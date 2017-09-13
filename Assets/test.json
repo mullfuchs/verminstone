@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "This is some test dialog\n[[I see|node1]]\n[[okay|node1]]\n[[uhh|node1]]\n[[sure|node1]]",
+		"position": {
+			"x": 540,
+			"y": 260
+		},
+		"colorID": 0
+	},
+	{
+		"title": "node1",
+		"tags": "",
+		"body": "Well \\n\nbye",
+		"position": {
+			"x": 813,
+			"y": 258
+		},
+		"colorID": 6
+	}
+]
