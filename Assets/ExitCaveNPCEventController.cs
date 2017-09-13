@@ -14,6 +14,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 	public GameObject[] NPCMiners = new GameObject[5];
 	public GameObject[] NPCCarriers = new GameObject[5];
 
+    private bool isWeighingdialogFinished = false;
+
 	// Use this for initialization
 	void Start () {
 		//grab all the carriers/miners
@@ -68,7 +70,10 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 		yield return new WaitForSeconds (2.0f);
 		GameObject foreman = GameObject.FindWithTag ("Foreman");
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<ZoomNFocus> ().focusOnNPC (foreman.transform);
-		yield return new WaitForSeconds (4.0f);
+        //start foreman dialog
+        FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue(foreman.GetComponent<Yarn.Unity.Example.NPC>().talkToNode);
+        //wait until dialog finished
+        yield return new WaitForSeconds (4.0f);
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<ZoomNFocus> ().reset ();
 		EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
 	}
