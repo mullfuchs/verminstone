@@ -48,6 +48,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 		}
 	}
 
+
+
 	void SendNPCsToGeneralAreaOfTarget(GameObject[] NPCGroup, GameObject[] spots){
 		for (int i = 0; i < NPCGroup.Length; i++) {
 			NPCGroup [i].GetComponent<AIStateMachine> ().SetNPCTarget (spots[i]);
@@ -62,7 +64,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 	}
 
 	IEnumerator weighStoneSequence(){
-		int carrierCount = NPCCarriers.Length;
+        EventController.GetComponent<CampEventController>().currentStagingArea = gatheringAreaObject;
+        int carrierCount = NPCCarriers.Length;
 		//have all the carriers dropped stone?
 		while (stoneBucketObject.GetComponent<RockBucketController> ().getNumberOfVisitedCarriers() < carrierCount) {
 			yield return null;

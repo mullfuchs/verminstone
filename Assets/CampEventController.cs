@@ -10,6 +10,8 @@ public class CampEventController : MonoBehaviour {
 	public GameObject Barracks;
 	public GameObject caveStagingArea;
 
+    public GameObject currentStagingArea;
+
 	//public GameObject[] gatheringAreaLocationObjects;
 
 	public GameObject[] NPCMiners = new GameObject[5];
@@ -37,11 +39,15 @@ public class CampEventController : MonoBehaviour {
 	}
 
 	public void SendNPCsToBarracks(){
+        CleanUpGatheringArea(currentStagingArea);
 		SendNPCsToArea (AllNPCs, Barracks);
+        currentStagingArea = Barracks;
 	}
 
 	public void SendNPCsToStagingArea(){
+        CleanUpGatheringArea(currentStagingArea);
 		SendNPCsToArea (AllNPCs, caveStagingArea);
+        currentStagingArea = caveStagingArea;
 	}
 
 	public void EndDay(){
@@ -55,7 +61,15 @@ public class CampEventController : MonoBehaviour {
 		}
 	}
 
-	GameObject[] InitializeGatheringArea(GameObject gatheringAreaObject){
+    void CleanUpGatheringArea(GameObject GatheringAreaObject)
+    {
+        foreach (Transform child in GatheringAreaObject.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+    }
+
+    GameObject[] InitializeGatheringArea(GameObject gatheringAreaObject){
 		GameObject[] gatheringAreaLocationObjects;
 		int size = NPCMiners.Length + NPCCarriers.Length;
 		gatheringAreaLocationObjects = new GameObject[size];
