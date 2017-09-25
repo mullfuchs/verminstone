@@ -94,6 +94,7 @@ public class CampEventController : MonoBehaviour {
 		//advance time
 		//fade in
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.clear, 2.0f);
+        SendNPCsToStagingArea();
 	}
 
 
