@@ -9,12 +9,12 @@ public class ShootOnAxisInput : MonoBehaviour {
 
 	public Transform spawnOffset;
 
-	public float shootDelay = 0.1f;
+	public float shootDelay = 0.3f;
     public float damage = 0.5f;
-    public float speed = 0.5f;
-    public float fireSpread = 0.9f;
-    public float cost = 5.0f;
-    public float range = 5.0f;
+    public float projectileSpeed = 0.5f;
+    public float fireSpread = 0.9f; //TODO, implement
+    public float cost = 0.1f;
+    public float secondsAlive = 5.0f;
 
 	private bool canShoot = true;
 
@@ -48,12 +48,19 @@ public class ShootOnAxisInput : MonoBehaviour {
 		}
 
 		if (canShoot && shootDirection.sqrMagnitude > 0.1f) {
-			Instantiate(bullet, spawnOffset.position, transform.rotation);
-			//Physics.IgnoreCollision(bullet.GetComponent<Collider>(), this.transform.parent.GetComponent<Collider>());
-			canShoot = false;
-			gameObject.GetComponentInParent<PowerObject> ().RemovePowerAmount (0.1f);
-			Invoke("ResetShot",shootDelay);
+            ShootProjectile();
 		}
 	}
+
+    void ShootProjectile()
+    {
+        Instantiate(bullet, spawnOffset.position, transform.rotation);
+        bullet.GetComponent<MoveForward>().speed = projectileSpeed;
+        bullet.GetComponent<MoveForward>().maxTime = secondsAlive;
+        //Physics.IgnoreCollision(bullet.GetComponent<Collider>(), this.transform.parent.GetComponent<Collider>());
+        canShoot = false;
+        gameObject.GetComponentInParent<PowerObject>().RemovePowerAmount(cost);
+        Invoke("ResetShot", shootDelay);
+    }
 	
 }

@@ -4,6 +4,7 @@ using System.Collections;
 public class MoveForward : MonoBehaviour {
 	public float speed = 1.0f;
 	public float maxTime = 5f;
+    public float damage = 5.0f;
 
 	// Update is called once per frame
 	void Update () {
