@@ -10,7 +10,11 @@ public class ShootOnAxisInput : MonoBehaviour {
 	public Transform spawnOffset;
 
 	public float shootDelay = 0.1f;
-
+    public float damage = 0.5f;
+    public float speed = 0.5f;
+    public float fireSpread = 0.9f;
+    public float cost = 5.0f;
+    public float range = 5.0f;
 
 	private bool canShoot = true;
 
