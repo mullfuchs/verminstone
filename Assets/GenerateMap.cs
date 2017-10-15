@@ -306,7 +306,7 @@ public class GenerateMap : MonoBehaviour {
 			}
 		}
 		survivingRooms.Sort ();
-
+        //TODO: FIX CAVE GEN STUFF
 		survivingRooms [0].isMainRoom = true;
 		survivingRooms [0].isAccessableFromMainRoom = true;
 
