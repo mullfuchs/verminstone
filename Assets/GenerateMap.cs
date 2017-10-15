@@ -475,6 +475,7 @@ public class GenerateMap : MonoBehaviour {
 	}
 
 	public Vector3 GetFloorExitPoint(){
+        print("Room count" + roomList.Count);
 		Room exitRoom = roomList [roomList.Count - 2];
 		Coord exitTile = exitRoom.insideTiles.ElementAt( (int)(exitRoom.insideTiles.Count / 2)  );
 		return coordToWorldPoint (exitTile);

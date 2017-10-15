@@ -4,6 +4,7 @@ using System.Collections;
 public class PowerObject : MonoBehaviour {
 
 	private float powerAmount = 0;
+    private int powerLevel = 1;
 
     private int powerThreshold = 5;
 
@@ -38,6 +39,7 @@ public class PowerObject : MonoBehaviour {
             shootingObject.damage = increaseValueUntilCeiling(shootingObject.damage, 10.0f, 0.5f);
             // public float damage = 0.5f;
             shootingObject.projectileSpeed = increaseValueUntilCeiling(shootingObject.projectileSpeed, 70.0f, 5.0f);
+            powerLevel++;
         // public float projectileSpeed = 0.5f;
             
         // public float fireSpread = 0.9f; //TODO, implement
@@ -83,7 +85,7 @@ public class PowerObject : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		GUILayout.Label ("Power " + powerAmount);
+		GUILayout.Label ("Power " + powerAmount + " Level " + powerLevel);
 	}
 
 
