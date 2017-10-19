@@ -77,5 +77,10 @@ public class NPCTeamHandler : MonoBehaviour {
 		NPCCarrier.GetComponent<AIStateMachine> ().GetStone (rock);
 	}
 
+    public void SendAllMinersToMineRock(GameObject rock)
+    {
+
+    }
+
 
 }
