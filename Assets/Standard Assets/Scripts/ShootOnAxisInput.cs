@@ -4,14 +4,14 @@ using System.Collections;
 public class ShootOnAxisInput : MonoBehaviour {
 	public GameObject bullet;
 
-	public string horizontalAxis = "Horizontal";
-	public string verticalAxis = "Vertical";
+	public string horizontalAxis = "Horizontal2";
+	public string verticalAxis = "Vertical2";
 
 	public Transform spawnOffset;
 
 	public float shootDelay = 0.3f;
     public float damage = 0.5f;
-    public float projectileSpeed = 0.5f;
+    public float projectileSpeed = 20.0f;
     public float fireSpread = 0.9f; //TODO, implement
     public float cost = 0.1f;
     public float secondsAlive = 5.0f;
@@ -55,8 +55,8 @@ public class ShootOnAxisInput : MonoBehaviour {
     void ShootProjectile()
     {
         Instantiate(bullet, spawnOffset.position, transform.rotation);
-        bullet.GetComponent<MoveForward>().speed = projectileSpeed;
-        bullet.GetComponent<MoveForward>().maxTime = secondsAlive;
+        //bullet.GetComponent<MoveForward>().speed = projectileSpeed;
+        //bullet.GetComponent<MoveForward>().maxTime = secondsAlive;
         //Physics.IgnoreCollision(bullet.GetComponent<Collider>(), this.transform.parent.GetComponent<Collider>());
         canShoot = false;
         gameObject.GetComponentInParent<PowerObject>().RemovePowerAmount(cost);
