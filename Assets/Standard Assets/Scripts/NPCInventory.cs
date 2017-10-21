@@ -30,11 +30,6 @@ public class NPCInventory : MonoBehaviour {
 	void Update () {
 		
 	}
-
-    void Equip(GameObject GearObject)
-    {
-
-    }
     
     Transform getBodyTransform(string part)
     {

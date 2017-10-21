@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityStandardAssets;
 
 public class NPCTeamHandler : MonoBehaviour {
 
-	public GameObject[] NPCMiners = new GameObject[5];
+	public GameObject[] NPCMiners;
 	public GameObject[] NPCCarriers = new GameObject[5];
 
 	Queue ActiveStones = new Queue();
@@ -13,10 +14,15 @@ public class NPCTeamHandler : MonoBehaviour {
 	Queue MinerQueue = new Queue();
 	Queue CarrierQueue = new Queue();
 
+    private List<GameObject> NPCList;
+
 	// Use this for initialization
 	void Start () {
 		NPCMiners = GameObject.FindGameObjectsWithTag ("Miner");
 		NPCCarriers = GameObject.FindGameObjectsWithTag ("Carrier");
+
+        NPCMiners = GameObject.FindGameObjectsWithTag("WorkerNPC");
+
 		foreach (GameObject g in NPCMiners) {
 			print ("added miner");
 			MinerQueue.Enqueue(g);
@@ -79,8 +85,33 @@ public class NPCTeamHandler : MonoBehaviour {
 
     public void SendAllMinersToMineRock(GameObject rock)
     {
-
+        //List<GameObject> ActiveMiners = 
     }
 
+    List<GameObject> GetAllNPCSwithMineTools()
+    {
+        List<GameObject> MinerList = new List<GameObject>();
+        foreach (GameObject g in NPCMiners)
+        {
+           if( g.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "MineTool")
+            {
+                MinerList.Add(g);
+            }
+        }
+        return MinerList;
+    }
+
+    List<GameObject> GetAllNPCSwithBagTools()
+    {
+        List<GameObject> CarrierList = new List<GameObject>();
+        foreach(GameObject g in NPCMiners)
+        {
+            if (g.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "BagTool")
+            {
+                CarrierList.Add(g);
+            }
+        }
+        return CarrierList;
+    }
 
 }
