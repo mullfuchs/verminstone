@@ -79,6 +79,7 @@ public class PowerObject : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "VerminStone") {
+            print("tagged verminstone");
 			AddPowerAmount(other.GetComponent<VStoneObject>().energy);
 			this.GetComponent<NPCTeamHandler>().AddStoneToBeMined(other.gameObject);
 		}

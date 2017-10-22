@@ -17,7 +17,7 @@ public class PassageTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider other){
-		if (other.tag == "Player" || other.tag == "Carrier" || other.tag == "Miner") {
+		if (other.tag == "Player" || other.tag == "WorkerNPC" || other.tag == "Miner") {
 			//Debug.Log ("Stepped off exit trigger");
 			//if(gameObject.GetComponent<ChangeFloorOnEnter>());
 			gameObject.GetComponent<ChangeFloorOnEnter> ().CanSwapLevels = true;

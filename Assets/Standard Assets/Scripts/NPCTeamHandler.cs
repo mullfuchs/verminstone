@@ -16,12 +16,20 @@ public class NPCTeamHandler : MonoBehaviour {
 
     private List<GameObject> NPCList;
 
+    private List<GameObject> CurrentMiners;
+    private List<GameObject> CurrentCarriers;
+
 	// Use this for initialization
 	void Start () {
-		NPCMiners = GameObject.FindGameObjectsWithTag ("Miner");
+		//NPCMiners = GameObject.FindGameObjectsWithTag ("Miner");
 		NPCCarriers = GameObject.FindGameObjectsWithTag ("Carrier");
 
         NPCMiners = GameObject.FindGameObjectsWithTag("WorkerNPC");
+
+        CurrentMiners = new List<GameObject>();
+
+        CurrentMiners = GetAllNPCSwithMineTools();
+
 
 		foreach (GameObject g in NPCMiners) {
 			print ("added miner");
@@ -36,9 +44,12 @@ public class NPCTeamHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (ActiveStones.Count > 0 && MinerQueue.Count > 0) {
-			print ("Sending miner to mine rock");
-			SendNPCToMineRock((GameObject)MinerQueue.Dequeue(), (GameObject)ActiveStones.Dequeue());
+		if (ActiveStones.Count > 0) {
+			print ("Sending miners to mine rock");
+            // get all miners with pickaxes
+
+            // 
+			SendNPCToMineRock((GameObject)MinerQueue.Dequeue(), (GameObject)ActiveStones.Peek());
 		}
 		
 		if (MinedStones.Count > 0 && CarrierQueue.Count > 0) {
@@ -52,13 +63,13 @@ public class NPCTeamHandler : MonoBehaviour {
 	}
 
 	public void AddStoneToBeMined(GameObject rock){
-		ActiveStones.Enqueue (rock);
-		CheckToSeeIfARockCanBePickedUpOrMined ();
+        //ActiveStones.Enqueue (rock);
+        print("sending miners to rock");
+        SendAllMinersToMineRock(rock);
 	}
 
 	public void AddStoneToBePickedUp(GameObject rock){
 		MinedStones.Enqueue (rock);
-		CheckToSeeIfARockCanBePickedUpOrMined ();
 	}
 
 	public void AddNPCToMinerQueue(GameObject NPC){
@@ -85,7 +96,11 @@ public class NPCTeamHandler : MonoBehaviour {
 
     public void SendAllMinersToMineRock(GameObject rock)
     {
-        //List<GameObject> ActiveMiners = 
+        foreach (GameObject Miner in CurrentMiners)
+        {
+            print("sending a miner to the rock");
+            Miner.GetComponent<AIStateMachine>().AddTargetForNPC(rock);
+        }
     }
 
     List<GameObject> GetAllNPCSwithMineTools()
@@ -93,10 +108,14 @@ public class NPCTeamHandler : MonoBehaviour {
         List<GameObject> MinerList = new List<GameObject>();
         foreach (GameObject g in NPCMiners)
         {
-           if( g.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "MineTool")
+            if(g.GetComponent<NPCInventory>().ObjectHeldInHands != null)
             {
-                MinerList.Add(g);
+                if (g.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "MineTool")
+                {
+                    MinerList.Add(g);
+                }
             }
+
         }
         return MinerList;
     }

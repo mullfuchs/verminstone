@@ -17,6 +17,8 @@ public class AIStateMachine : MonoBehaviour {
 
 	private GameObject FollowUpTarget;
 
+    Queue targets = new Queue();
+
 	private float vStoneAmount = 6.9f; //hard coding value for test purposes
 
 		// Use this for initialization
@@ -57,7 +59,7 @@ public class AIStateMachine : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CheckIfIHaveNoTarget ();
-
+        CheckIfTheresATargetInMyQueue();
 		if (FollowUpTarget != null) {
 			if (Vector3.Distance (gameObject.transform.position, getTarget().position) <= 1.5f) {
 				setTarget (FollowUpTarget);
@@ -76,20 +78,41 @@ public class AIStateMachine : MonoBehaviour {
 
 	void CheckIfIHaveNoTarget(){
 		if (this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().target == null 
-			&& gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().isActiveAndEnabled) {
-			setTarget(ChannelerIFollow);
+			&& gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().isActiveAndEnabled)
+        {
+                
+            if(targets.Count > 0)
+            {
+                print("NPC going to target in queue");
+                setTarget((GameObject)targets.Dequeue());
+            }
+            else
+            {
+                print("NPC following player");
+                setTarget(ChannelerIFollow);
+            }
+                
 		}
 	}
+
+    void CheckIfTheresATargetInMyQueue()
+    {
+        if (targets.Count > 0)
+        {
+            print("NPC going to target in queue");
+            setTarget((GameObject)targets.Dequeue());
+        }
+    }
 		
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "VerminStone") {
 				if(this.tag == "Miner" && other.GetComponent<VStoneObject>().HasBeenTouched){
-					StartCoroutine( MineVerminStone(other.gameObject));
+					//StartCoroutine( MineVerminStone(other.gameObject));
 				}
 				if(this.tag == "Carrier" && other.GetComponent<VStoneObject>().HasBeenMined){
-					PickUpVerminStone(other.gameObject);
-					Follow (DefaultTarget);
+					//PickUpVerminStone(other.gameObject);
+					//Follow (DefaultTarget);
 					//ReturnToMineCart(MineCartTarget);
 				}
 			}
@@ -150,6 +173,12 @@ public class AIStateMachine : MonoBehaviour {
 	public float GetVerminStoneAmount(){
 		return vStoneAmount;
 	}
+
+    public void AddTargetForNPC(GameObject target)
+    {
+        print("added target for npc");
+        targets.Enqueue(target);
+    }
 
 }
 

@@ -97,18 +97,11 @@ public class CaveManager : MonoBehaviour {
 	}
 		
 	void moveNPCTeamToPoint(GameObject Holder, Vector3 Location){
-		GameObject[] Carriers = player.GetComponent<NPCTeamHandler> ().NPCCarriers;
+		//GameObject[] Carriers = player.GetComponent<NPCTeamHandler> ().NPCCarriers;
 		GameObject[] Miners = player.GetComponent<NPCTeamHandler> ().NPCMiners;
 		Holder.GetComponent<PlayerAndNPCSpawner> ().setPoint (Location);
-		Debug.Log ("carrier count" + Carriers.Length);
+		//Debug.Log ("carrier count" + Carriers.Length);
 		Debug.Log ("miner count" + Miners.Length);
-		for (int i = 0; i < Carriers.Count(); i++) {
-
-			Debug.Log ("Enqued", Carriers[i]);
-
-			Holder.GetComponent<PlayerAndNPCSpawner> ().addNPC(Carriers[i]);
-
-		}
 		for (int i = 0; i < Miners.Count(); i++) {
 
 			Debug.Log ("Enqued");
