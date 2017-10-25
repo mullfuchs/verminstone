@@ -14,6 +14,8 @@ public class NPCTeamHandler : MonoBehaviour {
 	Queue MinerQueue = new Queue();
 	Queue CarrierQueue = new Queue();
 
+    private Queue AvailabileTargets = new Queue();
+
     private List<GameObject> NPCList;
 
     private List<GameObject> CurrentMiners;
@@ -132,5 +134,29 @@ public class NPCTeamHandler : MonoBehaviour {
         }
         return CarrierList;
     }
+
+    public void AddTargetForNPCs(GameObject target)
+    {
+        AvailabileTargets.Enqueue(target);
+    }
+
+    public GameObject GetATargetIfOneIsAvailable()
+    {
+       // print("Available targets " + (AvailabileTargets.Count));
+        if (AvailabileTargets.Count > 0)
+        {
+            return (GameObject)AvailabileTargets.Dequeue();
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public int checkTargetCount()
+    {
+        return AvailabileTargets.Count;
+    }
+
 
 }

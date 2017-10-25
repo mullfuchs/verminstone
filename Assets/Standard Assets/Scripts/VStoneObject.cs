@@ -12,11 +12,13 @@ public class VStoneObject : MonoBehaviour {
 	private float timer = 1.0f;
 	private float timerOGval = 0;
 	public GameObject VStoneFragmentObject;
+    private GameObject playerObject;
 	public int FragmentsToMake = 5;
 
 	// Use this for initialization
 	void Start () {
 		timerOGval = timer;
+        playerObject = GameObject.Find("Player");
 	}
 	
 	// Update is called once per frame
@@ -75,7 +77,7 @@ public class VStoneObject : MonoBehaviour {
 
 	void DestroyStoneAndCreateRocksToPickUp(){
 		for (int i = 0; i < FragmentsToMake; i++) {
-			Instantiate (VStoneFragmentObject, gameObject.transform.position, Quaternion.identity);
+			playerObject.GetComponent<NPCTeamHandler>().AddTargetForNPCs( Instantiate (VStoneFragmentObject, gameObject.transform.position, Quaternion.identity) );
 		}
 		Destroy(gameObject);
 	}

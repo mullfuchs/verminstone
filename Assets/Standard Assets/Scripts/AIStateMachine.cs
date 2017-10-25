@@ -58,8 +58,9 @@ public class AIStateMachine : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		CheckIfIHaveNoTarget ();
         CheckIfTheresATargetInMyQueue();
+        CheckIfIHaveNoTarget();
+
 		if (FollowUpTarget != null) {
 			if (Vector3.Distance (gameObject.transform.position, getTarget().position) <= 1.5f) {
 				setTarget (FollowUpTarget);
@@ -69,7 +70,10 @@ public class AIStateMachine : MonoBehaviour {
 	}
 
 	void setTarget(GameObject target){
-		this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().target = target.transform;
+        if(target != null)
+        {
+            this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target = target.transform;
+        }
 	}
 
 	Transform getTarget(){
@@ -80,30 +84,38 @@ public class AIStateMachine : MonoBehaviour {
 		if (this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().target == null 
 			&& gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().isActiveAndEnabled)
         {
-                
-            if(targets.Count > 0)
-            {
-                print("NPC going to target in queue");
-                setTarget((GameObject)targets.Dequeue());
-            }
-            else
-            {
-                print("NPC following player");
-                setTarget(ChannelerIFollow);
-            }
-                
-		}
+            CheckIfTheresATargetInMyQueue();
+            setTarget(ChannelerIFollow);
+        }
 	}
 
     void CheckIfTheresATargetInMyQueue()
     {
+
+        if (ChannelerIFollow.GetComponent<NPCTeamHandler>().checkTargetCount() > 0)
+        {
+            GameObject backobject = gameObject.GetComponent<NPCInventory>().ObjectOnBack;
+            if (backobject != null && backobject.tag == "BagTool")
+            {
+                targets.Enqueue(ChannelerIFollow.GetComponent<NPCTeamHandler>().GetATargetIfOneIsAvailable());
+                //setTarget((GameObject)targets.Dequeue());
+                print("adding fragment to an NPC target list, count:" + targets.Count);
+            }
+        }
+
         if (targets.Count > 0)
         {
-            print("NPC going to target in queue");
-            setTarget((GameObject)targets.Dequeue());
+            setTarget((GameObject)targets.Peek());
+            //print("setting target from target queue");
         }
+        else
+        {
+            setTarget(ChannelerIFollow);
+        }
+
     }
 		
+
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "VerminStone") {
@@ -125,7 +137,19 @@ public class AIStateMachine : MonoBehaviour {
 			}
 		}
 
-		}
+        if (other.tag == "VStoneFragment" && other.gameObject == getTargetObject())
+        {
+            if (gameObject.GetComponent<NPCInventory>().ObjectOnBack.tag == "BagTool")
+            {
+                print("picking up stone");
+                vStoneAmount += 5.0f;
+                targets.Dequeue();
+                Destroy(other.gameObject);
+                CheckIfTheresATargetInMyQueue();
+            }
+        }
+
+    }
 
 	void DropVerminStone(){
 		foreach (Transform child in transform) {
@@ -162,7 +186,16 @@ public class AIStateMachine : MonoBehaviour {
 	}
 		
 	GameObject getTargetObject(){
-		return this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target.gameObject;
+        GameObject obj = this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target.gameObject;
+        if(obj != null)
+        {
+            return obj;
+        }
+        else
+        {
+            return null;
+        }
+        //return this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target.gameObject;
 	}
 
 
