@@ -102,8 +102,9 @@ public class AIStateMachine : MonoBehaviour {
 		if (this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().target == null 
 			&& gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().isActiveAndEnabled)
         {
+            targets.Dequeue();
             CheckIfTheresATargetInMyQueue();
-            setTarget(ChannelerIFollow);
+            //setTarget(ChannelerIFollow); uncomment this first
         }
 	}
 
@@ -257,8 +258,8 @@ public class AIStateMachine : MonoBehaviour {
 
     public void AddTargetForNPC(GameObject target)
     {
-        print("added target for npc");
         targets.Enqueue(target);
+        print("adding target to an NPC target list, count:" + targets.Count);
     }
 
 }
