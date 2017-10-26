@@ -31,6 +31,16 @@ public class health : MonoBehaviour {
 				Destroy (this.gameObject);
 			}
 		}
+        
 
 	}
+
+    public void AddDamage(int damage)
+    {
+        healthPoints -= damage;
+        if(healthPoints <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

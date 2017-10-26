@@ -10,7 +10,7 @@ public class LookAtTargetAndWalkForward : MonoBehaviour {
 			target = GameObject.FindGameObjectWithTag ("Player");
 		} 
 		else {
-			target = GameObject.FindGameObjectWithTag ("Carrier");
+			target = GameObject.FindGameObjectWithTag ("NPCWorker");
 		}
 
 		this.gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().target = target.transform;

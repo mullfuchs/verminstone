@@ -5,7 +5,7 @@ using UnityStandardAssets;
 
 public class AIStateMachine : MonoBehaviour {
 
-	public enum AIState { Follow, GetStone, ReturningToCart };
+	public enum AIState { Follow, GetStone, ReturningToCart, Scared, Angry};
 
 	public GameObject ChannelerIFollow;
 
@@ -16,6 +16,8 @@ public class AIStateMachine : MonoBehaviour {
 	public GameObject MineCartTarget;
 
 	private GameObject FollowUpTarget;
+
+    private GameObject EnemyAttackingMe;
 
     Queue targets = new Queue();
 
@@ -58,8 +60,24 @@ public class AIStateMachine : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        CheckIfTheresATargetInMyQueue();
-        CheckIfIHaveNoTarget();
+        if(currentState == AIState.Angry || currentState == AIState.Scared)
+        {
+            if(EnemyAttackingMe == null)
+            {
+                print("NPC Returning to default state");
+                currentState = AIState.Follow;
+            }
+        }
+        
+
+
+        if (currentState == AIState.Follow)
+        {
+            CheckIfTheresATargetInMyQueue();
+            CheckIfIHaveNoTarget();
+        }
+        
+
 
 		if (FollowUpTarget != null) {
 			if (Vector3.Distance (gameObject.transform.position, getTarget().position) <= 1.5f) {
@@ -149,6 +167,36 @@ public class AIStateMachine : MonoBehaviour {
             }
         }
 
+        if(other.tag == "Bug")
+        {
+            if (gameObject.GetComponent<NPCInventory>().ObjectHeldInHands != null)
+            {
+                if (gameObject.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "MineTool" || gameObject.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "Weapon")
+                {
+                    setTarget(other.gameObject);
+                    EnemyAttackingMe = other.gameObject;
+                    currentState = AIState.Angry;
+                    print("NPC is angry");
+                }
+            }
+            else
+            {
+                setTarget(ChannelerIFollow);
+                EnemyAttackingMe = other.gameObject;
+                currentState = AIState.Scared;
+                print("NPC is scared");
+            }
+        }
+
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Bug" && currentState == AIState.Angry)
+        {
+           other.gameObject.GetComponent<health>().AddDamage(1);
+            print("NPC Did damage of 1");
+        }
     }
 
 	void DropVerminStone(){

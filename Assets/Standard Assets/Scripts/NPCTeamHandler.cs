@@ -140,6 +140,11 @@ public class NPCTeamHandler : MonoBehaviour {
         AvailabileTargets.Enqueue(target);
     }
 
+    public void DistributeFragmentsToCarrierNPCs()
+    {
+
+    }
+
     public GameObject GetATargetIfOneIsAvailable()
     {
        // print("Available targets " + (AvailabileTargets.Count));
