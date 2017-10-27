@@ -262,5 +262,12 @@ public class AIStateMachine : MonoBehaviour {
         print("adding target to an NPC target list, count:" + targets.Count);
     }
 
+
+    public void AttackEnemy(GameObject enemy)
+    {
+        currentState = AIState.Angry;
+        EnemyAttackingMe = enemy;
+        setTarget(enemy);
+    }
 }
 

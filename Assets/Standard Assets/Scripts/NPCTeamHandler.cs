@@ -20,18 +20,21 @@ public class NPCTeamHandler : MonoBehaviour {
 
     private List<GameObject> CurrentMiners;
     private List<GameObject> CurrentCarriers;
+    private List<GameObject> CurrentArmedNPCs;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		//NPCMiners = GameObject.FindGameObjectsWithTag ("Miner");
 		NPCCarriers = GameObject.FindGameObjectsWithTag ("Carrier");
 
         NPCMiners = GameObject.FindGameObjectsWithTag("WorkerNPC");
 
         CurrentMiners = new List<GameObject>();
+        CurrentArmedNPCs = new List<GameObject>();
 
         CurrentMiners = GetAllNPCSwithMineTools();
 
+        CurrentArmedNPCs = GetAllNPCSwithWeapons();
 
 		foreach (GameObject g in NPCMiners) {
 			print ("added miner");
@@ -58,6 +61,12 @@ public class NPCTeamHandler : MonoBehaviour {
 			print ("Sending carrier to pick up rock");
 			SendNPCToPickUpRock((GameObject)CarrierQueue.Dequeue(), (GameObject)MinedStones.Dequeue());
 		}
+
+        if (Input.GetButton("Order_Attack"))
+        {
+            print("Ordering NPCs to attack");
+            OrderNPCsToAttackNearestNPC();
+        }
 	}
 
 	void CheckToSeeIfARockCanBePickedUpOrMined(){
@@ -127,12 +136,29 @@ public class NPCTeamHandler : MonoBehaviour {
         List<GameObject> CarrierList = new List<GameObject>();
         foreach(GameObject g in NPCMiners)
         {
-            if (g.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "BagTool")
+            if (g.GetComponent<NPCInventory>().ObjectOnBack.tag == "BagTool")
             {
                 CarrierList.Add(g);
             }
         }
         return CarrierList;
+    }
+
+    List<GameObject> GetAllNPCSwithWeapons()
+    {
+        List<GameObject> NPCList = new List<GameObject>();
+        foreach (GameObject g in NPCMiners)
+        {
+            if (g.GetComponent<NPCInventory>().ObjectHeldInHands != null)
+            {
+                if (g.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "MineTool")
+                {
+                    NPCList.Add(g);
+                }
+            }
+
+        }
+        return NPCList;
     }
 
     public void AddTargetForNPCs(GameObject target)
@@ -163,5 +189,41 @@ public class NPCTeamHandler : MonoBehaviour {
         return AvailabileTargets.Count;
     }
 
+    void OrderNPCsToAttackNearestNPC()
+    {
+        //find bug closest to me
+        // closestBug = null;
+        float bugDistToPlayer = 0.0f;
+        GameObject[] bugs = GameObject.FindGameObjectsWithTag("Bug");
+        GameObject closestBug = bugs[0];
+        print("found bugs:" + bugs.Length);
+        
+        if(bugs.Length == 0)
+        {
+            print("found no bugs");
+            return;
+        }
+
+        
+        
+        bugDistToPlayer = Vector3.Distance(closestBug.transform.position, gameObject.transform.position);
+
+        foreach (GameObject b in bugs)
+        {
+            float bugDist = Vector3.Distance(b.transform.position, gameObject.transform.position);
+            if (bugDist < bugDistToPlayer)
+            {
+                closestBug = b;
+                bugDistToPlayer = bugDist;
+            }
+        }
+        
+
+        foreach (GameObject g in CurrentArmedNPCs)
+        {
+            print("sending NPCS to attack a bug");
+            g.GetComponent<AIStateMachine>().AttackEnemy(closestBug);
+        }
+    }
 
 }
