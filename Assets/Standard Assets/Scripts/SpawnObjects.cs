@@ -15,11 +15,11 @@ public class SpawnObjects : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (canSpawn) {
-			Instantiate(enemy, transform.position, transform.rotation);
-			canSpawn = false;
-			Invoke("ResetSpawn",spawnDelay);
-		}
+		//if (canSpawn) {
+			//Instantiate(enemy, transform.position, transform.rotation);
+			//canSpawn = false;
+			//Invoke("ResetSpawn",spawnDelay);
+		//}
 	}
 
     public void SpawnEnemy(GameObject objectToSpawn, GameObject[] TargetsForThatEnemy, int numberToSpawn)
