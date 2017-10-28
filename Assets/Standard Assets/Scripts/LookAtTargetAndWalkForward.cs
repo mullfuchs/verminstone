@@ -10,7 +10,7 @@ public class LookAtTargetAndWalkForward : MonoBehaviour {
 			target = GameObject.FindGameObjectWithTag ("Player");
 		} 
 		else {
-			target = GameObject.FindGameObjectWithTag ("NPCWorker");
+			target = GameObject.FindGameObjectWithTag ("WorkerNPC");
 		}
 
 		this.gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().target = target.transform;
@@ -24,4 +24,9 @@ public class LookAtTargetAndWalkForward : MonoBehaviour {
 //		}
 //		transform.Translate(Vector3.forward * walkSpeed * Time.deltaTime);
 	}
+
+    public void setTarget(GameObject newTarget)
+    {
+        this.gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target = newTarget.transform;
+    }
 }

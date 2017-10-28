@@ -25,7 +25,7 @@ public class health : MonoBehaviour {
 			}
 		}
 
-		if (obj.gameObject.tag == "Bug") {
+		if (obj.gameObject.tag == "Bug" && gameObject.tag != "Bug") {
 			healthPoints -= 1;
 			if (healthPoints <= 0) {
 				Destroy (this.gameObject);

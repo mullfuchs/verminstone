@@ -6,6 +6,7 @@ public class VStoneObject : MonoBehaviour {
 	public bool HasBeenTouched = false;
 	public bool HasBeenMined = false;
 	public bool IsBeingMined = false;
+    private bool SentForHelp = false;
 	private int minersInRadius = 0;
 	public int healthPoints = 500;
 	public int energy = 10;
@@ -13,12 +14,14 @@ public class VStoneObject : MonoBehaviour {
 	private float timerOGval = 0;
 	public GameObject VStoneFragmentObject;
     private GameObject playerObject;
+    private GameObject EnemyTeamHandler;
 	public int FragmentsToMake = 5;
 
 	// Use this for initialization
 	void Start () {
 		timerOGval = timer;
         playerObject = GameObject.Find("Player");
+        EnemyTeamHandler = GameObject.Find("EnemyNPCHandler");
 	}
 	
 	// Update is called once per frame
@@ -44,6 +47,12 @@ public class VStoneObject : MonoBehaviour {
 				IsBeingMined = true;
 			}
 			minersInRadius++;
+
+            if(SentForHelp == false)
+            {
+                EnemyTeamHandler.GetComponent<EnemyTeamHandler>().sendSwarmToAttackWhenVStoneMined(gameObject);
+                SentForHelp = true;
+            }
 		}
 
 //		if (other.tag == "Miner" && HasBeenTouched) {

@@ -226,4 +226,14 @@ public class NPCTeamHandler : MonoBehaviour {
         }
     }
 
+    public List<GameObject> GetCurrentMiners()
+    {
+        return CurrentMiners;
+    }
+
+    public List<GameObject> GetCurrentCarriers()
+    {
+        return CurrentCarriers;
+    }
+
 }
