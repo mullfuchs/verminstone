@@ -31,6 +31,8 @@ public class health : MonoBehaviour {
 				Destroy (this.gameObject);
 			}
 		}
+
+
         
 
 	}
@@ -42,5 +44,21 @@ public class health : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
+    }
+
+
+    void killgameObject()
+    {
+        if(gameObject.tag == "WorkerNPC")
+        {
+            gameObject.GetComponent<AIStateMachine>().handleDeath();
+        }
+
+        if(gameObject.tag == "Bug")
+        {
+
+        }
+
+        Destroy(this.gameObject);
     }
 }

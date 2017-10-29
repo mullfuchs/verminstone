@@ -269,5 +269,10 @@ public class AIStateMachine : MonoBehaviour {
         EnemyAttackingMe = enemy;
         setTarget(enemy);
     }
+
+    public void handleDeath()
+    {
+        //tell NPCTeamHandler it's died
+    }
 }
 

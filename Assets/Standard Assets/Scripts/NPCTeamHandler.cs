@@ -236,4 +236,10 @@ public class NPCTeamHandler : MonoBehaviour {
         return CurrentCarriers;
     }
 
+    public void handleNPCDeath()
+    {
+        //refresh lists
+        //redistribute targets
+    }
+
 }
