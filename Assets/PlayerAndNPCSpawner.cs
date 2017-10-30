@@ -27,6 +27,7 @@ public class PlayerAndNPCSpawner : MonoBehaviour {
 		NpcQueue.Enqueue (_npc);
 		_npc.GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = false;
 		_npc.transform.position = gameObject.transform.position;
+        _npc.SetActive(false);
 	}
 
 	public void placeNextNPC(){
@@ -35,7 +36,7 @@ public class PlayerAndNPCSpawner : MonoBehaviour {
 			GameObject nextNPC = (GameObject)NpcQueue.Dequeue ();
 			nextNPC.SetActive (true);
 
-			nextNPC.transform.position = point;
+			nextNPC.transform.position = point + new Vector3(0, 1.5f, 0);
 			nextNPC.GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = true;
 
 		} 
