@@ -242,4 +242,9 @@ public class NPCTeamHandler : MonoBehaviour {
         //redistribute targets
     }
 
+    public void distributeTargetsToNPCList()
+    {
+
+    }
+
 }

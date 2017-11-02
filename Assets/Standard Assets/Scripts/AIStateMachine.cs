@@ -274,5 +274,7 @@ public class AIStateMachine : MonoBehaviour {
     {
         //tell NPCTeamHandler it's died
     }
+
+
 }
 
