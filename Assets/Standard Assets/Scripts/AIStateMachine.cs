@@ -18,6 +18,8 @@ public class AIStateMachine : MonoBehaviour {
 	private GameObject FollowUpTarget;
 
     private GameObject EnemyAttackingMe;
+	private GameObject AttackHitBox;
+	private bool CanAttack = true;
 
     Queue targets = new Queue();
 
@@ -27,6 +29,8 @@ public class AIStateMachine : MonoBehaviour {
 	void Start () {
 		//DefaultTarget = this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target.gameObject;
 		vStoneAmount = 0.0f;
+		AttackHitBox = transform.Find ("AttackHitBox").gameObject;
+		AttackHitBox.SetActive (false);
 	}
 
 	void Awake(){
@@ -69,7 +73,16 @@ public class AIStateMachine : MonoBehaviour {
             }
         }
         
-
+		if (currentState == AIState.Angry) {
+			if (EnemyAttackingMe != null) {
+				//do distance check
+				float distToEnemy = Vector3.Distance(EnemyAttackingMe.transform.position, transform.position);
+				if (distToEnemy <= 1.5f && CanAttack) {
+					PerformAttack ();
+				}
+				//if under an amout start attacking
+			}
+		}
 
         if (currentState == AIState.Follow)
         {
@@ -275,6 +288,20 @@ public class AIStateMachine : MonoBehaviour {
         //tell NPCTeamHandler it's died
     }
 
+	public void PerformAttack(){
+		AttackHitBox.SetActive (true);
+		CanAttack = false;
+		Invoke ("HideHitBox", 0.5f);
+		Invoke ("ResetAttack", 1.5f);
+	}
+
+	public void HideHitBox(){
+		AttackHitBox.SetActive (false);
+	}
+
+	public void ResetAttack(){
+		CanAttack = true;
+	}
 
 }
 
