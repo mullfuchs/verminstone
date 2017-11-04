@@ -207,11 +207,13 @@ public class AIStateMachine : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
+        /*
         if (other.gameObject.tag == "Bug" && currentState == AIState.Angry)
         {
            other.gameObject.GetComponent<health>().AddDamage(1);
             print("NPC Did damage of 1");
         }
+        */
     }
 
 	void DropVerminStone(){
