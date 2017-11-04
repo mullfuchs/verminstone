@@ -183,6 +183,7 @@ public class AIStateMachine : MonoBehaviour {
 
         if(other.tag == "Bug")
         {
+
             if (gameObject.GetComponent<NPCInventory>().ObjectHeldInHands != null)
             {
                 if (gameObject.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "MineTool" || gameObject.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "Weapon")
