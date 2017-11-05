@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: a5c6806ae65ecbc4a8fa4dc92b39c4ed
+timeCreated: 1509864105
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Coyote
+  fontNames:
+  - Coyote
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

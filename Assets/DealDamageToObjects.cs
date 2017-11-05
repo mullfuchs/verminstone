@@ -18,9 +18,10 @@ public class DealDamageToObjects : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == AffectedTag)
+        health OtherHealth = other.GetComponent<health>();
+        if (other.tag == AffectedTag && OtherHealth)
         {
-            other.GetComponent<health>().AddDamage(5);
+            OtherHealth.AddDamage(5);
             //gameObject.SetActive(false);
         }
     }

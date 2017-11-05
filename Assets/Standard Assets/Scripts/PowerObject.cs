@@ -3,16 +3,28 @@ using System.Collections;
 
 public class PowerObject : MonoBehaviour {
 
-	private float powerAmount = 0;
-    private int powerLevel = 1;
+    public GameObject UIObject;
 
+	private float powerAmount = 0;
+    private float maxPowerAmount = 420;
+
+    private int powerLevel = 1;
     private int powerThreshold = 5;
 
     private ShootOnAxisInput shootingObject;
+    private UIController uiController;
+
 
     void Start()
     {
+        uiController = UIObject.GetComponent<UIController>();
         shootingObject = transform.GetChild(0).GetComponent<ShootOnAxisInput>();
+
+        uiController.updateBarMaxValue(uiController.XPBarObject, powerThreshold);
+        uiController.updateBar(uiController.XPBarObject, powerLevel);
+
+        uiController.updateBarMaxValue(uiController.PowerBarObject, maxPowerAmount);
+        uiController.updateBar(uiController.PowerBarObject, powerAmount);
     }
 
 
@@ -23,11 +35,13 @@ public class PowerObject : MonoBehaviour {
 
 	public void AddPowerAmount(float amount){
 		powerAmount += amount;
-	}
+        uiController.updateBar(uiController.PowerBarObject, powerLevel);
+    }
 
 	public void RemovePowerAmount(float amount){
-		powerAmount -= amount;	
-	}
+		powerAmount -= amount;
+        uiController.updateBar(uiController.PowerBarObject, powerLevel);
+    }
 
     void levelUp()
     {
@@ -40,12 +54,15 @@ public class PowerObject : MonoBehaviour {
             // public float damage = 0.5f;
             shootingObject.projectileSpeed = increaseValueUntilCeiling(shootingObject.projectileSpeed, 70.0f, 5.0f);
             powerLevel++;
-        // public float projectileSpeed = 0.5f;
-            
-        // public float fireSpread = 0.9f; //TODO, implement
-            
-        //  public float cost = 0.1f;
-        //  public float secondsAlive = 5.0f;
+
+            uiController.updateBarMaxValue(uiController.XPBarObject, powerThreshold);
+            uiController.updateBar(uiController.XPBarObject, powerLevel);
+            // public float projectileSpeed = 0.5f;
+
+            // public float fireSpread = 0.9f; //TODO, implement
+
+            //  public float cost = 0.1f;
+            //  public float secondsAlive = 5.0f;
         }
     }
 
@@ -81,6 +98,8 @@ public class PowerObject : MonoBehaviour {
 		if (other.tag == "VerminStone") {
             print("tagged verminstone");
 			AddPowerAmount(other.GetComponent<VStoneObject>().energy);
+            
+
 			this.GetComponent<NPCTeamHandler>().AddStoneToBeMined(other.gameObject);
 		}
 	}
