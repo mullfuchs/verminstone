@@ -9,6 +9,7 @@ public class PowerObject : MonoBehaviour {
     private float maxPowerAmount = 420;
 
     private int powerLevel = 1;
+    private int xp = 0;
     private int powerThreshold = 5;
 
     private ShootOnAxisInput shootingObject;
@@ -21,7 +22,7 @@ public class PowerObject : MonoBehaviour {
         shootingObject = transform.GetChild(0).GetComponent<ShootOnAxisInput>();
 
         uiController.updateBarMaxValue(uiController.XPBarObject, powerThreshold);
-        uiController.updateBar(uiController.XPBarObject, powerLevel);
+        uiController.updateBar(uiController.XPBarObject, xp);
 
         uiController.updateBarMaxValue(uiController.PowerBarObject, maxPowerAmount);
         uiController.updateBar(uiController.PowerBarObject, powerAmount);
@@ -98,7 +99,13 @@ public class PowerObject : MonoBehaviour {
 		if (other.tag == "VerminStone") {
             print("tagged verminstone");
 			AddPowerAmount(other.GetComponent<VStoneObject>().energy);
-            
+
+            xp += 1;
+
+            if(xp > powerThreshold)
+            {
+                levelUp();
+            }
 
 			this.GetComponent<NPCTeamHandler>().AddStoneToBeMined(other.gameObject);
 		}

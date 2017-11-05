@@ -30,12 +30,14 @@ public class UIController : MonoBehaviour {
 
     public void updateBar(GameObject barToUpdate, float amount)
     {
+        print("updating bar with" + amount);
         barToUpdate.GetComponent<FillableBarController>().UpdateCurrentValue(amount);
     }
 
     public void updateBarMaxValue(GameObject barToUpdate, float amount)
     {
-        barToUpdate.GetComponent<FillableBarController>().UpdateCurrentValue(amount);
+        print("updating bar max value with" + amount);
+        barToUpdate.GetComponent<FillableBarController>().SetMaxValue(amount);
     }
 
     public void updateText(GameObject textToUpdate, string value)
