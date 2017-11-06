@@ -31,7 +31,7 @@ public class FillableBarController : MonoBehaviour {
         print("Updating current value of bar with " + amount);
         if(amount > 0)
         {
-            bar.fillAmount = (MaxValue - amount) / 100;
+			bar.fillAmount = (amount / MaxValue);
         }
         else
         {

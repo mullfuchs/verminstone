@@ -4,10 +4,17 @@ using System.Collections;
 public class health : MonoBehaviour {
 	public float healthPoints = 2;
 	public bool isFreindlyFireOn = false;
+	public bool TrackOnTheUI = false;
+
+	private UIController controller = null;
 
 	// Use this for initialization
 	void Start () {
-	
+		if (TrackOnTheUI) {
+			controller = GameObject.Find ("Canvas").GetComponent<UIController> ();
+			controller.updateBarMaxValue (controller.HealthBarObject, healthPoints);
+			controller.updateBar (controller.HealthBarObject, healthPoints);
+		}
 	}
 	
 	// Update is called once per frame
@@ -32,7 +39,9 @@ public class health : MonoBehaviour {
 			}
 		}
 
-
+		if (TrackOnTheUI) {
+			controller.updateBar (controller.HealthBarObject, healthPoints);
+		}
         
 
 	}
@@ -40,6 +49,11 @@ public class health : MonoBehaviour {
     public void AddDamage(int damage)
     {
         healthPoints -= damage;
+
+		if (TrackOnTheUI) {
+			controller.updateBar (controller.HealthBarObject, healthPoints);
+		}
+
         if(healthPoints <= 0)
         {
             Destroy(this.gameObject);
