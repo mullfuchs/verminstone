@@ -260,4 +260,6 @@ public class NPCTeamHandler : MonoBehaviour {
         UIcontroller.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString());
     }
 
+
+
 }

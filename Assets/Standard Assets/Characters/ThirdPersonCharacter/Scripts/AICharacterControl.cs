@@ -27,7 +27,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         // Update is called once per frame
         private void Update()
         {
-            if (target != null)
+            if (target != null && agent.gameObject != null)
             {
 			
 	                agent.SetDestination(target.position);

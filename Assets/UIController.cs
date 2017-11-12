@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour {
     public GameObject XPBarObject;
 
     public GameObject VStoneAmountText;
+    public GameObject GameStatusText;
 
     private FillableBarController HealthBar;
     private FillableBarController PowerBar;
