@@ -28,8 +28,8 @@ public class IKControl : MonoBehaviour {
 				
 				// Set the look target position, if one has been assigned
 				if(lookObj != null) {
-					animator.SetLookAtWeight(1);
-					animator.SetLookAtPosition(lookObj.position);
+					//animator.SetLookAtWeight(1);
+					//animator.SetLookAtPosition(lookObj.position);
 				}    
 				
 				// Set the right hand target position and rotation, if one has been assigned
@@ -55,7 +55,7 @@ public class IKControl : MonoBehaviour {
 				animator.SetIKRotationWeight(AvatarIKGoal.RightHand,0);
 				animator.SetIKPositionWeight(AvatarIKGoal.LeftHand,0);
 				animator.SetIKRotationWeight(AvatarIKGoal.LeftHand,0); 
-				animator.SetLookAtWeight(0);
+				//animator.SetLookAtWeight(0);
 			}
 		}
 	}    

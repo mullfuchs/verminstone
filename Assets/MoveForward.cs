@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class MoveForward : MonoBehaviour {
-	public float speed = 1.0f;
+	public float speed = 10.0f;
 	public float maxTime = 5f;
-    public float damage = 5.0f;
+    public float damage = 10.0f;
 
 	// Update is called once per frame
 	void Update () {
@@ -15,4 +15,13 @@ public class MoveForward : MonoBehaviour {
 
 		transform.Translate(Vector3.forward * speed * Time.deltaTime);
 	}
+
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "Bug")
+        {
+            other.gameObject.GetComponent<health>().AddDamage(damage);
+        }
+        Destroy(this.gameObject);
+    }
 }
