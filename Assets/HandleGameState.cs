@@ -9,6 +9,8 @@ public class HandleGameState : MonoBehaviour {
 
     private bool clearToRestart = false;
 
+    private bool goodEnding = false;
+
     private GameObject playerOBJ;
 
 	// Use this for initialization
@@ -46,11 +48,16 @@ public class HandleGameState : MonoBehaviour {
 
     public void AscendAndShowResults()
     {
-        StartCoroutine(goodGameEnd());
+        if (!goodEnding)
+        {
+            StartCoroutine(goodGameEnd());
+        }
     }
 
     IEnumerator goodGameEnd()
     {
+        goodEnding = true;
+        //Destroy(playerOBJ);
         //GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().SetScreenOverlayColor (Color.black);
         GameObject.Find("MultipurposeCameraRig").GetComponent<ScreenFade>().FadeOutScene(2.0f);
         yield return new WaitForSeconds(2.0f);

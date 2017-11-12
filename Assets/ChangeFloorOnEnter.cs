@@ -8,7 +8,7 @@ public class ChangeFloorOnEnter : MonoBehaviour {
 
 	GameObject caveManager;
 
-	public bool CanSwapLevels = false;
+	public bool CanSwapLevels = true;
 
 	// Use this for initialization
 	void Start () {
@@ -17,10 +17,10 @@ public class ChangeFloorOnEnter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
-	void OnTriggerEnter(Collider other){
+	void OnTriggerStay(Collider other){
 		if (other.gameObject.tag == "Player" && CanSwapLevels) {
 			if (descending) {
 				caveManager.GetComponent<CaveManager> ().DescendToLowerFloor ();
@@ -31,4 +31,5 @@ public class ChangeFloorOnEnter : MonoBehaviour {
 			}
 		}
 	}
+
 }
