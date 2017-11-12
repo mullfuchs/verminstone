@@ -25,6 +25,8 @@ public class AIStateMachine : MonoBehaviour {
 
 	private float vStoneAmount = 6.9f; //hard coding value for test purposes
 
+
+
 		// Use this for initialization
 	void Start () {
 		//DefaultTarget = this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target.gameObject;
@@ -175,6 +177,7 @@ public class AIStateMachine : MonoBehaviour {
             {
                 print("picking up stone");
                 vStoneAmount += 5.0f;
+                ChannelerIFollow.GetComponent<NPCTeamHandler>().addCollectedVStone(5.0f);
                 targets.Dequeue();
                 Destroy(other.gameObject);
                 CheckIfTheresATargetInMyQueue();

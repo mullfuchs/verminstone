@@ -5,16 +5,17 @@ public class PowerObject : MonoBehaviour {
 
     public GameObject UIObject;
 
-	private float powerAmount = 0;
+	private float powerAmount = 1;
     private float maxPowerAmount = 420;
 
     private int powerLevel = 1;
-    private int xp = 0;
+    private int xp = 1;
     private int powerThreshold = 5;
 
     private ShootOnAxisInput shootingObject;
     private UIController uiController;
 
+    private GameObject HealingObject;
 
     void Start()
     {
@@ -26,12 +27,23 @@ public class PowerObject : MonoBehaviour {
 
         uiController.updateBarMaxValue(uiController.PowerBarObject, maxPowerAmount);
         uiController.updateBar(uiController.PowerBarObject, powerAmount);
+
+        HealingObject = transform.Find("HealingRadius").gameObject;
+        HealingObject.SetActive(false);
     }
 
 
 	// Update is called once per frame
 	void Update () {
-		
+        if (Input.GetButtonDown("HealButton"))
+        {
+            HealingObject.SetActive(true);
+            RemovePowerAmount(0.1f);
+        }
+        if(Input.GetButtonUp("HealButton"))
+        {
+            HealingObject.SetActive(false);
+        }
 	}
 
 	public void AddPowerAmount(float amount){

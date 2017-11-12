@@ -22,6 +22,11 @@ public class NPCTeamHandler : MonoBehaviour {
     private List<GameObject> CurrentCarriers;
     private List<GameObject> CurrentArmedNPCs;
 
+    public GameObject UIObject;
+    private UIController UIcontroller;
+
+    private float KilogramsofVstoneCollected = 0;
+
     // Use this for initialization
     void Start () {
 		//NPCMiners = GameObject.FindGameObjectsWithTag ("Miner");
@@ -44,6 +49,8 @@ public class NPCTeamHandler : MonoBehaviour {
 			print ("added carrier");
 			CarrierQueue.Enqueue(g);
 		}
+
+        UIcontroller = UIObject.GetComponent<UIController>();
 
 	}
 	
@@ -245,6 +252,12 @@ public class NPCTeamHandler : MonoBehaviour {
     public void distributeTargetsToNPCList()
     {
 
+    }
+
+    public void addCollectedVStone(float amount)
+    {
+        KilogramsofVstoneCollected += amount;
+        UIcontroller.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString());
     }
 
 }

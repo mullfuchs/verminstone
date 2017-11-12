@@ -3,6 +3,7 @@ using System.Collections;
 
 public class health : MonoBehaviour {
 	public float healthPoints = 2;
+    private float maxHealth;
 	public bool isFreindlyFireOn = false;
 	public bool TrackOnTheUI = false;
 
@@ -10,6 +11,7 @@ public class health : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        maxHealth = healthPoints;
 		if (TrackOnTheUI) {
 			controller = GameObject.Find ("Canvas").GetComponent<UIController> ();
 			controller.updateBarMaxValue (controller.HealthBarObject, healthPoints);
@@ -46,7 +48,7 @@ public class health : MonoBehaviour {
 
 	}
 
-    public void AddDamage(int damage)
+    public void AddDamage(float damage)
     {
         healthPoints -= damage;
 
@@ -60,6 +62,20 @@ public class health : MonoBehaviour {
         }
     }
 
+
+    public bool AddHealth(float health)
+    {
+        float tempHealth = healthPoints + health;
+        if(tempHealth < maxHealth)
+        {
+            health = tempHealth;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     void killgameObject()
     {
