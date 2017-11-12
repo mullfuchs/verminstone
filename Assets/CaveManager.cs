@@ -69,6 +69,8 @@ public class CaveManager : MonoBehaviour {
 
 	}
 
+ 
+
 	public void DescendToLowerFloor(){
 		if (currentFloor + 1 <= numberOfFloorsToMake) {
 			currentFloor += 1;
