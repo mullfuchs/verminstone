@@ -43,4 +43,22 @@ public class HandleGameState : MonoBehaviour {
         clearToRestart = true;
 
     }
+
+    public void AscendAndShowResults()
+    {
+        StartCoroutine(goodGameEnd());
+    }
+
+    IEnumerator goodGameEnd()
+    {
+        //GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().SetScreenOverlayColor (Color.black);
+        GameObject.Find("MultipurposeCameraRig").GetComponent<ScreenFade>().FadeOutScene(2.0f);
+        yield return new WaitForSeconds(2.0f);
+        UIcontroller.updateText(UIcontroller.GameStatusText, "RUN \n OVER");
+        yield return new WaitForSeconds(2.0f);
+        UIcontroller.updateText(UIcontroller.GameStatusText, "You collected " + playerOBJ.GetComponent<NPCTeamHandler>().getVStoneCollected() + " Kilos of Verminstone");
+        yield return new WaitForSeconds(2.0f);
+        UIcontroller.updateText(UIcontroller.GameStatusText, "Press the A button to restart");
+        clearToRestart = true;
+    }
 }

@@ -58,6 +58,7 @@ public class PowerObject : MonoBehaviour {
 
     void levelUp()
     {
+        /*
         if(powerAmount >= powerThreshold)
         {
             powerThreshold += 2;
@@ -77,6 +78,7 @@ public class PowerObject : MonoBehaviour {
             //  public float cost = 0.1f;
             //  public float secondsAlive = 5.0f;
         }
+        */
     }
 
     private float reduceValueUntilFloor(float value, float minValue, float reductionAmount)

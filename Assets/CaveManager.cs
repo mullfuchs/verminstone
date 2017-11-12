@@ -88,13 +88,16 @@ public class CaveManager : MonoBehaviour {
 		} else {
 			
 			Debug.Log ("resurfaceing");
-			SceneManager.LoadScene ("Camp", LoadSceneMode.Single);
+            GameObject.Find("DemoGameHandler").GetComponent<HandleGameState>().AscendAndShowResults();
+            //SceneManager.LoadScene ("Camp", LoadSceneMode.Single);
 		}
 	}
 
 	void makeNavMesh(){
 		navMeshFloor.GetComponent<UnityEngine.AI.NavMeshSurface> ().BuildNavMesh ();
 	}
+
+
 		
 	void moveNPCTeamToPoint(GameObject Holder, Vector3 Location){
 		//GameObject[] Carriers = player.GetComponent<NPCTeamHandler> ().NPCCarriers;
