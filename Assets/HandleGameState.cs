@@ -11,6 +11,8 @@ public class HandleGameState : MonoBehaviour {
 
     private bool goodEnding = false;
 
+	public bool forceRestart = false;
+
     private GameObject playerOBJ;
 
 	// Use this for initialization
@@ -27,6 +29,11 @@ public class HandleGameState : MonoBehaviour {
             StartCoroutine(GameOver());
         }
 
+
+		if(Input.GetButtonDown("Fire1") && forceRestart)
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		}
 
 		if(Input.GetButtonDown("Fire1") && clearToRestart)
         {
