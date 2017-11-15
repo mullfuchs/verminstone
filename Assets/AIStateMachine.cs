@@ -100,6 +100,8 @@ public class AIStateMachine : MonoBehaviour {
 			}	
 		}
 
+	
+
 	}
 
 	void setTarget(GameObject target){

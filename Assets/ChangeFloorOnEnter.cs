@@ -8,7 +8,7 @@ public class ChangeFloorOnEnter : MonoBehaviour {
 
 	GameObject caveManager;
 
-	public bool CanSwapLevels = true;
+	public bool CanSwapLevels = false;
 
 	// Use this for initialization
 	void Start () {

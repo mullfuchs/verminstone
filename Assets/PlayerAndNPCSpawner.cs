@@ -31,6 +31,7 @@ public class PlayerAndNPCSpawner : MonoBehaviour {
 	}
 
 	public void placeNextNPC(){
+		Debug.Log ("attempting to spawn npc");
 		if (NpcQueue.Count >= 1) {
 			Debug.Log ("spawned an NPC");
 			GameObject nextNPC = (GameObject)NpcQueue.Dequeue ();
