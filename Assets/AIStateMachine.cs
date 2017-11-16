@@ -25,7 +25,8 @@ public class AIStateMachine : MonoBehaviour {
 
 	private float vStoneAmount = 6.9f; //hard coding value for test purposes
 
-
+    private float defaultStoppingDist = 3.0f;
+    private float itemStoppingDist = 1.0f;
 
 		// Use this for initialization
 	void Start () {
@@ -33,7 +34,8 @@ public class AIStateMachine : MonoBehaviour {
 		vStoneAmount = 0.0f;
 		AttackHitBox = transform.Find ("AttackHitBox").gameObject;
 		AttackHitBox.SetActive (false);
-	}
+        updateStoppingDistance(defaultStoppingDist);
+    }
 
 	void Awake(){
 		//DefaultTarget = this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target.gameObject;
@@ -142,11 +144,13 @@ public class AIStateMachine : MonoBehaviour {
         if (targets.Count > 0)
         {
             setTarget((GameObject)targets.Peek());
+            updateStoppingDistance(itemStoppingDist);
             //print("setting target from target queue");
         }
         else
         {
             setTarget(ChannelerIFollow);
+            updateStoppingDistance(defaultStoppingDist);
         }
 
     }
@@ -310,6 +314,11 @@ public class AIStateMachine : MonoBehaviour {
 	public void ResetAttack(){
 		CanAttack = true;
 	}
+
+    void updateStoppingDistance(float dist)
+    {
+        GetComponent<UnityEngine.AI.NavMeshAgent>().stoppingDistance = dist;
+    }
 
 }
 
