@@ -19,7 +19,7 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//grab all the carriers/miners
-		NPCMiners = GameObject.FindGameObjectsWithTag ("Miner");
+		NPCMiners = GameObject.FindGameObjectsWithTag ("WorkerNPC");
 		NPCCarriers = GameObject.FindGameObjectsWithTag ("Carrier");
 		InitializeGatheringArea ();
 		//send all miners to a standing position

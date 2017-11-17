@@ -18,9 +18,12 @@ public class CaveManager : MonoBehaviour {
 
 	public GameObject NPCHolder;
 
-	List<Floor> FloorList = new List<Floor>();
+    public bool DemoCaveMode = false;
+
+    List<Floor> FloorList = new List<Floor>();
 
 	Floor CurrentFloor;
+
 
 	// Use this for initialization
 	void Start () {
@@ -90,8 +93,14 @@ public class CaveManager : MonoBehaviour {
 		} else {
 			
 			Debug.Log ("resurfaceing");
-            GameObject.Find("DemoGameHandler").GetComponent<HandleGameState>().AscendAndShowResults();
-            //SceneManager.LoadScene ("Camp", LoadSceneMode.Single);
+            if (DemoCaveMode)
+            {
+                GameObject.Find("DemoGameHandler").GetComponent<HandleGameState>().AscendAndShowResults();
+            }
+            else
+            {
+                SceneManager.LoadScene("Camp", LoadSceneMode.Single);
+            }
 		}
 	}
 

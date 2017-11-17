@@ -24,11 +24,9 @@ public class CampEventController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		NPCMiners = GameObject.FindGameObjectsWithTag ("Miner");
-		NPCCarriers = GameObject.FindGameObjectsWithTag ("Carrier");
-		AllNPCs = new GameObject[NPCMiners.Length + NPCCarriers.Length];
-		NPCMiners.CopyTo (AllNPCs, 0);
-		NPCCarriers.CopyTo (AllNPCs, NPCMiners.Length);
+
+		AllNPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+      
 	}
 	
 	// Update is called once per frame
