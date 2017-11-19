@@ -56,14 +56,14 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
 	void SendNPCsToGeneralAreaOfTarget(GameObject[] NPCGroup, GameObject[] spots){
 		for (int i = 0; i < NPCGroup.Length; i++) {
-			NPCGroup [i].GetComponent<AIStateMachine> ().SetNPCTarget (spots[i]);
+			NPCGroup [i].GetComponent<AIStateMachine> ().AddTargetForNPC (spots[i]);
 		}
 	}
 
 	void SendNPCsToTargetWithFollowup(GameObject[] NPCGroup, GameObject target, GameObject[] spots, int IndexOffset){
 		for (int i = 0; i < NPCGroup.Length; i++) {
-			NPCGroup[i].GetComponent<AIStateMachine> ().SetNPCTarget (target);
-			NPCGroup[i].GetComponent<AIStateMachine> ().SetFollowupTarget (spots [i + IndexOffset]);
+			NPCGroup[i].GetComponent<AIStateMachine> ().AddTargetForNPC (target);
+			NPCGroup[i].GetComponent<AIStateMachine> ().AddTargetForNPC (spots [i + IndexOffset]);
 		}
 	}
 
