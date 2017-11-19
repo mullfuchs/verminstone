@@ -28,20 +28,10 @@ public class CaveEntrance : MonoBehaviour {
 	}
 
 	void moveNPCTeamToPoint(GameObject Holder, Vector3 Location){
-		GameObject[] Carriers = player.GetComponent<NPCTeamHandler> ().NPCCarriers;
 		GameObject[] Miners = player.GetComponent<NPCTeamHandler> ().NPCMiners;
 		Holder.GetComponent<PlayerAndNPCSpawner> ().setPoint (Location);
 
-		for (int i = 0; i < Carriers.Length; i++) {
-			//Carriers [i].GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = false;
-			//Carriers [i].transform.position = point.transform.position;
-			Debug.Log ("Enqued");
 
-			Holder.GetComponent<PlayerAndNPCSpawner> ().addNPC(Carriers[i]);
-			//Carriers [i].SetActive (false);
-
-			//Carriers [i].GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = true;
-		}
 		for (int i = 0; i < Miners.Length; i++) {
 			//Miners [i].GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = false;
 			//Miners [i].transform.position = point.transform.position;
@@ -56,7 +46,7 @@ public class CaveEntrance : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider other){
-		if (other.tag == "Player" || other.tag == "Carrier" || other.tag == "Miner") {
+		if (other.tag == "Player" || other.tag == "WorkerNPC") {
 			Holder.GetComponent<PlayerAndNPCSpawner> ().placeNextNPC ();
 		} 
 	}

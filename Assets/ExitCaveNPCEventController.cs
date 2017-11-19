@@ -16,11 +16,15 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
     private bool isWeighingdialogFinished = false;
 
+    private NPCTeamHandler teamHandler;
+
 	// Use this for initialization
 	void Start () {
+        teamHandler = GameObject.Find("Player").GetComponent<NPCTeamHandler>();
+
 		//grab all the carriers/miners
-		NPCMiners = GameObject.FindGameObjectsWithTag ("WorkerNPC");
-		NPCCarriers = GameObject.FindGameObjectsWithTag ("Carrier");
+		NPCMiners = teamHandler.GetCurrentMiners().ToArray();
+		NPCCarriers = teamHandler.GetCurrentCarriers().ToArray();
 		InitializeGatheringArea ();
 		//send all miners to a standing position
 		SendNPCsToGeneralAreaOfTarget(NPCMiners, gatheringAreaLocationObjects);

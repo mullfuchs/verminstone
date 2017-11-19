@@ -38,7 +38,7 @@ public class NPCTeamHandler : MonoBehaviour {
         CurrentArmedNPCs = new List<GameObject>();
 
         CurrentMiners = GetAllNPCSwithMineTools();
-
+        CurrentCarriers = GetAllNPCSwithBagTools();
         CurrentArmedNPCs = GetAllNPCSwithWeapons();
 
 		foreach (GameObject g in NPCMiners) {
@@ -143,9 +143,12 @@ public class NPCTeamHandler : MonoBehaviour {
         List<GameObject> CarrierList = new List<GameObject>();
         foreach(GameObject g in NPCMiners)
         {
-            if (g.GetComponent<NPCInventory>().ObjectOnBack.tag == "BagTool")
+            if(g.GetComponent<NPCInventory>().ObjectOnBack != null)
             {
-                CarrierList.Add(g);
+                if (g.GetComponent<NPCInventory>().ObjectOnBack.tag == "BagTool")
+                {
+                    CarrierList.Add(g);
+                }
             }
         }
         return CarrierList;
@@ -240,7 +243,7 @@ public class NPCTeamHandler : MonoBehaviour {
 
     public List<GameObject> GetCurrentCarriers()
     {
-        return CurrentCarriers;
+        return GetAllNPCSwithBagTools();
     }
 
     public void handleNPCDeath()
