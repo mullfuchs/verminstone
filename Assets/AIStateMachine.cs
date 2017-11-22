@@ -27,6 +27,7 @@ public class AIStateMachine : MonoBehaviour {
 
     private float defaultStoppingDist = 3.0f;
     private float itemStoppingDist = 1.0f;
+    private bool GoToNextTargetWhenCurrentTargetReached = false;
 
 		// Use this for initialization
 	void Start () {
@@ -96,9 +97,10 @@ public class AIStateMachine : MonoBehaviour {
         
 
 
-		if (FollowUpTarget != null) {
-			if (Vector3.Distance (gameObject.transform.position, getTarget().position) <= 1.5f) {
-				setTarget (FollowUpTarget);
+		if (GoToNextTargetWhenCurrentTargetReached == true) {
+			if (Vector3.Distance (gameObject.transform.position, getTarget().position) <= defaultStoppingDist + 0.2f) {
+				setTarget((GameObject)targets.Dequeue());
+                GoToNextTargetWhenCurrentTargetReached = false;
 			}	
 		}
 
@@ -318,6 +320,18 @@ public class AIStateMachine : MonoBehaviour {
     void updateStoppingDistance(float dist)
     {
         GetComponent<UnityEngine.AI.NavMeshAgent>().stoppingDistance = dist;
+    }
+
+    public void SetGoToNextTargetFlag()
+    {
+        GoToNextTargetWhenCurrentTargetReached = true;
+    }
+
+    public void SendNPCToObject(GameObject target)
+    {
+        targets.Enqueue(target);
+        SetGoToNextTargetFlag();
+        updateStoppingDistance(itemStoppingDist);
     }
 
 }
