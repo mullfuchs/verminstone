@@ -29,6 +29,7 @@ public class NPCTeamHandler : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        UIObject = GameObject.Find("Canvas");
 		//NPCMiners = GameObject.FindGameObjectsWithTag ("Miner");
 		NPCCarriers = GameObject.FindGameObjectsWithTag ("Carrier");
 

@@ -69,7 +69,7 @@ public class CampEventController : MonoBehaviour {
 
     GameObject[] InitializeGatheringArea(GameObject gatheringAreaObject){
 		GameObject[] gatheringAreaLocationObjects;
-		int size = NPCMiners.Length + NPCCarriers.Length;
+		int size = AllNPCs.Length;
 		gatheringAreaLocationObjects = new GameObject[size];
 		for (int i = 0; i < gatheringAreaLocationObjects.Length; i++) {
 			Vector2 randomSpot = Random.insideUnitCircle * 5;

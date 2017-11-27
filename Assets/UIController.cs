@@ -18,9 +18,16 @@ public class UIController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        HealthBar = HealthBarObject.GetComponent<FillableBarController>();
-        PowerBar = PowerBarObject.GetComponent<FillableBarController>();
-        XPBar = XPBarObject.GetComponent<FillableBarController>();
+        assignBarObject(HealthBar, HealthBarObject);
+        assignBarObject(PowerBar, PowerBarObject);
+        assignBarObject(XPBar, XPBarObject); }
+
+    void assignBarObject(FillableBarController bar, GameObject barObject)
+    {
+        if(barObject != null)
+        {
+            bar = barObject.GetComponent<FillableBarController>();
+        }
     }
 
     // Update is called once per frame

@@ -19,6 +19,7 @@ public class PowerObject : MonoBehaviour {
 
     void Start()
     {
+        UIObject = GameObject.Find("Canvas");
         uiController = UIObject.GetComponent<UIController>();
         shootingObject = transform.GetChild(0).GetComponent<ShootOnAxisInput>();
 
