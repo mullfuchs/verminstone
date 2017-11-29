@@ -206,35 +206,36 @@ public class NPCTeamHandler : MonoBehaviour {
         // closestBug = null;
         float bugDistToPlayer = 0.0f;
         GameObject[] bugs = GameObject.FindGameObjectsWithTag("Bug");
-        GameObject closestBug = bugs[0];
-        print("found bugs:" + bugs.Length);
-        
-        if(bugs.Length == 0)
-        {
-            print("found no bugs");
-            return;
-        }
+		if (bugs.Length > 0) {
+			GameObject closestBug = bugs[0];
+			print("found bugs:" + bugs.Length);
 
-        
-        
-        bugDistToPlayer = Vector3.Distance(closestBug.transform.position, gameObject.transform.position);
+			if(bugs.Length == 0)
+			{
+				print("found no bugs");
+				return;
+			}		
+		
+		     
+	        bugDistToPlayer = Vector3.Distance(closestBug.transform.position, gameObject.transform.position);
 
-        foreach (GameObject b in bugs)
-        {
-            float bugDist = Vector3.Distance(b.transform.position, gameObject.transform.position);
-            if (bugDist < bugDistToPlayer)
-            {
-                closestBug = b;
-                bugDistToPlayer = bugDist;
-            }
-        }
-        
+	        foreach (GameObject b in bugs)
+	        {
+	            float bugDist = Vector3.Distance(b.transform.position, gameObject.transform.position);
+	            if (bugDist < bugDistToPlayer)
+	            {
+	                closestBug = b;
+	                bugDistToPlayer = bugDist;
+	            }
+	        }
+	        
 
-        foreach (GameObject g in CurrentArmedNPCs)
-        {
-            print("sending NPCS to attack a bug");
-            g.GetComponent<AIStateMachine>().AttackEnemy(closestBug);
-        }
+	        foreach (GameObject g in CurrentArmedNPCs)
+	        {
+	            print("sending NPCS to attack a bug");
+	            g.GetComponent<AIStateMachine>().AttackEnemy(closestBug);
+	        }
+		}
     }
 
     public List<GameObject> GetCurrentMiners()

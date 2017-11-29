@@ -42,7 +42,7 @@ namespace Yarn.Unity.Example{
 		void CheckForClosestNPC(){
 			GameObject closest = FindClosestNPC ();
 			FindObjectOfType<DialogueRunner> ().StartDialogue (closest.GetComponent<NPC> ().talkToNode);
-			mainCam.GetComponent<ZoomNFocus> ().focusOnNPC (closest.transform);
+			//mainCam.GetComponent<ZoomNFocus> ().focusOnNPC (closest.transform);
 			//mainCam.transform.SetPositionAndRotation(closest.GetComponent<NPC> ().CameraPosition.position, closest.GetComponent<NPC> ().CameraPosition.rotation);
 		}
 
