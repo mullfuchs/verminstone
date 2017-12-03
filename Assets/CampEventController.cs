@@ -10,6 +10,8 @@ public class CampEventController : MonoBehaviour {
 	public GameObject Barracks;
 	public GameObject caveStagingArea;
 
+    public GameObject MessHall;
+
     public GameObject currentStagingArea;
 
 	//public GameObject[] gatheringAreaLocationObjects;
@@ -48,6 +50,13 @@ public class CampEventController : MonoBehaviour {
         currentStagingArea = caveStagingArea;
 	}
 
+    public void SendAllNPCsToArea(GameObject area)
+    {
+        CleanUpGatheringArea(currentStagingArea);
+        SendNPCsToArea(AllNPCs, area);
+        currentStagingArea = area;
+    }
+
 	public void EndDay(){
 		StartCoroutine (EndDayCycle ());
 	}
@@ -55,16 +64,20 @@ public class CampEventController : MonoBehaviour {
 	void SendNPCsToArea(GameObject[] NPCGroup, GameObject target){
 		GameObject[] spots = InitializeGatheringArea (target);
 		for (int i = 0; i < NPCGroup.Length; i++) {
-				NPCGroup [i].GetComponent<AIStateMachine> ().SetNPCTarget (spots[i]);
+				NPCGroup [i].GetComponent<AIStateMachine> ().AddTargetForNPC (spots[i]);
 		}
 	}
 
     void CleanUpGatheringArea(GameObject GatheringAreaObject)
     {
-        foreach (Transform child in GatheringAreaObject.transform)
+        if(GatheringAreaObject != null)
         {
-            GameObject.Destroy(child.gameObject);
+            foreach (Transform child in GatheringAreaObject.transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
         }
+
     }
 
     GameObject[] InitializeGatheringArea(GameObject gatheringAreaObject){
@@ -92,7 +105,7 @@ public class CampEventController : MonoBehaviour {
 		//advance time
 		//fade in
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.clear, 2.0f);
-        SendNPCsToStagingArea();
+        SendAllNPCsToArea(MessHall);
 	}
 
 
