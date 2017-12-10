@@ -27,7 +27,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		float m_CapsuleHeight;
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
-		bool m_Crouching;
+		bool m_Crouching = false;
 
 
 
@@ -79,40 +79,40 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		void ScaleCapsuleForCrouching(bool crouch)
 		{
-			if (m_IsGrounded && crouch)
-			{
-				if (m_Crouching) return;
-				m_Capsule.height = m_Capsule.height / 2f;
-				m_Capsule.center = m_Capsule.center / 2f;
-				m_Crouching = true;
-			}
-			else
-			{
-				Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
-				float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
-				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength))
-				{
-					m_Crouching = true;
-					return;
-				}
-				m_Capsule.height = m_CapsuleHeight;
-				m_Capsule.center = m_CapsuleCenter;
-				m_Crouching = false;
-			}
+//			if (m_IsGrounded && crouch)
+//			{
+//				if (m_Crouching) return;
+//				m_Capsule.height = m_Capsule.height / 2f;
+//				m_Capsule.center = m_Capsule.center / 2f;
+//				m_Crouching = true;
+//			}
+//			else
+//			{
+//				Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
+//				float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
+//				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength))
+//				{
+//					m_Crouching = true;
+//					return;
+//				}
+//				m_Capsule.height = m_CapsuleHeight;
+//				m_Capsule.center = m_CapsuleCenter;
+//				m_Crouching = false;
+//			}
 		}
 
 		void PreventStandingInLowHeadroom()
 		{
 			// prevent standing up in crouch-only zones
-			if (!m_Crouching)
-			{
-				Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
-				float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
-				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength))
-				{
-					//m_Crouching = true;
-				}
-			}
+//			if (!m_Crouching)
+//			{
+//				Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
+//				float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
+//				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength))
+//				{
+//					//m_Crouching = true;
+//				}
+//			}
 		}
 
 

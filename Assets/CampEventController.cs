@@ -20,12 +20,14 @@ public class CampEventController : MonoBehaviour {
 	public GameObject[] NPCCarriers = new GameObject[5];
 
 	private GameObject[] AllNPCs;
+	private GameObject canvas;
+
 
 	public GameObject Sun;
 	private float DayCycleClockTime;
 	// Use this for initialization
 	void Start () {
-		
+		canvas = GameObject.Find ("Canvas");
 
 		AllNPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
       
@@ -108,5 +110,10 @@ public class CampEventController : MonoBehaviour {
         SendAllNPCsToArea(MessHall);
 	}
 
+
+	public void StartMessHallSequence(){
+		canvas.GetComponent<NPCFoodDistroUIController> ().CreateAndDisplayNPCcards ();
+
+	}
 
 }

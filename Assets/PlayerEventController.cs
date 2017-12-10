@@ -20,5 +20,8 @@ public class PlayerEventController : MonoBehaviour {
 		if (Other.tag == "bed") {
 			CampEventControllerInstance.EndDay ();
 		}
+		if (Other.tag == "MessHall") {
+			CampEventControllerInstance.StartMessHallSequence ();
+		}
 	}
 }
