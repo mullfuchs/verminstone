@@ -27,7 +27,7 @@ public class NPCFoodDistroUIController : MonoBehaviour {
 		cardParent.SetActive (true);
 		foreach (GameObject g in NPCs) {
 			GameObject uiCard = Instantiate (CardPrefab, cardParent.transform, false);
-
+			uiCard.SetActive (true);
 		}
 	}
 }
