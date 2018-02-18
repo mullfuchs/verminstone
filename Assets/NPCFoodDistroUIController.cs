@@ -28,6 +28,7 @@ public class NPCFoodDistroUIController : MonoBehaviour {
 		foreach (GameObject g in NPCs) {
 			GameObject uiCard = Instantiate (CardPrefab, cardParent.transform, false);
 			uiCard.SetActive (true);
+			uiCard.GetComponent<NPCFoodCardController> ().assignNPCtoCard (g);
 		}
 	}
 }

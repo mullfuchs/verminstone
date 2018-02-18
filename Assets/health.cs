@@ -3,6 +3,7 @@ using System.Collections;
 
 public class health : MonoBehaviour {
 	public float healthPoints = 2;
+	public float stamina = 100;
     private float maxHealth;
 	public bool isFreindlyFireOn = false;
 	public bool TrackOnTheUI = false;
@@ -21,7 +22,7 @@ public class health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	void OnCollisionEnter(Collision obj){
