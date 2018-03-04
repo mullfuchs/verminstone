@@ -23,5 +23,8 @@ public class PlayerEventController : MonoBehaviour {
 		if (Other.tag == "MessHall") {
 			CampEventControllerInstance.StartMessHallSequence ();
 		}
+        if (Other.tag == "EquipArea"){
+            CampEventControllerInstance.StartEquipAreaSequence();
+        }
 	}
 }
