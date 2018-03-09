@@ -10,6 +10,8 @@ public class EquipUIController : MonoBehaviour {
 
     private GameObject[] NPCs;
 
+    private GameObject[] Items;
+
     // Use this for initialization
     void Start()
     {
