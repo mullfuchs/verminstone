@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class EquipUIController : MonoBehaviour {
 
-    public GameObject CardPrefab;
+    public GameObject ItemCardPrefab;
 
-    public GameObject cardParent;
+    public GameObject ItemCardParent;
+
+    public GameObject NPCCardPrefab;
+
+    public GameObject NPCCardParent;
 
     private GameObject[] NPCs;
 
@@ -16,6 +20,8 @@ public class EquipUIController : MonoBehaviour {
     void Start()
     {
         NPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+        Items = GameObject.Find("CampEventController").GetComponent<CampInventoryController>().items;
+        //Items = 
     }
 
     // Update is called once per frame
@@ -25,12 +31,23 @@ public class EquipUIController : MonoBehaviour {
 
     public void CreateAndDisplayNPCcards()
     {
-        cardParent.SetActive(true);
+        NPCCardParent.SetActive(true);
         foreach (GameObject g in NPCs)
         {
-            GameObject uiCard = Instantiate(CardPrefab, cardParent.transform, false);
+            GameObject uiCard = Instantiate(NPCCardPrefab, NPCCardParent.transform, false);
             uiCard.SetActive(true);
-            uiCard.GetComponent<NPCFoodCardController>().assignNPCtoCard(g);
+            uiCard.GetComponent<NPCEquipCardController>().assignNPCtoCard(g);
+        }
+    }
+
+    public void CreateAndDisplayItemCards()
+    {
+        ItemCardParent.SetActive(true);
+        foreach (GameObject g in Items)
+        {
+            GameObject uiCard = Instantiate(ItemCardPrefab, ItemCardParent.transform, false);
+            uiCard.SetActive(true);
+            uiCard.GetComponent<ItemEquipCardController>().assignItemtoCard(g);
         }
     }
 

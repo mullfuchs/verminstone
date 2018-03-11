@@ -117,6 +117,8 @@ public class CampEventController : MonoBehaviour {
 
     public void StartEquipAreaSequence()
     {
+        canvas.GetComponent<EquipUIController>().CreateAndDisplayNPCcards();
+        canvas.GetComponent<EquipUIController>().CreateAndDisplayItemCards();
         //create and display equip UI
     }
 
