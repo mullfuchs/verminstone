@@ -32,4 +32,9 @@ public class ItemEquipCardController : MonoBehaviour {
         nameText.GetComponent<Text>().text = itemStats.itemName;
     }
 
+    public void setThisItemToEquip()
+    {
+        GameObject.Find("Canvas").GetComponent<EquipUIController>().SetCurrentItemAndEnableButtons(associatedItem);
+    }
+
 }

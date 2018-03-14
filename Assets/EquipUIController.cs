@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EquipUIController : MonoBehaviour {
 
@@ -16,11 +17,17 @@ public class EquipUIController : MonoBehaviour {
 
     private GameObject[] Items;
 
+    private List<GameObject> ItemCards;
+
+    private GameObject currentItem;
+
     // Use this for initialization
     void Start()
     {
         NPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
         Items = GameObject.Find("CampEventController").GetComponent<CampInventoryController>().items;
+        currentItem = null;
+        ItemCards = new List<GameObject>();
         //Items = 
     }
 
@@ -37,6 +44,7 @@ public class EquipUIController : MonoBehaviour {
             GameObject uiCard = Instantiate(NPCCardPrefab, NPCCardParent.transform, false);
             uiCard.SetActive(true);
             uiCard.GetComponent<NPCEquipCardController>().assignNPCtoCard(g);
+            ItemCards.Add(uiCard);
         }
     }
 
@@ -50,5 +58,36 @@ public class EquipUIController : MonoBehaviour {
             uiCard.GetComponent<ItemEquipCardController>().assignItemtoCard(g);
         }
     }
+
+    public void SetCurrentItemAndEnableButtons(GameObject item)
+    {
+        resetAllButtons();
+        currentItem = item;
+        foreach(GameObject g in ItemCards)
+        {
+            if (item.GetComponent<EquippableItem>().ForBack)
+            {
+                g.GetComponent<NPCEquipCardController>().BackEquipButton.GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                g.GetComponent<NPCEquipCardController>().HandEquipButton.GetComponent<Button>().interactable = true;
+            }
+        }
+    }
+
+    private void resetAllButtons()
+    {
+        foreach (GameObject g in ItemCards)
+        {
+           g.GetComponent<NPCEquipCardController>().BackEquipButton.GetComponent<Button>().interactable = false;
+
+           g.GetComponent<NPCEquipCardController>().HandEquipButton.GetComponent<Button>().interactable = false;
+     
+        }
+    }
+ 
+    //when the user clicks a 'select' button, enable the buttons for all players, hold that item here somewhere?
+    //when the user clicks an enabled 'equip' button, add that item to the player inventory, update the UI
 
 }
