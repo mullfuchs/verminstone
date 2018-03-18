@@ -90,4 +90,18 @@ public class EquipUIController : MonoBehaviour {
     //when the user clicks a 'select' button, enable the buttons for all players, hold that item here somewhere?
     //when the user clicks an enabled 'equip' button, add that item to the player inventory, update the UI
 
+    public void equipHandItemToNPC(GameObject npc)
+    {
+        npc.GetComponent<NPCInventory>().EquipHandItem(currentItem);
+        currentItem = null;
+        resetAllButtons();
+    }
+
+    public void equipBackItemToNPC(GameObject npc)
+    {
+        npc.GetComponent<NPCInventory>().EquipBackItem(currentItem);
+        currentItem = null;
+        resetAllButtons();
+    }
+
 }

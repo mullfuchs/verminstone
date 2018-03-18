@@ -47,16 +47,18 @@ public class NPCInventory : MonoBehaviour {
         }
     }
 
-    void EquipItem(GameObject item, GameObject slot, Transform bodyPart)
+    public void EquipHandItem(GameObject item)
     {
-        if(slot != null)
-        {
+        Destroy(ActiveHandObject);
+        ActiveHandObject = Instantiate(item, handTransform.position, handTransform.rotation, handTransform);
+        ObjectHeldInHands = item;
+    }
 
-        }
-        else
-        {
-
-        }
+    public void EquipBackItem(GameObject item)
+    {
+        Destroy(ActiveBackObject);
+        ActiveBackObject = Instantiate(item, backTransform.position, backTransform.rotation, backTransform);
+        ObjectOnBack = item;
     }
 
     public Transform FindDeepChild(Transform aParent, string aName)
