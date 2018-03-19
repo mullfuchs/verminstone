@@ -27,4 +27,13 @@ public class PlayerEventController : MonoBehaviour {
             CampEventControllerInstance.StartEquipAreaSequence();
         }
 	}
+
+	void OnTriggerExit(Collider Other){
+		if (Other.tag == "MessHall") {
+			CampEventControllerInstance.EndMessHallSequence ();
+		}
+		if (Other.tag == "EquipArea") {
+			CampEventControllerInstance.EndEquipAreaSequence ();
+		}
+	}
 }

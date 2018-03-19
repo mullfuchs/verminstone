@@ -115,11 +115,19 @@ public class CampEventController : MonoBehaviour {
 		canvas.GetComponent<NPCFoodDistroUIController> ().CreateAndDisplayNPCcards ();
 	}
 
+	public void EndMessHallSequence(){
+		canvas.GetComponent<NPCFoodDistroUIController> ().cleanUpFoodUI ();
+	}
+
     public void StartEquipAreaSequence()
     {
         canvas.GetComponent<EquipUIController>().CreateAndDisplayNPCcards();
         canvas.GetComponent<EquipUIController>().CreateAndDisplayItemCards();
         //create and display equip UI
     }
+
+	public void EndEquipAreaSequence(){
+		canvas.GetComponent<EquipUIController> ().cleanUpItemAndNPCCards ();
+	}
 
 }
