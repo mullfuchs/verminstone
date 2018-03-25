@@ -15,9 +15,14 @@ namespace Yarn.Unity.Example{
 
 		// Update is called once per frame
 		void Update () {
-			if (FindObjectOfType<DialogueRunner>().isDialogueRunning == true) {
-				return;
-			}
+            if(FindObjectOfType<DialogueRunner>() != null)
+            {
+                if (FindObjectOfType<DialogueRunner>().isDialogueRunning == true)
+                {
+                    return;
+                }
+            }
+
 
 			if (Input.GetKeyDown(KeyCode.Space)) {
 				//CheckForNearbyNPC ();
