@@ -19,6 +19,8 @@ public class EquipUIController : MonoBehaviour {
 
     private List<GameObject> ItemCards;
 
+	private List<GameObject> NPCCards;
+
     private GameObject currentItem;
 
     // Use this for initialization
@@ -28,7 +30,8 @@ public class EquipUIController : MonoBehaviour {
         Items = GameObject.Find("CampEventController").GetComponent<CampInventoryController>().items;
         currentItem = null;
         ItemCards = new List<GameObject>();
-        //Items = 
+		NPCCards = new List<GameObject> ();
+		//Items = 
     }
 
     // Update is called once per frame
@@ -44,7 +47,7 @@ public class EquipUIController : MonoBehaviour {
             GameObject uiCard = Instantiate(NPCCardPrefab, NPCCardParent.transform, false);
             uiCard.SetActive(true);
             uiCard.GetComponent<NPCEquipCardController>().assignNPCtoCard(g);
-            ItemCards.Add(uiCard);
+			NPCCards.Add(uiCard);
         }
     }
 
@@ -56,14 +59,28 @@ public class EquipUIController : MonoBehaviour {
             GameObject uiCard = Instantiate(ItemCardPrefab, ItemCardParent.transform, false);
             uiCard.SetActive(true);
             uiCard.GetComponent<ItemEquipCardController>().assignItemtoCard(g);
+			ItemCards.Add (uiCard);
         }
     }
+
+	public void cleanUpItemAndNPCCards(){
+		//destroy cards
+		foreach (GameObject x in ItemCards) {
+			Destroy (x);
+		}
+		foreach (GameObject x in NPCCards) {
+			Destroy (x);
+		}
+
+		ItemCardParent.SetActive(false);
+		NPCCardParent.SetActive(false);
+	}
 
     public void SetCurrentItemAndEnableButtons(GameObject item)
     {
         resetAllButtons();
         currentItem = item;
-        foreach(GameObject g in ItemCards)
+		foreach(GameObject g in NPCCards)
         {
             if (item.GetComponent<EquippableItem>().ForBack)
             {
@@ -78,7 +95,7 @@ public class EquipUIController : MonoBehaviour {
 
     private void resetAllButtons()
     {
-        foreach (GameObject g in ItemCards)
+		foreach (GameObject g in NPCCards)
         {
            g.GetComponent<NPCEquipCardController>().BackEquipButton.GetComponent<Button>().interactable = false;
 

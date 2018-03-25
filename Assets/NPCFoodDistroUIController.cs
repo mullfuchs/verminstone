@@ -13,8 +13,11 @@ public class NPCFoodDistroUIController : MonoBehaviour {
 
 	private GameObject[] NPCs;
 
+	private List<GameObject> NPCCards;
+
 	// Use this for initialization
 	void Start () {
+		NPCCards = new List<GameObject> ();
 		NPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
 	}
 	
@@ -29,6 +32,14 @@ public class NPCFoodDistroUIController : MonoBehaviour {
 			GameObject uiCard = Instantiate (CardPrefab, cardParent.transform, false);
 			uiCard.SetActive (true);
 			uiCard.GetComponent<NPCFoodCardController> ().assignNPCtoCard (g);
+			NPCCards.Add (uiCard);
 		}
+	}
+
+	public void cleanUpFoodUI(){
+		foreach (GameObject x in NPCCards) {
+			Destroy (x);
+		}
+		cardParent.SetActive (false);
 	}
 }
