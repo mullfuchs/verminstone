@@ -18,22 +18,15 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
     private NPCTeamHandler teamHandler;
 
+    private VStoneEconomyObject VStoneEcoInstance;
+
 	// Use this for initialization
 	void Start () {
         teamHandler = GameObject.Find("Player").GetComponent<NPCTeamHandler>();
-
-		//grab all the carriers/miners
 		NPCMiners = teamHandler.GetCurrentMiners().ToArray();
 		NPCCarriers = teamHandler.GetCurrentCarriers().ToArray();
 		InitializeGatheringArea ();
-		//send all miners to a standing position
-		SendNPCsToGeneralAreaOfTarget(NPCMiners, gatheringAreaLocationObjects);
-		//set em to go to the "bucket" and then to standing area
-		SendNPCsToTargetWithFollowup(NPCCarriers, stoneBucketObject, gatheringAreaLocationObjects, NPCMiners.Length);
-		//wait for weighing
-		StartCoroutine(weighStoneSequence());
-		//send them to a barrack
-
+        VStoneEcoInstance = GameObject.Find("CampEventController").GetComponent<VStoneEconomyObject>();
 	}
 
 	// Update is called once per frame
@@ -41,7 +34,17 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 		
 	}
 
-	void InitializeGatheringArea(){
+    public void doCaveExitEvent()
+    {
+        SendNPCsToGeneralAreaOfTarget(NPCMiners, gatheringAreaLocationObjects);
+        //set em to go to the "bucket" and then to standing area
+        SendNPCsToTargetWithFollowup(NPCCarriers, stoneBucketObject, gatheringAreaLocationObjects, NPCMiners.Length);
+        //wait for weighing
+        StartCoroutine(weighStoneSequence());
+        //send them to a barrack
+    }
+
+    void InitializeGatheringArea(){
 		int size = NPCMiners.Length + NPCCarriers.Length;
 		gatheringAreaLocationObjects = new GameObject[size];
 		for (int i = 0; i < gatheringAreaLocationObjects.Length; i++) {
@@ -82,6 +85,7 @@ public class ExitCaveNPCEventController : MonoBehaviour {
         //wait until dialog finished
         yield return new WaitForSeconds (4.0f);
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<ZoomNFocus> ().reset ();
+        print("total vstone collected this run: " + VStoneEcoInstance.getDailyTotal());
 		EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
 	}
 

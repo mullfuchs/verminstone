@@ -29,6 +29,8 @@ public class AIStateMachine : MonoBehaviour {
     private float itemStoppingDist = 1.0f;
     private bool GoToNextTargetWhenCurrentTargetReached = false;
 
+    private VStoneEconomyObject VStoneEcoInstance;
+
 		// Use this for initialization
 	void Start () {
 		//DefaultTarget = this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target.gameObject;
@@ -36,6 +38,7 @@ public class AIStateMachine : MonoBehaviour {
 		AttackHitBox = transform.Find ("AttackHitBox").gameObject;
 		AttackHitBox.SetActive (false);
         updateStoppingDistance(defaultStoppingDist);
+        VStoneEcoInstance = GameObject.Find("CampEventController").GetComponent<VStoneEconomyObject>();
     }
 
 	void Awake(){
@@ -179,11 +182,21 @@ public class AIStateMachine : MonoBehaviour {
 			}
 		}
 
+        if (other.tag == "StoneDropOff")
+        {
+            if(vStoneAmount > 0.0f)
+            {
+                VStoneEcoInstance.AddVStoneToDailyTotal(vStoneAmount);
+                vStoneAmount = 0;
+            }
+        }
+
         if (other.tag == "VStoneFragment" && other.gameObject == getTargetObject())
         {
             if (gameObject.GetComponent<NPCInventory>().ObjectOnBack.tag == "BagTool")
             {
                 print("picking up stone");
+                
                 vStoneAmount += 5.0f;
                 ChannelerIFollow.GetComponent<NPCTeamHandler>().addCollectedVStone(5.0f);
                 targets.Dequeue();

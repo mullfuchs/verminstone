@@ -27,4 +27,12 @@ public class PlayerEventController : MonoBehaviour {
             CampEventControllerInstance.StartEquipAreaSequence();
         }
 	}
+
+    void OnTriggerExit(Collider Other)
+    {
+        if(Other.tag == "CaveExit")
+        {
+            CampEventControllerInstance.StartVStoneWeighingSequence();
+        }
+    }
 }

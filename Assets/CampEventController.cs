@@ -22,6 +22,7 @@ public class CampEventController : MonoBehaviour {
 	private GameObject[] AllNPCs;
 	private GameObject canvas;
 
+    private ExitCaveNPCEventController exitCaveInstance;
 
 	public GameObject Sun;
 	private float DayCycleClockTime;
@@ -30,7 +31,7 @@ public class CampEventController : MonoBehaviour {
 		canvas = GameObject.Find ("Canvas");
 
 		AllNPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
-      
+        exitCaveInstance = GameObject.Find("CaveExit").GetComponent<ExitCaveNPCEventController>();
 	}
 	
 	// Update is called once per frame
@@ -110,6 +111,11 @@ public class CampEventController : MonoBehaviour {
         SendAllNPCsToArea(MessHall);
 	}
 
+
+    public void StartVStoneWeighingSequence()
+    {
+        exitCaveInstance.doCaveExitEvent();
+    }
 
 	public void StartMessHallSequence(){
 		canvas.GetComponent<NPCFoodDistroUIController> ().CreateAndDisplayNPCcards ();

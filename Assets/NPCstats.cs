@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPCstats : MonoBehaviour {
 
-	public string name;
+	public string NPCName;
 	public string mood;
 	public float health = 50;
 	public float stamina = 25;
