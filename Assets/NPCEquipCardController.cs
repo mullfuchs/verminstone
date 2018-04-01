@@ -39,7 +39,6 @@ public class NPCEquipCardController : MonoBehaviour {
     {
         NPCstats stats = associatedNPC.GetComponent<NPCstats>();
         nameText.GetComponent<Text>().text = stats.name;
-
     }
 
     private void EquipHandObject()

@@ -136,4 +136,6 @@ public class CampEventController : MonoBehaviour {
 		canvas.GetComponent<EquipUIController> ().cleanUpItemAndNPCCards ();
 	}
 
+
+
 }
