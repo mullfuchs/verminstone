@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CampPopulationController : MonoBehaviour {
 
+
+
 	private bool IsNewGame = true;
 
 	public int NPCSquadSize = 5;
@@ -17,14 +19,15 @@ public class CampPopulationController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
-
-	void Awake() {
 		if (IsNewGame) {
 			SpawnNewPlayerAndNPCSquad ();
 			IsNewGame = false;
 		}
+		IsNewGame = false;
+	}
+
+	void Awake() {
+
 	}
 	
 	// Update is called once per frame
@@ -32,7 +35,8 @@ public class CampPopulationController : MonoBehaviour {
 		
 	}
 
-	private void SpawnNewPlayerAndNPCSquad(){
+	public void SpawnNewPlayerAndNPCSquad(){
+		print ("spawning npcs and player");
 		SpawnPlayerPrefab ();
 		for (int i = 0; i < NPCSquadSize; i++) {
 			SpawnNPCPrefab ();

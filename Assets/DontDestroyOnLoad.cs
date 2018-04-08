@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class DontDestroyOnLoad : MonoBehaviour {
 
-    public bool disableScript = false;
-
 	void Awake() {
-        if (!disableScript)
-        {
-            DontDestroyOnLoad(transform.gameObject);
-        }
-        
+       DontDestroyOnLoad(transform.gameObject);
 	}
 }

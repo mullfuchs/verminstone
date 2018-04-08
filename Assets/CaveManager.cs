@@ -100,6 +100,7 @@ public class CaveManager : MonoBehaviour {
             else
             {
                 SceneManager.LoadScene("Camp", LoadSceneMode.Single);
+				GameObject.Find ("CampEventController").GetComponent<CampEventController> ().ExitCaveSequence ();
             }
 		}
 	}

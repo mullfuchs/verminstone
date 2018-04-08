@@ -38,7 +38,6 @@ public class UIController : MonoBehaviour {
 
     public void updateBar(GameObject barToUpdate, float amount)
     {
-        print("updating bar with" + amount);
         if(barToUpdate != null)
         {
             barToUpdate.GetComponent<FillableBarController>().UpdateCurrentValue(amount);
@@ -46,8 +45,7 @@ public class UIController : MonoBehaviour {
     }
 
     public void updateBarMaxValue(GameObject barToUpdate, float amount)
-    {
-        print("updating bar max value with" + amount);
+    {  
         if(barToUpdate != null)
         {
             barToUpdate.GetComponent<FillableBarController>().SetMaxValue(amount);

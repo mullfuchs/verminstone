@@ -26,6 +26,9 @@ public class PlayerEventController : MonoBehaviour {
         if (Other.tag == "EquipArea"){
             CampEventControllerInstance.StartEquipAreaSequence();
         }
+		if (Other.tag == "CaveEntrance") {
+			CampEventControllerInstance.EnterCaveSequence ();
+		}
 	}
 
 
@@ -39,7 +42,8 @@ public class PlayerEventController : MonoBehaviour {
 
         if (Other.tag == "CaveExit")
         {
-            CampEventControllerInstance.StartVStoneWeighingSequence();
+			//already being done in the cave exit object, unless I wanna change that, do I? probably
+            //CampEventControllerInstance.StartVStoneWeighingSequence();
         }
     }
 }

@@ -5,26 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class CaveEntrance : MonoBehaviour {
 
-	GameObject Holder;
+	public GameObject Holder;
 	GameObject player;
 
 	public bool LoadLevelOnEnter;
 
+	public bool newGameStarting = true;
+
 	// Use this for initialization
 	void Start () {
-		if (!LoadLevelOnEnter) {
-			player = GameObject.Find ("Player");
-			Holder = GameObject.Find ("NPCHolder");
-			player.transform.position = transform.position;
-			moveNPCTeamToPoint (Holder, transform.position);
+		if (!LoadLevelOnEnter && !newGameStarting) {
+			PositionPlayerandNPCsForCaveExit();
 		}
-
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void PositionPlayerandNPCsForCaveExit(){
+		player = GameObject.Find ("Player");
+		//Holder =  //GameObject.Find ("NPCHolder");
+		player.transform.position = transform.position;
+		moveNPCTeamToPoint (Holder, transform.position);
 	}
 
 	void moveNPCTeamToPoint(GameObject Holder, Vector3 Location){
@@ -54,6 +59,7 @@ public class CaveEntrance : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player" && LoadLevelOnEnter) {
 			SceneManager.LoadScene ("testMapScene");
+			LoadLevelOnEnter = false;
 		}
 	}
 }

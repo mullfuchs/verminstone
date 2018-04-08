@@ -11,7 +11,6 @@ public class CampEventController : MonoBehaviour {
 	public GameObject caveStagingArea;
 
     public GameObject MessHall;
-
     public GameObject currentStagingArea;
 
 	//public GameObject[] gatheringAreaLocationObjects;
@@ -22,7 +21,13 @@ public class CampEventController : MonoBehaviour {
 	private GameObject[] AllNPCs;
 	private GameObject canvas;
 
+	public GameObject caveExit;
+	public GameObject caveEntrance;
+
     private ExitCaveNPCEventController exitCaveInstance;
+	private CaveEntrance caveExitObject;
+
+	public static CampEventController instance = null;
 
 	public GameObject Sun;
 	private float DayCycleClockTime;
@@ -31,7 +36,18 @@ public class CampEventController : MonoBehaviour {
 		canvas = GameObject.Find ("Canvas");
 
 		AllNPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
-        exitCaveInstance = GameObject.Find("CaveExit").GetComponent<ExitCaveNPCEventController>();
+		exitCaveInstance = caveExit.GetComponent<ExitCaveNPCEventController> (); 
+		caveExitObject = caveExit.GetComponent<CaveEntrance> ();
+
+		//gameObject.GetComponent<CampPopulationController> ().SpawnNewPlayerAndNPCSquad ();
+	}
+
+	void Awake(){
+		if (instance == null) {
+			instance = this;
+		} else if (instance != this) {
+			Destroy (gameObject);
+		}
 	}
 	
 	// Update is called once per frame
@@ -104,18 +120,29 @@ public class CampEventController : MonoBehaviour {
 		//GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().SetScreenOverlayColor (Color.black);
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.black, 2.0f);
 		yield return new WaitForSeconds (2.0f);
-		Sun.transform.Rotate( new Vector3(7.633f,-201.307f,-153.5f));
+		//Sun.transform.Rotate( new Vector3(7.633f,-201.307f,-153.5f));
 		//advance time
 		//fade in
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.clear, 2.0f);
         SendAllNPCsToArea(MessHall);
 	}
 
+	public void EnterCaveSequence(){
+		//set cave entrance object to be inactive
+		//caveExitObject.LoadLevelOnEnter = false;
+		caveEntrance.SetActive(false);
+		caveExit.SetActive(false);
+	}
 
-    public void StartVStoneWeighingSequence()
-    {
-        exitCaveInstance.doCaveExitEvent();
-    }
+	public void ExitCaveSequence(){
+		print ("exiting cave");
+		//set the object to be active
+		caveExit.SetActive(true);
+		caveEntrance.SetActive (true);
+		//then do this
+		caveExitObject.PositionPlayerandNPCsForCaveExit ();
+		exitCaveInstance.doCaveExitEvent ();	
+	}
 
 	public void StartMessHallSequence(){
 		canvas.GetComponent<NPCFoodDistroUIController> ().CreateAndDisplayNPCcards ();
