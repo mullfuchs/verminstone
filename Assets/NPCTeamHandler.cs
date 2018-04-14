@@ -270,6 +270,11 @@ public class NPCTeamHandler : MonoBehaviour {
         return KilogramsofVstoneCollected;
     }
 
+	public void rebuildNPCLists(){
+		CurrentMiners = GetAllNPCSwithMineTools();
+		CurrentCarriers = GetAllNPCSwithBagTools();
+		CurrentArmedNPCs = GetAllNPCSwithWeapons();
+	}
 
 
 }

@@ -27,7 +27,9 @@ public class PlayerEventController : MonoBehaviour {
             CampEventControllerInstance.StartEquipAreaSequence();
         }
 		if (Other.tag == "CaveEntrance") {
+			gameObject.GetComponent<NPCTeamHandler> ().rebuildNPCLists ();
 			CampEventControllerInstance.EnterCaveSequence ();
+
 		}
 	}
 
