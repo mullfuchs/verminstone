@@ -57,6 +57,11 @@ public class NPCTeamHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (NPCMiners.Length == 0)
+        {
+            NPCMiners = GameObject.FindGameObjectsWithTag("WorkerNPC");
+        }
+
 		if (ActiveStones.Count > 0) {
 			print ("Sending miners to mine rock");
             // get all miners with pickaxes
@@ -206,7 +211,7 @@ public class NPCTeamHandler : MonoBehaviour {
         // closestBug = null;
         float bugDistToPlayer = 0.0f;
         GameObject[] bugs = GameObject.FindGameObjectsWithTag("Bug");
-		if (bugs.Length > 0) {
+		if (bugs.Length > 0) { 
 			GameObject closestBug = bugs[0];
 			print("found bugs:" + bugs.Length);
 

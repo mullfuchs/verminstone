@@ -42,6 +42,7 @@ public class EquipUIController : MonoBehaviour {
     public void CreateAndDisplayNPCcards()
     {
         NPCCardParent.SetActive(true);
+        NPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
         foreach (GameObject g in NPCs)
         {
             GameObject uiCard = Instantiate(NPCCardPrefab, NPCCardParent.transform, false);

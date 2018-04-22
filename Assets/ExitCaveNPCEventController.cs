@@ -23,8 +23,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         teamHandler = GameObject.Find("Player").GetComponent<NPCTeamHandler>();
-		NPCMiners = teamHandler.GetCurrentMiners().ToArray();
-		NPCCarriers = teamHandler.GetCurrentCarriers().ToArray();
+		//NPCMiners = teamHandler.GetCurrentMiners().ToArray();
+		//NPCCarriers = teamHandler.GetCurrentCarriers().ToArray();
 		InitializeGatheringArea ();
         VStoneEcoInstance = GameObject.Find("CampEventController").GetComponent<VStoneEconomyObject>();
 	}
@@ -36,6 +36,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
     public void doCaveExitEvent()
     {
+        NPCMiners = teamHandler.GetCurrentMiners().ToArray();
+        NPCCarriers = teamHandler.GetCurrentCarriers().ToArray();
         SendNPCsToGeneralAreaOfTarget(NPCMiners, gatheringAreaLocationObjects);
         //set em to go to the "bucket" and then to standing area
         SendNPCsToTargetWithFollowup(NPCCarriers, stoneBucketObject, gatheringAreaLocationObjects, NPCMiners.Length);
