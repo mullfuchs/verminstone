@@ -18,5 +18,25 @@
 			"y": 258
 		},
 		"colorID": 6
+	},
+	{
+		"title": "Node3",
+		"tags": "",
+		"body": "Here's some other dialog instead of like some terrible dialog\n\n[[That's nice|Node4]]",
+		"position": {
+			"x": 547,
+			"y": 34
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Node4",
+		"tags": "",
+		"body": "yep, thats me, you're probably wondering\nhow I ended up\nin this situation",
+		"position": {
+			"x": 798,
+			"y": 48
+		},
+		"colorID": 0
 	}
 ]
