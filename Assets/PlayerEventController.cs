@@ -44,8 +44,10 @@ public class PlayerEventController : MonoBehaviour {
 
         if (Other.tag == "CaveExit")
         {
+			CampEventControllerInstance.refreshReferences ();
 			//already being done in the cave exit object, unless I wanna change that, do I? probably
-            //CampEventControllerInstance.StartVStoneWeighingSequence();
+			//yea ya do, ya dumbass
+			//CampEventControllerInstance.ExitCaveSequence();
         }
     }
 }

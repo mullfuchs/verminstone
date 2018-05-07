@@ -48,8 +48,18 @@ public class CampEventController : MonoBehaviour {
 		} else if (instance != this) {
 			Destroy (gameObject);
 		}
+		refreshReferences ();
+		//repopulate 
 	}
-	
+
+	public void refreshReferences(){
+		print ("refreshing references");
+		canvas = GameObject.Find ("Canvas");
+		AllNPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+		exitCaveInstance = caveExit.GetComponent<ExitCaveNPCEventController> (); 
+		caveExitObject = caveExit.GetComponent<CaveEntrance> ();
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Y)){
