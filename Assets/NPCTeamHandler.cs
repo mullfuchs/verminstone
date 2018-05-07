@@ -31,7 +31,7 @@ public class NPCTeamHandler : MonoBehaviour {
     void Start () {
         UIObject = GameObject.Find("Canvas");
 		//NPCMiners = GameObject.FindGameObjectsWithTag ("Miner");
-		NPCCarriers = GameObject.FindGameObjectsWithTag ("Carrier");
+		//NPCCarriers = GameObject.FindGameObjectsWithTag ("Carrier");
 
         NPCMiners = GameObject.FindGameObjectsWithTag("WorkerNPC");
 
@@ -279,6 +279,12 @@ public class NPCTeamHandler : MonoBehaviour {
 		CurrentMiners = GetAllNPCSwithMineTools();
 		CurrentCarriers = GetAllNPCSwithBagTools();
 		CurrentArmedNPCs = GetAllNPCSwithWeapons();
+        NPCMiners = GameObject.FindGameObjectsWithTag("WorkerNPC");
+
+        foreach (GameObject npc in NPCMiners)
+        {
+            npc.GetComponent<AIStateMachine>().ResetNPCVariables();
+        }
 	}
 
 

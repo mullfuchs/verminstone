@@ -69,6 +69,10 @@ public class AIStateMachine : MonoBehaviour {
 		}
 	}
 		
+    public void ResetNPCVariables()
+    {
+        targets.Clear();
+    }
 
 	// Update is called once per frame
 	void Update () {
