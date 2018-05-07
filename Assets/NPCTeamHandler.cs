@@ -279,13 +279,16 @@ public class NPCTeamHandler : MonoBehaviour {
 		CurrentMiners = GetAllNPCSwithMineTools();
 		CurrentCarriers = GetAllNPCSwithBagTools();
 		CurrentArmedNPCs = GetAllNPCSwithWeapons();
-        NPCMiners = GameObject.FindGameObjectsWithTag("WorkerNPC");
-
-        foreach (GameObject npc in NPCMiners)
-        {
-            npc.GetComponent<AIStateMachine>().ResetNPCVariables();
-        }
+		resetNPCTargets ();
 	}
 
+	public void resetNPCTargets(){
+		NPCMiners = GameObject.FindGameObjectsWithTag("WorkerNPC");
+
+		foreach (GameObject npc in NPCMiners)
+		{
+			npc.GetComponent<AIStateMachine>().ResetNPCVariables();
+		}
+	}
 
 }

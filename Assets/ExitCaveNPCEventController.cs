@@ -36,9 +36,15 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
     public void doCaveExitEvent()
     {
+		teamHandler.resetNPCTargets ();
         NPCMiners = teamHandler.GetCurrentMiners().ToArray();
         NPCCarriers = teamHandler.GetCurrentCarriers().ToArray();
-        SendNPCsToGeneralAreaOfTarget(NPCMiners, gatheringAreaLocationObjects);
+		stoneBucketObject = GameObject.Find ("RockBucket");
+		gatheringAreaObject = GameObject.Find ("GatheringArea");
+
+		InitializeGatheringArea ();
+		SendNPCsToGeneralAreaOfTarget(NPCMiners, gatheringAreaLocationObjects);
+
         //set em to go to the "bucket" and then to standing area
         SendNPCsToTargetWithFollowup(NPCCarriers, stoneBucketObject, gatheringAreaLocationObjects, NPCMiners.Length);
         //wait for weighing
