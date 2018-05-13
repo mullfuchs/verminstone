@@ -94,6 +94,10 @@ public class AIStateMachine : MonoBehaviour {
 				}
 				//if under an amout start attacking
 			}
+            else
+            {
+                currentState = AIState.Follow;
+            }
 		}
 
         if (currentState == AIState.Follow)
