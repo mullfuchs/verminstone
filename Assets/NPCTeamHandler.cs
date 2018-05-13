@@ -245,7 +245,7 @@ public class NPCTeamHandler : MonoBehaviour {
 
     public List<GameObject> GetCurrentMiners()
     {
-        return CurrentMiners;
+		return GetAllNPCSwithMineTools();
     }
 
     public List<GameObject> GetCurrentCarriers()
