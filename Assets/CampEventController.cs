@@ -97,6 +97,14 @@ public class CampEventController : MonoBehaviour {
 		}
 	}
 
+    void SendNPCGroupToTarget(GameObject[] NPCGroup, GameObject target)
+    {
+        for (int i = 0; i < NPCGroup.Length; i++)
+        {
+            NPCGroup[i].GetComponent<AIStateMachine>().AddTargetForNPC(target);
+        }
+    }
+
     void CleanUpGatheringArea(GameObject GatheringAreaObject)
     {
         if(GatheringAreaObject != null)
@@ -151,10 +159,11 @@ public class CampEventController : MonoBehaviour {
 		//set the object to be active
 		caveExit.SetActive(true);
 		caveEntrance.SetActive (true);
-		//then do this
-		caveExitObject.PositionPlayerandNPCsForCaveExit ();
-		exitCaveInstance.doCaveExitEvent ();	
-	}
+        //then do this
+        SendNPCsToArea(AllNPCs, caveStagingArea);
+        //caveExitObject.PositionPlayerandNPCsForCaveExit ();
+        //exitCaveInstance.doCaveExitEvent ();	
+    }
 
 	public void StartMessHallSequence(){
 		canvas.GetComponent<NPCFoodDistroUIController> ().CreateAndDisplayNPCcards ();
