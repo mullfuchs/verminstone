@@ -160,9 +160,9 @@ public class CampEventController : MonoBehaviour {
 		caveExit.SetActive(true);
 		caveEntrance.SetActive (true);
         //then do this
-        SendNPCsToArea(AllNPCs, caveStagingArea);
-        //caveExitObject.PositionPlayerandNPCsForCaveExit ();
-        //exitCaveInstance.doCaveExitEvent ();	
+        //SendNPCsToArea(AllNPCs, caveStagingArea);
+        caveExitObject.PositionPlayerandNPCsForCaveExit ();
+        exitCaveInstance.doCaveExitEvent ();	
     }
 
 	public void StartMessHallSequence(){

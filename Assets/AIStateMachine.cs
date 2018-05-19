@@ -192,8 +192,10 @@ public class AIStateMachine : MonoBehaviour {
 
         if (other.tag == "StoneDropOff")
         {
-            if(vStoneAmount > 0.0f)
+            if(vStoneAmount >= 0.0f)
             {
+				targets.Dequeue ();
+				CheckIfTheresATargetInMyQueue ();
                 VStoneEcoInstance.AddVStoneToDailyTotal(vStoneAmount);
                 vStoneAmount = 0;
             }
