@@ -40,7 +40,7 @@ public class CaveEntrance : MonoBehaviour {
 		for (int i = 0; i < Miners.Length; i++) {
 			//Miners [i].GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = false;
 			//Miners [i].transform.position = point.transform.position;
-			Debug.Log ("Enqued");
+			//Debug.Log ("Enqued");
 
 			Holder.GetComponent<PlayerAndNPCSpawner> ().addNPC(Miners [i]);
 			//Miners [i].SetActive (false);

@@ -19,7 +19,7 @@ public class RockBucketController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.tag == "Carrier") {
+		if (other.tag == "WorkerNPC") {
 			totalWeightOfStones += other.GetComponent<AIStateMachine> ().GetVerminStoneAmount ();
 			numberOfStones++;
 			numberOfCarriersVisited++;
