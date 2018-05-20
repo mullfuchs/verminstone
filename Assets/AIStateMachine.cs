@@ -5,7 +5,7 @@ using UnityStandardAssets;
 
 public class AIStateMachine : MonoBehaviour {
 
-	public enum AIState { Follow, GetStone, ReturningToCart, Scared, Angry};
+	public enum AIState { Follow, GetStone, ReturningToCart, Scared, Angry, Idle};
 
 	public GameObject ChannelerIFollow;
 

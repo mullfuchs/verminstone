@@ -55,7 +55,9 @@ public class ExitCaveNPCEventController : MonoBehaviour {
     }
 
     void InitializeGatheringArea(){
+        print("initializing gathering area");
 		int size = NPCMiners.Length + NPCCarriers.Length;
+        print("number of spaces " + size);
 		gatheringAreaLocationObjects = new GameObject[size];
 		for (int i = 0; i < gatheringAreaLocationObjects.Length; i++) {
 			Vector2 randomSpot = Random.insideUnitCircle * 5;
@@ -69,13 +71,13 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
 	void SendNPCsToGeneralAreaOfTarget(GameObject[] NPCGroup, GameObject[] spots){
 		for (int i = 0; i < NPCGroup.Length; i++) {
-			NPCGroup [i].GetComponent<AIStateMachine> ().AddTargetForNPC (spots[i]);
+            NPCGroup [i].GetComponent<AIStateMachine> ().SendNPCToObject (spots[i]);
 		}
 	}
 
 	void SendNPCsToTargetWithFollowup(GameObject[] NPCGroup, GameObject target, GameObject[] spots, int IndexOffset){
 		for (int i = 0; i < NPCGroup.Length; i++) {
-			NPCGroup[i].GetComponent<AIStateMachine> ().SendNPCToObject (target);
+            NPCGroup[i].GetComponent<AIStateMachine> ().SendNPCToObject (target);
             NPCGroup[i].GetComponent<AIStateMachine> ().AddTargetForNPC (spots [i + IndexOffset]);
 		}
 	}
