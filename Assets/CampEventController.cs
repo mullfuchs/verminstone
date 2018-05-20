@@ -56,6 +56,7 @@ public class CampEventController : MonoBehaviour {
 		print ("refreshing references");
 		canvas = GameObject.Find ("Canvas");
 		AllNPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+		MessHall = GameObject.Find ("Mess Hall");
 		exitCaveInstance = caveExit.GetComponent<ExitCaveNPCEventController> (); 
 		caveExitObject = caveExit.GetComponent<CaveEntrance> ();
 	}
@@ -69,6 +70,7 @@ public class CampEventController : MonoBehaviour {
 
 	public void SendNPCsToBarracks(){
         CleanUpGatheringArea(currentStagingArea);
+		AllNPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
 		SendNPCsToArea (AllNPCs, Barracks);
         currentStagingArea = Barracks;
 	}
@@ -93,7 +95,8 @@ public class CampEventController : MonoBehaviour {
 	void SendNPCsToArea(GameObject[] NPCGroup, GameObject target){
 		GameObject[] spots = InitializeGatheringArea (target);
 		for (int i = 0; i < NPCGroup.Length; i++) {
-				NPCGroup [i].GetComponent<AIStateMachine> ().AddTargetForNPC (spots[i]);
+			NPCGroup [i].GetComponent<AIStateMachine> ().ResetNPCVariables ();
+			NPCGroup [i].GetComponent<AIStateMachine> ().AddTargetForNPC (spots[i]);
 		}
 	}
 
@@ -118,8 +121,10 @@ public class CampEventController : MonoBehaviour {
     }
 
     GameObject[] InitializeGatheringArea(GameObject gatheringAreaObject){
+		
 		GameObject[] gatheringAreaLocationObjects;
 		int size = AllNPCs.Length;
+		print ("creating gathering area, size: " + size);
 		gatheringAreaLocationObjects = new GameObject[size];
 		for (int i = 0; i < gatheringAreaLocationObjects.Length; i++) {
 			Vector2 randomSpot = Random.insideUnitCircle * 5;

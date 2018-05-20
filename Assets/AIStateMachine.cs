@@ -71,6 +71,7 @@ public class AIStateMachine : MonoBehaviour {
 		
     public void ResetNPCVariables()
     {
+		print ("Clearing npc targets");
         targets.Clear();
     }
 

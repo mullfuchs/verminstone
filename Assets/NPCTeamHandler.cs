@@ -267,7 +267,7 @@ public class NPCTeamHandler : MonoBehaviour {
     public void addCollectedVStone(float amount)
     {
         KilogramsofVstoneCollected += amount;
-        UIcontroller.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString());
+        //UIcontroller.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString());
     }
 
     public float getVStoneCollected()
