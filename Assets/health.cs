@@ -12,13 +12,18 @@ public class health : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        maxHealth = healthPoints;
+        if(gameObject.tag == "WorkerNPC")
+        {
+            healthPoints = gameObject.GetComponent<NPCstats>().health;
+        }
 		if (TrackOnTheUI) {
 			controller = GameObject.Find ("Canvas").GetComponent<UIController> ();
 			controller.updateBarMaxValue (controller.HealthBarObject, healthPoints);
 			controller.updateBar (controller.HealthBarObject, healthPoints);
 		}
-	}
+
+        maxHealth = healthPoints;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -37,6 +42,7 @@ public class health : MonoBehaviour {
 
 		if (obj.gameObject.tag == "Bug" && gameObject.tag != "Bug") {
 			healthPoints -= 1;
+            gameObject.GetComponent<NPCstats>().health = healthPoints;
 			if (healthPoints <= 0) {
 				Destroy (this.gameObject);
 			}
