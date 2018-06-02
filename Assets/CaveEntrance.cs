@@ -33,7 +33,8 @@ public class CaveEntrance : MonoBehaviour {
 	}
 
 	void moveNPCTeamToPoint(GameObject Holder, Vector3 Location){
-		GameObject[] Miners = player.GetComponent<NPCTeamHandler> ().NPCMiners;
+		GameObject[] Miners = GameObject.FindGameObjectsWithTag ("WorkerNPC");
+		//GameObject[] Miners = player.GetComponent<NPCTeamHandler> ().NPCMiners;
 		Holder.GetComponent<PlayerAndNPCSpawner> ().setPoint (Location);
 
 
