@@ -33,8 +33,10 @@ public class NPCFoodDistroUIController : MonoBehaviour {
 			GameObject uiCard = Instantiate (CardPrefab, cardParent.transform, false);
 			uiCard.SetActive (true);
 			uiCard.GetComponent<NPCFoodCardController> ().assignNPCtoCard (g);
+            
 			NPCCards.Add (uiCard);
-		}
+            uiCard.GetComponent<NPCFoodCardController>().updateFoodCardUI();
+        }
 	}
 
 	public void cleanUpFoodUI(){

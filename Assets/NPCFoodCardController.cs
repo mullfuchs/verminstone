@@ -27,7 +27,7 @@ public class NPCFoodCardController : MonoBehaviour {
 		
 	}
 
-	private void updateFoodCardUI(){
+	public void updateFoodCardUI(){
 		NPCstats stats = associatedNPC.GetComponent<NPCstats> ();
 		print ("stats name" + stats.name);
 		healthBar.GetComponent<FillableBarController> ().SetMaxValue (stats.maxHealth);
@@ -35,6 +35,10 @@ public class NPCFoodCardController : MonoBehaviour {
 
 		staminaBar.GetComponent<FillableBarController> ().SetMaxValue (stats.maxStamina);
 		staminaBar.GetComponent<FillableBarController> ().UpdateCurrentValue (stats.stamina);
+
+
+        healthBar.GetComponent<Image>().fillAmount = (stats.health / stats.maxHealth);
+        staminaBar.GetComponent<Image>().fillAmount = (stats.stamina / stats.maxStamina);
 
 		nameText.GetComponent<Text> ().text = stats.name;
 		moodText.GetComponent<Text> ().text = stats.mood;
