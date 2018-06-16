@@ -23,14 +23,14 @@ public class LookAtTargetAndWalkForward : MonoBehaviour {
 	}
 
 	void Update () {
-        if(target != null)
-        {
-            float distToEnemy = Vector3.Distance(target.transform.position, transform.position);
-            if (distToEnemy <= 1.5f && CanAttack)
-            {
-                PerformAttack();
-            }
-        }
+		if (target != null) {
+			float distToEnemy = Vector3.Distance (target.transform.position, transform.position);
+			if (distToEnemy <= 1.5f && CanAttack) {
+				PerformAttack ();
+			}
+		} else {
+			setTarget (GameObject.FindGameObjectWithTag ("Player"));
+		}
 	}
 
     public void setTarget(GameObject newTarget)

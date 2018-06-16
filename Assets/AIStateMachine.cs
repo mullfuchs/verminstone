@@ -151,7 +151,7 @@ public class AIStateMachine : MonoBehaviour {
             {
                 targets.Enqueue(ChannelerIFollow.GetComponent<NPCTeamHandler>().GetATargetIfOneIsAvailable());
                 //setTarget((GameObject)targets.Dequeue());
-                print("adding fragment to an NPC target list, count:" + targets.Count);
+                //print("adding fragment to an NPC target list, count:" + targets.Count);
             }
         }
 
