@@ -324,6 +324,8 @@ public class AIStateMachine : MonoBehaviour {
     public void handleDeath()
     {
         //tell NPCTeamHandler it's died
+		print("npc died :(");
+		ChannelerIFollow.GetComponent<NPCTeamHandler>().RefreshNPCMinerList();
     }
 
 	public void PerformAttack(){

@@ -118,6 +118,10 @@ public class NPCTeamHandler : MonoBehaviour {
 		NPCCarrier.GetComponent<AIStateMachine> ().GetStone (rock);
 	}
 
+	public void RefreshNPCMinerList(){
+		NPCMiners = GameObject.FindGameObjectsWithTag("WorkerNPC");
+	}
+
     public void SendAllMinersToMineRock(GameObject rock)
     {
         foreach (GameObject Miner in CurrentMiners)

@@ -36,7 +36,8 @@ public class EnemyTeamHandler : MonoBehaviour {
     {
         print("Sending A Swarm");
         GameObject closestsSpawner = findClosestSpawner(rockMined.transform.position);
-        List<GameObject> MinerList = playerTeamHandler.GetCurrentMiners();
+        
+		List<GameObject> MinerList = playerTeamHandler.GetCurrentMiners();
 
         closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(SwarmEnemy, MinerList.ToArray(), 2);
 
@@ -46,9 +47,9 @@ public class EnemyTeamHandler : MonoBehaviour {
     private GameObject findClosestSpawner(Vector3 targetPosition)
     {
         ListOfSpawnersOnFloor = GameObject.FindGameObjectsWithTag("Spawner");
-        return ListOfSpawnersOnFloor[0];
-        //GameObject closestSpawn = ListOfSpawnersOnFloor[0];
-        /*
+        //return ListOfSpawnersOnFloor[0];
+        GameObject closestSpawn = ListOfSpawnersOnFloor[0];
+        
         float distanceToSpawn = Vector3.Distance(closestSpawn.transform.position, targetPosition);
 
         foreach (GameObject b in ListOfSpawnersOnFloor)
@@ -60,8 +61,8 @@ public class EnemyTeamHandler : MonoBehaviour {
                 distanceToSpawn = tempDist;
             }
         }
-        */
-       // return closestSpawn;
+        
+       return closestSpawn;
     }
 
 
