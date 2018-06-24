@@ -31,6 +31,7 @@ public class CaveManager : MonoBehaviour {
 		mapGenObject.GetComponent<GenerateMap> ().initLevel ();
 		GenerateDungeon ();
 		LoadFloor (currentFloor, true);
+
 	}
 
 	void GenerateDungeon() {
@@ -56,8 +57,9 @@ public class CaveManager : MonoBehaviour {
 		} else {
 			player.transform.position = CurrentFloor.DescendPosition;
 			moveNPCTeamToPoint (NPCHolder, CurrentFloor.DescendPosition);
-		}
 
+		}
+		player.GetComponent<PowerObject> ().resetUIObject ();
 		//moveNPCTeamToPoint(new Vector3(100, 100, 100));
 		//GameObject AscendObject = CurrentFloor.AscendObject;//GameObject.Find("PassageUp(Clone)");
 

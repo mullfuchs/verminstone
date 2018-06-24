@@ -6,6 +6,9 @@ public class DealDamageToObjects : MonoBehaviour {
 
     public string AffectedTag;
 
+	public float damageAmount;
+	public float knockback;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -21,6 +24,7 @@ public class DealDamageToObjects : MonoBehaviour {
         health OtherHealth = other.GetComponent<health>();
         if (other.tag == AffectedTag && OtherHealth)
         {
+			other.attachedRigidbody.AddForce ( Vector3.Normalize( gameObject.transform.position - other.transform.position ) * 2 );
             OtherHealth.AddDamage(5);
             //gameObject.SetActive(false);
         }

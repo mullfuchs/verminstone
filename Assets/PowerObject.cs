@@ -7,6 +7,8 @@ public class PowerObject : MonoBehaviour {
 
 	private float powerAmount = 1;
     private float maxPowerAmount = 420;
+	private float regenRate = 0.005f;
+	private bool canRegen = true;
 
     private int powerLevel = 1;
     private int xp = 1;
@@ -33,9 +35,19 @@ public class PowerObject : MonoBehaviour {
         HealingObject.SetActive(false);
     }
 
+	public void resetUIObject(){
+		UIObject = GameObject.Find("Canvas");
+		uiController = UIObject.GetComponent<UIController>();
+	}
 
 	// Update is called once per frame
 	void Update () {
+		if (canRegen) {
+			AddPowerAmount (regenRate);
+			canRegen = false;
+			Invoke ("ResetRegen", 0.2f);
+		}
+			
         if (Input.GetButtonDown("HealButton"))
         {
             HealingObject.SetActive(true);
@@ -56,6 +68,10 @@ public class PowerObject : MonoBehaviour {
 		powerAmount -= amount;
         uiController.updateBar(uiController.PowerBarObject, powerLevel);
     }
+
+	void ResetRegen(){
+		canRegen = true;
+	}
 
     void levelUp()
     {

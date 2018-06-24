@@ -13,7 +13,7 @@ public class ShootOnAxisInput : MonoBehaviour {
     public float damage = 0.5f;
     public float projectileSpeed = 20.0f;
     public float fireSpread = 0.9f; //TODO, implement
-    public float cost = 0.1f;
+    public float cost = 0.8f;
     public float secondsAlive = 5.0f;
 
 	private bool canShoot = true;
