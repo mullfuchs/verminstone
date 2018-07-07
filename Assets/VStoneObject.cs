@@ -9,7 +9,7 @@ public class VStoneObject : MonoBehaviour {
     private bool SentForHelp = false;
 	private int minersInRadius = 0;
 	public int healthPoints = 500;
-	public int energy = 10;
+	public float energy = 0.5f;
 	private float timer = 1.0f;
 	private float timerOGval = 0;
 	public GameObject VStoneFragmentObject;

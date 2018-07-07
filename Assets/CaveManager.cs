@@ -59,7 +59,7 @@ public class CaveManager : MonoBehaviour {
 			moveNPCTeamToPoint (NPCHolder, CurrentFloor.DescendPosition);
 
 		}
-		player.GetComponent<PowerObject> ().resetUIObject ();
+
 		//moveNPCTeamToPoint(new Vector3(100, 100, 100));
 		//GameObject AscendObject = CurrentFloor.AscendObject;//GameObject.Find("PassageUp(Clone)");
 
@@ -115,7 +115,7 @@ public class CaveManager : MonoBehaviour {
 		
 	void moveNPCTeamToPoint(GameObject Holder, Vector3 Location){
 		//GameObject[] Carriers = player.GetComponent<NPCTeamHandler> ().NPCCarriers;
-		GameObject[] Miners = player.GetComponent<NPCTeamHandler> ().NPCMiners;
+		GameObject[] Miners = GameObject.FindGameObjectsWithTag ("WorkerNPC");
 		Holder.GetComponent<PlayerAndNPCSpawner> ().setPoint (Location);
 		//Debug.Log ("carrier count" + Carriers.Length);
 		Debug.Log ("miner count" + Miners.Length);

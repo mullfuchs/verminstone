@@ -18,6 +18,8 @@ public class UIController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+		GameObject player = GameObject.Find ("Player");
+		player.GetComponent<PowerObject> ().resetUIObject (gameObject);
         assignBarObject(HealthBar, HealthBarObject);
         assignBarObject(PowerBar, PowerBarObject);
         assignBarObject(XPBar, XPBarObject); }

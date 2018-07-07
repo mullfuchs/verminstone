@@ -47,7 +47,7 @@ public class ShootOnAxisInput : MonoBehaviour {
 			this.transform.parent.GetComponent<IKControl>().ikActive = false;
 		}
 
-		if (canShoot && shootDirection.sqrMagnitude > 0.1f) {
+		if (canShoot && shootDirection.sqrMagnitude > 0.1f && gameObject.GetComponentInParent<PowerObject>().getPowerAmount() > cost) {
             ShootProjectile();
 		}
 	}
