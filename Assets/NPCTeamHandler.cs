@@ -150,6 +150,7 @@ public class NPCTeamHandler : MonoBehaviour {
 
     List<GameObject> GetAllNPCSwithBagTools()
     {
+		
         List<GameObject> CarrierList = new List<GameObject>();
         foreach(GameObject g in NPCMiners)
         {
