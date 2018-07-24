@@ -38,7 +38,9 @@ public class PowerObject : MonoBehaviour {
 	public void resetUIObject(GameObject uiObj){
 		UIObject = uiObj;
 		uiController = UIObject.GetComponent<UIController>();
-	}
+        uiController.updateBarMaxValue(uiController.PowerBarObject, maxPowerAmount);
+        uiController.updateBarMaxValue(uiController.XPBarObject, powerThreshold);
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -66,12 +68,12 @@ public class PowerObject : MonoBehaviour {
 
 	public void AddPowerAmount(float amount){
 		powerAmount += amount;
-        uiController.updateBar(uiController.PowerBarObject, powerLevel);
+        uiController.updateBar(uiController.PowerBarObject, powerAmount);
     }
 
 	public void RemovePowerAmount(float amount){
 		powerAmount -= amount;
-        uiController.updateBar(uiController.PowerBarObject, powerLevel);
+        uiController.updateBar(uiController.PowerBarObject, powerAmount);
     }
 
 	void ResetRegen(){

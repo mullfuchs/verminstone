@@ -54,6 +54,7 @@ public class EquipUIController : MonoBehaviour {
 
     public void CreateAndDisplayItemCards()
     {
+        Items = GameObject.Find("CampEventController").GetComponent<CampInventoryController>().items;
         ItemCardParent.SetActive(true);
         foreach (GameObject g in Items)
         {
@@ -67,10 +68,11 @@ public class EquipUIController : MonoBehaviour {
 	public void cleanUpItemAndNPCCards(){
 		//destroy cards
 		foreach (GameObject x in ItemCards) {
-			Destroy (x);
+            DestroyObject(x);
+           // Destroy (x);
 		}
 		foreach (GameObject x in NPCCards) {
-			Destroy (x);
+			DestroyObject (x);
 		}
 
 		ItemCardParent.SetActive(false);
@@ -79,7 +81,7 @@ public class EquipUIController : MonoBehaviour {
 
     public void SetCurrentItemAndEnableButtons(GameObject item)
     {
-        resetAllButtons();
+        //resetAllButtons();
         currentItem = item;
 		foreach(GameObject g in NPCCards)
         {
@@ -98,9 +100,14 @@ public class EquipUIController : MonoBehaviour {
     {
 		foreach (GameObject g in NPCCards)
         {
-           g.GetComponent<NPCEquipCardController>().BackEquipButton.GetComponent<Button>().interactable = false;
 
-           g.GetComponent<NPCEquipCardController>().HandEquipButton.GetComponent<Button>().interactable = false;
+            if(g.GetComponent<NPCEquipCardController>() != null)
+            {
+                g.GetComponent<NPCEquipCardController>().BackEquipButton.GetComponent<Button>().interactable = false;
+
+                g.GetComponent<NPCEquipCardController>().HandEquipButton.GetComponent<Button>().interactable = false;
+            }
+
      
         }
     }

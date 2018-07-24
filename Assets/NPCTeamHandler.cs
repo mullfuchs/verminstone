@@ -43,11 +43,11 @@ public class NPCTeamHandler : MonoBehaviour {
         CurrentArmedNPCs = GetAllNPCSwithWeapons();
 
 		foreach (GameObject g in NPCMiners) {
-			print ("added miner");
+			//print ("added miner");
 			MinerQueue.Enqueue(g);
 		}
 		foreach (GameObject g in NPCCarriers) {
-			print ("added carrier");
+			//print ("added carrier");
 			CarrierQueue.Enqueue(g);
 		}
 
@@ -63,7 +63,7 @@ public class NPCTeamHandler : MonoBehaviour {
         }
 
 		if (ActiveStones.Count > 0) {
-			print ("Sending miners to mine rock");
+			//print ("Sending miners to mine rock");
             // get all miners with pickaxes
 
             // 
@@ -71,13 +71,13 @@ public class NPCTeamHandler : MonoBehaviour {
 		}
 		
 		if (MinedStones.Count > 0 && CarrierQueue.Count > 0) {
-			print ("Sending carrier to pick up rock");
+			//print ("Sending carrier to pick up rock");
 			SendNPCToPickUpRock((GameObject)CarrierQueue.Dequeue(), (GameObject)MinedStones.Dequeue());
 		}
 
         if (Input.GetButton("Order_Attack"))
         {
-            print("Ordering NPCs to attack");
+            //print("Ordering NPCs to attack");
             OrderNPCsToAttackNearestNPC();
         }
 	}
@@ -88,7 +88,7 @@ public class NPCTeamHandler : MonoBehaviour {
 
 	public void AddStoneToBeMined(GameObject rock){
         //ActiveStones.Enqueue (rock);
-        print("sending miners to rock");
+        //print("sending miners to rock");
         SendAllMinersToMineRock(rock);
 	}
 
@@ -126,7 +126,7 @@ public class NPCTeamHandler : MonoBehaviour {
     {
         foreach (GameObject Miner in CurrentMiners)
         {
-            print("sending a miner to the rock");
+           //print("sending a miner to the rock");
             Miner.GetComponent<AIStateMachine>().AddTargetForNPC(rock);
         }
     }
@@ -218,11 +218,11 @@ public class NPCTeamHandler : MonoBehaviour {
         GameObject[] bugs = GameObject.FindGameObjectsWithTag("Bug");
 		if (bugs.Length > 0) { 
 			GameObject closestBug = bugs[0];
-			print("found bugs:" + bugs.Length);
+			//print("found bugs:" + bugs.Length);
 
 			if(bugs.Length == 0)
 			{
-				print("found no bugs");
+				//print("found no bugs");
 				return;
 			}		
 		
@@ -242,7 +242,7 @@ public class NPCTeamHandler : MonoBehaviour {
 
 	        foreach (GameObject g in CurrentArmedNPCs)
 	        {
-	            print("sending NPCS to attack a bug");
+	           // print("sending NPCS to attack a bug");
 	            g.GetComponent<AIStateMachine>().AttackEnemy(closestBug);
 	        }
 		}
@@ -272,7 +272,7 @@ public class NPCTeamHandler : MonoBehaviour {
     public void addCollectedVStone(float amount)
     {
         KilogramsofVstoneCollected += amount;
-        //UIcontroller.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString());
+        UIcontroller.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString());
     }
 
     public float getVStoneCollected()

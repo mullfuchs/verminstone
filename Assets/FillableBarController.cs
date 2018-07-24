@@ -22,13 +22,13 @@ public class FillableBarController : MonoBehaviour {
 
     public void SetMaxValue(float amount)
     {
-        print("Setting max value of bar with " + amount);
+       // print("Setting max value of bar with " + amount);
         MaxValue = amount;
     }
 
     public void UpdateCurrentValue(float amount)
     {
-        print("Updating current value of bar with " + (amount / MaxValue));
+      //  print("Updating current value of bar with " + (amount / MaxValue));
         if(amount > 0 && bar != null)
         {
 			bar.fillAmount = (amount / MaxValue);

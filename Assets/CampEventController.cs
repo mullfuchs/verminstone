@@ -53,7 +53,7 @@ public class CampEventController : MonoBehaviour {
 	}
 
 	public void refreshReferences(){
-		print ("refreshing references");
+		//print ("refreshing references");
 		canvas = GameObject.Find ("Canvas");
 		AllNPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
 		MessHall = GameObject.Find ("Mess Hall");
@@ -124,7 +124,7 @@ public class CampEventController : MonoBehaviour {
 		
 		GameObject[] gatheringAreaLocationObjects;
 		int size = AllNPCs.Length;
-		print ("creating gathering area, size: " + size);
+		//print ("creating gathering area, size: " + size);
 		gatheringAreaLocationObjects = new GameObject[size];
 		for (int i = 0; i < gatheringAreaLocationObjects.Length; i++) {
 			Vector2 randomSpot = Random.insideUnitCircle * 5;

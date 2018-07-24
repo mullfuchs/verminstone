@@ -71,7 +71,7 @@ public class AIStateMachine : MonoBehaviour {
 		
     public void ResetNPCVariables()
     {
-		print ("Clearing npc targets");
+		//print ("Clearing npc targets");
         targets.Clear();
     }
 
@@ -81,7 +81,7 @@ public class AIStateMachine : MonoBehaviour {
         {
             if(EnemyAttackingMe == null)
             {
-                print("NPC Returning to default state");
+                //print("NPC Returning to default state");
                 currentState = AIState.Follow;
             }
         }
@@ -206,7 +206,7 @@ public class AIStateMachine : MonoBehaviour {
         {
             if (gameObject.GetComponent<NPCInventory>().ObjectOnBack.tag == "BagTool")
             {
-                print("picking up stone");
+                //print("picking up stone");
                 
                 vStoneAmount += 5.0f;
                 ChannelerIFollow.GetComponent<NPCTeamHandler>().addCollectedVStone(5.0f);
@@ -226,7 +226,7 @@ public class AIStateMachine : MonoBehaviour {
                     setTarget(other.gameObject);
                     EnemyAttackingMe = other.gameObject;
                     currentState = AIState.Angry;
-                    print("NPC is angry");
+                    //print("NPC is angry");
                 }
             }
             else
@@ -234,7 +234,7 @@ public class AIStateMachine : MonoBehaviour {
                 setTarget(ChannelerIFollow);
                 EnemyAttackingMe = other.gameObject;
                 currentState = AIState.Scared;
-                print("NPC is scared");
+               // print("NPC is scared");
             }
         }
 
@@ -310,7 +310,7 @@ public class AIStateMachine : MonoBehaviour {
     public void AddTargetForNPC(GameObject target)
     {
         targets.Enqueue(target);
-        print("adding target to an NPC target list, count:" + targets.Count);
+        //print("adding target to an NPC target list, count:" + targets.Count);
     }
 
 
