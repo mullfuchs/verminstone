@@ -35,8 +35,8 @@ public class PlayerAndNPCSpawner : MonoBehaviour {
 		if (NpcQueue.Count >= 1) {
 			Debug.Log ("spawned an NPC");
 			GameObject nextNPC = (GameObject)NpcQueue.Dequeue ();
-			nextNPC.SetActive (true);
 
+			nextNPC.SetActive (true);
 			nextNPC.transform.position = point + new Vector3(0, 1.5f, 0);
 			nextNPC.GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = true;
 

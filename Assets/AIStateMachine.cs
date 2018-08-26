@@ -77,15 +77,7 @@ public class AIStateMachine : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        if(currentState == AIState.Angry || currentState == AIState.Scared)
-        {
-            if(EnemyAttackingMe == null)
-            {
-                //print("NPC Returning to default state");
-                currentState = AIState.Follow;
-            }
-        }
-        
+
 		if (currentState == AIState.Angry) {
 			if (EnemyAttackingMe != null) {
 				//do distance check
@@ -97,6 +89,8 @@ public class AIStateMachine : MonoBehaviour {
 			}
             else
             {
+				//find an enemy?
+
                 currentState = AIState.Follow;
             }
 		}
@@ -115,7 +109,6 @@ public class AIStateMachine : MonoBehaviour {
                 GoToNextTargetWhenCurrentTargetReached = false;
 			}	
 		}
-
 	
 
 	}
@@ -182,14 +175,7 @@ public class AIStateMachine : MonoBehaviour {
 					//ReturnToMineCart(MineCartTarget);
 				}
 			}
-
-		if (other.tag == "MineCart"){
-			if(this.tag == "Carrier"){
-				DropVerminStone();
-				Follow(DefaultTarget);
-				AddSelfToAvailibleCarriers();
-			}
-		}
+			
 
         if (other.tag == "StoneDropOff")
         {
@@ -265,9 +251,6 @@ public class AIStateMachine : MonoBehaviour {
 	void PickUpVerminStone(GameObject vStone){
 		vStoneAmount += 0.6f;
 		Destroy (vStone);
-		//vStone.transform.SetParent (this.transform);
-		//vStone.transform.localPosition = new Vector3 (0f, 3.61f, 1.77f);
-		//this.GetComponent<IKControl>().ikActive = true;
 	}
 
 	IEnumerator MineVerminStone(GameObject rock){

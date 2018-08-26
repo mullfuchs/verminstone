@@ -141,6 +141,7 @@ public class CampEventController : MonoBehaviour {
 
 	IEnumerator EndDayCycle(){
 		//GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().SetScreenOverlayColor (Color.black);
+		GameObject.Find("Player").GetComponent<NPCTeamHandler>().resetNPCTargets();
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.black, 2.0f);
 		yield return new WaitForSeconds (2.0f);
         //Sun.transform.Rotate( new Vector3(7.633f,-201.307f,-153.5f));
