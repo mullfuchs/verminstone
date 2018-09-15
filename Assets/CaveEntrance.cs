@@ -29,7 +29,16 @@ public class CaveEntrance : MonoBehaviour {
 		player = GameObject.Find ("Player");
 		//Holder =  //GameObject.Find ("NPCHolder");
 		player.transform.position = transform.position;
-		moveNPCTeamToPoint (Holder, transform.position);
+
+		GameObject[] Miners = GameObject.FindGameObjectsWithTag ("WorkerNPC");
+
+		for (int i = 0; i < Miners.Length; i++) {
+			//print ("sending a miner to position of " + transform.position);
+			Vector3 exitPosition = new Vector3 (2.28f, 0.29f, -4.52f);
+			Miners [i].transform.position = exitPosition;
+			print ("thier position " + Miners [i].transform.position);
+		}
+		//moveNPCTeamToPoint (Holder, transform.position);
 	}
 
 	void moveNPCTeamToPoint(GameObject Holder, Vector3 Location){
@@ -45,7 +54,8 @@ public class CaveEntrance : MonoBehaviour {
 
 	void OnTriggerExit(Collider other){
 		if (other.tag == "Player" || other.tag == "WorkerNPC") {
-			Holder.GetComponent<PlayerAndNPCSpawner> ().placeNextNPC ();
+			//TEMP 
+			//Holder.GetComponent<PlayerAndNPCSpawner> ().placeNextNPC ();
 		} 
 	}
 

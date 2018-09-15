@@ -42,6 +42,9 @@ public class ExitCaveNPCEventController : MonoBehaviour {
         NPCMiners = teamHandler.GetCurrentMiners().ToArray();
         NPCCarriers = teamHandler.GetCurrentCarriers().ToArray();
 
+		//debug get stones from rock carriers
+		debugGetStonesFromCarriers(NPCCarriers);
+
 		stoneBucketObject = GameObject.Find ("RockBucket");
 		gatheringAreaObject = GameObject.Find ("GatheringArea");
 
@@ -99,4 +102,12 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 		EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
 	}
 
+	void debugGetStonesFromCarriers(GameObject[] NPCCarrierArray){
+		print ("DEBUG GET STONES, FUCK");
+		for (int i = 0; i < NPCCarrierArray.Length; i++) {
+			VStoneEcoInstance.AddVStoneToDailyTotal( NPCCarrierArray [i].GetComponent<AIStateMachine> ().GetVerminStoneAmount ());
+			print("DEBUG total vstone collected this run: " + VStoneEcoInstance.getDailyTotal());
+		}
+
+	}
 }

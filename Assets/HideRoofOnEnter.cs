@@ -19,12 +19,13 @@ public class HideRoofOnEnter : MonoBehaviour {
 
     void OnTriggerEnter()
     {
-        roofObject.SetActive(false);
+		//turning this off because NPCs will enter/exit spaces and fuck things up
+        //roofObject.SetActive(false);
     }
 
     void OnTriggerExit()
     {
-        roofObject.SetActive(true);
+        //roofObject.SetActive(true);
     }
 
     

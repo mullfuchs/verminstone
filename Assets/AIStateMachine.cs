@@ -23,7 +23,7 @@ public class AIStateMachine : MonoBehaviour {
 
     Queue targets = new Queue();
 
-	private float vStoneAmount = 6.9f; //hard coding value for test purposes
+	private float vStoneAmount = 0.0f; //hard coding value for test purposes
 
     private float defaultStoppingDist = 3.0f;
     private float itemStoppingDist = 1.0f;
@@ -105,8 +105,10 @@ public class AIStateMachine : MonoBehaviour {
 
 		if (GoToNextTargetWhenCurrentTargetReached == true) {
 			if (Vector3.Distance (gameObject.transform.position, getTarget().position) <= defaultStoppingDist + 0.2f) {
-				setTarget((GameObject)targets.Dequeue());
-                GoToNextTargetWhenCurrentTargetReached = false;
+				if (targets.Count != 0) {
+					setTarget ((GameObject)targets.Dequeue ());
+					GoToNextTargetWhenCurrentTargetReached = false;
+				}
 			}	
 		}
 	
