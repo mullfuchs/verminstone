@@ -101,7 +101,12 @@ public class AIStateMachine : MonoBehaviour {
             CheckIfIHaveNoTarget();
         }
         
-
+		if (currentState == AIState.Scared) {
+			if (EnemyAttackingMe == null) {
+				print ("no longer being attacked, returning to normal");
+				currentState = AIState.Follow;
+			}
+		}
 
 		if (GoToNextTargetWhenCurrentTargetReached == true) {
 			if (Vector3.Distance (gameObject.transform.position, getTarget().position) <= defaultStoppingDist + 0.2f) {
@@ -214,7 +219,7 @@ public class AIStateMachine : MonoBehaviour {
                     setTarget(other.gameObject);
                     EnemyAttackingMe = other.gameObject;
                     currentState = AIState.Angry;
-                    //print("NPC is angry");
+                    print("NPC is angry");
                 }
             }
             else
@@ -222,7 +227,7 @@ public class AIStateMachine : MonoBehaviour {
                 setTarget(ChannelerIFollow);
                 EnemyAttackingMe = other.gameObject;
                 currentState = AIState.Scared;
-               // print("NPC is scared");
+               	print("NPC is scared");
             }
         }
 

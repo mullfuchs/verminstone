@@ -102,7 +102,9 @@ public class CaveManager : MonoBehaviour {
             else
             {
                 SceneManager.LoadScene("Camp", LoadSceneMode.Single);
+
 				GameObject.Find ("CampEventController").GetComponent<CampEventController> ().ExitCaveSequence ();
+				//StartCoroutine (WaitASec ());
             }
 		}
 	}
@@ -132,5 +134,9 @@ public class CaveManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	IEnumerator WaitASec(){ 
+		yield return new WaitForSeconds (2);
 	}
 }

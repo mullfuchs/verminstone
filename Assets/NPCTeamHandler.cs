@@ -77,7 +77,7 @@ public class NPCTeamHandler : MonoBehaviour {
 
         if (Input.GetButton("Order_Attack"))
         {
-            //print("Ordering NPCs to attack");
+            print("Ordering NPCs to attack");
             OrderNPCsToAttackNearestNPC();
         }
 	}
@@ -124,6 +124,7 @@ public class NPCTeamHandler : MonoBehaviour {
 
     public void SendAllMinersToMineRock(GameObject rock)
     {
+		CurrentMiners = GetAllNPCSwithMineTools();
         foreach (GameObject Miner in CurrentMiners)
         {
            //print("sending a miner to the rock");
@@ -133,6 +134,7 @@ public class NPCTeamHandler : MonoBehaviour {
 
     List<GameObject> GetAllNPCSwithMineTools()
     {
+		RefreshNPCMinerList ();
         List<GameObject> MinerList = new List<GameObject>();
         foreach (GameObject g in NPCMiners)
         {
