@@ -43,6 +43,18 @@ public class PlayerAndNPCSpawner : MonoBehaviour {
 		} 
 	}
 
+	public void placeAllNPCs(){
+		float offsetX = 0f; //offset to keep npcs from spawning on top of each other
+		while(NpcQueue.Count > 0)
+		{
+			GameObject nextNPC = (GameObject)NpcQueue.Dequeue(); // removed
+			nextNPC.SetActive (true);
+			nextNPC.transform.position = point + new Vector3(0 + offsetX, 1.5f, 0);
+			nextNPC.GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = true;
+			offsetX += 0.5f;
+		}
+	}
+
 	void OnTriggerExit(Collider other){
 //		if (other.tag == "Player" || other.tag == "Carrier" || other.tag == "Miner") {
 //			Debug.Log ("Stepped off exit trigger");

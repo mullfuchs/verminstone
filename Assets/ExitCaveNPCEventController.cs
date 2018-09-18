@@ -52,8 +52,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
 		SendNPCsToGeneralAreaOfTarget(NPCMiners, gatheringAreaLocationObjects);
 
-        //set em to go to the "bucket" and then to standing area
-        SendNPCsToTargetWithFollowup(NPCCarriers, stoneBucketObject, gatheringAreaLocationObjects, NPCMiners.Length);
+		//set em to go to the "bucket" and then to standing area
+		SendNPCsToTargetWithFollowup(NPCCarriers, stoneBucketObject, gatheringAreaLocationObjects, NPCMiners.Length);
         //wait for weighing
         StartCoroutine(weighStoneSequence());
         //send them to a barrack
@@ -72,19 +72,27 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
 	void SendNPCsToGeneralAreaOfTarget(GameObject[] NPCGroup, GameObject[] spots){
 		for (int i = 0; i < NPCGroup.Length; i++) {
+			NPCGroup [i].GetComponent<AIStateMachine> ().ResetNPCVariables ();
             NPCGroup [i].GetComponent<AIStateMachine> ().SendNPCToObject (spots[i]);
 		}
 	}
 
 	void SendNPCsToTargetWithFollowup(GameObject[] NPCGroup, GameObject target, GameObject[] spots, int IndexOffset){
 		for (int i = 0; i < NPCGroup.Length; i++) {
+			NPCGroup [i].GetComponent<AIStateMachine> ().ResetNPCVariables ();
             NPCGroup[i].GetComponent<AIStateMachine> ().SendNPCToObject (target);
             NPCGroup[i].GetComponent<AIStateMachine> ().AddTargetForNPC (spots [i + IndexOffset]);
 		}
 	}
 
 	IEnumerator weighStoneSequence(){
+
+		yield return new WaitForSeconds (2.0f);
+
+
+
         EventController.GetComponent<CampEventController>().currentStagingArea = gatheringAreaObject;
+
         int carrierCount = NPCCarriers.Length;
 		//have all the carriers dropped stone?
 		while (stoneBucketObject.GetComponent<RockBucketController> ().getNumberOfVisitedCarriers() < carrierCount) {

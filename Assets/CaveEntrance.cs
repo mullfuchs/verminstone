@@ -56,10 +56,21 @@ public class CaveEntrance : MonoBehaviour {
 
 	}
 
+	void massMoveNPCToPlayer(){
+		GameObject[] Miners = GameObject.FindGameObjectsWithTag ("WorkerNPC");
+		player = GameObject.Find ("Player");
+
+		//print ("moving npcs to position: " + player.transform.position);
+		for (int i = 0; i < Miners.Length; i++) {
+			Miners [i].transform.position = player.transform.position; //player.transform.position;
+			//print ("thier position " + Miners [i].transform.position);
+		}
+	}
+
 	void OnTriggerExit(Collider other){
-		if (other.tag == "Player" || other.tag == "WorkerNPC") {
+		if (other.tag == "Player") {
 			//TEMP 
-			Holder.GetComponent<PlayerAndNPCSpawner> ().placeNextNPC ();
+			Holder.GetComponent<PlayerAndNPCSpawner> ().placeAllNPCs ();
 		} 
 	}
 
