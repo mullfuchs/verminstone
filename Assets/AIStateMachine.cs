@@ -195,6 +195,14 @@ public class AIStateMachine : MonoBehaviour {
             }
         }
 
+		if (other.tag == "StoneDropoffDebug") {
+			if(gameObject.GetComponent<NPCInventory>().ObjectOnBack.tag == "BagTool" && vStoneAmount >= 0.0f)
+			{
+				VStoneEcoInstance.AddVStoneToDailyTotal(vStoneAmount);
+				vStoneAmount = 0;
+			}
+		}
+
         if (other.tag == "VStoneFragment" && other.gameObject == getTargetObject())
         {
             if (gameObject.GetComponent<NPCInventory>().ObjectOnBack.tag == "BagTool")

@@ -27,4 +27,9 @@ public class VStoneEconomyObject : MonoBehaviour {
     {
         return vStoneDailyAmount;
     }
+
+	public float getTotalCollected()
+	{
+		return vStoneTotalCollected;
+	}
 }

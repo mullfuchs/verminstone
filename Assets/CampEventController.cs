@@ -100,13 +100,22 @@ public class CampEventController : MonoBehaviour {
 		}
 	}
 
-    void SendNPCGroupToTarget(GameObject[] NPCGroup, GameObject target)
+	public void SendNPCGroupToTarget(GameObject[] NPCGroup, GameObject target)
     {
         for (int i = 0; i < NPCGroup.Length; i++)
         {
             NPCGroup[i].GetComponent<AIStateMachine>().AddTargetForNPC(target);
         }
     }
+
+	public void ClearAllNPCTargts ()
+	{
+		for (int i = 0; i < AllNPCs.Length; i++)
+		{
+			AllNPCs[i].GetComponent<AIStateMachine>().ResetNPCVariables();
+		}
+	}
+
 
     void CleanUpGatheringArea(GameObject GatheringAreaObject)
     {

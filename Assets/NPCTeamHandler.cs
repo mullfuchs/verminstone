@@ -152,7 +152,7 @@ public class NPCTeamHandler : MonoBehaviour {
 
     List<GameObject> GetAllNPCSwithBagTools()
     {
-		
+		RefreshNPCMinerList ();
         List<GameObject> CarrierList = new List<GameObject>();
         foreach(GameObject g in NPCMiners)
         {

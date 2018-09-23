@@ -37,23 +37,15 @@ public class ExitCaveNPCEventController : MonoBehaviour {
     public void doCaveExitEvent()
     {
 		teamHandler = GameObject.Find("Player").GetComponent<NPCTeamHandler>();
-		teamHandler.resetNPCTargets ();
-		teamHandler.RefreshNPCMinerList();
+		//teamHandler.resetNPCTargets ();
+		//teamHandler.RefreshNPCMinerList();
         NPCMiners = teamHandler.GetCurrentMiners().ToArray();
         NPCCarriers = teamHandler.GetCurrentCarriers().ToArray();
 
 		//debug get stones from rock carriers
-		debugGetStonesFromCarriers(NPCCarriers);
+		//debugGetStonesFromCarriers(NPCCarriers);
 
-		stoneBucketObject = GameObject.Find ("RockBucket");
-		gatheringAreaObject = GameObject.Find ("GatheringArea");
 
-		InitializeGatheringArea ();
-
-		SendNPCsToGeneralAreaOfTarget(NPCMiners, gatheringAreaLocationObjects);
-
-		//set em to go to the "bucket" and then to standing area
-		SendNPCsToTargetWithFollowup(NPCCarriers, stoneBucketObject, gatheringAreaLocationObjects, NPCMiners.Length);
         //wait for weighing
         StartCoroutine(weighStoneSequence());
         //send them to a barrack
@@ -71,15 +63,15 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 	}
 
 	void SendNPCsToGeneralAreaOfTarget(GameObject[] NPCGroup, GameObject[] spots){
+		print ("sending npcs to target maybe");
 		for (int i = 0; i < NPCGroup.Length; i++) {
-			NPCGroup [i].GetComponent<AIStateMachine> ().ResetNPCVariables ();
             NPCGroup [i].GetComponent<AIStateMachine> ().SendNPCToObject (spots[i]);
 		}
 	}
 
 	void SendNPCsToTargetWithFollowup(GameObject[] NPCGroup, GameObject target, GameObject[] spots, int IndexOffset){
+		print ("sending carriers to target with followup");
 		for (int i = 0; i < NPCGroup.Length; i++) {
-			NPCGroup [i].GetComponent<AIStateMachine> ().ResetNPCVariables ();
             NPCGroup[i].GetComponent<AIStateMachine> ().SendNPCToObject (target);
             NPCGroup[i].GetComponent<AIStateMachine> ().AddTargetForNPC (spots [i + IndexOffset]);
 		}
@@ -89,16 +81,34 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
 		yield return new WaitForSeconds (2.0f);
 
+		//stoneBucketObject = GameObject.Find ("RockBucket");
+
+		//gatheringAreaObject = GameObject.Find ("GatheringArea");
+
+		//EventController.GetComponent<CampEventController> ().ClearAllNPCTargts();
+
+		//EventController.GetComponent<CampEventController> ().SendAllNPCsToArea (gatheringAreaObject);
+
+		//EventController.GetComponent<CampEventController> ().SendNPCGroupToTarget (NPCCarriers, stoneBucketObject);
+
+		//gatheringAreaObject = GameObject.Find ("GatheringArea");
+
+		//InitializeGatheringArea ();
+
+		//SendNPCsToGeneralAreaOfTarget(NPCMiners, gatheringAreaLocationObjects);
+
+		//set em to go to the "bucket" and then to standing area
+		//SendNPCsToTargetWithFollowup(NPCCarriers, stoneBucketObject, gatheringAreaLocationObjects, NPCMiners.Length);
 
 
-        EventController.GetComponent<CampEventController>().currentStagingArea = gatheringAreaObject;
+        //EventController.GetComponent<CampEventController>().currentStagingArea = gatheringAreaObject;
 
         int carrierCount = NPCCarriers.Length;
 		//have all the carriers dropped stone?
 		while (stoneBucketObject.GetComponent<RockBucketController> ().getNumberOfVisitedCarriers() < carrierCount) {
 			yield return null;
 		}
-		yield return new WaitForSeconds (2.0f);
+		yield return new WaitForSeconds (5.0f);
 		//GameObject foreman = GameObject.FindWithTag ("Foreman");
 		//GameObject.Find ("MultipurposeCameraRig").GetComponent<ZoomNFocus> ().focusOnNPC (foreman.transform);
         //start foreman dialog
@@ -107,6 +117,7 @@ public class ExitCaveNPCEventController : MonoBehaviour {
         //yield return new WaitForSeconds (4.0f);
 		//GameObject.Find ("MultipurposeCameraRig").GetComponent<ZoomNFocus> ().reset ();
         print("total vstone collected this run: " + VStoneEcoInstance.getDailyTotal());
+		print ("total vstone collected during this save: " + VStoneEcoInstance.getTotalCollected ());
 		EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
 	}
 

@@ -49,7 +49,7 @@ public class PlayerAndNPCSpawner : MonoBehaviour {
 		{
 			GameObject nextNPC = (GameObject)NpcQueue.Dequeue(); // removed
 			nextNPC.SetActive (true);
-			nextNPC.transform.position = point + new Vector3(0 + offsetX, 1.5f, 0);
+			nextNPC.transform.position = point + new Vector3(0 + offsetX, 1.5f, -1.0f);
 			nextNPC.GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = true;
 			offsetX += 0.5f;
 		}
