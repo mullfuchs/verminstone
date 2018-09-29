@@ -81,28 +81,6 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
 		yield return new WaitForSeconds (2.0f);
 
-		//stoneBucketObject = GameObject.Find ("RockBucket");
-
-		//gatheringAreaObject = GameObject.Find ("GatheringArea");
-
-		//EventController.GetComponent<CampEventController> ().ClearAllNPCTargts();
-
-		//EventController.GetComponent<CampEventController> ().SendAllNPCsToArea (gatheringAreaObject);
-
-		//EventController.GetComponent<CampEventController> ().SendNPCGroupToTarget (NPCCarriers, stoneBucketObject);
-
-		//gatheringAreaObject = GameObject.Find ("GatheringArea");
-
-		//InitializeGatheringArea ();
-
-		//SendNPCsToGeneralAreaOfTarget(NPCMiners, gatheringAreaLocationObjects);
-
-		//set em to go to the "bucket" and then to standing area
-		//SendNPCsToTargetWithFollowup(NPCCarriers, stoneBucketObject, gatheringAreaLocationObjects, NPCMiners.Length);
-
-
-        //EventController.GetComponent<CampEventController>().currentStagingArea = gatheringAreaObject;
-
         int carrierCount = NPCCarriers.Length;
 		//have all the carriers dropped stone?
 		while (stoneBucketObject.GetComponent<RockBucketController> ().getNumberOfVisitedCarriers() < carrierCount) {

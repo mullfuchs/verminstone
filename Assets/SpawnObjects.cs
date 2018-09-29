@@ -45,7 +45,8 @@ public class SpawnObjects : MonoBehaviour {
         while(count >= 0)
         {
             GameObject bugToSpawn = Instantiate(objectToSpawn, transform.position, transform.rotation);
-            bugToSpawn.GetComponent<LookAtTargetAndWalkForward>().setTarget(target);
+			bugToSpawn.GetComponent<AIBugController>().setTarget(target);
+			bugToSpawn.GetComponent<AIBugController> ().setOriginObject (gameObject);
             count--;
             yield return new WaitForSeconds(delay);
         }
