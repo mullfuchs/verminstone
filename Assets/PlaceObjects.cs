@@ -32,7 +32,7 @@ public class PlaceObjects : MonoBehaviour {
 		List<FloorObject> objectList = new List<FloorObject>();
 		//disabling object spawning for now
 		foreach (Vector3 point in objectCoords) { 
-			objectList.Add( new FloorObject(point, objectToAdd));
+			objectList.Add( new FloorObject(point, objectToAdd) );
 		}
 
 		foreach (Vector3 point in SpawnPoints) {
@@ -56,11 +56,11 @@ public class PlaceObjects : MonoBehaviour {
 
 
 	public class FloorObject{
-		Vector3 positionOnFloor;
-		GameObject gameObjectType;
+		public Vector3 positionOnFloor;
+		public GameObject gameObjectType;
 		public FloorObject(Vector3 _position, GameObject _gameObject){
-			positionOnFloor = _position;
-			gameObjectType = _gameObject;
+			this.positionOnFloor = _position;
+			this.gameObjectType = _gameObject;
 		}
 
 		public GameObject CreateObject(){
@@ -68,10 +68,11 @@ public class PlaceObjects : MonoBehaviour {
 		}
 
 		public Vector3 getPosition(){
-			return positionOnFloor;
+			return this.positionOnFloor;
 		}
 
 	}
+		
 
 	public void PopulateMapWithObjects(List<FloorObject> _objects){
 		List<GameObject> objectList = new List<GameObject> ();

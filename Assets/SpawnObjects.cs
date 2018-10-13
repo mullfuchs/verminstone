@@ -8,7 +8,8 @@ public class SpawnObjects : MonoBehaviour {
 	public float spawnDelay = 0.5f;
 
 	private bool canSpawn = true;
-	
+	private int floorLevel = 0;
+
 	void ResetSpawn(){
 		canSpawn = true;
 	}
@@ -22,8 +23,13 @@ public class SpawnObjects : MonoBehaviour {
 		//}
 	}
 
-    public void SpawnEnemy(GameObject objectToSpawn, GameObject[] TargetsForThatEnemy, int numberToSpawn)
+	public void setFloorLevel(int level){
+		floorLevel = level;
+	}
+
+	public void SpawnEnemy(GameObject objectToSpawn, GameObject[] TargetsForThatEnemy, int numberToSpawn, int floor)
     {
+		floorLevel = floor;
         StartCoroutine(spawnASetOfEnemies(0.5f, numberToSpawn, objectToSpawn, TargetsForThatEnemy));
     }
 
@@ -45,8 +51,9 @@ public class SpawnObjects : MonoBehaviour {
         while(count >= 0)
         {
             GameObject bugToSpawn = Instantiate(objectToSpawn, transform.position, transform.rotation);
-			bugToSpawn.GetComponent<AIBugController>().setTarget(target);
-			bugToSpawn.GetComponent<AIBugController> ().setOriginObject (gameObject);
+			bugToSpawn.GetComponent<AIBugController> ().setUpBug (target, gameObject, floorLevel);
+			//.setTarget(target);
+			//bugToSpawn.GetComponent<AIBugController> ().setOriginObject (gameObject);
             count--;
             yield return new WaitForSeconds(delay);
         }

@@ -47,6 +47,24 @@ public class AIBugController : MonoBehaviour {
 
 	}
 
+	public void setUpBug(GameObject target, GameObject origin, int floorLevel){
+		setTarget (target);
+		setOriginObject (origin);
+		//health right now is floor level x 10
+		float healthpoints = floorLevel * 10;
+		gameObject.GetComponent<health>().healthPoints = healthpoints;
+		//run away probability is set by health, probably? I think?
+		probabilityOfRunningAway = 0.5f;
+		//attack amount is a lot, probably
+		AttackHitBox = transform.Find("AttackHitBox").gameObject;
+		AttackHitBox.SetActive(true);
+		AttackHitBox.GetComponent<DealDamageToObjects>().damageAmount = floorLevel * 2;
+		AttackHitBox.SetActive (false);
+		//run speed is set last, if we have a lot of hp and attack, then they'll be slower.
+		walkSpeed = (healthpoints * 2 + floorLevel) / healthpoints;
+		print("bug stats: hp " + healthpoints + ", damage " + (floorLevel * 2) + ", walk speed " + walkSpeed);  
+	}
+
 	public void setTarget(GameObject newTarget)
 	{
 		this.gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target = newTarget.transform;
@@ -77,7 +95,10 @@ public class AIBugController : MonoBehaviour {
 
 	void OnCollisionEnter(Collision obj){
 		if (obj.gameObject.tag == "projectile") {
-			isAttacking = false;
+			if (Random.Range (0, 1) <= probabilityOfRunningAway) {
+				isAttacking = false;
+			} 
+
 		}
 	}
 

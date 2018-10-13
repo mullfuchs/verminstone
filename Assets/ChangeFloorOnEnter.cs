@@ -10,9 +10,13 @@ public class ChangeFloorOnEnter : MonoBehaviour {
 
 	public bool CanSwapLevels = false;
 
+	private int floorlevel = 1;
+	private GameObject EnemyTeamHandler;
+
 	// Use this for initialization
 	void Start () {
 		caveManager = GameObject.Find ("CaveManager");
+		floorlevel = 1;
 	}
 	
 	// Update is called once per frame
@@ -24,9 +28,17 @@ public class ChangeFloorOnEnter : MonoBehaviour {
 		if (other.gameObject.tag == "Player" && CanSwapLevels) {
 			if (descending) {
 				caveManager.GetComponent<CaveManager> ().DescendToLowerFloor ();
+				floorlevel += 1;
+				EnemyTeamHandler = GameObject.Find ("EnemyNPCHandler");
+				EnemyTeamHandler.GetComponent<EnemyTeamHandler> ().floorLevel = floorlevel;
+				print ("floor level: " + floorlevel);
 				CanSwapLevels = false;
 			} else {
 				caveManager.GetComponent<CaveManager> ().AscendToUpperFloor ();
+				floorlevel -= 1;
+				EnemyTeamHandler = GameObject.Find ("EnemyNPCHandler");
+				EnemyTeamHandler.GetComponent<EnemyTeamHandler> ().floorLevel = floorlevel;
+				print ("floor level: " + floorlevel);
 				CanSwapLevels = false;
 			}
 		}

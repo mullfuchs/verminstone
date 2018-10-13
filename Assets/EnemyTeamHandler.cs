@@ -14,6 +14,8 @@ public class EnemyTeamHandler : MonoBehaviour {
     public GameObject MediumEnemy;
     public GameObject HeavyPatrolEnemy;
 
+	public int floorLevel = 1;
+
     private NPCTeamHandler playerTeamHandler;
 
     // Use this for initialization
@@ -39,7 +41,7 @@ public class EnemyTeamHandler : MonoBehaviour {
         
 		List<GameObject> MinerList = playerTeamHandler.GetCurrentMiners();
 
-        closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(SwarmEnemy, MinerList.ToArray(), 2);
+		closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(SwarmEnemy, MinerList.ToArray(), floorLevel, floorLevel);
 
 
     }

@@ -23,6 +23,10 @@ public class VStoneEconomyObject : MonoBehaviour {
         vStoneTotalCollected += amount;
     }
 
+	public void resetDailyTotal(){
+		vStoneDailyAmount = 0;
+	}
+
     public float getDailyTotal()
     {
         return vStoneDailyAmount;
