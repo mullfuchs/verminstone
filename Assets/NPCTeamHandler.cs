@@ -174,7 +174,7 @@ public class NPCTeamHandler : MonoBehaviour {
         {
             if (g.GetComponent<NPCInventory>().ObjectHeldInHands != null)
             {
-                if (g.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "MineTool")
+				if (g.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "Weapon" )
                 {
                     NPCList.Add(g);
                 }
@@ -220,11 +220,11 @@ public class NPCTeamHandler : MonoBehaviour {
         GameObject[] bugs = GameObject.FindGameObjectsWithTag("Bug");
 		if (bugs.Length > 0) { 
 			GameObject closestBug = bugs[0];
-			//print("found bugs:" + bugs.Length);
+			print("found bugs:" + bugs.Length);
 
 			if(bugs.Length == 0)
 			{
-				//print("found no bugs");
+				print("found no bugs");
 				return;
 			}		
 		
@@ -244,7 +244,13 @@ public class NPCTeamHandler : MonoBehaviour {
 
 	        foreach (GameObject g in CurrentArmedNPCs)
 	        {
-	           // print("sending NPCS to attack a bug");
+				g.GetComponent<AIStateMachine> ().ResetNPCVariables ();
+				foreach (GameObject b in bugs) {
+					if (b.activeSelf) {
+						g.GetComponent<AIStateMachine> ().AddTargetForNPC (b);	
+					}
+				}
+	            print("sending NPCS to attack a bug");
 	            g.GetComponent<AIStateMachine>().AttackEnemy(closestBug);
 	        }
 		}

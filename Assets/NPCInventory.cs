@@ -51,6 +51,7 @@ public class NPCInventory : MonoBehaviour {
     {
         Destroy(ActiveHandObject);
         ActiveHandObject = Instantiate(item, handTransform.position, handTransform.rotation, handTransform);
+
         ObjectHeldInHands = item;
     }
 
@@ -60,6 +61,14 @@ public class NPCInventory : MonoBehaviour {
         ActiveBackObject = Instantiate(item, backTransform.position, backTransform.rotation, backTransform);
         ObjectOnBack = item;
     }
+
+	public GameObject getHandObject(){
+		if (ActiveHandObject) {
+			return ActiveHandObject;
+		} else {
+			return null;
+		}
+	}
 
     public Transform FindDeepChild(Transform aParent, string aName)
     {

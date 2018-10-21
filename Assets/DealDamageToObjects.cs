@@ -6,7 +6,7 @@ public class DealDamageToObjects : MonoBehaviour {
 
     public string AffectedTag;
 
-	public float damageAmount;
+	public float baseDamageAmount;
 	public float knockback;
 
 	// Use this for initialization
@@ -24,9 +24,20 @@ public class DealDamageToObjects : MonoBehaviour {
         health OtherHealth = other.GetComponent<health>();
         if (other.tag == AffectedTag && OtherHealth)
         {
+			float tempDMG = baseDamageAmount;
 			other.attachedRigidbody.AddForce ( Vector3.Normalize( gameObject.transform.position - other.transform.position ) * 2 );
-            OtherHealth.AddDamage(5);
-            //gameObject.SetActive(false);
+			//is this npc holding something?
+			GameObject handObj = gameObject.transform.parent.GetComponent<NPCInventory>().getHandObject();
+			//if it is is it a weapon?
+			if (handObj.GetComponent<WeaponController> () != null) {
+				tempDMG += handObj.GetComponent<WeaponController> ().damage;
+			}
+			OtherHealth.AddDamage(tempDMG);
         }
     }
+
+	public void increaseHitDamage(int amount){
+		baseDamageAmount += amount;
+		print ("damage increased to " + baseDamageAmount);
+	}
 }

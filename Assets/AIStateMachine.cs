@@ -79,19 +79,23 @@ public class AIStateMachine : MonoBehaviour {
 	void Update () {
 
 		if (currentState == AIState.Angry) {
+			updateStoppingDistance (0);
 			if (EnemyAttackingMe != null) {
-				//do distance check
+
 				float distToEnemy = Vector3.Distance(EnemyAttackingMe.transform.position, transform.position);
 				if (distToEnemy <= 1.5f && CanAttack) {
 					PerformAttack ();
 				}
-				//if under an amout start attacking
 			}
             else
             {
 				//find an enemy?
-
-                currentState = AIState.Follow;
+				if (targets.Count > 0) {
+					EnemyAttackingMe = (GameObject)targets.Dequeue ();	
+					setTarget (EnemyAttackingMe);
+				} else {
+					currentState = AIState.Follow;
+				}
             }
 		}
 
@@ -317,6 +321,7 @@ public class AIStateMachine : MonoBehaviour {
         currentState = AIState.Angry;
         EnemyAttackingMe = enemy;
         setTarget(enemy);
+		print ("number of targets im attacking " + targets.Count );
     }
 
     public void handleDeath()
