@@ -74,7 +74,21 @@ public class CaveManager : MonoBehaviour {
 
 	}
 
- 
+	public void RemoveObjectFromFloor(GameObject objectToRemove){
+		//iterate thru entire floor list??
+		//if the game object matches 
+		List<PlaceObjects.FloorObject> tempFloorList = CurrentFloor.getObjectList();
+		PlaceObjects.FloorObject tempObj = null;
+		foreach (PlaceObjects.FloorObject item in tempFloorList) {
+			if (item.thisGameObject == objectToRemove) {
+				tempObj = item;
+			}
+		}
+		if (tempObj != null) {
+			print ("removing object from floor?");
+			CurrentFloor.getObjectList ().Remove (tempObj);
+		}
+	}
 
 	public void DescendToLowerFloor(){
 		if (currentFloor + 1 <= numberOfFloorsToMake) {

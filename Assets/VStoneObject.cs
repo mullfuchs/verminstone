@@ -88,6 +88,8 @@ public class VStoneObject : MonoBehaviour {
 		for (int i = 0; i < FragmentsToMake; i++) {
 			playerObject.GetComponent<NPCTeamHandler>().AddTargetForNPCs( Instantiate (VStoneFragmentObject, gameObject.transform.position, Quaternion.identity) );
 		}
+		//try to remove it from the list
+		GameObject.Find("CaveManager").GetComponent<CaveManager>().RemoveObjectFromFloor(gameObject);
 		Destroy(gameObject);
 	}
 }

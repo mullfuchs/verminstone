@@ -58,13 +58,15 @@ public class PlaceObjects : MonoBehaviour {
 	public class FloorObject{
 		public Vector3 positionOnFloor;
 		public GameObject gameObjectType;
+		public GameObject thisGameObject;
 		public FloorObject(Vector3 _position, GameObject _gameObject){
 			this.positionOnFloor = _position;
 			this.gameObjectType = _gameObject;
 		}
 
 		public GameObject CreateObject(){
-			return Instantiate (gameObjectType, positionOnFloor, Quaternion.identity);
+			thisGameObject = Instantiate (gameObjectType, positionOnFloor, Quaternion.identity);
+			return thisGameObject;
 		}
 
 		public Vector3 getPosition(){
