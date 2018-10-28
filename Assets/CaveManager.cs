@@ -39,7 +39,8 @@ public class CaveManager : MonoBehaviour {
 			int[,] tempFloor = mapGenObject.GetComponent<GenerateMap> ().MakeFloor ();
 			List<Vector3> tempPositionList = mapGenObject.GetComponent<GenerateMap>().GetRandomPointsInRooms (2);
 			List<Vector3> spawnPointsList = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms (1);
-			List<PlaceObjects.FloorObject> tempObjList = mapGenObject.GetComponent<PlaceObjects> ().PopulateMapList (tempPositionList, spawnPointsList);
+			List<Vector3> sporePointsList = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms (1);
+			List<PlaceObjects.FloorObject> tempObjList = mapGenObject.GetComponent<PlaceObjects> ().PopulateMapList (tempPositionList, spawnPointsList,sporePointsList);
 			FloorList.Add( new Floor(tempFloor, tempObjList) );
 		}
 	}
@@ -85,7 +86,6 @@ public class CaveManager : MonoBehaviour {
 			}
 		}
 		if (tempObj != null) {
-			print ("removing object from floor?");
 			CurrentFloor.getObjectList ().Remove (tempObj);
 		}
 	}
