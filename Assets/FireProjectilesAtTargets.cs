@@ -17,6 +17,8 @@ public class FireProjectilesAtTargets : MonoBehaviour {
 
 	private bool canShoot = true;
 
+	public float attackRange = 5.0f;
+
 	private Transform shootTransform;
 
 	void ResetShot(){
@@ -38,7 +40,7 @@ public class FireProjectilesAtTargets : MonoBehaviour {
 	}
 
 	void lookForANewTarget(){
-		Collider[] allOverlappingColliders = Physics.OverlapSphere(transform.position, this.GetComponent<SphereCollider>().radius);
+		Collider[] allOverlappingColliders = Physics.OverlapSphere(transform.position, attackRange);
 
 		List<GameObject> NPCsToTarget = new List<GameObject> ();
 		for (int i = 0; i < allOverlappingColliders.Length; i++) {
@@ -46,7 +48,7 @@ public class FireProjectilesAtTargets : MonoBehaviour {
 				NPCsToTarget.Add (allOverlappingColliders [i].gameObject);
 			}
 		}
-
+		//print ("why isn't this working, found " + NPCsToTarget.Count + "targets");
 		GameObject target = null;
 		float distance = 100.0f;
 	
@@ -65,7 +67,8 @@ public class FireProjectilesAtTargets : MonoBehaviour {
 	{
 		if (target != null) {
 			shootTransform.LookAt (target.transform);
-			Instantiate(Projectile, shootTransform.position, shootTransform.rotation);
+			GameObject projectile = Instantiate(Projectile, shootTransform.position, shootTransform.rotation);
+			projectile.GetComponent<MoveForward> ().originObject = gameObject;
 		}
 		canShoot = false;
 		Invoke("ResetShot", shootDelay);

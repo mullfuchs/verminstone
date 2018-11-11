@@ -221,6 +221,15 @@ public class AIStateMachine : MonoBehaviour {
             }
         }
 
+		if (other.tag == "projectile") {
+			GameObject projectileOrigin = other.gameObject.GetComponent<MoveForward> ().originObject;
+			if (projectileOrigin != null) {
+				setTarget (ChannelerIFollow);
+				EnemyAttackingMe = projectileOrigin;
+				currentState = AIState.Scared;
+			}
+		}
+
         if(other.tag == "Bug")
         {
 

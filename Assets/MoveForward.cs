@@ -7,6 +7,8 @@ public class MoveForward : MonoBehaviour {
     public float damage = 10.0f;
 	public string[] affectedTags;
 
+	public GameObject originObject;
+
 	// Update is called once per frame
 	void Update () {
 		maxTime -= 1.0f * Time.deltaTime;
