@@ -212,12 +212,18 @@ public class NPCTeamHandler : MonoBehaviour {
         return AvailabileTargets.Count;
     }
 
+	void OrderArmedNPCsToAttack()
+	{
+		
+	}
+
     void OrderNPCsToAttackNearestNPC()
     {
         //find bug closest to me
         // closestBug = null;
         float bugDistToPlayer = 0.0f;
         GameObject[] bugs = GameObject.FindGameObjectsWithTag("Bug");
+		//change this to a collision sphere around each armed player
 		if (bugs.Length > 0) { 
 			GameObject closestBug = bugs[0];
 			print("found bugs:" + bugs.Length);

@@ -32,6 +32,7 @@ public class health : MonoBehaviour {
 
 	void OnCollisionEnter(Collision obj){
 		if (obj.gameObject.tag == "projectile" && isFreindlyFireOn) {
+			//print ("took projectile damage");
 			healthPoints -= obj.gameObject.GetComponent<MoveForward>().damage;
 			Destroy (obj.gameObject);
 			if (healthPoints <= 0) {
@@ -39,6 +40,7 @@ public class health : MonoBehaviour {
 			}
 		}
 
+		/*
 		if (obj.gameObject.tag == "Bug" && gameObject.tag != "Bug") {
 			healthPoints -= 1;
 			gameObject.GetComponent<NPCstats>().health = healthPoints;
@@ -46,6 +48,7 @@ public class health : MonoBehaviour {
 				Destroy (this.gameObject);
 			}
 		}
+		*/
 
 		if (TrackOnTheUI) {
 			controller.updateBar (controller.HealthBarObject, healthPoints);

@@ -68,6 +68,7 @@ public class FireProjectilesAtTargets : MonoBehaviour {
 		if (target != null) {
 			shootTransform.LookAt (target.transform);
 			GameObject projectile = Instantiate(Projectile, shootTransform.position, shootTransform.rotation);
+			Physics.IgnoreCollision (projectile.GetComponent<Collider> (), gameObject.GetComponent<Collider> (), true);
 			projectile.GetComponent<MoveForward> ().originObject = gameObject;
 		}
 		canShoot = false;
