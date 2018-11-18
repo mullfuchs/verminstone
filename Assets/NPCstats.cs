@@ -10,6 +10,7 @@ public class NPCstats : MonoBehaviour {
 	public float stamina = 25;
 	public float maxHealth = 100;
 	public float maxStamina = 100;
+	public GameObject ragDollObject;
 
 	// Use this for initialization
 	void Start () {

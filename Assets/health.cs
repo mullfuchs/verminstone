@@ -67,6 +67,7 @@ public class health : MonoBehaviour {
 
         if(healthPoints <= 0)
         {
+			Instantiate (gameObject.GetComponent<NPCstats> ().ragDollObject, gameObject.transform.position, gameObject.transform.rotation); 
             Destroy(this.gameObject);
         }
     }
@@ -90,7 +91,7 @@ public class health : MonoBehaviour {
     {
         if(gameObject.tag == "WorkerNPC")
         {
-            gameObject.GetComponent<AIStateMachine>().handleDeath();
+			gameObject.GetComponent<AIStateMachine>().handleDeath();
         }
 
         if(gameObject.tag == "Bug")
