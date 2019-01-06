@@ -73,10 +73,15 @@ public class AIStateMachine : MonoBehaviour {
     {
 		//print ("Clearing npc targets");
         targets.Clear();
+		currentState = AIState.Follow;
     }
 
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.F)) {
+			ResetNPCVariables ();
+		}
+
 
 		if (currentState == AIState.Angry) {
 			updateStoppingDistance (0);
@@ -84,6 +89,7 @@ public class AIStateMachine : MonoBehaviour {
 
 				float distToEnemy = Vector3.Distance(EnemyAttackingMe.transform.position, transform.position);
 				if (distToEnemy <= 1.5f && CanAttack) {
+					print ("performing attack");
 					PerformAttack ();
 				}
 			}
@@ -94,7 +100,9 @@ public class AIStateMachine : MonoBehaviour {
 					EnemyAttackingMe = (GameObject)targets.Dequeue ();	
 					setTarget (EnemyAttackingMe);
 				} else {
-					currentState = AIState.Follow;
+					print ("no longer attacking, returning to follow");
+					ResetNPCVariables ();
+					//currentState = AIState.Follow;
 				}
             }
 		}

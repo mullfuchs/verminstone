@@ -78,7 +78,9 @@ public class NPCTeamHandler : MonoBehaviour {
         if (Input.GetButton("Order_Attack"))
         {
             print("Ordering NPCs to attack");
-            OrderNPCsToAttackNearestNPC();
+			OrderArmedNPCsToAttack ();
+			//trying something new
+			//OrderNPCsToAttackNearestNPC();
         }
 	}
 
@@ -214,7 +216,39 @@ public class NPCTeamHandler : MonoBehaviour {
 
 	void OrderArmedNPCsToAttack()
 	{
-		
+		//get bugs within a distance
+
+		Collider[] allOverlappingColliders = Physics.OverlapSphere(transform.position, 15.0f);
+
+		List<GameObject> NPCsToTarget = new List<GameObject> ();
+		for (int i = 0; i < allOverlappingColliders.Length; i++) {
+			if (allOverlappingColliders [i].gameObject.tag == "Bug") {
+				NPCsToTarget.Add (allOverlappingColliders [i].gameObject);
+			}
+		}
+
+		GameObject target = null;
+		float distance = 100.0f;
+
+		foreach (GameObject item in NPCsToTarget) {
+			float tempdist = Vector3.Distance (transform.position, item.transform.position);
+			if (tempdist < distance) {
+				target = item;
+				distance = tempdist;
+			}
+		}
+
+		foreach (GameObject g in CurrentArmedNPCs)
+		{
+			g.GetComponent<AIStateMachine> ().ResetNPCVariables ();
+			foreach (GameObject b in NPCsToTarget) {
+				if (b.activeSelf) {
+					g.GetComponent<AIStateMachine> ().AddTargetForNPC (b);	
+				}
+			}
+			print("sending NPCS to attack a bug");
+			g.GetComponent<AIStateMachine>().AttackEnemy(target);
+		}
 	}
 
     void OrderNPCsToAttackNearestNPC()

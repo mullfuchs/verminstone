@@ -6,6 +6,8 @@ public class FireProjectilesAtTargets : MonoBehaviour {
 
 	public GameObject Projectile;
 
+	public GameObject FiringPoint;
+
 	private GameObject currentTarget = null;
 
 	public float shootDelay = 2.0f;
@@ -27,9 +29,14 @@ public class FireProjectilesAtTargets : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		shootTransform = transform;
-		shootTransform.position = transform.position;
-		shootTransform.rotation = transform.rotation;
+		if (FiringPoint == null) {
+			shootTransform = transform;
+			shootTransform.position = transform.position;
+			shootTransform.rotation = transform.rotation;
+				
+		} else {
+			shootTransform = FiringPoint.transform;
+		}
 	}
 	
 	// Update is called once per frame
@@ -66,9 +73,13 @@ public class FireProjectilesAtTargets : MonoBehaviour {
 	void ShootProjectile(GameObject target)
 	{
 		if (target != null) {
-			shootTransform.LookAt (target.transform);
-			GameObject projectile = Instantiate(Projectile, shootTransform.position, shootTransform.rotation);
-			Physics.IgnoreCollision (projectile.GetComponent<Collider> (), gameObject.GetComponent<Collider> (), true);
+			Vector3 difference = target.transform.position - transform.position;
+			float rotationZ = Mathf.Atan2(difference.x, difference.z) * Mathf.Rad2Deg;
+			shootTransform.rotation = Quaternion.Euler(0.0f, rotationZ, 0.0f);
+
+			GameObject projectile = Instantiate(Projectile, shootTransform.position, shootTransform.rotation) as GameObject;
+
+			Physics.IgnoreCollision (projectile.GetComponent<Collider> (), GetComponent<Collider> ());
 			projectile.GetComponent<MoveForward> ().originObject = gameObject;
 		}
 		canShoot = false;

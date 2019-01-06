@@ -25,7 +25,8 @@ public class ChangeFloorOnEnter : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider other){
-		if (other.gameObject.tag == "Player" && CanSwapLevels) {
+		
+		if (other.gameObject.tag == "Player" && CanSwapLevels && Input.GetKeyDown(KeyCode.Space)) {
 			if (descending) {
 				caveManager.GetComponent<CaveManager> ().DescendToLowerFloor ();
 				floorlevel += 1;
@@ -42,6 +43,7 @@ public class ChangeFloorOnEnter : MonoBehaviour {
 				CanSwapLevels = false;
 			}
 		}
+
 	}
 
 }

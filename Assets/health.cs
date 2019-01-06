@@ -51,6 +51,8 @@ public class health : MonoBehaviour {
 		*/
 
 		if (TrackOnTheUI) {
+			controller = GameObject.Find ("Canvas").GetComponent<UIController> ();
+			controller.updateBarMaxValue (controller.HealthBarObject, healthPoints);
 			controller.updateBar (controller.HealthBarObject, healthPoints);
 		}
         
@@ -61,14 +63,20 @@ public class health : MonoBehaviour {
     {
         healthPoints -= damage;
 
+		if (gameObject.GetComponent<NPCstats> () != null) {
+			gameObject.GetComponent<NPCstats> ().health = healthPoints;
+		}
+
 		if (TrackOnTheUI) {
 			controller.updateBar (controller.HealthBarObject, healthPoints);
 		}
 
         if(healthPoints <= 0)
         {
-			Instantiate (gameObject.GetComponent<NPCstats> ().ragDollObject, gameObject.transform.position, gameObject.transform.rotation); 
-            Destroy(this.gameObject);
+			if(gameObject.GetComponent<NPCstats> ().ragDollObject != null){
+				Instantiate (gameObject.GetComponent<NPCstats> ().ragDollObject, gameObject.transform.position, gameObject.transform.rotation); 
+			}
+			Destroy(this.gameObject);
         }
     }
 

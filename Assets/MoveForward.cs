@@ -9,6 +9,10 @@ public class MoveForward : MonoBehaviour {
 
 	public GameObject originObject;
 
+	void Start(){
+		//gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.forward * speed);
+	}
+
 	// Update is called once per frame
 	void Update () {
 		maxTime -= 1.0f * Time.deltaTime;
@@ -27,10 +31,15 @@ public class MoveForward : MonoBehaviour {
 			}
 		}
 		//keeping this in for redundancy
-        if(other.gameObject.tag == "Bug")
+       // if(other.gameObject.tag == "Bug")
         {
-			other.gameObject.GetComponent<health>().AddDamage(damage);
+		//	other.gameObject.GetComponent<health>().AddDamage(damage);
         }
-        Destroy(this.gameObject);
+
+		if (other.gameObject != originObject) {
+			Destroy(this.gameObject);
+		}
+        
     }
+		
 }
