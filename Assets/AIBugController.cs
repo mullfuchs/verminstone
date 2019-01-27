@@ -11,8 +11,6 @@ public class AIBugController : MonoBehaviour {
 	private GameObject AttackHitBox;
 	private GameObject OriginObject;
 
-
-
 	private bool CanAttack = true;
 	private bool isAttacking = true;
 	// Update is called once per frame
@@ -51,7 +49,7 @@ public class AIBugController : MonoBehaviour {
 		setTarget (target);
 		setOriginObject (origin);
 		//health right now is floor level x 10
-		float healthpoints = floorLevel * 10;
+		float healthpoints = floorLevel * 30;
 		gameObject.GetComponent<health>().healthPoints = healthpoints;
 		//run away probability is set by health, probably? I think?
 		probabilityOfRunningAway = 0.5f;

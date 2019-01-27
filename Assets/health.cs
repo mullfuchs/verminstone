@@ -73,10 +73,8 @@ public class health : MonoBehaviour {
 
         if(healthPoints <= 0)
         {
-			if(gameObject.GetComponent<NPCstats> ().ragDollObject != null){
-				Instantiate (gameObject.GetComponent<NPCstats> ().ragDollObject, gameObject.transform.position, gameObject.transform.rotation); 
-			}
-			Destroy(this.gameObject);
+			killgameObject ();
+			//Destroy(this.gameObject);
         }
     }
 
@@ -99,14 +97,24 @@ public class health : MonoBehaviour {
     {
         if(gameObject.tag == "WorkerNPC")
         {
+			if(gameObject.GetComponent<NPCstats> ().ragDollObject != null){
+				Instantiate (gameObject.GetComponent<NPCstats> ().ragDollObject, gameObject.transform.position, gameObject.transform.rotation);
+			}
+
+			if (gameObject.GetComponent<NPCInventory> () != null) {
+				NPCInventory inventory = gameObject.GetComponent<NPCInventory> ();
+				if (inventory.ObjectOnBack != null) {
+					inventory.DropBackItem ();
+				}
+				if (inventory.ObjectHeldInHands != null) {
+					inventory.DropHandItem ();
+				}
+			}
+
+
 			gameObject.GetComponent<AIStateMachine>().handleDeath();
         }
-
-        if(gameObject.tag == "Bug")
-        {
-
-        }
-
+			
         Destroy(this.gameObject);
     }
 }

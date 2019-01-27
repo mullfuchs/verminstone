@@ -51,7 +51,9 @@ public class NPCInventory : MonoBehaviour {
     {
         Destroy(ActiveHandObject);
         ActiveHandObject = Instantiate(item, handTransform.position, handTransform.rotation, handTransform);
-
+		ActiveHandObject.GetComponent<Rigidbody> ().isKinematic = true;
+		ActiveHandObject.GetComponent<Rigidbody> ().useGravity = false;
+		ActiveHandObject.GetComponent<BoxCollider> ().enabled = false;
         ObjectHeldInHands = item;
     }
 
@@ -59,8 +61,27 @@ public class NPCInventory : MonoBehaviour {
     {
         Destroy(ActiveBackObject);
         ActiveBackObject = Instantiate(item, backTransform.position, backTransform.rotation, backTransform);
+		ActiveBackObject.GetComponent<Rigidbody> ().isKinematic = true;
+		ActiveBackObject.GetComponent<Rigidbody> ().useGravity = false;
+		ActiveBackObject.GetComponent<BoxCollider> ().enabled = false;
         ObjectOnBack = item;
     }
+
+	public void DropBackItem()
+	{
+		ActiveBackObject.transform.parent = null;
+		ActiveBackObject.GetComponent<Rigidbody> ().isKinematic = false;
+		ActiveBackObject.GetComponent<Rigidbody> ().useGravity = true;
+		ActiveBackObject.GetComponent<BoxCollider> ().enabled = true;
+	}
+
+	public void DropHandItem()
+	{
+		ActiveHandObject.transform.parent = null;
+		ActiveHandObject.GetComponent<Rigidbody> ().isKinematic = false;
+		ActiveHandObject.GetComponent<Rigidbody> ().useGravity = true;
+		ActiveHandObject.GetComponent<BoxCollider> ().enabled = true;
+	}
 
 	public GameObject getHandObject(){
 		if (ActiveHandObject) {
