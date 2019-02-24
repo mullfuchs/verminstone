@@ -1,0 +1,42 @@
+[
+	{
+		"title": "Day 1",
+		"tags": "",
+		"body": "This is really depressing, and it's my first day here\n[[Yeah..|Day 1.Agree]]\n[[Nah..|Day 1.Disagree]]\n[[Nice weather we're having|Day 1.Deflect]]",
+		"position": {
+			"x": 70,
+			"y": 99
+		},
+		"colorID": 6
+	},
+	{
+		"title": "Day 1.Agree",
+		"tags": "",
+		"body": "I hope we don't die so we can do it all again tomorrow",
+		"position": {
+			"x": 437,
+			"y": 103
+		},
+		"colorID": 6
+	},
+	{
+		"title": "Day 1.Disagree",
+		"tags": "",
+		"body": "...Okay?",
+		"position": {
+			"x": 682,
+			"y": 104
+		},
+		"colorID": 6
+	},
+	{
+		"title": "Day 1.Deflect",
+		"tags": "",
+		"body": "Yeah it's nice out",
+		"position": {
+			"x": 927,
+			"y": 97
+		},
+		"colorID": 6
+	}
+]

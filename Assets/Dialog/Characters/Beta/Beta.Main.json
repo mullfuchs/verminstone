@@ -1,0 +1,62 @@
+[
+	{
+		"title": "Beta.Day1.Morning.Start",
+		"tags": "",
+		"body": "Start Node for Beta, Day 1, morning",
+		"position": {
+			"x": 16,
+			"y": 67
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Beta.Day1.Evening.Start",
+		"tags": "",
+		"body": "Made it through my first day. it starts again tomorrow",
+		"position": {
+			"x": 5,
+			"y": 296
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Beta.Day2.Morning.Start",
+		"tags": "",
+		"body": "I couldn't sleep well, could you?",
+		"position": {
+			"x": 238,
+			"y": 68
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Node4",
+		"tags": "",
+		"body": "Empty Text",
+		"position": {
+			"x": 245,
+			"y": 294
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Node5",
+		"tags": "",
+		"body": "Empty Text",
+		"position": {
+			"x": 473,
+			"y": 65
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Node6",
+		"tags": "",
+		"body": "Empty Text",
+		"position": {
+			"x": 475,
+			"y": 293
+		},
+		"colorID": 0
+	}
+]

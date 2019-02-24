@@ -1,0 +1,32 @@
+[
+	{
+		"title": "Baba.Day0.Intro.Start",
+		"tags": "",
+		"body": "...\n[[Where Am I?|Baba.Day0.Intro.Start2]]",
+		"position": {
+			"x": 181,
+			"y": 145
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Baba.Day0.Intro.Start2",
+		"tags": "",
+		"body": "You do not get to talk!\nDo you know why you're here?\n[[No...|Baba.Day0.Intro.Start3]]",
+		"position": {
+			"x": 470,
+			"y": 148
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Baba.Day0.Intro.Start3",
+		"tags": "",
+		"body": "During processing you were scanned for reacting to Kstone\nAnd, congradulations, you do.\nWhile the mine produces Coal and steel, Kstone is what's added at the very\nend to give the metals its strength\nOnly creatures who react to Kstone are able to find it\nThis is where you'll come in\nYou will be going down into the Kstone shafts with another team of slaves\nEvery day, you will meet your quota, you'll be put back into the mine if you\ncome up under quota.\n",
+		"position": {
+			"x": 738,
+			"y": 136
+		},
+		"colorID": 0
+	}
+]

@@ -1,0 +1,31 @@
+title: Day 1
+tags: 
+colorID: 6
+position: 70,99
+---
+This is really depressing, and it's my first day here
+[[Yeah..|Day 1.Agree]]
+[[Nah..|Day 1.Disagree]]
+[[Nice weather we're having|Day 1.Deflect]]
+===
+title: Day 1.Agree
+tags: 
+colorID: 6
+position: 437,103
+---
+I hope we don't die so we can do it all again tomorrow
+===
+title: Day 1.Disagree
+tags: 
+colorID: 6
+position: 682,104
+---
+...Okay?
+===
+title: Day 1.Deflect
+tags: 
+colorID: 6
+position: 927,97
+---
+Yeah it's nice out
+===

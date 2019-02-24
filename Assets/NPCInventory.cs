@@ -72,7 +72,8 @@ public class NPCInventory : MonoBehaviour {
 		ActiveBackObject.transform.parent = null;
 		ActiveBackObject.GetComponent<Rigidbody> ().isKinematic = false;
 		ActiveBackObject.GetComponent<Rigidbody> ().useGravity = true;
-		ActiveBackObject.GetComponent<BoxCollider> ().enabled = true;
+        ActiveBackObject.GetComponent<BoxCollider>().enabled = true;
+        ObjectOnBack = null;
 	}
 
 	public void DropHandItem()
@@ -81,6 +82,7 @@ public class NPCInventory : MonoBehaviour {
 		ActiveHandObject.GetComponent<Rigidbody> ().isKinematic = false;
 		ActiveHandObject.GetComponent<Rigidbody> ().useGravity = true;
 		ActiveHandObject.GetComponent<BoxCollider> ().enabled = true;
+        ObjectHeldInHands = null;
 	}
 
 	public GameObject getHandObject(){

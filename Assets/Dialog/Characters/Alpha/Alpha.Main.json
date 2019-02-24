@@ -1,0 +1,62 @@
+[
+	{
+		"title": "Alpha.Day1.Evening.Start",
+		"tags": "",
+		"body": "It's the nite start node, day 1",
+		"position": {
+			"x": 35,
+			"y": 303
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Alpha.Day1.Morning.Start",
+		"tags": "",
+		"body": "It's Day one baby, time to drink some moonshine",
+		"position": {
+			"x": 28,
+			"y": 58
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Alpha.Day2.Morning.Start",
+		"tags": "",
+		"body": "I've lived another day, but to what end?",
+		"position": {
+			"x": 277,
+			"y": 53
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Alpha.Day2.Evening.Start",
+		"tags": "",
+		"body": "I made it through another day, ugh",
+		"position": {
+			"x": 286,
+			"y": 296
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Alpha.Day3.Morning.Start",
+		"tags": "",
+		"body": "Third day, I'm cold",
+		"position": {
+			"x": 526,
+			"y": 48
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Alpha.Day3.Evening.Start",
+		"tags": "",
+		"body": "Made it to the end of the demo.",
+		"position": {
+			"x": 527,
+			"y": 299
+		},
+		"colorID": 0
+	}
+]

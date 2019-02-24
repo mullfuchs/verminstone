@@ -1,0 +1,32 @@
+[
+	{
+		"title": "NPC 2 Day 1",
+		"tags": "",
+		"body": "It's day 1, this sucks",
+		"position": {
+			"x": 49,
+			"y": 91
+		},
+		"colorID": 0
+	},
+	{
+		"title": "NPC 2 Day 2",
+		"tags": "",
+		"body": "It's Day 2, I'm hungry",
+		"position": {
+			"x": 50,
+			"y": 312
+		},
+		"colorID": 0
+	},
+	{
+		"title": "NPC 2 Day 3",
+		"tags": "",
+		"body": "It's Day Three, time to, like, kill",
+		"position": {
+			"x": 272,
+			"y": 312
+		},
+		"colorID": 0
+	}
+]

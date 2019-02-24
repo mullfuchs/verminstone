@@ -1,0 +1,62 @@
+[
+	{
+		"title": "Delta.Day1.Morning.Start",
+		"tags": "",
+		"body": "I wanna make a joke but, like, damn",
+		"position": {
+			"x": 80,
+			"y": 116
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Delta.Day2.Morning.Start",
+		"tags": "",
+		"body": "Can you not",
+		"position": {
+			"x": 316,
+			"y": 111
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Delta.Day1.Evening.Start",
+		"tags": "",
+		"body": "Ughhhhh",
+		"position": {
+			"x": 82,
+			"y": 333
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Delta.Day2.Evening.Start",
+		"tags": "",
+		"body": "Fuck...why",
+		"position": {
+			"x": 309,
+			"y": 329
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Delta.Day3.Morning.Start",
+		"tags": "",
+		"body": "It's nearly the end of the demo? are you impressed?",
+		"position": {
+			"x": 538,
+			"y": 100
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Delta.Day3.Evening.Start",
+		"tags": "",
+		"body": "These editing tools are a bit crap",
+		"position": {
+			"x": 536,
+			"y": 333
+		},
+		"colorID": 0
+	}
+]

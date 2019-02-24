@@ -1,0 +1,62 @@
+[
+	{
+		"title": "Chi.Day1.Morning.Start",
+		"tags": "",
+		"body": "Good? Morning? It's Day 1?",
+		"position": {
+			"x": 31,
+			"y": 87
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Chi.Day1.Evening",
+		"tags": "",
+		"body": "Made it through the first day without dying, weird",
+		"position": {
+			"x": 253,
+			"y": 88
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Chi.Day2.Morning.Start",
+		"tags": "",
+		"body": "I'm Hungry",
+		"position": {
+			"x": 29,
+			"y": 304
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Chi.Day2.Evening.Start",
+		"tags": "",
+		"body": "I didn't die, surprise",
+		"position": {
+			"x": 255,
+			"y": 304
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Chi.Day3.Morning",
+		"tags": "",
+		"body": "Made it to day 3 of the demo, weird",
+		"position": {
+			"x": 31,
+			"y": 515
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Chi.Day3.Evening.Start",
+		"tags": "",
+		"body": "This is the end of the demo, please give me 350 large and 24 months\nto finish this game",
+		"position": {
+			"x": 257,
+			"y": 516
+		},
+		"colorID": 0
+	}
+]

@@ -251,6 +251,25 @@ public class NPCTeamHandler : MonoBehaviour {
 		}
 	}
 
+    void HaveNPCsCheckAndPickupDroppedItems(GameObject handitem, GameObject backitem)
+    {
+        print("NPCs checking for dropped items");
+        foreach(GameObject n in NPCMiners)
+        {
+            NPCInventory npcInv = n.GetComponent<NPCInventory>();
+            if(npcInv.ObjectHeldInHands == null)
+            {
+                n.GetComponent<AIStateMachine>().AddTargetForNPC(handitem);
+            }
+
+            if(npcInv.ObjectOnBack == null)
+            {
+                n.GetComponent<AIStateMachine>().AddTargetForNPC(backitem);
+            }
+        }
+
+    }
+
     void OrderNPCsToAttackNearestNPC()
     {
         //find bug closest to me
@@ -306,10 +325,14 @@ public class NPCTeamHandler : MonoBehaviour {
         return GetAllNPCSwithBagTools();
     }
 
-    public void handleNPCDeath()
+    public void handleNPCDeath(GameObject npc)
     {
+
         //refresh lists
-        //redistribute targets
+        //redistribute targets, if any
+        GameObject handObj = npc.GetComponent<NPCInventory>().ObjectHeldInHands;
+        GameObject backObj = npc.GetComponent<NPCInventory>().ObjectOnBack;
+        HaveNPCsCheckAndPickupDroppedItems(handObj, backObj);
     }
 
     public void distributeTargetsToNPCList()

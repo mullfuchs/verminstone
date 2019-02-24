@@ -1,0 +1,32 @@
+[
+	{
+		"title": "NPC 1 Day 1",
+		"tags": "",
+		"body": "It's day 1, I'm feeling pretty depressed",
+		"position": {
+			"x": 49,
+			"y": 91
+		},
+		"colorID": 0
+	},
+	{
+		"title": "NPC 1 Day 2",
+		"tags": "",
+		"body": "It's Day 2, I'm feeling really depressed, but more depressed",
+		"position": {
+			"x": 50,
+			"y": 312
+		},
+		"colorID": 0
+	},
+	{
+		"title": "NPC 1 Day 3",
+		"tags": "",
+		"body": "It's Day Three, lets start a rebellion. The ground will be red with the blood of our masters",
+		"position": {
+			"x": 272,
+			"y": 312
+		},
+		"colorID": 0
+	}
+]
