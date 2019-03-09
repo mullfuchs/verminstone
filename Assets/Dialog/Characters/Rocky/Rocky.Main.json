@@ -1,0 +1,52 @@
+[
+	{
+		"title": "Rocky.Day1.Intro.Start",
+		"tags": "",
+		"body": "Hey what's up, I'm rocky\nYou look like the new channeler on one of the verminstone mine shafts, is that right?\nSo, the caves are filled with bugs, they glow, they seem to really hate it when you take their verminstone\nI'm not sure why a bug needs the fucking rocks, but nature and all that\nAnyway, I'm sure you've felled a few that got in your way right?\nYou might have seen one or two of the others go up to em and yank the teeth out\nWeird right? Yeah it's fucking weird, but there's a real good reason\nIf you take those teeth, and you grind em up real good\nthen you apply some heat, let it sit for a bit\nand then you take the little crystals that form, and smoke that shit\nIt goes by a lot of names but we just call it Fang\nThis being an isolated slave labor mine and refinery, like, who wouldn't be getting ripped all the time?\nFang's great, try it some time if you really want to.\nBut really, if you bring up some bug teeth, I can get you all some stuff.\nI can get you just about anything, I have access to the managment bunks\nAll for bug teeth, don't try to make Fang yourself, I mean you can try\nAlso considering the life expectancy of folks that work the Verminstone shafts, well. shit I'd probably be high as fuck too\nI've yammered on pretty much long enough, but listen. Bug Teeth, for whatever.",
+		"position": {
+			"x": 486,
+			"y": 93
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Rocky.Day2.Intro.Start",
+		"tags": "",
+		"body": "Hey, you got any...uhhh\n...bug teeth?\nI'm just joshing, the guards look the other way\nreason they do is because they're also on Fang, a lot\nof course, they gotta take a drug test if they fuck up\nand usually if they do, they'll test positive and get fired.\nI guess getting fired isn't the worst thing, those humans will never share our fate\nweird, that\nBut yeah, nearly everyone here, if they're doing anything menial, they're gonna be high as fuck after a point\nFang is addicting, you smoke your first puff and it's like you can feel happiness again\nBut after a while it's like anything else, you just need it to keep going\nMaintaining, is what they call it\nI really don't judge anyone who smokes it, except the guards and the other humans\nNow if they catch you with it, on a bad day, they'll just throw you in the cells for it\nAnd if they throw you in the cells, they figure you ain't working, so they only feed you half as much\nAnd you're addicted, so you go through withdrawl while you're in there, it fucking sucks\nso when they come out of the cells they're starving and they need a fix\n...I'm sorry I've just been blabbering this whole time, do you actually have bug teeth for me\n[[Yeah here's some *debug_give_bugteeth*|Rocky.Day2.Intro.Yes]]\n[[I aint got shit for you|Rocky.Day2.Intro.No]]\n[[You seem to profit off other's suffering, do you feel bad?|Rocky.Day2.Intro.Maybe]]",
+		"position": {
+			"x": 490,
+			"y": 305
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Rocky.Day2.Intro.Yes",
+		"tags": "",
+		"body": "Oh great.\nSo here's what I got right now\n[[Firewood|Rocky.Buy.Firewood]]\n[[Extra Gruel|Rocky.Buy.ExtraGruel]]\n[[Floor Rug|Rocky.Buy.Rug]]\n[[Fang crystals|Rocky.Buy.Fang]]",
+		"position": {
+			"x": 718,
+			"y": 310
+		},
+		"colorID": 6
+	},
+	{
+		"title": "Rocky.Intro.Day2.Maybe",
+		"tags": "",
+		"body": "Profit? Suffering\nListening, if I could buy my own freedom back, I would\nBut i can't do that, you can't do that either\nBoth you and I, we've been trapped in this horrible machine\nMe, I can move around this fucking place, they let me anywhere\nand I can sneak anywhere else I need to go\nYes",
+		"position": {
+			"x": 499,
+			"y": 744
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Rocky.Day2.Intro.No",
+		"tags": "",
+		"body": "Nothing? Alright. Well, if you want anything, you know where to find me",
+		"position": {
+			"x": 492,
+			"y": 522
+		},
+		"colorID": 0
+	}
+]

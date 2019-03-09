@@ -2,60 +2,140 @@
 	{
 		"title": "Beta.Day1.Morning.Start",
 		"tags": "",
-		"body": "Start Node for Beta, Day 1, morning",
+		"body": "Hey\nYou had a training session? We did't get one of those.\nThey just pointed at a bunch of those blue rocks and told us if we don't bring enough up they won't let us out of the cave\nI'm not sure what to do, do you?\n[[Just follow me|Beta.Day1.Morning.Start.Yes]]\n[[No not really|Beta.Day1.Morning.Start.No]]\n[[I'm just doing what they tell me|Beta.Day1.Morning.Start.Maybe]]",
 		"position": {
-			"x": 16,
-			"y": 67
+			"x": -505,
+			"y": -116
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Beta.Day1.Evening.Start",
 		"tags": "",
-		"body": "Made it through my first day. it starts again tomorrow",
+		"body": "Made it through my first day. it starts over again tomorrow\nI think I can get the hang of this\nHow long do they expect us to survive anyway?",
 		"position": {
-			"x": 5,
-			"y": 296
+			"x": -508,
+			"y": 89
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Beta.Day2.Morning.Start",
 		"tags": "",
-		"body": "I couldn't sleep well, could you?",
+		"body": "I couldn't sleep well, could you?\n[[I can't get used to this place|Beta.Day2.Morning.Start.Yes]]\n[[I guess I slept alright|Beta.Day2.Morning.Start.No]]\n[[I had some strange dreams|Beta.Day2.Morning.Start.Maybe]]",
 		"position": {
-			"x": 238,
-			"y": 68
+			"x": -507,
+			"y": 296
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Node4",
+		"title": "Beta.Day2.Evening.Start",
 		"tags": "",
-		"body": "Empty Text",
+		"body": "Are they gonna feed us any more than they are?\nHow do they expect us to get their fucking rocks if we're hungry all the time\n",
 		"position": {
-			"x": 245,
-			"y": 294
+			"x": -509,
+			"y": 503
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Node5",
+		"title": "Beta.Day3.Morning.Start",
 		"tags": "",
-		"body": "Empty Text",
+		"body": "I don't think I've had a dream since I got here\nI think I'm too tired at the end of the day to dream\nThis place, is like a nightmare",
 		"position": {
-			"x": 473,
-			"y": 65
+			"x": -510,
+			"y": 713
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Node6",
+		"title": "Beta.Day3.Evening.Start",
 		"tags": "",
-		"body": "Empty Text",
+		"body": "Night must fall when we're underground\nI seem to only see the sun in the morning\nI wonder how bad it's going to be in winter, will we even see the sun?",
 		"position": {
-			"x": 475,
+			"x": -509,
+			"y": 917
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Beta.Day1.Morning.Start.Yes",
+		"tags": "",
+		"body": "You're the channeler right? Yeah I figured.\nThey told us you're supposed to be able to \"see\" the stones somehow\n[[Beta.Day1.Morning.Start2]]",
+		"position": {
+			"x": -290,
+			"y": -114
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Beta.Day1.Morning.Start.No",
+		"tags": "",
+		"body": "No earthly idea, huh\nI suppose it's really their fault if we can't do our job\n[[Beta.Day1.Morning.Start2]]",
+		"position": {
+			"x": -70,
+			"y": -121
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Beta.Day1.Morning.Start.Maybe",
+		"tags": "",
+		"body": "Well yeah, they're the ones pointing guns at us all the time\n[[Beta.Day1.Morning.Start2]]",
+		"position": {
+			"x": 145,
+			"y": -129
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Beta.Day1.Morning.Start2",
+		"tags": "",
+		"body": "God, I hate this",
+		"position": {
+			"x": 360,
+			"y": -129
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Beta.Day2.Morning.Start.Yes",
+		"tags": "",
+		"body": "Yeah, A place like this, it just feels cursed\n[[Beta.Day2.Morning.Start2]]",
+		"position": {
+			"x": -288,
 			"y": 293
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Beta.Day2.Morning.Start.No",
+		"tags": "",
+		"body": "heh, lucky\n[[Beta.Day2.Morning.Start2]]",
+		"position": {
+			"x": -71,
+			"y": 292
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Beta.Day2.Morning.Start.Maybe",
+		"tags": "",
+		"body": "Someone told me channelers tend to get weird dreams\nI can't even begin to imagine what they must be like\n[[Beta.Day2.Morning.Start2]]",
+		"position": {
+			"x": 150,
+			"y": 289
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Beta.Day2.Morning.Start2",
+		"tags": "",
+		"body": "Alright, I guess we should, uh\nMine these fucking rocks",
+		"position": {
+			"x": 373,
+			"y": 289
 		},
 		"colorID": 0
 	}

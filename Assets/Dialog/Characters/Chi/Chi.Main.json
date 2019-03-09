@@ -2,50 +2,50 @@
 	{
 		"title": "Chi.Day1.Morning.Start",
 		"tags": "",
-		"body": "Good? Morning? It's Day 1?",
+		"body": "....he-hello?\n....\n...?\n.... please don't talk to me",
 		"position": {
-			"x": 31,
-			"y": 87
+			"x": -562,
+			"y": -55
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Chi.Day1.Evening",
+		"title": "Chi.Day1.Evening.Start",
 		"tags": "",
-		"body": "Made it through the first day without dying, weird",
+		"body": "....\n... I'm sorry, I...\nI don't...want\nwant to .... talk",
 		"position": {
-			"x": 253,
-			"y": 88
+			"x": -560,
+			"y": 153
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Chi.Day2.Morning.Start",
 		"tags": "",
-		"body": "I'm Hungry",
+		"body": ".... \n.... why are you talking ....\nto ... to me?\n...",
 		"position": {
-			"x": 29,
-			"y": 304
+			"x": -558,
+			"y": 359
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Chi.Day2.Evening.Start",
 		"tags": "",
-		"body": "I didn't die, surprise",
+		"body": ".... \nwhy do you keep trying to...\nto... to talk to me?\n[[I care about you|Chi.Day2.Evening.Start.Yes]]\n[[I want to see if you'll say something|Chi.Day2.Evening.Start.No]]\n[[I want something|Chi.Day2.Evening.Start.Maybe]]",
 		"position": {
-			"x": 255,
-			"y": 304
+			"x": -555,
+			"y": 564
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Chi.Day3.Morning",
+		"title": "Chi.Day3.Morning.Start",
 		"tags": "",
-		"body": "Made it to day 3 of the demo, weird",
+		"body": "Hey\n\"hey\"",
 		"position": {
-			"x": 31,
-			"y": 515
+			"x": -559,
+			"y": 771
 		},
 		"colorID": 0
 	},
@@ -54,8 +54,38 @@
 		"tags": "",
 		"body": "This is the end of the demo, please give me 350 large and 24 months\nto finish this game",
 		"position": {
-			"x": 257,
-			"y": 516
+			"x": -554,
+			"y": 987
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Chi.Day2.Evening.Start.Yes",
+		"tags": "",
+		"body": "You....care about me?\nYou care about me??\nI'm sorry\nI'm not worth being cared about\n\"Don't say that\"\nWhy do you care about me?\nforget it",
+		"position": {
+			"x": -174,
+			"y": 561
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Chi.Day2.Evening.Start.No",
+		"tags": "",
+		"body": ".... well\nI have nothing to say to you except\nfuck off",
+		"position": {
+			"x": 391,
+			"y": 565
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Chi.Day2.Evening.Start.No",
+		"tags": "",
+		"body": "Well...I don't have ..anything \nfor you\n...\nlook around you. None of us have anything",
+		"position": {
+			"x": 138,
+			"y": 561
 		},
 		"colorID": 0
 	}

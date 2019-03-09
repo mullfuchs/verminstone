@@ -46,6 +46,7 @@ public class CampNarrativeController : MonoBehaviour {
 			npc.GetComponent<Yarn.Unity.Example.NPC> ().talkToNode = startnode;
 		}
     }
+		
 
 	public string GetStartNode(string characterName, int day, timePeriod time_of_day){
 		string startNode = characterName + ".Day" + day + "." + time_of_day.ToString() + ".Start";

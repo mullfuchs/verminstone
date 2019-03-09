@@ -2,60 +2,140 @@
 	{
 		"title": "Alpha.Day1.Evening.Start",
 		"tags": "",
-		"body": "It's the nite start node, day 1",
+		"body": "Bugs! The entire cave is filled with bugs\nI knew they were down there but I never...\nFuck.",
 		"position": {
-			"x": 35,
-			"y": 303
+			"x": -223,
+			"y": 196
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Alpha.Day1.Morning.Start",
 		"tags": "",
-		"body": "It's Day one baby, time to drink some moonshine",
+		"body": "????\nYou look new here\n\nWhat's your name?\n[[Emma|Alpha.Day1.Morning.Start.Yes]]\n[[Not telling|Alpha.Day1.Morning.Start.No]]\n[[...|Alpha.Day1.Morning.Start.Maybe]]",
 		"position": {
-			"x": 28,
-			"y": 58
+			"x": -233,
+			"y": -30
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Alpha.Day2.Morning.Start",
 		"tags": "",
-		"body": "I've lived another day, but to what end?",
+		"body": "I couldn't sleep well last night, these bunks are terrible\nI guess they figure we won't live long enough, so why should they even get us good beds",
 		"position": {
-			"x": 277,
-			"y": 53
+			"x": -224,
+			"y": 417
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Alpha.Day2.Evening.Start",
 		"tags": "",
-		"body": "I made it through another day, ugh",
+		"body": "I made it through another day, ugh\n\nSo, personal question but, how'd you end up losing your freedom?\n[[Family Farm|Alpha.Day2.Evening.Start.Yes]]\n[[I don't want to say|Alpha.Day2.Evening.Start.No]]\n[[Lie|Alpha.Day2.Evening.Start.Maybe]]",
 		"position": {
-			"x": 286,
-			"y": 296
+			"x": -225,
+			"y": 645
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Alpha.Day3.Morning.Start",
 		"tags": "",
-		"body": "Third day, I'm cold",
+		"body": "I'm so cold, these tents don't keep any heat\nWe have a heater too, but they don't give us any wood for it, what's the point?",
 		"position": {
-			"x": 526,
-			"y": 48
+			"x": -231,
+			"y": 868
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Alpha.Day3.Evening.Start",
 		"tags": "",
-		"body": "Made it to the end of the demo.",
+		"body": "I've survived three days in that cave\nI was pretty resigned at this point but with you leading us I feel a bit better\n",
 		"position": {
-			"x": 527,
-			"y": 299
+			"x": -234,
+			"y": 1087
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Alpha.Day1.Morning.Start.No",
+		"tags": "",
+		"body": "Oh not telling huh? I get that.\n[[Alpha.Day1.Morning.Start2]]",
+		"position": {
+			"x": 274,
+			"y": -58
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Alpha.Day1.Morning.Start.Yes",
+		"tags": "",
+		"body": "Emma's a good name, I don't think I met an Emma Before\n[[Alpha.Day1.Morning.Start2]]",
+		"position": {
+			"x": 18,
+			"y": -33
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Alpha.Day1.Morning.Start.Maybe",
+		"tags": "",
+		"body": "Silent type huh? \n[[Alpha.Day1.Morning.Start2]]",
+		"position": {
+			"x": 513,
+			"y": -37
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Alpha.Day1.Morning.Start2",
+		"tags": "",
+		"body": "People always told me \"good luck\", and I'd tell you the same, but. \nWell luck just doesn't mean shit does it?",
+		"position": {
+			"x": 791,
+			"y": -40
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Alpha.Day2.Evening.Start.Yes",
+		"tags": "",
+		"body": "\"Our family farm's debt, we didn't make enough in last season's harvest to cover the interest\"\nOh the intrest huh? Ain't that fucking terrible\nYou owe money, and they want to make a profit off that too\n[[Alpha.Day2.Evening.Start2]]",
+		"position": {
+			"x": 10,
+			"y": 635
+		},
+		"colorID": 6
+	},
+	{
+		"title": "Alpha.Day2.Evening.Start.No",
+		"tags": "",
+		"body": "Oh, is it painful, huh? I understand\n[[Alpha.Day2.Evening.Start2]]",
+		"position": {
+			"x": 244,
+			"y": 634
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Alpha.Day2.Evening.Start.Maybe",
+		"tags": "",
+		"body": "\"I shot someone\"\n[[Alpha.Day2.Evening.Start2]]",
+		"position": {
+			"x": 472,
+			"y": 638
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Alpha.Day2.Evening.Start2",
+		"tags": "",
+		"body": "Well me, I was walking on the wrong side of the street\nSome cops were just rounding people up and they took me\nCharged me with \"evading peace officers\" or something\nI only was able to send a single letter out to my folks before they shipped me to the market\nI still think about what I was doing that day, why the hell I decided to go for a walk at that particular time\nThats why I said I just stopped beliving it when people told me \"Good Luck\"\nLike that's supposed to mean something",
+		"position": {
+			"x": 754,
+			"y": 625
 		},
 		"colorID": 0
 	}
