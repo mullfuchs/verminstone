@@ -157,6 +157,13 @@ public class CampEventController : MonoBehaviour {
         //Sun.transform.Rotate( new Vector3(7.633f,-201.307f,-153.5f));
         //advance time
         gameObject.GetComponent<CampNarrativeController>().day += 1;
+		gameObject.GetComponent<CampNarrativeController>().timeOfDay = CampNarrativeController.timePeriod.Morning;
+		gameObject.GetComponent<CampNarrativeController> ().AdvanceDialogDayOfNPCs ();
+		//gameObject.GetComponent<CampNarrativeController> ().AdvanceDialoyDayOfKeyNPCs ();
+		gameObject.GetComponent<CampNarrativeController> ().UpdateNPCNarratives ();
+		//gameObject.GetComponent<CampNarrativeController> ().UpdateKeyNPCNarratives ();
+
+
         //fade in
         caveEntrance.GetComponent<CaveEntrance>().LoadLevelOnEnter = true;
         GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.clear, 2.0f);
@@ -167,12 +174,16 @@ public class CampEventController : MonoBehaviour {
 	public void EnterCaveSequence(){
 		//set cave entrance object to be inactive
 		//caveExitObject.LoadLevelOnEnter = false;
+
 		caveEntrance.SetActive(false);
 		caveExit.SetActive(false);
 	}
 
 	public void ExitCaveSequence(){
 		print ("exiting cave");
+		gameObject.GetComponent<CampNarrativeController>().timeOfDay = CampNarrativeController.timePeriod.Evening;
+		gameObject.GetComponent<CampNarrativeController> ().UpdateNPCNarratives ();
+		//gameObject.GetComponent<CampNarrativeController> ().UpdateKeyNPCNarratives ();
 		//set the object to be active
 		caveExit.SetActive(true);
 		caveEntrance.SetActive (true);

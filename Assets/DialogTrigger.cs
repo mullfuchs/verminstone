@@ -39,6 +39,9 @@ namespace Yarn.Unity.Example{
 			});
 			if (target != null) {
 				// Kick off the dialogue at this node.
+				if (target.GetComponentInParent<NPCstats> ().hasBeenTalkedToToday == false) {
+					target.GetComponentInParent<NPCstats> ().hasBeenTalkedToToday = true;
+				}
 				FindObjectOfType<DialogueRunner> ().StartDialogue (target.talkToNode);
 
 			}
