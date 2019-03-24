@@ -45,6 +45,7 @@ namespace Yarn.Unity.Example {
 		// The object that contains the dialogue and the options.
 		// This object will be enabled when conversation starts, and
 		// disabled when it ends.
+		public GameObject dialogAndPortraitContainer;
 		public GameObject dialogueContainer;
 		
 		// The UI element that displays lines
@@ -69,8 +70,10 @@ namespace Yarn.Unity.Example {
 		void Awake ()
 		{
 			// Start by hiding the container, line and option buttons
-			if (dialogueContainer != null)
+			if (dialogueContainer != null) {
+				dialogAndPortraitContainer.SetActive (false);
 				dialogueContainer.SetActive(false);
+			}
 			
 			lineText.gameObject.SetActive (false);
 			
@@ -180,8 +183,10 @@ namespace Yarn.Unity.Example {
 			Debug.Log ("Dialogue starting!");
 			
 			// Enable the dialogue controls.
-			if (dialogueContainer != null)
-				dialogueContainer.SetActive(true);
+			if (dialogueContainer != null) {
+				dialogAndPortraitContainer.SetActive (true);
+				dialogueContainer.SetActive (true);
+			}
 
 			// Hide the game controls.
 			if (gameControlsContainer != null) {
@@ -198,6 +203,7 @@ namespace Yarn.Unity.Example {
 
 			// Hide the dialogue interface.
 			if (dialogueContainer != null)
+				dialogAndPortraitContainer.SetActive(false);
 				dialogueContainer.SetActive(false);
 
 			// Show the game controls.
