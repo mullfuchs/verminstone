@@ -42,8 +42,8 @@ namespace Yarn.Unity.Example{
 				if (target.GetComponentInParent<NPCstats> ().hasBeenTalkedToToday == false) {
 					target.GetComponentInParent<NPCstats> ().hasBeenTalkedToToday = true;
 				}
+				FindObjectOfType<DialogPortraitController> ().populateDialogPortraits (gameObject.GetComponent<NPCstats>().DialogPortraits, target.GetComponent<NPCstats>().DialogPortraits );
 				FindObjectOfType<DialogueRunner> ().StartDialogue (target.talkToNode);
-
 			}
 		}
 
@@ -73,6 +73,8 @@ namespace Yarn.Unity.Example{
 			}
 			return closest;
 		}
+
+
 	}
 
 }

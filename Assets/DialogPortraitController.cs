@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogPortraitController : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class DialogPortraitController : MonoBehaviour
     
     //array or list for left images here
     //array or list for right images
+	public Image[] leftImages;
+	public Image[] rightImages;
+
 
     // Use this for initialization
     void Start()
@@ -31,42 +35,49 @@ public class DialogPortraitController : MonoBehaviour
     //some kind of fucking, I dunno, populate image function
     //when a dialog starts it calls a function that gets both dialog members and pulls their dialog portraits in, which are stored on the NPC themselves
     //
-    public void populateDialogPortraits()
+	public void populateDialogPortraits(Image[] leftPortraits, Image[] rightPortraits)
     {
-
+		leftImages = leftPortraits;
+		rightImages = rightPortraits;
     }
 
     [Yarn.Unity.YarnCommand("setLeftPortraitImage")]
     public void ChangeLeftImage(string imageName)
     {
+		Image portrait = GetImage (imageName, leftImages);
+		if (portrait != null) {
+			leftPortrait.GetComponent<Image> () = portrait;
+		}
        // leftPortrait.GetComponent<UnityEngine.UI.Image>().sprite = ?
     }
 
     [Yarn.Unity.YarnCommand("setRightPortraitImage")]
     public void ChangeRightImage(string imageName)
     {
-
+		Image portrait = GetImage (imageName, rightImages);
+		if (portrait != null) {
+			rightPortrait.GetComponent<Image> () = portrait;
+		}
     }
 
-    public void UseSprite(string spriteName)
+	public Image GetImage(string imageName, Image[] images)
     {
 
-        Sprite s = null;
-        foreach (var info in sprites)
+        Image s = null;
+		foreach (Image info in images)
         {
-            if (info.name == spriteName)
+			if (info.name == imageName)
             {
-                s = info.sprite;
+                s = info;
                 break;
             }
         }
         if (s == null)
         {
-            Debug.LogErrorFormat("Can't find sprite named {0}!", spriteName);
-            return;
+			Debug.LogErrorFormat("Can't find sprite named {0}!", imageName);
+            return null;
         }
-
-        GetComponent<SpriteRenderer>().sprite = s;
+		return s;
     }
 
 
