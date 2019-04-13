@@ -41,22 +41,22 @@ public class DialogPortraitController : MonoBehaviour
 		rightImages = rightPortraits;
     }
 
-    [Yarn.Unity.YarnCommand("setLeftPortraitImage")]
+    [Yarn.Unity.YarnCommand("setLeftPortrait")]
     public void ChangeLeftImage(string imageName)
     {
 		Image portrait = GetImage (imageName, leftImages);
 		if (portrait != null) {
-			leftPortrait.GetComponent<Image> () = portrait;
+			leftPortrait.GetComponent<Image>().sprite = portrait.sprite;
 		}
        // leftPortrait.GetComponent<UnityEngine.UI.Image>().sprite = ?
     }
 
-    [Yarn.Unity.YarnCommand("setRightPortraitImage")]
+    [Yarn.Unity.YarnCommand("setRightPortrait")]
     public void ChangeRightImage(string imageName)
     {
 		Image portrait = GetImage (imageName, rightImages);
 		if (portrait != null) {
-			rightPortrait.GetComponent<Image> () = portrait;
+			rightPortrait.GetComponent<Image> ().sprite = portrait.sprite;
 		}
     }
 
