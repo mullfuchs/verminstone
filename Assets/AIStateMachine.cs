@@ -136,6 +136,7 @@ public class AIStateMachine : MonoBehaviour {
         if(target != null)
         {
             this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target = target.transform;
+			this.GetComponent<IKControl> ().lookObj = target.transform;	
         }
 	}
 
@@ -305,15 +306,18 @@ public class AIStateMachine : MonoBehaviour {
 	}
 		
 	GameObject getTargetObject(){
-        GameObject obj = this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target.gameObject;
-        if(obj != null)
-        {
-            return obj;
-        }
-        else
-        {
-            return null;
-        }
+		if (this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> () != null) {
+			GameObject obj = this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().target.gameObject;
+			if(obj != null)
+			{
+				return obj;
+			}
+			else
+			{
+				return null;
+			}
+		}
+		return null;
         //return this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target.gameObject;
 	}
 
