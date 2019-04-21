@@ -12,7 +12,7 @@
 	{
 		"title": "Alpha.Day1.Morning.Start",
 		"tags": "",
-		"body": "????\nYou look new here\n\nWhat's your name?\n[[Emma|Alpha.Day1.Morning.Start.Yes]]\n[[Not telling|Alpha.Day1.Morning.Start.No]]\n[[...|Alpha.Day1.Morning.Start.Maybe]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer alpha_default_silent>>\n????\n<<setLeftPortrait DialogAndPortraitContainer alpha_default_talking>>\nYou look new here\nWhat's your name?\n[[Emma|Alpha.Day1.Morning.Start.Yes]]\n[[Not telling|Alpha.Day1.Morning.Start.No]]\n[[...|Alpha.Day1.Morning.Start.Maybe]]",
 		"position": {
 			"x": -233,
 			"y": -30
@@ -62,7 +62,7 @@
 	{
 		"title": "Alpha.Day1.Morning.Start.No",
 		"tags": "",
-		"body": "Oh not telling huh? I get that.\n[[Alpha.Day1.Morning.Start2]]",
+		"body": "<<setLeftPortrait DialogAndPortraitContainer alpha_default_talking>>\nOh not telling huh? I get that.\n[[Alpha.Day1.Morning.Start2]]",
 		"position": {
 			"x": 274,
 			"y": -58
@@ -72,7 +72,7 @@
 	{
 		"title": "Alpha.Day1.Morning.Start.Yes",
 		"tags": "",
-		"body": "Emma's a good name, I don't think I met an Emma Before\n[[Alpha.Day1.Morning.Start2]]",
+		"body": "<<setLeftPortrait DialogAndPortraitContainer alpha_default_talking>>\nEmma's a good name, I don't think I met an Emma Before\n[[Alpha.Day1.Morning.Start2]]",
 		"position": {
 			"x": 18,
 			"y": -33
@@ -82,7 +82,7 @@
 	{
 		"title": "Alpha.Day1.Morning.Start.Maybe",
 		"tags": "",
-		"body": "Silent type huh? \n[[Alpha.Day1.Morning.Start2]]",
+		"body": "<<setLeftPortrait DialogAndPortraitContainer alpha_default_talking>>\nSilent type huh? \n<<setLeftPortrait DialogAndPortraitContainer alpha_default_silent>>\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\nNope\n[[Alpha.Day1.Morning.Start2]]",
 		"position": {
 			"x": 513,
 			"y": -37
@@ -92,7 +92,7 @@
 	{
 		"title": "Alpha.Day1.Morning.Start2",
 		"tags": "",
-		"body": "People always told me \"good luck\", and I'd tell you the same, but. \nWell luck just doesn't mean shit does it?",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer alpha_default_talking>>\nPeople always told me \"good luck\", and I'd tell you the same, but. \n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer alpha_default_silent>>\nWell luck just doesn't mean shit does it?",
 		"position": {
 			"x": 791,
 			"y": -40

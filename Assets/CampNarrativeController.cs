@@ -38,6 +38,7 @@ public class CampNarrativeController : MonoBehaviour {
 			dialogNamespace = NPCDialogs [i].name.Split (charSeparators, System.StringSplitOptions.None);
 			string characterName = dialogNamespace [0];
 			npcs [i].GetComponent<Yarn.Unity.Example.NPC> ().characterName = characterName;
+            npcs[i].GetComponent<NPCstats>().NPCName = characterName;
 			print ("setting dialog for char " + characterName);
 		}
 		UpdateNPCNarratives ();
@@ -49,7 +50,7 @@ public class CampNarrativeController : MonoBehaviour {
 		foreach (GameObject npc in npcs) {
 			//get name of npc, if it exists
 			//maybe make an object that holds the npc name and associated portraits
-			string name = npc.GetComponent<NPCstats>().name;
+			string name = npc.GetComponent<NPCstats>().NPCName;
 			foreach (npcPortraitObject portraitObject in NPCPortraitObjects) {
 				if (name == portraitObject.NPCName) {
 					npc.GetComponent<NPCstats> ().DialogPortraits = portraitObject.portraits;

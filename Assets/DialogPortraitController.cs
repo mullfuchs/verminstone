@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
 public class DialogPortraitController : MonoBehaviour
 {
     /*
@@ -44,6 +46,7 @@ public class DialogPortraitController : MonoBehaviour
     [Yarn.Unity.YarnCommand("setLeftPortrait")]
     public void ChangeLeftImage(string imageName)
     {
+        print("setting left portrait");
 		Sprite portrait = GetImage (imageName, leftImages);
 		if (portrait != null) {
 			leftPortrait.GetComponent<Image>().sprite = portrait;
@@ -54,6 +57,7 @@ public class DialogPortraitController : MonoBehaviour
     [Yarn.Unity.YarnCommand("setRightPortrait")]
     public void ChangeRightImage(string imageName)
     {
+        print("setting right portrait");
 		Sprite portrait = GetImage (imageName, rightImages);
 		if (portrait != null) {
 			rightPortrait.GetComponent<Image> ().sprite = portrait;
@@ -66,6 +70,7 @@ public class DialogPortraitController : MonoBehaviour
 		Sprite s = null;
 		foreach (Sprite info in images)
         {
+            print("sprint named " + info.name);
 			if (info.name == imageName)
             {
                 s = info;
