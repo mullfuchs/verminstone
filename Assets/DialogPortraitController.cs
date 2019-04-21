@@ -17,8 +17,8 @@ public class DialogPortraitController : MonoBehaviour
     
     //array or list for left images here
     //array or list for right images
-	public Image[] leftImages;
-	public Image[] rightImages;
+	public Sprite[] leftImages;
+	public Sprite[] rightImages;
 
 
     // Use this for initialization
@@ -35,7 +35,7 @@ public class DialogPortraitController : MonoBehaviour
     //some kind of fucking, I dunno, populate image function
     //when a dialog starts it calls a function that gets both dialog members and pulls their dialog portraits in, which are stored on the NPC themselves
     //
-	public void populateDialogPortraits(Image[] leftPortraits, Image[] rightPortraits)
+	public void populateDialogPortraits(Sprite[] leftPortraits, Sprite[] rightPortraits)
     {
 		leftImages = leftPortraits;
 		rightImages = rightPortraits;
@@ -44,9 +44,9 @@ public class DialogPortraitController : MonoBehaviour
     [Yarn.Unity.YarnCommand("setLeftPortrait")]
     public void ChangeLeftImage(string imageName)
     {
-		Image portrait = GetImage (imageName, leftImages);
+		Sprite portrait = GetImage (imageName, leftImages);
 		if (portrait != null) {
-			leftPortrait.GetComponent<Image>().sprite = portrait.sprite;
+			leftPortrait.GetComponent<Image>().sprite = portrait;
 		}
        // leftPortrait.GetComponent<UnityEngine.UI.Image>().sprite = ?
     }
@@ -54,17 +54,17 @@ public class DialogPortraitController : MonoBehaviour
     [Yarn.Unity.YarnCommand("setRightPortrait")]
     public void ChangeRightImage(string imageName)
     {
-		Image portrait = GetImage (imageName, rightImages);
+		Sprite portrait = GetImage (imageName, rightImages);
 		if (portrait != null) {
-			rightPortrait.GetComponent<Image> ().sprite = portrait.sprite;
+			rightPortrait.GetComponent<Image> ().sprite = portrait;
 		}
     }
 
-	public Image GetImage(string imageName, Image[] images)
+	public Sprite GetImage(string imageName, Sprite[] images)
     {
 
-        Image s = null;
-		foreach (Image info in images)
+		Sprite s = null;
+		foreach (Sprite info in images)
         {
 			if (info.name == imageName)
             {

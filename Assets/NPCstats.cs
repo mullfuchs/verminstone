@@ -13,7 +13,7 @@ public class NPCstats : MonoBehaviour {
 	public GameObject ragDollObject;
 	public bool hasBeenTalkedToToday = false;
 	public int daysTalkedTo = 1;
-	public UnityEngine.UI.Image[] DialogPortraits;
+	public Sprite[] DialogPortraits;
 
 	// Use this for initialization
 	void Start () {

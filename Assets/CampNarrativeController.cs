@@ -14,12 +14,17 @@ public class CampNarrativeController : MonoBehaviour {
 
 	public GameObject[] KeyNPCs;
 
+	public npcPortraitObject[] NPCPortraitObjects;
+
+	public npcPortraitObject[] KeyNPCPortraitObjects;
+
 	// Use this for initialization
 	void Start () {
 	    //get the list of npcs
 		day = 1;
 		timeOfDay = timePeriod.Morning;
 		SetUpNarratives();
+		SetUpNPCPortraits ();
 	}
 
 	public void SetUpNarratives(){
@@ -36,6 +41,23 @@ public class CampNarrativeController : MonoBehaviour {
 			print ("setting dialog for char " + characterName);
 		}
 		UpdateNPCNarratives ();
+	}
+
+	public void SetUpNPCPortraits(){
+		GameObject[] npcs;
+		npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
+		foreach (GameObject npc in npcs) {
+			//get name of npc, if it exists
+			//maybe make an object that holds the npc name and associated portraits
+			string name = npc.GetComponent<NPCstats>().name;
+			foreach (npcPortraitObject portraitObject in NPCPortraitObjects) {
+				if (name == portraitObject.NPCName) {
+					npc.GetComponent<NPCstats> ().DialogPortraits = portraitObject.portraits;
+				} else {
+					print ("No portraits found, uh, fix that");
+				}
+			}
+		}
 	}
 
     public void UpdateNPCNarratives()
@@ -93,4 +115,10 @@ public class CampNarrativeController : MonoBehaviour {
 	void Update () {
 		
 	}
+}
+
+[System.Serializable] 
+public class npcPortraitObject{
+	public string NPCName;
+	public Sprite[] portraits;
 }
