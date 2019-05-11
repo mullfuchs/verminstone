@@ -44,17 +44,18 @@ public class CampNarrativeController : MonoBehaviour {
 	}
 
 	public void SetUpNPCPortraits(){
+		print ("setting up portraits");
 		GameObject[] npcs;
 		npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
 		foreach (GameObject npc in npcs) {
 			//get name of npc, if it exists
 			//maybe make an object that holds the npc name and associated portraits
-			string name = npc.GetComponent<NPCstats>().name;
+			string name = npc.GetComponent<NPCstats>().NPCName;
 			foreach (npcPortraitObject portraitObject in NPCPortraitObjects) {
 				if (name == portraitObject.NPCName) {
 					npc.GetComponent<NPCstats> ().DialogPortraits = portraitObject.portraits;
 				} else {
-					print ("No portraits found, uh, fix that");
+					print ("No portraits found for npc: " + name);
 				}
 			}
 		}
