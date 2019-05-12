@@ -12,7 +12,7 @@ public class EnemyTeamHandler : MonoBehaviour {
 
     public GameObject SwarmEnemy;
     public GameObject MediumEnemy;
-    public GameObject HeavyPatrolEnemy;
+    public GameObject BossEnemy;
 
 	public int floorLevel = 1;
 
@@ -44,6 +44,16 @@ public class EnemyTeamHandler : MonoBehaviour {
 
 		closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(SwarmEnemy, MinerList.ToArray(), floorLevel, floorLevel);
 		randSpawner.GetComponent<SpawnObjects> ().SpawnEnemy (SwarmEnemy, MinerList.ToArray (), floorLevel, floorLevel);
+
+		//one out of like..10 chance to spawn a medium
+		if (Random.Range (1, 10) <= 1) {
+			closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(MediumEnemy, MinerList.ToArray(), floorLevel, floorLevel);
+		}
+		//one out of like 20 to spawn a boss
+		if (Random.Range (1, 20) <= 1) {
+			closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(BossEnemy, MinerList.ToArray(), floorLevel, floorLevel);
+		}
+
 
 
     }
