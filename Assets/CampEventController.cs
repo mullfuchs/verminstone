@@ -162,7 +162,7 @@ public class CampEventController : MonoBehaviour {
 		//gameObject.GetComponent<CampNarrativeController> ().AdvanceDialoyDayOfKeyNPCs ();
 		gameObject.GetComponent<CampNarrativeController> ().UpdateNPCNarratives ();
 		//gameObject.GetComponent<CampNarrativeController> ().UpdateKeyNPCNarratives ();
-
+		gameObject.GetComponent<VStoneEconomyObject>().IncreaseDailyQuota(gameObject.GetComponent<CampNarrativeController>().day);
 
         //fade in
         caveEntrance.GetComponent<CaveEntrance>().LoadLevelOnEnter = true;

@@ -87,16 +87,18 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 			yield return null;
 		}
 		yield return new WaitForSeconds (5.0f);
-		//GameObject foreman = GameObject.FindWithTag ("Foreman");
-		//GameObject.Find ("MultipurposeCameraRig").GetComponent<ZoomNFocus> ().focusOnNPC (foreman.transform);
-        //start foreman dialog
-        //FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue(foreman.GetComponent<Yarn.Unity.Example.NPC>().talkToNode);
-        //wait until dialog finished
-        //yield return new WaitForSeconds (4.0f);
-		//GameObject.Find ("MultipurposeCameraRig").GetComponent<ZoomNFocus> ().reset ();
+
         print("total vstone collected this run: " + VStoneEcoInstance.getDailyTotal());
 		print ("total vstone collected during this save: " + VStoneEcoInstance.getTotalCollected ());
-		EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
+
+		if (VStoneEcoInstance.meetsDailyQuota (VStoneEcoInstance.getDailyTotal ())) {
+			//door lowring thing goes here
+			EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
+		} else {
+			print ("go back 2 the caves");
+			VStoneEcoInstance.resetDailyTotal ();
+		}
+
 	}
 
 	void debugGetStonesFromCarriers(GameObject[] NPCCarrierArray){
