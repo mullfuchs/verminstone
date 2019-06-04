@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MineDoorController : MonoBehaviour {
+public class RagdollController : MonoBehaviour {
 
+	public GameObject NPCCopy;
 
 	// Use this for initialization
 	void Start () {
@@ -12,14 +13,6 @@ public class MineDoorController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
-
-	public void OpenMineDoor(){
-		
-	}
-
-	public void CloseMineDoor(){
 		
 	}
 }

@@ -99,7 +99,8 @@ public class health : MonoBehaviour {
         {
 			if(gameObject.GetComponent<NPCstats> ().ragDollObject != null){
                 GameObject.FindGameObjectWithTag("Player").GetComponent<NPCTeamHandler>().handleNPCDeath(gameObject);
-				Instantiate (gameObject.GetComponent<NPCstats> ().ragDollObject, gameObject.transform.position, gameObject.transform.rotation);
+				GameObject ragdoll = Instantiate (gameObject.GetComponent<NPCstats> ().ragDollObject, gameObject.transform.position, gameObject.transform.rotation);
+				ragdoll.GetComponent<RagdollController> ().NPCCopy = this.gameObject;
 			}
 
 			if (gameObject.GetComponent<NPCInventory> () != null) {
