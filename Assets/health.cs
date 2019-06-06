@@ -100,7 +100,9 @@ public class health : MonoBehaviour {
 			if(gameObject.GetComponent<NPCstats> ().ragDollObject != null){
                 GameObject.FindGameObjectWithTag("Player").GetComponent<NPCTeamHandler>().handleNPCDeath(gameObject);
 				GameObject ragdoll = Instantiate (gameObject.GetComponent<NPCstats> ().ragDollObject, gameObject.transform.position, gameObject.transform.rotation);
-				ragdoll.GetComponent<RagdollController> ().NPCCopy = this.gameObject;
+                ragdoll.GetComponent<RagdollController>().NPCCopy = this.gameObject;
+                this.gameObject.transform.parent = ragdoll.transform;
+                this.gameObject.SetActive(false);
 			}
 
 			if (gameObject.GetComponent<NPCInventory> () != null) {
@@ -112,9 +114,8 @@ public class health : MonoBehaviour {
 					inventory.DropHandItem ();
 				}
 			}
-
-
 			gameObject.GetComponent<AIStateMachine>().handleDeath();
+            return;
         }
 			
         Destroy(this.gameObject);

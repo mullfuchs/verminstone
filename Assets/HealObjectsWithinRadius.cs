@@ -27,14 +27,20 @@ public class HealObjectsWithinRadius : MonoBehaviour {
             }
         }
 
-		if (other.name == "WorkerNPCRagdoll" && objectHealth != null) {
+		if (other.tag == "RagDoll") {
 			RessurectNPC (other.gameObject);
 		}
 
     }
 
 	void RessurectNPC(GameObject npc){
-		GameObject.Instantiate (npc.GetComponent<RagdollController> ().NPCCopy, npc.transform.position, Quaternion.identity);
+        //GameObject npcBody = Instantiate (npc.GetComponent<RagdollController> ().NPCCopy, npc.transform.position, Quaternion.identity);
+        print("bringing npc back to life");
+        GameObject npcBody = npc.transform.parent.GetComponent<RagdollController>().NPCCopy;
+        npcBody.SetActive(true);
+        npcBody.transform.parent = null;
+        npcBody.GetComponent<health>().AddHealth(40.0f);
+        npcBody.transform.position = npc.transform.position;
 		Destroy (npc);
 		//ragdoll should have a reference to the npc
 		//spawn it in the same position as the ragdoll
