@@ -36,12 +36,12 @@ public class HealObjectsWithinRadius : MonoBehaviour {
 	void RessurectNPC(GameObject npc){
         //GameObject npcBody = Instantiate (npc.GetComponent<RagdollController> ().NPCCopy, npc.transform.position, Quaternion.identity);
         print("bringing npc back to life");
-        GameObject npcBody = npc.transform.parent.GetComponent<RagdollController>().NPCCopy;
+		GameObject npcBody = npc.transform.root.GetComponent<RagdollController>().NPCCopy;
         npcBody.SetActive(true);
         npcBody.transform.parent = null;
         npcBody.GetComponent<health>().AddHealth(40.0f);
         npcBody.transform.position = npc.transform.position;
-		Destroy (npc);
+		Destroy (npc.transform.root.gameObject);
 		//ragdoll should have a reference to the npc
 		//spawn it in the same position as the ragdoll
 		//destroy the ragdoll
