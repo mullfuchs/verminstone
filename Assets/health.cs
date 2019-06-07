@@ -104,7 +104,7 @@ public class health : MonoBehaviour {
                 this.gameObject.transform.parent = ragdoll.transform;
                 this.gameObject.SetActive(false);
 			}
-
+			/*
 			if (gameObject.GetComponent<NPCInventory> () != null) {
 				NPCInventory inventory = gameObject.GetComponent<NPCInventory> ();
 				if (inventory.ObjectOnBack != null) {
@@ -114,6 +114,7 @@ public class health : MonoBehaviour {
 					inventory.DropHandItem ();
 				}
 			}
+			*/
 			gameObject.GetComponent<AIStateMachine>().handleDeath();
             return;
         }

@@ -41,10 +41,8 @@ public class HealObjectsWithinRadius : MonoBehaviour {
         npcBody.transform.parent = null;
         npcBody.GetComponent<health>().AddHealth(40.0f);
         npcBody.transform.position = npc.transform.position;
+		npcBody.GetComponent<AIStateMachine> ().handleRessurection();
 		Destroy (npc.transform.root.gameObject);
-		//ragdoll should have a reference to the npc
-		//spawn it in the same position as the ragdoll
-		//destroy the ragdoll
 	}
 
 	//oh man what if you can heal, which takes health out of you, but you can suck the health out of npcs to get more vstone power? yeah

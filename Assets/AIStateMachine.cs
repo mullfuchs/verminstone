@@ -352,6 +352,11 @@ public class AIStateMachine : MonoBehaviour {
 		ChannelerIFollow.GetComponent<NPCTeamHandler>().RefreshNPCMinerList();
     }
 
+	public void handleRessurection()
+	{
+		ChannelerIFollow.GetComponent<NPCTeamHandler>().RefreshNPCMinerList();
+	}
+
 	public void PerformAttack(){
 		AttackHitBox.SetActive (true);
 		CanAttack = false;
