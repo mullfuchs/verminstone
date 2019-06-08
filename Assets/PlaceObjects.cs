@@ -7,8 +7,10 @@ public class PlaceObjects : MonoBehaviour {
 	public GameObject objectToAdd;
 	public GameObject spawnPointObject;
 	public GameObject sporeObject;
+	public GameObject fireSporeObject;
 	public GameObject AscendObjet;
 	public GameObject DescendObject;
+	public GameObject[] FloorObjects;
 	public bool finishedSpawning = false;
 	//
 	//List<Vector3> objectCoords = new List<Vector3>();
@@ -29,7 +31,7 @@ public class PlaceObjects : MonoBehaviour {
 		
 	}
 	//todo: refactor this
-	public List<FloorObject> PopulateMapList(List<Vector3> objectCoords, List<Vector3>SpawnPoints, List<Vector3>SporePoints){
+	public List<FloorObject> PopulateMapList(List<Vector3> objectCoords, List<Vector3>SpawnPoints, List<Vector3>SporePoints, List<Vector3>FireSporePoints){
 		List<FloorObject> objectList = new List<FloorObject>();
 		//disabling object spawning for now
 		foreach (Vector3 point in objectCoords) { 
@@ -42,6 +44,10 @@ public class PlaceObjects : MonoBehaviour {
 
 		foreach (Vector3 point in SporePoints) {
 			objectList.Add (new FloorObject (point, sporeObject));
+		}
+
+		foreach (Vector3 point in FireSporePoints) {
+			objectList.Add (new FloorObject (point, fireSporeObject));
 		}
 
 		FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorEntryPoint (), AscendObjet);

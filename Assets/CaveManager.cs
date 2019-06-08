@@ -37,10 +37,15 @@ public class CaveManager : MonoBehaviour {
 	void GenerateDungeon() {
 		for (int i = 0; i < numberOfFloorsToMake; i++) {
 			int[,] tempFloor = mapGenObject.GetComponent<GenerateMap> ().MakeFloor ();
+			//how many sets of points do we need?
+			//how do we figure out fill percent?
+			//as we get random points from the floor we should, like remove those points from possible points
+			//so we don't get overlapping things
 			List<Vector3> tempPositionList = mapGenObject.GetComponent<GenerateMap>().GetRandomPointsInRooms (2);
 			List<Vector3> spawnPointsList = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms (1);
 			List<Vector3> sporePointsList = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms (1);
-			List<PlaceObjects.FloorObject> tempObjList = mapGenObject.GetComponent<PlaceObjects> ().PopulateMapList (tempPositionList, spawnPointsList,sporePointsList);
+			List<Vector3> fireSporePointsList = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms (1);
+			List<PlaceObjects.FloorObject> tempObjList = mapGenObject.GetComponent<PlaceObjects> ().PopulateMapList (tempPositionList, spawnPointsList,sporePointsList,fireSporePointsList);
 			FloorList.Add( new Floor(tempFloor, tempObjList) );
 		}
 	}
