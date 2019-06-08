@@ -39,7 +39,7 @@ public class SpawnObjects : MonoBehaviour {
         print("targets: " + count);
         while(count > 0)
         {
-            StartCoroutine(spawnSingleEnemyTimed(delay, amount, SwarmEnemy, targets[count - 1]));
+            StartCoroutine(spawnSingleEnemyTimed(delay, amount, objectToSpawn, targets[count - 1]));
             count--;
             yield return new WaitForSeconds(delay);
         }

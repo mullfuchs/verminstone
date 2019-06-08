@@ -58,7 +58,6 @@ public class PowerObject : MonoBehaviour {
         if (Input.GetButtonDown("HealButton"))
         {
             HealingObject.SetActive(true);
-            RemovePowerAmount(0.1f);
         }
         if(Input.GetButtonUp("HealButton"))
         {

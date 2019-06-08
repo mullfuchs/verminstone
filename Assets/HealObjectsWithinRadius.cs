@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class HealObjectsWithinRadius : MonoBehaviour {
 
+    public float RessurectionPowerAmount = 5.0f;
     private health PlayerHealth;
+    private PowerObject PlayerPowerObject;
 
 	// Use this for initialization
 	void Start () {
         PlayerHealth = GameObject.Find("Player").GetComponent<health>();
-	}
+        PlayerPowerObject = GameObject.Find("Player").GetComponent<PowerObject>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -24,11 +27,13 @@ public class HealObjectsWithinRadius : MonoBehaviour {
             if (objectHealth.AddHealth(1.0f))
             {
                 PlayerHealth.AddDamage(0.3f);
+                PlayerPowerObject.RemovePowerAmount(0.1f);
             }
         }
 
-		if (other.tag == "RagDoll") {
+		if (other.tag == "RagDoll" && PlayerPowerObject.getPowerAmount() >= RessurectionPowerAmount) {
 			RessurectNPC (other.gameObject);
+            PlayerPowerObject.RemovePowerAmount(RessurectionPowerAmount);
 		}
 
     }

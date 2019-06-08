@@ -42,16 +42,19 @@ public class EnemyTeamHandler : MonoBehaviour {
 
 		List<GameObject> MinerList = playerTeamHandler.GetCurrentMiners();
 
-		closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(SwarmEnemy, MinerList.ToArray(), floorLevel, floorLevel);
+        closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(MediumEnemy, MinerList.ToArray(), 1, floorLevel);
+        closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(BossEnemy, MinerList.ToArray(), 1, floorLevel);
+
+        closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(SwarmEnemy, MinerList.ToArray(), floorLevel, floorLevel);
 		randSpawner.GetComponent<SpawnObjects> ().SpawnEnemy (SwarmEnemy, MinerList.ToArray (), floorLevel, floorLevel);
 
-		//one out of like..10 chance to spawn a medium
-		if (Random.Range (1, 10) <= 1) {
-			closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(MediumEnemy, MinerList.ToArray(), floorLevel, floorLevel);
+        //one out of like..10 chance to spawn a medium
+        if (Random.Range (0, 3) <= 1) {
+			//closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(MediumEnemy, MinerList.ToArray(), 1, floorLevel);
 		}
 		//one out of like 20 to spawn a boss
-		if (Random.Range (1, 20) <= 1) {
-			closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(BossEnemy, MinerList.ToArray(), floorLevel, floorLevel);
+		if (Random.Range (0, 5) <= 1) {
+			//closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(BossEnemy, MinerList.ToArray(), 1, floorLevel);
 		}
 
 
