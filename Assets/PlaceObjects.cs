@@ -10,7 +10,7 @@ public class PlaceObjects : MonoBehaviour {
 	public GameObject fireSporeObject;
 	public GameObject AscendObjet;
 	public GameObject DescendObject;
-	public GameObject[] FloorObjects;
+	public FloorObjectCreationSetup[] FloorObjects;
 	public bool finishedSpawning = false;
 	//
 	//List<Vector3> objectCoords = new List<Vector3>();
@@ -36,7 +36,7 @@ public class PlaceObjects : MonoBehaviour {
 		 
 		for (int i = 0; i < objectCoords.Length; i++) {
 			foreach (Vector3 point in objectCoords[i]) {
-				objectList.Add (new FloorObject (point, FloorObjects [i]));
+				objectList.Add (new FloorObject (point, FloorObjects [i].gameObjectType));
 			}
 		}
 		//disabling object spawning for now
@@ -93,6 +93,12 @@ public class PlaceObjects : MonoBehaviour {
 			return this.positionOnFloor;
 		}
 
+	}
+
+	[System.Serializable] public class FloorObjectCreationSetup
+	{
+		public GameObject gameObjectType;
+		public int FloorFillPercentage;
 	}
 		
 
