@@ -38,14 +38,26 @@ public class CaveManager : MonoBehaviour {
 		for (int i = 0; i < numberOfFloorsToMake; i++) {
 			int[,] tempFloor = mapGenObject.GetComponent<GenerateMap> ().MakeFloor ();
 			//how many sets of points do we need?
+			int objectPointListCount = mapGenObject.GetComponent<PlaceObjects>().FloorObjects.Length;
+
 			//how do we figure out fill percent?
+			//an array of lists?
+
+			List<Vector3>[] pointListArray;
+			pointListArray = new List<Vector3>[objectPointListCount];
+
+			for (int j = 0; j < objectPointListCount; j++) {
+				pointListArray[j] = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms (1);
+			}
+				
 			//as we get random points from the floor we should, like remove those points from possible points
 			//so we don't get overlapping things
+
 			List<Vector3> tempPositionList = mapGenObject.GetComponent<GenerateMap>().GetRandomPointsInRooms (2);
 			List<Vector3> spawnPointsList = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms (1);
 			List<Vector3> sporePointsList = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms (1);
 			List<Vector3> fireSporePointsList = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms (1);
-			List<PlaceObjects.FloorObject> tempObjList = mapGenObject.GetComponent<PlaceObjects> ().PopulateMapList (tempPositionList, spawnPointsList,sporePointsList,fireSporePointsList);
+			List<PlaceObjects.FloorObject> tempObjList = mapGenObject.GetComponent<PlaceObjects> ().PopulateMapList (pointListArray);
 			FloorList.Add( new Floor(tempFloor, tempObjList) );
 		}
 	}

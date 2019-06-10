@@ -31,9 +31,16 @@ public class PlaceObjects : MonoBehaviour {
 		
 	}
 	//todo: refactor this
-	public List<FloorObject> PopulateMapList(List<Vector3> objectCoords, List<Vector3>SpawnPoints, List<Vector3>SporePoints, List<Vector3>FireSporePoints){
+	public List<FloorObject> PopulateMapList(List<Vector3>[] objectCoords){
 		List<FloorObject> objectList = new List<FloorObject>();
+		 
+		for (int i = 0; i < objectCoords.Length; i++) {
+			foreach (Vector3 point in objectCoords[i]) {
+				objectList.Add (new FloorObject (point, FloorObjects [i]));
+			}
+		}
 		//disabling object spawning for now
+		/*
 		foreach (Vector3 point in objectCoords) { 
 			objectList.Add( new FloorObject(point, objectToAdd) );
 		}
@@ -49,6 +56,8 @@ public class PlaceObjects : MonoBehaviour {
 		foreach (Vector3 point in FireSporePoints) {
 			objectList.Add (new FloorObject (point, fireSporeObject));
 		}
+
+		*/
 
 		FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorEntryPoint (), AscendObjet);
 		FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorExitPoint (), DescendObject);
