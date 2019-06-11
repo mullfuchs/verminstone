@@ -44,7 +44,16 @@ public class CampPopulationController : MonoBehaviour {
 	}
 
 	public void ReplaceDeadNPCs(){
-	
+		//get count of npcs
+		int npcCount = GameObject.FindGameObjectsWithTag("WorkerNPC").Length;
+		//how many do we need?
+		int replacementNPCCount = NPCSquadSize - npcCount;
+		//spawn em in baby
+		for (int i = 0; i < replacementNPCCount; i++) {
+			GameObject npc = SpawnNPCPrefab ();
+
+		}
+		//then set up a narrative for it
 	}
 
 	private void SpawnPlayerPrefab(){
@@ -52,8 +61,8 @@ public class CampPopulationController : MonoBehaviour {
 		Player.name = "Player";
 	}
 
-	private void SpawnNPCPrefab(){
+	private GameObject SpawnNPCPrefab(){
 		GameObject NPC = Instantiate (NPCPrefab, NPCSpawnPoint.position, Quaternion.identity);
-
+		return NPC;
 	}
 }

@@ -6,6 +6,8 @@ public class CampNarrativeController : MonoBehaviour {
 
     public int day = 0;
 
+	public int scriptCount = 0;
+
 	public enum timePeriod {Morning, Evening};
 
 	public timePeriod timeOfDay;
@@ -32,6 +34,7 @@ public class CampNarrativeController : MonoBehaviour {
 		npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
 		for(int i = 0; i < npcs.Length; i++){
 			npcs [i].GetComponent<Yarn.Unity.Example.NPC> ().scriptToLoad = NPCDialogs [i];
+			scriptCount++;
 			//set character name by, uh, getting the file name and parsing it?
 			string[] dialogNamespace;
 			char[] charSeparators = new char[] {'.'};
@@ -117,6 +120,31 @@ public class CampNarrativeController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public void SetUpNewNPCNarrative(GameObject npc){
+		TextAsset npcScript = getScriptForNPC();
+		npc.GetComponent<Yarn.Unity.Example.NPC> ().scriptToLoad = npcScript;
+		//set character name by, uh, getting the file name and parsing it?
+		string[] dialogNamespace;
+		char[] charSeparators = new char[] {'.'};
+		dialogNamespace = npcScript.name.Split (charSeparators, System.StringSplitOptions.None);
+		string characterName = dialogNamespace [0];
+		npc.GetComponent<Yarn.Unity.Example.NPC> ().characterName = characterName;
+		npc.GetComponent<NPCstats>().NPCName = characterName;
+		print ("setting dialog for char " + characterName);
+		//set up it's portratit
+	}
+
+	TextAsset getScriptForNPC(){
+		//uhh well I guess we can track how many scripts from the pool have been used
+		//and then just snag the next one? 
+		if (NPCDialogs [scriptCount] != null) {
+			return NPCDialogs [scriptCount];
+			scriptCount++;
+		} 
+		return NPCDialogs [0];
+	}
+
 }
 
 [System.Serializable] 
