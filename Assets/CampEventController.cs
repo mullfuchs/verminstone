@@ -158,6 +158,9 @@ public class CampEventController : MonoBehaviour {
         //advance time
         gameObject.GetComponent<CampNarrativeController>().day += 1;
 		gameObject.GetComponent<CampNarrativeController>().timeOfDay = CampNarrativeController.timePeriod.Morning;
+
+		gameObject.GetComponent<CampPopulationController> ().ReplaceDeadNPCs ();
+
 		gameObject.GetComponent<CampNarrativeController> ().AdvanceDialogDayOfNPCs ();
 		//gameObject.GetComponent<CampNarrativeController> ().AdvanceDialoyDayOfKeyNPCs ();
 		gameObject.GetComponent<CampNarrativeController> ().UpdateNPCNarratives ();

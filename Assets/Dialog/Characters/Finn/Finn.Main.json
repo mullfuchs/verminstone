@@ -1,0 +1,62 @@
+[
+	{
+		"title": "Finn.Day1.Morning.Start",
+		"tags": "",
+		"body": "Morning, Day 1, i'm Finn",
+		"position": {
+			"x": -659,
+			"y": 29
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Finn.Day1.Evening.Start",
+		"tags": "",
+		"body": "Day one, but its nite",
+		"position": {
+			"x": -662,
+			"y": 253
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Finn.Day2.Morning.Start",
+		"tags": "",
+		"body": "Good morning? What's good about it?",
+		"position": {
+			"x": -665,
+			"y": 482
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Finn.Day2.Evening.Start",
+		"tags": "",
+		"body": "It sure is night again huh",
+		"position": {
+			"x": -667,
+			"y": 694
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Finn.Day3.Morning.Start",
+		"tags": "",
+		"body": "Every day I wake up in this place and I know there's no escape. \nI have dreams where I'm trapped in a well and I can't get out, I claw at the walls\nto try and get out but, well... I never do.\nAnd then I wake up here",
+		"position": {
+			"x": -378,
+			"y": 14
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Finn.Day3.Evening.Start",
+		"tags": "",
+		"body": "I'm going to have that same dream again tonight, I can almost feel it\n",
+		"position": {
+			"x": -397,
+			"y": 257
+		},
+		"colorID": 0
+	}
+]

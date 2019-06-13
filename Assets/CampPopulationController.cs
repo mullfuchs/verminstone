@@ -49,9 +49,12 @@ public class CampPopulationController : MonoBehaviour {
 		//how many do we need?
 		int replacementNPCCount = NPCSquadSize - npcCount;
 		//spawn em in baby
+
+		CampNarrativeController narrativeController = gameObject.GetComponent<CampNarrativeController> ();
+
 		for (int i = 0; i < replacementNPCCount; i++) {
 			GameObject npc = SpawnNPCPrefab ();
-
+			narrativeController.SetUpNewNPCNarrative (npc);
 		}
 		//then set up a narrative for it
 	}
