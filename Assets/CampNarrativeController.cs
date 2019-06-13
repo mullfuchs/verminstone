@@ -132,15 +132,32 @@ public class CampNarrativeController : MonoBehaviour {
 		npc.GetComponent<Yarn.Unity.Example.NPC> ().characterName = characterName;
 		npc.GetComponent<NPCstats>().NPCName = characterName;
 		print ("setting dialog for char " + characterName);
-		//set up it's portratit
+        //set up it's portratit
+        SetUpNewNPCPortrait(npc);
 	}
 
-	TextAsset getScriptForNPC(){
+    public void SetUpNewNPCPortrait(GameObject npc)
+    {
+        string name = npc.GetComponent<NPCstats>().NPCName;
+        foreach (npcPortraitObject portraitObject in NPCPortraitObjects)
+        {
+            if (name == portraitObject.NPCName)
+            {
+                npc.GetComponent<NPCstats>().DialogPortraits = portraitObject.portraits;
+            }
+            else
+            {
+                print("No portraits found for npc: " + name);
+            }
+        }
+    }
+
+	public TextAsset getScriptForNPC(){
 		//uhh well I guess we can track how many scripts from the pool have been used
 		//and then just snag the next one? 
 		if (NPCDialogs [scriptCount] != null) {
-			return NPCDialogs [scriptCount];
-			scriptCount++;
+            scriptCount++;
+            return NPCDialogs [scriptCount];
 		} 
 		return NPCDialogs [0];
 	}
