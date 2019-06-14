@@ -35,7 +35,7 @@ public class SpawnObjects : MonoBehaviour {
 
     private IEnumerator spawnASetOfEnemies(float delay, int amount, GameObject objectToSpawn, GameObject[] targets)
     {
-        int count = targets.Length;
+		int count = amount;
         print("targets: " + count);
         while(count > 0)
         {

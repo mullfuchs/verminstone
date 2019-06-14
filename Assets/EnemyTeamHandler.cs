@@ -42,8 +42,8 @@ public class EnemyTeamHandler : MonoBehaviour {
 
 		List<GameObject> MinerList = playerTeamHandler.GetCurrentMiners();
 
-        closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(MediumEnemy, MinerList.ToArray(), 1, floorLevel);
-        closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(BossEnemy, MinerList.ToArray(), 1, floorLevel);
+        //closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(MediumEnemy, MinerList.ToArray(), 1, floorLevel);
+        //closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(BossEnemy, MinerList.ToArray(), 1, floorLevel);
 
         closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(SwarmEnemy, MinerList.ToArray(), floorLevel, floorLevel);
 		randSpawner.GetComponent<SpawnObjects> ().SpawnEnemy (SwarmEnemy, MinerList.ToArray (), floorLevel, floorLevel);
