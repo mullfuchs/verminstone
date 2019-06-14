@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CampEventController : MonoBehaviour {
 
@@ -31,6 +32,8 @@ public class CampEventController : MonoBehaviour {
 
 	public GameObject Sun;
 	private float DayCycleClockTime;
+
+	public int day = 1;
 	// Use this for initialization
 	void Start () {
 		canvas = GameObject.Find ("Canvas");
@@ -156,9 +159,14 @@ public class CampEventController : MonoBehaviour {
 		yield return new WaitForSeconds (2.0f);
         //Sun.transform.Rotate( new Vector3(7.633f,-201.307f,-153.5f));
         //advance time
+		day += 1;
         gameObject.GetComponent<CampNarrativeController>().day += 1;
 		gameObject.GetComponent<CampNarrativeController>().timeOfDay = CampNarrativeController.timePeriod.Morning;
 
+		if (day >= 3) {
+			print ("you won the game!");
+			SceneManager.LoadScene ("tempEndGame");
+		}
 		gameObject.GetComponent<CampPopulationController> ().ReplaceDeadNPCs ();
 
 		gameObject.GetComponent<CampNarrativeController> ().AdvanceDialogDayOfNPCs ();
