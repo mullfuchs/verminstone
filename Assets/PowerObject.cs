@@ -71,8 +71,10 @@ public class PowerObject : MonoBehaviour {
     }
 
 	public void RemovePowerAmount(float amount){
-		powerAmount -= amount;
-        uiController.updateBar(uiController.PowerBarObject, powerAmount);
+		if (powerAmount > 0) {
+			powerAmount -= amount;
+			uiController.updateBar(uiController.PowerBarObject, powerAmount);
+		}
     }
 
 	void ResetRegen(){
