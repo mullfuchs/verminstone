@@ -27,7 +27,8 @@ public class CampPopulationController : MonoBehaviour {
 	}
 
 	void Awake() {
-
+		NPCSpawnPoint = GameObject.Find ("NPCSpawn").transform;
+		PlayerSpawnPoint = GameObject.Find ("PlayerSpawn").transform;
 	}
 	
 	// Update is called once per frame
