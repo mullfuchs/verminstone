@@ -327,12 +327,17 @@ public class NPCTeamHandler : MonoBehaviour {
 
     public void handleNPCDeath(GameObject npc)
     {
-
         //refresh lists
         //redistribute targets, if any
-        GameObject handObj = npc.GetComponent<NPCInventory>().ObjectHeldInHands;
-        GameObject backObj = npc.GetComponent<NPCInventory>().ObjectOnBack;
-        HaveNPCsCheckAndPickupDroppedItems(handObj, backObj);
+        if(npc.GetComponent<NPCInventory>().ObjectOnBack.GetComponent<EquippableItem>().itemName == "Back Bag")
+        {
+            KilogramsofVstoneCollected -= npc.GetComponent<AIStateMachine>().GetVerminStoneAmount();
+        }
+
+        //TODO: hash out if/how npcs picking up inventory works
+        //GameObject handObj = npc.GetComponent<NPCInventory>().ObjectHeldInHands;
+        //GameObject backObj = npc.GetComponent<NPCInventory>().ObjectOnBack;
+        //HaveNPCsCheckAndPickupDroppedItems(handObj, backObj);
     }
 
     public void distributeTargetsToNPCList()
@@ -353,6 +358,11 @@ public class NPCTeamHandler : MonoBehaviour {
     public float getVStoneCollected()
     {
         return KilogramsofVstoneCollected;
+    }
+
+    public void emptyVstoneCollected()
+    {
+        KilogramsofVstoneCollected = 0;
     }
 
 	public void rebuildNPCLists(){

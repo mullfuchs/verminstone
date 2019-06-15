@@ -88,6 +88,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 		}
 		yield return new WaitForSeconds (5.0f);
 
+        teamHandler.emptyVstoneCollected();
+
         print("total vstone collected this run: " + VStoneEcoInstance.getDailyTotal());
 		print ("total vstone collected during this save: " + VStoneEcoInstance.getTotalCollected ());
 
