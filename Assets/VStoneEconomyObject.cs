@@ -6,7 +6,7 @@ public class VStoneEconomyObject : MonoBehaviour {
 
     private float vStoneDailyAmount;
     private float vStoneTotalCollected;
-	private float DailyQuota = 300;
+	public float DailyQuota = 45;
 
 
     // Use this for initialization
