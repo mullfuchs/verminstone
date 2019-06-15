@@ -163,7 +163,7 @@ public class CampEventController : MonoBehaviour {
         gameObject.GetComponent<CampNarrativeController>().day += 1;
 		gameObject.GetComponent<CampNarrativeController>().timeOfDay = CampNarrativeController.timePeriod.Morning;
 
-		if (day >= 3) {
+		if (day >= 4) {
 			print ("you won the game!");
 			SceneManager.LoadScene ("tempEndGame");
 		}
