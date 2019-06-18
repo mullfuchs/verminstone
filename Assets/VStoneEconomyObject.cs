@@ -7,11 +7,11 @@ public class VStoneEconomyObject : MonoBehaviour {
     private float vStoneDailyAmount;
     private float vStoneTotalCollected;
 	public float DailyQuota = 45;
-
+	public float IncrementAmout = 20;
 
     // Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -44,6 +44,10 @@ public class VStoneEconomyObject : MonoBehaviour {
 		return DailyQuota;
 	}
 
+	public void SetDailyQuota(){
+		GameObject.Find ("Player").GetComponent<NPCTeamHandler> ().setVstoneQuota (DailyQuota);
+	}
+
 	public void IncreaseDailyQuota(int day){
 		DailyQuota = DailyQuota * day;
 	}
@@ -54,10 +58,5 @@ public class VStoneEconomyObject : MonoBehaviour {
 		}
 		return false;
 	}
-
-	/*
-	 * need to add...uhhh...some shit
-	 * so we need to set the daily quota, and then we need to test wether the daily amout meets that
-	 * 
-	 */
+		
 }

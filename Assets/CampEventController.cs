@@ -185,7 +185,7 @@ public class CampEventController : MonoBehaviour {
 	public void EnterCaveSequence(){
 		//set cave entrance object to be inactive
 		//caveExitObject.LoadLevelOnEnter = false;
-
+		gameObject.GetComponent<VStoneEconomyObject>().SetDailyQuota();
 		caveEntrance.SetActive(false);
 		caveExit.SetActive(false);
 	}

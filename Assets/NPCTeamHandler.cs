@@ -26,6 +26,7 @@ public class NPCTeamHandler : MonoBehaviour {
     private UIController UIcontroller;
 
     private float KilogramsofVstoneCollected = 0;
+	private float KgVstoneNeeded = 0;
 
     // Use this for initialization
     void Start () {
@@ -52,6 +53,7 @@ public class NPCTeamHandler : MonoBehaviour {
 		}
 
         UIcontroller = UIObject.GetComponent<UIController>();
+		//UIcontroller.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString() + " / " + KgVstoneNeeded.ToString() );
 
 	}
 	
@@ -331,7 +333,7 @@ public class NPCTeamHandler : MonoBehaviour {
         //redistribute targets, if any
         if(npc.GetComponent<NPCInventory>().ObjectOnBack.GetComponent<EquippableItem>().itemName == "Back Bag")
         {
-            KilogramsofVstoneCollected -= npc.GetComponent<AIStateMachine>().GetVerminStoneAmount();
+			removeCollectedVStone (npc.GetComponent<AIStateMachine> ().GetVerminStoneAmount ());
         }
 
         //TODO: hash out if/how npcs picking up inventory works
@@ -352,8 +354,21 @@ public class NPCTeamHandler : MonoBehaviour {
 		if (uiObject != null) {
 			UIcontroller = uiObject;
 		}
-        UIcontroller.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString());
+
+		UIcontroller.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString() + " / " + KgVstoneNeeded.ToString() );
     }
+
+	public void removeCollectedVStone(float amount)
+	{
+		KilogramsofVstoneCollected -= amount;
+		UIController uiObject = GameObject.FindObjectOfType<UIController> ();
+		if (uiObject != null) {
+			UIcontroller = uiObject;
+		}
+
+		UIcontroller.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString() + " / " + KgVstoneNeeded.ToString() );
+
+	}
 
     public float getVStoneCollected()
     {
@@ -364,6 +379,10 @@ public class NPCTeamHandler : MonoBehaviour {
     {
         KilogramsofVstoneCollected = 0;
     }
+
+	public void setVstoneQuota(float amt){
+		KgVstoneNeeded = amt;
+	}
 
 	public void rebuildNPCLists(){
 		CurrentMiners = GetAllNPCSwithMineTools();
