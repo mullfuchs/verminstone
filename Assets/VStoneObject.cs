@@ -89,7 +89,9 @@ public class VStoneObject : MonoBehaviour {
 			playerObject.GetComponent<NPCTeamHandler>().AddTargetForNPCs( Instantiate (VStoneFragmentObject, gameObject.transform.position, Quaternion.identity) );
 		}
 		//try to remove it from the list
-		GameObject.Find("CaveManager").GetComponent<CaveManager>().RemoveObjectFromFloor(gameObject);
+		if (GameObject.Find ("CaveManager") != null) {
+			GameObject.Find("CaveManager").GetComponent<CaveManager>().RemoveObjectFromFloor(gameObject);
+		}
 		Destroy(gameObject);
 	}
 }

@@ -19,10 +19,16 @@ public class NPCInventory : MonoBehaviour {
         if(ObjectHeldInHands != null)
         {
             ActiveHandObject = Instantiate(ObjectHeldInHands, handTransform.position, handTransform.rotation, handTransform);
+			ActiveHandObject.GetComponent<Rigidbody> ().isKinematic = true;
+			ActiveHandObject.GetComponent<Rigidbody> ().useGravity = false;
+			ActiveHandObject.GetComponent<BoxCollider> ().enabled = false;
         }
         if (ObjectOnBack != null)
         {
             ActiveBackObject = Instantiate(ObjectOnBack, backTransform.position, backTransform.rotation, backTransform);
+			ActiveBackObject.GetComponent<Rigidbody> ().isKinematic = true;
+			ActiveBackObject.GetComponent<Rigidbody> ().useGravity = false;
+			ActiveBackObject.GetComponent<BoxCollider> ().enabled = false;
         }
 	}
 	

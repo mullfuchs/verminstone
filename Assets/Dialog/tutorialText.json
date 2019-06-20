@@ -1,0 +1,62 @@
+[
+	{
+		"title": "Tutorial.Start",
+		"tags": "",
+		"body": "This is the tutorial Area!\nUse the WASD keys to move around\nThe NPCs will follow you wherever you go\nthey're as dumb as you are.\nYour purpose is to find and collect blue rithodin crystals\nMove to the next area!",
+		"position": {
+			"x": 385,
+			"y": 172
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial.Mining",
+		"tags": "",
+		"body": "See that blue sparkly thing? Thats a crystal\nCrystals are an important part of the r-steel refining process\nOnly you, a channeler, can see and react to crystals\nGo up and touch it to see what happens",
+		"position": {
+			"x": 615,
+			"y": 166
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial.Mining2",
+		"tags": "",
+		"body": "When you touched the crystal, workers carrying a pickaxe know to start mining\nWhen a crystal reaches critical mass, it breaks apart into smaller chunks\nthat's when the workers with carrying bags scramble for them\nNow, for the real fun, go to the next section",
+		"position": {
+			"x": 836,
+			"y": 168
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial.Combat",
+		"tags": "",
+		"body": "The Crystal caves are populated by these fucking weird bugs\nfor some reason they get really angry when you try to take the crystals\nIt's been observed that when miners start hitting a crystal, that's when bugs tend to swarm\nfor the purposes of training, we'll just relese some for you to play with\nWhen you see bugs, you can hit the \"E\" key to send the sword guy to attack them\nor you can use the arrow keys to send a beam of energy, killing them\nIf your carriers die, you can't bring crystal back to the surface\nif your miners die, you can't mine crystals\nSo keep them alive, if you'd like to live yourself",
+		"position": {
+			"x": 386,
+			"y": 394
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial.Combat2",
+		"tags": "",
+		"body": "In this next area we've brought a collection of flora\nFlora attack all creatures that pass by them with deadly projectile spores\nIt's in your best intrest to eliminate them, or avoid them, I'm not your mom\nYou can use your power to heal your fellow workers, but it'll also cost you health\nalternativly if you're feeling low on health, you can extract it from your fellow workers\npress F to heal, but press G if you want to heal yourself\ndon't get too enthusiastic, you'll kill your comrads, or yourself",
+		"position": {
+			"x": 621,
+			"y": 395
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial.End",
+		"tags": "",
+		"body": "That's the end of the tutorial\nTo exit a cave, go back to the elevator that dropped you off\nBut remember, if you don't bring enough back to the surface \nyou'll have to go back down for more\nhave fun!",
+		"position": {
+			"x": 839,
+			"y": 385
+		},
+		"colorID": 0
+	}
+]

@@ -353,9 +353,9 @@ public class NPCTeamHandler : MonoBehaviour {
 		UIController uiObject = GameObject.FindObjectOfType<UIController> ();
 		if (uiObject != null) {
 			UIcontroller = uiObject;
+			UIcontroller.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString() + " / " + KgVstoneNeeded.ToString() );
 		}
-
-		UIcontroller.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString() + " / " + KgVstoneNeeded.ToString() );
+			
     }
 
 	public void removeCollectedVStone(float amount)

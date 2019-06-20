@@ -67,7 +67,9 @@ public class PowerObject : MonoBehaviour {
 
 	public void AddPowerAmount(float amount){
 		powerAmount += amount;
-        uiController.updateBar(uiController.PowerBarObject, powerAmount);
+		if (uiController != null) {
+			uiController.updateBar(uiController.PowerBarObject, powerAmount);
+		}
     }
 
 	public void RemovePowerAmount(float amount){
