@@ -13,6 +13,9 @@ public class MineTutorialController : MonoBehaviour {
 	bool m_Started;
 	public LayerMask m_LayerMask;
 
+	public GameObject[] ObjectsToActivateOnStart;
+	public GameObject[] ObjectsToDeactivateOnEnd;
+
 	// Use this for initialization
 	void Start () {
 		m_Started = true;
@@ -33,18 +36,24 @@ public class MineTutorialController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.name == "Player" && startedTutorial == false) {
+			startedTutorial = true;
 			DoIntroStuff ();
-            startedTutorial = true;
 		}
 	}
 
 	void DoIntroStuff(){
         GameObject.Find("Dialogue").GetComponent<Yarn.Unity.DialogueRunner>().StartDialogue(TutorialStartText);
+		for (int i = 0; i < ObjectsToActivateOnStart.Length; i++) {
+			ObjectsToActivateOnStart [i].SetActive (true);
+		}
 		print ("Entering Mining Tutoral");
 	}
 
 	void DoExitStuff(){
         GameObject.Find("Dialogue").GetComponent<Yarn.Unity.DialogueRunner>().StartDialogue(TutorialEndText);
+		for (int i = 0; i < ObjectsToDeactivateOnEnd.Length; i++) {
+			ObjectsToDeactivateOnEnd [i].SetActive (false);
+		}
         print ("finished mining tutorial");
 	}
 
