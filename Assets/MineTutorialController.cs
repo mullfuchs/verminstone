@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class MineTutorialController : MonoBehaviour {
 
-	public GameObject[] stonesToMine;
+    bool startedTutorial = false;
+    bool endedTutorial = false;
 
-	public bool allStonesGone;
+    public string TutorialStartText;
+    public string TutorialEndText;    
 
 	bool m_Started;
 	public LayerMask m_LayerMask;
 
 	// Use this for initialization
 	void Start () {
-		allStonesGone = false;
 		m_Started = true;
 	}
 
@@ -23,25 +24,28 @@ public class MineTutorialController : MonoBehaviour {
 
 	void MyCollisions (){
 		Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, m_LayerMask);
-		int i = 0;
 		//Check when there is a new collider coming into contact with the box
-		if (hitColliders.Length <= 0) {
-			DoExitStuff ();
+		if (hitColliders.Length <= 0 && endedTutorial == false) {
+            endedTutorial = true;
+            DoExitStuff ();
 		}
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.gameObject.name == "Player") {
+		if (other.gameObject.name == "Player" && startedTutorial == false) {
 			DoIntroStuff ();
+            startedTutorial = true;
 		}
 	}
 
 	void DoIntroStuff(){
+        GameObject.Find("Dialogue").GetComponent<Yarn.Unity.DialogueRunner>().StartDialogue(TutorialStartText);
 		print ("Entering Mining Tutoral");
 	}
 
 	void DoExitStuff(){
-		print ("finished mining tutorial");
+        GameObject.Find("Dialogue").GetComponent<Yarn.Unity.DialogueRunner>().StartDialogue(TutorialEndText);
+        print ("finished mining tutorial");
 	}
 
 	void OnDrawGizmos()
