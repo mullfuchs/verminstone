@@ -7,7 +7,7 @@ public class CampPopulationController : MonoBehaviour {
 
 
 
-	private bool IsNewGame = true;
+	public bool IsNewGame = true;
 
 	public int NPCSquadSize = 5;
 
