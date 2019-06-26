@@ -42,6 +42,7 @@ public class CampNarrativeController : MonoBehaviour {
 			string characterName = dialogNamespace [0];
 			npcs [i].GetComponent<Yarn.Unity.Example.NPC> ().characterName = characterName;
             npcs[i].GetComponent<NPCstats>().NPCName = characterName;
+			npcs [i].GetComponent<NPCstats> ().NPCScriptIndex = i;
 			print ("setting dialog for char " + characterName);
 		}
 		UpdateNPCNarratives ();

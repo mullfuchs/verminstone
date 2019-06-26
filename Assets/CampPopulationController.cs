@@ -60,6 +60,10 @@ public class CampPopulationController : MonoBehaviour {
 		//then set up a narrative for it
 	}
 
+	public void LoadNPCFromSave(string name, int healthpoints, int position, int daysTalkedTo, int scriptIndex){
+		
+	}
+
 	private void SpawnPlayerPrefab(){
 		GameObject Player = Instantiate (PlayerPrefab, PlayerSpawnPoint.position, Quaternion.identity);
 		Player.name = "Player";

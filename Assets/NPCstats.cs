@@ -14,6 +14,7 @@ public class NPCstats : MonoBehaviour {
 	public bool hasBeenTalkedToToday = false;
 	public int daysTalkedTo = 1;
 	public Sprite[] DialogPortraits;
+	public int NPCScriptIndex;
 
 	// Use this for initialization
 	void Start () {
