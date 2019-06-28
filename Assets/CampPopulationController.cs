@@ -7,7 +7,7 @@ public class CampPopulationController : MonoBehaviour {
 
 
 
-	public bool IsNewGame = true;
+	public bool IsNewGame = false;
 
 	public int NPCSquadSize = 5;
 
@@ -19,25 +19,33 @@ public class CampPopulationController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (GameObject.Find ("StartGameController").GetComponent<StartGameController> ().loadGameFromSave) {
-			IsNewGame = false;
-			//this is also being looked at in the game save controller so watch it
-		}
 
-
-		if (IsNewGame) {
-			SpawnNewPlayerAndNPCSquad ();
-			IsNewGame = false;
-		} else {
-			
-		}
 
 	}
 
 	void Awake() {
 		NPCSpawnPoint = GameObject.Find ("NPCSpawn").transform;
 		PlayerSpawnPoint = GameObject.Find ("PlayerSpawn").transform;
-	}
+
+        GameObject startGameObj = GameObject.Find("StartGameController");
+        if (startGameObj != null && startGameObj.GetComponent<StartGameController>().loadGameFromSave == true)
+        {
+            print("loading game from save");
+            IsNewGame = false;
+            //this is also being looked at in the game save controller so watch it
+        }
+        else
+        {
+            IsNewGame = true;
+        }
+
+
+        if (IsNewGame)
+        {
+            SpawnNewPlayerAndNPCSquad();
+            IsNewGame = false;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -45,7 +53,7 @@ public class CampPopulationController : MonoBehaviour {
 	}
 
 	public void SpawnNewPlayerAndNPCSquad(){
-		print ("spawning npcs and player");
+		print ("spawning new npcs and player");
 		SpawnPlayerPrefab ();
 		for (int i = 0; i < NPCSquadSize; i++) {
 			SpawnNPCPrefab ();
@@ -79,12 +87,19 @@ public class CampPopulationController : MonoBehaviour {
 		CampNarrativeController narrativeController = gameObject.GetComponent<CampNarrativeController> ();
 
 		narrativeController.SetUpNewNPCNarrative (npc, scriptIndex);
-
 	}
 
-	private void SpawnPlayerPrefab(){
+    public void LoadPlayerFromSave(Vector3 position, float healthpoints)
+    {
+        GameObject player = SpawnPlayerPrefab();
+        player.transform.position = position;
+        player.GetComponent<health>().healthPoints = healthpoints;
+    }
+
+	private GameObject SpawnPlayerPrefab(){
 		GameObject Player = Instantiate (PlayerPrefab, PlayerSpawnPoint.position, Quaternion.identity);
 		Player.name = "Player";
+        return Player;
 	}
 
 	private GameObject SpawnNPCPrefab(){

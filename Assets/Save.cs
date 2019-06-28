@@ -6,7 +6,7 @@ using UnityEngine;
 public class Save {
 	public List<NPCProfile> NPCProfiles = new List<NPCProfile>();
 
-	public Vector3 PlayerPosition;
+	public SerializableVector3 PlayerPosition;
 	public float PlayerHealth;
 
 	public int DaysElapsed;
@@ -16,7 +16,7 @@ public class Save {
 public class NPCProfile{
 	public string NPCName;
 	public int NPCDialogIndex;
-	public Vector3 NPCPosition;
+    public SerializableVector3 NPCPosition;
 	public float NPCHealth;
 	public int NPCDaysTalkedTo;
 }
