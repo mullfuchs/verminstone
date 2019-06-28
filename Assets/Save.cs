@@ -4,14 +4,20 @@ using UnityEngine;
 
 [System.Serializable]
 public class Save {
-	public List<string> NPCNames = new List<string>();
-	public List<int> NPCDialogIndex = new List<int> ();
-	public List<Vector3> NPCPositions = new List<Vector3>();
-	public List<float> NPCHealth = new List<float>();
-	public List<int> NPCDaysTalkedTo = new List<int> ();
+	public List<NPCProfile> NPCProfiles = new List<NPCProfile>();
 
 	public Vector3 PlayerPosition;
 	public float PlayerHealth;
 
 	public int DaysElapsed;
 }
+
+[System.Serializable]
+public class NPCProfile{
+	public string NPCName;
+	public int NPCDialogIndex;
+	public Vector3 NPCPosition;
+	public float NPCHealth;
+	public int NPCDaysTalkedTo;
+}
+	

@@ -19,11 +19,19 @@ public class CampPopulationController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if (GameObject.Find ("StartGameController").GetComponent<StartGameController> ().loadGameFromSave) {
+			IsNewGame = false;
+			//this is also being looked at in the game save controller so watch it
+		}
+
+
 		if (IsNewGame) {
 			SpawnNewPlayerAndNPCSquad ();
 			IsNewGame = false;
+		} else {
+			
 		}
-		IsNewGame = false;
+
 	}
 
 	void Awake() {
@@ -60,8 +68,18 @@ public class CampPopulationController : MonoBehaviour {
 		//then set up a narrative for it
 	}
 
-	public void LoadNPCFromSave(string name, int healthpoints, int position, int daysTalkedTo, int scriptIndex){
-		
+	public void LoadNPCFromSave(string name, float healthpoints, Vector3 position, int daysTalkedTo, int scriptIndex){
+		GameObject npc = SpawnNPCPrefab ();
+		npc.transform.position = position;
+		NPCstats stats = npc.GetComponent<NPCstats> ();
+		stats.name = name;
+		stats.daysTalkedTo = daysTalkedTo;
+		stats.NPCScriptIndex = scriptIndex;
+		stats.health = healthpoints;
+		CampNarrativeController narrativeController = gameObject.GetComponent<CampNarrativeController> ();
+
+		narrativeController.SetUpNewNPCNarrative (npc, scriptIndex);
+
 	}
 
 	private void SpawnPlayerPrefab(){

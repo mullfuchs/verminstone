@@ -12,6 +12,12 @@ public class GameSaveController : MonoBehaviour {
 	void Start () {
 		
 	}
+
+	void Awake(){
+		if (GameObject.Find ("StartGameController").GetComponent<StartGameController> ().loadGameFromSave) {
+			LoadGame ();
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -41,10 +47,8 @@ public class GameSaveController : MonoBehaviour {
 			FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
 			Save save = (Save)bf.Deserialize(file);
 			file.Close();
-
 			print("Game file loaded?");
-
-
+			LoadGameData (save);
 		}
 		else{
 			print ("Could not find save file");	
@@ -57,6 +61,7 @@ public class GameSaveController : MonoBehaviour {
 		//then have it load the NPCs?
 
 	}
+		
 
 	public Save CreateGameSave(){
 		Save gameSave = new Save ();
@@ -65,11 +70,15 @@ public class GameSaveController : MonoBehaviour {
 		GameObject[] npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
 		for (int i = 0; i < npcs.Length; i++) {
 			NPCstats stats = npcs [i].GetComponent<NPCstats> ();
-			gameSave.NPCNames.Add (stats.NPCName);
-			gameSave.NPCPositions.Add ( npcs [i].transform.position);
-			gameSave.NPCDialogIndex.Add (stats.NPCScriptIndex);
-			gameSave.NPCDaysTalkedTo.Add (stats.daysTalkedTo);
-			gameSave.NPCHealth.Add (stats.health);
+
+			NPCProfile profile = new NPCProfile();
+			profile.NPCName = stats.NPCName;
+			profile.NPCHealth = stats.health;
+			profile.NPCPosition = npcs [i].transform.position;
+			profile.NPCDaysTalkedTo = stats.daysTalkedTo;
+			profile.NPCDialogIndex = stats.NPCScriptIndex;
+
+			gameSave.NPCProfiles.Add (profile);
 		}
 
 		GameObject player = GameObject.Find ("Player");
@@ -80,6 +89,13 @@ public class GameSaveController : MonoBehaviour {
 		gameSave.DaysElapsed = GameObject.Find ("CampEventController").GetComponent<CampEventController> ().day;
 
 		return gameSave;
+	}
+
+	void LoadGameData(Save data){
+		CampPopulationController campPopController = GameObject.Find ("CampEventController").GetComponent<CampPopulationController> ();
+		foreach (NPCProfile profile in data.NPCProfiles) {
+			campPopController.LoadNPCFromSave (profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex);
+		}
 	}
 
 

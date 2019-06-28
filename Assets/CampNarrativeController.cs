@@ -122,8 +122,8 @@ public class CampNarrativeController : MonoBehaviour {
 		
 	}
 
-	public void SetUpNewNPCNarrative(GameObject npc){
-		TextAsset npcScript = getScriptForNPC();
+	public void SetUpNewNPCNarrative(GameObject npc, int scriptIndex = -1){
+		TextAsset npcScript = getScriptForNPC(scriptIndex);
 		npc.GetComponent<Yarn.Unity.Example.NPC> ().scriptToLoad = npcScript;
 		//set character name by, uh, getting the file name and parsing it?
 		string[] dialogNamespace;
@@ -153,14 +153,17 @@ public class CampNarrativeController : MonoBehaviour {
         }
     }
 
-	public TextAsset getScriptForNPC(){
-		//uhh well I guess we can track how many scripts from the pool have been used
-		//and then just snag the next one? 
-		if (NPCDialogs [scriptCount] != null) {
-            scriptCount++;
-            return NPCDialogs [scriptCount];
-		} 
-		return NPCDialogs [0];
+	public TextAsset getScriptForNPC(int scriptIndex){
+		//if script index is negative one, get one from the pool of npc scripts
+		if (scriptIndex == -1) {
+			if (NPCDialogs [scriptCount] != null) {
+				scriptCount++;
+				return NPCDialogs [scriptCount];
+			} 
+			return NPCDialogs [0];
+		} else {
+			return NPCDialogs [scriptIndex];
+		}
 	}
 
 }
