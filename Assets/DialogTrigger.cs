@@ -24,7 +24,7 @@ namespace Yarn.Unity.Example{
             }
 
 
-			if (Input.GetKeyDown(KeyCode.Space)) {
+			if (Input.GetKeyDown(KeyCode.Q)) {
 				CheckForNearbyNPC ();
 				//CheckForClosestNPC();
 			}

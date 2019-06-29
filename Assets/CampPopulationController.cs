@@ -19,18 +19,21 @@ public class CampPopulationController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		if (IsNewGame) {
+			SpawnNewPlayerAndNPCSquad ();
+			IsNewGame = false;
+		} else {
+
+		}
+
 		if (GameObject.Find ("StartGameController").GetComponent<StartGameController> ().loadGameFromSave) {
 			IsNewGame = false;
 			//this is also being looked at in the game save controller so watch it
 		}
 
 
-		if (IsNewGame) {
-			SpawnNewPlayerAndNPCSquad ();
-			IsNewGame = false;
-		} else {
-			
-		}
+
 
 	}
 

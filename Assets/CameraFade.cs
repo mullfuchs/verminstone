@@ -25,8 +25,8 @@ public class CameraFade : MonoBehaviour
 
 		// TEMP:
 		// usage: use "SetScreenOverlayColor" to set the initial color, then use "StartFade" to set the desired color & fade duration and start the fade
-		//SetScreenOverlayColor(new Color(0,0,0,1));
-		//StartFade(new Color(1,0,0,1), 5);
+		SetScreenOverlayColor(new Color(0,0,0,1));
+		StartFade(new Color(0,0,0,0), 3);
 	}
 
 
