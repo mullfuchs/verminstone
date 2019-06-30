@@ -20,6 +20,10 @@ public class CampNarrativeController : MonoBehaviour {
 
 	public npcPortraitObject[] KeyNPCPortraitObjects;
 
+	public GameDreamSequenceObject CurrentDream;
+
+	public GameDreamSequenceObject[] DreamSequence;
+
 	// Use this for initialization
 	void Start () {
 	    //get the list of npcs
@@ -172,4 +176,11 @@ public class CampNarrativeController : MonoBehaviour {
 public class npcPortraitObject{
 	public string NPCName;
 	public Sprite[] portraits;
+}
+
+[System.Serializable]
+public class GameDreamSequenceObject{
+	public string SceneName;
+	public int dayDreamIsTriggered;
+	public string dreamDialogNode;
 }
