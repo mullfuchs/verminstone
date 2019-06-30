@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CampNarrativeController : MonoBehaviour {
 
@@ -168,6 +169,16 @@ public class CampNarrativeController : MonoBehaviour {
 		} else {
 			return NPCDialogs [scriptIndex];
 		}
+	}
+
+	public bool RunDreamForDay(int day){
+		for (int i = 0; i < DreamSequence.Length; i++) {
+			if (DreamSequence [i].dayDreamIsTriggered == day) {
+				SceneManager.LoadScene (DreamSequence [i].SceneName);
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

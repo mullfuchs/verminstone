@@ -167,6 +167,12 @@ public class CampEventController : MonoBehaviour {
 			print ("you won the game!");
 			SceneManager.LoadScene ("tempEndGame");
 		}
+		if (gameObject.GetComponent<CampNarrativeController> ().RunDreamForDay (day - 1) == false) {
+			StartDay ();
+		}
+	}
+
+	public void StartDay(){
 		gameObject.GetComponent<CampPopulationController> ().ReplaceDeadNPCs ();
 
 		gameObject.GetComponent<CampNarrativeController> ().AdvanceDialogDayOfNPCs ();
@@ -175,11 +181,11 @@ public class CampEventController : MonoBehaviour {
 		//gameObject.GetComponent<CampNarrativeController> ().UpdateKeyNPCNarratives ();
 		gameObject.GetComponent<VStoneEconomyObject>().IncreaseDailyQuota(gameObject.GetComponent<CampNarrativeController>().day);
 
-        //fade in
-        caveEntrance.GetComponent<CaveEntrance>().LoadLevelOnEnter = true;
-        GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.clear, 2.0f);
-        SendAllNPCsToArea(MessHall);
-        
+		//fade in
+		caveEntrance.GetComponent<CaveEntrance>().LoadLevelOnEnter = true;
+		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.clear, 2.0f);
+		SendAllNPCsToArea(MessHall);
+
 	}
 
 	public void EnterCaveSequence(){
