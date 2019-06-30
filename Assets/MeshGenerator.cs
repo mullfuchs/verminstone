@@ -46,6 +46,14 @@ public class MeshGenerator : MonoBehaviour {
 		mesh.triangles = triangles.ToArray();
 		mesh.RecalculateNormals();
 
+		Vector2[] UVs = new Vector2[verticies.Count];
+		for (int i = 0; i < verticies.Count; i++) {
+			float percentX = Mathf.InverseLerp (-map.GetLength (0) / 2 + squareSize, map.GetLength (0) / 2 + squareSize, verticies [i].x);
+			float percentY = Mathf.InverseLerp (-map.GetLength (0) / 2 + squareSize, map.GetLength (0) / 2 + squareSize, verticies [i].z);
+			UVs [i] = new Vector2 (percentX, percentY);
+		}
+		mesh.uv = UVs;
+
 		CreateWallMesh ();
 	}
 
@@ -78,7 +86,22 @@ public class MeshGenerator : MonoBehaviour {
 		wallMesh.vertices = wallVerticies.ToArray ();
 		wallMesh.triangles = wallTriangles.ToArray ();
 
+		wallMesh.RecalculateNormals ();
+
+		float scaleFactor = 1;
+
+		Vector2[] UVs = new Vector2[ wallMesh.vertices.Length ];
+
+		for (int i = 0; i < wallMesh.vertices.Length; i++) {
+			UVs[i] =  new Vector2(wallMesh.vertices[i].x, wallMesh.vertices[i].y);
+		}
+
+		wallMesh.uv = UVs;
+
+
 		walls.mesh = wallMesh;
+
+
 //		if (gameObject.GetComponent<MeshCollider> () == null) {
 //			MeshCollider wallCollider = walls.gameObject.AddComponent<MeshCollider> ();
 //		} else {
