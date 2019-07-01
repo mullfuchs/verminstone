@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Collections;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 using UnityEngine;
@@ -14,9 +13,12 @@ public class GameSaveController : MonoBehaviour {
 	}
 
 	void Awake(){
-		if (GameObject.Find ("StartGameController").GetComponent<StartGameController> ().loadGameFromSave) {
-			LoadGame ();
-		}
+        GameObject startGameObj = GameObject.Find("StartGameController");
+        if (startGameObj != null && startGameObj.GetComponent<StartGameController>().loadGameFromSave == true)
+        {
+            LoadGame();
+            //this is also being looked at in the game event controller so watch it
+        }
 	}
 	
 	// Update is called once per frame
@@ -74,7 +76,7 @@ public class GameSaveController : MonoBehaviour {
 			NPCProfile profile = new NPCProfile();
 			profile.NPCName = stats.NPCName;
 			profile.NPCHealth = stats.health;
-			profile.NPCPosition = npcs [i].transform.position;
+            profile.NPCPosition = npcs[i].transform.position;
 			profile.NPCDaysTalkedTo = stats.daysTalkedTo;
 			profile.NPCDialogIndex = stats.NPCScriptIndex;
 
@@ -92,10 +94,18 @@ public class GameSaveController : MonoBehaviour {
 	}
 
 	void LoadGameData(Save data){
-		CampPopulationController campPopController = GameObject.Find ("CampEventController").GetComponent<CampPopulationController> ();
+
+        CampPopulationController campPopController = GameObject.Find("CampEventController").GetComponent<CampPopulationController>();
+        campPopController.LoadPlayerFromSave(data.PlayerPosition, data.PlayerHealth);
+
+        //set the day
+        gameObject.transform.GetComponent<CampEventController>().day = data.DaysElapsed;
+
 		foreach (NPCProfile profile in data.NPCProfiles) {
 			campPopController.LoadNPCFromSave (profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex);
 		}
+
+
 	}
 
 

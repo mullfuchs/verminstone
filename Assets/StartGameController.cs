@@ -19,6 +19,7 @@ public class StartGameController : MonoBehaviour {
 
 	public void StartNewGame(){
 		SceneManager.LoadScene ("tutorialLevel");
+        loadGameFromSave = false;
 	}
 
 	public void LoadGameFromSave(){
