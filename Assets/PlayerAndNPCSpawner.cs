@@ -6,6 +6,9 @@ public class PlayerAndNPCSpawner : MonoBehaviour {
 
 	public Queue<GameObject> NpcQueue;
 
+	private GameObject[] NPCs;
+	private GameObject Player;
+
 	Vector3 point;
 
 	// Use this for initialization
@@ -20,6 +23,11 @@ public class PlayerAndNPCSpawner : MonoBehaviour {
 
 	public void setPoint(Vector3 _point){
 		point = _point;
+	}
+
+	public void addPlayerAndNPCs(GameObject player, GameObject[] npcs){
+		Player = player;
+		NPCs = npcs;
 	}
 
 	public void addNPC(GameObject _npc){
@@ -52,6 +60,16 @@ public class PlayerAndNPCSpawner : MonoBehaviour {
 			nextNPC.transform.position = point + new Vector3(0 + offsetX, 1.5f, -1.0f);
 			nextNPC.GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = true;
 			offsetX += 0.5f;
+		}
+	}
+
+	public void placePlayerAndNPCs(){
+		float offsetX = 0.0f;
+		if (Player != null) {
+			Player.transform.position = point;
+		}
+		for (int i = 0; i < NPCs.Length; i++) {
+			NPCs[i].transform.position = point + new Vector3(0 + offsetX, 1.5f, -1.0f);
 		}
 	}
 
