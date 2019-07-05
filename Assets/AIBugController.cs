@@ -13,20 +13,26 @@ public class AIBugController : MonoBehaviour {
 
 	private bool CanAttack = true;
 	private bool isAttacking = true;
+
+	public bool patrol = false;
 	// Update is called once per frame
 	void Start (){
 		
 		AttackHitBox = transform.Find("AttackHitBox").gameObject;
 		AttackHitBox.SetActive(false);
 
-		if (Random.Range (0, 2) <= 0 && target == null) {
-			target = GameObject.FindGameObjectWithTag ("Player");
-		} 
-		else {
-			target = GameObject.FindGameObjectWithTag ("WorkerNPC");
+		if (!patrol) {
+			if (Random.Range (0, 2) <= 0 && target == null) {
+				target = GameObject.FindGameObjectWithTag ("Player");
+			} else {
+				target = GameObject.FindGameObjectWithTag ("WorkerNPC");
+			}
+
+			this.gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().target = target.transform;
+		} else {
+			isAttacking = false;
 		}
 
-		this.gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().target = target.transform;
 	}
 
 	void Update () {
@@ -36,11 +42,11 @@ public class AIBugController : MonoBehaviour {
 				if (distToEnemy <= 1.5f && CanAttack) {
 					PerformAttack ();
 				}
-			} else {
+			} else if(!patrol) {
 				setTarget (GameObject.FindGameObjectWithTag ("Player"));
 			}
 		} else {
-			setTarget (OriginObject);
+			//setTarget (OriginObject);
 		}
 
 	}
@@ -52,7 +58,7 @@ public class AIBugController : MonoBehaviour {
 		float healthpoints = floorLevel * 30;
 		gameObject.GetComponent<health>().healthPoints = healthpoints;
 		//run away probability is set by health, probably? I think?
-		probabilityOfRunningAway = 0.5f;
+		//probabilityOfRunningAway = ;
 		//attack amount is a lot, probably
 		AttackHitBox = transform.Find("AttackHitBox").gameObject;
 		AttackHitBox.SetActive(true);
@@ -63,9 +69,26 @@ public class AIBugController : MonoBehaviour {
 		print("bug stats: hp " + healthpoints + ", damage " + (floorLevel * 2) + ", walk speed " + walkSpeed);  
 	}
 
+	public void setUpPatrolBug(Transform target, int floorLevel){
+		setTargetTransform (target);
+		float healthpoints = floorLevel * 50;
+		gameObject.GetComponent<health> ().healthPoints = healthpoints;
+		AttackHitBox = transform.Find("AttackHitBox").gameObject;
+		AttackHitBox.SetActive(true);
+		AttackHitBox.GetComponent<DealDamageToObjects>().baseDamageAmount = floorLevel * 2;
+		AttackHitBox.SetActive (false);
+		walkSpeed = (healthpoints * 2 + floorLevel) / healthpoints;
+		print("patrol bug stats: hp " + healthpoints + ", damage " + (floorLevel * 2) + ", walk speed " + walkSpeed);  
+	}
+
 	public void setTarget(GameObject newTarget)
 	{
 		this.gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target = newTarget.transform;
+	}
+
+	public void setTargetTransform(Transform newTarget)
+	{
+		this.gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().target = newTarget;
 	}
 
 	public void setOriginObject(GameObject origin)
@@ -93,10 +116,9 @@ public class AIBugController : MonoBehaviour {
 
 	void OnCollisionEnter(Collision obj){
 		if (obj.gameObject.tag == "projectile") {
-			if (Random.Range (0, 1) <= probabilityOfRunningAway) {
+			if (Random.Range (0, 1) <= probabilityOfRunningAway && probabilityOfRunningAway > 0) {
 				isAttacking = false;
 			} 
-
 		}
 	}
 
