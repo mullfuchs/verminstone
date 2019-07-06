@@ -11,6 +11,8 @@ public class EnemyPatrolController : MonoBehaviour {
 	private Transform currentTarget;
 	private int targetIndex;
 
+	private bool patrolling = true;
+
 	// Use this for initialization
 	void Start () {
 		if (targets.Length >= 2) {
@@ -24,6 +26,21 @@ public class EnemyPatrolController : MonoBehaviour {
 			currentTarget = getNewTarget ();
 			gameObject.GetComponent<AIBugController> ().setTargetTransform (currentTarget);
 		}
+
+		if (patrolling) {
+			Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, 5.0f);
+			int i = 0;
+			while (i < hitColliders.Length)
+			{
+				if (hitColliders [i].gameObject.tag == "WorkerNPC") {
+					patrolling = false;
+					gameObject.GetComponent<AIBugController> ().setTarget (hitColliders [i].gameObject);
+				}
+				i++;
+			}
+		}
+
+
 	}
 
 	void SetupPatrol(Transform[] _targets){

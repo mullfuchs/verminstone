@@ -120,6 +120,11 @@ public class AIBugController : MonoBehaviour {
 				isAttacking = false;
 			} 
 		}
+
+		if (obj.gameObject.tag == "WorkerNPC") {
+			isAttacking = true;
+			setTarget (obj.gameObject);
+		}
 	}
 
 	void OnTriggerEnter(Collider obj){
