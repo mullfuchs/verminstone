@@ -71,6 +71,7 @@ public class AIBugController : MonoBehaviour {
 
 	public void setUpPatrolBug(Transform target, int floorLevel){
 		setTargetTransform (target);
+		patrol = true;
 		float healthpoints = floorLevel * 50;
 		gameObject.GetComponent<health> ().healthPoints = healthpoints;
 		AttackHitBox = transform.Find("AttackHitBox").gameObject;

@@ -17,6 +17,8 @@ public class EnemyPatrolController : MonoBehaviour {
 	void Start () {
 		if (targets.Length >= 2) {
 			SetupPatrol (targets);
+		} else {
+			SetupPatrolWithGameObjects (GameObject.FindGameObjectsWithTag ("Spawner"));
 		}
 	}
 	
@@ -50,6 +52,14 @@ public class EnemyPatrolController : MonoBehaviour {
 		targetIndex = 0;
 	}
 
+	void SetupPatrolWithGameObjects(GameObject[] _targets){
+		Transform[] _targetTransforms = new Transform[_targets.Length];
+		for (int i = 0; i < _targets.Length; i++) {
+			_targetTransforms[i] = _targets [i].transform;
+		}
+		SetupPatrol (_targetTransforms);
+	}
+
 	Transform getNewTarget(){
 		if (targetIndex == targets.Length) {
 			targetIndex = 0;
@@ -58,4 +68,6 @@ public class EnemyPatrolController : MonoBehaviour {
 		}
 		return targets [targetIndex];
 	}
+
+
 }

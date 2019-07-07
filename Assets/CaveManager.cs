@@ -58,6 +58,9 @@ public class CaveManager : MonoBehaviour {
 			List<Vector3> spawnPointsList = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms (1);
 			List<Vector3> sporePointsList = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms (1);
 			List<Vector3> fireSporePointsList = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms (1);
+
+			//List<Vector3> patrolPointList = mapGenObject.GetComponent<GenerateMap> ().GetListOfPointsInRooms (3);
+
 			List<PlaceObjects.FloorObject> tempObjList = mapGenObject.GetComponent<PlaceObjects> ().PopulateMapList (pointListArray);
 			FloorList.Add( new Floor(tempFloor, tempObjList) );
 		}

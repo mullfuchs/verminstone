@@ -8,6 +8,9 @@ public class PlaceObjects : MonoBehaviour {
 	public GameObject spawnPointObject;
 	public GameObject sporeObject;
 	public GameObject fireSporeObject;
+
+	public GameObject PatrolBug;
+
 	public GameObject AscendObjet;
 	public GameObject DescendObject;
 	public FloorObjectCreationSetup[] FloorObjects;
@@ -59,10 +62,13 @@ public class PlaceObjects : MonoBehaviour {
 
 		*/
 
+		FloorObject FloorPatrolBug = new FloorObject (gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), PatrolBug);
+
 		FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorEntryPoint (), AscendObjet);
 		FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorExitPoint (), DescendObject);
 		objectList.Add (EntryPoint);
 		objectList.Add (ExitPoint);
+		objectList.Add (FloorPatrolBug);
 		return objectList;
 	}
 

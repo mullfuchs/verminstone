@@ -466,6 +466,22 @@ public class GenerateMap : MonoBehaviour {
 
 		return coordList;
 	}
+
+	public List<Vector3> GetListOfPointsInRooms(int numberOfPointsToGet){
+		List<Vector3> coordList = new List<Vector3> ();	
+
+		while (coordList.Count < numberOfPointsToGet) {
+			foreach (Room room in roomList) {
+				foreach (Coord tile in room.tiles) {
+					if (prng.Next (0, 1000) < 1) {
+						coordList.Add( coordToWorldPoint(tile));
+					}
+				}
+			}
+		}
+
+		return coordList;
+	}
 		
 
 	public Vector3 GetFloorEntryPoint(){
@@ -481,7 +497,15 @@ public class GenerateMap : MonoBehaviour {
 		return coordToWorldPoint (exitTile);
 	}
 
-
+	public Vector3 GetRandomPointInRandomRoom(){
+		int roomIndex = UnityEngine.Random.Range (0, roomList.Count);
+		Room randRoom = roomList[roomIndex];
+		//get random room
+		Coord randomSpot = randRoom.insideTiles.ElementAt( UnityEngine.Random.Range(0, randRoom.insideTiles.Count) );
+		//get random point in that room
+		//return it
+		return coordToWorldPoint(randomSpot);
+	}
 
 	public void RenderMap(int[,] mapToRender){
 		MeshGenerator meshGen = GetComponent<MeshGenerator> ();
