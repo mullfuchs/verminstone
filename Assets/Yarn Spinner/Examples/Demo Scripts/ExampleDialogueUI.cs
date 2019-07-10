@@ -71,8 +71,11 @@ namespace Yarn.Unity.Example {
 		{
 			// Start by hiding the container, line and option buttons
 			if (dialogueContainer != null) {
-				dialogAndPortraitContainer.SetActive (false);
 				dialogueContainer.SetActive(false);
+			}
+
+			if (dialogAndPortraitContainer != null) {
+				dialogAndPortraitContainer.SetActive (false);
 			}
 			
 			lineText.gameObject.SetActive (false);
@@ -184,8 +187,11 @@ namespace Yarn.Unity.Example {
 			
 			// Enable the dialogue controls.
 			if (dialogueContainer != null) {
-				dialogAndPortraitContainer.SetActive (true);
 				dialogueContainer.SetActive (true);
+			}
+
+			if (dialogAndPortraitContainer != null) {
+				dialogAndPortraitContainer.SetActive (true);
 			}
 
 			// Hide the game controls.
@@ -202,9 +208,10 @@ namespace Yarn.Unity.Example {
 			Debug.Log ("Complete!");
 
 			// Hide the dialogue interface.
-			if (dialogueContainer != null)
-				dialogAndPortraitContainer.SetActive(false);
-				dialogueContainer.SetActive(false);
+			if (dialogueContainer != null) {
+				dialogueContainer.SetActive (false);
+			}
+		
 
 			// Show the game controls.
 			if (gameControlsContainer != null) {
