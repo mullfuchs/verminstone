@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b5ca770c58102d241b97ace9f009be51
+timeCreated: 1562555476
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Kitsch Trial
+  fontNames:
+  - Kitsch Trial
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
