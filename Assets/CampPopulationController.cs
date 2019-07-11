@@ -20,7 +20,7 @@ public class CampPopulationController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-
+		/*
 		if (IsNewGame) {
 			SpawnNewPlayerAndNPCSquad ();
 			IsNewGame = false;
@@ -28,12 +28,17 @@ public class CampPopulationController : MonoBehaviour {
 
 		}
 
-		if (GameObject.Find ("StartGameController").GetComponent<StartGameController> ().loadGameFromSave) {
+
+		if (GameObject.Find ("StartGameController") != null &&
+		   GameObject.Find ("StartGameController").GetComponent<StartGameController> ().loadGameFromSave) {
 			IsNewGame = false;
 			//this is also being looked at in the game save controller so watch it
+		} else {
+			SpawnNewPlayerAndNPCSquad ();
+			IsNewGame = false;
 		}
 
-
+		*/
 	}
 
 	void Awake() {
@@ -46,10 +51,6 @@ public class CampPopulationController : MonoBehaviour {
             print("loading game from save");
             IsNewGame = false;
             //this is also being looked at in the game save controller so watch it
-        }
-        else
-        {
-            IsNewGame = true;
         }
 
 

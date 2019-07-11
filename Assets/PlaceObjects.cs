@@ -66,9 +66,9 @@ public class PlaceObjects : MonoBehaviour {
 
 		FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorEntryPoint (), AscendObjet);
 		FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorExitPoint (), DescendObject);
+		objectList.Add (FloorPatrolBug);
 		objectList.Add (EntryPoint);
 		objectList.Add (ExitPoint);
-		objectList.Add (FloorPatrolBug);
 		return objectList;
 	}
 

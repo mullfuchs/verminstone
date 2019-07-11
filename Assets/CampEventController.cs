@@ -33,6 +33,8 @@ public class CampEventController : MonoBehaviour {
 	public GameObject Sun;
 	private float DayCycleClockTime;
 
+	public int DaysToFinishGame = 10;
+
 	public int day = 1;
 	// Use this for initialization
 	void Start () {
@@ -52,7 +54,7 @@ public class CampEventController : MonoBehaviour {
 			Destroy (gameObject);
 		}
 		refreshReferences ();
-		//repopulate 
+		//repopulate
 	}
 
 	public void refreshReferences(){
@@ -153,6 +155,8 @@ public class CampEventController : MonoBehaviour {
 
 	IEnumerator EndDayCycle(){
 		//GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().SetScreenOverlayColor (Color.black);
+		gameObject.GetComponent<GameSaveController>().SaveGame();
+
 		GameObject.Find("Player").GetComponent<NPCTeamHandler>().resetNPCTargets();
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.black, 2.0f);
 		GameObject.Find ("CampEventController").GetComponent<VStoneEconomyObject> ().resetDailyTotal ();
@@ -163,7 +167,7 @@ public class CampEventController : MonoBehaviour {
         gameObject.GetComponent<CampNarrativeController>().day += 1;
 		gameObject.GetComponent<CampNarrativeController>().timeOfDay = CampNarrativeController.timePeriod.Morning;
 
-		if (day >= 4) {
+		if (day >= DaysToFinishGame) {
 			print ("you won the game!");
 			SceneManager.LoadScene ("tempEndGame");
 		}

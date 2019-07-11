@@ -17,7 +17,7 @@ public class PlayerEventController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider Other){
-		if (Other.tag == "bed") {
+		if (Other.tag == "bed" && Input.GetKeyDown(KeyCode.Space)) {
 			CampEventControllerInstance.EndDay ();
 		}
 		if (Other.tag == "MessHall") {
