@@ -10,6 +10,8 @@ public class health : MonoBehaviour {
 
 	private UIController controller = null;
 
+	private FillableBarController healthBar;
+
 	// Use this for initialization
 	void Start () {
         if(gameObject.tag == "WorkerNPC")
@@ -63,6 +65,10 @@ public class health : MonoBehaviour {
     {
         healthPoints -= damage;
 
+		if (healthBar != null) {
+			healthBar.UpdateCurrentValue (healthPoints);
+		}
+
 		if (gameObject.GetComponent<NPCstats> () != null) {
 			gameObject.GetComponent<NPCstats> ().health = healthPoints;
 		}
@@ -84,13 +90,19 @@ public class health : MonoBehaviour {
         float tempHealth = healthPoints + health;
         if(tempHealth < maxHealth)
         {
-            health = tempHealth;
+			healthPoints = tempHealth;
+
+			if (healthBar != null) {
+				healthBar.UpdateCurrentValue (healthPoints);
+			}
+
             return true;
         }
         else
         {
             return false;
         }
+			
     }
 
     void killgameObject()
@@ -121,4 +133,8 @@ public class health : MonoBehaviour {
 			
         Destroy(this.gameObject);
     }
+
+	public void SetTrackingUIElement(FillableBarController _healthBar){
+		healthBar = _healthBar;
+	}
 }
