@@ -27,11 +27,17 @@ public class DealDamageToObjects : MonoBehaviour {
 			float tempDMG = baseDamageAmount;
 			other.attachedRigidbody.AddForce ( Vector3.Normalize( gameObject.transform.position - other.transform.position ) * 2 );
 			//is this npc holding something?
-			GameObject handObj = gameObject.transform.parent.GetComponent<NPCInventory>().getHandObject();
+			GameObject handObj = null;
+
+			if (gameObject.transform.parent.GetComponent<NPCInventory> () != null) {
+				handObj = gameObject.transform.parent.GetComponent<NPCInventory>().getHandObject();
+			}
+
 			//if it is is it a weapon?
-			if (handObj.GetComponent<WeaponController> () != null) {
+			if (handObj != null && handObj.GetComponent<WeaponController> () != null) {
 				tempDMG += handObj.GetComponent<WeaponController> ().damage;
 			}
+
 			OtherHealth.AddDamage(tempDMG);
         }
     }

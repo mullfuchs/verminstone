@@ -331,7 +331,7 @@ public class NPCTeamHandler : MonoBehaviour {
     {
         //refresh lists
         //redistribute targets, if any
-        if(npc.GetComponent<NPCInventory>().ObjectOnBack.GetComponent<EquippableItem>().itemName == "Back Bag")
+		if(npc.GetComponent<NPCInventory>().ObjectOnBack != null && npc.GetComponent<NPCInventory>().ObjectOnBack.GetComponent<EquippableItem>().itemName == "Back Bag")
         {
 			removeCollectedVStone (npc.GetComponent<AIStateMachine> ().GetVerminStoneAmount ());
         }

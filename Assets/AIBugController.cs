@@ -99,6 +99,7 @@ public class AIBugController : MonoBehaviour {
 
 	public void PerformAttack()
 	{
+		print ("Bug performing a hit attack");
 		AttackHitBox.SetActive(true);
 		CanAttack = false;
 		Invoke("HideHitBox", 0.5f);
