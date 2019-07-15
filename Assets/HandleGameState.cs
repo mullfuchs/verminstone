@@ -30,14 +30,14 @@ public class HandleGameState : MonoBehaviour {
         }
 
 
-		if(Input.GetButtonDown("Fire1") && forceRestart)
+		if(Input.GetKeyDown(KeyCode.Alpha0) && forceRestart)
 		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-		}
+            SceneManager.LoadScene("TitleScreen");
+        }
 
-		if(Input.GetButtonDown("Fire1") && clearToRestart)
+		if(Input.GetKeyDown(KeyCode.Alpha0) && clearToRestart)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("TitleScreen");
         }
 	}
 
@@ -48,7 +48,7 @@ public class HandleGameState : MonoBehaviour {
         yield return new WaitForSeconds(2.0f);
         UIcontroller.updateText(UIcontroller.GameStatusText, "GAME \n OVER");
         yield return new WaitForSeconds(2.0f);
-        UIcontroller.updateText(UIcontroller.GameStatusText, "Press the A button to restart");
+        UIcontroller.updateText(UIcontroller.GameStatusText, "Press the Zero key to restart");
         clearToRestart = true;
 
     }
@@ -72,7 +72,7 @@ public class HandleGameState : MonoBehaviour {
         yield return new WaitForSeconds(2.0f);
         UIcontroller.updateText(UIcontroller.GameStatusText, "You collected " + playerOBJ.GetComponent<NPCTeamHandler>().getVStoneCollected() + " Kilos of Verminstone");
         yield return new WaitForSeconds(2.0f);
-        UIcontroller.updateText(UIcontroller.GameStatusText, "Press the A button to restart");
+        UIcontroller.updateText(UIcontroller.GameStatusText, "Press the Zero key to restart");
         clearToRestart = true;
     }
 }
