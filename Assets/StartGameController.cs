@@ -28,4 +28,8 @@ public class StartGameController : MonoBehaviour {
 		SceneManager.LoadScene ("Camp");
 		//next secene can fail I don't give a shit right now ha
 	}
+
+	public void ExitGame(){
+		Application.Quit ();
+	}
 }

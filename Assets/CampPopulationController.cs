@@ -45,6 +45,12 @@ public class CampPopulationController : MonoBehaviour {
 		NPCSpawnPoint = GameObject.Find ("NPCSpawn").transform;
 		PlayerSpawnPoint = GameObject.Find ("PlayerSpawn").transform;
 
+		if (IsNewGame == true)
+		{
+			SpawnNewPlayerAndNPCSquad();
+			IsNewGame = false;
+		}
+
         GameObject startGameObj = GameObject.Find("StartGameController");
         if (startGameObj != null && startGameObj.GetComponent<StartGameController>().loadGameFromSave == true)
         {
@@ -52,13 +58,7 @@ public class CampPopulationController : MonoBehaviour {
             IsNewGame = false;
             //this is also being looked at in the game save controller so watch it
         }
-
-
-        if (IsNewGame)
-        {
-            SpawnNewPlayerAndNPCSquad();
-            IsNewGame = false;
-        }
+			
     }
 	
 	// Update is called once per frame

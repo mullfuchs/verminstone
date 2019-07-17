@@ -72,13 +72,18 @@ public class AIStateMachine : MonoBehaviour {
     public void ResetNPCVariables()
     {
 		//print ("Clearing npc targets");
-        targets.Clear();
+		GameObject handobj = gameObject.GetComponent<NPCInventory>().ObjectHeldInHands;
+		if (handobj != null && (handobj.GetComponent<EquippableItem>().itemName == "Pickaxe" || handobj.tag == "Weapon"))
+		{
+			targets.Clear();
+		}
+
 		currentState = AIState.Follow;
     }
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.R)) {
+		if (Input.GetKeyDown (KeyCode.R) || Input.GetButton("Recall")) {
 			ResetNPCVariables ();
 		}
 
