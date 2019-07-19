@@ -7,7 +7,11 @@ public class MoveForward : MonoBehaviour {
     public float damage = 10.0f;
 	public string[] affectedTags;
 
+	private bool isMoving = true;
+
 	public GameObject originObject;
+
+	public GameObject hitEffect;
 
 	void Start(){
 		//gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.forward * speed);
@@ -19,8 +23,10 @@ public class MoveForward : MonoBehaviour {
 		if (maxTime <= 0.0f) {
 			GameObject.Destroy(gameObject);
 		}
+		if (isMoving) {
+			transform.Translate(Vector3.forward * speed * Time.deltaTime);
+		}
 
-		transform.Translate(Vector3.forward * speed * Time.deltaTime);
 	}
 
     void OnCollisionEnter(Collision other)
@@ -37,7 +43,11 @@ public class MoveForward : MonoBehaviour {
         }
 
 		if (other.gameObject != originObject) {
-			Destroy(this.gameObject);
+			isMoving = false;
+			if (hitEffect != null) {
+				gameObject.GetComponent<Collider> ().enabled = false;
+				Instantiate(hitEffect, gameObject.transform.position, Quaternion.identity);
+			}
 		}
         
     }
