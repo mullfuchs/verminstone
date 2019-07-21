@@ -67,6 +67,7 @@ public class EquipUIController : MonoBehaviour {
 
 	public void cleanUpItemAndNPCCards(){
 		//destroy cards
+
 		foreach (GameObject x in ItemCards) {
             DestroyObject(x);
            // Destroy (x);
@@ -74,7 +75,8 @@ public class EquipUIController : MonoBehaviour {
 		foreach (GameObject x in NPCCards) {
 			DestroyObject (x);
 		}
-
+		ItemCards.Clear();
+		NPCCards.Clear ();
 		ItemCardParent.SetActive(false);
 		NPCCardParent.SetActive(false);
 	}
@@ -83,6 +85,7 @@ public class EquipUIController : MonoBehaviour {
     {
         //resetAllButtons();
         currentItem = item;
+		print ("Number of cards in npc cards " + NPCCards.Count);
 		foreach(GameObject g in NPCCards)
         {
             if (item.GetComponent<EquippableItem>().ForBack)

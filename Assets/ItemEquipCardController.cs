@@ -35,7 +35,7 @@ public class ItemEquipCardController : MonoBehaviour {
     public void setThisItemToEquip()
     {
         EquipUIController equipUI = GameObject.Find("Canvas").GetComponent<EquipUIController>();
-        if(equipUI != null)
+		if(equipUI != null && associatedItem != null)
         {
             equipUI.SetCurrentItemAndEnableButtons(associatedItem);
         }
