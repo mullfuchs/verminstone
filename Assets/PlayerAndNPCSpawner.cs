@@ -69,7 +69,7 @@ public class PlayerAndNPCSpawner : MonoBehaviour {
 			Player.transform.position = point;
 		}
 		for (int i = 0; i < NPCs.Length; i++) {
-			NPCs[i].transform.position = point + new Vector3(0 + offsetX, 1.5f, -1.0f);
+			NPCs[i].transform.position = point;
 		}
 	}
 
