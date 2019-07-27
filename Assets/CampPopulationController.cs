@@ -76,7 +76,9 @@ public class CampPopulationController : MonoBehaviour {
 
 	public void LoadNPCFromSave(string name, float healthpoints, Vector3 position, int daysTalkedTo, int scriptIndex){
 		GameObject npc = SpawnNPCPrefab ();
+        npc.SetActive(false);
 		npc.transform.position = position;
+        npc.SetActive(true);
 		NPCstats stats = npc.GetComponent<NPCstats> ();
 		stats.name = name;
 		stats.daysTalkedTo = daysTalkedTo;
