@@ -65,12 +65,18 @@ public class PlayerAndNPCSpawner : MonoBehaviour {
 
 	public void placePlayerAndNPCs(){
 		float offsetX = 0.0f;
+		GameObject.Find ("MultipurposeCameraRig").transform.position = point;
 		if (Player != null) {
 			Player.transform.position = point;
 		}
 		for (int i = 0; i < NPCs.Length; i++) {
-			NPCs[i].transform.position = point;
+			NPCs [i].SetActive (false);
+			Vector3 npcWarpPosition = point + new Vector3(0 + offsetX, 1.5f, -1.0f);
+			NPCs [i].transform.position = point;
+			offsetX += 0.5f;
+			NPCs [i].SetActive (true);
 		}
+
 	}
 
 	void OnTriggerExit(Collider other){

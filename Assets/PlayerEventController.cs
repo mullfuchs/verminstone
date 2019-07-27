@@ -17,9 +17,6 @@ public class PlayerEventController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider Other){
-		if (Other.tag == "bed" && Input.GetKeyDown(KeyCode.Space)) {
-			CampEventControllerInstance.EndDay ();
-		}
 		if (Other.tag == "MessHall") {
 			CampEventControllerInstance.StartMessHallSequence ();
 		}
@@ -30,6 +27,13 @@ public class PlayerEventController : MonoBehaviour {
 			gameObject.GetComponent<NPCTeamHandler> ().rebuildNPCLists ();
 			CampEventControllerInstance.EnterCaveSequence ();
 
+		}
+	}
+
+	void OnTriggerStay(Collider other){
+		if (other.tag == "bed" && Input.GetKeyDown(KeyCode.Space)) {
+			print ("Ending day");
+			CampEventControllerInstance.EndDay ();
 		}
 	}
 
