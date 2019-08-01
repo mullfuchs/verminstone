@@ -26,7 +26,11 @@ public class PlayerEventController : MonoBehaviour {
 		if (Other.tag == "CaveEntrance") {
 			gameObject.GetComponent<NPCTeamHandler> ().rebuildNPCLists ();
 			CampEventControllerInstance.EnterCaveSequence ();
-
+		}
+		if (Other.tag == "CampArea") {
+			//start the npc idle stuff
+			CampEventControllerInstance.gameObject.GetComponent<NPCBedController>().AssignBeds();
+			//start the end day timer in the campevent controller??? Sure???
 		}
 	}
 

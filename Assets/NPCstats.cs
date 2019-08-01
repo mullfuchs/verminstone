@@ -19,6 +19,7 @@ public class NPCstats : MonoBehaviour {
 	public int daysTalkedTo = 1;
 	public Sprite[] DialogPortraits;
 	public int NPCScriptIndex;
+	public int bedIndex;
 
 	/*
 	 * NPC systems

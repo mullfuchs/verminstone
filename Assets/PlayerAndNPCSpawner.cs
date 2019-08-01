@@ -70,11 +70,13 @@ public class PlayerAndNPCSpawner : MonoBehaviour {
 			Player.transform.position = point;
 		}
 		for (int i = 0; i < NPCs.Length; i++) {
-			NPCs [i].SetActive (false);
-			Vector3 npcWarpPosition = point + new Vector3(0 + offsetX, 1.5f, -1.0f);
-			NPCs [i].transform.position = point;
-			offsetX += 0.5f;
-			NPCs [i].SetActive (true);
+
+			//NPCs [i].SetActive (false);
+			Vector3 npcWarpPosition = point + new Vector3(0 + offsetX, 0.05f, -1.0f);
+			NPCs [i].GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().agent.Warp ( npcWarpPosition );
+			//NPCs [i].transform.position = point;
+			offsetX += 1.5f;
+			//NPCs [i].SetActive (true);
 		}
 
 	}

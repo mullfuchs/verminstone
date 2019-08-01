@@ -36,6 +36,8 @@ public class CampEventController : MonoBehaviour {
 	public int DaysToFinishGame = 10;
 
 	public int day = 1;
+
+	private GameObject[] NPCbeds;
 	// Use this for initialization
 	void Start () {
 		canvas = GameObject.Find ("Canvas");
@@ -160,6 +162,7 @@ public class CampEventController : MonoBehaviour {
 		GameObject.Find("Player").GetComponent<NPCTeamHandler>().resetNPCTargets();
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.black, 2.0f);
 		GameObject.Find ("CampEventController").GetComponent<VStoneEconomyObject> ().resetDailyTotal ();
+
 		yield return new WaitForSeconds (2.0f);
         //Sun.transform.Rotate( new Vector3(7.633f,-201.307f,-153.5f));
         //advance time

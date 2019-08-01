@@ -24,8 +24,9 @@ public class NPCOverworldController : MonoBehaviour {
 
 	public bool idling = false;
 
-	float idleTime = 15.0f;
-	float idlePeriod = 15.0f;
+	float idleTime = 0.0f;
+	float idlePeriod = 35.0f;
+	float idleCounter = 3;
 
 	GameObject[] npcIdleTargets;
 	int idleTargetIndex = 0;
@@ -49,18 +50,26 @@ public class NPCOverworldController : MonoBehaviour {
 
 				gameObject.GetComponent<AIStateMachine> ().SendNPCToObject(npcIdleTargets[idleTargetIndex]);
 				idleTime = idlePeriod;
+				idleCounter -= 1;
+				if (idleCounter <= 0) {
+					GoToBed ();
+				}
 			}
 		}
 	}
 
 	void GoToBed(){
 		//find a bed
-
-		//path to it
+		if (gameObject.GetComponent<NPCstats> ().bedIndex != null) {
+			GameObject bed = GameObject.Find("CampEventController").GetComponent<NPCBedController>().npcBeds[ gameObject.GetComponent<NPCstats> ().bedIndex ];
+			gameObject.GetComponent<AIStateMachine> ().SendNPCToObject (bed);
+			//God this sucks, but what can ya do lol
+		}
 	}
 
 	void DoIdleRoutine(){
 		idling = true;
+		idleTime = idlePeriod;
 		npcIdleTargets = buildIdleTargetList ();
 		gameObject.GetComponent<AIStateMachine> ().SendNPCToObject (npcIdleTargets[0]);
 	}
@@ -76,7 +85,7 @@ public class NPCOverworldController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "CampArea") {
-			print ("npc doing idle routine");
+			//print ("npc doing idle routine");
 			DoIdleRoutine ();
 		}
 	}
