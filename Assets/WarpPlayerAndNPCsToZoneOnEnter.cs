@@ -7,6 +7,7 @@ public class WarpPlayerAndNPCsToZoneOnEnter : MonoBehaviour {
 	public GameObject TargetZone;
 	public Transform point;
 
+	public bool ForceNPCsToFollowOnExit;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,10 @@ public class WarpPlayerAndNPCsToZoneOnEnter : MonoBehaviour {
 		//get objects
 		GameObject player = GameObject.Find("Player");
 		GameObject[] npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
+
+		if (ForceNPCsToFollowOnExit) {
+			player.GetComponent<NPCTeamHandler> ().resetNPCTargets ();
+		}
 
 		//fade camera out
 		GameObject.Find("MultipurposeCameraRig").GetComponent<CameraFade>().StartFade(Color.black, 2.0f);

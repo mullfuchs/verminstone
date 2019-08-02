@@ -172,12 +172,14 @@ public class CampNarrativeController : MonoBehaviour {
 	}
 
 	public bool RunDreamForDay(int day){
+		/* turning this off for now cuz it's busted af
 		for (int i = 0; i < DreamSequence.Length; i++) {
 			if (DreamSequence [i].dayDreamIsTriggered == day) {
 				SceneManager.LoadScene (DreamSequence [i].SceneName);
 				return true;
 			}
 		}
+		*/
 		return false;
 	}
 

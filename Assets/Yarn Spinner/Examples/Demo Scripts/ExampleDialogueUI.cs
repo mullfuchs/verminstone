@@ -212,6 +212,9 @@ namespace Yarn.Unity.Example {
 				dialogueContainer.SetActive (false);
 			}
 		
+			if (dialogAndPortraitContainer != null) {
+				dialogAndPortraitContainer.SetActive (false);
+			}
 
 			// Show the game controls.
 			if (gameControlsContainer != null) {
