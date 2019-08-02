@@ -26,7 +26,7 @@ public class NPCOverworldController : MonoBehaviour {
 
 	float idleTime = 0.0f;
 	float idlePeriod = 35.0f;
-	float idleCounter = 3;
+	float idleCounter = 1;
 
 	GameObject[] npcIdleTargets;
 	int idleTargetIndex = 0;

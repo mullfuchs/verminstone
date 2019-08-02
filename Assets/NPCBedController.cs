@@ -8,7 +8,8 @@ public class NPCBedController : MonoBehaviour {
 	public GameObject[] npcBeds;
 
 	void Start () {
-		//AssignBeds();
+
+		AssignBeds();
 	}
 	
 	// Update is called once per frame
@@ -17,9 +18,9 @@ public class NPCBedController : MonoBehaviour {
 	}
 
 	public void AssignBeds(){
-		GameObject[] beds = GameObject.FindGameObjectsWithTag ("bed");
+		npcBeds = GameObject.FindGameObjectsWithTag("bed");
 		GameObject[] npcs = GameObject.FindGameObjectsWithTag("WorkerNPC");
-		for(int i = 0; i < beds.Length; i++){
+		for(int i = 0; i < npcs.Length; i++){
 			//if (npcs [i] != null) {
 				npcs [i].GetComponent<NPCstats> ().bedIndex = i;
 			//}
