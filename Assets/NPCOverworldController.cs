@@ -25,7 +25,7 @@ public class NPCOverworldController : MonoBehaviour {
 	public bool idling = false;
 
 	float idleTime = 0.0f;
-	float idlePeriod = 35.0f;
+	float idlePeriod = 15.0f;
 	float idleCounter = 1;
 
 	GameObject[] npcIdleTargets;
@@ -38,31 +38,44 @@ public class NPCOverworldController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (idling) {
-			//start a countdown, if it's below a threshold, go to the next target in idle targets;
-			idleTime -= Time.deltaTime;
-			if (idleTime <= 0.0f) {
-				if (idleTargetIndex > npcIdleTargets.Length) {
-					idleTargetIndex = 0;
-				} else {
-					idleTargetIndex++;
-				}
+        if (idling)
+        {
+            //start a countdown, if it's below a threshold, go to the next target in idle targets;
+            idleTime -= Time.deltaTime;
+            if (idleTime <= 0.0f)
+            {
+                idleCounter -= 1;
+                if (idleCounter <= 0)
+                {
+                    idling = false;
+                    GoToBed();
+                }
+                else
+                {
+                    if (idleTargetIndex > npcIdleTargets.Length)
+                    {
+                        idleTargetIndex = 0;
+                    }
+                    else
+                    {
+                        idleTargetIndex++;
+                    }
+                    gameObject.GetComponent<AIStateMachine>().SendNPCToObject(npcIdleTargets[idleTargetIndex]);
+                    idleTime = idlePeriod;
+                }
+            }
+        }
 
-				gameObject.GetComponent<AIStateMachine> ().SendNPCToObject(npcIdleTargets[idleTargetIndex]);
-				idleTime = idlePeriod;
-				idleCounter -= 1;
-				if (idleCounter <= 0) {
-					GoToBed ();
-				}
-			}
-		}
+
 	}
 
 	void GoToBed(){
-		//find a bedn
-		idling = false;
+        //find a bedn
+       // print("npc going to bed");
+		//idling = false;
 		if (gameObject.GetComponent<NPCstats> ().bedIndex != null) {
-			GameObject bed = GameObject.Find("CampEventController").GetComponent<NPCBedController>().npcBeds[ gameObject.GetComponent<NPCstats> ().bedIndex ];
+            gameObject.GetComponent<AIStateMachine>().ResetNPCVariables();
+            GameObject bed = GameObject.Find("CampEventController").GetComponent<NPCBedController>().npcBeds[ gameObject.GetComponent<NPCstats> ().bedIndex ];
 			gameObject.GetComponent<AIStateMachine> ().SendNPCToObject (bed);
 			//God this sucks, but what can ya do lol
 		}
@@ -80,6 +93,7 @@ public class NPCOverworldController : MonoBehaviour {
 
 		idleTargets = GameObject.FindGameObjectsWithTag ("IdleLocation");
 		shuffleArray (idleTargets);
+        
 
 		return idleTargets;
 	}
