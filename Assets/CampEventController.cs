@@ -158,8 +158,7 @@ public class CampEventController : MonoBehaviour {
 	IEnumerator EndDayCycle(){
 		//GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().SetScreenOverlayColor (Color.black);
 		gameObject.GetComponent<GameSaveController>().SaveGame();
-
-		GameObject.Find("Player").GetComponent<NPCTeamHandler>().resetNPCTargets();
+        
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.black, 2.0f);
 		GameObject.Find ("CampEventController").GetComponent<VStoneEconomyObject> ().resetDailyTotal ();
 
