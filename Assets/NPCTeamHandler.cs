@@ -242,7 +242,7 @@ public class NPCTeamHandler : MonoBehaviour {
 
 		foreach (GameObject g in CurrentArmedNPCs)
 		{
-			g.GetComponent<AIStateMachine> ().ResetNPCVariables ();
+			g.GetComponent<AIStateMachine> ().RecallFightingEnemies ();
 			foreach (GameObject b in NPCsToTarget) {
 				if (b.activeSelf) {
 					g.GetComponent<AIStateMachine> ().AddTargetForNPC (b);	
@@ -305,7 +305,7 @@ public class NPCTeamHandler : MonoBehaviour {
 
 	        foreach (GameObject g in CurrentArmedNPCs)
 	        {
-				g.GetComponent<AIStateMachine> ().ResetNPCVariables ();
+				g.GetComponent<AIStateMachine> ().RecallFightingEnemies ();
 				foreach (GameObject b in bugs) {
 					if (b.activeSelf) {
 						g.GetComponent<AIStateMachine> ().AddTargetForNPC (b);	

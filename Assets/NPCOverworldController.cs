@@ -74,7 +74,6 @@ public class NPCOverworldController : MonoBehaviour {
        // print("npc going to bed");
 		//idling = false;
 		if (gameObject.GetComponent<NPCstats> ().bedIndex != null) {
-            gameObject.GetComponent<AIStateMachine>().ResetNPCVariables();
             GameObject bed = GameObject.Find("CampEventController").GetComponent<NPCBedController>().npcBeds[ gameObject.GetComponent<NPCstats> ().bedIndex ];
 			gameObject.GetComponent<AIStateMachine> ().SendNPCToObject (bed);
 			//God this sucks, but what can ya do lol
@@ -99,7 +98,7 @@ public class NPCOverworldController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.tag == "CampArea") {
+		if (other.tag == "CampArea" && GameObject.Find("CampEventController").GetComponent<CampNarrativeController>().timeOfDay == CampNarrativeController.timePeriod.Evening) {
 			//print ("npc doing idle routine");
 			DoIdleRoutine ();
 		}
