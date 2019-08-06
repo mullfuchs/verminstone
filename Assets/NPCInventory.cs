@@ -6,16 +6,22 @@ public class NPCInventory : MonoBehaviour {
     
     public GameObject ObjectHeldInHands;
     public GameObject ObjectOnBack;
+	public GameObject ObjectOnHead;
 
     private Transform handTransform;
     private Transform backTransform;
+	private Transform headTransform;
+
     private GameObject ActiveHandObject;
     private GameObject ActiveBackObject;
+	private GameObject ActiveHeadObject;
 
 	// Use this for initialization
 	void Start () {
         handTransform = FindDeepChild(gameObject.transform, "hand_R");
         backTransform = FindDeepChild(gameObject.transform, "neck");
+		headTransform = FindDeepChild (gameObject.transform, "head");
+
         if(ObjectHeldInHands != null)
         {
             ActiveHandObject = Instantiate(ObjectHeldInHands, handTransform.position, handTransform.rotation, handTransform);
@@ -30,11 +36,28 @@ public class NPCInventory : MonoBehaviour {
 			ActiveBackObject.GetComponent<Rigidbody> ().useGravity = false;
 			ActiveBackObject.GetComponent<BoxCollider> ().enabled = false;
         }
+		if (ObjectOnHead != null) 
+		{
+			print ("attaching head object");
+			AttachObject (ActiveHeadObject, ObjectOnHead, headTransform);
+		}
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	void AttachObject(GameObject activeSlotObject, GameObject item, Transform objectTransform){
+		activeSlotObject = Instantiate (item, objectTransform.position, objectTransform.rotation, objectTransform);
+		if (activeSlotObject.GetComponent<Rigidbody> () != null) {
+			activeSlotObject.GetComponent<Rigidbody> ().isKinematic = true;
+			activeSlotObject.GetComponent<Rigidbody> ().useGravity = false;
+		}
+		if (activeSlotObject.GetComponent<BoxCollider> () != null) {
+			activeSlotObject.GetComponent<BoxCollider> ().enabled = false;
+		}
 	}
     
     Transform getBodyTransform(string part)
