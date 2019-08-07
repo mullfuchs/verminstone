@@ -82,6 +82,11 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 		yield return new WaitForSeconds (2.0f);
 
         int carrierCount = NPCCarriers.Length;
+
+		for(int i = 0; i < NPCCarriers.Length; i++){
+			NPCCarriers [i].GetComponent<AIStateMachine> ().SendNPCToObject (stoneBucketObject); 
+		}
+
 		//have all the carriers dropped stone?
 		while (stoneBucketObject.GetComponent<RockBucketController> ().getNumberOfVisitedCarriers() < carrierCount) {
 			yield return null;

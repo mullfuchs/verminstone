@@ -32,6 +32,7 @@ public class CaveEntrance : MonoBehaviour {
 
 		moveNPCTeamToPoint (Holder, transform.position);
 
+		Holder.GetComponent<PlayerAndNPCSpawner> ().placeAllNPCs ();
 		/*
 		GameObject[] Miners = GameObject.FindGameObjectsWithTag ("WorkerNPC");
 
@@ -70,7 +71,8 @@ public class CaveEntrance : MonoBehaviour {
 	void OnTriggerExit(Collider other){
 		if (other.tag == "Player") {
 			//TEMP 
-			Holder.GetComponent<PlayerAndNPCSpawner> ().placeAllNPCs ();
+			//Holder.GetComponent<PlayerAndNPCSpawner> ().placeAllNPCs ();
+
 		} 
 	}
 
