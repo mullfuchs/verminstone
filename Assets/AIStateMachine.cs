@@ -249,6 +249,12 @@ public class AIStateMachine : MonoBehaviour {
 			}
 		}
 
+		if (other.gameObject.name == "EquipmentReturn") {
+			//if (CurrentTarget == other.gameObject) {
+				gameObject.GetComponent<NPCInventory> ().DestroyAllEquippedObjects ();
+			//}
+		}
+
         if(other.tag == "Bug")
         {
 
