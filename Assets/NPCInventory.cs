@@ -122,6 +122,23 @@ public class NPCInventory : MonoBehaviour {
 		}
 	}
 
+	public void DestroyAllEquippedObjects()
+	{
+		if (ActiveHandObject) {
+			Destroy (ActiveHandObject);
+		}
+		if (ActiveBackObject) {
+			Destroy (ActiveBackObject);
+		}
+		if (ActiveHeadObject) {
+			Destroy (ActiveHeadObject);
+		}
+			
+		ObjectHeldInHands = null;
+		ObjectOnHead = null;
+		ObjectOnBack = null;
+	}
+
     public Transform FindDeepChild(Transform aParent, string aName)
     {
         var result = aParent.Find(aName);

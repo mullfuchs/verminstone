@@ -101,7 +101,13 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 		if (VStoneEcoInstance.meetsDailyQuota (VStoneEcoInstance.getDailyTotal ())) {
 			//door lowring thing goes here
 			GameObject.Find("CaveExitDoor").GetComponent<DoorController>().OpenDoor();
-			EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
+			GameObject[] npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
+
+			for (int i = 0; i < npcs.Length; i++) {
+				npcs [i].GetComponent<AIStateMachine> ().SendNPCToObject ( GameObject.Find("EquipmentReturn") );
+			}
+
+			//EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
 		} else {
 			print ("go back 2 the caves");
 			VStoneEcoInstance.resetDailyTotal ();
