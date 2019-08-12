@@ -70,9 +70,7 @@ public class CampEventController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.Y)){
-			SendNPCsToStagingArea ();
-		}
+
 	}
 
 	public void SendNPCsToBarracks(){
@@ -116,7 +114,7 @@ public class CampEventController : MonoBehaviour {
     {
         for (int i = 0; i < NPCGroup.Length; i++)
         {
-            NPCGroup[i].GetComponent<AIStateMachine>().AddTargetForNPC(target);
+            NPCGroup[i].GetComponent<AIStateMachine>().SendNPCToObject(target);
         }
     }
 
@@ -197,7 +195,7 @@ public class CampEventController : MonoBehaviour {
 		//fade in
 		caveEntrance.GetComponent<CaveEntrance>().LoadLevelOnEnter = true;
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.clear, 2.0f);
-
+        
 		print ("sending npcs to food table");
 		SendNPCGroupToTarget(GameObject.FindGameObjectsWithTag("WorkerNPC") , GameObject.Find("FoodTable"));
 		GameObject.Find ("Player").GetComponent<PlayerEventController> ().canEndDay = true;

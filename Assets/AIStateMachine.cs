@@ -130,6 +130,7 @@ public class AIStateMachine : MonoBehaviour {
 			}
 		}
 
+        
 		if (GoToNextTargetWhenCurrentTargetReached == true) {
 			if (Vector3.Distance (gameObject.transform.position, getTarget().position) <= defaultStoppingDist + 0.2f) {
 				if (targets.Count != 0) {
@@ -138,7 +139,7 @@ public class AIStateMachine : MonoBehaviour {
 				}
 			}	
 		}
-	
+	    
 
 	}
 
