@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerEventController : MonoBehaviour {
 
+	public bool canEndDay = true;
 
 	private CampEventController CampEventControllerInstance;
 	// Use this for initialization
@@ -35,8 +36,9 @@ public class PlayerEventController : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider other){
-		if (other.tag == "bed" && Input.GetKeyDown(KeyCode.Space)) {
+		if (other.tag == "bed" && Input.GetKeyDown(KeyCode.Space) && canEndDay) {
 			print ("Ending day");
+			canEndDay = false;
 			CampEventControllerInstance.EndDay ();
 		}
 	}

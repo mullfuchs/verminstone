@@ -95,6 +95,11 @@ public class CampEventController : MonoBehaviour {
         currentStagingArea = area;
     }
 
+	public void SendAllNPCsToAGameObject(GameObject target)
+	{
+		
+	}
+		
 	public void EndDay(){
 		StartCoroutine (EndDayCycle ());
 	}
@@ -179,6 +184,8 @@ public class CampEventController : MonoBehaviour {
 	}
 
 	public void StartDay(){
+
+
 		gameObject.GetComponent<CampPopulationController> ().ReplaceDeadNPCs ();
 
 		gameObject.GetComponent<CampNarrativeController> ().AdvanceDialogDayOfNPCs ();
@@ -190,7 +197,11 @@ public class CampEventController : MonoBehaviour {
 		//fade in
 		caveEntrance.GetComponent<CaveEntrance>().LoadLevelOnEnter = true;
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.clear, 2.0f);
-		SendAllNPCsToArea(MessHall);
+
+		print ("sending npcs to food table");
+		SendNPCGroupToTarget(GameObject.FindGameObjectsWithTag("WorkerNPC") , GameObject.Find("FoodTable"));
+		GameObject.Find ("Player").GetComponent<PlayerEventController> ().canEndDay = true;
+
 
 	}
 
@@ -223,6 +234,11 @@ public class CampEventController : MonoBehaviour {
 	}
 
 	public void EndMessHallSequence(){
+		if (gameObject.GetComponent<CampNarrativeController> ().timeOfDay == CampNarrativeController.timePeriod.Morning) {
+			print ("Sending npcs to prestage area");
+			SendNPCGroupToTarget(GameObject.FindGameObjectsWithTag("WorkerNPC"), GameObject.Find("PreCaveStagingArea"));
+		}
+			
 		canvas.GetComponent<NPCFoodDistroUIController> ().cleanUpFoodUI ();
 	}
 
