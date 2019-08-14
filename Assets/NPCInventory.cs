@@ -124,6 +124,7 @@ public class NPCInventory : MonoBehaviour {
 
 	public void DestroyAllEquippedObjects()
 	{
+		
 		if (ActiveHandObject) {
 			Destroy (ActiveHandObject);
 		}

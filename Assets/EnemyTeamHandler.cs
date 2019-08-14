@@ -18,6 +18,19 @@ public class EnemyTeamHandler : MonoBehaviour {
 
     private NPCTeamHandler playerTeamHandler;
 
+	public FloorSpawnRates[] SpawnRatesForFloors;
+
+	/*
+	 * so this here needs to better control spawning
+	 * I basically wanna control how many bugs are spawned, and which are spawned, at what level
+	 * because right now it sucks
+	 * ANYWAY. I should have like a table that this imports
+	 * and it looks at the floor and it looks at the table and goes "ah, send X Y and Z to the enemies"
+	 * it could be a class, that holds amounts per level, and it's stored in an array, which I define?
+	 * I could parse it from a json that would be less work, it would mean not going into testMap every
+	 * time I wanna fix it or balance it.
+	*/
+
     // Use this for initialization
     void Start () {
         NPCList = new List<GameObject>();
@@ -27,6 +40,8 @@ public class EnemyTeamHandler : MonoBehaviour {
         playerTeamHandler = GameObject.Find("Player").GetComponent<NPCTeamHandler>();
 
         ListOfSpawnersOnFloor = GameObject.FindGameObjectsWithTag("Spawner");
+
+
 	}
 	
 	// Update is called once per frame
@@ -42,24 +57,25 @@ public class EnemyTeamHandler : MonoBehaviour {
 
 		List<GameObject> MinerList = playerTeamHandler.GetCurrentMiners();
 
-        //closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(MediumEnemy, MinerList.ToArray(), 1, floorLevel);
-        //closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(BossEnemy, MinerList.ToArray(), 1, floorLevel);
+        //closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(SwarmEnemy, MinerList.ToArray(), floorLevel, floorLevel);
+		//randSpawner.GetComponent<SpawnObjects> ().SpawnEnemy (SwarmEnemy, MinerList.ToArray (), floorLevel, floorLevel);
 
-        closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(SwarmEnemy, MinerList.ToArray(), floorLevel, floorLevel);
-		randSpawner.GetComponent<SpawnObjects> ().SpawnEnemy (SwarmEnemy, MinerList.ToArray (), floorLevel, floorLevel);
 
-        //one out of like..10 chance to spawn a medium
-        if (Random.Range (0, 3) <= 1) {
-			//closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(MediumEnemy, MinerList.ToArray(), 1, floorLevel);
+		if (floorLevel > SpawnRatesForFloors.Length) {
+			MakeSwarmFromSpawnRate (closestsSpawner, MinerList.ToArray(), SpawnRatesForFloors [SpawnRatesForFloors.Length]);
+		} else {
+			MakeSwarmFromSpawnRate (closestsSpawner, MinerList.ToArray(), SpawnRatesForFloors [floorLevel]);
 		}
-		//one out of like 20 to spawn a boss
-		if (Random.Range (0, 5) <= 1) {
-			//closestsSpawner.GetComponent<SpawnObjects>().SpawnEnemy(BossEnemy, MinerList.ToArray(), 1, floorLevel);
-		}
-
 
 
     }
+
+	private void MakeSwarmFromSpawnRate(GameObject spawner, GameObject[] targets, FloorSpawnRates spawnRate){
+		for(int i = 0; i < spawnRate.EnemySpawnRates.Length; i++){
+			spawner.GetComponent<SpawnObjects> ().SpawnEnemy (spawnRate.EnemySpawnRates [i].enemyToSpawn, targets, 
+				spawnRate.EnemySpawnRates [i].numberOfEnemyToSpawn, 0);
+		}
+	}
 
     private GameObject findClosestSpawner(Vector3 targetPosition)
     {
@@ -91,4 +107,14 @@ public class EnemyTeamHandler : MonoBehaviour {
 	}
 
 
+	public class FloorSpawnRates{
+		public EnemySpawnRate[] EnemySpawnRates;
+	}
+
+	public class EnemySpawnRate{
+		public GameObject enemyToSpawn;
+		public int numberOfEnemyToSpawn;
+		public float probabilityOfSpawning;
+	}
 }
+	

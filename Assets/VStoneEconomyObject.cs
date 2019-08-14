@@ -49,7 +49,7 @@ public class VStoneEconomyObject : MonoBehaviour {
 	}
 
 	public void IncreaseDailyQuota(int day){
-		DailyQuota = DailyQuota * day;
+		DailyQuota = DailyQuota + IncrementAmout;
 	}
 
 	public bool meetsDailyQuota(float vStoneAmount){
