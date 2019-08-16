@@ -61,7 +61,7 @@ public class EnemyTeamHandler : MonoBehaviour {
 		//randSpawner.GetComponent<SpawnObjects> ().SpawnEnemy (SwarmEnemy, MinerList.ToArray (), floorLevel, floorLevel);
 
 
-		if (floorLevel > SpawnRatesForFloors.Length) {
+		if (floorLevel >= SpawnRatesForFloors.Length) {
 			MakeSwarmFromSpawnRate (closestsSpawner, MinerList.ToArray(), SpawnRatesForFloors [SpawnRatesForFloors.Length]);
 		} else {
 			MakeSwarmFromSpawnRate (closestsSpawner, MinerList.ToArray(), SpawnRatesForFloors [floorLevel]);
@@ -73,7 +73,7 @@ public class EnemyTeamHandler : MonoBehaviour {
 	private void MakeSwarmFromSpawnRate(GameObject spawner, GameObject[] targets, FloorSpawnRates spawnRate){
 		for(int i = 0; i < spawnRate.EnemySpawnRates.Length; i++){
 			spawner.GetComponent<SpawnObjects> ().SpawnEnemy (spawnRate.EnemySpawnRates [i].enemyToSpawn, targets, 
-				spawnRate.EnemySpawnRates [i].numberOfEnemyToSpawn, 0);
+				spawnRate.EnemySpawnRates [i].numberOfEnemyToSpawn, floorLevel);
 		}
 	}
 
@@ -106,11 +106,12 @@ public class EnemyTeamHandler : MonoBehaviour {
 		return randomSpawn;
 	}
 
-
+	[System.Serializable]
 	public class FloorSpawnRates{
 		public EnemySpawnRate[] EnemySpawnRates;
 	}
 
+	[System.Serializable]
 	public class EnemySpawnRate{
 		public GameObject enemyToSpawn;
 		public int numberOfEnemyToSpawn;

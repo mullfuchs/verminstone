@@ -30,33 +30,26 @@ public class SpawnObjects : MonoBehaviour {
 	public void SpawnEnemy(GameObject objectToSpawn, GameObject[] TargetsForThatEnemy, int numberToSpawn, int floor)
     {
 		floorLevel = floor;
-        StartCoroutine(spawnASetOfEnemies(0.5f, numberToSpawn, objectToSpawn, TargetsForThatEnemy));
+		StartCoroutine(spawnASetOfEnemies(0.5f, numberToSpawn, objectToSpawn, TargetsForThatEnemy));
     }
 
     private IEnumerator spawnASetOfEnemies(float delay, int amount, GameObject objectToSpawn, GameObject[] targets)
     {
 		int count = amount;
         print("targets: " + count);
-        while(count > 0)
+		while(amount > 0)
         {
-            StartCoroutine(spawnSingleEnemyTimed(delay, amount, objectToSpawn, targets[count - 1]));
-            count--;
+			StartCoroutine(spawnSingleEnemyTimed(delay, amount, objectToSpawn, targets[Random.Range(0, targets.Length)]));
+			amount--;
             yield return new WaitForSeconds(delay);
         }
     }
 
     private IEnumerator spawnSingleEnemyTimed(float delay, int amount, GameObject objectToSpawn, GameObject target)
     {
-        int count = amount;
-        while(count >= 0)
-        {
-            GameObject bugToSpawn = Instantiate(objectToSpawn, transform.position, transform.rotation);
-			bugToSpawn.GetComponent<AIBugController> ().setUpBug (target, gameObject, floorLevel);
-			//.setTarget(target);
-			//bugToSpawn.GetComponent<AIBugController> ().setOriginObject (gameObject);
-            count--;
-            yield return new WaitForSeconds(delay);
-        }
+       	GameObject bugToSpawn = Instantiate(objectToSpawn, transform.position, transform.rotation);
+		bugToSpawn.GetComponent<AIBugController> ().setUpBug (target, gameObject, floorLevel);
+        yield return new WaitForSeconds(delay);
     }
 
 
