@@ -32,11 +32,15 @@ namespace Yarn.Unity.Example{
 
 		void CheckForNearbyNPC(){
 			var allParticipants = new List<NPC> (FindObjectsOfType<NPC> ());
+
+
 			var target = allParticipants.Find (delegate (NPC p) {
 				return string.IsNullOrEmpty (p.talkToNode) == false && // has a conversation node?
 					(p.transform.position - this.transform.position)// is in range?
 						.magnitude <= interactionRadius;
 			});
+
+
 			if (target != null) {
 				// Kick off the dialogue at this node.
 				if (target.GetComponentInParent<NPCstats> ().hasBeenTalkedToToday == false) {
