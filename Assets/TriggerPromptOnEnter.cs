@@ -25,6 +25,7 @@ public class TriggerPromptOnEnter : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player" && canTalkToNPC)
         {
+			print ("prompt object active");
             PromptObject.SetActive(true);
         }
     }

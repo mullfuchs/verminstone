@@ -38,8 +38,7 @@ public class NPCInventory : MonoBehaviour {
         }
 		if (ObjectOnHead != null) 
 		{
-			print ("attaching head object");
-			AttachObject (ActiveHeadObject, ObjectOnHead, headTransform);
+			ActiveHeadObject = AttachObject (ObjectOnHead, headTransform);
 		}
 
 	}
@@ -49,8 +48,8 @@ public class NPCInventory : MonoBehaviour {
 		
 	}
 
-	void AttachObject(GameObject activeSlotObject, GameObject item, Transform objectTransform){
-		activeSlotObject = Instantiate (item, objectTransform.position, objectTransform.rotation, objectTransform);
+	GameObject AttachObject(GameObject item, Transform objectTransform){
+		GameObject activeSlotObject = Instantiate (item, objectTransform.position, objectTransform.rotation, objectTransform);
 		if (activeSlotObject.GetComponent<Rigidbody> () != null) {
 			activeSlotObject.GetComponent<Rigidbody> ().isKinematic = true;
 			activeSlotObject.GetComponent<Rigidbody> ().useGravity = false;
@@ -58,6 +57,7 @@ public class NPCInventory : MonoBehaviour {
 		if (activeSlotObject.GetComponent<BoxCollider> () != null) {
 			activeSlotObject.GetComponent<BoxCollider> ().enabled = false;
 		}
+		return activeSlotObject;
 	}
     
     Transform getBodyTransform(string part)
@@ -132,6 +132,7 @@ public class NPCInventory : MonoBehaviour {
 			Destroy (ActiveBackObject);
 		}
 		if (ActiveHeadObject) {
+			print ("removing helmet");
 			Destroy (ActiveHeadObject);
 		}
 			

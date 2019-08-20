@@ -47,8 +47,8 @@ public class NPCOverworldController : MonoBehaviour {
                 idleCounter -= 1;
                 if (idleCounter <= 0)
                 {
+					GoToBed ();
                     idling = false;
-                    GoToBed();
                 }
                 else
                 {
