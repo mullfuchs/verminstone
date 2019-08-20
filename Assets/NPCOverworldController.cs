@@ -102,6 +102,9 @@ public class NPCOverworldController : MonoBehaviour {
 			//print ("npc doing idle routine");
 			DoIdleRoutine ();
 		}
+
+
+
 	}
 
 	void shuffleArray(GameObject[] targets)

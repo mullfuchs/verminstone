@@ -65,7 +65,7 @@ public class CampNarrativeController : MonoBehaviour {
 				if (name == portraitObject.NPCName) {
 					npc.GetComponent<NPCstats> ().DialogPortraits = portraitObject.portraits;
 				} else {
-					print ("No portraits found for npc: " + name);
+					//print ("No portraits found for npc: " + name);
 				}
 			}
 		}
@@ -83,6 +83,10 @@ public class CampNarrativeController : MonoBehaviour {
 			string startnode = GetStartNode (npc.GetComponent<Yarn.Unity.Example.NPC> ().characterName, npc.GetComponent<NPCstats>().daysTalkedTo, timeOfDay);
 			print ("start node" + startnode);
 			npc.GetComponent<Yarn.Unity.Example.NPC> ().talkToNode = startnode;
+			//hack, if it's evening, reload the script, since the scene is being rebuilt;
+			if (timeOfDay == timePeriod.Evening) {
+				npc.GetComponent<Yarn.Unity.Example.NPC> ().LoadNPCScript();
+			}
 		}
     }
 
@@ -137,7 +141,7 @@ public class CampNarrativeController : MonoBehaviour {
 		string characterName = dialogNamespace [0];
 		npc.GetComponent<Yarn.Unity.Example.NPC> ().characterName = characterName;
 		npc.GetComponent<NPCstats>().NPCName = characterName;
-		print ("setting dialog for char " + characterName);
+		print ("setting dialog for new char " + characterName);
         //set up it's portratit
         SetUpNewNPCPortrait(npc);
 	}
