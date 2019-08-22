@@ -85,8 +85,9 @@ public class CampNarrativeController : MonoBehaviour {
 			string startnode = GetStartNode (npc.GetComponent<Yarn.Unity.Example.NPC> ().characterName, npc.GetComponent<NPCstats>().daysTalkedTo, timeOfDay);
 			print ("start node" + startnode);
 			npc.GetComponent<Yarn.Unity.Example.NPC> ().talkToNode = startnode;
-			
 		}
+		
+		//GameObject.Find ("Dialogue").GetComponent<Yarn.Unity.DialogueRunner> ().HotLoadNPCScripts ();
     }
 
 	public void UpdateKeyNPCNarratives()
@@ -185,6 +186,7 @@ public class CampNarrativeController : MonoBehaviour {
 		*/
 		return false;
 	}
+
 
 }
 

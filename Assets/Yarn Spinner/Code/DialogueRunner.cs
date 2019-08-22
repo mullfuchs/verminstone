@@ -91,11 +91,20 @@ namespace Yarn.Unity
 
 			// Load all JSON
 			foreach (var source in sourceText) {
-				dialogue.LoadString (source.text, source.name);
+				//dialogue.LoadString (source.text, source.name);
 			}
+				
 
 			if (startAutomatically) {
 				StartDialogue();
+			}
+		}
+
+		public void HotLoadNPCScripts(){
+			Yarn.Unity.Example.NPC[] npcsToLoad = FindObjectsOfType<Yarn.Unity.Example.NPC> ();
+			foreach (var npc in npcsToLoad) {
+				print ("hot loading script");
+				dialogue.LoadString (npc.scriptToLoad.text, npc.scriptToLoad.name);
 			}
 		}
 
