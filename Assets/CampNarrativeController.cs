@@ -25,6 +25,8 @@ public class CampNarrativeController : MonoBehaviour {
 
 	public GameDreamSequenceObject[] DreamSequence;
 
+    private bool hasDialogBeenLoaded = false;
+
 	// Use this for initialization
 	void Start () {
 	    //get the list of npcs
@@ -83,10 +85,7 @@ public class CampNarrativeController : MonoBehaviour {
 			string startnode = GetStartNode (npc.GetComponent<Yarn.Unity.Example.NPC> ().characterName, npc.GetComponent<NPCstats>().daysTalkedTo, timeOfDay);
 			print ("start node" + startnode);
 			npc.GetComponent<Yarn.Unity.Example.NPC> ().talkToNode = startnode;
-			//hack, if it's evening, reload the script, since the scene is being rebuilt;
-			if (timeOfDay == timePeriod.Evening) {
-				npc.GetComponent<Yarn.Unity.Example.NPC> ().LoadNPCScript();
-			}
+			
 		}
     }
 

@@ -85,7 +85,6 @@ public class EquipUIController : MonoBehaviour {
     {
         //resetAllButtons();
         currentItem = item;
-		print ("Number of cards in npc cards " + NPCCards.Count);
 		foreach(GameObject g in NPCCards)
         {
             if (item.GetComponent<EquippableItem>().ForBack)
