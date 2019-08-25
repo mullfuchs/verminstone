@@ -8,6 +8,8 @@ public class DealDamageToObjects : MonoBehaviour {
 
 	public float baseDamageAmount;
 	public float knockback;
+	public GameObject hitEffect;
+
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +27,9 @@ public class DealDamageToObjects : MonoBehaviour {
         if (other.tag == AffectedTag && OtherHealth)
         {
 			float tempDMG = baseDamageAmount;
-			other.attachedRigidbody.AddForce ( Vector3.Normalize( gameObject.transform.position - other.transform.position ) * 2 );
+			if (other.attachedRigidbody != null) {
+				other.attachedRigidbody.AddForce ( Vector3.Normalize( gameObject.transform.position - other.transform.position ) * 2 );
+			}
 			//is this npc holding something?
 			GameObject handObj = null;
 
@@ -33,12 +37,17 @@ public class DealDamageToObjects : MonoBehaviour {
 				handObj = gameObject.transform.parent.GetComponent<NPCInventory>().getHandObject();
 			}
 
-			//if it is is it a weapon?
+			//if it is, is it a weapon?
 			if (handObj != null && handObj.GetComponent<WeaponController> () != null) {
 				tempDMG += handObj.GetComponent<WeaponController> ().damage;
 			}
 
 			OtherHealth.AddDamage(tempDMG);
+			//print (gameObject.transform.parent.name + " Doing damage to " + other.gameObject.transform.parent.name);
+
+			if (hitEffect != null) {
+				Instantiate(hitEffect, gameObject.transform.position, Quaternion.identity);
+			}
         }
     }
 

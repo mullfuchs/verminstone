@@ -98,7 +98,7 @@ public class AIStateMachine : MonoBehaviour {
 			if (EnemyAttackingMe != null) {
 
 				float distToEnemy = Vector3.Distance(EnemyAttackingMe.transform.position, transform.position);
-				if (distToEnemy <= 1.5f && CanAttack) {
+				if (distToEnemy <= 2.5f && CanAttack) {
 					print ("performing attack");
 					PerformAttack ();
 				}
