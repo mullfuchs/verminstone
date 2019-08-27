@@ -12,14 +12,18 @@ public class NPCEquipCardController : MonoBehaviour {
     public GameObject nameText;
     public GameObject HandEquipButton;
     public GameObject BackEquipButton;
+	public GameObject HeadEquipButton;
 
     // Use this for initialization
     void Start () {
         Button handequipbtn = HandEquipButton.GetComponent<Button>();
         Button backequipbtn = BackEquipButton.GetComponent<Button>();
+		Button headequipbtn = HeadEquipButton.GetComponent<Button> ();
 
         handequipbtn.onClick.AddListener(EquipHandObject);
         backequipbtn.onClick.AddListener(EquipBackObject);
+		headequipbtn.onClick.AddListener (EquipHeadObject);
+
 
         canvasOBJ = GameObject.Find("Canvas");
 	}
@@ -50,6 +54,11 @@ public class NPCEquipCardController : MonoBehaviour {
     {
         canvasOBJ.GetComponent<EquipUIController>().equipBackItemToNPC(associatedNPC);
     }
+
+	private void EquipHeadObject()
+	{
+		canvasOBJ.GetComponent<EquipUIController> ().equipHeadItemToNPC (associatedNPC);		
+	}
 
     public GameObject getAssociatedNPC()
     {

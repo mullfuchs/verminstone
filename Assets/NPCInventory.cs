@@ -96,6 +96,16 @@ public class NPCInventory : MonoBehaviour {
         ObjectOnBack = item;
     }
 
+	public void EquipHeadItem(GameObject item)
+	{
+		Destroy(ActiveHeadObject);
+		ActiveHeadObject = Instantiate(item, headTransform.position, headTransform.rotation, headTransform);
+		ActiveHeadObject.GetComponent<Rigidbody> ().isKinematic = true;
+		ActiveHeadObject.GetComponent<Rigidbody> ().useGravity = false;
+		ActiveHeadObject.GetComponent<BoxCollider> ().enabled = false;
+		ObjectOnHead = item;
+	}
+
 	public void DropBackItem()
 	{
 		ActiveBackObject.transform.parent = null;

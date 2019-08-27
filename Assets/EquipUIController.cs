@@ -87,14 +87,13 @@ public class EquipUIController : MonoBehaviour {
         currentItem = item;
 		foreach(GameObject g in NPCCards)
         {
-            if (item.GetComponent<EquippableItem>().ForBack)
-            {
-                g.GetComponent<NPCEquipCardController>().BackEquipButton.GetComponent<Button>().interactable = true;
-            }
-            else
-            {
-                g.GetComponent<NPCEquipCardController>().HandEquipButton.GetComponent<Button>().interactable = true;
-            }
+			if (item.GetComponent<EquippableItem> ().ForBack) {
+				g.GetComponent<NPCEquipCardController> ().BackEquipButton.GetComponent<Button> ().interactable = true;
+			} else if (item.GetComponent<EquippableItem> ().ForHand) {
+				g.GetComponent<NPCEquipCardController> ().HandEquipButton.GetComponent<Button> ().interactable = true;
+			} else {
+				g.GetComponent<NPCEquipCardController> ().HeadEquipButton.GetComponent<Button> ().interactable = true;
+			}
         }
     }
 
@@ -108,6 +107,8 @@ public class EquipUIController : MonoBehaviour {
                 g.GetComponent<NPCEquipCardController>().BackEquipButton.GetComponent<Button>().interactable = false;
 
                 g.GetComponent<NPCEquipCardController>().HandEquipButton.GetComponent<Button>().interactable = false;
+
+				g.GetComponent<NPCEquipCardController>().HeadEquipButton.GetComponent<Button>().interactable = false;
             }
 
      
@@ -130,5 +131,12 @@ public class EquipUIController : MonoBehaviour {
         currentItem = null;
         resetAllButtons();
     }
+
+	public void equipHeadItemToNPC(GameObject npc)
+	{
+		npc.GetComponent<NPCInventory> ().EquipHeadItem (currentItem);
+		currentItem = null;
+		resetAllButtons ();
+	}
 
 }
