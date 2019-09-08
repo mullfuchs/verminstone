@@ -6,6 +6,8 @@ namespace Yarn.Unity.Example{
 	public class DialogTrigger : MonoBehaviour {
 		public float interactionRadius = 3.0f;
 
+        public bool canTalkToNPCs = true;
+
 		GameObject mainCam;
 
 		// Use this for initialization
@@ -41,7 +43,8 @@ namespace Yarn.Unity.Example{
 			});
 
 
-			if (target != null) {
+			if (target != null && canTalkToNPCs) {
+                canTalkToNPCs = false;
 				// Kick off the dialogue at this node.
 				if (target.GetComponentInParent<NPCstats> ().hasBeenTalkedToToday == false) {
 					target.GetComponentInParent<NPCstats> ().hasBeenTalkedToToday = true;
