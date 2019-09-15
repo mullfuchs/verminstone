@@ -220,7 +220,9 @@ namespace Yarn.Unity.Example {
 			if (gameControlsContainer != null) {
 				gameControlsContainer.gameObject.SetActive(true);
 			}
-			
+
+            GameObject.Find("Player").GetComponent<DialogTrigger>().canTalkToNPCs = true;
+
 			yield break;
 		}
 		
