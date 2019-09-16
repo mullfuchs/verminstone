@@ -12,6 +12,8 @@ public class health : MonoBehaviour {
 
 	private FillableBarController healthBar;
 
+	public GameObject DeathEffectObject;
+
 	// Use this for initialization
 	void Start () {
         if(gameObject.tag == "WorkerNPC")
@@ -38,7 +40,8 @@ public class health : MonoBehaviour {
 			healthPoints -= obj.gameObject.GetComponent<MoveForward>().damage;
 			Destroy (obj.gameObject);
 			if (healthPoints <= 0) {
-				Destroy (this.gameObject);
+				killgameObject ();
+				//Destroy (this.gameObject);
 			}
 		}
 
@@ -107,6 +110,11 @@ public class health : MonoBehaviour {
 
     void killgameObject()
     {
+		if (DeathEffectObject != null) {
+			print ("creating death effect");
+			Instantiate (DeathEffectObject, gameObject.transform.position, Quaternion.identity);	
+		}
+
         if(gameObject.tag == "WorkerNPC")
         {
 			if(gameObject.GetComponent<NPCstats> ().ragDollObject != null){
