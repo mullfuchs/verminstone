@@ -6,7 +6,7 @@ namespace Yarn.Unity.Example{
 	public class DialogTrigger : MonoBehaviour {
 		public float interactionRadius = 3.0f;
 
-        public bool canTalkToNPCs = true;
+        public bool canTalkToNPCs = false;
 
 		GameObject mainCam;
 
