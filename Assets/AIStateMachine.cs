@@ -323,7 +323,7 @@ public class AIStateMachine : MonoBehaviour {
 	}
 		
 	GameObject getTargetObject(){
-		if (this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> () != null) {
+		if (this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().target != null) {
 			GameObject obj = this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().target.gameObject;
 			if(obj != null)
 			{

@@ -17,7 +17,7 @@ public class PowerObject : MonoBehaviour {
     private ShootOnAxisInput shootingObject;
     private UIController uiController;
 
-    private GameObject HealingObject;
+	public GameObject HealingObject;
 
     void Start()
     {
