@@ -19,6 +19,8 @@ public class PowerObject : MonoBehaviour {
 
 	public GameObject HealingObject;
 
+	public Light GlowLight;
+
     void Start()
     {
         UIObject = GameObject.Find("Canvas");
@@ -69,6 +71,8 @@ public class PowerObject : MonoBehaviour {
 		powerAmount += amount;
 		if (uiController != null) {
 			uiController.updateBar(uiController.PowerBarObject, powerAmount);
+			setLightIntensity (powerAmount);
+
 		}
     }
 
@@ -76,6 +80,7 @@ public class PowerObject : MonoBehaviour {
 		if (powerAmount > 0) {
 			powerAmount -= amount;
 			uiController.updateBar(uiController.PowerBarObject, powerAmount);
+			setLightIntensity (powerAmount);
 		}
     }
 
@@ -158,5 +163,13 @@ public class PowerObject : MonoBehaviour {
 
 	public float getPowerAmount(){
 		return powerAmount;
+	}
+
+	void setLightIntensity(float powerLevel){
+		if (powerLevel >= 5) {
+			GlowLight.intensity = 5;
+		} else {
+			GlowLight.intensity = powerLevel;
+		}
 	}
 }
