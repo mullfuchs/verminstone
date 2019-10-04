@@ -10,9 +10,9 @@ public class PowerObject : MonoBehaviour {
 	private float regenRate = 0.005f;
 	private bool canRegen = true;
 
-    private int powerLevel = 1;
-    private int xp = 1;
-    private int powerThreshold = 5;
+	public int powerLevel = 1;
+	public int xp = 1;
+	public int powerThreshold = 5;
 
     private ShootOnAxisInput shootingObject;
     private UIController uiController;
@@ -28,7 +28,7 @@ public class PowerObject : MonoBehaviour {
         shootingObject = transform.GetChild(0).GetComponent<ShootOnAxisInput>();
 
         uiController.updateBarMaxValue(uiController.XPBarObject, powerThreshold);
-        uiController.updateBar(uiController.XPBarObject, xp);
+        uiController.updateBar(uiController.XPBarObject, 1);
 
         uiController.updateBarMaxValue(uiController.PowerBarObject, maxPowerAmount);
         uiController.updateBar(uiController.PowerBarObject, powerAmount);
@@ -41,7 +41,8 @@ public class PowerObject : MonoBehaviour {
 		UIObject = uiObj;
 		uiController = UIObject.GetComponent<UIController>();
         uiController.updateBarMaxValue(uiController.PowerBarObject, maxPowerAmount);
-        uiController.updateBarMaxValue(uiController.XPBarObject, powerThreshold);
+		uiController.updateBarMaxValue(uiController.XPBarObject, powerThreshold);
+		uiController.updateText (uiController.XPText, powerLevel.ToString());
     }
 
 	// Update is called once per frame
@@ -90,27 +91,20 @@ public class PowerObject : MonoBehaviour {
 
     void levelUp()
     {
-        /*
+        
         if(powerAmount >= powerThreshold)
         {
             powerThreshold += 2;
-            shootingObject.shootDelay = reduceValueUntilFloor(shootingObject.shootDelay, 0.01f, 0.01f);
-            //        public float shootDelay = 0.3f;
-            shootingObject.damage = increaseValueUntilCeiling(shootingObject.damage, 10.0f, 0.5f);
-            // public float damage = 0.5f;
-            shootingObject.projectileSpeed = increaseValueUntilCeiling(shootingObject.projectileSpeed, 70.0f, 5.0f);
-            powerLevel++;
 
+			powerLevel += 1;
+			xp = 0;
+		
             uiController.updateBarMaxValue(uiController.XPBarObject, powerThreshold);
-            uiController.updateBar(uiController.XPBarObject, powerLevel);
-            // public float projectileSpeed = 0.5f;
+			uiController.updateBar(uiController.XPBarObject, xp);
+			uiController.updateText (uiController.XPText, powerLevel.ToString());
 
-            // public float fireSpread = 0.9f; //TODO, implement
-
-            //  public float cost = 0.1f;
-            //  public float secondsAlive = 5.0f;
         }
-        */
+        
     }
 
     private float reduceValueUntilFloor(float value, float minValue, float reductionAmount)
@@ -147,6 +141,8 @@ public class PowerObject : MonoBehaviour {
 			AddPowerAmount(other.GetComponent<VStoneObject>().energy);
 
             xp += 1;
+			uiController.updateBar(uiController.XPBarObject, xp);
+			//uiController.updateText (uiController.XPText, "Power Level: " + powerLevel);
 
             if(xp > powerThreshold)
             {

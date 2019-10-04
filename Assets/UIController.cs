@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour {
     public GameObject HealthBarObject;
     public GameObject PowerBarObject;
     public GameObject XPBarObject;
+	public GameObject XPText;
 
     public GameObject VStoneAmountText;
     public GameObject GameStatusText;
