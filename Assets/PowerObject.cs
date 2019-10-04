@@ -60,7 +60,10 @@ public class PowerObject : MonoBehaviour {
 			
         if (Input.GetButtonDown("HealButton"))
         {
-            HealingObject.SetActive(true);
+			if (powerLevel >= 2) {
+				levelDown ();
+				HealingObject.SetActive (true);
+			}
         }
         if(Input.GetButtonUp("HealButton"))
         {
@@ -106,6 +109,17 @@ public class PowerObject : MonoBehaviour {
         }
         
     }
+
+	void levelDown(){
+		if (powerLevel >= 2) {
+			powerLevel -= 1;
+			powerThreshold -= 2;
+			xp = 0;
+			uiController.updateBarMaxValue(uiController.XPBarObject, powerThreshold);
+			uiController.updateBar(uiController.XPBarObject, xp);
+			uiController.updateText (uiController.XPText, powerLevel.ToString());
+		}
+	}
 
     private float reduceValueUntilFloor(float value, float minValue, float reductionAmount)
     {
