@@ -22,7 +22,7 @@ public class HealObjectsWithinRadius : MonoBehaviour {
     void OnTriggerStay(Collider other)
     {
         health objectHealth = other.gameObject.GetComponent<health>();
-        if(other.tag == "WorkerNPC" && objectHealth != null)
+		if(other.gameObject.tag == "WorkerNPC" && objectHealth != null)
         {
             if (objectHealth.AddHealth(1.0f))
             {

@@ -51,6 +51,9 @@ public class PowerObject : MonoBehaviour {
 			canRegen = false;
 		}
 
+		if (powerAmount <= 0) {
+			canRegen = true;
+		}
 
 		if (canRegen) {
 			AddPowerAmount (regenRate);
