@@ -103,6 +103,12 @@ public class health : MonoBehaviour {
         }
         else
         {
+			healthPoints = maxHealth;
+
+			if (healthBar != null) {
+				healthBar.UpdateCurrentValue (healthPoints);
+			}
+
             return false;
         }
 			

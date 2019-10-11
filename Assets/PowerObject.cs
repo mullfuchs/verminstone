@@ -9,6 +9,7 @@ public class PowerObject : MonoBehaviour {
     private float maxPowerAmount = 5;
 	private float regenRate = 0.005f;
 	private bool canRegen = true;
+	private bool healing = false;
 
 	public int powerLevel = 1;
 	public int xp = 1;
@@ -55,7 +56,7 @@ public class PowerObject : MonoBehaviour {
 			canRegen = true;
 		}
 
-		if (canRegen) {
+		if (canRegen && !healing) {
 			AddPowerAmount (regenRate);
 			canRegen = false;
 			Invoke ("ResetRegen", 0.2f);
@@ -66,12 +67,23 @@ public class PowerObject : MonoBehaviour {
 			if (powerLevel >= 2) {
 				levelDown ();
 				HealingObject.SetActive (true);
+				healing = true;
 			}
         }
         if(Input.GetButtonUp("HealButton"))
         {
             HealingObject.SetActive(false);
+			healing = false;
         }
+
+		//healing yourself costs one level, I mean, that makes sense right?
+
+		if (Input.GetButtonDown ("HealSelfButton")) {
+			if (powerLevel >= 2) {
+				levelDown ();
+				gameObject.GetComponent<health> ().AddHealth (100f);
+			}
+		}
 	}
 
 	public void AddPowerAmount(float amount){
