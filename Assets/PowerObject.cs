@@ -197,4 +197,9 @@ public class PowerObject : MonoBehaviour {
 			GlowLight.intensity = powerLevel;
 		}
 	}
+
+    public void setGlowLight(bool isOn)
+    {
+        GlowLight.enabled = isOn;
+    }
 }

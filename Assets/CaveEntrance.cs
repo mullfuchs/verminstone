@@ -33,7 +33,10 @@ public class CaveEntrance : MonoBehaviour {
 		moveNPCTeamToPoint (Holder, transform.position);
 
 		Holder.GetComponent<PlayerAndNPCSpawner> ().placeAllNPCs ();
-		/*
+
+        player.GetComponent<PowerObject>().setGlowLight(false);
+
+        /*
 		GameObject[] Miners = GameObject.FindGameObjectsWithTag ("WorkerNPC");
 
 		print ("moving npcs to position: " + player.transform.position);
@@ -43,8 +46,8 @@ public class CaveEntrance : MonoBehaviour {
 		}
 		*/
 
-		//
-	}
+        //
+    }
 
 	void moveNPCTeamToPoint(GameObject Holder, Vector3 Location){
 		GameObject[] Miners = GameObject.FindGameObjectsWithTag ("WorkerNPC");
@@ -78,6 +81,7 @@ public class CaveEntrance : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player" && LoadLevelOnEnter) {
+            other.gameObject.GetComponent<PowerObject>().setGlowLight(true);
 			SceneManager.LoadScene ("testMapScene");
 			LoadLevelOnEnter = false;
 		}
