@@ -78,15 +78,22 @@ public class VStoneObject : MonoBehaviour {
 	}
 
 	void MineStone(){
-		healthPoints -= minersInRadius * 10;
-		if (healthPoints <= 0) {
-			DestroyStoneAndCreateRocksToPickUp ();		
+		if (minersInRadius >= 1) {
+			healthPoints -= minersInRadius * 10;
+			if (healthPoints <= 0) {
+				DestroyStoneAndCreateRocksToPickUp ();		
+			}
 		}
 	}
 
 	void DestroyStoneAndCreateRocksToPickUp(){
+		float offsetX = 0.0f;
 		for (int i = 0; i < FragmentsToMake; i++) {
-			playerObject.GetComponent<NPCTeamHandler>().AddTargetForNPCs( Instantiate (VStoneFragmentObject, gameObject.transform.position, Quaternion.identity) );
+			Vector3 newPosition = gameObject.transform.position + new Vector3(0 + offsetX, 0, 0);
+			GameObject fragment = Instantiate (VStoneFragmentObject, newPosition, Quaternion.identity);
+			fragment.GetComponent<Rigidbody> ().AddForce (new Vector3 (Random.Range(1.0f, 5.0f) , 0.5f, Random.Range(1.0f, 5.0f) ), ForceMode.Impulse);
+			playerObject.GetComponent<NPCTeamHandler>().AddTargetForNPCs( fragment );
+			offsetX += 1.5f;
 		}
 		//try to remove it from the list
 		if (GameObject.Find ("CaveManager") != null) {
