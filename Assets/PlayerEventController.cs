@@ -22,6 +22,7 @@ public class PlayerEventController : MonoBehaviour {
 			CampEventControllerInstance.StartMessHallSequence ();
 		}
         if (Other.tag == "EquipArea"){
+			
             CampEventControllerInstance.StartEquipAreaSequence();
         }
 		if (Other.tag == "CaveEntrance") {

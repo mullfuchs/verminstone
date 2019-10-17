@@ -110,6 +110,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 			//EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
 		} else {
 			print ("go back 2 the caves");
+			EventController.GetComponent<CampEventController> ().caveEntrance.GetComponent<CaveEntrance> ().LoadLevelOnEnter = true;
+			// caveEntrance.SetActive (true);
 			VStoneEcoInstance.resetDailyTotal ();
 		}
 
