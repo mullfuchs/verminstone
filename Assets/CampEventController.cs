@@ -242,8 +242,12 @@ public class CampEventController : MonoBehaviour {
 
     public void StartEquipAreaSequence()
     {
-		canvas.GetComponent<EquipUIController>().CreateAndDisplayItemCards();
-        canvas.GetComponent<EquipUIController>().CreateAndDisplayNPCcards();
+		//check here if there's been enough vstone collected
+		VStoneEconomyObject vEco = gameObject.GetComponent<VStoneEconomyObject>();
+		if (!vEco.meetsDailyQuota (vEco.getDailyTotal ())) {
+			canvas.GetComponent<EquipUIController> ().CreateAndDisplayItemCards ();
+			canvas.GetComponent<EquipUIController> ().CreateAndDisplayNPCcards ();
+		}
         //create and display equip UI
     }
 
