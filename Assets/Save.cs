@@ -8,8 +8,8 @@ public class Save {
 
 	public SerializableVector3 PlayerPosition;
 	public float PlayerHealth;
-
 	public int DaysElapsed;
+	public List<string> CompletedQuests = new List<string>();
 }
 
 [System.Serializable]

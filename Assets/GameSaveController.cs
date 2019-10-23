@@ -90,6 +90,13 @@ public class GameSaveController : MonoBehaviour {
 
 		gameSave.DaysElapsed = GameObject.Find ("CampEventController").GetComponent<CampEventController> ().day;
 
+		gameSave.CompletedQuests = GameObject.Find ("GameQuestObjects").GetComponant<CampQuestController> ().GetCompletedQuestList ();
+
+		//quest controller has a list of strings of completed quests
+		//get that list, stick it in the save file. 
+
+
+
 		return gameSave;
 	}
 
@@ -105,6 +112,7 @@ public class GameSaveController : MonoBehaviour {
 			campPopController.LoadNPCFromSave (profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex);
 		}
 
+		GameObject.Find ("GameQuestObjects").GetComponant<CampQuestController> ().LoadCompletedQuests ( data.CompletedQuests );
 
 	}
 
