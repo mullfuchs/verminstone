@@ -48,6 +48,17 @@ public class CampQuestController : MonoBehaviour {
 		}
 	}
 
+	[Yarn.Unity.YarnCommand("endQuest")]
+	public void EndQuest(string QuestName){
+		foreach (QuestReference q in QuestObjects) {
+			if (QuestName == q.QuestName) {
+				print ("Ending Quest: " + q.QuestName);
+				q.QuestObject.SetActive (false);
+				CompletedQuests.Remove (q.QuestName);
+			}
+		}
+	}
+
 	public List<string> GetCompletedQuestList(){
 		return CompletedQuests;
 	}
