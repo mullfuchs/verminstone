@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //spawn in player and NPCs when they die or whatever
@@ -118,11 +119,43 @@ public class CampPopulationController : MonoBehaviour {
 		//parse CSV ???
 
 		string[] NPCStats = NPCStatCSV.text.Split('\n');
+		List<NPCStatRecord> NPCStatRecords = new List<NPCStatRecord> ();
+
 		for (int i = 1; i < NPCStats.Length; i++) {
 			//skipping first entry in CSV, which contains labels
 			string[] stats = NPCStats[i].Split (',');
+			NPCStatRecord npcRecord;
+			npcRecord.Name = stats [0];
+			npcRecord.FurType = stats [1];
+			npcRecord.BaseHP = ConvertStringToInt( stats [2]);
+			npcRecord.Attack = ConvertStringToInt( stats [3]);
+			npcRecord.Defense = ConvertStringToInt( stats [4]);
+			npcRecord.Bravery = ConvertStringToInt( stats [5]);
+			npcRecord.RunSpeed = ConvertStringToInt( stats [6]);
+			NPCStatRecords.Add (npcRecord);
 		}
 			
+	}
+
+	private int? ConvertStringToInt(string intString)
+	{
+		int i = 0;
+		try
+		{
+			i = System.Convert.ToInt32(intString);
+		}
+		catch (FormatException)
+		{
+			print ("NPCstat CSV import failed, format exception");
+		}
+		catch (OverflowException)
+		{
+			// the OverflowException is thrown when the string is a valid integer, 
+			// but is too large for a 32 bit integer.  Use Convert.ToInt64 in
+			// this case.
+			print("NPCstat CSV import failed, overflow exception");
+		}
+		return i;
 	}
 }
 
