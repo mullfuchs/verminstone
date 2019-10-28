@@ -1,0 +1,41 @@
+NPC quest ideas
+TODO: have a way to run quests on conversation complete
+
+How to complete quests:
+  NPC should survive X days, need to be talked to during 
+  maybe NPC wants to have certain role for x amount of time?
+  certain other quests are active? (how to detect?)
+
+Escape - a 3/5 part setup requiring them to stay alive?
+  part 1, initial meeting
+  part 2, showing the secret spot
+  part 3, getting someone else involved
+  ...
+  final part, escape
+
+Rebellion - Complete 5 questlines to make it happen
+  part 1, initial meeting
+  part 2, showing the secret spot
+  part 3, getting someone else involved
+  ...
+  final part, battle sequence
+
+Mini-quests
+  Getting items for camp
+    better heater
+    rugs/furniture/decoration
+  Affects on in game stuff
+    extra team members
+    lower quota
+    more food during breakfast
+    better mining equipment
+    different clothing objects on NPCs/players/you
+
+New NPCs to talk to
+  Merchant NPC.
+  guards.
+  ghosts?
+
+
+
+

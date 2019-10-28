@@ -17,6 +17,8 @@ public class CampPopulationController : MonoBehaviour {
 	public Transform PlayerSpawnPoint;
 	public Transform NPCSpawnPoint;
 
+	public TextAsset NPCStatCSV;
+
 	// Use this for initialization
 	void Start () {
 		NPCSpawnPoint = GameObject.Find ("NPCSpawn").transform;
@@ -106,4 +108,31 @@ public class CampPopulationController : MonoBehaviour {
 		GameObject NPC = Instantiate (NPCPrefab, NPCSpawnPoint.position, Quaternion.identity);
 		return NPC;
 	}
+
+	//npc stat work should go here, I think
+	//how do I want to set up NPC stats? well, I could use a CSV that holds all the values, and
+	//use that to easily set up individual NPCs.
+
+	private void loadNPCStatsFromCSV(){
+		//load text asset
+		//parse CSV ???
+
+		string[] NPCStats = NPCStatCSV.text.Split('\n');
+		for (int i = 1; i < NPCStats.Length; i++) {
+			//skipping first entry in CSV, which contains labels
+			string[] stats = NPCStats[i].Split (',');
+		}
+			
+	}
+}
+
+public class NPCStatRecord{
+	public string Name;
+	public string AnimalType;
+	public int FurType;
+	public int BaseHP;
+	public int Attack;
+	public int Defense;
+	public int Bravery;
+	public int RunSpeed;
 }
