@@ -23,6 +23,8 @@ public class NPCstats : MonoBehaviour {
 	public int NPCScriptIndex;
 	public int bedIndex;
 
+	public NPCStatRecord statObject;
+
 	/*
 	 * NPC systems
 	 * need a way to make different profiles so what do npcs do?
@@ -59,6 +61,7 @@ public class NPCstats : MonoBehaviour {
 
     public void loadNPCStatFromRecord(NPCStatRecord npcRecord)
     {
+		statObject = npcRecord;
         NPCName = npcRecord.Name;
         health = npcRecord.BaseHP;
         maxHealth = npcRecord.BaseHP;

@@ -18,7 +18,13 @@ public class CampPopulationController : MonoBehaviour {
 
 	public TextAsset NPCStatCSV;
 
-    public List<NPCStatRecord> NPCRecords;
+	public GameObject blankNPCPrefab;
+	public GameObject[] NPCBodyTypes;
+	public Material[] NPCBodyMaterials;
+
+    public NPCStatRecord[] NPCRecords;
+
+	public int NPCRecordStatIndex = 0;
 
     // Use this for initialization
     void Start () {
@@ -27,7 +33,7 @@ public class CampPopulationController : MonoBehaviour {
 
 		GameObject startGameObj = GameObject.Find("StartGameController");
 
-        NPCRecords = loadNPCStatsFromCSV();
+		NPCRecords = loadNPCStatsFromCSV().ToArray();
 
         if (startGameObj != null && startGameObj.GetComponent<StartGameController>().loadGameFromSave == true)
 		{
@@ -38,6 +44,9 @@ public class CampPopulationController : MonoBehaviour {
 
 		if (IsNewGame == true)
 		{
+			//create new NPC Pool (load from CSV, shuffle)
+			NPCRecords = loadNPCStatsFromCSV().ToArray();
+
 			SpawnNewPlayerAndNPCSquad();
 			IsNewGame = false;
 		}
@@ -60,7 +69,9 @@ public class CampPopulationController : MonoBehaviour {
 		print ("spawning new npcs and player");
 		SpawnPlayerPrefab ();
 		for (int i = 0; i < NPCSquadSize; i++) {
-			SpawnNPCPrefab ();
+			GameObject npc = SpawnNPCPrefab ();
+			AssociateNewNPCWithNPCStatRecord (npc);
+			giveNPCCorrectBodyAndTexture (npc);
 		}
 	}
 
@@ -112,14 +123,9 @@ public class CampPopulationController : MonoBehaviour {
 		GameObject NPC = Instantiate (NPCPrefab, NPCSpawnPoint.position, Quaternion.identity);
 		return NPC;
 	}
-
-	//npc stat work should go here, I think
-	//how do I want to set up NPC stats? well, I could use a CSV that holds all the values, and
-	//use that to easily set up individual NPCs.
+		
 
 	private List<NPCStatRecord> loadNPCStatsFromCSV(){
-		//load text asset
-		//parse CSV ???
 
 		string[] NPCStats = NPCStatCSV.text.Split('\n');
 		List<NPCStatRecord> NPCStatRecords = new List<NPCStatRecord> ();
@@ -162,6 +168,26 @@ public class CampPopulationController : MonoBehaviour {
 			print("NPCstat CSV import failed, overflow exception");
 		}
 		return i;
+	}
+
+	private void AssociateNewNPCWithNPCStatRecord(GameObject npc){
+		npc.GetComponent<NPCstats> ().loadNPCStatFromRecord (NPCRecords [NPCRecordStatIndex]);
+		NPCRecordStatIndex++;
+	}
+
+	private void giveNPCCorrectBodyAndTexture(GameObject npc){
+		string NPCType = npc.GetComponent<NPCstats> ().statObject.AnimalType;
+		int furType = npc.GetComponent<NPCstats> ().statObject.FurType;
+		GameObject body;
+
+		if (NPCType == "fox") {
+			body = Instantiate (NPCBodyTypes [1], npc);
+		} else {
+			body = Instantiate (NPCBodyTypes [0], npc);
+		}
+
+		body.GetComponentInChildren<SkinnedMeshRenderer> ().material == NPCBodyMaterials [furType];
+
 	}
 }
 
