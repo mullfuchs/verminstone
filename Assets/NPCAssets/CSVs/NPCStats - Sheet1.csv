@@ -1,0 +1,6 @@
+Name,Type (rabbit; fox; cat; dog),Color (1-6),HP,Attack,Defense,Bravery,Run Speed
+Alpha,rabbit,1,100,5,6,10,4
+Beta,fox,1,100,4,7,5,4
+Delta,dog,1,100,6,6,6,5
+Sigma,cat,1,100,3,3,3,4
+Epsilon,rabbit,2,100,7,4,1,3

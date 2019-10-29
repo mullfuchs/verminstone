@@ -39,7 +39,7 @@ public class CampPopulationController : MonoBehaviour {
 			IsNewGame = false;
 		}
 
-
+        loadNPCStatsFromCSV();
 
 	}
 
@@ -124,20 +124,22 @@ public class CampPopulationController : MonoBehaviour {
 		for (int i = 1; i < NPCStats.Length; i++) {
 			//skipping first entry in CSV, which contains labels
 			string[] stats = NPCStats[i].Split (',');
-			NPCStatRecord npcRecord;
+			NPCStatRecord npcRecord = new NPCStatRecord();
 			npcRecord.Name = stats [0];
-			npcRecord.FurType = stats [1];
-			npcRecord.BaseHP = ConvertStringToInt( stats [2]);
-			npcRecord.Attack = ConvertStringToInt( stats [3]);
-			npcRecord.Defense = ConvertStringToInt( stats [4]);
-			npcRecord.Bravery = ConvertStringToInt( stats [5]);
-			npcRecord.RunSpeed = ConvertStringToInt( stats [6]);
+            npcRecord.AnimalType = stats[1];
+            npcRecord.FurType = ConvertStringToInt(stats[2]);
+            npcRecord.BaseHP = ConvertStringToInt( stats [3]);
+			npcRecord.Attack = ConvertStringToInt( stats [4]);
+			npcRecord.Defense = ConvertStringToInt( stats [5]);
+			npcRecord.Bravery = ConvertStringToInt( stats [6]);
+			npcRecord.RunSpeed = ConvertStringToInt( stats [7]);
 			NPCStatRecords.Add (npcRecord);
+            print("added record for " + npcRecord.Name);
 		}
 			
 	}
 
-	private int? ConvertStringToInt(string intString)
+	private int ConvertStringToInt(string intString)
 	{
 		int i = 0;
 		try
