@@ -12,8 +12,10 @@ public class NPCstats : MonoBehaviour {
 	public float maxStamina = 100;
 	public float endurance = 1;
 	public float recovery = 1;
-	public float bravery = 1;
-	public float runSpeed = 4;
+    public int attack = 1;
+    public int defense = 1;
+	public int bravery = 1;
+	public int runSpeed = 4;
 	public GameObject ragDollObject;
 	public bool hasBeenTalkedToToday = false;
 	public int daysTalkedTo = 1;
@@ -54,4 +56,15 @@ public class NPCstats : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void loadNPCStatFromRecord(NPCStatRecord npcRecord)
+    {
+        NPCName = npcRecord.Name;
+        health = npcRecord.BaseHP;
+        maxHealth = npcRecord.BaseHP;
+        attack = npcRecord.Attack;
+        defense = npcRecord.Defense;
+        bravery = npcRecord.Bravery;
+        runSpeed = npcRecord.RunSpeed;
+    }
 }

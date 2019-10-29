@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class CampPopulationController : MonoBehaviour {
 
-
-
 	public bool IsNewGame = false;
 
 	public int NPCSquadSize = 5;
@@ -20,13 +18,18 @@ public class CampPopulationController : MonoBehaviour {
 
 	public TextAsset NPCStatCSV;
 
-	// Use this for initialization
-	void Start () {
+    public List<NPCStatRecord> NPCRecords;
+
+    // Use this for initialization
+    void Start () {
 		NPCSpawnPoint = GameObject.Find ("NPCSpawn").transform;
 		PlayerSpawnPoint = GameObject.Find ("PlayerSpawn").transform;
 
 		GameObject startGameObj = GameObject.Find("StartGameController");
-		if (startGameObj != null && startGameObj.GetComponent<StartGameController>().loadGameFromSave == true)
+
+        NPCRecords = loadNPCStatsFromCSV();
+
+        if (startGameObj != null && startGameObj.GetComponent<StartGameController>().loadGameFromSave == true)
 		{
 			print("loading game from save");
 			IsNewGame = false;
@@ -39,7 +42,7 @@ public class CampPopulationController : MonoBehaviour {
 			IsNewGame = false;
 		}
 
-        loadNPCStatsFromCSV();
+        
 
 	}
 
@@ -114,7 +117,7 @@ public class CampPopulationController : MonoBehaviour {
 	//how do I want to set up NPC stats? well, I could use a CSV that holds all the values, and
 	//use that to easily set up individual NPCs.
 
-	private void loadNPCStatsFromCSV(){
+	private List<NPCStatRecord> loadNPCStatsFromCSV(){
 		//load text asset
 		//parse CSV ???
 
@@ -136,7 +139,8 @@ public class CampPopulationController : MonoBehaviour {
 			NPCStatRecords.Add (npcRecord);
             print("added record for " + npcRecord.Name);
 		}
-			
+
+        return NPCStatRecords;
 	}
 
 	private int ConvertStringToInt(string intString)
