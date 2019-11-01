@@ -33,7 +33,7 @@ public class CampPopulationController : MonoBehaviour {
 
 		GameObject startGameObj = GameObject.Find("StartGameController");
 
-		NPCRecords = loadNPCStatsFromCSV().ToArray();
+		//NPCRecords = loadNPCStatsFromCSV().ToArray();
 
         if (startGameObj != null && startGameObj.GetComponent<StartGameController>().loadGameFromSave == true)
 		{
@@ -45,7 +45,7 @@ public class CampPopulationController : MonoBehaviour {
 		if (IsNewGame == true)
 		{
 			//create new NPC Pool (load from CSV, shuffle)
-			NPCRecords = loadNPCStatsFromCSV().ToArray();
+			//NPCRecords = loadNPCStatsFromCSV().ToArray();
 
 			SpawnNewPlayerAndNPCSquad();
 			IsNewGame = false;
@@ -70,8 +70,8 @@ public class CampPopulationController : MonoBehaviour {
 		SpawnPlayerPrefab ();
 		for (int i = 0; i < NPCSquadSize; i++) {
 			GameObject npc = SpawnNPCPrefab ();
-			AssociateNewNPCWithNPCStatRecord (npc);
-			giveNPCCorrectBodyAndTexture (npc);
+			//AssociateNewNPCWithNPCStatRecord (npc);
+			//giveNPCCorrectBodyAndTexture (npc);
 		}
 	}
 
@@ -181,12 +181,12 @@ public class CampPopulationController : MonoBehaviour {
 		GameObject body;
 
 		if (NPCType == "fox") {
-			body = Instantiate (NPCBodyTypes [1], npc);
+			body = Instantiate (NPCBodyTypes [1], npc.transform);
 		} else {
-			body = Instantiate (NPCBodyTypes [0], npc);
+			body = Instantiate (NPCBodyTypes [0], npc.transform);
 		}
 
-		body.GetComponentInChildren<SkinnedMeshRenderer> ().material == NPCBodyMaterials [furType];
+		body.GetComponentInChildren<SkinnedMeshRenderer> ().material = NPCBodyMaterials [furType];
 
 	}
 }
