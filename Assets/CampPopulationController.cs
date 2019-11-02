@@ -33,7 +33,7 @@ public class CampPopulationController : MonoBehaviour {
 
 		GameObject startGameObj = GameObject.Find("StartGameController");
 
-		//NPCRecords = loadNPCStatsFromCSV().ToArray();
+		NPCRecords = loadNPCStatsFromCSV().ToArray();
 
         if (startGameObj != null && startGameObj.GetComponent<StartGameController>().loadGameFromSave == true)
 		{
@@ -69,9 +69,10 @@ public class CampPopulationController : MonoBehaviour {
 		print ("spawning new npcs and player");
 		SpawnPlayerPrefab ();
 		for (int i = 0; i < NPCSquadSize; i++) {
-			GameObject npc = SpawnNPCPrefab ();
-			//AssociateNewNPCWithNPCStatRecord (npc);
-			//giveNPCCorrectBodyAndTexture (npc);
+			//GameObject npc = SpawnNPCPrefab ();
+			GameObject blankNPC = Instantiate (blankNPCPrefab, NPCSpawnPoint.position, Quaternion.identity);
+			AssociateNewNPCWithNPCStatRecord (blankNPC);
+			giveNPCCorrectBodyAndTexture (blankNPC);
 		}
 	}
 
@@ -133,6 +134,7 @@ public class CampPopulationController : MonoBehaviour {
 		for (int i = 1; i < NPCStats.Length; i++) {
 			//skipping first entry in CSV, which contains labels
 			string[] stats = NPCStats[i].Split (',');
+
 			NPCStatRecord npcRecord = new NPCStatRecord();
 			npcRecord.Name = stats [0];
             npcRecord.AnimalType = stats[1];
@@ -187,6 +189,8 @@ public class CampPopulationController : MonoBehaviour {
 		}
 
 		body.GetComponentInChildren<SkinnedMeshRenderer> ().material = NPCBodyMaterials [furType];
+
+		npc.GetComponent<Animator> ().avatar = body.GetComponent<Animator> ().avatar;
 
 	}
 }
