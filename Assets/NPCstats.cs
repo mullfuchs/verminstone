@@ -74,7 +74,7 @@ public class NPCstats : MonoBehaviour {
 
     void changeStatsOnNPC()
     {
-  
-        gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().m_MoveSpeedMultiplier = (float)(runSpeed / 10);
+        //you should really put all stat change stuff in here because it means less referencing other shit, and it's in one place!
+        gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().m_MoveSpeedMultiplier = ((float)runSpeed / 10);
     }
 }
