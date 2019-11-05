@@ -10,11 +10,21 @@ public class DealDamageToObjects : MonoBehaviour {
 	public float knockback;
 	public GameObject hitEffect;
 
+    private int AttackStat = 0;
 
 	// Use this for initialization
 	void Start () {
 		
 	}
+
+    void Awake()
+    {
+        GameObject parent = gameObject.transform.parent.gameObject;
+        if(parent.GetComponent<NPCstats>() != null)
+        {
+            AttackStat = parent.GetComponent<NPCstats>().attack;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -26,7 +36,7 @@ public class DealDamageToObjects : MonoBehaviour {
         health OtherHealth = other.GetComponent<health>();
         if (other.tag == AffectedTag && OtherHealth)
         {
-			float tempDMG = baseDamageAmount;
+			float tempDMG = baseDamageAmount + AttackStat;
 			if (other.attachedRigidbody != null) {
 				other.attachedRigidbody.AddForce ( Vector3.Normalize( gameObject.transform.position - other.transform.position ) * 2 );
 			}

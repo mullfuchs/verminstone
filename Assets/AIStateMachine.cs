@@ -39,6 +39,8 @@ public class AIStateMachine : MonoBehaviour {
 		AttackHitBox.SetActive (false);
         updateStoppingDistance(defaultStoppingDist);
         VStoneEcoInstance = GameObject.Find("CampEventController").GetComponent<VStoneEconomyObject>();
+
+
     }
 
 	void Awake(){

@@ -8,6 +8,8 @@ public class health : MonoBehaviour {
 	public bool isFreindlyFireOn = false;
 	public bool TrackOnTheUI = false;
 
+
+    private int defensePoints = 0;
 	private UIController controller = null;
 
 	private FillableBarController healthBar;
@@ -19,6 +21,7 @@ public class health : MonoBehaviour {
         if(gameObject.tag == "WorkerNPC")
         {
             healthPoints = gameObject.GetComponent<NPCstats>().health;
+            defensePoints = gameObject.GetComponent<NPCstats>().defense;
         }
 		if (TrackOnTheUI) {
 			controller = GameObject.Find ("Canvas").GetComponent<UIController> ();
@@ -36,13 +39,14 @@ public class health : MonoBehaviour {
 
 	void OnCollisionEnter(Collision obj){
 		if (obj.gameObject.tag == "projectile" && isFreindlyFireOn) {
-			//print ("took projectile damage");
-			healthPoints -= obj.gameObject.GetComponent<MoveForward>().damage;
-			Destroy (obj.gameObject);
-			if (healthPoints <= 0) {
-				killgameObject ();
+            //print ("took projectile damage");
+            //healthPoints -= obj.gameObject.GetComponent<MoveForward>().damage;
+            AddDamage(obj.gameObject.GetComponent<MoveForward>().damage);
+           // Destroy (obj.gameObject);
+			//if (healthPoints <= 0) {
+			//	killgameObject ();
 				//Destroy (this.gameObject);
-			}
+			//}
 		}
 
 		/*
@@ -66,7 +70,7 @@ public class health : MonoBehaviour {
 
     public void AddDamage(float damage)
     {
-        healthPoints -= damage;
+        healthPoints -= (damage - defensePoints);
 
 		if (healthBar != null) {
 			healthBar.UpdateCurrentValue (healthPoints);

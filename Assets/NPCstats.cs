@@ -69,5 +69,12 @@ public class NPCstats : MonoBehaviour {
         defense = npcRecord.Defense;
         bravery = npcRecord.Bravery;
         runSpeed = npcRecord.RunSpeed;
+        changeStatsOnNPC();
+    }
+
+    void changeStatsOnNPC()
+    {
+  
+        gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().m_MoveSpeedMultiplier = (float)(runSpeed / 10);
     }
 }
