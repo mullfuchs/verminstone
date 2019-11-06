@@ -14,16 +14,25 @@ public class NPCEquipCardController : MonoBehaviour {
     public GameObject BackEquipButton;
 	public GameObject HeadEquipButton;
 
+    public GameObject EquipButton;
+
+    public Image BackObjectIcon;
+    public Image HandObjectIcon;
+    public Image HeadObjectIcon;
+    
+
     // Use this for initialization
     void Start () {
         Button handequipbtn = HandEquipButton.GetComponent<Button>();
         Button backequipbtn = BackEquipButton.GetComponent<Button>();
 		Button headequipbtn = HeadEquipButton.GetComponent<Button> ();
+        Button equipbtn = EquipButton.GetComponent<Button>();
 
         handequipbtn.onClick.AddListener(EquipHandObject);
         backequipbtn.onClick.AddListener(EquipBackObject);
 		headequipbtn.onClick.AddListener (EquipHeadObject);
 
+        equipbtn.onClick.AddListener(EquipItemToNPC);
 
         canvasOBJ = GameObject.Find("Canvas");
 	}
@@ -42,7 +51,7 @@ public class NPCEquipCardController : MonoBehaviour {
     private void UpdateEquipCard()
     {
         NPCstats stats = associatedNPC.GetComponent<NPCstats>();
-        nameText.GetComponent<Text>().text = stats.name;
+        nameText.GetComponent<Text>().text = stats.NPCName + "\n" + "Attack - " + stats.attack + "\n" + "Defense - " + stats.defense;
     }
 
     private void EquipHandObject()
@@ -59,6 +68,11 @@ public class NPCEquipCardController : MonoBehaviour {
 	{
 		canvasOBJ.GetComponent<EquipUIController> ().equipHeadItemToNPC (associatedNPC);		
 	}
+
+    private void EquipItemToNPC()
+    {
+
+    }
 
     public GameObject getAssociatedNPC()
     {
