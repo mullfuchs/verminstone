@@ -79,6 +79,7 @@ public class GameSaveController : MonoBehaviour {
             profile.NPCPosition = npcs[i].transform.position;
 			profile.NPCDaysTalkedTo = stats.daysTalkedTo;
 			profile.NPCDialogIndex = stats.NPCScriptIndex;
+			profile.statRecord = stats.statObject;
 
 			gameSave.NPCProfiles.Add (profile);
 		}
@@ -109,7 +110,7 @@ public class GameSaveController : MonoBehaviour {
         gameObject.transform.GetComponent<CampEventController>().day = data.DaysElapsed;
 
 		foreach (NPCProfile profile in data.NPCProfiles) {
-			campPopController.LoadNPCFromSave (profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex);
+			campPopController.LoadNPCFromSave (profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex, profile.statRecord);
 		}
 
 		GameObject.Find ("GameQuestObjects").GetComponent<CampQuestController> ().LoadCompletedQuests ( data.CompletedQuests );

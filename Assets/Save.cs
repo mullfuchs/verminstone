@@ -19,5 +19,6 @@ public class NPCProfile{
     public SerializableVector3 NPCPosition;
 	public float NPCHealth;
 	public int NPCDaysTalkedTo;
+	public NPCStatRecord statRecord;
 }
 	

@@ -92,9 +92,9 @@ public class CampPopulationController : MonoBehaviour {
 		//then set up a narrative for it
 	}
 
-	public void LoadNPCFromSave(string name, float healthpoints, Vector3 position, int daysTalkedTo, int scriptIndex){
-		GameObject npc = SpawnNPCPrefab ();
-       
+	public void LoadNPCFromSave(string name, float healthpoints, Vector3 position, int daysTalkedTo, int scriptIndex, NPCStatRecord statRecord){
+		GameObject npc = Instantiate (blankNPCPrefab, NPCSpawnPoint.position, Quaternion.identity);
+
 		npc.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().agent.Warp ( position );
 
 		NPCstats stats = npc.GetComponent<NPCstats> ();
@@ -105,6 +105,8 @@ public class CampPopulationController : MonoBehaviour {
 		CampNarrativeController narrativeController = gameObject.GetComponent<CampNarrativeController> ();
 
 		narrativeController.SetUpNewNPCNarrative (npc, scriptIndex);
+		stats.loadNPCStatFromRecord (statRecord);
+		giveNPCCorrectBodyAndTexture (npc);
 	}
 
     public void LoadPlayerFromSave(Vector3 position, float healthpoints)
@@ -195,6 +197,7 @@ public class CampPopulationController : MonoBehaviour {
 	}
 }
 
+[System.Serializable]
 public class NPCStatRecord{
 	public string Name;
 	public string AnimalType;
