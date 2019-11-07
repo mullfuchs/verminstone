@@ -71,7 +71,7 @@ public class NPCEquipCardController : MonoBehaviour {
 
     private void EquipItemToNPC()
     {
-
+        canvasOBJ.GetComponent<EquipUIController>().equipItemToNPC(associatedNPC);
     }
 
     public GameObject getAssociatedNPC()
