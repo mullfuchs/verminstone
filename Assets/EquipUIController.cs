@@ -159,4 +159,10 @@ public class EquipUIController : MonoBehaviour {
         }
     }
 
+    public GameObject getCurrentlySelectedItem()
+    {
+        return currentItem;
+    }
+
+
 }

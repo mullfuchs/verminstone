@@ -71,7 +71,13 @@ public class NPCEquipCardController : MonoBehaviour {
 
     private void EquipItemToNPC()
     {
+        GameObject currentItem = canvasOBJ.GetComponent<EquipUIController>().getCurrentlySelectedItem();
+        if(currentItem != null)
+        {
+            updateIconForEquippedItem(currentItem);
+        }
         canvasOBJ.GetComponent<EquipUIController>().equipItemToNPC(associatedNPC);
+
     }
 
     public GameObject getAssociatedNPC()
@@ -83,6 +89,23 @@ public class NPCEquipCardController : MonoBehaviour {
         else
         {
             return null;
+        }
+    }
+
+    public void updateIconForEquippedItem(GameObject item)
+    {
+        EquippableItem gameItem = item.GetComponent<EquippableItem>();
+        if (gameItem.ForBack)
+        {
+            BackObjectIcon.sprite = gameItem.icon;
+        }
+        else if (gameItem.ForHand)
+        {
+            HandObjectIcon.sprite = gameItem.icon;
+        }
+        else
+        {
+            HeadObjectIcon.sprite = gameItem.icon;
         }
     }
 }
