@@ -82,8 +82,24 @@ public class UIController : MonoBehaviour {
 			uiCard.GetComponentInChildren<FillableBarController> ().SetMaxValue( npcs [i].GetComponent<health> ().maxHealth );
 			uiCard.GetComponentInChildren<FillableBarController> ().UpdateCurrentValue( npcs [i].GetComponent<health> ().healthPoints);
 			uiCard.transform.Find("Portrait").GetComponent<Image>().sprite = npcs [i].GetComponent<NPCstats> ().DialogPortraits [0];
+			SetUpInventoryIcons (npcs [i], uiCard);
+
 			npcs [i].GetComponent<health> ().SetTrackingUIElement ( uiCard.GetComponentInChildren<FillableBarController> () );
 			uiCard.SetActive (true);
+		}
+	}
+
+	private void SetUpInventoryIcons(GameObject npc, GameObject card){
+		NPCInventory inv = npc.GetComponent<NPCInventory> ();
+
+		if (inv.ObjectHeldInHands != null) {
+			card.transform.Find ("handIcon").GetComponent<Image> ().sprite = inv.ObjectHeldInHands.GetComponent<EquippableItem> ().icon;
+		}
+		if (inv.ObjectOnBack != null) {
+			card.transform.Find ("backIcon").GetComponent<Image> ().sprite = inv.ObjectOnBack.GetComponent<EquippableItem> ().icon;
+		}
+		if (inv.ObjectOnHead != null) {
+			card.transform.Find ("headIcon").GetComponent<Image> ().sprite = inv.ObjectOnHead.GetComponent<EquippableItem>().icon;
 		}
 	}
 
