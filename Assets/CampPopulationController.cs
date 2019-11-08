@@ -93,9 +93,7 @@ public class CampPopulationController : MonoBehaviour {
 	}
 
 	public void LoadNPCFromSave(string name, float healthpoints, Vector3 position, int daysTalkedTo, int scriptIndex, NPCStatRecord statRecord){
-		GameObject npc = Instantiate (blankNPCPrefab, NPCSpawnPoint.position, Quaternion.identity);
-
-		npc.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().agent.Warp ( position );
+		GameObject npc = Instantiate (blankNPCPrefab, position, Quaternion.identity);
 
 		NPCstats stats = npc.GetComponent<NPCstats> ();
 		stats.name = name;
@@ -105,8 +103,11 @@ public class CampPopulationController : MonoBehaviour {
 		CampNarrativeController narrativeController = gameObject.GetComponent<CampNarrativeController> ();
 
 		narrativeController.SetUpNewNPCNarrative (npc, scriptIndex);
+		print ("Attempting to load " + stats.NPCName);
 		stats.loadNPCStatFromRecord (statRecord);
 		giveNPCCorrectBodyAndTexture (npc);
+
+		//npc.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().agent.Warp ( position );
 	}
 
     public void LoadPlayerFromSave(Vector3 position, float healthpoints)

@@ -50,7 +50,7 @@ public class CampNarrativeController : MonoBehaviour {
 			npcs [i].GetComponent<Yarn.Unity.Example.NPC> ().characterName = characterName;
             npcs[i].GetComponent<NPCstats>().NPCName = characterName;
 			npcs [i].GetComponent<NPCstats> ().NPCScriptIndex = i;
-			print ("setting dialog for char " + characterName);
+			//print ("setting dialog for char " + characterName);
 		}
 		UpdateNPCNarratives ();
 	}
@@ -83,7 +83,7 @@ public class CampNarrativeController : MonoBehaviour {
 		npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
 		foreach (GameObject npc in npcs) {
 			string startnode = GetStartNode (npc.GetComponent<Yarn.Unity.Example.NPC> ().characterName, npc.GetComponent<NPCstats>().daysTalkedTo, timeOfDay);
-			print ("start node" + startnode);
+			//print ("start node" + startnode);
 			npc.GetComponent<Yarn.Unity.Example.NPC> ().talkToNode = startnode;
 		}
 		
@@ -157,7 +157,7 @@ public class CampNarrativeController : MonoBehaviour {
             }
             else
             {
-                print("No portraits found for npc: " + name);
+                //print("No portraits found for npc: " + name);
             }
         }
     }
