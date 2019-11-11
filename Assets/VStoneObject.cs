@@ -17,6 +17,8 @@ public class VStoneObject : MonoBehaviour {
     private GameObject EnemyTeamHandler;
 	public int FragmentsToMake = 5;
 
+	public float ShardSpawnRadius = 0.5f;
+
 	// Use this for initialization
 	void Start () {
 		timerOGval = timer;
@@ -87,13 +89,12 @@ public class VStoneObject : MonoBehaviour {
 	}
 
 	void DestroyStoneAndCreateRocksToPickUp(){
-		float offsetX = 0.0f;
+		float radiusOffset = 360 / FragmentsToMake;
 		for (int i = 0; i < FragmentsToMake; i++) {
-			Vector3 newPosition = gameObject.transform.position + new Vector3(0 + offsetX, 0, 0);
+			Vector3 newPosition = gameObject.transform.position + new Vector3(ShardSpawnRadius * Mathf.Cos(radiusOffset * i), 0.5f ,ShardSpawnRadius * Mathf.Sin(radiusOffset * i) );
 			GameObject fragment = Instantiate (VStoneFragmentObject, newPosition, Quaternion.identity);
 			fragment.GetComponent<Rigidbody> ().AddForce (new Vector3 (Random.Range(1.0f, 5.0f) , 0.5f, Random.Range(1.0f, 5.0f) ), ForceMode.Impulse);
 			playerObject.GetComponent<NPCTeamHandler>().AddTargetForNPCs( fragment );
-			offsetX += 1.5f;
 		}
 		//try to remove it from the list
 		if (GameObject.Find ("CaveManager") != null) {
