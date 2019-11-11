@@ -32,14 +32,17 @@ public class PlayerEventController : MonoBehaviour {
 		if (Other.tag == "CampArea") {
 			//start the npc idle stuff
 			CampEventControllerInstance.gameObject.GetComponent<NPCBedController>().AssignBeds();
-			//start the end day timer in the campevent controller??? Sure???
+
+            //start the end day timer in the campevent controller??? Sure???
 			if (CampEventControllerInstance.GetComponent<CampNarrativeController> ().timeOfDay == CampNarrativeController.timePeriod.Evening) {
 				gameObject.GetComponent<Yarn.Unity.Example.DialogTrigger> ().canTalkToNPCs = true;
-			}
+                CampEventControllerInstance.NPCDialogEnabled(true);
+            }
 
 			if (CampEventControllerInstance.GetComponent<CampNarrativeController> ().timeOfDay == CampNarrativeController.timePeriod.Morning) {
 				gameObject.GetComponent<Yarn.Unity.Example.DialogTrigger> ().canTalkToNPCs = false;
-			}
+                CampEventControllerInstance.NPCDialogEnabled(false);
+            }
 
 		}
 

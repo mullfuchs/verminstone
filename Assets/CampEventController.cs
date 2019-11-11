@@ -97,6 +97,15 @@ public class CampEventController : MonoBehaviour {
 	{
 		
 	}
+
+    public void NPCDialogEnabled(bool enabled)
+    {
+        AllNPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+        foreach(GameObject npc in AllNPCs)
+        {
+            npc.GetComponentInChildren<TriggerPromptOnEnter>().canTalkToNPC = enabled;
+        }
+    }
 		
 	public void EndDay(){
 		StartCoroutine (EndDayCycle ());
