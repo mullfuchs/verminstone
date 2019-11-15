@@ -62,7 +62,7 @@ public class AIBugController : MonoBehaviour {
 		//attack amount is a lot, probably
 		AttackHitBox = transform.Find("AttackHitBox").gameObject;
 		AttackHitBox.SetActive(true);
-		AttackHitBox.GetComponent<DealDamageToObjects>().baseDamageAmount = floorLevel * 2;
+		AttackHitBox.GetComponent<DealDamageToObjects>().baseDamageAmount = floorLevel * 6;
 		AttackHitBox.SetActive (false);
 		//run speed is set last, if we have a lot of hp and attack, then they'll be slower.
 		walkSpeed = (healthpoints * 2 + floorLevel) / healthpoints;

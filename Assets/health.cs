@@ -70,7 +70,12 @@ public class health : MonoBehaviour {
 
     public void AddDamage(float damage)
     {
-        healthPoints -= (damage - defensePoints);
+		float tempDamage = (damage - defensePoints);
+		if (tempDamage <= 0) {
+			healthPoints -= 1;
+		} else {
+			healthPoints -= tempDamage;
+		}
 
 		if (healthBar != null) {
 			healthBar.UpdateCurrentValue (healthPoints);
