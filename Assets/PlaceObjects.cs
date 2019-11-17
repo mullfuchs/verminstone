@@ -72,6 +72,26 @@ public class PlaceObjects : MonoBehaviour {
 		return objectList;
 	}
 
+	public List<FloorObject> PopulateMapListWithCaveFloor(CaveFloor _CaveFloor, List<Vector3>[] objectCoords){
+		List<FloorObject> objectList = new List<FloorObject>();
+
+		for (int i = 0; i < objectCoords.Length; i++) {
+			foreach (Vector3 point in objectCoords[i]) {
+				objectList.Add (new FloorObject (point, _CaveFloor.FloorObjects [i].gameObjectType));
+			}
+		}
+
+		FloorObject FloorPatrolBug = new FloorObject (gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), PatrolBug);
+
+		FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorEntryPoint (), AscendObjet);
+		FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorExitPoint (), DescendObject);
+		objectList.Add (FloorPatrolBug);
+		objectList.Add (EntryPoint);
+		objectList.Add (ExitPoint);
+		return objectList;
+
+	}
+
 //	public List<FloorObject> AddEntranceAndExits(List<FloorObject> _objects){
 //		FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorEntryPoint (), AscendObjet);
 //		FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorExitPoint (), AscendObjet);

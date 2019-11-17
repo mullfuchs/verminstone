@@ -20,7 +20,9 @@ public class CaveManager : MonoBehaviour {
 
     public bool DemoCaveMode = false;
 
-    List<Floor> FloorList = new List<Floor>();
+	public CaveFloor[] CaveFloors;
+
+	List<Floor> FloorList = new List<Floor>();
 
 	Floor CurrentFloor;
 
@@ -36,9 +38,10 @@ public class CaveManager : MonoBehaviour {
 
 	void GenerateDungeon() {
 		for (int i = 0; i < numberOfFloorsToMake; i++) {
-			int[,] tempFloor = mapGenObject.GetComponent<GenerateMap> ().MakeFloor ();
+			int[,] tempFloor = mapGenObject.GetComponent<GenerateMap> ().MakeFloor (CaveFloors[i].fillPercent);
 			//how many sets of points do we need?
-			int objectPointListCount = mapGenObject.GetComponent<PlaceObjects>().FloorObjects.Length;
+			int objectPointListCount = CaveFloors[i].FloorObjects.Length;
+			//int objectPointListCount = mapGenObject.GetComponent<PlaceObjects>().FloorObjects.Length;
 
 			//how do we figure out fill percent?
 			//an array of lists?
@@ -47,8 +50,9 @@ public class CaveManager : MonoBehaviour {
 			pointListArray = new List<Vector3>[objectPointListCount];
 
 			for (int j = 0; j < objectPointListCount; j++) {
-				int fillpercent = mapGenObject.GetComponent<PlaceObjects> ().FloorObjects [j].FloorFillPercentage;
-				pointListArray[j] = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms ( fillpercent );
+				int objFillPercent = CaveFloors [i].FloorObjects [j].FloorFillPercentage;
+				//int fillpercent = mapGenObject.GetComponent<PlaceObjects> ().FloorObjects [j].FloorFillPercentage;
+				pointListArray[j] = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms ( objFillPercent );
 			}
 				
 			//as we get random points from the floor we should, like remove those points from possible points
@@ -61,7 +65,8 @@ public class CaveManager : MonoBehaviour {
 
 			//List<Vector3> patrolPointList = mapGenObject.GetComponent<GenerateMap> ().GetListOfPointsInRooms (3);
 
-			List<PlaceObjects.FloorObject> tempObjList = mapGenObject.GetComponent<PlaceObjects> ().PopulateMapList (pointListArray);
+			//List<PlaceObjects.FloorObject> tempObjList = mapGenObject.GetComponent<PlaceObjects> ().PopulateMapList (pointListArray);
+			List<PlaceObjects.FloorObject> tempObjList = mapGenObject.GetComponent<PlaceObjects> ().PopulateMapListWithCaveFloor (CaveFloors[i], pointListArray);
 			FloorList.Add( new Floor(tempFloor, tempObjList) );
 		}
 	}
@@ -174,4 +179,11 @@ public class CaveManager : MonoBehaviour {
 	IEnumerator WaitASec(){ 
 		yield return new WaitForSeconds (2);
 	}
+}
+
+[System.Serializable]
+public struct CaveFloor
+{
+	public int fillPercent;
+	public PlaceObjects.FloorObjectCreationSetup[] FloorObjects;
 }

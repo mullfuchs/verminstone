@@ -17,6 +17,7 @@ public class GenerateMap : MonoBehaviour {
 
 	int[,] map;
 
+
 	System.Random prng;
 
 	List<Room> roomList;
@@ -45,13 +46,18 @@ public class GenerateMap : MonoBehaviour {
 		}
 	}
 
-	public int[,] MakeFloor(){
-		return CreateMap ();
+	public int[,] MakeFloor(int fillPercent){
+		return CreateMap (fillPercent);
 	}
 
-	int[,] CreateMap(){
+	int[,] CreateMap(int fillPercent){
 		map = new int[width, height];
-		RandomFillMap ();
+
+		if (fillPercent <= 0) {
+			RandomFillMap ();
+		} else {
+			RandomFillMapPercent (fillPercent);
+		}
 
 		for (int i = 0; i < 5; i++) {
 			SmoothMap ();
@@ -321,7 +327,18 @@ public class GenerateMap : MonoBehaviour {
 		return (x >= 0 && x < width && y >= 0 && y < height);
 	}
 
+	void RandomFillMapPercent(int percentFill){
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				if (x == 0 || x == width - 1 || y == 0 || y == height - 1) {
+					map [x, y] = 1;
+				} else {
+					map [x, y] = (prng.Next (0, 100) < percentFill) ? 1 : 0;
+				}
 
+			}
+		}
+	}
 
 	void RandomFillMap(){
 //		if (useRandomSeed) {
