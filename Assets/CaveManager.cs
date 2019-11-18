@@ -37,7 +37,7 @@ public class CaveManager : MonoBehaviour {
 	}
 
 	void GenerateDungeon() {
-		for (int i = 0; i < numberOfFloorsToMake; i++) {
+		for (int i = 0; i < CaveFloors.Length; i++) {
 			int[,] tempFloor = mapGenObject.GetComponent<GenerateMap> ().MakeFloor (CaveFloors[i].fillPercent);
 			//how many sets of points do we need?
 			int objectPointListCount = CaveFloors[i].FloorObjects.Length;
