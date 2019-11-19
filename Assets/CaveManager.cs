@@ -22,6 +22,8 @@ public class CaveManager : MonoBehaviour {
 
 	public CaveFloor[] CaveFloors;
 
+	public CaveFloorMaterials[] CaveFloorMaterials;
+
 	List<Floor> FloorList = new List<Floor>();
 
 	Floor CurrentFloor;
@@ -77,6 +79,10 @@ public class CaveManager : MonoBehaviour {
 		mapGenObject.GetComponent<GenerateMap> ().RenderMap (FloorToLoad.getMap ());
 		makeNavMesh ();
 		mapGenObject.GetComponent<PlaceObjects> ().finishedSpawning = false;
+
+		mapGenObject.transform.Find ("wall").GetComponent<MeshRenderer> ().material = CaveFloorMaterials [floorNumber].wallMat;
+		mapGenObject.transform.Find ("Plane").GetComponent<MeshRenderer> ().material = CaveFloorMaterials [floorNumber].floorMat;
+
 		StartCoroutine(InstantiateObjectsForFloor(CurrentFloor));
 		if (isDescending) {
 			player.transform.position = CurrentFloor.AscendPosition;
@@ -186,4 +192,11 @@ public struct CaveFloor
 {
 	public int fillPercent;
 	public PlaceObjects.FloorObjectCreationSetup[] FloorObjects;
+}
+	
+[System.Serializable]
+public struct CaveFloorMaterials
+{
+	public Material wallMat;
+	public Material floorMat;
 }
