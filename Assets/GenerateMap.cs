@@ -505,10 +505,12 @@ public class GenerateMap : MonoBehaviour {
 		int randRoom = UnityEngine.Random.Range (0, roomList.Count);
 		Room entryRoom = roomList [ randRoom ];
 		Coord entryTile = entryRoom.insideTiles.ElementAt( (int)(entryRoom.insideTiles.Count / 2) );
+
 		return coordToWorldPoint (entryTile);
 	}
 
 	public Vector3 GetFloorExitPoint(){
+		print ("room count: " + roomList.Count);
 		int randRoom = UnityEngine.Random.Range (0, roomList.Count);
 		Room exitRoom = roomList [ randRoom ];
 		Coord exitTile = exitRoom.insideTiles.ElementAt( (int)(exitRoom.insideTiles.Count / 2)  );
@@ -520,6 +522,7 @@ public class GenerateMap : MonoBehaviour {
 		Room randRoom = roomList[roomIndex];
 		//get random room
 		Coord randomSpot = randRoom.insideTiles.ElementAt( UnityEngine.Random.Range(0, randRoom.insideTiles.Count) );
+
 		//get random point in that room
 		//return it
 		return coordToWorldPoint(randomSpot);

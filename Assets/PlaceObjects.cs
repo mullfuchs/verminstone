@@ -64,8 +64,8 @@ public class PlaceObjects : MonoBehaviour {
 
 		FloorObject FloorPatrolBug = new FloorObject (gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), PatrolBug);
 
-		FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorEntryPoint (), AscendObjet);
-		FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorExitPoint (), DescendObject);
+		FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), AscendObjet);
+		FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), DescendObject);
 		objectList.Add (FloorPatrolBug);
 		objectList.Add (EntryPoint);
 		objectList.Add (ExitPoint);
@@ -83,8 +83,8 @@ public class PlaceObjects : MonoBehaviour {
 
 		FloorObject FloorPatrolBug = new FloorObject (gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), PatrolBug);
 
-		FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorEntryPoint (), AscendObjet);
-		FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetFloorExitPoint (), DescendObject);
+		FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), AscendObjet);
+		FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), DescendObject);
 		objectList.Add (FloorPatrolBug);
 		objectList.Add (EntryPoint);
 		objectList.Add (ExitPoint);
