@@ -80,7 +80,7 @@ public class CaveManager : MonoBehaviour {
 		makeNavMesh ();
 		mapGenObject.GetComponent<PlaceObjects> ().finishedSpawning = false;
 
-		mapGenObject.transform.Find ("wall").GetComponent<MeshRenderer> ().material = CaveFloorMaterials [floorNumber].wallMat;
+		mapGenObject.transform.Find ("walls").GetComponent<MeshRenderer> ().material = CaveFloorMaterials [floorNumber].wallMat;
 		mapGenObject.transform.Find ("Plane").GetComponent<MeshRenderer> ().material = CaveFloorMaterials [floorNumber].floorMat;
 
 		StartCoroutine(InstantiateObjectsForFloor(CurrentFloor));

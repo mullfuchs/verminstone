@@ -502,14 +502,15 @@ public class GenerateMap : MonoBehaviour {
 		
 
 	public Vector3 GetFloorEntryPoint(){
-		Room entryRoom = roomList [roomList.Count - 1];
+		int randRoom = UnityEngine.Random.Range (0, roomList.Count);
+		Room entryRoom = roomList [ randRoom ];
 		Coord entryTile = entryRoom.insideTiles.ElementAt( (int)(entryRoom.insideTiles.Count / 2) );
 		return coordToWorldPoint (entryTile);
 	}
 
 	public Vector3 GetFloorExitPoint(){
-        print("Room count" + roomList.Count);
-		Room exitRoom = roomList [roomList.Count - 2];
+		int randRoom = UnityEngine.Random.Range (0, roomList.Count);
+		Room exitRoom = roomList [ randRoom ];
 		Coord exitTile = exitRoom.insideTiles.ElementAt( (int)(exitRoom.insideTiles.Count / 2)  );
 		return coordToWorldPoint (exitTile);
 	}
