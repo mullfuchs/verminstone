@@ -108,6 +108,7 @@ public class GameSaveController : MonoBehaviour {
 
         //set the day
         gameObject.transform.GetComponent<CampEventController>().day = data.DaysElapsed;
+		gameObject.transform.GetComponent<CampEventController> ().StartDay ();
 
 		foreach (NPCProfile profile in data.NPCProfiles) {
 			campPopController.LoadNPCFromSave (profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex, profile.statRecord);
