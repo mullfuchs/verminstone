@@ -77,6 +77,7 @@ public class CaveManager : MonoBehaviour {
 		Floor FloorToLoad = FloorList.ElementAt (floorNumber);
 		CurrentFloor = FloorToLoad;
 		mapGenObject.GetComponent<GenerateMap> ().RenderMap (FloorToLoad.getMap ());
+		clearNavMesh ();
 		makeNavMesh ();
 		mapGenObject.GetComponent<PlaceObjects> ().finishedSpawning = false;
 
@@ -107,6 +108,11 @@ public class CaveManager : MonoBehaviour {
 
 	}
 
+	IEnumerator ClearAllObjectsFromCurrentFloor(){
+		mapGenObject.GetComponent<PlaceObjects> ().ClearObjectsOnFloor ();
+		yield return new WaitForSeconds (1.0f);
+	}
+
 	public void RemoveObjectFromFloor(GameObject objectToRemove){
 		//iterate thru entire floor list??
 		//if the game object matches 
@@ -125,7 +131,7 @@ public class CaveManager : MonoBehaviour {
 	public void DescendToLowerFloor(){
 		if (currentFloor + 1 <= numberOfFloorsToMake) {
 			currentFloor += 1;
-			mapGenObject.GetComponent<PlaceObjects> ().ClearObjectsOnFloor ();
+			StartCoroutine (ClearAllObjectsFromCurrentFloor());
 			CurrentFloor = null;
 			LoadFloor (currentFloor, true);
 
@@ -135,7 +141,8 @@ public class CaveManager : MonoBehaviour {
 	public void AscendToUpperFloor(){
 		if (currentFloor - 1 >= 0) {
 			currentFloor -= 1;
-			mapGenObject.GetComponent<PlaceObjects> ().ClearObjectsOnFloor ();
+			StartCoroutine (ClearAllObjectsFromCurrentFloor());
+			//mapGenObject.GetComponent<PlaceObjects> ().ClearObjectsOnFloor ();
 			CurrentFloor = null;
 			LoadFloor (currentFloor, false);
 		} else {
@@ -157,6 +164,12 @@ public class CaveManager : MonoBehaviour {
 
 	void makeNavMesh(){
 		navMeshFloor.GetComponent<UnityEngine.AI.NavMeshSurface> ().BuildNavMesh ();
+	}
+
+	void clearNavMesh(){
+		if (navMeshFloor.GetComponent<UnityEngine.AI.NavMeshSurface> ().navMeshData != null) {
+			navMeshFloor.GetComponent<UnityEngine.AI.NavMeshSurface> ().RemoveData ();
+		}
 	}
 
 

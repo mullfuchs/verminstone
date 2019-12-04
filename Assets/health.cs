@@ -18,7 +18,7 @@ public class health : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if(gameObject.tag == "WorkerNPC")
+		if(gameObject.tag == "WorkerNPC" || gameObject.tag == "Player")
         {
             healthPoints = gameObject.GetComponent<NPCstats>().health;
             defensePoints = gameObject.GetComponent<NPCstats>().defense;
@@ -41,7 +41,7 @@ public class health : MonoBehaviour {
 		if (obj.gameObject.tag == "projectile" && isFreindlyFireOn) {
             //print ("took projectile damage");
             //healthPoints -= obj.gameObject.GetComponent<MoveForward>().damage;
-            AddDamage(obj.gameObject.GetComponent<MoveForward>().damage);
+            ///AddDamage(obj.gameObject.GetComponent<MoveForward>().damage);
            // Destroy (obj.gameObject);
 			//if (healthPoints <= 0) {
 			//	killgameObject ();
