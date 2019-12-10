@@ -484,6 +484,18 @@ public class GenerateMap : MonoBehaviour {
 		return coordList;
 	}
 
+	public List<Vector3> GetSetNumberOfRandomPointsInRooms(int numberOfPoints){
+		List<Vector3> coordList = new List<Vector3> ();
+
+		while (coordList.Count < numberOfPoints) {
+			Room tempRoom = roomList.ElementAt (UnityEngine.Random.Range (0, roomList.Count));
+			Coord tempTile = tempRoom.tiles.ElementAt (UnityEngine.Random.Range (0, tempRoom.tiles.Count));
+			coordList.Add (coordToWorldPoint (tempTile));
+		}
+
+		return coordList;
+	}
+
 	public List<Vector3> GetListOfPointsInRooms(int numberOfPointsToGet){
 		List<Vector3> coordList = new List<Vector3> ();	
 
