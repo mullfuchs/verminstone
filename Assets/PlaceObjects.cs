@@ -125,6 +125,7 @@ public class PlaceObjects : MonoBehaviour {
 	{
 		public GameObject gameObjectType;
 		public int FloorFillPercentage;
+		public int AmountPerFloor;
 	}
 		
 

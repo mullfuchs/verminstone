@@ -52,9 +52,10 @@ public class CaveManager : MonoBehaviour {
 			pointListArray = new List<Vector3>[objectPointListCount];
 
 			for (int j = 0; j < objectPointListCount; j++) {
-				int objFillPercent = CaveFloors [i].FloorObjects [j].FloorFillPercentage;
+				int objFillPercent = CaveFloors [i].FloorObjects [j].AmountPerFloor;
 				//int fillpercent = mapGenObject.GetComponent<PlaceObjects> ().FloorObjects [j].FloorFillPercentage;
-				pointListArray[j] = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms ( objFillPercent );
+				//pointListArray[j] = mapGenObject.GetComponent<GenerateMap> ().GetRandomPointsInRooms ( objFillPercent );
+				pointListArray[j] = mapGenObject.GetComponent<GenerateMap> ().GetSetNumberOfRandomPointsInRooms ( objFillPercent );
 			}
 				
 			//as we get random points from the floor we should, like remove those points from possible points
