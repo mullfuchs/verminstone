@@ -14,6 +14,8 @@ public class AIBugController : MonoBehaviour {
 	private bool CanAttack = true;
 	private bool isAttacking = true;
 
+	private int FrameTimeout = 0;
+
 	public bool patrol = false;
 	// Update is called once per frame
 	void Start (){
@@ -47,6 +49,14 @@ public class AIBugController : MonoBehaviour {
 			}
 		} else {
 			//setTarget (OriginObject);
+		}
+
+		FrameTimeout++;
+		if (FrameTimeout >= 10) {
+			FrameTimeout = 0;
+			if (target != null) {
+				CheckForCloserTarget (target);
+			}
 		}
 
 	}
@@ -131,6 +141,21 @@ public class AIBugController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider obj){
 		
+	}
+
+	void CheckForCloserTarget(GameObject target){
+		Collider[] targets = Physics.OverlapSphere (gameObject.transform.position, 3.0f);
+		float TargetDist = Vector3.Distance (target.transform.position, gameObject.transform.position);
+		foreach (Collider c in targets) {
+			if (c.gameObject.tag == "WorkerNPC" || c.gameObject.tag == "Player") {
+				float checkDist = Vector3.Distance (c.gameObject.transform.position, gameObject.transform.position);
+				if (c.gameObject != target && checkDist < TargetDist) {
+					setTarget (c.gameObject);
+					print ("bug found a closer target");
+					return;
+				}
+			}
+		}
 	}
 
 }
