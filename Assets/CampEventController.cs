@@ -178,6 +178,7 @@ public class CampEventController : MonoBehaviour {
         //Sun.transform.Rotate( new Vector3(7.633f,-201.307f,-153.5f));
         //advance time
 		day += 1;
+		GameObject.Find ("DayCounter").GetComponent<UnityEngine.UI.Text> ().text = "Day:" + day;
         gameObject.GetComponent<CampNarrativeController>().day += 1;
 		gameObject.GetComponent<CampNarrativeController>().timeOfDay = CampNarrativeController.timePeriod.Morning;
 
