@@ -7,6 +7,7 @@ public class VStoneEconomyObject : MonoBehaviour {
     private float vStoneDailyAmount;
     private float vStoneTotalCollected;
 	public float DailyQuota = 45;
+	public float YesterdaysQuota = 0;
 	public float IncrementAmout = 20;
 	public float VStoneNeededForExtraFood = 5;
 
@@ -55,6 +56,7 @@ public class VStoneEconomyObject : MonoBehaviour {
 	}
 
 	public void IncreaseDailyQuota(int day){
+		YesterdaysQuota = DailyQuota;
 		DailyQuota = DailyQuota + IncrementAmout;
 	}
 
