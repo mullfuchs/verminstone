@@ -8,6 +8,7 @@ public class VStoneEconomyObject : MonoBehaviour {
     private float vStoneTotalCollected;
 	public float DailyQuota = 45;
 	public float IncrementAmout = 20;
+	public float VStoneNeededForExtraFood = 5;
 
     // Use this for initialization
 	void Start () {
@@ -17,6 +18,11 @@ public class VStoneEconomyObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public int getExtraPortionsBasedOnVstone(){
+		float diff = vStoneDailyAmount - DailyQuota;
+		return (int)(diff / VStoneNeededForExtraFood);
 	}
 
     public void AddVStoneToDailyTotal(float amount)

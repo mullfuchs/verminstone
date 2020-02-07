@@ -15,10 +15,12 @@ public class NPCFoodDistroUIController : MonoBehaviour {
 
 	private List<GameObject> NPCCards;
 
+	private int ExtraFoodAmount = 0;
 	// Use this for initialization
 	void Start () {
 		NPCCards = new List<GameObject> ();
 		NPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+
 	}
 	
 	// Update is called once per frame
@@ -28,6 +30,8 @@ public class NPCFoodDistroUIController : MonoBehaviour {
 
 	public void CreateAndDisplayNPCcards(){
 		cardParent.SetActive (true);
+		ExtraFoodAmount = GameObject.Find ("CampEventController").GetComponent<VStoneEconomyObject> ().getExtraPortionsBasedOnVstone ();
+		cardParent.transform.Find ("ExtraFoodDisplay").GetComponent<UnityEngine.UI.Text> ().text = "Extra Portions: " + ExtraFoodAmount;
         NPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
         foreach (GameObject g in NPCs) {
 			GameObject uiCard = Instantiate (CardPrefab, cardParent.transform, false);
