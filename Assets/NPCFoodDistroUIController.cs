@@ -15,7 +15,7 @@ public class NPCFoodDistroUIController : MonoBehaviour {
 
 	private List<GameObject> NPCCards;
 
-	private int ExtraFoodAmount = 0;
+	public int ExtraFoodAmount = 0;
 	// Use this for initialization
 	void Start () {
 		NPCCards = new List<GameObject> ();
@@ -37,7 +37,7 @@ public class NPCFoodDistroUIController : MonoBehaviour {
 			GameObject uiCard = Instantiate (CardPrefab, cardParent.transform, false);
 			uiCard.SetActive (true);
 			uiCard.GetComponent<NPCFoodCardController> ().assignNPCtoCard (g);
-            
+			uiCard.GetComponent<NPCFoodCardController> ().parentFoodDistroObject = this;
 			NPCCards.Add (uiCard);
             uiCard.GetComponent<NPCFoodCardController>().updateFoodCardUI();
         }
@@ -54,5 +54,16 @@ public class NPCFoodDistroUIController : MonoBehaviour {
 			Destroy (x);
 		}
 		cardParent.SetActive (false);
+	}
+
+	public void updateAllCards(){
+		ExtraFoodAmount -= 1;
+		cardParent.transform.Find ("ExtraFoodDisplay").GetComponent<UnityEngine.UI.Text> ().text = "Extra Portions: " + ExtraFoodAmount;
+		if (ExtraFoodAmount <= 0) {
+			foreach (GameObject x in NPCCards) {
+				GameObject button = x.transform.Find ("Button").gameObject;
+				button.GetComponent<UnityEngine.UI.Button> ().interactable = false;
+			}
+		}
 	}
 }

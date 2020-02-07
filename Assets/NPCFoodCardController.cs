@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class NPCFoodCardController : MonoBehaviour {
 
+	public NPCFoodDistroUIController parentFoodDistroObject;
+
 	private GameObject associatedNPC;
 	private health npcHealth;
 
@@ -52,9 +54,14 @@ public class NPCFoodCardController : MonoBehaviour {
 
 	public void givePortionToNPC(){
 		//check remaining amount
-		NPCstats stats = associatedNPC.GetComponent<NPCstats> ();
-		stats.health = 100;
-        npcHealth.healthPoints = npcHealth.maxHealth;
-		updateFoodCardUI ();
+		if (parentFoodDistroObject.ExtraFoodAmount > 0) {
+			NPCstats stats = associatedNPC.GetComponent<NPCstats> ();
+			stats.health = 100;
+			npcHealth.healthPoints = npcHealth.maxHealth;
+			updateFoodCardUI ();
+			parentFoodDistroObject.updateAllCards ();
+		}
+
+
 	}
 }
