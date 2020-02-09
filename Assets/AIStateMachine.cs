@@ -199,16 +199,12 @@ public class AIStateMachine : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "VerminStone") {
-				if(this.tag == "Miner" && other.GetComponent<VStoneObject>().HasBeenTouched){
-					//StartCoroutine( MineVerminStone(other.gameObject));
-				}
-				if(this.tag == "Carrier" && other.GetComponent<VStoneObject>().HasBeenMined){
-					//PickUpVerminStone(other.gameObject);
-					//Follow (DefaultTarget);
-					//ReturnToMineCart(MineCartTarget);
-				}
+			if (gameObject.GetComponent<NPCInventory> ().ObjectHeldInHands.tag == "MineTool") {
+				setTarget(other.gameObject);
+				EnemyAttackingMe = other.gameObject;
+				currentState = AIState.Angry;		
 			}
-			
+		}
 
         if (other.tag == "StoneDropOff")
         {
@@ -284,6 +280,13 @@ public class AIStateMachine : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
+		if (other.gameObject.tag == "VerminStone") {
+			if (gameObject.GetComponent<NPCInventory> ().ObjectHeldInHands.tag == "MineTool") {
+				setTarget(other.gameObject);
+				EnemyAttackingMe = other.gameObject;
+				currentState = AIState.Angry;		
+			}
+		}
         /*
         if (other.gameObject.tag == "Bug" && currentState == AIState.Angry)
         {

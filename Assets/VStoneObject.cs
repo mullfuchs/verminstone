@@ -37,11 +37,28 @@ public class VStoneObject : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter(Collider other){
+	void OnCollisionEnter(Collider other){
 		if (other.tag == "Player" && !HasBeenTouched) {
 			HasBeenTouched = true;
 			this.GetComponent<ParticleSystem>().Stop();
 		}
+
+		if (other.tag == "WorkerHitBox") {
+			healthPoints -= other.gameObject.GetComponent<NPCstats> ().attack;
+			if (healthPoints <= 0) {
+				DestroyStoneAndCreateRocksToPickUp ();		
+			}
+
+			if(SentForHelp == false)
+			{
+				EnemyTeamHandler.GetComponent<EnemyTeamHandler>().sendSwarmToAttackWhenVStoneMined(gameObject);
+				SentForHelp = true;
+			}
+		}
+	}
+
+	void OnTriggerEnter(Collider other){
+
 
 		if (other.tag == "WorkerNPC" && HasBeenTouched) {
 			print ("stone being mined");
@@ -50,11 +67,7 @@ public class VStoneObject : MonoBehaviour {
 			}
 			minersInRadius++;
 
-            if(SentForHelp == false)
-            {
-                EnemyTeamHandler.GetComponent<EnemyTeamHandler>().sendSwarmToAttackWhenVStoneMined(gameObject);
-                SentForHelp = true;
-            }
+
 		}
 
 //		if (other.tag == "Miner" && HasBeenTouched) {
