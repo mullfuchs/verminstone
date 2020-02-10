@@ -164,10 +164,10 @@ public class PowerObject : MonoBehaviour {
         return returnVal;
     }
 
-	void OnTriggerEnter(Collider other){
-		if (other.tag == "VerminStone") {
+	void OnCollisionEnter(Collision other){
+		if (other.gameObject.tag == "VerminStone") {
             print("tagged verminstone");
-			AddPowerAmount(other.GetComponent<VStoneObject>().energy);
+			AddPowerAmount(other.gameObject.GetComponent<VStoneObject>().energy);
 
             xp += 1;
 			uiController.updateBar(uiController.XPBarObject, xp);

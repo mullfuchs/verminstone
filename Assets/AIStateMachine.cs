@@ -100,7 +100,7 @@ public class AIStateMachine : MonoBehaviour {
 			if (EnemyAttackingMe != null) {
 
 				float distToEnemy = Vector3.Distance(EnemyAttackingMe.transform.position, transform.position);
-				if (distToEnemy <= 2.5f && CanAttack) {
+				if (distToEnemy <= 4.5f && CanAttack) {
 					print ("performing attack");
 					PerformAttack ();
 				}
@@ -280,23 +280,24 @@ public class AIStateMachine : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
-		if (other.gameObject.tag == "VerminStone") {
-			if (gameObject.GetComponent<NPCInventory> ().ObjectHeldInHands.tag == "MineTool") {
-				setTarget(other.gameObject);
-				EnemyAttackingMe = other.gameObject;
-				currentState = AIState.Angry;		
-			}
-		}
         /*
-        if (other.gameObject.tag == "Bug" && currentState == AIState.Angry)
-        {
-           other.gameObject.GetComponent<health>().AddDamage(1);
-            print("NPC Did damage of 1");
-        }
-        */
+       if (other.gameObject.tag == "VerminStone") {
+           if (gameObject.GetComponent<NPCInventory> ().ObjectHeldInHands.tag == "MineTool") {
+               setTarget(other.gameObject);
+               EnemyAttackingMe = other.gameObject;
+               currentState = AIState.Angry;		
+           }
+       }
+
+       if (other.gameObject.tag == "Bug" && currentState == AIState.Angry)
+       {
+          other.gameObject.GetComponent<health>().AddDamage(1);
+           print("NPC Did damage of 1");
+       }
+       */
     }
 
-	void DropVerminStone(){
+    void DropVerminStone(){
 		foreach (Transform child in transform) {
 			if(child.CompareTag("VerminStone")){
 				Destroy(child.gameObject);

@@ -32,19 +32,19 @@ public class VStoneObject : MonoBehaviour {
 			timer -= Time.deltaTime;
 			if (timer <= 0.0f) {
 				timer = timerOGval;
-				MineStone ();
+		//		MineStone ();
 			}
 		}
 	}
 
-	void OnCollisionEnter(Collider other){
-		if (other.tag == "Player" && !HasBeenTouched) {
+	void OnCollisionEnter(Collision other){
+		if (other.gameObject.tag == "Player" && !HasBeenTouched) {
 			HasBeenTouched = true;
 			this.GetComponent<ParticleSystem>().Stop();
 		}
 
-		if (other.tag == "WorkerHitBox") {
-			healthPoints -= other.gameObject.GetComponent<NPCstats> ().attack;
+		if (other.gameObject.tag == "WorkerHitBox") {
+			healthPoints -= other.transform.parent.GetComponent<NPCstats> ().attack;
 			if (healthPoints <= 0) {
 				DestroyStoneAndCreateRocksToPickUp ();		
 			}
@@ -100,6 +100,22 @@ public class VStoneObject : MonoBehaviour {
 			}
 		}
 	}
+
+    public void DamageStone(float damage)
+    {
+        healthPoints -= (int)damage;
+
+        if (SentForHelp == false)
+        {
+            EnemyTeamHandler.GetComponent<EnemyTeamHandler>().sendSwarmToAttackWhenVStoneMined(gameObject);
+            SentForHelp = true;
+        }
+
+        if (healthPoints <= 0)
+        {
+            DestroyStoneAndCreateRocksToPickUp();
+        }
+    }
 
 	void DestroyStoneAndCreateRocksToPickUp(){
 		float radiusOffset = 360 / FragmentsToMake;
