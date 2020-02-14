@@ -104,6 +104,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 			GameObject[] npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
 
 			for (int i = 0; i < npcs.Length; i++) {
+                //since we're loading into the scene and dialog is now "new" we have to reload each npc's scripts into it's registry, or whatever
+                npcs[i].GetComponent<Yarn.Unity.Example.NPC>().LoadNPCScript();
 				npcs [i].GetComponent<AIStateMachine> ().SendNPCToObject ( GameObject.Find("EquipmentReturn") );
 			}
 

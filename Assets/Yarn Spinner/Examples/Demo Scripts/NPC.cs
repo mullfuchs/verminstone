@@ -54,8 +54,11 @@ namespace Yarn.Unity.Example {
 		}
 
 		public void LoadNPCScript(){
-
-		}
+            if (scriptToLoad != null)
+            {
+                FindObjectOfType<Yarn.Unity.DialogueRunner>().AddScript(scriptToLoad);
+            }
+        }
 	}
 
 }
