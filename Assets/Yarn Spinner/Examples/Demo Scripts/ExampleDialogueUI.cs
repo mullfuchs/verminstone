@@ -223,6 +223,7 @@ namespace Yarn.Unity.Example {
 
             GameObject.Find("Player").GetComponent<DialogTrigger>().canTalkToNPCs = true;
 
+
 			yield break;
 		}
 		

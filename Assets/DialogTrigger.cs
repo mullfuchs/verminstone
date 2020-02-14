@@ -49,7 +49,8 @@ namespace Yarn.Unity.Example{
 				if (target.GetComponentInParent<NPCstats> ().hasBeenTalkedToToday == false) {
 					target.GetComponentInParent<NPCstats> ().hasBeenTalkedToToday = true;
 				}
-		
+				//pause any idle stuff going on?
+				target.GetComponentInParent<NPCOverworldController>().idling = false;
 				FindObjectOfType<DialogueRunner> ().StartDialogue (target.talkToNode);
                // FindObjectOfType<DialogPortraitController>().populateDialogPortraits(target.GetComponent<NPCstats>().DialogPortraits, gameObject.GetComponent<NPCstats>().DialogPortraits);
             }
