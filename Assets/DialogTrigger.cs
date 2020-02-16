@@ -10,6 +10,8 @@ namespace Yarn.Unity.Example{
 
 		GameObject mainCam;
 
+        GameObject CurrentNPC;
+
 		// Use this for initialization
 		void Start () {
 			mainCam = GameObject.Find ("MultipurposeCameraRig");
@@ -49,7 +51,8 @@ namespace Yarn.Unity.Example{
 				if (target.GetComponentInParent<NPCstats> ().hasBeenTalkedToToday == false) {
 					target.GetComponentInParent<NPCstats> ().hasBeenTalkedToToday = true;
 				}
-		
+                CurrentNPC = target.gameObject;
+                CurrentNPC.GetComponent<NPCOverworldController>().idling = false;
 				FindObjectOfType<DialogueRunner> ().StartDialogue (target.talkToNode);
                // FindObjectOfType<DialogPortraitController>().populateDialogPortraits(target.GetComponent<NPCstats>().DialogPortraits, gameObject.GetComponent<NPCstats>().DialogPortraits);
             }
@@ -63,6 +66,15 @@ namespace Yarn.Unity.Example{
 			}
 			//mainCam.transform.SetPositionAndRotation(closest.GetComponent<NPC> ().CameraPosition.position, closest.GetComponent<NPC> ().CameraPosition.rotation);
 		}
+
+        public void ReleaseNPCPlayerIsTalkingTo()
+        {
+            canTalkToNPCs = true;
+            if(CurrentNPC != null)
+            {
+                CurrentNPC.GetComponent<NPCOverworldController>().idling = true;
+            }
+        }
 
 		public GameObject FindClosestNPC()
 		{
