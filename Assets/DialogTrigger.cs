@@ -53,6 +53,7 @@ namespace Yarn.Unity.Example{
 				}
                 CurrentNPC = target.gameObject;
                 CurrentNPC.GetComponent<NPCOverworldController>().idling = false;
+
 				FindObjectOfType<DialogueRunner> ().StartDialogue (target.talkToNode);
                // FindObjectOfType<DialogPortraitController>().populateDialogPortraits(target.GetComponent<NPCstats>().DialogPortraits, gameObject.GetComponent<NPCstats>().DialogPortraits);
             }
