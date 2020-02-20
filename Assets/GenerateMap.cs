@@ -530,15 +530,28 @@ public class GenerateMap : MonoBehaviour {
 	}
 
 	public Vector3 GetRandomPointInRandomRoom(){
+		if (roomList.Count <= 0) {
+			print ("No more empty rooms! that's a problem!");
+			return Vector3.zero;
+		}
+
+		Room randRoom;
 		int roomIndex = UnityEngine.Random.Range (0, roomList.Count);
-		Room randRoom = roomList[roomIndex];
+		randRoom = roomList[roomIndex];
+
+
 		//get random room
 		Coord randomSpot = randRoom.insideTiles.ElementAt( UnityEngine.Random.Range(0, randRoom.insideTiles.Count) );
-
+		//testing this
+		randRoom.insideTiles.Remove(randomSpot);
+		if (randRoom.insideTiles.Count <= 0) {
+			roomList.Remove (randRoom);
+		}
 		//get random point in that room
 		//return it
 		return coordToWorldPoint(randomSpot);
 	}
+
 
 	public void RenderMap(int[,] mapToRender){
 		MeshGenerator meshGen = GetComponent<MeshGenerator> ();
