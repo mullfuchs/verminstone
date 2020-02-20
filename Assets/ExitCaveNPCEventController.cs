@@ -83,7 +83,17 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
         int carrierCount = NPCCarriers.Length;
 
+
+
 		for(int i = 0; i < NPCCarriers.Length; i++){
+            print("sending npc to rock bucket");
+            while (NPCCarriers[i].GetComponent<UnityEngine.AI.NavMeshAgent>().isOnNavMesh == false)
+            {
+                print("npc not on nav mesh yet");
+                yield return new WaitForSeconds(0.3f);
+                //wait for thing to get on mesh before continuing
+            }    
+
 			NPCCarriers [i].GetComponent<AIStateMachine> ().SendNPCToObject (stoneBucketObject); 
 		}
 
