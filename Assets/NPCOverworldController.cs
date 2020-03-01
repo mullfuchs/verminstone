@@ -28,6 +28,9 @@ public class NPCOverworldController : MonoBehaviour {
 	float idlePeriod = 15.0f;
 	float idleCounter = 1;
 
+	public bool isEscaping;
+	GameObject campEscapeObject;
+
 	GameObject[] npcIdleTargets;
 	int idleTargetIndex = 0;
 
@@ -47,7 +50,11 @@ public class NPCOverworldController : MonoBehaviour {
                 idleCounter -= 1;
                 if (idleCounter <= 0)
                 {
-					GoToBed ();
+					if (!isEscaping) {
+						GoToBed ();
+					} else {
+						
+					}
                     idling = false;
                 }
                 else
@@ -80,6 +87,12 @@ public class NPCOverworldController : MonoBehaviour {
 		}
 	}
 
+	void GoToEscapeObject(){
+		if (campEscapeObject != null) {
+			gameObject.GetComponent<AIStateMachine> ().SendNPCToObject (campEscapeObject);
+		}
+	}
+
 	void DoIdleRoutine(){
 		idling = true;
 		idleTime = idlePeriod;
@@ -93,6 +106,9 @@ public class NPCOverworldController : MonoBehaviour {
 		idleTargets = GameObject.FindGameObjectsWithTag ("IdleLocation");
 		shuffleArray (idleTargets);
         
+		if (isEscaping) {
+			campEscapeObject = GameObject.Find ("CampAreaSecretEscape");
+		}
 
 		return idleTargets;
 	}

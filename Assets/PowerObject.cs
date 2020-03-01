@@ -48,7 +48,7 @@ public class PowerObject : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (powerAmount >= maxPowerAmount) {
+		if (powerAmount > maxPowerAmount) {
 			canRegen = false;
 		}
 
