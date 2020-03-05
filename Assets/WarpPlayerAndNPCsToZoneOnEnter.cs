@@ -8,7 +8,7 @@ public class WarpPlayerAndNPCsToZoneOnEnter : MonoBehaviour {
 	public Transform point;
 
 	public bool ForceNPCsToFollowOnExit;
-
+    public bool warpOnlyOne = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -21,8 +21,19 @@ public class WarpPlayerAndNPCsToZoneOnEnter : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player" && TargetZone != null) {
-			StartCoroutine ("warpToZOne");
+            if (!warpOnlyOne)
+            {
+                StartCoroutine("warpToZOne");
+            }
+            else
+            {
+                StartCoroutine("warpPlayerToZone");
+            }
 		}
+        if(other.tag == "WorkerNPC" && TargetZone != null && warpOnlyOne)
+        {
+            WarpNPCToZone(other.gameObject);
+        }
 	}
 
 	IEnumerator warpToZOne(){
@@ -47,4 +58,18 @@ public class WarpPlayerAndNPCsToZoneOnEnter : MonoBehaviour {
 		//fade camera in
 
 	}
+
+    IEnumerator warpPlayerToZone()
+    {
+        GameObject.Find("MultipurposeCameraRig").GetComponent<CameraFade>().StartFade(Color.black, 2.0f);
+        GameObject player = GameObject.Find("Player");
+        yield return new WaitForSeconds(2.0f);
+        player.transform.position = TargetZone.GetComponent<WarpPlayerAndNPCsToZoneOnEnter>().point.position;
+        GameObject.Find("MultipurposeCameraRig").GetComponent<CameraFade>().StartFade(Color.clear, 2.0f);
+    }
+
+    void WarpNPCToZone(GameObject g)
+    {
+       g.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().agent.Warp(TargetZone.GetComponent<WarpPlayerAndNPCsToZoneOnEnter>().point.position);
+    }
 }

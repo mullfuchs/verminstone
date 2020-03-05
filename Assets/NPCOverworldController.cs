@@ -53,7 +53,7 @@ public class NPCOverworldController : MonoBehaviour {
 					if (!isEscaping) {
 						GoToBed ();
 					} else {
-						
+                        GoToEscapeObject();
 					}
                     idling = false;
                 }
@@ -91,6 +91,10 @@ public class NPCOverworldController : MonoBehaviour {
 		if (campEscapeObject != null) {
 			gameObject.GetComponent<AIStateMachine> ().SendNPCToObject (campEscapeObject);
 		}
+        else
+        {
+            GoToBed();
+        }
 	}
 
 	void DoIdleRoutine(){
