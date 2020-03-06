@@ -148,6 +148,7 @@ public class CampPopulationController : MonoBehaviour {
 			npcRecord.Bravery = ConvertStringToInt( stats [6]);
 			npcRecord.RunSpeed = ConvertStringToInt( stats [7]);
 			NPCStatRecords.Add (npcRecord);
+
             print("added record for " + npcRecord.Name);
 		}
 
@@ -181,6 +182,7 @@ public class CampPopulationController : MonoBehaviour {
 	}
 
 	private void giveNPCCorrectBodyAndTexture(GameObject npc){
+		npc.name = npc.GetComponent<NPCstats> ().statObject.Name;
 		string NPCType = npc.GetComponent<NPCstats> ().statObject.AnimalType;
 		int furType = npc.GetComponent<NPCstats> ().statObject.FurType;
 		GameObject body;
