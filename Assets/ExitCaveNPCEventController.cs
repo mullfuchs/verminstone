@@ -38,7 +38,6 @@ public class ExitCaveNPCEventController : MonoBehaviour {
     {
 		teamHandler = GameObject.Find("Player").GetComponent<NPCTeamHandler>();
 
-        GameObject.Find("CampEventController").GetComponent<GameSaveController>().LoadQuestObjects();
         //teamHandler.resetNPCTargets ();
         //teamHandler.RefreshNPCMinerList();
         NPCMiners = teamHandler.GetCurrentMiners().ToArray();
@@ -115,7 +114,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 			GameObject.Find("CaveExitDoor").GetComponent<DoorController>().OpenDoor();
 			GameObject[] npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
 
-			for (int i = 0; i < npcs.Length; i++) {
+            GameObject.Find("CampEventController").GetComponent<GameSaveController>().LoadQuestObjects();
+            for (int i = 0; i < npcs.Length; i++) {
                 //since we're loading into the scene and dialog is now "new" we have to reload each npc's scripts into it's registry, or whatever
                 npcs[i].GetComponent<Yarn.Unity.Example.NPC>().LoadNPCScript();
 				npcs [i].GetComponent<AIStateMachine> ().SendNPCToObject ( GameObject.Find("EquipmentReturn") );
