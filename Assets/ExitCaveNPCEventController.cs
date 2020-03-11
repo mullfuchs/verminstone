@@ -37,8 +37,10 @@ public class ExitCaveNPCEventController : MonoBehaviour {
     public void doCaveExitEvent()
     {
 		teamHandler = GameObject.Find("Player").GetComponent<NPCTeamHandler>();
-		//teamHandler.resetNPCTargets ();
-		//teamHandler.RefreshNPCMinerList();
+
+        GameObject.Find("CampEventController").GetComponent<GameSaveController>().LoadQuestObjects();
+        //teamHandler.resetNPCTargets ();
+        //teamHandler.RefreshNPCMinerList();
         NPCMiners = teamHandler.GetCurrentMiners().ToArray();
         NPCCarriers = teamHandler.GetCurrentCarriers().ToArray();
 

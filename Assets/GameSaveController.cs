@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class GameSaveController : MonoBehaviour {
 
+    private Save currentlyLoadedSave;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -93,10 +95,8 @@ public class GameSaveController : MonoBehaviour {
 
 		gameSave.CompletedQuests = GameObject.Find ("GameQuestObjects").GetComponent<CampQuestController> ().GetCompletedQuestList ();
 
-		//quest controller has a list of strings of completed quests
-		//get that list, stick it in the save file. 
 
-
+        currentlyLoadedSave = gameSave;
 
 		return gameSave;
 	}
@@ -115,8 +115,14 @@ public class GameSaveController : MonoBehaviour {
 		}
 
 		GameObject.Find ("GameQuestObjects").GetComponent<CampQuestController> ().LoadCompletedQuests ( data.CompletedQuests );
-
+        currentlyLoadedSave = data;
 	}
 
-
+    public void LoadQuestObjects()
+    {
+        if(currentlyLoadedSave != null)
+        {
+            GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().LoadCompletedQuests(currentlyLoadedSave.CompletedQuests);
+        }
+    }
 }

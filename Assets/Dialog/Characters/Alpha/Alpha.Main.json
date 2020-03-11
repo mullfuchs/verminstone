@@ -2,7 +2,7 @@
 	{
 		"title": "Alpha.Day1.Evening.Start",
 		"tags": "",
-		"body": "Bugs! The entire cave is filled with bugs\nI knew they were down there but I never...\nFuck.\nBy the way you can escape out the right now\n<<startQuest GameQuestObjects EscapeQuest>>",
+		"body": "Bugs! The entire cave is filled with bugs\nI knew they were down there but I never...\nFuck.\nBy the way im escaping now\n<<startQuest GameQuestObjects CampAreaSecretEscape>>",
 		"position": {
 			"x": -223,
 			"y": 196

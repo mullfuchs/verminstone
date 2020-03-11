@@ -181,7 +181,8 @@ public class CampPopulationController : MonoBehaviour {
 	}
 
 	private void giveNPCCorrectBodyAndTexture(GameObject npc){
-		string NPCType = npc.GetComponent<NPCstats> ().statObject.AnimalType;
+        npc.name = npc.GetComponent<NPCstats>().statObject.Name;
+        string NPCType = npc.GetComponent<NPCstats> ().statObject.AnimalType;
 		int furType = npc.GetComponent<NPCstats> ().statObject.FurType;
 		GameObject body;
 

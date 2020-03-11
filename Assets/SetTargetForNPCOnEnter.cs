@@ -15,7 +15,7 @@ public class SetTargetForNPCOnEnter : MonoBehaviour {
     {
         if (other.tag == "WorkerNPC")
         {
-            other.GetComponent<AIStateMachine>().AddTargetForNPC(target);
+            other.GetComponent<AIStateMachine>().HardSendNPCToObject(target);
         }
     }
 

@@ -91,7 +91,7 @@ namespace Yarn.Unity
 
 			// Load all JSON
 			foreach (var source in sourceText) {
-				//dialogue.LoadString (source.text, source.name);
+				dialogue.LoadString (source.text, source.name);
 			}
 				
 

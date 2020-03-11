@@ -412,5 +412,12 @@ public class AIStateMachine : MonoBehaviour {
         updateStoppingDistance(itemStoppingDist);
     }
 
+    public void HardSendNPCToObject(GameObject target)
+    {
+        targets.Clear();
+        targets.Enqueue(target);
+        updateStoppingDistance(itemStoppingDist);
+    }
+
 }
 
