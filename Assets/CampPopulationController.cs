@@ -39,8 +39,10 @@ public class CampPopulationController : MonoBehaviour {
 		{
 			print("loading game from save");
 			IsNewGame = false;
-			//this is also being looked at in the game save controller so watch it
-		}
+            //this is also being looked at in the game save controller so watch it
+            startGameObj.GetComponent<StartGameController>().loadGameFromSave = false;
+
+        }
 
 		if (IsNewGame == true)
 		{
