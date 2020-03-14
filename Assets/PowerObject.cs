@@ -87,11 +87,16 @@ public class PowerObject : MonoBehaviour {
 	}
 
 	public void AddPowerAmount(float amount){
-		powerAmount += amount;
-		if (uiController != null) {
-			uiController.updateBar(uiController.PowerBarObject, powerAmount);
-			setLightIntensity (powerAmount);
+		if ((powerAmount + amount) <= maxPowerAmount) {
+			powerAmount += amount;
+		} else {
+			powerAmount = maxPowerAmount;
+			canRegen = false;
+		}
 
+		if (uiController != null) {
+			uiController.updateBar (uiController.PowerBarObject, powerAmount);
+			setLightIntensity (powerAmount);
 		}
     }
 
