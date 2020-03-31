@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CampQuestController : MonoBehaviour {
@@ -14,6 +15,7 @@ public class CampQuestController : MonoBehaviour {
 	public QuestReference[] QuestObjects;
 
 	private List<string> CompletedQuests = new List<string>();
+
 
 	// Use this for initialization
 	void Start () {
@@ -59,6 +61,21 @@ public class CampQuestController : MonoBehaviour {
 		}
 	}
 
+    public QuestVariables GatherQuestVariablesForSave()
+    {
+        QuestVariables QuestVariableReference = new QuestVariables();
+        QuestVariableReference.EscapingNPCs = gameObject.transform.Find("CampAreaSecretEscape").GetComponent<SetNPCEscapeFlags>().npcsThatCanEscape.ToArray();
+        QuestVariableReference.daysLeftToEscape = gameObject.transform.Find("CampAreaSecretEscape").GetComponent<SetNPCEscapeFlags>().daysLeftToEscape;
+        return QuestVariableReference;
+    }
+
+    public void RestoreQuestVariables(QuestVariables q)
+    {
+        SetNPCEscapeFlags flags = gameObject.transform.Find("CampAreaSecretEscape").GetComponent<SetNPCEscapeFlags>();
+        flags.npcsThatCanEscape =  q.EscapingNPCs.ToList();
+        flags.daysLeftToEscape = q.daysLeftToEscape;
+    }
+
 	public List<string> GetCompletedQuestList(){
 		return CompletedQuests;
 	}
@@ -75,4 +92,10 @@ public class CampQuestController : MonoBehaviour {
 public class QuestReference{
 	public string QuestName;
 	public GameObject QuestObject;
+}
+
+[System.Serializable]
+public struct QuestVariables{
+    public string[] EscapingNPCs;
+    public int daysLeftToEscape;
 }

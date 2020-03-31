@@ -25,8 +25,8 @@ public class NPCOverworldController : MonoBehaviour {
 	public bool idling = false;
 
 	float idleTime = 0.0f;
-	float idlePeriod = 15.0f;
-	float idleCounter = 1;
+	public float idlePeriod = 15.0f;
+	public float idleCounter = 1;
 
 	public bool isEscaping;
 	GameObject campEscapeObject;

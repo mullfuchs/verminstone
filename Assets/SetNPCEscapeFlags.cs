@@ -4,22 +4,29 @@ using UnityEngine;
 
 public class SetNPCEscapeFlags : MonoBehaviour {
 
-	public string[] npcsThatCanEscape;
+    public List<string> npcsThatCanEscape;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public int daysLeftToEscape;
 
-	void Awake(){
-		foreach (string name in npcsThatCanEscape) {
-			GameObject n = GameObject.Find (name);
-			n.GetComponent<NPCOverworldController> ().isEscaping = true;
-		}
-	}
+    // Use this for initialization
+    void Start() {
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+    void Awake() {
+        foreach (string name in npcsThatCanEscape) {
+            GameObject n = GameObject.Find(name);
+            n.GetComponent<NPCOverworldController>().isEscaping = true;
+        }
+    }
+
+    // Update is called once per frame
+    void Update() {
+
+    }
+
+    [Yarn.Unity.YarnCommand("addNPCToEscape")]
+    public void addEscapingNPC(string npcName){
+        npcsThatCanEscape.Add(npcName);
+    }
 }

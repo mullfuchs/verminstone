@@ -10,6 +10,7 @@ public class Save {
 	public float PlayerHealth;
 	public int DaysElapsed;
 	public List<string> CompletedQuests = new List<string>();
+    public QuestVariables QuestVariableReference = new QuestVariables();
 }
 
 [System.Serializable]

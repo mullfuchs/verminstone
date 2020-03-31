@@ -94,7 +94,7 @@ public class GameSaveController : MonoBehaviour {
 		gameSave.DaysElapsed = GameObject.Find ("CampEventController").GetComponent<CampEventController> ().day;
 
 		gameSave.CompletedQuests = GameObject.Find ("GameQuestObjects").GetComponent<CampQuestController> ().GetCompletedQuestList ();
-
+        gameSave.QuestVariableReference = GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().GatherQuestVariablesForSave();
 
         currentlyLoadedSave = gameSave;
 
@@ -115,6 +115,7 @@ public class GameSaveController : MonoBehaviour {
 		}
 
 		GameObject.Find ("GameQuestObjects").GetComponent<CampQuestController> ().LoadCompletedQuests ( data.CompletedQuests );
+        GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().RestoreQuestVariables(data.QuestVariableReference);
         currentlyLoadedSave = data;
 	}
 
@@ -123,6 +124,7 @@ public class GameSaveController : MonoBehaviour {
         if(currentlyLoadedSave != null)
         {
             GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().LoadCompletedQuests(currentlyLoadedSave.CompletedQuests);
+            GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().RestoreQuestVariables(currentlyLoadedSave.QuestVariableReference);
         }
     }
 }
