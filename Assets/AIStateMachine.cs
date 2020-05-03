@@ -31,6 +31,8 @@ public class AIStateMachine : MonoBehaviour {
 
     private VStoneEconomyObject VStoneEcoInstance;
 
+    private bool canCarryVstone = true;
+
 		// Use this for initialization
 	void Start () {
 		//DefaultTarget = this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target.gameObject;
@@ -173,7 +175,7 @@ public class AIStateMachine : MonoBehaviour {
         if (ChannelerIFollow.GetComponent<NPCTeamHandler>().checkTargetCount() > 0)
         {
             GameObject backobject = gameObject.GetComponent<NPCInventory>().ObjectOnBack;
-            if (backobject != null && backobject.tag == "BagTool")
+            if (backobject != null && backobject.tag == "BagTool" && canCarryVstone)
             {
                 targets.Enqueue(ChannelerIFollow.GetComponent<NPCTeamHandler>().GetATargetIfOneIsAvailable());
                 //setTarget((GameObject)targets.Dequeue());
@@ -230,10 +232,35 @@ public class AIStateMachine : MonoBehaviour {
             if (gameObject.GetComponent<NPCInventory>().ObjectOnBack.tag == "BagTool")
             {
                 print("picking up stone");
-                
-                vStoneAmount += 5.0f;
-                ChannelerIFollow.GetComponent<NPCTeamHandler>().addCollectedVStone(5.0f);
-                targets.Dequeue();
+                //check bag capacity vs what I have
+                float vStoneFragmentAmount = 5.0f;
+                int cap = gameObject.GetComponent<NPCInventory>().ObjectOnBack.GetComponent<Vstonebag>().vStoneCapacity;
+                if (cap < (int)vStoneAmount + vStoneFragmentAmount)
+                {
+                    canCarryVstone = false;
+                    targets.Clear();
+                    print("bag full, can't carry anymore");
+                    //it's full, empty target queue of additional vstone including this one and set a flag
+                    //give vstone to other npcs? 
+                    while(targets.Count > 0)
+                    {
+                        GameObject target = (GameObject)targets.Peek();
+                        if(target.tag == "VStoneFragment")
+                        {
+                            ChannelerIFollow.GetComponent<NPCTeamHandler>().AddTargetForNPCs(target);
+                        }
+
+                        targets.Dequeue();
+                        
+                    }
+                }
+
+                vStoneAmount += vStoneFragmentAmount;
+                ChannelerIFollow.GetComponent<NPCTeamHandler>().addCollectedVStone(vStoneFragmentAmount);
+                if (targets.Count > 0)
+                {
+                    targets.Dequeue();
+                }
                 Destroy(other.gameObject);
                 CheckIfTheresATargetInMyQueue();
             }

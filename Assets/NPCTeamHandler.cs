@@ -334,6 +334,8 @@ public class NPCTeamHandler : MonoBehaviour {
 		if(npc.GetComponent<NPCInventory>().ObjectOnBack != null && npc.GetComponent<NPCInventory>().ObjectOnBack.GetComponent<EquippableItem>().itemName == "Back Bag")
         {
 			removeCollectedVStone (npc.GetComponent<AIStateMachine> ().GetVerminStoneAmount ());
+            //spawn vstone bag prefab
+            //find an npc that has an empty slot or does not have a back, make em pick it up
         }
 
         //TODO: hash out if/how npcs picking up inventory works
