@@ -132,6 +132,19 @@ public class NPCInventory : MonoBehaviour {
 		}
 	}
 
+    public GameObject getBackObject()
+    {
+        if (ActiveBackObject)
+        {
+            return ActiveBackObject;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+
 	public void DestroyAllEquippedObjects()
 	{
 		

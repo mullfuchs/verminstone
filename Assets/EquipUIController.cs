@@ -13,6 +13,10 @@ public class EquipUIController : MonoBehaviour {
 
     public GameObject NPCCardParent;
 
+    public GameObject VStoneQuotaUIObject;
+    private int CurrentQuota;
+    private int CurrentCapacity;
+
     private GameObject[] NPCs;
 
     private GameObject[] Items;
@@ -31,6 +35,7 @@ public class EquipUIController : MonoBehaviour {
         currentItem = null;
         ItemCards = new List<GameObject>();
 		NPCCards = new List<GameObject> ();
+        CurrentCapacity = 0;
 		//Items = 
     }
 
@@ -41,6 +46,8 @@ public class EquipUIController : MonoBehaviour {
 
     public void CreateAndDisplayNPCcards()
     {
+        CurrentQuota = (int)GameObject.Find("CampEventController").GetComponent<VStoneEconomyObject>().getDailyQuota();
+
         NPCCardParent.SetActive(true);
         NPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
         foreach (GameObject g in NPCs)
@@ -50,6 +57,8 @@ public class EquipUIController : MonoBehaviour {
             uiCard.GetComponent<NPCEquipCardController>().assignNPCtoCard(g);
 			NPCCards.Add(uiCard);
         }
+
+        UpdateCarryCapacityUI();
     }
 
     public void CreateAndDisplayItemCards()
@@ -65,16 +74,32 @@ public class EquipUIController : MonoBehaviour {
         }
     }
 
+    public void UpdateCarryCapacityUI()
+    {
+        NPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+        int npcCapacity = 0;
+        foreach (GameObject g in NPCs)
+        {
+           GameObject backObject = g.GetComponent<NPCInventory>().getBackObject();
+           if ( backObject != null && backObject.tag == "BagTool")
+            {
+                GameObject bag = g.GetComponent<NPCInventory>().ObjectOnBack;
+                npcCapacity += bag.GetComponent<Vstonebag>().vStoneCapacity;
+            }
+
+        }
+        VStoneQuotaUIObject.GetComponent<Text>().text = "Today's Quota: " + CurrentQuota + "\n" + "Current Capacity: " + npcCapacity;
+    }
+
 	public void cleanUpItemAndNPCCards(){
 		//destroy cards
 
 		foreach (GameObject x in ItemCards) {
-            DestroyObject(x);
-           // Destroy (x);
+            Destroy(x);
 		}
 		foreach (GameObject x in NPCCards) {
-			DestroyObject (x);
-		}
+            Destroy(x);
+        }
 		ItemCards.Clear();
 		NPCCards.Clear ();
 		ItemCardParent.SetActive(false);
@@ -132,6 +157,7 @@ public class EquipUIController : MonoBehaviour {
     public void equipBackItemToNPC(GameObject npc)
     {
         npc.GetComponent<NPCInventory>().EquipBackItem(currentItem);
+        UpdateCarryCapacityUI();
         currentItem = null;
         resetAllButtons();
     }
