@@ -45,7 +45,10 @@ public class PlayerEventController : MonoBehaviour {
             }
 
 		}
-
+        if(Other.tag == "TunnelDigArea")
+        {
+            CampEventControllerInstance.StartTunnelDigSequence();
+        }
 	}
 
 	void OnTriggerStay(Collider other){
@@ -70,6 +73,11 @@ public class PlayerEventController : MonoBehaviour {
 			CampEventControllerInstance.refreshReferences ();
 
 			//CampEventControllerInstance.ExitCaveSequence();
+        }
+
+        if (Other.tag == "TunnelDigArea")
+        {
+            CampEventControllerInstance.EndTunnelDigSequence();
         }
     }
 }

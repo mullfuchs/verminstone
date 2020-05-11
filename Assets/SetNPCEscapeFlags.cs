@@ -6,7 +6,12 @@ public class SetNPCEscapeFlags : MonoBehaviour {
 
     public List<string> npcsThatCanEscape;
 
+    public bool hasPlayerStartedEscape = false;
+
+    public int metersOfTunnelDug;
     public int daysLeftToEscape;
+    public bool canPlayerAttemptEscape = false;
+    public int metersNeededToEscape;
 
     // Use this for initialization
     void Start() {
@@ -29,4 +34,13 @@ public class SetNPCEscapeFlags : MonoBehaviour {
     public void addEscapingNPC(string npcName){
         npcsThatCanEscape.Add(npcName);
     }
+
+    [Yarn.Unity.YarnCommand("setPlayerStartEscapeFlag")]
+    public void setPlayerStartEscapeFlag()
+    {
+        hasPlayerStartedEscape = true;
+    }
+
+
+
 }

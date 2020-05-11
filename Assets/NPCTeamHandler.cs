@@ -349,6 +349,14 @@ public class NPCTeamHandler : MonoBehaviour {
 
     }
 
+    public void DistributeDroppedNPCEquipment(GameObject equipment)
+    {
+        //is this a back or a hand item?
+
+        //check out the npcs, first one with a empty slot of the kind that the equipment is has the target assigned
+        
+    }
+
     public void addCollectedVStone(float amount)
     {
         KilogramsofVstoneCollected += amount;

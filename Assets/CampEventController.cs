@@ -264,6 +264,15 @@ public class CampEventController : MonoBehaviour {
 		canvas.GetComponent<EquipUIController> ().cleanUpItemAndNPCCards ();
 	}
 
+    public void StartTunnelDigSequence()
+    {
+        canvas.GetComponent<EscapeUIController>().CreateAndDisplayNPCcards();
+    }
+
+    public void EndTunnelDigSequence()
+    {
+        canvas.GetComponent<EscapeUIController>().CleanUpEscapeUI();
+    }
 
 
 }
