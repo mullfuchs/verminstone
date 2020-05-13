@@ -72,7 +72,17 @@ public class EscapeUIController : MonoBehaviour
         TunnelDisplay.GetComponent<Text>().text = "Tunnel Dug: " + metersOfTunnel;
     }
 
-
+    public void AttemptEscape()
+    {
+        if(metersOfTunnel >= 10)
+        {
+            print("Successful escape");
+        }
+        else
+        {
+            print("ya fucked up");
+        }
+    }
         // Update is called once per frame
     void Update()
     {

@@ -186,6 +186,11 @@ public class CampEventController : MonoBehaviour {
 			print ("you won the game!");
 			SceneManager.LoadScene ("tempEndGame");
 		}
+        //hard coding escape quest to start at a certain day
+        if(day >= 1 && GameObject.Find("CampAreaSecretEscape") == null )
+        {
+
+        }
 
 		StartDay ();
 	}
