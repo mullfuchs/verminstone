@@ -11,6 +11,7 @@ public class Save {
 	public int DaysElapsed;
 	public List<string> CompletedQuests = new List<string>();
     public QuestVariables QuestVariableReference = new QuestVariables();
+    public ExampleVariableStorage.DefaultVariable[] DialogViariableReferece;
 }
 
 [System.Serializable]

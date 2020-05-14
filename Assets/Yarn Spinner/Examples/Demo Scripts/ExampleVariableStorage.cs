@@ -157,4 +157,15 @@ public class ExampleVariableStorage : VariableStorageBehaviour
 	}
 
 
+    public DefaultVariable[] GetDialogVariables()
+    {
+        return defaultVariables;
+
+    }
+
+    public void LoadVariablesFromSaveFile(DefaultVariable[] dialogVariables)
+    {
+        defaultVariables = dialogVariables;
+    }
+
 }

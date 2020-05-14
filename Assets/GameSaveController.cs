@@ -96,6 +96,8 @@ public class GameSaveController : MonoBehaviour {
 		gameSave.CompletedQuests = GameObject.Find ("GameQuestObjects").GetComponent<CampQuestController> ().GetCompletedQuestList ();
         gameSave.QuestVariableReference = GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().GatherQuestVariablesForSave();
 
+        gameSave.DialogViariableReferece = GameObject.Find("Dialogue").GetComponent<ExampleVariableStorage>().GetDialogVariables();
+
         currentlyLoadedSave = gameSave;
 
 		return gameSave;
@@ -116,6 +118,8 @@ public class GameSaveController : MonoBehaviour {
 
 		GameObject.Find ("GameQuestObjects").GetComponent<CampQuestController> ().LoadCompletedQuests ( data.CompletedQuests );
         GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().RestoreQuestVariables(data.QuestVariableReference);
+
+        GameObject.Find("Dialogue").GetComponent<ExampleVariableStorage>().LoadVariablesFromSaveFile(data.DialogViariableReferece);
         currentlyLoadedSave = data;
 	}
 
