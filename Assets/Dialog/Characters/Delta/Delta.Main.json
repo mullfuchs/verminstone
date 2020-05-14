@@ -22,7 +22,7 @@
 	{
 		"title": "Delta.Day1.Evening.Start",
 		"tags": "",
-		"body": "Ughhhhh",
+		"body": "Ughhhhh\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Delta.EscapeOption]]\n<<endif>>\n[[Nevermind|Delta.EndDialog]]",
 		"position": {
 			"x": 82,
 			"y": 333
@@ -32,7 +32,7 @@
 	{
 		"title": "Delta.Day2.Evening.Start",
 		"tags": "",
-		"body": "Fuck...why",
+		"body": "Fuck...why\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Delta.EscapeOption]]\n<<endif>>\n[[Nevermind|Delta.EndDialog]]",
 		"position": {
 			"x": 309,
 			"y": 329
@@ -52,10 +52,30 @@
 	{
 		"title": "Delta.Day3.Evening.Start",
 		"tags": "",
-		"body": "These editing tools are a bit crap",
+		"body": "These editing tools are a bit crap\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Delta.EscapeOption]]\n<<endif>>\n[[Nevermind|Delta.EndDialog]]",
 		"position": {
 			"x": 536,
 			"y": 333
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Delta.EscapeOption",
+		"tags": "",
+		"body": "<<addNPCToEscape CampAreaSecretEscape Delta>>\nI do want to get out of this hellhole, actually",
+		"position": {
+			"x": 911,
+			"y": 87
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Delta.EndDialog",
+		"tags": "",
+		"body": "Later",
+		"position": {
+			"x": 890,
+			"y": 349
 		},
 		"colorID": 0
 	}

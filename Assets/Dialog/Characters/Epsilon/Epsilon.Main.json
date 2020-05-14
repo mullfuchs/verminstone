@@ -12,7 +12,7 @@
 	{
 		"title": "Epsilon.Day1.Evening.Start",
 		"tags": "",
-		"body": "Day one, but its nite",
+		"body": "Day one, but its nite\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Epsilon.EscapeOption]]\n<<endif>>\n[[Nevermind|Epsilon.EndDialog]]",
 		"position": {
 			"x": -662,
 			"y": 253
@@ -32,7 +32,7 @@
 	{
 		"title": "Epsilon.Day2.Evening.Start",
 		"tags": "",
-		"body": "It sure is night again huh",
+		"body": "It sure is night again huh\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Epsilon.EscapeOption]]\n<<endif>>\n[[Nevermind|Epsilon.EndDialog]]",
 		"position": {
 			"x": -667,
 			"y": 694
@@ -52,10 +52,30 @@
 	{
 		"title": "Epsilon.Day3.Evening.Start",
 		"tags": "",
-		"body": "I'm going to have that same dream again tonight, I can almost feel it\n",
+		"body": "I'm going to have that same dream again tonight, I can almost feel it\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Epsilon.EscapeOption]]\n<<endif>>\n[[Nevermind|Epsilon.EndDialog]]",
 		"position": {
 			"x": -397,
 			"y": 257
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Epsilon.EscapeOption",
+		"tags": "",
+		"body": "<<addNPCToEscape CampAreaSecretEscape Epsilon>>\nOh yeah, lets get out of here",
+		"position": {
+			"x": -16,
+			"y": 174
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Epsilon.EndDialog",
+		"tags": "",
+		"body": "Bottom Text",
+		"position": {
+			"x": -65,
+			"y": 464
 		},
 		"colorID": 0
 	}
