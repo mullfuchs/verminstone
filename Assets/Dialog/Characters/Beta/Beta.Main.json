@@ -12,7 +12,7 @@
 	{
 		"title": "Beta.Day1.Evening.Start",
 		"tags": "",
-		"body": "Made it through my first day. it starts over again tomorrow\nI think I can get the hang of this\nHow long do they expect us to survive anyway?\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Beta.EscapeOption]]\n<<endif>>\n[[Nevermind|Beta.EndDialog]]",
+		"body": "Made it through my first day. it starts over again tomorrow\nI think I can get the hang of this\nHow long do they expect us to survive anyway?\n<<if $escape_active == 1>>\n[[I'm trying to escape, wanna join in?|Beta.EscapeOption]]\n<<endif>>\n[[Nevermind|Beta.EndDialog]]",
 		"position": {
 			"x": -508,
 			"y": 89
@@ -32,7 +32,7 @@
 	{
 		"title": "Beta.Day2.Evening.Start",
 		"tags": "",
-		"body": "Are they gonna feed us any more than they are?\nHow do they expect us to get their fucking rocks if we're hungry all the time\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Beta.EscapeOption]]\n<<endif>>\n[[Nevermind|Beta.EndDialog]]",
+		"body": "Are they gonna feed us any more than they are?\nHow do they expect us to get their fucking rocks if we're hungry all the time\n<<if $escape_active == 1>>\n[[I'm trying to escape, wanna join in?|Beta.EscapeOption]]\n<<endif>>\n[[Nevermind|Beta.EndDialog]]",
 		"position": {
 			"x": -509,
 			"y": 503
@@ -42,7 +42,7 @@
 	{
 		"title": "Beta.Day3.Morning.Start",
 		"tags": "",
-		"body": "I don't think I've had a dream since I got here\nI think I'm too tired at the end of the day to dream\nThis place, is like a nightmare\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Beta.EscapeOption]]\n<<endif>>\n[[Nevermind|Beta.EndDialog]]",
+		"body": "I don't think I've had a dream since I got here\nI think I'm too tired at the end of the day to dream\nThis place, is like a nightmare\n<<if $escape_active == 1>>\n[[I'm trying to escape, wanna join in?|Beta.EscapeOption]]\n<<endif>>\n[[Nevermind|Beta.EndDialog]]",
 		"position": {
 			"x": -510,
 			"y": 713
@@ -52,7 +52,7 @@
 	{
 		"title": "Beta.Day3.Evening.Start",
 		"tags": "",
-		"body": "Night must fall when we're underground\nI seem to only see the sun in the morning\nI wonder how bad it's going to be in winter, will we even see the sun?\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Beta.EscapeOption]]\n<<endif>>\n[[Nevermind|Beta.EndDialog]]",
+		"body": "Night must fall when we're underground\nI seem to only see the sun in the morning\nI wonder how bad it's going to be in winter, will we even see the sun?\n<<if $escape_active == 1>>\n[[I'm trying to escape, wanna join in?|Beta.EscapeOption]]\n<<endif>>\n[[Nevermind|Beta.EndDialog]]",
 		"position": {
 			"x": -509,
 			"y": 917

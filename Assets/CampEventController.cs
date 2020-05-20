@@ -189,7 +189,8 @@ public class CampEventController : MonoBehaviour {
         //hard coding escape quest to start at a certain day
         if(day >= 1 && GameObject.Find("CampAreaSecretEscape") == null )
         {
-
+            print("trying to turn on camp area secret escape");
+            GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().StartQuest("CampAreaSecretEscape");
         }
 
 		StartDay ();
@@ -271,6 +272,7 @@ public class CampEventController : MonoBehaviour {
 
     public void StartTunnelDigSequence()
     {
+
         canvas.GetComponent<EscapeUIController>().CreateAndDisplayNPCcards();
     }
 

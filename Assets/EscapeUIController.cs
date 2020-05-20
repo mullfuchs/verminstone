@@ -29,12 +29,22 @@ public class EscapeUIController : MonoBehaviour
 
     private void Awake()
     {
+        //EscapeObjectInstance = GameObject.Find("CampAreaSecretEscape").GetComponent<SetNPCEscapeFlags>();
+    }
+
+    private void SetUp()
+    {
+
         EscapeObjectInstance = GameObject.Find("CampAreaSecretEscape").GetComponent<SetNPCEscapeFlags>();
+        NPCCards = new List<GameObject>();
+        NPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+
+        metersOfTunnel = EscapeObjectInstance.metersOfTunnelDug;
     }
 
     public void CreateAndDisplayNPCcards()
     {
-
+        SetUp();
         cardParent.SetActive(true);
         //get npcs that are signed up to escape
         foreach(string g in EscapeObjectInstance.npcsThatCanEscape)

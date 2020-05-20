@@ -224,6 +224,7 @@ public class AIStateMachine : MonoBehaviour {
 			{
 				VStoneEcoInstance.AddVStoneToDailyTotal(vStoneAmount);
 				vStoneAmount = 0;
+                canCarryVstone = true;
 			}
 		}
 

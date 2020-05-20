@@ -2,7 +2,7 @@
 	{
 		"title": "EscapeQuest.Start",
 		"tags": "",
-		"body": "Hello there\nI told your friend here not to get spotted\nWhatever\nThis is The Secret escape quest\nI'm going to write some dialog later explaining this\nbut the thing is that you need to bring one or two more of your compatriots\nThen we can start tunneling out of here\ntunneling is going to drain their life force\nso, choose wiesly\nwe need two npcs to tunnel for 10 days each before we can escape\nthen that's it, we're out of here\n<<set $escape_active to 1>>\n<<setPlayerStartEscapeFlag CampAreaSecretEscape>>",
+		"body": "Hello there\n<<set $escape_active to 1>>\n<<setPlayerStartEscapeFlag CampAreaSecretEscape>>\nI told your friend here not to get spotted\nWhatever\nThis is The Secret escape quest\nI'm going to write some dialog later explaining this\nbut the thing is that you need to bring one or two more of your compatriots\nThen we can start tunneling out of here\ntunneling is going to drain their life force\nso, choose wiesly\nwe need two npcs to tunnel for 10 days each before we can escape\nthen that's it, we're out of here\n",
 		"position": {
 			"x": 540,
 			"y": 260
