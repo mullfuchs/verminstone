@@ -65,7 +65,7 @@ public class EquipUIController : MonoBehaviour {
 
     public void CreateAndDisplayItemCards()
     {
-        Items = GameObject.Find("CampEventController").GetComponent<CampInventoryController>().items;
+        Items = GameObject.Find("CampEventController").GetComponent<CampInventoryController>().getInventoryList();
         ItemCardParent.SetActive(true);
         foreach (GameObject g in Items)
         {

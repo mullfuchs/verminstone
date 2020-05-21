@@ -20,6 +20,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
     private VStoneEconomyObject VStoneEcoInstance;
 
+    private bool hasExitDialogCompleted = false;
+
 	// Use this for initialization
 	void Start () {
         teamHandler = GameObject.Find("Player").GetComponent<NPCTeamHandler>();
@@ -110,7 +112,18 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 		print ("total vstone collected during this save: " + VStoneEcoInstance.getTotalCollected ());
 
 		if (VStoneEcoInstance.meetsDailyQuota (VStoneEcoInstance.getDailyTotal ())) {
-			//door lowring thing goes here
+            //door lowring thing goes here
+
+            //pop dialog for success, or failure
+
+            FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue("Overseer.Exit.Success1");
+
+            while (hasExitDialogCompleted != true)
+            {
+                yield return null;
+            }
+            hasExitDialogCompleted = false;
+
 			GameObject.Find("CaveExitDoor").GetComponent<DoorController>().OpenDoor();
 			GameObject[] npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
 
@@ -123,10 +136,19 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
 			//EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
 		} else {
-			print ("go back 2 the caves");
+            FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue("Overseer.Exit.Failure1");
+
+            while (hasExitDialogCompleted != true)
+            {
+                yield return null;
+            }
+            hasExitDialogCompleted = false;
+
+            print ("go back 2 the caves");
 			EventController.GetComponent<CampEventController> ().caveEntrance.GetComponent<CaveEntrance> ().LoadLevelOnEnter = true;
 			// caveEntrance.SetActive (true);
 			VStoneEcoInstance.resetDailyTotal ();
+
 		}
 
 	}
@@ -139,4 +161,11 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 		}
 
 	}
+
+    [Yarn.Unity.YarnCommand("completeCaveExitDialog")]
+    public void completeExitDialog()
+    {
+        print("finishing exit dialog");
+        hasExitDialogCompleted = true;
+    }
 }

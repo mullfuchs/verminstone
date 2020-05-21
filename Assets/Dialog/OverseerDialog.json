@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Overseer.Exit.Success1",
+		"tags": "",
+		"body": "That's a satisfactory amount of crystal\nyou could always bring up more\nmaybe we'd feed you more\nbut no matter, you'll be back tomorrow\n<<completeCaveExitDialog CaveExit>>\n",
+		"position": {
+			"x": 326,
+			"y": 149
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Overseer.Exit.Failure1",
+		"tags": "",
+		"body": "Unacceptable! Go back in there and bring back your quota\n<<completeCaveExitDialog CaveExit>>",
+		"position": {
+			"x": 580,
+			"y": 174
+		},
+		"colorID": 0
+	}
+]
