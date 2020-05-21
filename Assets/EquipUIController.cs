@@ -9,6 +9,8 @@ public class EquipUIController : MonoBehaviour {
 
     public GameObject ItemCardParent;
 
+    public GameObject ItemGroupParent;
+
     public GameObject NPCCardPrefab;
 
     public GameObject NPCCardParent;
@@ -73,6 +75,16 @@ public class EquipUIController : MonoBehaviour {
 			ItemCards.Add (uiCard);
         }
     }
+    
+    public void CreateAndDisplayItemCategories()
+    {
+        CampInventoryController inventoryInstance = GameObject.Find("CampEventController").GetComponent<CampInventoryController>();
+        ItemCardParent.SetActive(true);
+        //create a new item category object, parent it to the Item card parent
+        //put cards in there for the items in each catagory
+
+    }
+    
 
     public void UpdateCarryCapacityUI()
     {

@@ -10,4 +10,5 @@ public class EquippableItem : MonoBehaviour {
     public bool ForHand;
     public bool ForBack;
     public Sprite icon;
+    public int itemLevel;
 }

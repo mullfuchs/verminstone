@@ -29,7 +29,7 @@ public class ItemEquipCardController : MonoBehaviour {
     private void updateCardUI()
     {
         EquippableItem itemStats = associatedItem.GetComponent<EquippableItem>();
-        nameText.GetComponent<Text>().text = itemStats.itemName;
+        nameText.GetComponent<Text>().text = "Level " + itemStats.itemLevel + " " + itemStats.itemName;
     }
 
     public void setThisItemToEquip()

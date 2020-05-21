@@ -6,11 +6,17 @@ public class CampInventoryController : MonoBehaviour {
 
     public GameObject[] items;
 
-    public InventoryItem[] weapons;
-    public InventoryItem[] armors;
-    public InventoryItem[] bags;
-    public InventoryItem[] helmets;
-    public InventoryItem[] pickaxes;
+    public int weaponLevel = 0;
+    public int armorLevel = 0;
+    public int bagLevel = 0;
+    public int helmetLevel = 0;
+    public int pickaxeLevel = 0;
+
+    public GameObject[] weapons;
+    public GameObject[] armors;
+    public GameObject[] bags;
+    public GameObject[] helmets;
+    public GameObject[] pickaxes;
 
     public List<InventoryItem> allItems;
 
@@ -24,6 +30,58 @@ public class CampInventoryController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+    }
+
+    public GameObject[] getInventoryList()
+    {
+        GameObject[] InventoryList = new GameObject[] { weapons[weaponLevel], armors[armorLevel], bags[bagLevel], helmets[helmetLevel], pickaxes[pickaxeLevel] };
+        return InventoryList;
+    }
+
+    [Yarn.Unity.YarnCommand("upgradeWeaponLevel")]
+    public void UpgradeWeaponLevel()
+    {
+        if(weaponLevel + 1 <= weapons.Length)
+        {
+            weaponLevel += 1;
+        }
+    }
+
+    [Yarn.Unity.YarnCommand("upgradeArmorLevel")]
+    public void UpgradeArmorLevel()
+    {
+        if (armorLevel + 1 <= armors.Length)
+        {
+            armorLevel += 1;
+        }
+    }
+
+    [Yarn.Unity.YarnCommand("upgradeBagLevel")]
+    public void UpgradeBagLevel()
+    {
+        if (bagLevel + 1 <= bags.Length)
+        {
+            bagLevel += 1;
+        }
+    }
+
+    [Yarn.Unity.YarnCommand("upgradeHelmetLevel")]
+    public void UpgradeHelmetLevel()
+    {
+        if(helmetLevel + 1 <= helmets.Length)
+        {
+            helmetLevel += 1;
+        }
+    }
+
+
+    [Yarn.Unity.YarnCommand("upgradePickaxeLevel")]
+    public void UpgradePickaxeLevel()
+    {
+        if (pickaxeLevel + 1 <= pickaxes.Length)
+        {
+            pickaxeLevel += 1;
+        }
     }
 
 
