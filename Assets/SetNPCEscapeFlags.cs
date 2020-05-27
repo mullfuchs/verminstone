@@ -40,15 +40,17 @@ public class SetNPCEscapeFlags : MonoBehaviour {
     {
         hasPlayerStartedEscape = true;
         
+        
         GameObject dialogInstance = GameObject.Find("Dialogue");
         ExampleVariableStorage.DefaultVariable[] vars = dialogInstance.GetComponent<ExampleVariableStorage>().defaultVariables;
         foreach(ExampleVariableStorage.DefaultVariable x in vars)
         {
             if(x.name == "escape_active")
             {
-                x.value = "1";
+                x.value = "true";
             }
         }
+        
         
     }
 

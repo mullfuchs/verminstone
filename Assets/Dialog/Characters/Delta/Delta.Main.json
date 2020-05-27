@@ -22,7 +22,7 @@
 	{
 		"title": "Delta.Day1.Evening.Start",
 		"tags": "",
-		"body": "Ughhhhh\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Delta.EscapeOption]]\n<<endif>>\n[[Nevermind|Delta.EndDialog]]",
+		"body": "Ughhhhh\n<<if $escape_active is true>>\n[[I'm trying to escape, wanna join in?|Delta.EscapeOption]]\n<<endif>>\n[[Nevermind|Delta.EndDialog]]",
 		"position": {
 			"x": 82,
 			"y": 333
@@ -32,7 +32,7 @@
 	{
 		"title": "Delta.Day2.Evening.Start",
 		"tags": "",
-		"body": "Fuck...why\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Delta.EscapeOption]]\n<<endif>>\n[[Nevermind|Delta.EndDialog]]",
+		"body": "Fuck...why\n<<if $escape_active is true>>\n[[I'm trying to escape, wanna join in?|Delta.EscapeOption]]\n<<endif>>\n[[Nevermind|Delta.EndDialog]]",
 		"position": {
 			"x": 309,
 			"y": 329
@@ -52,7 +52,7 @@
 	{
 		"title": "Delta.Day3.Evening.Start",
 		"tags": "",
-		"body": "These editing tools are a bit crap\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Delta.EscapeOption]]\n<<endif>>\n[[Nevermind|Delta.EndDialog]]",
+		"body": "These editing tools are a bit crap\n<<if $escape_active is true>>\n[[I'm trying to escape, wanna join in?|Delta.EscapeOption]]\n<<endif>>\n[[Nevermind|Delta.EndDialog]]",
 		"position": {
 			"x": 536,
 			"y": 333

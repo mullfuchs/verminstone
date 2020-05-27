@@ -57,6 +57,10 @@ public class ExampleVariableStorage : VariableStorageBehaviour
 	// Reset to our default values when the game starts
 	void Awake ()
 	{
+        if(debugTextView == null)
+        {
+            debugTextView = GameObject.Find("DialogVariableDebug").GetComponent<UnityEngine.UI.Text>();
+        }
 		ResetToDefaults ();
 	}
 

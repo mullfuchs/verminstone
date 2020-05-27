@@ -56,6 +56,7 @@ public class NPCOverworldController : MonoBehaviour {
                         GoToEscapeObject();
 					}
                     idling = false;
+                    idleCounter = 0;
                 }
                 else
                 {

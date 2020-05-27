@@ -12,7 +12,7 @@
 	{
 		"title": "Chi.Day1.Evening.Start",
 		"tags": "",
-		"body": "....\n... I'm sorry, I...\nI don't...want\nwant to .... talk\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Chi.EscapeOption]]\n<<endif>>\n[[Nevermind|Chi.EndDialog]]",
+		"body": "....\n... I'm sorry, I...\nI don't...want\nwant to .... talk\n<<if $escape_active is true>>\n[[I'm trying to escape, wanna join in?|Chi.EscapeOption]]\n<<endif>>\n[[Nevermind|Chi.EndDialog]]",
 		"position": {
 			"x": -560,
 			"y": 153
@@ -24,8 +24,8 @@
 		"tags": "",
 		"body": ".... \n.... why are you talking ....\nto ... to me?\n...",
 		"position": {
-			"x": -558,
-			"y": 359
+			"x": -542,
+			"y": 365
 		},
 		"colorID": 0
 	},
@@ -42,7 +42,7 @@
 	{
 		"title": "Chi.Day3.Morning.Start",
 		"tags": "",
-		"body": "Hey\n\"hey\"\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Chi.EscapeOption]]\n<<endif>>\n[[Nevermind|Chi.EndDialog]]",
+		"body": "Hey\n\"hey\"\n<<if $escape_active is true>>\n[[I'm trying to escape, wanna join in?|Chi.EscapeOption]]\n<<endif>>\n[[Nevermind|Chi.EndDialog]]",
 		"position": {
 			"x": -559,
 			"y": 771
@@ -52,7 +52,7 @@
 	{
 		"title": "Chi.Day3.Evening.Start",
 		"tags": "",
-		"body": "This is the end of the demo, please give me 350 large and 24 months\nto finish this game\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Chi.EscapeOption]]\n<<endif>>\n[[Nevermind|Chi.EndDialog]]",
+		"body": "This is the end of the demo, please give me 350 large and 24 months\nto finish this game\n<<if $escape_active is true>>\n[[I'm trying to escape, wanna join in?|Chi.EscapeOption]]\n<<endif>>\n[[Nevermind|Chi.EndDialog]]",
 		"position": {
 			"x": -554,
 			"y": 987
@@ -62,7 +62,7 @@
 	{
 		"title": "Chi.Day2.Evening.Start.Yes",
 		"tags": "",
-		"body": "You....care about me?\nYou care about me??\nI'm sorry\nI'm not worth being cared about\n\"Don't say that\"\nWhy do you care about me?\nforget it\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Chi.EscapeOption]]\n<<endif>>\n[[Nevermind|Chi.EndDialog]]",
+		"body": "You....care about me?\nYou care about me??\nI'm sorry\nI'm not worth being cared about\n\"Don't say that\"\nWhy do you care about me?\nforget it\n<<if $escape_active is true>>\n[[I'm trying to escape, wanna join in?|Chi.EscapeOption]]\n<<endif>>\n[[Nevermind|Chi.EndDialog]]",
 		"position": {
 			"x": -221,
 			"y": 570
@@ -72,7 +72,7 @@
 	{
 		"title": "Chi.Day2.Evening.Start.Maybe",
 		"tags": "",
-		"body": ".... well\nI have nothing to say to you except\nfuck off\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Chi.EscapeOption]]\n<<endif>>\n[[Nevermind|Chi.EndDialog]]",
+		"body": ".... well\nI have nothing to say to you except\nfuck off\n<<if $escape_active is true>>\n[[I'm trying to escape, wanna join in?|Chi.EscapeOption]]\n<<endif>>\n[[Nevermind|Chi.EndDialog]]",
 		"position": {
 			"x": 391,
 			"y": 565
@@ -82,7 +82,7 @@
 	{
 		"title": "Chi.Day2.Evening.Start.No",
 		"tags": "",
-		"body": "Well...I don't have ..anything \nfor you\n...\nlook around you. None of us have anything\n<<if $escape_active is 1>>\n[[I'm trying to escape, wanna join in?|Chi.EscapeOption]]\n<<endif>>\n[[Nevermind|Chi.EndDialog]]",
+		"body": "Well...I don't have ..anything \nfor you\n...\nlook around you. None of us have anything\n<<if $escape_active is true>>\n[[I'm trying to escape, wanna join in?|Chi.EscapeOption]]\n<<endif>>\n[[Nevermind|Chi.EndDialog]]",
 		"position": {
 			"x": 138,
 			"y": 561
