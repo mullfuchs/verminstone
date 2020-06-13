@@ -1,0 +1,232 @@
+[
+	{
+		"title": "Krimble.Day1.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 212,
+			"y": 143
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day1.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 212,
+			"y": 355
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Dialog.Resolve",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nIs there something else you want to talk about?\n[[Yeah I'm trying to escape|Krimble.AddToEscapeQuest]]\n[[Not really...|Krimble.EndDialog]]",
+		"position": {
+			"x": 1667,
+			"y": 233
+		},
+		"colorID": 2
+	},
+	{
+		"title": "Krimble.Day2.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 230,
+			"y": 665
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day2.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 227,
+			"y": 881
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day3.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 459,
+			"y": 665
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day3.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 466,
+			"y": 890
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day4.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 746,
+			"y": 666
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day4.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 746,
+			"y": 884
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day5.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 999,
+			"y": 665
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day5.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 999,
+			"y": 887
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day6.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 1239,
+			"y": 662
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day6.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 1247,
+			"y": 882
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day7.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 203,
+			"y": 1182
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day7.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 195,
+			"y": 1416
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day8.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 427,
+			"y": 1182
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day8.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 435,
+			"y": 1410
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day9.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 662,
+			"y": 1184
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day9.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 672,
+			"y": 1416
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day10.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 890,
+			"y": 1181
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.Day10.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"position": {
+			"x": 888,
+			"y": 1410
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.AddToEscapeQuest",
+		"tags": "",
+		"body": "<<addNPCToEscape CampAreaSecretEscape Krimble>>\nEscape? Here? You have a plan?\nI'll help you, whatever it takes\n",
+		"position": {
+			"x": 1911,
+			"y": 580
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Krimble.EndDialog",
+		"tags": "",
+		"body": "Empty Text",
+		"position": {
+			"x": 2141,
+			"y": 337
+		},
+		"colorID": 0
+	}
+]

@@ -32,7 +32,7 @@
 	{
 		"title": "Basil.Day2.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nhmmm, hey\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nhey\n\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 230,
 			"y": 665
@@ -42,7 +42,7 @@
 	{
 		"title": "Basil.Day2.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nhey there\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nhey\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 227,
 			"y": 881
@@ -52,7 +52,7 @@
 	{
 		"title": "Basil.Day3.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nI'm hungry, did you sleep well?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nNo\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nMe neither\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 459,
 			"y": 665
@@ -62,7 +62,7 @@
 	{
 		"title": "Basil.Day3.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nDo the caves bother you as much as it does me\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nKind of, yeah\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHuh\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 466,
 			"y": 890
@@ -72,7 +72,7 @@
 	{
 		"title": "Basil.Day4.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nMornin'\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHey\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 746,
 			"y": 666
@@ -82,7 +82,7 @@
 	{
 		"title": "Basil.Day4.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHey Emma, what were you doing before all this?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nOh, I was a farmer \n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nMe too. Soybeans, what about you?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nWheat mostly\nI dunno it's kind of hard to think about right now\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nOk, yeah.\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 746,
 			"y": 884
@@ -92,7 +92,7 @@
 	{
 		"title": "Basil.Day5.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nMornin' Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHey Basil\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 665
@@ -102,7 +102,7 @@
 	{
 		"title": "Basil.Day5.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHey again Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHey Basil\nHow'd you end up here?\nI mean, it's not like you walked here\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\n....\nWell if you must know, my last owner fuckin died\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nOh\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nIt was kind of bittersweet, because I hated the bastard, we all did\nbut there was no way I was getting out of there\nI guess I didn't expect to end up here\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 887
@@ -112,7 +112,7 @@
 	{
 		"title": "Basil.Day6.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nMornin', again, Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHey again Basil\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 1239,
 			"y": 662
@@ -122,7 +122,7 @@
 	{
 		"title": "Basil.Day6.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHey Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHey Basil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nah fuck I hate it here, i hate talking \nwhat is there to even fucking talk about\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nI know, I know\nwhy don't you tell me something about yourself\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nLike what? Some kind of story.\nI guess. Not like we have anywhere to go right now. \nI could tell you about the night my last owner died.\n...actually, you know what, nevermind\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 1247,
 			"y": 882
@@ -132,7 +132,7 @@
 	{
 		"title": "Basil.Day7.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\n......\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHey\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 203,
 			"y": 1182
@@ -142,7 +142,7 @@
 	{
 		"title": "Basil.Day7.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHey Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHey Basil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nSo about last time, you know\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nYour old owner, how he died?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nYeah well, I was never supposed to tell anyone\nbut I guess it doesn't matter now anymore\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nWhat? What do you mean?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nWe killed him, Emma. He was the most horrible person I ever met\nAnd we killed him in cold blood that night. \nI don't know why I feel bad about it, but I do.\nAnd they never found out about it. It seemed like an accident.\nAnd nobody talked either, so they just assumed he croaked.\nbut I still ended up here, so I guess the joke's on me\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nBasil...\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nI'm not afraid of the caves anymore, Emma\nI deserve this, I deserve what's coming to me\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 195,
 			"y": 1416
@@ -152,7 +152,7 @@
 	{
 		"title": "Basil.Day8.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\n......\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\n....hey\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 427,
 			"y": 1182
@@ -162,7 +162,7 @@
 	{
 		"title": "Basil.Day8.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHey Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHey Basil\nHow are you, uh, feeling?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nI did a lot of thinking about it, and you know\nI'm glad he's dead. I'm glad we killed him.\nMy last owner\nI don't know why but talking about it for the first time helped me process it a little\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\n....\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 435,
 			"y": 1410
@@ -172,7 +172,7 @@
 	{
 		"title": "Basil.Day9.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHey Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHey Basil\n\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 662,
 			"y": 1184
@@ -182,7 +182,7 @@
 	{
 		"title": "Basil.Day9.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHey Emma\nDidn't you say your family had a bunch of debt?\nAnd that's why you got sold? \nI feel like I've heard that\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\n....Yeah\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nSame thing happened to me\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHuh\nWere you angry? did you feel like you had to put on a brave face?\nI did. I wanted to scream the entire time.\nMy sister was supposed to get sold too, but she ran away\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nI was, yeah. I wanted to run too.\nI didn't, i thought i had to sacrifice myself so the rest of the village wouldn't lose any more\nbut now, yeah, I wish I had run\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nI used to be angry at my sister too\nbut after a while, here, I don't anymore\nI understood why she did\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nMaybe she's out there\nmaybe you'll run into her again\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nI hope so\n\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 672,
 			"y": 1416
@@ -192,7 +192,7 @@
 	{
 		"title": "Basil.Day10.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHey\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHey\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 890,
 			"y": 1181
@@ -202,7 +202,7 @@
 	{
 		"title": "Basil.Day10.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nYou want me to say something profound?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nGo for it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nsomething profound\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHa\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 888,
 			"y": 1410
