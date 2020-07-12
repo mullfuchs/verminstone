@@ -2,7 +2,7 @@
 	{
 		"title": "Murmur.Day1.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nMorning Murmur\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nHey Emma",
 		"position": {
 			"x": 212,
 			"y": 143
@@ -12,7 +12,7 @@
 	{
 		"title": "Murmur.Day1.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nWhat's on your mind Emma?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nDespair, mainly\nHopelessness\nBoredom too?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nYeah i feel pretty bored\nBored and terrified\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nyeah",
 		"position": {
 			"x": 212,
 			"y": 355
@@ -22,7 +22,7 @@
 	{
 		"title": "Murmur.Dialog.Resolve",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nIs there something else you want to talk about?\n[[Yeah I'm trying to escape|Murmur.AddToEscapeQuest]]\n[[Not really...|Murmur.EndDialog]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Murmur.AddToEscapeQuest]]\n[[Not really...|Murmur.EndDialog]]",
 		"position": {
 			"x": 1667,
 			"y": 233
@@ -32,7 +32,7 @@
 	{
 		"title": "Murmur.Day2.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nHello Murmur\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nHello Emma\nAre we gonna get a bunch of crystal today?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nI guess we are",
 		"position": {
 			"x": 230,
 			"y": 665
@@ -42,7 +42,7 @@
 	{
 		"title": "Murmur.Day2.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nHey emma\nif you don't mind me asking, how did you end up...\nuhh...enslaved?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nNo it's fine\nI was on a farm on some bank owned land\nand, uh, well we didn't have a good harvest\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nThat's terrible, I'm sorry\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nyeah!",
 		"position": {
 			"x": 227,
 			"y": 881
@@ -52,7 +52,7 @@
 	{
 		"title": "Murmur.Day3.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nGood morning \n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nYeah good morning I guess",
 		"position": {
 			"x": 459,
 			"y": 665
@@ -62,7 +62,7 @@
 	{
 		"title": "Murmur.Day3.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nevening Murumur\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\n...\nYeah",
 		"position": {
 			"x": 466,
 			"y": 890
@@ -72,7 +72,7 @@
 	{
 		"title": "Murmur.Day4.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\ngood morning\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nhey\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 746,
 			"y": 666
@@ -82,7 +82,7 @@
 	{
 		"title": "Murmur.Day4.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nHey MurMur\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nmmmm\nyeah\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nis something on your mind?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nNot really\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 746,
 			"y": 884
@@ -92,7 +92,7 @@
 	{
 		"title": "Murmur.Day5.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nGood morning Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nhey\n\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 665
@@ -102,7 +102,7 @@
 	{
 		"title": "Murmur.Day5.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nI'm so tired Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nYeah, me too\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nI don't know how much longer I can keep going\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nI don't know either\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 887
@@ -112,7 +112,7 @@
 	{
 		"title": "Murmur.Day6.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nHello Murmur\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nHello Emma\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 1239,
 			"y": 662
@@ -122,7 +122,7 @@
 	{
 		"title": "Murmur.Day6.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nStill tired Murmur?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nYes, I'm so fucking tired\nand bored, I'm so bored\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nsame, yes\n<<CampEventController upgradeBagLevel>>\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 1247,
 			"y": 882
@@ -132,7 +132,7 @@
 	{
 		"title": "Murmur.Day7.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nHello Murmur\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nHey Emma\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 203,
 			"y": 1182
@@ -142,7 +142,7 @@
 	{
 		"title": "Murmur.Day7.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nI can't keep going on like this \n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nYeah emma?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nI don't know how much longer I can survive\nIf this is just going to be an endless struggle\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nyeah that sucks\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 195,
 			"y": 1416
@@ -152,7 +152,7 @@
 	{
 		"title": "Murmur.Day8.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nHey\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nHey Emma\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 427,
 			"y": 1182
@@ -162,7 +162,7 @@
 	{
 		"title": "Murmur.Day8.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nHey Murmur\nHow do you keep going? \nYou seem so unflappable\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nHonestly? I just stopped caring about everything\nstopped caring if I had a future, if I had any quality of life\nit's amazing what you can endure when you don't care\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nwait really?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nNo, I'm barely holding it together\nIf I stop and think about anything I start to despair\nEven then sometimes, it's uncontrollable\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nso what should I do?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nI dunno, sleep through it like I do.\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 435,
 			"y": 1410
@@ -172,7 +172,7 @@
 	{
 		"title": "Murmur.Day9.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nHey, I \"slept\" through it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nOh great\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 662,
 			"y": 1184
@@ -182,7 +182,7 @@
 	{
 		"title": "Murmur.Day9.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nWhat's on your mind Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\njack shit, how about you\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nabout the same, honestly\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 672,
 			"y": 1416
@@ -192,7 +192,7 @@
 	{
 		"title": "Murmur.Day10.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nhello emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nhey Murmur\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 890,
 			"y": 1181
@@ -202,7 +202,7 @@
 	{
 		"title": "Murmur.Day10.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_talking>>\nHello, I don't think we've met\nI'm Murmur. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Murmur_default_silent>>\nLikewise\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nHey murmur, how'd you get your name?\nI've been meaning to ask but I guess I hadn't yet\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\noh my name?\nOne day i just decided to call myself this\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nreally? there's no tragic backstory behind it?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nnah not really\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\noh\n\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 888,
 			"y": 1410

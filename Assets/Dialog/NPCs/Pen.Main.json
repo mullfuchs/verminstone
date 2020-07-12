@@ -2,7 +2,7 @@
 	{
 		"title": "Pen.Day1.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nGood morning Pen\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nHey Emma\n",
 		"position": {
 			"x": 212,
 			"y": 143
@@ -12,7 +12,7 @@
 	{
 		"title": "Pen.Day1.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nOne thing I like to ask folks I meet is\nhow'd you end up here\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nMy family sold me after our harvest didn't make enough money\nI mean, what are you expecting?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nI've heard that one before\nseems to be pretty common\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nyeah, how about you?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nSomeone I thought I could trust betrayed me\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nwhat?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nyeah, business partner invited me over\nturns out he also invited some slavers\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\njesus christ\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nyeah it was all over after that",
 		"position": {
 			"x": 212,
 			"y": 355
@@ -22,7 +22,7 @@
 	{
 		"title": "Pen.Dialog.Resolve",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nIs there something else you want to talk about?\n[[Yeah I'm trying to escape|Pen.AddToEscapeQuest]]\n[[Not really...|Pen.EndDialog]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Pen.AddToEscapeQuest]]\n[[Not really...|Pen.EndDialog]]",
 		"position": {
 			"x": 1667,
 			"y": 233
@@ -32,7 +32,7 @@
 	{
 		"title": "Pen.Day2.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nMorning Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nHey Pen",
 		"position": {
 			"x": 230,
 			"y": 665
@@ -42,7 +42,7 @@
 	{
 		"title": "Pen.Day2.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nPen do you still feel, uh\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nangry? yeah I do\nI don't understand how someone does that\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nI don't either\nat least in my case I got sold so the bank doesn't default on some loan\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nIs that any better though?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nnot really",
 		"position": {
 			"x": 227,
 			"y": 881
@@ -52,7 +52,7 @@
 	{
 		"title": "Pen.Day3.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nHey Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nPen, morning",
 		"position": {
 			"x": 459,
 			"y": 665
@@ -62,7 +62,7 @@
 	{
 		"title": "Pen.Day3.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nYou got anything to discuss?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nNah not really\nI did get us some better equipment though\nshould be available tomorrow\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nhow did you manage that?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nbeen talking to the guy who has to haul all the equipment around\nI've been giving him extra food\nfinally came through on me\n",
 		"position": {
 			"x": 466,
 			"y": 890
@@ -72,7 +72,7 @@
 	{
 		"title": "Pen.Day4.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nthanks pen\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nno problem\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 746,
 			"y": 666
@@ -82,7 +82,7 @@
 	{
 		"title": "Pen.Day4.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nHey pen\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nhow are you feeling today emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nfucking awful\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\ndon't we all\n\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 746,
 			"y": 884
@@ -92,7 +92,7 @@
 	{
 		"title": "Pen.Day5.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nmorning pen\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nhi emma\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 665
@@ -102,7 +102,7 @@
 	{
 		"title": "Pen.Day5.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nhey emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nhey pen\nyou gonna ask me something?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nmmm yeah\nyou got any good memories?\nlike from before all this\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nwell\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nlike the first boy you kissed?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nI ain't exactly into boys, pen\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\noh\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nher name was sarah though\nstill think about her once in a while\n<<CampEventController upgradeArmorLevel>>\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 887
@@ -112,7 +112,7 @@
 	{
 		"title": "Pen.Day6.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nhi emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nhey...pen\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 1239,
 			"y": 662
@@ -122,7 +122,7 @@
 	{
 		"title": "Pen.Day6.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nhey pen\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nhey emma\nwanna ask me something\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nyeah, I was wondering if you had any good memories yourself\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\noh, well, I used to be a grocer\npart of my job was working the bakery\nmy favorite part of that was making wedding cakes\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nwedding cakes?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nyeah. they were simple, meant to feed a lot of people\nI miss that\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 1247,
 			"y": 882
@@ -132,7 +132,7 @@
 	{
 		"title": "Pen.Day7.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nmorning pen\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nmorning emma\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 203,
 			"y": 1182
@@ -142,7 +142,7 @@
 	{
 		"title": "Pen.Day7.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nyou got any more stories pen?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nhow about the time I ran away\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nyou...escaped?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nOld place that owned me had pretty lax security\none day we just kinda ran for it\nme an a few others\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\noh, how far did you get?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nwe were out for a few days\nslave catchers though, they're worse than the slavers\nthey take a sick pleasure in hunting runaways down\nlike it's some kind of sport\nwouldn't let up for three whole days\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nwhat happened?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nI collapsed from exhaustion, i thought I was going to die\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nthey took you back?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nI...don't want to talk about what they did\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\n..okay\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 195,
 			"y": 1416
@@ -152,7 +152,7 @@
 	{
 		"title": "Pen.Day8.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nhi pen\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\n...\nhey\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 427,
 			"y": 1182
@@ -162,7 +162,7 @@
 	{
 		"title": "Pen.Day8.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nso emma\nhow are you?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nI'm tired, as usual\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nsame, yeah\n\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 435,
 			"y": 1410
@@ -172,7 +172,7 @@
 	{
 		"title": "Pen.Day9.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nmorning pen\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nmorning emma\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 662,
 			"y": 1184
@@ -182,7 +182,7 @@
 	{
 		"title": "Pen.Day9.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nWhy do we keep going\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nI don't know emma\nI don't know\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 672,
 			"y": 1416
@@ -192,7 +192,7 @@
 	{
 		"title": "Pen.Day10.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nemma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\npen\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 890,
 			"y": 1181
@@ -202,7 +202,7 @@
 	{
 		"title": "Pen.Day10.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_talking>>\nHello, I don't think we've met\nI'm Pen. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Pen_default_silent>>\nLikewise\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nhey pen\nwhen you escaped...how was it\ndid you feel free? even for a moment?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nwell if you must ask, yeah I did\nfor a few hours before we knew they were chasing us\ni've never felt so alive\nI'd keep reliving those hours over and over\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nyou stopped\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nyeah, it just felt like I was reliving something I'd never get back\nI can't be an optimist\nI'll die from heartbreak\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 888,
 			"y": 1410

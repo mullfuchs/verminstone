@@ -1,0 +1,232 @@
+[
+	{
+		"title": "Lentil.Day1.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 212,
+			"y": 143
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day1.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHi Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nHi Lentil\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 212,
+			"y": 355
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Dialog.Resolve",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Lentil.AddToEscapeQuest]]\n[[Not really...|Lentil.EndDialog]]",
+		"position": {
+			"x": 1667,
+			"y": 233
+		},
+		"colorID": 2
+	},
+	{
+		"title": "Lentil.Day2.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 230,
+			"y": 665
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day2.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nNice weather we're having lentil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nIs that a joke?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\n...I guess\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nthat's some real good deadpan comedy there\nlove it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nok sure\n\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 227,
+			"y": 881
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day3.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 459,
+			"y": 665
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day3.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nWhat did you use to do?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nI used to be a miner\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\na free miner?\nI thought all mines were slave labor\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nNah, it was actually good money\ncan't get good yeild if your labor is starving and terrified\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nwell, I guess someone's trying\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 466,
+			"y": 890
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day4.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 746,
+			"y": 666
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day4.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLentil, do you know how these caves work?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nI can tell you this is unlike any other cave I've been in\nthis is no ordinary mine\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\n...\nno shit\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nThe bugs have to be living off something\nI wonder if it's the energy from the crystals\nyou feel that energy yourself?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nI do\nthat's why they made me a channeler\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nyeah, it's like their sun\nbut what are they feeding off of\nsurface creatures that wander in\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nus? I guess\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 746,
+			"y": 884
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day5.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 999,
+			"y": 665
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day5.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nDepressed again Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nOf course I am\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nMe too\nit's like the whole world is a dark void\nit's like I'm in a tornado of ash\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nI feel like I'm at the bottom of the sea\nI can feel the weight of the whole ocean\ncrushing my ribcage\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\n...\nthat's good\nthat's poetry\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nyou think so?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nyeah\n<<CampEventController upgradePickaxeLevel>>\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 999,
+			"y": 887
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day6.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 1239,
+			"y": 662
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day6.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nEmma, how did you end up enslaved?\nEnsared? Stolen?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nMy family works on bank owned farm\nif we don't make enough in a harvest well\nsome of us have to get sold off\nit works that way for the whole village\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHow Tragic\nI could always seem to find enough ore to stay out of it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nwhat happened to you?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\na friend got me drunk one night\nand introduced me to some slavers\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\n...how does something like that even happen?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nDesparation on their part, I guess\nFinders fee thing i guess\nI don't even think they got much for me.\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nHow do you feel?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nA bastard like that, who does something like that\nit stains their soul\nit will follow them like a goul, forever\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 1247,
+			"y": 882
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day7.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 203,
+			"y": 1182
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day7.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nEmma, weird question for you\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nok\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nwhat happens after we die?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nUh, I don't want to think about it\nif there's nothing, it's terrifying\nI can only hope there's something\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nwhy? It'll be like before you were born\nyou won't even be able to percive of it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nyeah sure but\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nbut what\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nwhat's the point of this discussion?\nare you trying to prove something?\nI guess you don't belive in anything huh\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\n...I didn't say that\nyou wanna know what I think?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nwhat?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nI think we get to see our old friends and family\nand every past life\nwe all get to share one last moment together\nand then we choose to go back to life\nobliterating our memories of everything\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\n....\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nhorseshit, I know\nbut it's something\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 195,
+			"y": 1416
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day8.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 427,
+			"y": 1182
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day8.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLentil i have a weird question for you\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nok sure\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nhow much did you get sold for?\nsometimes me and the others, we compare prices\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nwhat? oh me\nlike 67 thousand or something\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nwas it at an auction or something?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nno they just weighed me and stuck a price tag on\nno real logic behind it I don't think\nwhy, what did you go for\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nabout 54 thousand\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\noh\nlike, is there some kind of contest y'all are having?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nI dunno, just curious\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 435,
+			"y": 1410
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day9.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 662,
+			"y": 1184
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day9.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHey Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nHi Lentil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nYou going to ask me something weird?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nNo, you first\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\n...\nWhat's your favorite color?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nthat's your question?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nwell, do you have one?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\n....\nI'm not dignifying that with a response\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nok, fine\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 672,
+			"y": 1416
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day10.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 890,
+			"y": 1181
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.Day10.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHi Lentil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHi Emma\n\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nHey\nSo my favorite color is actually blue\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nOh, ok\nMine's red\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nhaha\n[[....|Lentil.Dialog.Resolve]]",
+		"position": {
+			"x": 888,
+			"y": 1410
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.AddToEscapeQuest",
+		"tags": "",
+		"body": "<<addNPCToEscape CampAreaSecretEscape Lentil>>\nEscape? Here? You have a plan?\nI'll help you, whatever it takes\n",
+		"position": {
+			"x": 1911,
+			"y": 580
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lentil.EndDialog",
+		"tags": "",
+		"body": "Empty Text",
+		"position": {
+			"x": 2141,
+			"y": 337
+		},
+		"colorID": 0
+	}
+]

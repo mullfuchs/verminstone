@@ -2,7 +2,7 @@
 	{
 		"title": "Krimble.Day1.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nhey emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nhello, krimble",
 		"position": {
 			"x": 212,
 			"y": 143
@@ -12,7 +12,7 @@
 	{
 		"title": "Krimble.Day1.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nEvening, Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nHey\nKrimble how'd you get your name?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nOh? it's my Aunt's old name\nSupposadly it's an old word for river\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nRiver, huh\ndo you like it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nI think it suits me",
 		"position": {
 			"x": 212,
 			"y": 355
@@ -32,7 +32,7 @@
 	{
 		"title": "Krimble.Day2.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nHey Krimble\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nYou can call me Krim, it's fine\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nok...Krim",
 		"position": {
 			"x": 230,
 			"y": 665
@@ -42,7 +42,7 @@
 	{
 		"title": "Krimble.Day2.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nSo Krim, were you owned by anyone else before coming here?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nNo, this is all I've ever known\nI've been talking to others and they worked as like, servants or whatever\nI can't help but feel like it didn't have to be this bad\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nyeah, same",
 		"position": {
 			"x": 227,
 			"y": 881
@@ -52,7 +52,7 @@
 	{
 		"title": "Krimble.Day3.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nHey Krim\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nHey Emma\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 459,
 			"y": 665
@@ -62,7 +62,7 @@
 	{
 		"title": "Krimble.Day3.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nGot anything to say \n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nNah not really\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nOk\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 466,
 			"y": 890
@@ -72,7 +72,7 @@
 	{
 		"title": "Krimble.Day4.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nMorning Krim\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nEmma...hello\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 746,
 			"y": 666
@@ -82,7 +82,7 @@
 	{
 		"title": "Krimble.Day4.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nSo, what did you do, uh, before this?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nmy family grew crops, I guess we didn't make enough money\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nWe kept bees\nI guess that didn't make enough money either\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nwhat's that like?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nbees are actually pretty friendly and if you take care of them, they'll return the favor\nthey just couldn't make enough honey for us\nand...well\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nyeah\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 746,
 			"y": 884
@@ -92,7 +92,7 @@
 	{
 		"title": "Krimble.Day5.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nHey Krim\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nHey Emma\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 665
@@ -102,7 +102,7 @@
 	{
 		"title": "Krimble.Day5.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nI'm so tired Krim\nThey don't let us sleep enough\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nYeah, I don't think I'm going to make it through the winter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nwhat do you mean?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nI heard some of the old timers talking\nthe one's who've been here a while, i mean\nthey say a lot of folks don't make it through the winter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\noh, oh no\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nyeah\nwhat about you, can you handle a winter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nI don't know\n<<CampEventController upgradePickaxeLevel>>\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 887
@@ -112,7 +112,7 @@
 	{
 		"title": "Krimble.Day6.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nHi emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nHi Krim\n\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 1239,
 			"y": 662
@@ -122,7 +122,7 @@
 	{
 		"title": "Krimble.Day6.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nKrim do you have dreams?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nDreams? Like sleeping dreams or dreams of some kind of future\nbecause I have none of the latter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nI meant like sleeping dreams\nsince I came here they've become really vivid\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nHm, I haven't noticed\nMostly it's just blank\n...\nI did have a dream I was home though\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nHome?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nYeah, a small town in the Coastland, right on the water\nI hate waking up from those kinds of dreams\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nbecause you're back here?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nYeah\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 1247,
 			"y": 882
@@ -132,7 +132,7 @@
 	{
 		"title": "Krimble.Day7.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nHi Krim, any dreams?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nNo not really\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 203,
 			"y": 1182
@@ -142,7 +142,7 @@
 	{
 		"title": "Krimble.Day7.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nHey emma, want to hear a joke?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nWhat? A Joke?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nwell...\nI got nothing\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\n... Is that the joke?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nyes\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nhah aha\nfunny\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 195,
 			"y": 1416
@@ -152,7 +152,7 @@
 	{
 		"title": "Krimble.Day8.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nMorning Krim\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nHey emma, any dreams?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\n*sigh*\n\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 427,
 			"y": 1182
@@ -162,7 +162,7 @@
 	{
 		"title": "Krimble.Day8.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nI had another dream about home\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nYou did?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nYeah. I'm going through the beehives and checking all of them\nthe harvest is going to be good, from the looks of it\nThen I go up the hill to look at the ocean\nand I feel the breeze across my face\nI felt so many memories come flooding back\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\n...\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nThen I woke up\nIt feels like my brain is pulling a cruel trick on me\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nI don't know, I get them sometimes\nit beats the waking world\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nI guess\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 435,
 			"y": 1410
@@ -172,7 +172,7 @@
 	{
 		"title": "Krimble.Day9.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nGood morning Krim\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nGood morning emma\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 662,
 			"y": 1184
@@ -182,7 +182,7 @@
 	{
 		"title": "Krimble.Day9.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nWhat are you thinking about Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nWinter, and about what you said\nI'm not sure I can make it day to day\nmuch less, you know, longer that\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nYeah, it's hard to think even a day or two ahead\nit's like we're in some kind of machine\nno tomorrow or yesterday\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nyeah\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 672,
 			"y": 1416
@@ -192,7 +192,7 @@
 	{
 		"title": "Krimble.Day10.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nHi Krim\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nHi Emma\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 890,
 			"y": 1181
@@ -202,7 +202,7 @@
 	{
 		"title": "Krimble.Day10.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nHello, I don't think we've met\nI'm Krimble. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_silent>>\nLikewise\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nThinking about anything Emma?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nNo not really\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nStill worried about winter?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nYeah\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nIf we're still alive by then, I'll watch out for you\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nMe too Krimble\nThanks\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 888,
 			"y": 1410

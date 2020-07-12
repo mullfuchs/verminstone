@@ -1,0 +1,232 @@
+[
+	{
+		"title": "Memphis.Day1.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 212,
+			"y": 143
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day1.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nHey, I'm emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nI'm Memphis\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 212,
+			"y": 355
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Dialog.Resolve",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Memphis.AddToEscapeQuest]]\n[[Not really...|Memphis.EndDialog]]",
+		"position": {
+			"x": 1667,
+			"y": 233
+		},
+		"colorID": 2
+	},
+	{
+		"title": "Memphis.Day2.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 230,
+			"y": 665
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day2.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHey Emma, how's it going.\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nIt's going to shit\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nhaha I hear that\nwhy does the quota keep going up?\ndo they expect us to mine an infinite amount of crystals or something?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nI heard they increase it until the losses become more expensive than the gains\nunfortunatly, I've heard this crystal is really valuable\nwhat do they even use it for?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nIt's for refining the ore that's being dug up on the other side of the compound\nI'm not sure how the process works, but it adds strength to the metal alloy\nor something\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nsomething huh\nwhat do they use this fuckin steel for anyway\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nWarships or some shit\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nwe're at the start of a long chain of misery and pain\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 227,
+			"y": 881
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day3.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 459,
+			"y": 665
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day3.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nHi Memphis\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHey Emma\nDo you feel any satisfaction in a hard day's work?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nHonestly, I do. When we're down there in the mine fighting off bugs...\nit makes me forget everything that's up here on the surface\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nYeah, i feel that too, a little bit\nIt's messed up\nI'm terrified of the mine, but, I almost have more control down there than up here\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nWe can also kill the bugs\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nThat too\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 466,
+			"y": 890
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day4.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 746,
+			"y": 666
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day4.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nMemphis is a stupid name, your parents were stupid\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nthey sold me into slavery to buy a boat so yes I agree\nWas it a fishing boat?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nNo like a yacht, a fucking yacht\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nwhat, that's the most insane thing I've ever heard\nwho sells their kid into slavery to buy a yacht\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nthe same parents who name a kid Memphis\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nyou ever think about changing your name?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nI can't really think of one, but yeah\nI suppose if I escape again and I were to start a new life\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nwho said anything about escaping?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nUhhh, yeah\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 746,
+			"y": 884
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day5.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 999,
+			"y": 665
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day5.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nWhat do you think they use these crystals for?\nBesides refining metal, I mean\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHmm, well, certain people, like you, react to it and get special powers\nbut somehow it only happens underground\nI hear they're using some crystals to make weapons but they haven't figured it out\nmost of the metal refined here goes into warships and such\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nAre \"we\" at war?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nI don't remember. There's the empire, which I guess counts as \"Us\"\nAnd the Republic, which counts as \"them\"\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nWhat are they fighting over?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nI'm not sure, since from what I've been told, the Republic has slavery too\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nWhat? So there's no escaping this is there?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nYeah, I don't know.\n<<CampEventController upgradePickaxeLevel>>\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 999,
+			"y": 887
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day6.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 1239,
+			"y": 662
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day6.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nSo Memphis, that war we were talking about yesterday\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nIt's not really a war\nreally what I think happens is both sides build warships just to see who's strongest\nAnd neither side really fight\nlike there might be a proxy conflict, but that's it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nSo we're mining crystal to make steel\n...so that they can build a bunch of useless warships\n...so that our \"side\" has more than the other \"side\"\nWhen does this end?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nI don't know.\nI worried they'll get bored and want to use their armies\njust to see who'd win\nOf course if that happened, our lives would get a lot worse\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 1247,
+			"y": 882
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day7.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 203,
+			"y": 1182
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day7.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nEmma, you keep asking me about the world\nbut I kinda wanna know about yours\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nI used to work on a farm, I grew up on a farm\nreally don't have much to offer you\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nDo you rabbits have, like, a religion or something?\nI know that's a weird question\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nNo not at all\nWe have this book of stories, supposed to teach us about the world\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nYeah?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nLike there's one where there's a big disaster that's about to happen\nlike a huge dust storm\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nSo do they pray to some god and they get saved?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nNo what happens is they band together and make a shelter\na shelter out of ash, because the forest had also burned down\nI think the lesson is, don't rely on a miracle and work together\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHrm, that's...unexpected\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nWhat were you expecting?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nLike, if you have impure thoughts, you'll die and suffer for all eternity\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nThat sounds real fucked up\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\n...Yeah\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 195,
+			"y": 1416
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day8.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 427,
+			"y": 1182
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day8.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nHi Memphis\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHi Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nI hate mining so much\nI hate the crystals, the bugs\ngoing deeper and deeper into the caves to get even more crystals\nmainly, I hate it when someone else gets hurt\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nDon't beat yourself up\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nMemphis, i'm the only person who can heal, or sense the crystals\nor do anything, really\nI feel like I'm no good at this\nIf I fuck up everyone else dies\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nWell, you aren't wrong\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nDo you feel like I'm not healing you enough?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nI can't say either way\nI don't think anyone else begrudges you\nIf anything, you're caring for us more than anyone else right now\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nReally?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nYeah\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 435,
+			"y": 1410
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day9.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 662,
+			"y": 1184
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day9.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nEmma why do we suffer so much\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\n...\nMemphis I'm tired\nI really don't want to talk about feelings right now\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\n... Okay\n\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 672,
+			"y": 1416
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day10.Morning.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 890,
+			"y": 1181
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.Day10.Evening.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nMemphis, since coming here do you feel like your dreams are different?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nNo, can't say that I do\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nMine have been really vivid\nSometimes it feels like I'm there\nIt doesn't even feel like a dream\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nWhat are they like?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nIn one of them I'm standing over one of the guards\nHe's in his dorm room, or something\nI'm just standing over him and he yells at me\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nCan you talk at all? In these dreams?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nNo not really\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nWhat does the guard say?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nAt first he was angry I was there\nbut with each subsequent visit, he seems to remember me, and has gone more and more defensive\nto the point where I think he fears me\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHave you seen this guard anywhere in the factory or around the mine?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nNo, I haven't\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHm. Weird. \n[[....|Memphis.Dialog.Resolve]]",
+		"position": {
+			"x": 888,
+			"y": 1410
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.AddToEscapeQuest",
+		"tags": "",
+		"body": "<<addNPCToEscape CampAreaSecretEscape Memphis>>\nEscape? Here? You have a plan?\nI'll help you, whatever it takes\n",
+		"position": {
+			"x": 1911,
+			"y": 580
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Memphis.EndDialog",
+		"tags": "",
+		"body": "Empty Text",
+		"position": {
+			"x": 2141,
+			"y": 337
+		},
+		"colorID": 0
+	}
+]

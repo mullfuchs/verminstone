@@ -2,7 +2,7 @@
 	{
 		"title": "Astreil.Day1.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nMorning Astreil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nHey....\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 212,
 			"y": 143
@@ -12,7 +12,7 @@
 	{
 		"title": "Astreil.Day1.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nyou seem kind of distant Astreil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nWell, yeah\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nHow did you end up enslaved?\nIf you don't mind me asking\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nI was, uh\nI was always a slave\nI was born into this\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\noh, i'm sorry\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nit's not your fault\ndon't apologize\n\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 212,
 			"y": 355
@@ -22,7 +22,7 @@
 	{
 		"title": "Astreil.Dialog.Resolve",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nIs there something else you want to talk about?\n[[Yeah I'm trying to escape|Astreil.AddToEscapeQuest]]\n[[Not really...|Astreil.EndDialog]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Astreil.AddToEscapeQuest]]\n[[Not really...|Astreil.EndDialog]]",
 		"position": {
 			"x": 1667,
 			"y": 233
@@ -32,7 +32,7 @@
 	{
 		"title": "Astreil.Day2.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\n....\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nhi\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\n....\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 230,
 			"y": 665
@@ -42,7 +42,7 @@
 	{
 		"title": "Astreil.Day2.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nYou got anything to talk about?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nNo Emma, not really\nit's just...\nI hear stories of the outside, of being free\nevery one I hear just makes me angrier\nI've never had that\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\n....\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nI'll never have that\nnow that I'm here\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nwhere were you before\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\n...\nI don't wanna talk about it\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 227,
 			"y": 881
@@ -52,7 +52,7 @@
 	{
 		"title": "Astreil.Day3.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nhey Astreil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nHi Emma\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 459,
 			"y": 665
@@ -62,7 +62,7 @@
 	{
 		"title": "Astreil.Day3.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nHey Astreil\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nAre you just talking to me because you pity me\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nSort of, yes\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nheh\nhaha\nthat's funny\nyou know I've worked these mines before\ndone a lot of time slaying bugs, mining, and carrying\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nwhich do you prefer\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nwell none of them\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\noh\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 466,
 			"y": 890
@@ -72,7 +72,7 @@
 	{
 		"title": "Astreil.Day4.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nHi Astreil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nGood morning emma\n\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 746,
 			"y": 666
@@ -82,7 +82,7 @@
 	{
 		"title": "Astreil.Day4.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nEmma why don't you tell me something about yourself\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nwhy, i thought stories from the outside made you angry\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nI don't care, i guess\nhit me\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nwhat do you want to know\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nhow about...your parents?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nMy parents\nuh, well they were the ones that sold me into slavery\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\noh really?\nI guess we have something in common\nit's our parent's fault\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nthey were nice to me and my sister growing up\nthey always told me the day might come when I'd have you\nyou know\n\"go away\"\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nah huh\nwas that your word for it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nyeah, I guess we didn't want to talk about it\nthe day it happened they asked me to get something in the basement\nthen they just locked the door\ntill the squad from the bank came\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nohh\nawful\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 746,
 			"y": 884
@@ -92,7 +92,7 @@
 	{
 		"title": "Astreil.Day5.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\n... morning Emma\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\n...\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 665
@@ -102,7 +102,7 @@
 	{
 		"title": "Astreil.Day5.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nWell Astreil\nI told you about my past\nI guess it's only fair you tell me about yours\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\n...\nsure\nyou wanna know what I did before this?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nwhat was it Astreil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nI was a Slave catcher\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\na...what?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nyeah\nfolks like me have good noses\nwe can track runaways for days\nI get fed extra food if I caught one\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nwhat...what the fuck\ndid you feel guilty?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nOh yes, guilty as hell\nof course, if any got away, we'd be beaten\nI just kind of accepted it as my lot in life\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\n...\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nRabbits, raccoons, even dogs, they're pretty easy to catch\nbut foxes, they're tricky bastards\nthey have techniques, they got a whole system\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nwhat kind of system?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\noh they do shit like, double back on paths\nwalk on fenceposts, cross rivers laterally\nall kinds of shit, they're so hard to track\nfuckin bastards\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\n...\nsounds like you have a grudge\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nI do\n<<CampEventController upgradeBagLevel>>\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 887
@@ -112,7 +112,7 @@
 	{
 		"title": "Astreil.Day6.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\n...\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\n...\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 1239,
 			"y": 662
@@ -122,7 +122,7 @@
 	{
 		"title": "Astreil.Day6.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\n..Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nCatch any foxes down there?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nshut, the fuck up\n\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 1247,
 			"y": 882
@@ -132,7 +132,7 @@
 	{
 		"title": "Astreil.Day7.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\n...\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nhey Astreil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\n...\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 203,
 			"y": 1182
@@ -142,7 +142,7 @@
 	{
 		"title": "Astreil.Day7.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\n...\nYou wanna talk\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nsure\nhow'd you end up here?\ndid you lose someone you were trailing\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nnah\nit was a whole group\nabout 20 or so runaways\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\n20?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nyeah. the rest of the slave catchers had fallen behind\nit was just me \nI chased them for probably 5 or 6 days, they kind of blurred together\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nand you couldn't catch them\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nI caught em, they were trapped on the banks of some river\nof course, it was 20 to 1, so not a whole lot I could do\nthey asked me to join them\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nand you didn't\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nI...I don't know what I was thinking\nI think I was afraid of getting caught, i knew their chances of getting out were bad\nI told them where to cross the river, then I met up with my, uh, \"boss\"\nTold them they went somewhere else\nWord somehow got back to me, I'm not sure why he didn't kill me\nI guess he wanted me to keep suffering\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\n...\nyou did good there\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nnah I didn't\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 195,
 			"y": 1416
@@ -152,7 +152,7 @@
 	{
 		"title": "Astreil.Day8.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\n...\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nhey Astreil\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 427,
 			"y": 1182
@@ -162,7 +162,7 @@
 	{
 		"title": "Astreil.Day8.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nAstreil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nEmma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nWhat you told me yesterday\nyou let 20 runaways go, they're probably free right now thanks to you\nYou still feel guilty\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nAbsolutly\nThe others I caught didn't get away\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\n...\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nsome things you just carry forever emma\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 435,
 			"y": 1410
@@ -172,7 +172,7 @@
 	{
 		"title": "Astreil.Day9.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\n...\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\n...\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 662,
 			"y": 1184
@@ -182,7 +182,7 @@
 	{
 		"title": "Astreil.Day9.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nYou wanna talk Astreil?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nNot really no\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 672,
 			"y": 1416
@@ -192,7 +192,7 @@
 	{
 		"title": "Astreil.Day10.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nHey ...\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 890,
 			"y": 1181
@@ -202,7 +202,7 @@
 	{
 		"title": "Astreil.Day10.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_talking>>\nHello, I don't think we've met\nI'm Astreil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Astreil_default_silent>>\nLikewise\n[[....|Astreil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nHey ...\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\n...\nYou wanna talk about anything?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\n...\nok sure\ntell me something about yourself\nwhat keeps you going?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nwhat keeps me going?\n...\nI don't have an answer to that\nmisplaced optimism?\nwhat about you\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_silent>>\nI think I'm too afraid of death to embrace it\nso I'm stuck in the weird middle part\nbetween unbirth and unlife\nso, fear, I guess\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer astreil_default_talking>>\nfair enough\n[[....|Astreil.Dialog.Resolve]]",
 		"position": {
 			"x": 888,
 			"y": 1410

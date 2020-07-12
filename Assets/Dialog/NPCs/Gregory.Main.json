@@ -2,7 +2,7 @@
 	{
 		"title": "Gregory.Day1.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nHello there\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nHey\n[[....|Gregory.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nHello there\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nHey\n",
 		"position": {
 			"x": 212,
 			"y": 143
@@ -12,7 +12,7 @@
 	{
 		"title": "Gregory.Day1.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\n*sigh*\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nYou alright Gregory?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nNo, of course not\n[[....|Gregory.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\n*sigh*\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nYou alright Gregory?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nNo, of course not\n",
 		"position": {
 			"x": 212,
 			"y": 355
@@ -22,7 +22,7 @@
 	{
 		"title": "Gregory.Dialog.Resolve",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Gregory_default_talking>>\nIs there something else you want to talk about?\n[[Yeah I'm trying to escape|Gregory.AddToEscapeQuest]]\n[[Not really...|Gregory.EndDialog]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Gregory_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Gregory.AddToEscapeQuest]]\n[[Not really...|Gregory.EndDialog]]",
 		"position": {
 			"x": 1667,
 			"y": 233
@@ -32,7 +32,7 @@
 	{
 		"title": "Gregory.Day2.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nHello Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nHey Gregory\nDid you sleep well?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nNo emma I didn't\nBut thanks for asking\nI'm glad we can at least give a shit about each other\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nLikewise\n[[....|Gregory.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nHello Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nHey Gregory\nDid you sleep well?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nNo emma I didn't\nBut thanks for asking\nI'm glad we can at least give a shit about each other\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nLikewise\n",
 		"position": {
 			"x": 230,
 			"y": 665
@@ -42,7 +42,7 @@
 	{
 		"title": "Gregory.Day2.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nHello Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nHey Gregory\nSo, uh, where you from?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nWhere am I \"from\"?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nYeah\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nA little prarie town in the Northlands. \n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nOh, what's the name of the place?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nWhy do you care?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nI was just...asking\n[[....|Gregory.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nHello Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nHey Gregory\nSo, uh, where you from?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nWhere am I \"from\"?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nYeah\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nA little prarie town in the Northlands. \n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nOh, what's the name of the place?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nWhy do you care?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nI was just...asking\n",
 		"position": {
 			"x": 227,
 			"y": 881
@@ -52,7 +52,7 @@
 	{
 		"title": "Gregory.Day3.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nI slept like crap last night\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nI didn't for once\n[[....|Gregory.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nI slept like crap last night\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nI didn't for once\n",
 		"position": {
 			"x": 459,
 			"y": 665
@@ -62,7 +62,7 @@
 	{
 		"title": "Gregory.Day3.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nYou gonna talk to me today?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nDon't feel like it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nAlright\n[[....|Gregory.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nYou gonna talk to me today?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nDon't feel like it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nAlright\n",
 		"position": {
 			"x": 466,
 			"y": 890
@@ -122,7 +122,7 @@
 	{
 		"title": "Gregory.Day6.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nYou really wanna know how I ended up here?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nUh\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nI .... I sold myself\nIt happened after like the 3rd bad harvest\nwe just didn't have any money anymore\nturned up at the bank and just handed myself over\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nOh...oh shit\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nThe broker kept telling me he could get me into some kind of easy work\nWell, it wasn't.\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nI'm so sorry\nI mean, my family had the same problem\nwe had a few bad harvests and my number came up\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nAt least you didn't have a choice\nYou don't have any regrets\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nNo, I guess not\nBut did you really have a choice either?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nI don't know. I'll never know\n[[....|Gregory.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nYou really wanna know how I ended up here?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nUh\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nI .... I sold myself\nIt happened after like the 3rd bad harvest\nwe just didn't have any money anymore\nturned up at the bank and just handed myself over\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nOh...oh shit\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nThe broker kept telling me he could get me into some kind of easy work\nWell, it wasn't.\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nI'm so sorry\nI mean, my family had the same problem\nwe had a few bad harvests and my number came up\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nAt least you didn't have a choice\nYou don't have any regrets\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_silent>>\nNo, I guess not\nBut did you really have a choice either?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer gregory_default_talking>>\nI don't know. I'll never know\n<<CampEventController upgradeWeaponLevel>>\n[[....|Gregory.Dialog.Resolve]]",
 		"position": {
 			"x": 1247,
 			"y": 882
