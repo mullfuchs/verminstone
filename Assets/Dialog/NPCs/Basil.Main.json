@@ -22,7 +22,7 @@
 	{
 		"title": "Basil.Dialog.Resolve",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[I'm trying to escape, wanna join in?|Basil.AddToEscapeQuest]]\n[[Not really...|Basil.EndDialog]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[I'm trying to escape, wanna join in?|Basil.AddToEscapeQuest]]\n<<endif>>\n[[Not really...|Basil.EndDialog]]",
 		"position": {
 			"x": 1667,
 			"y": 233

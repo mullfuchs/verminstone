@@ -22,7 +22,7 @@
 	{
 		"title": "Gregory.Dialog.Resolve",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Gregory_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Gregory.AddToEscapeQuest]]\n[[Not really...|Gregory.EndDialog]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Gregory_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Gregory.AddToEscapeQuest]]\n<<endif>>\n[[Not really...|Gregory.EndDialog]]",
 		"position": {
 			"x": 1667,
 			"y": 233

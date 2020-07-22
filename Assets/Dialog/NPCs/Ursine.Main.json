@@ -22,7 +22,7 @@
 	{
 		"title": "Ursine.Dialog.Resolve",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Ursine.AddToEscapeQuest]]\n[[Not really...|Ursine.EndDialog]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Ursine.AddToEscapeQuest]]\n<<endif>>\n[[Not really...|Ursine.EndDialog]]",
 		"position": {
 			"x": 1667,
 			"y": 233
