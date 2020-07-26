@@ -15,7 +15,14 @@ public class SetNPCEscapeFlags : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-
+        //check if escape ncs are zero
+        //if zero find a random npc
+        if(npcsThatCanEscape.Count == 0)
+        {
+            GameObject[] npcs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+            GameObject randNPC = npcs[Random.Range(0, npcs.Length - 1)];
+            npcsThatCanEscape.Add( randNPC.GetComponent<NPCstats>().NPCName );
+        }
     }
 
     void Awake() {
@@ -32,7 +39,13 @@ public class SetNPCEscapeFlags : MonoBehaviour {
 
     [Yarn.Unity.YarnCommand("addNPCToEscape")]
     public void addEscapingNPC(string npcName){
-        npcsThatCanEscape.Add(npcName);
+        //are they added already?
+        if (!npcsThatCanEscape.Contains(npcName))
+        {
+            npcsThatCanEscape.Add(npcName);
+        }
+
+        //maybe set a variable that is specific to the npc name so we don't have to ask again
     }
 
     [Yarn.Unity.YarnCommand("setPlayerStartEscapeFlag")]
@@ -54,6 +67,6 @@ public class SetNPCEscapeFlags : MonoBehaviour {
         
     }
 
-
+     
 
 }
