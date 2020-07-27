@@ -176,14 +176,14 @@ public class CampNarrativeController : MonoBehaviour {
 	}
 
 	public bool RunDreamForDay(int day){
-		/* turning this off for now cuz it's busted af
+		// turning this back on for now cuz it's busted af
 		for (int i = 0; i < DreamSequence.Length; i++) {
 			if (DreamSequence [i].dayDreamIsTriggered == day) {
 				SceneManager.LoadScene (DreamSequence [i].SceneName);
 				return true;
 			}
 		}
-		*/
+		
 		return false;
 	}
 
@@ -199,6 +199,7 @@ public class npcPortraitObject{
 [System.Serializable]
 public class GameDreamSequenceObject{
 	public string SceneName;
+    public Scene SceneFile;
 	public int dayDreamIsTriggered;
 	public string dreamDialogNode;
 }

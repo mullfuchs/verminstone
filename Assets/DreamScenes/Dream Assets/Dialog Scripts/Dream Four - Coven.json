@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Coven.Dream4.Start",
+		"tags": "",
+		"body": "\"Are you here to help?\"\nWe are trying\nwe've combined auraus to amplify the projection\n\"This must be the coven\"\nThis is some of them, yes\nWe can help you, eventually\n\"uh huh\"\n\"I haven't eaten a whole meal in like 2 months\"\n\"How about you help me with that first\"\nDo...do you even want our help?\nYou should be greatful we are even contacting you\n\"So how are you going to help me?\"\nIf you get to a high enough channel level by touching enough crystals\nthat will increase your plane aura, and we can use that as a beacon\nusing that beacon, we can send you extra energy we generate here\n\"What about, like, teleportation?\"\nThat's far too dangerous\nWe know about your plight, and the plight of enslaved channelers everywhere\nIts our mission to help however you can\n\"Ok well...\"\n<<returnToCampScene DialogAndPortraitContainer>>",
+		"position": {
+			"x": 540,
+			"y": 260
+		},
+		"colorID": 0
+	}
+]

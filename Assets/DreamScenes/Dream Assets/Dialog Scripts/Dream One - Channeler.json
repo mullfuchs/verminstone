@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Dream1.Channeler.Start",
+		"tags": "",
+		"body": "Don't be afraid\nyou can trust me\n\"I don't\"\nWhat's happened to you, your reaction to the crystals\nthe new powers you have, to heal and harm\nthe dreams, like this\njust listen to me for a moment\n\"is this a trick?\"\nNo, it's no trick\nwe were able to sense your being a few days ago\n\"Who's we?\"\n- Oh, a coven of other channelers, like you\nCan you tell us where you are?\n\"I'm a slave in a crystal mine\"\n\"Somewhere in the basin mountains, I'm not sure\"\n\"Haven't looked at a map in a while\"\nOh, oh. Oh dear.\nWe cannot help you right now\n\"why's that?\"\n\"I knew it, this is a joke\"\n\"Fuck you\"\n<<returnToCampScene DialogAndPortraitContainer>>\n",
+		"position": {
+			"x": 540,
+			"y": 260
+		},
+		"colorID": 0
+	}
+]
