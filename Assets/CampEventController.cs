@@ -192,6 +192,7 @@ public class CampEventController : MonoBehaviour {
             print("trying to turn on camp area secret escape");
             GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().StartQuest("CampAreaSecretEscape");
         }
+        gameObject.GetComponent<CampNarrativeController>().RunDreamForDay(day);
 
 		StartDay ();
 	}

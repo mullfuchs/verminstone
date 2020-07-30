@@ -18,8 +18,9 @@ public class ReturnToCampScene : MonoBehaviour {
 	[Yarn.Unity.YarnCommand("returnToCampScene")]
 	public void loadCamp(){
 		print ("returning to camp?");
-		GameObject.Find ("CampEventController").GetComponent<CampEventController> ().StartDay ();
-		SceneManager.LoadScene ("Camp");
+        SceneManager.LoadScene("Camp");
+        GameObject.Find ("CampEventController").GetComponent<CampEventController> ().StartDay ();
+
 
 	}
 }

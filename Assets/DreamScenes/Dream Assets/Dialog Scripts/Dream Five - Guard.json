@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Dream5.Start",
+		"tags": "",
+		"body": "What...\nWhat are you doing in here?\nYou're one of the channelers!\nHow did you get in here?\n...\nI don't recognize you\nbut I'll find out\n...\nAre you here to guilt me?\nWorking as a guard in a slave colony\nDo you think I wanted this?\nI feel guilty, sure\nThere's no way the republic would survive without slave labor\nEveryone knows that\n...\nWhat do you want from me!?\nAnswer Me!\nAnswer Me!!\n<<returnToCampScene DialogAndPortraitContainer>>\n",
+		"position": {
+			"x": 371,
+			"y": 123
+		},
+		"colorID": 0
+	}
+]

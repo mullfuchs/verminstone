@@ -23,8 +23,14 @@ public class EscapeUIController : MonoBehaviour
     {
         NPCCards = new List<GameObject>();
         NPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
-
-        metersOfTunnel = EscapeObjectInstance.metersOfTunnelDug;
+        if (EscapeObjectInstance != null)
+        {
+            metersOfTunnel = EscapeObjectInstance.metersOfTunnelDug;
+        }
+        else
+        {
+            metersOfTunnel = 0;
+        }
     }
 
     private void Awake()
