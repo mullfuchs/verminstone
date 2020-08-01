@@ -192,14 +192,17 @@ public class CampEventController : MonoBehaviour {
             print("trying to turn on camp area secret escape");
             GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().StartQuest("CampAreaSecretEscape");
         }
-        gameObject.GetComponent<CampNarrativeController>().RunDreamForDay(day);
 
-		StartDay ();
+        if(!gameObject.GetComponent<CampNarrativeController>().RunDreamForDay(day))
+        {
+            StartDay();
+        }
+
 	}
 
 	public void StartDay(){
 
-
+        refreshReferences();
 		gameObject.GetComponent<CampPopulationController> ().ReplaceDeadNPCs ();
 
 		gameObject.GetComponent<CampNarrativeController> ().AdvanceDialogDayOfNPCs ();
@@ -210,7 +213,7 @@ public class CampEventController : MonoBehaviour {
 
 		//fade in
 		caveEntrance.GetComponent<CaveEntrance>().LoadLevelOnEnter = true;
-		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.clear, 2.0f);
+		//GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.clear, 2.0f);
         
 		print ("sending npcs to food table");
 		SendNPCGroupToTarget(GameObject.FindGameObjectsWithTag("WorkerNPC") , GameObject.Find("FoodTable"));
@@ -244,6 +247,10 @@ public class CampEventController : MonoBehaviour {
     }
 
 	public void StartMessHallSequence(){
+        if(canvas == null)
+        {
+            canvas = GameObject.Find("Canvas");
+        }
 		canvas.GetComponent<NPCFoodDistroUIController> ().CreateAndDisplayNPCcards ();
 	}
 
@@ -252,7 +259,10 @@ public class CampEventController : MonoBehaviour {
 			print ("Sending npcs to prestage area");
 			SendNPCGroupToTarget(GameObject.FindGameObjectsWithTag("WorkerNPC"), GameObject.Find("PreCaveStagingArea"));
 		}
-			
+		if(canvas == null)
+        {
+            canvas = GameObject.Find("Canvas");
+        }	
 		canvas.GetComponent<NPCFoodDistroUIController> ().cleanUpFoodUI ();
 	}
 

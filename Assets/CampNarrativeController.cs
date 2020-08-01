@@ -27,14 +27,20 @@ public class CampNarrativeController : MonoBehaviour {
 
     private bool hasDialogBeenLoaded = false;
 
+    private GameObject playerObjectReference;
+    private GameObject[] npcRefernces;
+
 	// Use this for initialization
 	void Start () {
 	    //get the list of npcs
 		day = 1;
 		timeOfDay = timePeriod.Morning;
+
 		SetUpNarratives();
 		SetUpNPCPortraits ();
-	}
+        playerObjectReference = GameObject.Find("Player");
+        npcRefernces = GameObject.FindGameObjectsWithTag("WorkerNPC");
+    }
 
 	public void SetUpNarratives(){
 		GameObject[] npcs;
@@ -179,6 +185,7 @@ public class CampNarrativeController : MonoBehaviour {
 		// turning this back on for now cuz it's busted af
 		for (int i = 0; i < DreamSequence.Length; i++) {
 			if (DreamSequence [i].dayDreamIsTriggered == day) {
+                SetPlayerAndNPCsActive(false);
 				SceneManager.LoadScene (DreamSequence [i].SceneName);
 				return true;
 			}
@@ -187,6 +194,16 @@ public class CampNarrativeController : MonoBehaviour {
 		return false;
 	}
 
+    public void SetPlayerAndNPCsActive(bool areActive)
+    {
+        playerObjectReference.SetActive(areActive);
+        /*
+        foreach (GameObject npc in npcRefernces)
+        {
+            npc.SetActive(areActive);
+        }
+        */
+    }
 
 }
 
