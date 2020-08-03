@@ -213,13 +213,12 @@ public class CampEventController : MonoBehaviour {
 
 		//fade in
 		caveEntrance.GetComponent<CaveEntrance>().LoadLevelOnEnter = true;
-		//GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.clear, 2.0f);
-        
-		print ("sending npcs to food table");
-		SendNPCGroupToTarget(GameObject.FindGameObjectsWithTag("WorkerNPC") , GameObject.Find("FoodTable"));
-		GameObject.Find ("Player").GetComponent<PlayerEventController> ().canEndDay = true;
 
+        print("sending npcs to food table");
+        SendNPCGroupToTarget(GameObject.FindGameObjectsWithTag("WorkerNPC"), GameObject.Find("FoodTable"));
+        GameObject.Find("Player").GetComponent<PlayerEventController>().canEndDay = true;
 
+        GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.clear, 2.0f);
 	}
 
 	public void EnterCaveSequence(){

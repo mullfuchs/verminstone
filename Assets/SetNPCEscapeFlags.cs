@@ -21,15 +21,22 @@ public class SetNPCEscapeFlags : MonoBehaviour {
         {
             GameObject[] npcs = GameObject.FindGameObjectsWithTag("WorkerNPC");
             GameObject randNPC = npcs[Random.Range(0, npcs.Length - 1)];
-            npcsThatCanEscape.Add( randNPC.GetComponent<NPCstats>().NPCName );
+            npcsThatCanEscape.Add( randNPC.name);
+
+            foreach (string name in npcsThatCanEscape)
+            {
+                GameObject n = GameObject.Find(name);
+                n.GetComponent<NPCOverworldController>().isEscaping = true;
+            }
+
+
         }
+
+
     }
 
     void Awake() {
-        foreach (string name in npcsThatCanEscape) {
-            GameObject n = GameObject.Find(name);
-            n.GetComponent<NPCOverworldController>().isEscaping = true;
-        }
+
     }
 
     // Update is called once per frame
