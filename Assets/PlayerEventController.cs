@@ -6,6 +6,19 @@ public class PlayerEventController : MonoBehaviour {
 
 	public bool canEndDay = true;
 
+    public SpriteRenderer iconIndicator;
+
+    public Sprite EnterIcon;
+    public Sprite GoUpIcon;
+    public Sprite GoDownIcon;
+    public Sprite FoodIcon;
+    public Sprite SleepIcon;
+    public Sprite Talkicon;
+    public Sprite EscapeIcon;
+    public Sprite EquipIcon;
+
+    private bool isActionButtonPressed;
+
 	private CampEventController CampEventControllerInstance;
 	// Use this for initialization
 	void Start () {
@@ -14,21 +27,33 @@ public class PlayerEventController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        //action button starts and stops action, freezes movement
+        //cancel button remove action. 
+        if (Input.GetButtonDown("Action"))
+        {
+            isActionButtonPressed = true;
+        }
+
+        if(Input.GetButtonUp("Action"))
+        {
+            isActionButtonPressed = false;
+        }
 	}
 
 	void OnTriggerEnter(Collider Other){
 		if (Other.tag == "MessHall") {
-			CampEventControllerInstance.StartMessHallSequence ();
-		}
+            //CampEventControllerInstance.StartMessHallSequence ();
+            iconIndicator.sprite = FoodIcon;
+        }
         if (Other.tag == "EquipArea"){
-			
-            CampEventControllerInstance.StartEquipAreaSequence();
+            iconIndicator.sprite = EquipIcon;
+            //CampEventControllerInstance.StartEquipAreaSequence();
         }
 		if (Other.tag == "CaveEntrance") {
-			gameObject.GetComponent<NPCTeamHandler> ().rebuildNPCLists ();
-			CampEventControllerInstance.EnterCaveSequence ();
-		}
+            iconIndicator.sprite = EnterIcon;
+            //gameObject.GetComponent<NPCTeamHandler> ().rebuildNPCLists ();
+            //CampEventControllerInstance.EnterCaveSequence ();
+        }
 		if (Other.tag == "CampArea") {
 			//start the npc idle stuff
 			CampEventControllerInstance.gameObject.GetComponent<NPCBedController>().AssignBeds();
@@ -47,7 +72,12 @@ public class PlayerEventController : MonoBehaviour {
 		}
         if(Other.tag == "TunnelDigArea")
         {
-            CampEventControllerInstance.StartTunnelDigSequence();
+            iconIndicator.sprite = EnterIcon;
+            //CampEventControllerInstance.StartTunnelDigSequence();
+        }
+        if(Other.tag == "bed")
+        {
+            iconIndicator.sprite = SleepIcon;
         }
 	}
 
@@ -57,10 +87,42 @@ public class PlayerEventController : MonoBehaviour {
 			canEndDay = false;
 			CampEventControllerInstance.EndDay ();
 		}
-	}
+
+        if (Input.GetButtonDown("Action"))
+        {
+            
+            switch (other.tag)
+            {
+                case "CaveEntrance":
+                    gameObject.GetComponent<NPCTeamHandler>().rebuildNPCLists();
+                    CampEventControllerInstance.EnterCaveSequence();
+                    break;
+                case "MessHall":
+                    CampEventControllerInstance.StartMessHallSequence();
+                    break;
+                case "EquipArea":
+                    CampEventControllerInstance.StartEquipAreaSequence();
+                    break;
+                case "TunnelDigArea":
+                    CampEventControllerInstance.StartTunnelDigSequence();
+                    break;
+                default:
+                    break;
+            }
+           // isActionButtonPressed = false;
+        }
+
+
+
+    }
 
 
 	void OnTriggerExit(Collider Other){
+        //generally remove the icon.
+        iconIndicator.sprite = null;
+
+
+
 		if (Other.tag == "MessHall") {
 			CampEventControllerInstance.EndMessHallSequence ();
 		}

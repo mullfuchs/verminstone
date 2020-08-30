@@ -79,8 +79,8 @@ public class CaveEntrance : MonoBehaviour {
 		} 
 	}
 
-	void OnTriggerEnter(Collider other){
-		if (other.tag == "Player" && LoadLevelOnEnter) {
+	void OnTriggerStay(Collider other){
+		if (other.tag == "Player" && LoadLevelOnEnter && Input.GetButtonDown("Action")) {
             other.gameObject.GetComponent<PowerObject>().setGlowLight(true);
 			SceneManager.LoadScene ("testMapScene");
 			LoadLevelOnEnter = false;
