@@ -79,6 +79,16 @@ public class PlayerEventController : MonoBehaviour {
         {
             iconIndicator.sprite = SleepIcon;
         }
+
+        if(Other.name == "PassageUp(Clone)")
+        {
+            iconIndicator.sprite = GoUpIcon;
+        }
+
+        if(Other.name == "PassageDown(Clone)")
+        {
+            iconIndicator.sprite = GoDownIcon;
+        }
 	}
 
 	void OnTriggerStay(Collider other){
