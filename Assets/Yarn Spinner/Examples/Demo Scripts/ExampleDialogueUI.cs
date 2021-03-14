@@ -61,7 +61,11 @@ namespace Yarn.Unity.Example {
 		
 		[Tooltip("How quickly to show the text, in seconds per character")]
 		public float textSpeed = 0.025f;
-		
+
+        public AudioSource AudioSource;
+        public AudioClip TextAdvanceSound;
+        public AudioClip DialogActivateSound;
+        public AudioClip DialogDeactivateSound;
 		// The buttons that let the user choose an option
 		public List<Button> optionButtons;
 
@@ -103,6 +107,7 @@ namespace Yarn.Unity.Example {
 				foreach (char c in line.text) {
 					stringBuilder.Append (c);
 					lineText.text = stringBuilder.ToString ();
+                    AudioSource.PlayOneShot(TextAdvanceSound);
 					yield return new WaitForSeconds (textSpeed);
 				}
 			} else {
@@ -143,6 +148,10 @@ namespace Yarn.Unity.Example {
 			foreach (var optionString in optionsCollection.options) {
 				optionButtons [i].gameObject.SetActive (true);
 				optionButtons [i].GetComponentInChildren<Text> ().text = optionString;
+                if(i == 0)
+                {
+                    optionButtons[i].GetComponent<Button>().Select();
+                }
 				i++;
 			}
 			

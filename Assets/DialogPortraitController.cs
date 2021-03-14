@@ -16,7 +16,10 @@ public class DialogPortraitController : MonoBehaviour
     */
     public GameObject leftPortrait;
     public GameObject rightPortrait;
-    
+
+    public Color fadeColor;
+    public Color unFadedColor = Color.white;
+
     //array or list for left images here
     //array or list for right images
 	public Sprite[] leftImages;
@@ -50,6 +53,7 @@ public class DialogPortraitController : MonoBehaviour
 		Sprite portrait = GetImage (imageName, leftImages);
 		if (portrait != null) {
 			leftPortrait.GetComponent<Image>().sprite = portrait;
+            SetColorOfSpriteBasedOnName(leftPortrait.GetComponent<Image>(), imageName);
 		}
        // leftPortrait.GetComponent<UnityEngine.UI.Image>().sprite = ?
     }
@@ -61,7 +65,8 @@ public class DialogPortraitController : MonoBehaviour
 		Sprite portrait = GetImage (imageName, rightImages);
 		if (portrait != null) {
 			rightPortrait.GetComponent<Image> ().sprite = portrait;
-		}
+            SetColorOfSpriteBasedOnName(rightPortrait.GetComponent<Image>(), imageName);
+        }
     }
 
 	public Sprite GetImage(string imageName, Sprite[] images)
@@ -83,6 +88,18 @@ public class DialogPortraitController : MonoBehaviour
             return null;
         }
 		return s;
+    }
+
+    public void SetColorOfSpriteBasedOnName(Image image, string imagename)
+    {
+        if (imagename.Contains("silent"))
+        {
+            image.color = fadeColor;
+        }
+        else
+        {
+            image.color = unFadedColor;
+        }
     }
 
 
