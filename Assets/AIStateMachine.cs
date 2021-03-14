@@ -30,6 +30,7 @@ public class AIStateMachine : MonoBehaviour {
     private bool GoToNextTargetWhenCurrentTargetReached = false;
 
     private VStoneEconomyObject VStoneEcoInstance;
+    private CampNarrativeController narrativeController;
 
     private bool canCarryVstone = true;
 
@@ -41,7 +42,7 @@ public class AIStateMachine : MonoBehaviour {
 		AttackHitBox.SetActive (false);
         updateStoppingDistance(defaultStoppingDist);
         VStoneEcoInstance = GameObject.Find("CampEventController").GetComponent<VStoneEconomyObject>();
-
+        narrativeController = GameObject.Find("CampEventController").GetComponent<CampNarrativeController>();
 
     }
 
@@ -277,9 +278,9 @@ public class AIStateMachine : MonoBehaviour {
 		}
 
 		if (other.gameObject.name == "EquipmentReturn") {
-			//if (CurrentTarget == other.gameObject) {
+			if (narrativeController.timeOfDay == CampNarrativeController.timePeriod.Evening) { //only return equipment if it's night time
 				gameObject.GetComponent<NPCInventory> ().DestroyAllEquippedObjects ();
-			//}
+			}
 		}
 
         if(other.tag == "Bug")

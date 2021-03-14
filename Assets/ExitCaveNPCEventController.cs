@@ -127,15 +127,21 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 			GameObject.Find("CaveExitDoor").GetComponent<DoorController>().OpenDoor();
 			GameObject[] npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
 
-            GameObject.Find("CampEventController").GetComponent<GameSaveController>().LoadQuestObjects();
             for (int i = 0; i < npcs.Length; i++) {
                 //since we're loading into the scene and dialog is now "new" we have to reload each npc's scripts into it's registry, or whatever
                 npcs[i].GetComponent<Yarn.Unity.Example.NPC>().LoadNPCScript();
-				npcs [i].GetComponent<AIStateMachine> ().SendNPCToObject ( GameObject.Find("EquipmentReturn") );
+                //STUPID HACK, turning off and on navmesh agent, because one NPC will just not path for whatever reason
+                npcs[i].GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+                npcs[i].GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+
+                npcs [i].GetComponent<AIStateMachine> ().SendNPCToObject ( GameObject.Find("EquipmentReturn") );
 			}
 
-			//EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
-		} else {
+
+            GameObject.Find("CampEventController").GetComponent<GameSaveController>().LoadQuestObjects();
+
+            //EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
+        } else {
             FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue("Overseer.Exit.Failure1");
 
             while (hasExitDialogCompleted != true)

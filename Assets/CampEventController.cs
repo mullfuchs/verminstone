@@ -127,7 +127,15 @@ public class CampEventController : MonoBehaviour {
         }
     }
 
-	public void ClearAllNPCTargts ()
+    public void SendNPCGroupToTargetHARDSEND(GameObject[] NPCGroup, GameObject target)
+    {
+        for (int i = 0; i < NPCGroup.Length; i++)
+        {
+            NPCGroup[i].GetComponent<UnityEngine.AI.NavMeshAgent>().SetDestination( target.transform.position );
+        }
+    }
+
+    public void ClearAllNPCTargts ()
 	{
 		for (int i = 0; i < AllNPCs.Length; i++)
 		{
@@ -187,10 +195,11 @@ public class CampEventController : MonoBehaviour {
 			SceneManager.LoadScene ("tempEndGame");
 		}
         //hard coding escape quest to start at a certain day
+        //ed: turning this off for now to fix NPC not behaving if it's called by escape quest bug
         if(day >= 1 && GameObject.Find("CampAreaSecretEscape") == null )
         {
-            print("trying to turn on camp area secret escape");
-            GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().StartQuest("CampAreaSecretEscape");
+           // print("trying to turn on camp area secret escape");
+           // GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().StartQuest("CampAreaSecretEscape");
         }
 
         if(!gameObject.GetComponent<CampNarrativeController>().RunDreamForDay(day))
@@ -256,7 +265,9 @@ public class CampEventController : MonoBehaviour {
 	public void EndMessHallSequence(){
 		if (gameObject.GetComponent<CampNarrativeController> ().timeOfDay == CampNarrativeController.timePeriod.Morning) {
 			print ("Sending npcs to prestage area");
-			SendNPCGroupToTarget(GameObject.FindGameObjectsWithTag("WorkerNPC"), GameObject.Find("PreCaveStagingArea"));
+            ClearAllNPCTargts();
+
+            SendNPCGroupToTargetHARDSEND(GameObject.FindGameObjectsWithTag("WorkerNPC"), GameObject.Find("bigdoor"));
 		}
 		if(canvas == null)
         {
@@ -267,8 +278,9 @@ public class CampEventController : MonoBehaviour {
 
     public void StartEquipAreaSequence()
     {
-		//check here if there's been enough vstone collected
-		VStoneEconomyObject vEco = gameObject.GetComponent<VStoneEconomyObject>();
+        canvas = GameObject.Find("Canvas");
+        //check here if there's been enough vstone collected
+        VStoneEconomyObject vEco = gameObject.GetComponent<VStoneEconomyObject>();
 		if (!vEco.meetsDailyQuota (vEco.getDailyTotal ())) {
 			canvas.GetComponent<EquipUIController> ().CreateAndDisplayItemCards ();
 			canvas.GetComponent<EquipUIController> ().CreateAndDisplayNPCcards ();

@@ -43,6 +43,7 @@ public class PlayerEventController : MonoBehaviour {
 	void OnTriggerEnter(Collider Other){
 		if (Other.tag == "MessHall") {
             //CampEventControllerInstance.StartMessHallSequence ();
+            //why the fuck was this turned off? uhh 
             iconIndicator.sprite = FoodIcon;
         }
         if (Other.tag == "EquipArea"){

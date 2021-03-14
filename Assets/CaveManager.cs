@@ -26,6 +26,9 @@ public class CaveManager : MonoBehaviour {
 
 	List<Floor> FloorList = new List<Floor>();
 
+    //flag set if this version of the scene is the final cave
+    public bool isFinalCave = false;
+
 	Floor CurrentFloor;
 
 

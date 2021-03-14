@@ -9,6 +9,7 @@ public class IKControl : MonoBehaviour {
 	protected Animator animator;
 	
 	public bool ikActive = false;
+    public bool overrideControls = false;
 	public Transform rightHandObj = null;
 	public Transform leftHandObj = null;
 	public Transform lookObj = null;
@@ -24,7 +25,7 @@ public class IKControl : MonoBehaviour {
 		if(animator) {
 			
 			//if the IK is active, set the position and rotation directly to the goal. 
-			if(ikActive) {
+			if(ikActive || overrideControls) {
 				
 				// Set the look target position, if one has been assigned
 				if(lookObj != null) {
