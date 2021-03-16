@@ -34,13 +34,19 @@ public class AIStateMachine : MonoBehaviour {
 
     private bool canCarryVstone = true;
 
-		// Use this for initialization
-	void Start () {
+    public AudioClip mineRockHitSound;
+    public AudioClip swordHitSound;
+    public AudioClip stonePickupSound;
+    private AudioSource m_AudioSource;
+
+    // Use this for initialization
+    void Start () {
 		//DefaultTarget = this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target.gameObject;
 		vStoneAmount = 0.0f;
 		AttackHitBox = transform.Find ("AttackHitBox").gameObject;
 		AttackHitBox.SetActive (false);
         updateStoppingDistance(defaultStoppingDist);
+        m_AudioSource = GetComponent<AudioSource>();
         VStoneEcoInstance = GameObject.Find("CampEventController").GetComponent<VStoneEconomyObject>();
         narrativeController = GameObject.Find("CampEventController").GetComponent<CampNarrativeController>();
 
@@ -258,6 +264,7 @@ public class AIStateMachine : MonoBehaviour {
                 }
 
                 vStoneAmount += vStoneFragmentAmount;
+                m_AudioSource.PlayOneShot(stonePickupSound);
                 ChannelerIFollow.GetComponent<NPCTeamHandler>().addCollectedVStone(vStoneFragmentAmount);
                 if (targets.Count > 0)
                 {
@@ -339,6 +346,7 @@ public class AIStateMachine : MonoBehaviour {
 
 	void PickUpVerminStone(GameObject vStone){
 		vStoneAmount += 0.6f;
+        m_AudioSource.PlayOneShot(stonePickupSound);
 		Destroy (vStone);
 	}
 
@@ -412,6 +420,14 @@ public class AIStateMachine : MonoBehaviour {
 	public void PerformAttack(){
 		AttackHitBox.SetActive (true);
 		CanAttack = false;
+        if(gameObject.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "MineTool")
+        {
+            m_AudioSource.PlayOneShot(mineRockHitSound);
+        }
+        else
+        {
+            m_AudioSource.PlayOneShot(swordHitSound);
+        }
 		Invoke ("HideHitBox", 0.5f);
 		Invoke ("ResetAttack", 1.5f);
 	}

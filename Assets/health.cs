@@ -8,6 +8,7 @@ public class health : MonoBehaviour {
 	public bool isFreindlyFireOn = false;
 	public bool TrackOnTheUI = false;
 
+    public AudioClip deathSound;
 
     private int defensePoints = 0;
 	private UIController controller = null;
@@ -153,7 +154,12 @@ public class health : MonoBehaviour {
 			gameObject.GetComponent<AIStateMachine>().handleDeath();
             return;
         }
-			
+		
+        if(deathSound != null)
+        {
+            AudioSource.PlayClipAtPoint(deathSound, this.transform.position);
+        }
+
         Destroy(this.gameObject);
     }
 

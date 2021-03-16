@@ -11,6 +11,12 @@ public class AIBugController : MonoBehaviour {
 	private GameObject AttackHitBox;
 	private GameObject OriginObject;
 
+    private AudioSource audioSource;
+
+    public AudioClip spawnSound;
+    public AudioClip hitSomethingSound;
+    public AudioClip dieSound;
+
 	private bool CanAttack = true;
 	private bool isAttacking = true;
 
@@ -19,10 +25,12 @@ public class AIBugController : MonoBehaviour {
 	public bool patrol = false;
 	// Update is called once per frame
 	void Start (){
-		
+        audioSource = GetComponent<AudioSource>();
+
 		AttackHitBox = transform.Find("AttackHitBox").gameObject;
 		AttackHitBox.SetActive(false);
 
+        audioSource.PlayOneShot(spawnSound);
 		if (!patrol) {
 			if (Random.Range (0, 2) <= 0 && target == null) {
 				target = GameObject.FindGameObjectWithTag ("Player");
@@ -114,7 +122,8 @@ public class AIBugController : MonoBehaviour {
 		CanAttack = false;
 		Invoke("HideHitBox", 0.5f);
 		Invoke("ResetAttack", 1.5f);
-	}
+        audioSource.PlayOneShot(hitSomethingSound);
+    }
 
 	public void HideHitBox()
 	{

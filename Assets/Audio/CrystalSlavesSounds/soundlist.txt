@@ -1,0 +1,37 @@
+sounds I should get
+
+
+dripping water sound
+stepping sound
+
+-player commands (want to record these)
+
+laser shoot sounds
+laser hit sounds
+healing sound
+order attack sound
+order recall sound
+
+-mining
+
+hitting sounds x (hit impact sword)
+mining sound x (stone hit)
+pickup stone sound x (stone dropping)
+stone explosion sound x (ice break)
+
+-enemies
+
+spawn sound (gravel sweep)
+step sound
+swing/hit sound (meat slap on glass)
+dying sound (zombie grunt)
+
+-overworld
+
+gate open sound (old garage door)
+equip sound (item equip) 
+unequip sound (chainmail rustle)
+ambient industrial noise (industrial texture)
+
+sound manager (the smart way)
+have a sound object that is on all the fucking time, a list of sounds, etc

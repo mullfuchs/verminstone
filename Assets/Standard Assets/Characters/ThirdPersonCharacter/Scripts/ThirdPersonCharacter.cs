@@ -16,7 +16,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		[SerializeField] float m_AnimSpeedMultiplier = 1f;
 		[SerializeField] float m_GroundCheckDistance = 0.1f;
 
-		Rigidbody m_Rigidbody;
+        [SerializeField] private float m_StepInterval;
+        [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
+        [SerializeField] private float footsetpInterval;
+
+        Rigidbody m_Rigidbody;
 		Animator m_Animator;
 		bool m_IsGrounded;
 		float m_OrigGroundCheckDistance;
@@ -28,18 +32,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching = false;
+        private AudioSource m_AudioSource;
+        private float footAudioTimer = 0;
 
-
-
-		void Start()
+        void Start()
 		{
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
 			m_Capsule = GetComponent<CapsuleCollider>();
 			m_CapsuleHeight = m_Capsule.height;
 			m_CapsuleCenter = m_Capsule.center;
-
-			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+            m_AudioSource = GetComponent<AudioSource>();
+            m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
 		}
 
@@ -76,8 +80,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			UpdateAnimator(move);
 		}
 
+        private void FixedUpdate()
+        {
 
-		void ScaleCapsuleForCrouching(bool crouch)
+        }
+            void ScaleCapsuleForCrouching(bool crouch)
 		{
 //			if (m_IsGrounded && crouch)
 //			{
@@ -144,6 +151,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// which affects the movement speed because of the root motion.
 			if (m_IsGrounded && move.magnitude > 0)
 			{
+                SimulateFootSteps();
 				m_Animator.speed = m_AnimSpeedMultiplier;
 			}
 			else
@@ -223,5 +231,31 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_Animator.applyRootMotion = false;
 			}
 		}
-	}
+
+        private void SimulateFootSteps()
+        {
+            footAudioTimer += Time.fixedDeltaTime;
+            if(footAudioTimer >= footsetpInterval)
+            {
+                footAudioTimer = 0;
+                PlayFootStepAudio();
+            }
+        }
+
+        private void PlayFootStepAudio()
+        {
+            if (!m_IsGrounded || m_FootstepSounds.Length == 0)
+            {
+                return;
+            }
+            // pick & play a random footstep sound from the array,
+            // excluding sound at index 0
+            int n = Random.Range(0, m_FootstepSounds.Length);
+            m_AudioSource.clip = m_FootstepSounds[n];
+            m_AudioSource.PlayOneShot(m_AudioSource.clip);
+            // move picked sound to index 0 so it's not picked next time
+            m_FootstepSounds[n] = m_FootstepSounds[0];
+            m_FootstepSounds[0] = m_AudioSource.clip;
+        }
+    }
 }

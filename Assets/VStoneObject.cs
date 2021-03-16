@@ -19,6 +19,8 @@ public class VStoneObject : MonoBehaviour {
 
 	public float ShardSpawnRadius = 0.5f;
 
+    public AudioClip destructionSound;
+
 	// Use this for initialization
 	void Start () {
 		timerOGval = timer;
@@ -129,6 +131,7 @@ public class VStoneObject : MonoBehaviour {
 		if (GameObject.Find ("CaveManager") != null) {
 			GameObject.Find("CaveManager").GetComponent<CaveManager>().RemoveObjectFromFloor(gameObject);
 		}
+        AudioSource.PlayClipAtPoint(destructionSound, this.transform.position);
 		Destroy(gameObject);
 	}
 }
