@@ -16,6 +16,9 @@ public class EquipUIController : MonoBehaviour {
     public GameObject NPCCardParent;
 
     public GameObject VStoneQuotaUIObject;
+
+    public GameObject LaunchButton;
+
     private int CurrentQuota;
     private int CurrentCapacity;
 
@@ -164,6 +167,7 @@ public class EquipUIController : MonoBehaviour {
 
         currentItem = null;
         resetAllButtons();
+        checkForValidLoadout();
     }
 
     public void equipBackItemToNPC(GameObject npc)
@@ -172,6 +176,7 @@ public class EquipUIController : MonoBehaviour {
         UpdateCarryCapacityUI();
         currentItem = null;
         resetAllButtons();
+        checkForValidLoadout();
     }
 
 	public void equipHeadItemToNPC(GameObject npc)
@@ -179,7 +184,8 @@ public class EquipUIController : MonoBehaviour {
 		npc.GetComponent<NPCInventory> ().EquipHeadItem (currentItem);
 		currentItem = null;
 		resetAllButtons ();
-	}
+        checkForValidLoadout();
+    }
 
     public void equipItemToNPC(GameObject npc)
     {
@@ -202,5 +208,43 @@ public class EquipUIController : MonoBehaviour {
         return currentItem;
     }
 
+    void checkForValidLoadout()
+    {
+        //if there's at least one equipped pickaxe and one equipped bag, enable the launch button
+        //otherwise set it to false;
+        bool hasPickaxe = false;
+        bool hasBag = false;
+
+        NPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+        foreach (GameObject g in NPCs)
+        {
+            NPCInventory Inventory =  g.GetComponent<NPCInventory>();
+            GameObject backobject = Inventory.getBackObject();
+            if (backobject != null && backobject.tag == "BagTool")
+            {
+                hasBag = true;
+            }
+            GameObject handobject = Inventory.getHandObject();
+            if(handobject != null && handobject.tag == "MineTool")
+            {
+                hasPickaxe = true;
+            }
+        }
+
+        if(hasBag && hasPickaxe)
+        {
+            enableLaunchButton(true);
+        }
+        else
+        {
+            enableLaunchButton(false);
+        }
+
+    }
+
+    void enableLaunchButton(bool canInteract)
+    {
+        LaunchButton.GetComponent<Button>().interactable = canInteract;
+    }
 
 }

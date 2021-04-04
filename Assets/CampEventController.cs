@@ -231,10 +231,12 @@ public class CampEventController : MonoBehaviour {
 	}
 
 	public void EnterCaveSequence(){
-		//set cave entrance object to be inactive
-		//caveExitObject.LoadLevelOnEnter = false;
-		gameObject.GetComponent<VStoneEconomyObject>().SetDailyQuota();
-		caveEntrance.SetActive(false);
+        //set cave entrance object to be inactive
+        //caveExitObject.LoadLevelOnEnter = false;
+        GameObject.Find("Player").GetComponent<NPCTeamHandler>().rebuildNPCLists();
+        gameObject.GetComponent<VStoneEconomyObject>().SetDailyQuota();
+        caveEntrance.GetComponent<CaveEntrance>().enterCaveAndStartRun();
+		//caveEntrance.SetActive(false);
 		caveExit.SetActive(false);
 	}
 
@@ -286,6 +288,7 @@ public class CampEventController : MonoBehaviour {
 			canvas.GetComponent<EquipUIController> ().CreateAndDisplayNPCcards ();
 		}
         //create and display equip UI
+        //disable playerinput
     }
 
 	public void EndEquipAreaSequence(){
