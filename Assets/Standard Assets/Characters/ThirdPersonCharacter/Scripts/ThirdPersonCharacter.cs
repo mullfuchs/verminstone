@@ -257,5 +257,23 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             m_FootstepSounds[n] = m_FootstepSounds[0];
             m_FootstepSounds[0] = m_AudioSource.clip;
         }
+
+        public void PlayMineAnimation(bool isPlaying)
+        {
+            m_Animator.SetBool("Mining", isPlaying);
+        }
+
+        public void PlayAttackAnimation(bool isPlaying)
+        {
+            m_Animator.SetBool("Attacking", isPlaying);
+        }
+
+        public void PlayAnimation(string animation, bool isPlaying)
+        {
+            m_Animator.SetBool(animation, isPlaying);
+        }
+
+
+        
     }
 }

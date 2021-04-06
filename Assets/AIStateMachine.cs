@@ -423,11 +423,14 @@ public class AIStateMachine : MonoBehaviour {
         if(gameObject.GetComponent<NPCInventory>().ObjectHeldInHands.tag == "MineTool")
         {
             m_AudioSource.PlayOneShot(mineRockHitSound);
+            gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().PlayMineAnimation(true);
         }
         else
         {
             m_AudioSource.PlayOneShot(swordHitSound);
+            gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().PlayAttackAnimation(true);
         }
+        
 		Invoke ("HideHitBox", 0.5f);
 		Invoke ("ResetAttack", 1.5f);
 	}
@@ -438,7 +441,9 @@ public class AIStateMachine : MonoBehaviour {
 
 	public void ResetAttack(){
 		CanAttack = true;
-	}
+        gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().PlayAttackAnimation(false);
+        gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().PlayMineAnimation(false);
+    }
 
     void updateStoppingDistance(float dist)
     {
