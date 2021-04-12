@@ -115,8 +115,11 @@ public class ExitCaveNPCEventController : MonoBehaviour {
             //door lowring thing goes here
 
             //pop dialog for success, or failure
-
+            //populateDialogPortraits();
             FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue("Overseer.Exit.Success1");
+            //get overseer dialog portraits from keynpcs from CampNarrativeControllerObject
+            Sprite[] OverseerPortraits = GameObject.Find("CampEventController").GetComponent<CampNarrativeController>().getPotraitsForKeyNPC("Overseer");
+            FindObjectOfType<DialogPortraitController>().populateDialogPortraits(GameObject.Find("Player").GetComponent<NPCstats>().DialogPortraits, OverseerPortraits);
 
             while (hasExitDialogCompleted != true)
             {

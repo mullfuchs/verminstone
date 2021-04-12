@@ -181,6 +181,19 @@ public class CampNarrativeController : MonoBehaviour {
 		}
 	}
 
+    public Sprite[] getPotraitsForKeyNPC(string npcName)
+    {
+        foreach(npcPortraitObject portraitObject in KeyNPCPortraitObjects)
+        {
+            if(npcName == portraitObject.NPCName)
+            {
+                return portraitObject.portraits;
+            }
+        }
+
+        return null;
+    }
+
 	public bool RunDreamForDay(int day){
         // turning this back on for now cuz it's busted af
         /* turning off since returning from dream state breaks NPCs
