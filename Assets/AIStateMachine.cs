@@ -26,7 +26,7 @@ public class AIStateMachine : MonoBehaviour {
 	private float vStoneAmount = 0.0f; //hard coding value for test purposes
 
     private float defaultStoppingDist = 3.0f;
-    private float itemStoppingDist = 1.0f;
+    private float itemStoppingDist = 0.5f;
     private bool GoToNextTargetWhenCurrentTargetReached = false;
 
     private VStoneEconomyObject VStoneEcoInstance;
