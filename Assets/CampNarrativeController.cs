@@ -196,7 +196,7 @@ public class CampNarrativeController : MonoBehaviour {
 
 	public bool RunDreamForDay(int day){
         // turning this back on for now cuz it's busted af
-        /* turning off since returning from dream state breaks NPCs
+        
         for (int i = 0; i < DreamSequence.Length; i++) {
 			if (DreamSequence [i].dayDreamIsTriggered == day) {
                 SetPlayerAndNPCsActive(false);
@@ -204,7 +204,7 @@ public class CampNarrativeController : MonoBehaviour {
 				return true;
 			}
 		}
-		*/
+
 
 		return false;
 	}
