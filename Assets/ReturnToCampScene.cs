@@ -13,7 +13,11 @@ public class ReturnToCampScene : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        //press x to skip
+		if(Input.GetKeyDown(KeyCode.X))
+        {
+            loadCamp();
+        }
 	}
 
 	[Yarn.Unity.YarnCommand("returnToCampScene")]

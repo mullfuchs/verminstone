@@ -51,16 +51,37 @@ public class PlayerAndNPCSpawner : MonoBehaviour {
 		} 
 	}
 
-	public void placeAllNPCs(){
-		float offsetX = 0f; //offset to keep npcs from spawning on top of each other
+	public void placeAllNPCs(GameObject[] exitPlacementObjects){
+        foreach(GameObject placementObject in exitPlacementObjects)
+        {
+            if(NpcQueue.Count > 0)
+            {
+                GameObject nextNPC = (GameObject)NpcQueue.Dequeue(); // removed
+                nextNPC.SetActive(true);
+                nextNPC.transform.position = placementObject.transform.position;
+                nextNPC.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+                nextNPC.GetComponent<AIStateMachine>().SetNPCTarget(placementObject);
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        /*
+        int index = 0;
 		while(NpcQueue.Count > 0)
 		{
 			GameObject nextNPC = (GameObject)NpcQueue.Dequeue(); // removed
-			nextNPC.SetActive (true);
-			nextNPC.transform.position = point + new Vector3(0 + offsetX, 1.5f, -1.0f);
+            nextNPC.SetActive (true);
+            nextNPC.transform.position = exitPlacementObjects[index].transform.position;
 			nextNPC.GetComponent<UnityEngine.AI.NavMeshAgent> ().enabled = true;
-			offsetX += 0.5f;
+            if (index + 1 != exitPlacementObjects.Length)
+                index++;
+            else
+                index = 0;
 		}
+        */
 	}
 
 	public void placePlayerAndNPCs(){

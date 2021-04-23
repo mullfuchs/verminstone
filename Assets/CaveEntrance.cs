@@ -12,6 +12,8 @@ public class CaveEntrance : MonoBehaviour {
 
 	public bool newGameStarting = true;
 
+    public GameObject[] NPCExitPositions;
+
 	// Use this for initialization
 	void Start () {
 		if (!LoadLevelOnEnter && !newGameStarting) {
@@ -32,7 +34,10 @@ public class CaveEntrance : MonoBehaviour {
 
 		moveNPCTeamToPoint (Holder, transform.position);
 
-		Holder.GetComponent<PlayerAndNPCSpawner> ().placeAllNPCs ();
+        //hmm, don't wanna use this anymore
+		Holder.GetComponent<PlayerAndNPCSpawner> ().placeAllNPCs(NPCExitPositions);
+
+        //i guess iterate through the thing here???
 
         player.GetComponent<PowerObject>().setGlowLight(false);
 
