@@ -287,6 +287,7 @@ public class AIStateMachine : MonoBehaviour {
 		if (other.gameObject.name == "EquipmentReturn") {
 			if (narrativeController.timeOfDay == CampNarrativeController.timePeriod.Evening) { //only return equipment if it's night time
 				gameObject.GetComponent<NPCInventory> ().DestroyAllEquippedObjects ();
+                targets.Clear(); //clearing targets to solve weird pathing problem
 			}
 		}
 

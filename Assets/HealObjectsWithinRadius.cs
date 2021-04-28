@@ -26,7 +26,8 @@ public class HealObjectsWithinRadius : MonoBehaviour {
         {
             if (objectHealth.AddHealth(1.0f))
             {
-                PlayerHealth.AddDamage(0.3f);
+                //PlayerHealth.AddDamage(0.3f);
+                PlayerHealth.AddHealth(1.0f);
                 PlayerPowerObject.RemovePowerAmount(0.1f);
             }
         }
