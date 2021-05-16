@@ -112,7 +112,7 @@ public class NPCOverworldController : MonoBehaviour {
 		shuffleArray (idleTargets);
         
 		if (isEscaping) {
-			campEscapeObject = GameObject.Find ("CampAreaSecretEscape");
+			campEscapeObject = GameObject.Find ("EscapeWarpZone");
 		}
 
 		return idleTargets;
@@ -140,4 +140,9 @@ public class NPCOverworldController : MonoBehaviour {
 		}
 
 	}
+
+    public void SendNPCToBed()
+    {
+        GoToBed();
+    }
 }

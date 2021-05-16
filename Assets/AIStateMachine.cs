@@ -21,7 +21,7 @@ public class AIStateMachine : MonoBehaviour {
 	private GameObject AttackHitBox;
 	private bool CanAttack = true;
 
-    Queue targets = new Queue();
+    public Queue targets = new Queue();
 
 	private float vStoneAmount = 0.0f; //hard coding value for test purposes
 

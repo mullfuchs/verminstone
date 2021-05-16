@@ -93,11 +93,17 @@ public class EscapeUIController : MonoBehaviour
         if(metersOfTunnel >= 10)
         {
             print("Successful escape");
+            //
         }
         else
         {
             print("ya fucked up");
         }
+    }
+
+    public void EndDigAttempt()
+    {
+        EscapeObjectInstance.WarpNPCsToBed();
     }
         // Update is called once per frame
     void Update()

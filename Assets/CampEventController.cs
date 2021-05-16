@@ -195,11 +195,10 @@ public class CampEventController : MonoBehaviour {
 			SceneManager.LoadScene ("tempEndGame");
 		}
         //hard coding escape quest to start at a certain day
-        //ed: turning this off for now to fix NPC not behaving if it's called by escape quest bug
         if(day >= 1 && GameObject.Find("CampAreaSecretEscape") == null )
         {
            // print("trying to turn on camp area secret escape");
-           // GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().StartQuest("CampAreaSecretEscape");
+            GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().StartQuest("CampAreaSecretEscape");
         }
 
         if(!gameObject.GetComponent<CampNarrativeController>().RunDreamForDay(day))

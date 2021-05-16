@@ -68,7 +68,7 @@ public class WarpPlayerAndNPCsToZoneOnEnter : MonoBehaviour {
         GameObject.Find("MultipurposeCameraRig").GetComponent<CameraFade>().StartFade(Color.clear, 2.0f);
     }
 
-    void WarpNPCToZone(GameObject g)
+    public void WarpNPCToZone(GameObject g)
     {
        g.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().agent.Warp(TargetZone.GetComponent<WarpPlayerAndNPCsToZoneOnEnter>().point.position);
     }
