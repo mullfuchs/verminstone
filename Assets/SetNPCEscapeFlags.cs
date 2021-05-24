@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SetNPCEscapeFlags : MonoBehaviour {
 
@@ -13,6 +14,8 @@ public class SetNPCEscapeFlags : MonoBehaviour {
     public bool canPlayerAttemptEscape = false;
     public int metersNeededToEscape;
 
+    public string EscapeScene;
+
     public GameObject EscapeReturnGameObject;
     public GameObject EntryWarpZone;
 
@@ -20,7 +23,7 @@ public class SetNPCEscapeFlags : MonoBehaviour {
     void Start() {
         //check if escape ncs are zero
         //if zero find a random npc
-        if(npcsThatCanEscape.Count == 0)
+        if(npcsThatCanEscape.Count == 0 && !hasPlayerStartedEscape)
         {
             GameObject[] npcs = GameObject.FindGameObjectsWithTag("WorkerNPC");
             GameObject randNPC = npcs[Random.Range(0, npcs.Length - 1)];
@@ -88,16 +91,20 @@ public class SetNPCEscapeFlags : MonoBehaviour {
             GameObject n = GameObject.Find(name);
             if(n != null)
             {
+                //clearing targets makes them follow 
+                //n.GetComponent<AIStateMachine>().targets.Clear();
                 
-                n.GetComponent<AIStateMachine>().targets.Clear();
                 //n.GetComponent<NPCOverworldController>().isEscaping = false;
                 n.GetComponent<NPCOverworldController>().SendNPCToBed();
                 EntryWarpZone.GetComponent<WarpPlayerAndNPCsToZoneOnEnter>().WarpNPCToZone(n);
             }
         }
+        
+    }
 
-        //teleport to bed
-
+    public void LoadEscapeScene()
+    {
+        SceneManager.LoadScene(EscapeScene);
     }
 
      

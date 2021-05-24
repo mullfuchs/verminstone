@@ -90,10 +90,11 @@ public class EscapeUIController : MonoBehaviour
 
     public void AttemptEscape()
     {
-        if(metersOfTunnel >= 10)
+        if(metersOfTunnel >= EscapeObjectInstance.metersNeededToEscape)
         {
             print("Successful escape");
             //
+            EscapeObjectInstance.LoadEscapeScene();
         }
         else
         {

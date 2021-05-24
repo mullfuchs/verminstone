@@ -24,7 +24,7 @@ public class VStoneEconomyObject : MonoBehaviour {
 	public int getExtraPortionsBasedOnVstone(){
 		//float diff = vStoneDailyAmount - YesterdaysQuota;
 		//return (int)(diff / VStoneNeededForExtraFood);
-		return 3;
+		return 4;
 	}
 
     public void AddVStoneToDailyTotal(float amount)

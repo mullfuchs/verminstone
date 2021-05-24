@@ -45,7 +45,31 @@ public class CampNarrativeController : MonoBehaviour {
 	public void SetUpNarratives(){
 		GameObject[] npcs;
 		npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
-		for(int i = 0; i < npcs.Length; i++){
+        foreach(GameObject npc in npcs)
+        {
+            string npcName = npc.GetComponent<NPCstats>().NPCName;
+
+            foreach(TextAsset text in NPCDialogs)
+            {
+                if(npcName + ".Main" == text.name) //look for the name of the script to load using name of NPC
+                {
+                    npc.GetComponent<Yarn.Unity.Example.NPC>().scriptToLoad = text;
+                    npc.GetComponent<Yarn.Unity.Example.NPC>().characterName = npcName;
+                    npc.GetComponent<NPCstats>().NPCScriptIndex = 0;
+                }
+            }
+
+            if(npc.GetComponent<Yarn.Unity.Example.NPC>().scriptToLoad == null)
+            {
+                print("couldn't load dialog for " + npcName);
+            }
+        }
+
+
+        /*
+		for(int i = 0; i < npcs.Length; i++){ //well this was stupid!
+
+
 			npcs [i].GetComponent<Yarn.Unity.Example.NPC> ().scriptToLoad = NPCDialogs [i];
 			scriptCount++;
 			//set character name by, uh, getting the file name and parsing it?
@@ -58,6 +82,7 @@ public class CampNarrativeController : MonoBehaviour {
 			npcs [i].GetComponent<NPCstats> ().NPCScriptIndex = i;
 			//print ("setting dialog for char " + characterName);
 		}
+        */
 		UpdateNPCNarratives ();
 	}
 
@@ -138,7 +163,7 @@ public class CampNarrativeController : MonoBehaviour {
 	}
 
 	public void SetUpNewNPCNarrative(GameObject npc, int scriptIndex = -1){
-		TextAsset npcScript = getScriptForNPC(scriptIndex);
+		TextAsset npcScript = getScriptForNPC(npc.GetComponent<NPCstats>().NPCName);
 		npc.GetComponent<Yarn.Unity.Example.NPC> ().scriptToLoad = npcScript;
 		//set character name by, uh, getting the file name and parsing it?
 		string[] dialogNamespace;
@@ -180,6 +205,26 @@ public class CampNarrativeController : MonoBehaviour {
 			return NPCDialogs [scriptIndex];
 		}
 	}
+
+    public TextAsset getScriptForNPC(string name)
+    {
+        TextAsset returnDialog = null;
+
+        foreach (TextAsset text in NPCDialogs)
+        {
+            if (name + ".Main" == text.name) //look for the name of the script to load using name of NPC
+            {
+                returnDialog = text;
+            }
+        }
+
+        if (returnDialog == null)
+        {
+            print("couldn't load dialog for " + name);
+        }
+
+        return returnDialog;
+    }
 
     public Sprite[] getPotraitsForKeyNPC(string npcName)
     {
