@@ -29,12 +29,40 @@ namespace Yarn.Unity.Example{
 
 
 			if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("Action") ){
-				CheckForNearbyNPC ();
+				//CheckForNearbyNPC ();
 				//CheckForClosestNPC();
 			}
 		}
 
-		void CheckForNearbyNPC(){
+        private void OnTriggerStay(Collider other)
+        {
+            if(other.tag == "NPCDialogTrigger")
+            {
+                //do a UI thing that shows who you're talking to
+                //probably on the Player character, idk
+                GameObject npc = other.gameObject;
+
+                if(Input.GetButtonDown("Action") && canTalkToNPCs)
+                {
+                    canTalkToNPCs = false;
+                    // Kick off the dialogue at this node.
+                    if (npc.GetComponentInParent<NPCstats>().hasBeenTalkedToToday == false)
+                    {
+                        npc.GetComponentInParent<NPCstats>().hasBeenTalkedToToday = true;
+                    }
+                    CurrentNPC = npc.gameObject.transform.parent.gameObject;
+                    if(CurrentNPC.GetComponent<NPCOverworldController>() != null)
+                    {
+                        CurrentNPC.GetComponent<NPCOverworldController>().idling = false;
+                    }
+
+                    FindObjectOfType<DialogueRunner>().StartDialogue(CurrentNPC.GetComponent<NPC>().talkToNode);
+                    FindObjectOfType<DialogPortraitController>().populateDialogPortraits(CurrentNPC.GetComponent<NPCstats>().DialogPortraits, gameObject.GetComponent<NPCstats>().DialogPortraits);
+                }
+            }
+        }
+
+        void CheckForNearbyNPC(){
 			var allParticipants = new List<NPC> (FindObjectsOfType<NPC> ());
 
 

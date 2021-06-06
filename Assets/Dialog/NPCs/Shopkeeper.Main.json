@@ -1,0 +1,72 @@
+[
+	{
+		"title": "Shopkeeper.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nHello, what would you want to upgrade?\n[[Upgrade swords|Shopkeeper.upgradeSwords]]\n[[Upgrade pickaxe|Shopkeeper.upgradePickaxe]]\n[[Upgrade bags|Shopkeeper.upgradeBags]]\n[[Upgrade helmets|Shopkeeper.upgradeHelmets]]\n[[Upgrade armor|Shopkeeper.upgradeArmor]]",
+		"position": {
+			"x": -61,
+			"y": 195
+		},
+		"colorID": 6
+	},
+	{
+		"title": "Shopkeeper.upgradeSwords",
+		"tags": "",
+		"body": "Stronger Swords this time?\nI suppose it's worth it.\nMore damage never hurt anyone.\n<<upgradeSwordLevel CampEventController>>\n[[....|Shopkeeper.ResolveDialog]]",
+		"position": {
+			"x": 483,
+			"y": -92
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Shopkeeper.upgradeBags",
+		"tags": "",
+		"body": "Better bags today?\nDeeper pockets to hold more crystal.\nA wise choice\n<<upgradeBagLevel CampEventController>>\n[[....|Shopkeeper.ResolveDialog]]",
+		"position": {
+			"x": 482,
+			"y": 120
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Shopkeeper.upgradeHelmets",
+		"tags": "",
+		"body": "Better helmets! Gotta protect that head of yours.\nThe lights on these are slightly brighter.\nMaybe you'll notice a difference\n<<upgradeHelmetLevel CampEventController>>\n[[....|Shopkeeper.ResolveDialog]]",
+		"position": {
+			"x": 479,
+			"y": 332
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Shopkeeper.upgradeArmor",
+		"tags": "",
+		"body": "A heavier set of armor?\nthe best offense is good defense...after all...\n<<upgradeArmorLevel CampEventController>>\n[[....|Shopkeeper.ResolveDialog]]",
+		"position": {
+			"x": 477,
+			"y": 546
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Shopkeeper.upgradePickaxe",
+		"tags": "",
+		"body": "Ah, new pickaxes. Slightly sharper than before.\nMight make mining easier\n<<upgradePickaxeLevel CampEventController>>\n[[....|Shopkeeper.ResolveDialog]]",
+		"position": {
+			"x": 485,
+			"y": -311
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Shopkeeper.ResolveDialog",
+		"tags": "",
+		"body": "Good Luck Out there",
+		"position": {
+			"x": 1030,
+			"y": 156
+		},
+		"colorID": 0
+	}
+]

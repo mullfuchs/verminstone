@@ -87,15 +87,22 @@ public class GameSaveController : MonoBehaviour {
 		}
 
 		GameObject player = GameObject.Find ("Player");
+        GameObject campEventController = GameObject.Find("CampEventController");
 
 		gameSave.PlayerPosition = player.transform.position;
 		gameSave.PlayerHealth = player.GetComponent<health> ().healthPoints;
+        //gameSave.DaysElapsed = GameObject.Find ("CampEventController").GetComponent<CampEventController> ().day;
+        gameSave.DaysElapsed = campEventController.GetComponent<CampEventController>().day;
 
-		gameSave.DaysElapsed = GameObject.Find ("CampEventController").GetComponent<CampEventController> ().day;
+        //weapon/upgrade levels
+        gameSave.WeaponLevel = campEventController.GetComponent<CampInventoryController>().weaponLevel;
+        gameSave.ArmorLevel = campEventController.GetComponent<CampInventoryController>().armorLevel;
+        gameSave.BagLevel = campEventController.GetComponent<CampInventoryController>().bagLevel;
+        gameSave.HelmetLevel = campEventController.GetComponent<CampInventoryController>().helmetLevel;
+        gameSave.PickaxeLevel = campEventController.GetComponent<CampInventoryController>().pickaxeLevel;
 
-		gameSave.CompletedQuests = GameObject.Find ("GameQuestObjects").GetComponent<CampQuestController> ().GetCompletedQuestList ();
+        gameSave.CompletedQuests = GameObject.Find ("GameQuestObjects").GetComponent<CampQuestController> ().GetCompletedQuestList ();
         gameSave.QuestVariableReference = GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().GatherQuestVariablesForSave();
-
         gameSave.DialogViariableReferece = GameObject.Find("Dialogue").GetComponent<ExampleVariableStorage>().GetDialogVariables();
 
         currentlyLoadedSave = gameSave;
@@ -120,6 +127,15 @@ public class GameSaveController : MonoBehaviour {
         GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().RestoreQuestVariables(data.QuestVariableReference);
 
         GameObject.Find("Dialogue").GetComponent<ExampleVariableStorage>().LoadVariablesFromSaveFile(data.DialogViariableReferece);
+
+        //load the upgrade levels
+        CampInventoryController campInventoryController = GameObject.Find("CampEventController").GetComponent<CampInventoryController>();
+        campInventoryController.weaponLevel = data.WeaponLevel;
+        campInventoryController.armorLevel = data.ArmorLevel;
+        campInventoryController.bagLevel = data.BagLevel;
+        campInventoryController.helmetLevel = data.HelmetLevel;
+        campInventoryController.pickaxeLevel = data.PickaxeLevel;
+
         currentlyLoadedSave = data;
 	}
 

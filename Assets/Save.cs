@@ -12,6 +12,11 @@ public class Save {
 	public List<string> CompletedQuests = new List<string>();
     public QuestVariables QuestVariableReference = new QuestVariables();
     public ExampleVariableStorage.DefaultVariable[] DialogViariableReferece;
+    public int WeaponLevel;
+    public int ArmorLevel;
+    public int BagLevel;
+    public int HelmetLevel;
+    public int PickaxeLevel;
 }
 
 [System.Serializable]
