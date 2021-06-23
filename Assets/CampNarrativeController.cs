@@ -144,7 +144,7 @@ public class CampNarrativeController : MonoBehaviour {
 		}
 	}
 
-	public void AdvanceDialoyDayOfKeyNPCs(){
+	public void AdvanceDialogDayOfKeyNPCs(){
 		foreach (GameObject keyNPC in KeyNPCs) {
 			if (keyNPC.GetComponent<NPCstats> ().hasBeenTalkedToToday) {
 				keyNPC.GetComponent<NPCstats> ().daysTalkedTo += 1;

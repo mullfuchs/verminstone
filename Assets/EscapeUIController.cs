@@ -65,6 +65,12 @@ public class EscapeUIController : MonoBehaviour
         TunnelDisplay.GetComponent<Text>().text = "Tunnel Dug: " + metersOfTunnel;
         //make cards for em
         //add a player card too
+        GameObject playerObj = GameObject.Find("Player");
+        GameObject playerCard = Instantiate(CardPrefab, cardParent.transform);
+        playerCard.SetActive(true);
+        playerCard.GetComponent<NPCEscapeCardController>().assignNPCtoCard(playerObj);
+        playerCard.GetComponent<NPCEscapeCardController>().parentEscapeUIController = this;
+        NPCCards.Add(playerCard);
         //display em
         //display how much digging's been done
     }

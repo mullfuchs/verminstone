@@ -99,7 +99,7 @@ namespace Yarn.Unity.Example{
         public void ReleaseNPCPlayerIsTalkingTo()
         {
             canTalkToNPCs = true;
-            if(CurrentNPC != null)
+            if(CurrentNPC != null && CurrentNPC.GetComponent<NPCOverworldController>() != null)
             {
                 CurrentNPC.GetComponent<NPCOverworldController>().idling = true;
             }

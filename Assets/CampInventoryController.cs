@@ -38,7 +38,7 @@ public class CampInventoryController : MonoBehaviour {
         return InventoryList;
     }
 
-    [Yarn.Unity.YarnCommand("upgradeWeaponLevel")]
+    [Yarn.Unity.YarnCommand("upgradeSwordLevel")]
     public void UpgradeWeaponLevel()
     {
         if(weaponLevel + 1 <= weapons.Length)

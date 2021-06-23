@@ -22,20 +22,27 @@ public class SetNPCEscapeFlags : MonoBehaviour {
     // Use this for initialization
     void Start() {
         //check if escape ncs are zero
-        //if zero find a random npc
-        if(npcsThatCanEscape.Count == 0 && !hasPlayerStartedEscape)
+        GameObject[] npcs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+        bool npcsEscaping = false;
+        foreach (GameObject g in npcs)
         {
-            GameObject[] npcs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+            if (g.GetComponent<NPCOverworldController>().isEscaping)
+            {
+                npcsEscaping = true;
+                npcsThatCanEscape.Add(g.name);
+            }
+        }
+        //if zero find a random npc
+        if (!npcsEscaping)
+        {
             GameObject randNPC = npcs[Random.Range(0, npcs.Length - 1)];
             npcsThatCanEscape.Add( randNPC.name);
+        }
 
-            foreach (string name in npcsThatCanEscape)
-            {
-                GameObject n = GameObject.Find(name);
-                n.GetComponent<NPCOverworldController>().isEscaping = true;
-            }
-
-
+        foreach (string name in npcsThatCanEscape)
+        {
+            GameObject n = GameObject.Find(name);
+            n.GetComponent<NPCOverworldController>().isEscaping = true;
         }
 
 

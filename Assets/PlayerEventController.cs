@@ -8,6 +8,8 @@ public class PlayerEventController : MonoBehaviour {
 
     public SpriteRenderer iconIndicator;
 
+    public TextMesh actionDescriptionText;
+
     public Sprite EnterIcon;
     public Sprite GoUpIcon;
     public Sprite GoDownIcon;
@@ -23,7 +25,9 @@ public class PlayerEventController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		CampEventControllerInstance = GameObject.Find ("CampEventController").GetComponent<CampEventController> ();
-	}
+        actionDescriptionText.text = "";
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -45,13 +49,16 @@ public class PlayerEventController : MonoBehaviour {
             //CampEventControllerInstance.StartMessHallSequence ();
             //why the fuck was this turned off? uhh 
             iconIndicator.sprite = FoodIcon;
+            actionDescriptionText.text = "Eat";
         }
         if (Other.tag == "EquipArea"){
             iconIndicator.sprite = EquipIcon;
+            actionDescriptionText.text = "Equip Team";
             //CampEventControllerInstance.StartEquipAreaSequence();
         }
 		if (Other.tag == "CaveEntrance") {
             iconIndicator.sprite = EnterIcon;
+            actionDescriptionText.text = "Enter Cave";
             //gameObject.GetComponent<NPCTeamHandler> ().rebuildNPCLists ();
             //CampEventControllerInstance.EnterCaveSequence ();
         }
@@ -74,21 +81,41 @@ public class PlayerEventController : MonoBehaviour {
         if(Other.tag == "TunnelDigArea")
         {
             iconIndicator.sprite = EnterIcon;
+            actionDescriptionText.text = "Dig Tunnel";
             //CampEventControllerInstance.StartTunnelDigSequence();
         }
         if(Other.tag == "bed")
         {
             iconIndicator.sprite = SleepIcon;
+            actionDescriptionText.text = "Sleep";
         }
 
         if(Other.name == "PassageUp(Clone)")
         {
             iconIndicator.sprite = GoUpIcon;
+            actionDescriptionText.text = "Ascend";
         }
 
         if(Other.name == "PassageDown(Clone)")
         {
             iconIndicator.sprite = GoDownIcon;
+            actionDescriptionText.text = "Descend";
+        }
+
+        if(Other.tag == "NPCDialogTrigger")
+        {
+            ///hmmm I could put in a switch here so that the NPC is only able to be talked to once that day, checking the"has been talked to"
+            ////becuse that would fix one or two problems, 
+            if(gameObject.GetComponent<Yarn.Unity.Example.DialogTrigger>().canTalkToNPCs)
+            {
+                iconIndicator.sprite = Talkicon;
+                string npcName = Other.GetComponentInParent<NPCstats>().NPCName;
+                if (npcName != null && npcName != "")
+                {
+                    actionDescriptionText.text = "Talk To " + npcName;
+                }
+            }
+
         }
 	}
 
@@ -132,9 +159,9 @@ public class PlayerEventController : MonoBehaviour {
         //generally remove the icon.
         iconIndicator.sprite = null;
 
+        actionDescriptionText.text = "";
 
-
-		if (Other.tag == "MessHall") {
+        if (Other.tag == "MessHall") {
 			CampEventControllerInstance.EndMessHallSequence ();
 		}
 		if (Other.tag == "EquipArea") {
