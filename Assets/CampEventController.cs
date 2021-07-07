@@ -227,12 +227,19 @@ public class CampEventController : MonoBehaviour {
         GameObject.Find("Player").GetComponent<PlayerEventController>().canEndDay = true;
 
         GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.clear, 2.0f);
+        Yarn.Unity.Example.NPC[] NPCTalkObjects = FindObjectsOfType<Yarn.Unity.Example.NPC>();
+        foreach(Yarn.Unity.Example.NPC npc in NPCTalkObjects)
+        {
+            npc.canTalkTo = true;
+        }
+
 	}
 
 	public void EnterCaveSequence(){
         //set cave entrance object to be inactive
         //caveExitObject.LoadLevelOnEnter = false;
         GameObject.Find("Player").GetComponent<NPCTeamHandler>().rebuildNPCLists();
+        GameObject.Find("Player").GetComponent<PlayerEventController>().dialogOpened = false;
         gameObject.GetComponent<VStoneEconomyObject>().SetDailyQuota();
         caveEntrance.GetComponent<CaveEntrance>().enterCaveAndStartRun();
 		//caveEntrance.SetActive(false);
@@ -250,8 +257,7 @@ public class CampEventController : MonoBehaviour {
         //then do this
         //SendNPCsToArea(AllNPCs, caveStagingArea);
         caveExitObject.PositionPlayerandNPCsForCaveExit ();
-        
-
+       
 		exitCaveInstance.doCaveExitEvent (); //try doing this when player steps off exit
     }
 
@@ -275,7 +281,8 @@ public class CampEventController : MonoBehaviour {
             canvas = GameObject.Find("Canvas");
         }	
 		canvas.GetComponent<NPCFoodDistroUIController> ().cleanUpFoodUI ();
-	}
+        GameObject.Find("Player").GetComponent<PlayerEventController>().dialogOpened = false;
+    }
 
     public void StartEquipAreaSequence()
     {
@@ -291,7 +298,8 @@ public class CampEventController : MonoBehaviour {
     }
 
 	public void EndEquipAreaSequence(){
-		canvas.GetComponent<EquipUIController> ().cleanUpItemAndNPCCards ();
+        GameObject.Find("Player").GetComponent<PlayerEventController>().dialogOpened = false;
+        canvas.GetComponent<EquipUIController> ().cleanUpItemAndNPCCards ();
 	}
 
     public void StartTunnelDigSequence()
@@ -303,6 +311,7 @@ public class CampEventController : MonoBehaviour {
     public void EndTunnelDigSequence()
     {
         canvas.GetComponent<EscapeUIController>().CleanUpEscapeUI();
+        GameObject.Find("Player").GetComponent<PlayerEventController>().dialogOpened = false;
     }
 
 

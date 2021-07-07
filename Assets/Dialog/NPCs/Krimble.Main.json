@@ -22,7 +22,7 @@
 	{
 		"title": "Krimble.Dialog.Resolve",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Krimble_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Krimble.AddToEscapeQuest]]\n<<endif>>\n[[Not really...|Krimble.EndDialog]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Krimble.AddToEscapeQuest]]\n<<endif>>\n[[Not really...|Krimble.EndDialog]]",
 		"position": {
 			"x": 1667,
 			"y": 233

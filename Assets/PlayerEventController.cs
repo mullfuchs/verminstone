@@ -20,13 +20,14 @@ public class PlayerEventController : MonoBehaviour {
     public Sprite EquipIcon;
 
     private bool isActionButtonPressed;
+    public bool dialogOpened;
 
 	private CampEventController CampEventControllerInstance;
 	// Use this for initialization
 	void Start () {
 		CampEventControllerInstance = GameObject.Find ("CampEventController").GetComponent<CampEventController> ();
         actionDescriptionText.text = "";
-
+        dialogOpened = false;
     }
 	
 	// Update is called once per frame
@@ -126,7 +127,7 @@ public class PlayerEventController : MonoBehaviour {
 			CampEventControllerInstance.EndDay ();
 		}
 
-        if (Input.GetButtonDown("Action"))
+        if (Input.GetButtonDown("Action") && !dialogOpened)
         {
             
             switch (other.tag)
@@ -137,12 +138,15 @@ public class PlayerEventController : MonoBehaviour {
                     break;
                 case "MessHall":
                     CampEventControllerInstance.StartMessHallSequence();
+                    dialogOpened = true;
                     break;
                 case "EquipArea":
                     CampEventControllerInstance.StartEquipAreaSequence();
+                    dialogOpened = true;
                     break;
                 case "TunnelDigArea":
                     CampEventControllerInstance.StartTunnelDigSequence();
+                    dialogOpened = true;
                     break;
                 default:
                     break;
@@ -163,21 +167,24 @@ public class PlayerEventController : MonoBehaviour {
 
         if (Other.tag == "MessHall") {
 			CampEventControllerInstance.EndMessHallSequence ();
+            dialogOpened = false;
 		}
 		if (Other.tag == "EquipArea") {
 			CampEventControllerInstance.EndEquipAreaSequence ();
+            dialogOpened = false;
 		}
 
         if (Other.tag == "CaveExit")
         {
 			CampEventControllerInstance.refreshReferences ();
-
-			//CampEventControllerInstance.ExitCaveSequence();
+            dialogOpened = false;
+            //CampEventControllerInstance.ExitCaveSequence();
         }
 
         if (Other.tag == "TunnelDigArea")
         {
             CampEventControllerInstance.EndTunnelDigSequence();
+            dialogOpened = false;
         }
     }
 }

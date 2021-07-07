@@ -42,13 +42,14 @@ namespace Yarn.Unity.Example{
                 //probably on the Player character, idk
                 GameObject npc = other.gameObject;
 
-                if(Input.GetButtonDown("Action") && canTalkToNPCs)
+                if(Input.GetButtonDown("Action") && canTalkToNPCs && npc.GetComponentInParent<Yarn.Unity.Example.NPC>().canTalkTo == true)
                 {
                     canTalkToNPCs = false;
                     // Kick off the dialogue at this node.
                     if (npc.GetComponentInParent<NPCstats>().hasBeenTalkedToToday == false)
                     {
                         npc.GetComponentInParent<NPCstats>().hasBeenTalkedToToday = true;
+                        npc.GetComponentInParent<Yarn.Unity.Example.NPC>().canTalkTo = false;
                     }
                     CurrentNPC = npc.gameObject.transform.parent.gameObject;
                     if(CurrentNPC.GetComponent<NPCOverworldController>() != null)

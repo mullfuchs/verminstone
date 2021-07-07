@@ -2,7 +2,7 @@
 	{
 		"title": "Ursine.Day1.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 212,
 			"y": 143
@@ -22,7 +22,7 @@
 	{
 		"title": "Ursine.Dialog.Resolve",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Ursine.AddToEscapeQuest]]\n<<endif>>\n[[Not really...|Ursine.EndDialog]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Ursine.AddToEscapeQuest]]\n<<endif>>\n[[Not really...|Ursine.EndDialog]]",
 		"position": {
 			"x": 1667,
 			"y": 233
@@ -32,7 +32,7 @@
 	{
 		"title": "Ursine.Day2.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 230,
 			"y": 665
@@ -52,7 +52,7 @@
 	{
 		"title": "Ursine.Day3.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 459,
 			"y": 665
@@ -72,7 +72,7 @@
 	{
 		"title": "Ursine.Day4.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 746,
 			"y": 666
@@ -92,7 +92,7 @@
 	{
 		"title": "Ursine.Day5.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 665
@@ -112,7 +112,7 @@
 	{
 		"title": "Ursine.Day6.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 1239,
 			"y": 662
@@ -132,7 +132,7 @@
 	{
 		"title": "Ursine.Day7.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 203,
 			"y": 1182
@@ -152,7 +152,7 @@
 	{
 		"title": "Ursine.Day8.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 427,
 			"y": 1182
@@ -172,7 +172,7 @@
 	{
 		"title": "Ursine.Day9.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 662,
 			"y": 1184
@@ -192,7 +192,7 @@
 	{
 		"title": "Ursine.Day10.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 890,
 			"y": 1181

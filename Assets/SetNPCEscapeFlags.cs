@@ -26,7 +26,7 @@ public class SetNPCEscapeFlags : MonoBehaviour {
         bool npcsEscaping = false;
         foreach (GameObject g in npcs)
         {
-            if (g.GetComponent<NPCOverworldController>().isEscaping)
+            if (g.GetComponent<NPCOverworldController>().isEscaping && !npcsThatCanEscape.Contains(g.name))
             {
                 npcsEscaping = true;
                 npcsThatCanEscape.Add(g.name);

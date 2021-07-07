@@ -2,7 +2,7 @@
 	{
 		"title": "Memphis.Day1.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
 		"position": {
 			"x": 212,
 			"y": 143
@@ -22,7 +22,7 @@
 	{
 		"title": "Memphis.Dialog.Resolve",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Memphis.AddToEscapeQuest]]\n<<endif>>\n[[Not really...|Memphis.EndDialog]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nIs there something else you want to talk about?\n<<if $escape_active is true>>\n[[Yeah I'm trying to escape|Memphis.AddToEscapeQuest]]\n<<endif>>\n[[Not really...|Memphis.EndDialog]]",
 		"position": {
 			"x": 1667,
 			"y": 233
@@ -32,7 +32,7 @@
 	{
 		"title": "Memphis.Day2.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
 		"position": {
 			"x": 230,
 			"y": 665
@@ -52,7 +52,7 @@
 	{
 		"title": "Memphis.Day3.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
 		"position": {
 			"x": 459,
 			"y": 665
@@ -72,7 +72,7 @@
 	{
 		"title": "Memphis.Day4.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
 		"position": {
 			"x": 746,
 			"y": 666
@@ -92,7 +92,7 @@
 	{
 		"title": "Memphis.Day5.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 665
@@ -112,7 +112,7 @@
 	{
 		"title": "Memphis.Day6.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
 		"position": {
 			"x": 1239,
 			"y": 662
@@ -132,7 +132,7 @@
 	{
 		"title": "Memphis.Day7.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
 		"position": {
 			"x": 203,
 			"y": 1182
@@ -152,7 +152,7 @@
 	{
 		"title": "Memphis.Day8.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
 		"position": {
 			"x": 427,
 			"y": 1182
@@ -172,7 +172,7 @@
 	{
 		"title": "Memphis.Day9.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
 		"position": {
 			"x": 662,
 			"y": 1184
@@ -192,7 +192,7 @@
 	{
 		"title": "Memphis.Day10.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer Memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_talking>>\nHello, I don't think we've met\nI'm Memphis. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer memphis_default_silent>>\nLikewise\n[[....|Memphis.Dialog.Resolve]]",
 		"position": {
 			"x": 890,
 			"y": 1181

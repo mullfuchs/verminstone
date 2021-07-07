@@ -39,6 +39,7 @@ namespace Yarn.Unity.Example {
 		[Header("Optional")]
 		public TextAsset scriptToLoad;
 
+        public bool canTalkTo = true;
 
 		// Use this for initialization
 		void Start () {
