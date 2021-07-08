@@ -232,6 +232,7 @@ public class CampEventController : MonoBehaviour {
         {
             npc.canTalkTo = true;
         }
+        gameObject.GetComponent<CampInventoryController>().EnableShopKeeper(true);
 
 	}
 

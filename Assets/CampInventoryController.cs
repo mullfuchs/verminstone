@@ -6,6 +6,8 @@ public class CampInventoryController : MonoBehaviour {
 
     public GameObject[] items;
 
+    public GameObject ShopKeeperNPC;
+
     public int weaponLevel = 0;
     public int armorLevel = 0;
     public int bagLevel = 0;
@@ -25,6 +27,12 @@ public class CampInventoryController : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+        ShopKeeperNPC = GameObject.Find("ShopKeeper");
+    }
+
+    private void Awake()
+    {
+        ShopKeeperNPC = GameObject.Find("ShopKeeper");
     }
 
     // Update is called once per frame
@@ -36,6 +44,19 @@ public class CampInventoryController : MonoBehaviour {
     {
         GameObject[] InventoryList = new GameObject[] { weapons[weaponLevel], armors[armorLevel], bags[bagLevel], helmets[helmetLevel], pickaxes[pickaxeLevel] };
         return InventoryList;
+    }
+
+    public void EnableShopKeeper(bool isActive)
+    {
+        if(ShopKeeperNPC == null)
+        {
+            ShopKeeperNPC = GameObject.Find("ShopKeeper");
+        }
+
+        if (ShopKeeperNPC != null)
+        {
+            ShopKeeperNPC.SetActive(isActive);
+        }
     }
 
     [Yarn.Unity.YarnCommand("upgradeSwordLevel")]

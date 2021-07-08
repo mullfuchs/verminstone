@@ -139,7 +139,7 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
                 npcs [i].GetComponent<AIStateMachine> ().SendNPCToObject ( GameObject.Find("EquipmentReturn") );
 			}
-
+            GameObject.Find("CampEventController").GetComponent<CampInventoryController>().EnableShopKeeper(false);
 
             GameObject.Find("CampEventController").GetComponent<GameSaveController>().LoadQuestObjects();
 
