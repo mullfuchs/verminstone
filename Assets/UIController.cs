@@ -89,6 +89,12 @@ public class UIController : MonoBehaviour {
 		}
 	}
 
+    public void ResetNPCCards()
+    {
+        //clear existing cards
+        //make new ones via setup
+    }
+
 	private void SetUpInventoryIcons(GameObject npc, GameObject card){
 		NPCInventory inv = npc.GetComponent<NPCInventory> ();
 
@@ -102,5 +108,7 @@ public class UIController : MonoBehaviour {
 			card.transform.Find ("headIcon").GetComponent<Image> ().sprite = inv.ObjectOnHead.GetComponent<EquippableItem>().icon;
 		}
 	}
+
+
 
 }

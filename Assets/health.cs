@@ -140,18 +140,15 @@ public class health : MonoBehaviour {
                 this.gameObject.transform.parent = ragdoll.transform;
                 this.gameObject.SetActive(false);
 			}
-			/*
-			if (gameObject.GetComponent<NPCInventory> () != null) {
-				NPCInventory inventory = gameObject.GetComponent<NPCInventory> ();
-				if (inventory.ObjectOnBack != null) {
-					inventory.DropBackItem ();
-				}
-				if (inventory.ObjectHeldInHands != null) {
-					inventory.DropHandItem ();
-				}
-			}
-			*/
-			gameObject.GetComponent<AIStateMachine>().handleDeath();
+            //dump the bag if they have it
+            GameObject backobject = gameObject.GetComponent<NPCInventory>().getBackObject();
+            if(backobject != null && backobject.tag == "BagTool")
+            {
+                gameObject.GetComponent<NPCInventory>().DropBackItem();
+            }
+
+
+			gameObject.GetComponent<AIStateMachine>().handleDeath(backobject);
             return;
         }
 		

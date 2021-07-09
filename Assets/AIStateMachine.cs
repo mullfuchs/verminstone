@@ -262,7 +262,7 @@ public class AIStateMachine : MonoBehaviour {
                         
                     }
                 }
-
+                gameObject.GetComponent<NPCInventory>().ObjectOnBack.GetComponent<Vstonebag>().currentVStoneAmount += vStoneFragmentAmount;
                 vStoneAmount += vStoneFragmentAmount;
                 m_AudioSource.PlayOneShot(stonePickupSound);
                 ChannelerIFollow.GetComponent<NPCTeamHandler>().addCollectedVStone(vStoneFragmentAmount);
@@ -283,6 +283,18 @@ public class AIStateMachine : MonoBehaviour {
 				//currentState = AIState.Scared;
 			}
 		}
+
+        if (other.tag == "BagTool" && other.gameObject == getTargetObject())
+        {
+            //drop current back object
+            gameObject.GetComponent<NPCInventory>().DropBackItem();
+            //equip this object
+            gameObject.GetComponent<NPCInventory>().EquipBackItem(other.gameObject);
+            //update vstone total
+            vStoneAmount += other.gameObject.GetComponent<Vstonebag>().currentVStoneAmount;
+            ChannelerIFollow.GetComponent<NPCTeamHandler>().addCollectedVStone(other.gameObject.GetComponent<Vstonebag>().currentVStoneAmount);
+            GameObject.Find("Canvas").GetComponent<UIController>().SetupNPCCards();
+        }
 
 		if (other.gameObject.name == "EquipmentReturn") {
 			if (narrativeController.timeOfDay == CampNarrativeController.timePeriod.Evening) { //only return equipment if it's night time
@@ -406,10 +418,15 @@ public class AIStateMachine : MonoBehaviour {
 		print ("number of targets im attacking " + targets.Count );
     }
 
-    public void handleDeath()
+    public void handleDeath(GameObject target)
     {
         //tell NPCTeamHandler it's died
 		print("npc died :(");
+        if(target != null && target.tag == "BagTool")
+        {
+            //if target is a bag object, add that to the npc team handler queue or whatever
+            ChannelerIFollow.GetComponent<NPCTeamHandler>().makeNPCPickUpBag(target);
+        }
 		ChannelerIFollow.GetComponent<NPCTeamHandler>().RefreshNPCMinerList();
     }
 

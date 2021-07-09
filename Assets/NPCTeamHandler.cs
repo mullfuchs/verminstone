@@ -90,6 +90,26 @@ public class NPCTeamHandler : MonoBehaviour {
 
 	}
 
+    public void makeNPCPickUpBag(GameObject bag)
+    {
+        //check all npc for health and if they do not have a 
+        List<GameObject> eligableNPCs = new List<GameObject>();
+        foreach (GameObject g in NPCMiners)
+        {
+            
+            GameObject backObject = g.GetComponent<NPCInventory>().getBackObject();
+
+            if (g.GetComponent<health>().healthPoints > 0 && (backObject == null || backObject.tag != "BagTool"))
+            {
+                eligableNPCs.Add(g);
+            }
+        }
+        int randIndex = Random.Range(0, eligableNPCs.Count);
+
+        eligableNPCs[randIndex].GetComponent<AIStateMachine>().AddTargetForNPC(bag);
+
+    }
+
 	public void AddStoneToBeMined(GameObject rock){
         //ActiveStones.Enqueue (rock);
         //print("sending miners to rock");

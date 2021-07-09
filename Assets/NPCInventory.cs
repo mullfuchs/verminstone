@@ -108,11 +108,15 @@ public class NPCInventory : MonoBehaviour {
 
 	public void DropBackItem()
 	{
-		ActiveBackObject.transform.parent = null;
-		ActiveBackObject.GetComponent<Rigidbody> ().isKinematic = false;
-		ActiveBackObject.GetComponent<Rigidbody> ().useGravity = true;
-        ActiveBackObject.GetComponent<BoxCollider>().enabled = true;
-        ObjectOnBack = null;
+        if(ActiveBackObject != null)
+        {
+            ActiveBackObject.transform.parent = null;
+            ActiveBackObject.GetComponent<Rigidbody>().isKinematic = false;
+            ActiveBackObject.GetComponent<Rigidbody>().useGravity = true;
+            ActiveBackObject.GetComponent<BoxCollider>().enabled = true;
+            ObjectOnBack = null;
+        }
+
 	}
 
 	public void DropHandItem()

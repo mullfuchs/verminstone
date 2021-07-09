@@ -7,6 +7,8 @@ public class Vstonebag : MonoBehaviour
 
     public int vStoneCapacity = 150;
     public int defense = 0;
+
+    public float currentVStoneAmount = 0;
     // Start is called before the first frame update
     void Start()
     {
