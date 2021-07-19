@@ -66,6 +66,7 @@ public class PlayerEventController : MonoBehaviour {
 		if (Other.tag == "CampArea") {
 			//start the npc idle stuff
 			CampEventControllerInstance.gameObject.GetComponent<NPCBedController>().AssignBeds();
+            CampEventControllerInstance.MakeNonWorkernPCsIdle();
 
             //start the end day timer in the campevent controller??? Sure???
 			if (CampEventControllerInstance.GetComponent<CampNarrativeController> ().timeOfDay == CampNarrativeController.timePeriod.Evening) {

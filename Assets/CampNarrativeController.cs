@@ -117,8 +117,16 @@ public class CampNarrativeController : MonoBehaviour {
 			//print ("start node" + startnode);
 			npc.GetComponent<Yarn.Unity.Example.NPC> ().talkToNode = startnode;
 		}
-		
-		//GameObject.Find ("Dialogue").GetComponent<Yarn.Unity.DialogueRunner> ().HotLoadNPCScripts ();
+
+        GameObject[] NonWorkernpcs;
+        NonWorkernpcs = GameObject.FindGameObjectsWithTag("dialog_npc");
+        foreach (GameObject npc in NonWorkernpcs)
+        {
+            string startnode = GetStartNode(npc.GetComponent<Yarn.Unity.Example.NPC>().characterName, npc.GetComponent<NPCstats>().daysTalkedTo, timeOfDay);
+            //print ("start node" + startnode);
+            npc.GetComponent<Yarn.Unity.Example.NPC>().talkToNode = startnode;
+        }
+        //GameObject.Find ("Dialogue").GetComponent<Yarn.Unity.DialogueRunner> ().HotLoadNPCScripts ();
     }
 
 	public void UpdateKeyNPCNarratives()

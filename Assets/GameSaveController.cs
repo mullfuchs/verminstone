@@ -85,8 +85,25 @@ public class GameSaveController : MonoBehaviour {
 
 			gameSave.NPCProfiles.Add (profile);
 		}
+        //yes I KNOW i'm repeating code here I DON"T CARE dingus
+        GameObject[] NonWorkers = GameObject.FindGameObjectsWithTag("dialog_npc");
+        for (int i = 0; i < NonWorkers.Length; i++)
+        {
+            NPCstats stats = NonWorkers[i].GetComponent<NPCstats>();
 
-		GameObject player = GameObject.Find ("Player");
+            NPCProfile profile = new NPCProfile();
+            profile.NPCName = stats.NPCName;
+            profile.NPCHealth = stats.health;
+            profile.NPCPosition = NonWorkers[i].transform.position;
+            profile.NPCDaysTalkedTo = stats.daysTalkedTo;
+            profile.NPCDialogIndex = stats.NPCScriptIndex;
+            profile.statRecord = stats.statObject;
+
+            gameSave.NonWorkerNPCProfiles.Add(profile);
+        }
+
+
+        GameObject player = GameObject.Find ("Player");
         GameObject campEventController = GameObject.Find("CampEventController");
 
 		gameSave.PlayerPosition = player.transform.position;
@@ -120,10 +137,15 @@ public class GameSaveController : MonoBehaviour {
 		gameObject.transform.GetComponent<CampEventController> ().StartDay ();
 
 		foreach (NPCProfile profile in data.NPCProfiles) {
-			campPopController.LoadNPCFromSave (profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex, profile.statRecord);
+			campPopController.LoadNPCFromSave (profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex, profile.statRecord, true);
 		}
 
-		GameObject.Find ("GameQuestObjects").GetComponent<CampQuestController> ().LoadCompletedQuests ( data.CompletedQuests );
+        foreach (NPCProfile profile in data.NonWorkerNPCProfiles)
+        {
+            campPopController.LoadNPCFromSave(profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex, profile.statRecord, false);
+        }
+
+        GameObject.Find ("GameQuestObjects").GetComponent<CampQuestController> ().LoadCompletedQuests ( data.CompletedQuests );
         GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().RestoreQuestVariables(data.QuestVariableReference);
 
         GameObject.Find("Dialogue").GetComponent<ExampleVariableStorage>().LoadVariablesFromSaveFile(data.DialogViariableReferece);

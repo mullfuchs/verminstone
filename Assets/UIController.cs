@@ -91,8 +91,13 @@ public class UIController : MonoBehaviour {
 
     public void ResetNPCCards()
     {
+        foreach(Transform child in NPCPrefabContainer.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
         //clear existing cards
         //make new ones via setup
+        SetupNPCCards();
     }
 
 	private void SetUpInventoryIcons(GameObject npc, GameObject card){

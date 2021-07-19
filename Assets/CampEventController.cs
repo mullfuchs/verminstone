@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class CampEventController : MonoBehaviour {
 
@@ -18,6 +19,8 @@ public class CampEventController : MonoBehaviour {
 
 	public GameObject[] NPCMiners = new GameObject[5];
 	public GameObject[] NPCCarriers = new GameObject[5];
+
+    public GameObject[] NonWorkerNPCs;
 
 	private GameObject[] AllNPCs;
 	private GameObject canvas;
@@ -97,6 +100,30 @@ public class CampEventController : MonoBehaviour {
 	{
 		
 	}
+
+    public void HideNonWorkerNPCs()
+    {
+        NonWorkerNPCs = GameObject.FindGameObjectsWithTag("dialog_npc");
+        foreach(GameObject g in NonWorkerNPCs)
+        {
+            g.SetActive(false);
+        }
+    }
+
+    public void UnHideWorkerNPCs()
+    {
+        if(NonWorkerNPCs.Length > 0)
+        {
+            foreach (GameObject g in NonWorkerNPCs)
+            {
+                if(g != null)
+                {
+                    g.SetActive(true);
+                    g.GetComponent<NavMeshAgent>().Warp(gameObject.GetComponent<CampPopulationController>().NonWorkerNPCSpawnPoint.transform.position);
+                }
+            }
+        }
+    }
 
     public void NPCDialogEnabled(bool enabled)
     {
@@ -239,6 +266,7 @@ public class CampEventController : MonoBehaviour {
 	public void EnterCaveSequence(){
         //set cave entrance object to be inactive
         //caveExitObject.LoadLevelOnEnter = false;
+        HideNonWorkerNPCs();
         GameObject.Find("Player").GetComponent<NPCTeamHandler>().rebuildNPCLists();
         GameObject.Find("Player").GetComponent<PlayerEventController>().dialogOpened = false;
         gameObject.GetComponent<VStoneEconomyObject>().SetDailyQuota();
@@ -249,6 +277,7 @@ public class CampEventController : MonoBehaviour {
 
 	public void ExitCaveSequence(){
 		print ("exiting cave");
+        UnHideWorkerNPCs();
 		gameObject.GetComponent<CampNarrativeController>().timeOfDay = CampNarrativeController.timePeriod.Evening;
 		gameObject.GetComponent<CampNarrativeController> ().UpdateNPCNarratives ();
 		//gameObject.GetComponent<CampNarrativeController> ().UpdateKeyNPCNarratives ();
@@ -315,5 +344,15 @@ public class CampEventController : MonoBehaviour {
         GameObject.Find("Player").GetComponent<PlayerEventController>().dialogOpened = false;
     }
 
+    public void MakeNonWorkernPCsIdle()
+    {
+        if(NonWorkerNPCs.Length > 0)
+        {
+            foreach(GameObject npc in NonWorkerNPCs)
+            {
+                npc.GetComponent<NPCOverworldController>().idling = true;
+            }
+        }
+    }
 
 }

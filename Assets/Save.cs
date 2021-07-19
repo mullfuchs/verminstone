@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Save {
 	public List<NPCProfile> NPCProfiles = new List<NPCProfile>();
+    public List<NPCProfile> NonWorkerNPCProfiles = new List<NPCProfile>();
 
 	public SerializableVector3 PlayerPosition;
 	public float PlayerHealth;

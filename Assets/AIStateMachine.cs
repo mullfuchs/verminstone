@@ -287,13 +287,15 @@ public class AIStateMachine : MonoBehaviour {
         if (other.tag == "BagTool" && other.gameObject == getTargetObject())
         {
             //drop current back object
+
+            ChannelerIFollow.GetComponent<NPCTeamHandler>().addCollectedVStone(other.gameObject.GetComponent<Vstonebag>().currentVStoneAmount);
             gameObject.GetComponent<NPCInventory>().DropBackItem();
             //equip this object
             gameObject.GetComponent<NPCInventory>().EquipBackItem(other.gameObject);
             //update vstone total
             vStoneAmount += other.gameObject.GetComponent<Vstonebag>().currentVStoneAmount;
-            ChannelerIFollow.GetComponent<NPCTeamHandler>().addCollectedVStone(other.gameObject.GetComponent<Vstonebag>().currentVStoneAmount);
-            GameObject.Find("Canvas").GetComponent<UIController>().SetupNPCCards();
+            GameObject.Find("Canvas").GetComponent<UIController>().ResetNPCCards();
+            targets.Dequeue();
         }
 
 		if (other.gameObject.name == "EquipmentReturn") {

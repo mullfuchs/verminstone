@@ -15,6 +15,7 @@ public class CampPopulationController : MonoBehaviour {
 
 	public Transform PlayerSpawnPoint;
 	public Transform NPCSpawnPoint;
+    public Transform NonWorkerNPCSpawnPoint;
 
 	public TextAsset NPCStatCSV;
 
@@ -76,7 +77,20 @@ public class CampPopulationController : MonoBehaviour {
 			AssociateNewNPCWithNPCStatRecord (blankNPC);
 			giveNPCCorrectBodyAndTexture (blankNPC);
 		}
+        while(NPCRecordStatIndex < NPCRecords.Length)
+        {
+            SpawnNonWorkerNPC();
+        }
+
 	}
+
+    public void SpawnNonWorkerNPC()
+    {
+        GameObject blankNPC = Instantiate(blankNPCPrefab, NonWorkerNPCSpawnPoint.position, Quaternion.identity);
+        AssociateNewNPCWithNPCStatRecord(blankNPC);
+        giveNPCCorrectBodyAndTexture(blankNPC);
+        blankNPC.tag = "dialog_npc";
+    }
 
 	public void ReplaceDeadNPCs(){
 		//get count of npcs
@@ -94,7 +108,7 @@ public class CampPopulationController : MonoBehaviour {
 		//then set up a narrative for it
 	}
 
-	public void LoadNPCFromSave(string name, float healthpoints, Vector3 position, int daysTalkedTo, int scriptIndex, NPCStatRecord statRecord){
+	public void LoadNPCFromSave(string name, float healthpoints, Vector3 position, int daysTalkedTo, int scriptIndex, NPCStatRecord statRecord, bool isWorker){
 		GameObject npc = Instantiate (blankNPCPrefab, position, Quaternion.identity);
 
 		NPCstats stats = npc.GetComponent<NPCstats> ();
@@ -109,6 +123,10 @@ public class CampPopulationController : MonoBehaviour {
 		stats.loadNPCStatFromRecord (statRecord);
 		giveNPCCorrectBodyAndTexture (npc);
 
+        if (!isWorker)
+        {
+            npc.tag = "dialog_npc";
+        }
 		//npc.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().agent.Warp ( position );
 	}
 

@@ -20,9 +20,13 @@ public class NPCBedController : MonoBehaviour {
 	public void AssignBeds(){
 		npcBeds = GameObject.FindGameObjectsWithTag("bed");
 		GameObject[] npcs = GameObject.FindGameObjectsWithTag("WorkerNPC");
-		for(int i = 0; i < npcs.Length; i++){
-			//if (npcs [i] != null) {
-				npcs [i].GetComponent<NPCstats> ().bedIndex = i;
+        GameObject[] nonWorkerNPCs = GameObject.FindGameObjectsWithTag("dialog_npc");
+        GameObject[] combinedNPCs = new GameObject[npcs.Length + nonWorkerNPCs.Length];
+        System.Array.Copy(npcs, combinedNPCs, npcs.Length);
+        System.Array.Copy(nonWorkerNPCs, 0, combinedNPCs, npcs.Length, nonWorkerNPCs.Length);
+        for (int i = 0; i < combinedNPCs.Length; i++){
+            //if (npcs [i] != null) {
+                combinedNPCs[i].GetComponent<NPCstats> ().bedIndex = i;
 			//}
 		}
 	}
