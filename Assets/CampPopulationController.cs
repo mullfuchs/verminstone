@@ -102,8 +102,9 @@ public class CampPopulationController : MonoBehaviour {
 		CampNarrativeController narrativeController = gameObject.GetComponent<CampNarrativeController> ();
 
 		for (int i = 0; i < replacementNPCCount; i++) {
-			GameObject npc = SpawnNPCPrefab ();
-			narrativeController.SetUpNewNPCNarrative (npc);
+            GameObject[] nonWorkers = GameObject.FindGameObjectsWithTag("dialog_npc");
+            int randIndex = UnityEngine.Random.Range(0, nonWorkers.Length);
+            nonWorkers[randIndex].tag = "WorkerNPC";
 		}
 		//then set up a narrative for it
 	}
