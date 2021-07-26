@@ -77,6 +77,7 @@ public class EquipUIController : MonoBehaviour {
             uiCard.GetComponent<ItemEquipCardController>().assignItemtoCard(g);
 			ItemCards.Add (uiCard);
         }
+        ItemCards[0].GetComponentInChildren<UnityEngine.UI.Button>().Select();
     }
     
     public void CreateAndDisplayItemCategories()
@@ -129,6 +130,7 @@ public class EquipUIController : MonoBehaviour {
         {
             g.GetComponent<NPCEquipCardController>().EquipButton.GetComponent<Button>().interactable = true;
 
+            /*
             if (item.GetComponent<EquippableItem> ().ForBack) {
 				g.GetComponent<NPCEquipCardController> ().BackEquipButton.GetComponent<Button> ().interactable = true;
 			} else if (item.GetComponent<EquippableItem> ().ForHand) {
@@ -136,6 +138,7 @@ public class EquipUIController : MonoBehaviour {
 			} else {
 				g.GetComponent<NPCEquipCardController> ().HeadEquipButton.GetComponent<Button> ().interactable = true;
 			}
+            */
         }
     }
 
@@ -145,6 +148,7 @@ public class EquipUIController : MonoBehaviour {
         {
             g.GetComponent<NPCEquipCardController>().EquipButton.GetComponent<Button>().interactable = false; 
 
+            /*
             if (g.GetComponent<NPCEquipCardController>() != null)
             {
                 g.GetComponent<NPCEquipCardController>().BackEquipButton.GetComponent<Button>().interactable = false;
@@ -153,7 +157,7 @@ public class EquipUIController : MonoBehaviour {
 
 				g.GetComponent<NPCEquipCardController>().HeadEquipButton.GetComponent<Button>().interactable = false;
             }
-
+            */
      
         }
     }
@@ -165,8 +169,8 @@ public class EquipUIController : MonoBehaviour {
     {
         npc.GetComponent<NPCInventory>().EquipHandItem(currentItem);
 
-        currentItem = null;
-        resetAllButtons();
+       // currentItem = null;
+       // resetAllButtons();
         checkForValidLoadout();
     }
 
@@ -174,16 +178,16 @@ public class EquipUIController : MonoBehaviour {
     {
         npc.GetComponent<NPCInventory>().EquipBackItem(currentItem);
         UpdateCarryCapacityUI();
-        currentItem = null;
-        resetAllButtons();
+       // currentItem = null;
+       // resetAllButtons();
         checkForValidLoadout();
     }
 
 	public void equipHeadItemToNPC(GameObject npc)
 	{
 		npc.GetComponent<NPCInventory> ().EquipHeadItem (currentItem);
-		currentItem = null;
-		resetAllButtons ();
+		//currentItem = null;
+		//resetAllButtons ();
         checkForValidLoadout();
     }
 
@@ -245,6 +249,86 @@ public class EquipUIController : MonoBehaviour {
     void enableLaunchButton(bool canInteract)
     {
         LaunchButton.GetComponent<Button>().interactable = canInteract;
+    }
+
+    public void SetUpControllerNavigation()
+    {
+        //UNITY IS BEING A LITTLE SCRIMBLO BIMBLO
+        //I guess I can get the equip buttons and see if there's a corrosponding select button, if not set it to the last one
+        //for the first 
+
+        for (int cardIndex = 0; cardIndex < NPCCards.Count; cardIndex++)
+        {
+            if (cardIndex < ItemCards.Count)
+            {
+                //OMGF
+                Navigation buttonNav = NPCCards[cardIndex].GetComponent<NPCEquipCardController>().EquipButton.GetComponent<Button>().navigation;
+                buttonNav.selectOnRight = ItemCards[cardIndex].GetComponentInChildren<Button>();
+                buttonNav.selectOnUp = getSelectOnUp(NPCCards, cardIndex, LaunchButton);
+                buttonNav.selectOnDown = getSelectOnDown(NPCCards, cardIndex, LaunchButton);
+                NPCCards[cardIndex].GetComponent<NPCEquipCardController>().EquipButton.GetComponent<Button>().navigation = buttonNav;
+            }
+            else
+            {
+                Navigation buttonNav = NPCCards[cardIndex].GetComponent<NPCEquipCardController>().EquipButton.GetComponent<Button>().navigation;
+                buttonNav.selectOnRight = ItemCards[NPCCards.Count].GetComponentInChildren<Button>();
+                buttonNav.selectOnUp = getSelectOnUp(NPCCards, cardIndex, LaunchButton);
+                buttonNav.selectOnDown = getSelectOnDown(NPCCards, cardIndex, LaunchButton);
+                NPCCards[cardIndex].GetComponent<NPCEquipCardController>().EquipButton.GetComponent<Button>().navigation = buttonNav;
+            }
+        }
+
+        for (int cardIndex = 0; cardIndex < ItemCards.Count; cardIndex++)
+        {
+            if (cardIndex < NPCCards.Count)
+            {
+                Navigation buttonNav = ItemCards[cardIndex].GetComponentInChildren<Button>().navigation;
+                buttonNav.selectOnLeft = NPCCards[cardIndex].GetComponentInChildren<Button>();
+                buttonNav.selectOnUp = getSelectOnUp(ItemCards, cardIndex, LaunchButton);
+                buttonNav.selectOnDown = getSelectOnDown(ItemCards, cardIndex, LaunchButton);
+                ItemCards[cardIndex].GetComponentInChildren<Button>().navigation = buttonNav;
+            }
+            else
+            {
+                Navigation buttonNav = ItemCards[cardIndex].GetComponentInChildren<Button>().navigation;
+                buttonNav.selectOnLeft = NPCCards[NPCCards.Count].GetComponentInChildren<Button>();
+                buttonNav.selectOnUp = getSelectOnUp(ItemCards, cardIndex, LaunchButton);
+                buttonNav.selectOnDown = getSelectOnDown(ItemCards, cardIndex, LaunchButton);
+                ItemCards[cardIndex].GetComponentInChildren<Button>().navigation = buttonNav;
+            }
+        }
+
+    }
+
+    Button getSelectOnUp(List<GameObject> buttonStack, int currentIndex, GameObject DefaultButton)
+    {
+        //given the index, give the button above it in order, if it's the first, set it to the default button
+        if(currentIndex == 0)
+        {
+            if(DefaultButton.GetComponent<Button>() != null)
+            {
+                return DefaultButton.GetComponent<Button>();
+            }
+        }
+        else
+        {
+            return buttonStack[currentIndex - 1].GetComponentInChildren<Button>();
+        }
+        return null;
+    }
+
+    Button getSelectOnDown(List<GameObject> buttonStack, int currentIndex, GameObject DefaultButton)
+    {
+        //given index, give button below it in order, if it's the last, set it to default button;
+        if (currentIndex == (buttonStack.Count - 1) && DefaultButton.GetComponent<Button>() != null)
+        {
+            return DefaultButton.GetComponent<Button>();
+        }
+        else
+        {
+            return buttonStack[currentIndex + 1].GetComponentInChildren<Button>();
+        }
+        return null;
     }
 
 }

@@ -71,6 +71,7 @@ public class EscapeUIController : MonoBehaviour
         playerCard.GetComponent<NPCEscapeCardController>().assignNPCtoCard(playerObj);
         playerCard.GetComponent<NPCEscapeCardController>().parentEscapeUIController = this;
         NPCCards.Add(playerCard);
+        NPCCards[0].GetComponentInChildren<UnityEngine.UI.Button>().Select();
         //display em
         //display how much digging's been done
     }

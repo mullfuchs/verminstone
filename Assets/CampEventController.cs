@@ -322,7 +322,9 @@ public class CampEventController : MonoBehaviour {
 		if (!vEco.meetsDailyQuota (vEco.getDailyTotal ())) {
 			canvas.GetComponent<EquipUIController> ().CreateAndDisplayItemCards ();
 			canvas.GetComponent<EquipUIController> ().CreateAndDisplayNPCcards ();
-		}
+            canvas.GetComponent<EquipUIController>().SetUpControllerNavigation();
+
+        }
         //create and display equip UI
         //disable playerinput
     }

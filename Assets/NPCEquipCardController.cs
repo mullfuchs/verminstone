@@ -23,14 +23,14 @@ public class NPCEquipCardController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Button handequipbtn = HandEquipButton.GetComponent<Button>();
-        Button backequipbtn = BackEquipButton.GetComponent<Button>();
-		Button headequipbtn = HeadEquipButton.GetComponent<Button> ();
+       // Button handequipbtn = HandEquipButton.GetComponent<Button>();
+      //  Button backequipbtn = BackEquipButton.GetComponent<Button>();
+	//	Button headequipbtn = HeadEquipButton.GetComponent<Button> ();
         Button equipbtn = EquipButton.GetComponent<Button>();
 
-        handequipbtn.onClick.AddListener(EquipHandObject);
-        backequipbtn.onClick.AddListener(EquipBackObject);
-		headequipbtn.onClick.AddListener (EquipHeadObject);
+       // handequipbtn.onClick.AddListener(EquipHandObject);
+       // backequipbtn.onClick.AddListener(EquipBackObject);
+		//headequipbtn.onClick.AddListener (EquipHeadObject);
 
         equipbtn.onClick.AddListener(EquipItemToNPC);
 

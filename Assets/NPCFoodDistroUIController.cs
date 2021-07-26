@@ -48,6 +48,7 @@ public class NPCFoodDistroUIController : MonoBehaviour {
         playerUICard.GetComponent<NPCFoodCardController>().parentFoodDistroObject = this;
 		NPCCards.Add (playerUICard);
 		playerUICard.GetComponent<NPCFoodCardController> ().updateFoodCardUI ();
+        NPCCards[0].GetComponentInChildren<UnityEngine.UI.Button>().Select();
 	}
 
 	public void cleanUpFoodUI(){
