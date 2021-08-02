@@ -269,6 +269,7 @@ public class CampEventController : MonoBehaviour {
         HideNonWorkerNPCs();
         GameObject.Find("Player").GetComponent<NPCTeamHandler>().rebuildNPCLists();
         GameObject.Find("Player").GetComponent<PlayerEventController>().dialogOpened = false;
+        FindObjectOfType<PlayerEventController>().SetPlayerMovement(true);
         gameObject.GetComponent<VStoneEconomyObject>().SetDailyQuota();
         caveEntrance.GetComponent<CaveEntrance>().enterCaveAndStartRun();
 		//caveEntrance.SetActive(false);
@@ -311,6 +312,7 @@ public class CampEventController : MonoBehaviour {
             canvas = GameObject.Find("Canvas");
         }	
 		canvas.GetComponent<NPCFoodDistroUIController> ().cleanUpFoodUI ();
+        FindObjectOfType<PlayerEventController>().SetPlayerMovement(true);
         GameObject.Find("Player").GetComponent<PlayerEventController>().dialogOpened = false;
     }
 
@@ -331,6 +333,7 @@ public class CampEventController : MonoBehaviour {
 
 	public void EndEquipAreaSequence(){
         GameObject.Find("Player").GetComponent<PlayerEventController>().dialogOpened = false;
+        FindObjectOfType<PlayerEventController>().SetPlayerMovement(true);
         canvas.GetComponent<EquipUIController> ().cleanUpItemAndNPCCards ();
 	}
 
@@ -343,6 +346,7 @@ public class CampEventController : MonoBehaviour {
     public void EndTunnelDigSequence()
     {
         canvas.GetComponent<EscapeUIController>().CleanUpEscapeUI();
+        FindObjectOfType<PlayerEventController>().SetPlayerMovement(true);
         GameObject.Find("Player").GetComponent<PlayerEventController>().dialogOpened = false;
     }
 

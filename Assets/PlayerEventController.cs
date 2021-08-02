@@ -122,7 +122,7 @@ public class PlayerEventController : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider other){
-		if (other.tag == "bed" && Input.GetKeyDown(KeyCode.Space) && canEndDay) {
+		if (other.tag == "bed" && Input.GetButtonDown("Action") && canEndDay) {
 			print ("Ending day");
 			canEndDay = false;
 			CampEventControllerInstance.EndDay ();
@@ -140,14 +140,17 @@ public class PlayerEventController : MonoBehaviour {
                 case "MessHall":
                     CampEventControllerInstance.StartMessHallSequence();
                     dialogOpened = true;
+                    SetPlayerMovement(false);
                     break;
                 case "EquipArea":
                     CampEventControllerInstance.StartEquipAreaSequence();
                     dialogOpened = true;
+                    SetPlayerMovement(false);
                     break;
                 case "TunnelDigArea":
                     CampEventControllerInstance.StartTunnelDigSequence();
                     dialogOpened = true;
+                    SetPlayerMovement(false);
                     break;
                 default:
                     break;
@@ -187,5 +190,10 @@ public class PlayerEventController : MonoBehaviour {
             CampEventControllerInstance.EndTunnelDigSequence();
             dialogOpened = false;
         }
+    }
+
+    public void SetPlayerMovement(bool canMove)
+    {
+        gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl>().can_move = canMove;
     }
 }

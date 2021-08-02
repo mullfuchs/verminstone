@@ -146,9 +146,11 @@ namespace Yarn.Unity
 			// Signal that we're starting up.
 			yield return StartCoroutine(this.dialogueUI.DialogueStarted());
 
-			// Get lines, options and commands from the Dialogue object,
-			// one at a time.
-			foreach (Yarn.Dialogue.RunnerResult step in dialogue.Run(startNode)) {
+
+            // Get lines, options and commands from the Dialogue object,
+            // one at a time.
+
+            foreach (Yarn.Dialogue.RunnerResult step in dialogue.Run(startNode)) {
 
 				if (step is Yarn.Dialogue.LineResult) {
 

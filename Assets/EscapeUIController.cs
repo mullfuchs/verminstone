@@ -11,6 +11,9 @@ public class EscapeUIController : MonoBehaviour
 
     public GameObject TunnelDisplay;
 
+    public GameObject EscapeButton;
+    public GameObject ExitButton;
+
     private GameObject[] NPCs;
 
     private List<GameObject> NPCCards;
@@ -72,6 +75,7 @@ public class EscapeUIController : MonoBehaviour
         playerCard.GetComponent<NPCEscapeCardController>().parentEscapeUIController = this;
         NPCCards.Add(playerCard);
         NPCCards[0].GetComponentInChildren<UnityEngine.UI.Button>().Select();
+        SetUpControllerNavigation();
         //display em
         //display how much digging's been done
     }
@@ -117,5 +121,57 @@ public class EscapeUIController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetUpControllerNavigation()
+    {
+        Navigation escapeButtonNav = EscapeButton.GetComponent<Button>().navigation;
+        escapeButtonNav.selectOnDown = ExitButton.GetComponent<Button>();
+        escapeButtonNav.selectOnUp = NPCCards[NPCCards.Count - 1].GetComponent<NPCEscapeCardController>().digButton;
+        ExitButton.GetComponent<Button>().navigation = escapeButtonNav;
+
+        Navigation exitButtonNav = ExitButton.GetComponent<Button>().navigation;
+        exitButtonNav.selectOnDown = NPCCards[0].GetComponent<NPCEscapeCardController>().digButton;
+        exitButtonNav.selectOnUp = EscapeButton.GetComponent<Button>();
+        ExitButton.GetComponent<Button>().navigation = exitButtonNav;
+
+        for (int cardIndex = 0; cardIndex < NPCCards.Count; cardIndex++)
+        {
+            Navigation buttonNav = NPCCards[cardIndex].GetComponent<NPCEscapeCardController>().digButton.navigation;
+            buttonNav.selectOnUp = getSelectOnUp(NPCCards, cardIndex, ExitButton);
+            buttonNav.selectOnDown = getSelectOnDown(NPCCards, cardIndex, EscapeButton);
+            NPCCards[cardIndex].GetComponent<NPCEscapeCardController>().digButton.navigation = buttonNav;
+        }
+    }
+
+    Button getSelectOnUp(List<GameObject> buttonStack, int currentIndex, GameObject DefaultButton)
+    {
+        //given the index, give the button above it in order, if it's the first, set it to the default button
+        if (currentIndex == 0)
+        {
+            if (DefaultButton.GetComponent<Button>() != null)
+            {
+                return DefaultButton.GetComponent<Button>();
+            }
+        }
+        else
+        {
+            return buttonStack[currentIndex - 1].GetComponentInChildren<Button>();
+        }
+        return null;
+    }
+
+    Button getSelectOnDown(List<GameObject> buttonStack, int currentIndex, GameObject DefaultButton)
+    {
+        //given index, give button below it in order, if it's the last, set it to default button;
+        if (currentIndex == (buttonStack.Count - 1) && DefaultButton.GetComponent<Button>() != null)
+        {
+            return DefaultButton.GetComponent<Button>();
+        }
+        else
+        {
+            return buttonStack[currentIndex + 1].GetComponentInChildren<Button>();
+        }
+        return null;
     }
 }

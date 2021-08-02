@@ -15,6 +15,10 @@ public class NPCFoodCardController : MonoBehaviour {
 	public GameObject healthBar;
 	public GameObject staminaBar;
 
+    public Button healButton;
+
+    public Image portrait;
+
 	// Use this for initialization
 	void Start () {
 		//Get the ui elements attached to this thing
@@ -35,16 +39,18 @@ public class NPCFoodCardController : MonoBehaviour {
 		healthBar.GetComponent<FillableBarController> ().SetMaxValue (stats.maxHealth);
 		healthBar.GetComponent<FillableBarController> ().UpdateCurrentValue (stats.health);
 
-		staminaBar.GetComponent<FillableBarController> ().SetMaxValue (stats.maxStamina);
-		staminaBar.GetComponent<FillableBarController> ().UpdateCurrentValue (stats.stamina);
+		//staminaBar.GetComponent<FillableBarController> ().SetMaxValue (stats.maxStamina);
+		//staminaBar.GetComponent<FillableBarController> ().UpdateCurrentValue (stats.stamina);
 
 
         healthBar.GetComponent<Image>().fillAmount = (npcHealth.healthPoints / npcHealth.maxHealth);
-        staminaBar.GetComponent<Image>().fillAmount = (stats.stamina / stats.maxStamina);
+        //staminaBar.GetComponent<Image>().fillAmount = (stats.stamina / stats.maxStamina);
 
 		nameText.GetComponent<Text> ().text = stats.name;
-		moodText.GetComponent<Text> ().text = stats.mood;
-	}
+        //moodText.GetComponent<Text> ().text = stats.mood;
+
+        portrait.sprite = associatedNPC.GetComponent<NPCstats>().DialogPortraits[0];
+    }
 
 	public void assignNPCtoCard(GameObject npc){
 		associatedNPC = npc;

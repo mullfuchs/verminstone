@@ -56,6 +56,7 @@ namespace Yarn.Unity.Example{
                     {
                         CurrentNPC.GetComponent<NPCOverworldController>().idling = false;
                     }
+                    FindObjectOfType<PlayerEventController>().SetPlayerMovement(false);
 
                     FindObjectOfType<DialogueRunner>().StartDialogue(CurrentNPC.GetComponent<NPC>().talkToNode);
                     FindObjectOfType<DialogPortraitController>().populateDialogPortraits(CurrentNPC.GetComponent<NPCstats>().DialogPortraits, gameObject.GetComponent<NPCstats>().DialogPortraits);
@@ -99,6 +100,7 @@ namespace Yarn.Unity.Example{
 
         public void ReleaseNPCPlayerIsTalkingTo()
         {
+            FindObjectOfType<PlayerEventController>().SetPlayerMovement(true);
             canTalkToNPCs = true;
             if(CurrentNPC != null && CurrentNPC.GetComponent<NPCOverworldController>() != null)
             {

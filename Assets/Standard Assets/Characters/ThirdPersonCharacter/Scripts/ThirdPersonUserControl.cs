@@ -12,7 +12,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_CamForward;             // The current forward direction of the camera
         private Vector3 m_Move;
         private bool m_Jump = false;                      // the world-relative desired move direction, calculated from the camForward and user input.
-
+        public bool can_move = true;
         
         private void Start()
         {
@@ -68,7 +68,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 #endif
 
             // pass all parameters to the character control script
-            m_Character.Move(m_Move, crouch, m_Jump);
+            if(can_move)
+            {
+                m_Character.Move(m_Move, crouch, m_Jump);
+            }
+            else
+            {
+                m_Character.Move(Vector3.zero, false, false);
+            }
             m_Jump = false;
         }
     }

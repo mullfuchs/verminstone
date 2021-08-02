@@ -99,7 +99,14 @@ public class CampNarrativeController : MonoBehaviour {
 		print ("setting up portraits");
 		GameObject[] npcs;
 		npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
-		foreach (GameObject npc in npcs) {
+
+        GameObject[] NonWorkers = GameObject.FindGameObjectsWithTag("dialog_npc");
+  
+        GameObject[] combinedNPCs = new GameObject[npcs.Length + NonWorkers.Length];
+        System.Array.Copy(npcs, combinedNPCs, npcs.Length);
+        System.Array.Copy(NonWorkers, 0, combinedNPCs, npcs.Length, NonWorkers.Length);
+
+        foreach (GameObject npc in combinedNPCs) {
 			//get name of npc, if it exists
 			//maybe make an object that holds the npc name and associated portraits
 			string name = npc.GetComponent<NPCstats>().NPCName;
@@ -131,7 +138,7 @@ public class CampNarrativeController : MonoBehaviour {
         NonWorkernpcs = GameObject.FindGameObjectsWithTag("dialog_npc");
         foreach (GameObject npc in NonWorkernpcs)
         {
-            string startnode = GetStartNode(npc.GetComponent<NPCstats>().NPCName, npc.GetComponent<NPCstats>().daysTalkedTo, timeOfDay);
+            string startnode = GetStartNode(npc.GetComponent<Yarn.Unity.Example.NPC>().characterName, npc.GetComponent<NPCstats>().daysTalkedTo, timeOfDay);
             //print ("start node" + startnode);
             npc.GetComponent<Yarn.Unity.Example.NPC>().talkToNode = startnode;
         }
