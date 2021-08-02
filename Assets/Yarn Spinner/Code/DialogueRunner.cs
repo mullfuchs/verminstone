@@ -149,7 +149,10 @@ namespace Yarn.Unity
 
             // Get lines, options and commands from the Dialogue object,
             // one at a time.
+            if(NodeExists(startNode))
+            {
 
+            
             foreach (Yarn.Dialogue.RunnerResult step in dialogue.Run(startNode)) {
 
 				if (step is Yarn.Dialogue.LineResult) {
@@ -189,8 +192,13 @@ namespace Yarn.Unity
 				}
 			}
 
-			// No more results! The dialogue is done.
-			yield return StartCoroutine (this.dialogueUI.DialogueComplete ());
+            }
+            else
+            {
+                Debug.Log("Dialog node doesn't exist");
+            }
+            // No more results! The dialogue is done.
+            yield return StartCoroutine (this.dialogueUI.DialogueComplete ());
 
 			// Clear the 'is running' flag. We do this after DialogueComplete returns,
 			// to allow time for any animations that might run while transitioning

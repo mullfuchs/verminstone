@@ -9,6 +9,8 @@ public class WarpPlayerAndNPCsToZoneOnEnter : MonoBehaviour {
 
 	public bool ForceNPCsToFollowOnExit;
     public bool warpOnlyOne = false;
+
+    public bool canTalkAfterWarping = true;
 	// Use this for initialization
 	void Start () {
 		
@@ -40,8 +42,8 @@ public class WarpPlayerAndNPCsToZoneOnEnter : MonoBehaviour {
 		//get objects
 		GameObject player = GameObject.Find("Player");
 		GameObject[] npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
-
-		if (ForceNPCsToFollowOnExit) {
+        player.GetComponent<Yarn.Unity.Example.DialogTrigger>().canTalkToNPCs = canTalkAfterWarping;
+        if (ForceNPCsToFollowOnExit) {
 			player.GetComponent<NPCTeamHandler> ().resetNPCTargets ();
 		}
 
@@ -66,6 +68,7 @@ public class WarpPlayerAndNPCsToZoneOnEnter : MonoBehaviour {
         yield return new WaitForSeconds(2.0f);
         player.transform.position = TargetZone.GetComponent<WarpPlayerAndNPCsToZoneOnEnter>().point.position;
         GameObject.Find("MultipurposeCameraRig").GetComponent<CameraFade>().StartFade(Color.clear, 2.0f);
+       
     }
 
     public void WarpNPCToZone(GameObject g)

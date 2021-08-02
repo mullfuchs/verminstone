@@ -70,7 +70,7 @@ public class PlayerEventController : MonoBehaviour {
 
             //start the end day timer in the campevent controller??? Sure???
 			if (CampEventControllerInstance.GetComponent<CampNarrativeController> ().timeOfDay == CampNarrativeController.timePeriod.Evening) {
-				gameObject.GetComponent<Yarn.Unity.Example.DialogTrigger> ().canTalkToNPCs = true;
+				//gameObject.GetComponent<Yarn.Unity.Example.DialogTrigger> ().canTalkToNPCs = true;
                 CampEventControllerInstance.NPCDialogEnabled(true);
             }
 
