@@ -155,6 +155,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
             //EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
         } else {
             FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue("Overseer.Exit.Failure1");
+            Sprite[] OverseerPortraits = GameObject.Find("CampEventController").GetComponent<CampNarrativeController>().getPotraitsForKeyNPC("Overseer");
+            FindObjectOfType<DialogPortraitController>().populateDialogPortraits(GameObject.Find("Player").GetComponent<NPCstats>().DialogPortraits, OverseerPortraits);
 
             while (hasExitDialogCompleted != true)
             {
@@ -163,7 +165,10 @@ public class ExitCaveNPCEventController : MonoBehaviour {
             hasExitDialogCompleted = false;
 
             print ("go back 2 the caves");
-			EventController.GetComponent<CampEventController> ().caveEntrance.GetComponent<CaveEntrance> ().LoadLevelOnEnter = true;
+            //hack? setting the thing to true, so that when the revised release npc trigger is set, it flips it to false, rather than hard setting it to true every time
+            GameObject.Find("Player").GetComponent<Yarn.Unity.Example.DialogTrigger>().canTalkToNPCs = true;
+
+            EventController.GetComponent<CampEventController> ().caveEntrance.GetComponent<CaveEntrance> ().LoadLevelOnEnter = true;
 			// caveEntrance.SetActive (true);
 			VStoneEcoInstance.resetDailyTotal ();
 
@@ -185,5 +190,6 @@ public class ExitCaveNPCEventController : MonoBehaviour {
     {
         print("finishing exit dialog");
         hasExitDialogCompleted = true;
+        GameObject.Find("Player").GetComponent<Yarn.Unity.Example.DialogTrigger>().canTalkToNPCs = false;
     }
 }

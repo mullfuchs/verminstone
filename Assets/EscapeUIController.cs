@@ -82,6 +82,7 @@ public class EscapeUIController : MonoBehaviour
 
     public void CleanUpEscapeUI()
     {
+        FindObjectOfType<PlayerEventController>().SetPlayerMovement(true);
         EscapeObjectInstance.metersOfTunnelDug = metersOfTunnel;
         //remove everything
         foreach(GameObject g in NPCCards)
@@ -128,7 +129,7 @@ public class EscapeUIController : MonoBehaviour
         Navigation escapeButtonNav = EscapeButton.GetComponent<Button>().navigation;
         escapeButtonNav.selectOnDown = ExitButton.GetComponent<Button>();
         escapeButtonNav.selectOnUp = NPCCards[NPCCards.Count - 1].GetComponent<NPCEscapeCardController>().digButton;
-        ExitButton.GetComponent<Button>().navigation = escapeButtonNav;
+        EscapeButton.GetComponent<Button>().navigation = escapeButtonNav;
 
         Navigation exitButtonNav = ExitButton.GetComponent<Button>().navigation;
         exitButtonNav.selectOnDown = NPCCards[0].GetComponent<NPCEscapeCardController>().digButton;

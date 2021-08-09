@@ -66,7 +66,7 @@ public class PlayerEventController : MonoBehaviour {
 		if (Other.tag == "CampArea") {
 			//start the npc idle stuff
 			CampEventControllerInstance.gameObject.GetComponent<NPCBedController>().AssignBeds();
-            CampEventControllerInstance.MakeNonWorkernPCsIdle();
+            //CampEventControllerInstance.MakeNonWorkernPCsIdle();
 
             //start the end day timer in the campevent controller??? Sure???
 			if (CampEventControllerInstance.GetComponent<CampNarrativeController> ().timeOfDay == CampNarrativeController.timePeriod.Evening) {
@@ -143,9 +143,12 @@ public class PlayerEventController : MonoBehaviour {
                     SetPlayerMovement(false);
                     break;
                 case "EquipArea":
-                    CampEventControllerInstance.StartEquipAreaSequence();
-                    dialogOpened = true;
-                    SetPlayerMovement(false);
+                    if (GameObject.Find("CampEventController").GetComponent<CampNarrativeController>().timeOfDay == CampNarrativeController.timePeriod.Morning)
+                    {
+                        CampEventControllerInstance.StartEquipAreaSequence();
+                        dialogOpened = true;
+                        SetPlayerMovement(false);
+                    }
                     break;
                 case "TunnelDigArea":
                     CampEventControllerInstance.StartTunnelDigSequence();

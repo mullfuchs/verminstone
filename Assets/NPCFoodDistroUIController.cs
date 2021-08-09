@@ -71,6 +71,7 @@ public class NPCFoodDistroUIController : MonoBehaviour {
 				GameObject button = x.transform.Find ("Button").gameObject;
 				button.GetComponent<UnityEngine.UI.Button> ().interactable = false;
 			}
+            ExitButton.GetComponent<Button>().Select();
 		}
 	}
 

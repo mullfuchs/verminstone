@@ -101,7 +101,7 @@ namespace Yarn.Unity.Example{
         public void ReleaseNPCPlayerIsTalkingTo()
         {
             FindObjectOfType<PlayerEventController>().SetPlayerMovement(true);
-            canTalkToNPCs = true;
+            canTalkToNPCs = !canTalkToNPCs;
             if(CurrentNPC != null && CurrentNPC.GetComponent<NPCOverworldController>() != null)
             {
                 CurrentNPC.GetComponent<NPCOverworldController>().idling = true;
