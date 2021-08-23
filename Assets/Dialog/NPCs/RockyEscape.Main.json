@@ -1,0 +1,62 @@
+[
+	{
+		"title": "RockyEscape.Start",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nOh hello\nI didn't expect to see you here\nbut I told your friend over there to at least try to remain hidden\nI guess the secret's out\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nwhat secret?\nThat you were going to escape without the rest of us?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nI don't know, probably\nEscape, from a place like this, isn't impossible\nhowever\nprogress on our tunnel here has been incredibly slow\nto the point where I don't think we will ever make it\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nOk, I can help, we can all help\nthere's other people in our camp, we could all get out!\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nah shhh shhh\nI know, you're enthusiastic about this\nthe end may be in sight, but it's still so far away\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nwhat's stopping us from all digging this thing now?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nFolks talk, folks are ... pursuaded to talk\nyou need to know whom you can trust\n[[...|RockyEscape.QuestionMenu]]",
+		"position": {
+			"x": -6,
+			"y": 326
+		},
+		"colorID": 0
+	},
+	{
+		"title": "RockyEscape.DigLengthQuestion",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nHow long are we supposed to dig?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nIt's somewhere between 500 and 600 meters of rock\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nWhat!?!? that's....\n...that's almost impossible\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nMost escape attempts fail because people can't get through the rock\nIt's too much for them, they get found out or die from something else\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nFive hundred meters, that will take\nmonths?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nIf you can convince more people to join\nthat'll certainly make quicker work of it\n[[...|RockyEscape.QuestionMenu]]",
+		"position": {
+			"x": 600,
+			"y": 137
+		},
+		"colorID": 0
+	},
+	{
+		"title": "RockyEscape.LifeForceQuestion",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nSo how do we dig this thing?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nwell, there's a reason \nThe ground we're on is pretty hard\nand the rock we have to dig through is really hard\nit'll really strain anyone who attempts to dig through it\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nlike, how?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nanyone who tries to dig will lose some HP\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nlike hitpoints?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nsomething like that\n[[...|RockyEscape.QuestionMenu]]",
+		"position": {
+			"x": 592,
+			"y": 385
+		},
+		"colorID": 0
+	},
+	{
+		"title": "RockyEscape.InventoryQuestion",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nI come to you every few days for upgrades\nwhy not just give us everything we need right away?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nWell, they've determined that high price equipment is a privelage\na privelage for the lucky few who live long enough\nwhy waste the money on someone who's going to die\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nbut, they'd get a better yeild, more of us would survive\nsurely it would be cheaper to give us better equipment\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nI don't know how economics work!\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nbut, you're a shop keeper aren't you?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nyes, we would make more if you had better shovels, swords, maybe even guns\nbut the fact is, the thought of losing a valuable piece of equipment to them is...\nunbearable\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nbut, we're living things, you can't tell me they value inanimate objects over us...\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nI mean...look around my dear\n[[...|RockyEscape.QuestionMenu]]",
+		"position": {
+			"x": 308,
+			"y": 646
+		},
+		"colorID": 0
+	},
+	{
+		"title": "RockyEscape.QuestionMenu",
+		"tags": "",
+		"body": "Any other questions for me\n[[Yeah, how much do we need to dig?|RockyEscape.DigLengthQuestion]]\n[[How difficult will it be to dig?|RockyEscape.LifeForceQuestion]]\n[[You're the shopkeeper, why can't I get better stuff?|RockyEscape.InventoryQuestion]]\n[[No, I want to start digging|RockyEscape.ResolveDialog]]",
+		"position": {
+			"x": 303,
+			"y": 311
+		},
+		"colorID": 0
+	},
+	{
+		"title": "RockyEscape.ResolveDialog",
+		"tags": "",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nOk. Just walk up to the thing and dig\nOur associate here will also help\n<<set $escape_active to true>>\n<<setPlayerStartEscapeFlag CampAreaSecretEscape>>\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nAre you gonna fuckin help?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\noh uhh, absolutly",
+		"position": {
+			"x": 303,
+			"y": -25
+		},
+		"colorID": 0
+	}
+]
