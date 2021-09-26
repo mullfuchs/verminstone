@@ -35,8 +35,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private AudioSource m_AudioSource;
         private float footAudioTimer = 0;
 
+        public Animator fallbackAnimator;
+
         void Start()
 		{
+
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
 			m_Capsule = GetComponent<CapsuleCollider>();
@@ -222,14 +225,20 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			{
 				m_GroundNormal = hitInfo.normal;
 				m_IsGrounded = true;
-				m_Animator.applyRootMotion = true;
+                if(m_Animator != null)
+                {
+                    m_Animator.applyRootMotion = true;
+                }
 			}
 			else
 			{
 				m_IsGrounded = false;
 				m_GroundNormal = Vector3.up;
-				m_Animator.applyRootMotion = false;
-			}
+                if (m_Animator != null)
+                {
+                    m_Animator.applyRootMotion = false;
+                }
+            }
 		}
 
         private void SimulateFootSteps()

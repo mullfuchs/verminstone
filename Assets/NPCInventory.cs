@@ -18,9 +18,9 @@ public class NPCInventory : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        handTransform = FindDeepChild(gameObject.transform, "hand_R");
-        backTransform = FindDeepChild(gameObject.transform, "neck");
-		headTransform = FindDeepChild (gameObject.transform, "head");
+        handTransform = FindDeepChild(gameObject.transform, "hand.R");
+        backTransform = FindDeepChild(gameObject.transform, "spine.003");
+		headTransform = FindDeepChild (gameObject.transform, "spine.006_end");
 
         if(ObjectHeldInHands != null)
         {

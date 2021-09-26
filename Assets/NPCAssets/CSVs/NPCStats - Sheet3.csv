@@ -1,11 +1,11 @@
 Name,Type (rabbit; fox; cat; dog),Color (1-6),HP,Attack,Defense,Bravery,Run Speed
-Astreil,rabbit,1,100,5,6,10,8
+Astreil,fox,0,100,5,6,10,8
 Basil,fox,1,100,4,7,5,8
 Gregory,fox,2,100,6,6,6,7
-Krimble,rabbit,2,100,3,3,3,8
-Lentil,rabbit,3,100,7,4,1,7
-Memphis,cat,1,100,5,6,10,8
-Murmur,cat,2,100,4,7,5,8
-Pen,dog,1,100,6,6,6,7
-Rin,dog,2,100,3,3,3,8
-Ursine,dog,3,100,7,4,1,7
+Krimble,rabbit,3,100,3,3,3,8
+Lentil,rabbit,4,100,7,4,1,7
+Memphis,cat,5,100,5,6,10,8
+Murmur,cat,6,100,4,7,5,8
+Pen,dog,7,100,6,6,6,7
+Rin,dog,8,100,3,3,3,8
+Ursine,dog,9,100,7,4,1,7

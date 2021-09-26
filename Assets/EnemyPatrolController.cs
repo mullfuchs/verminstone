@@ -15,7 +15,7 @@ public class EnemyPatrolController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (targets.Length >= 2) {
+		if (targets.Length >= 1) {
 			SetupPatrol (targets);
 		} else {
 			SetupPatrolWithGameObjects (GameObject.FindGameObjectsWithTag ("Spawner"));

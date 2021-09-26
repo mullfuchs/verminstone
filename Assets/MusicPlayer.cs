@@ -29,7 +29,7 @@ public class MusicPlayer : MonoBehaviour
     {
         if (!currentSong.isPlaying)
         {
-            if(currentSongIndex + 1 > Songs.Length)
+            if(currentSongIndex + 1 >= Songs.Length)
             {
                 currentSongIndex = 0;
             }

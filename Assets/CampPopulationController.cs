@@ -206,12 +206,26 @@ public class CampPopulationController : MonoBehaviour {
         string NPCType = npc.GetComponent<NPCstats> ().statObject.AnimalType;
 		int furType = npc.GetComponent<NPCstats> ().statObject.FurType;
 		GameObject body;
+        
+        switch (NPCType)
+        {
+            case "rabbit":
+                body = Instantiate(NPCBodyTypes[0], npc.transform);
+                break;
+            case "fox":
+                body = Instantiate(NPCBodyTypes[1], npc.transform);
+                break;
+            case "cat":
+                body = Instantiate(NPCBodyTypes[2], npc.transform);
+                break;
+            case "dog":
+                body = Instantiate(NPCBodyTypes[3], npc.transform);
+                break;
+            default:
+                body = Instantiate(NPCBodyTypes[0], npc.transform);
+                break;
+        }
 
-		if (NPCType == "fox") {
-			body = Instantiate (NPCBodyTypes [1], npc.transform);
-		} else {
-			body = Instantiate (NPCBodyTypes [0], npc.transform);
-		}
 
 		body.GetComponentInChildren<SkinnedMeshRenderer> ().material = NPCBodyMaterials [furType];
 
