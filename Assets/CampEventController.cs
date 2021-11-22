@@ -238,7 +238,9 @@ public class CampEventController : MonoBehaviour {
 	public void StartDay(){
 
         refreshReferences();
-		gameObject.GetComponent<CampPopulationController> ().ReplaceDeadNPCs ();
+        //gameObject.GetComponent<CampPopulationController> ().ReplaceDeadNPCs ();
+
+        gameObject.GetComponent<CampPopulationController>().shuffleNPCAssignments();
 
 		gameObject.GetComponent<CampNarrativeController> ().AdvanceDialogDayOfNPCs ();
 		//gameObject.GetComponent<CampNarrativeController> ().AdvanceDialoyDayOfKeyNPCs ();

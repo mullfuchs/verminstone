@@ -60,6 +60,8 @@ namespace Yarn.Unity.Example{
 
                     FindObjectOfType<DialogueRunner>().StartDialogue(CurrentNPC.GetComponent<NPC>().talkToNode);
                     FindObjectOfType<DialogPortraitController>().populateDialogPortraits(CurrentNPC.GetComponent<NPCstats>().DialogPortraits, gameObject.GetComponent<NPCstats>().DialogPortraits);
+
+                    FindObjectOfType<ZoomNFocus>().focusOnPointBelowPlayer();
                 }
             }
         }
@@ -101,6 +103,7 @@ namespace Yarn.Unity.Example{
         public void ReleaseNPCPlayerIsTalkingTo()
         {
             FindObjectOfType<PlayerEventController>().SetPlayerMovement(true);
+            FindObjectOfType<ZoomNFocus>().resetCameraRotation();
             canTalkToNPCs = !canTalkToNPCs;
             if(CurrentNPC != null && CurrentNPC.GetComponent<NPCOverworldController>() != null)
             {

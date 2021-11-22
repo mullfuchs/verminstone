@@ -25,7 +25,7 @@ public class TriggerPromptOnEnter : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player" && canTalkToNPC)
         {
-            PromptObject.SetActive(true);
+            //PromptObject.SetActive(true);
         }
     }
 
@@ -34,7 +34,7 @@ public class TriggerPromptOnEnter : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player" && canTalkToNPC)
         {
-            PromptObject.SetActive(false);
+           // PromptObject.SetActive(false);
         }
     }
 }

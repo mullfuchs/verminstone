@@ -7,7 +7,9 @@ public class ZoomNFocus : MonoBehaviour {
 	//Transform target;
 	private Transform origin;
 	private Quaternion originRot;
+    public float rotationAmount = 11.0f;
 	public float transitionDuration = 2.5f;
+    private bool isRotated = false;
 
 	// Use this for initialization
 	void Awake () {
@@ -20,25 +22,52 @@ public class ZoomNFocus : MonoBehaviour {
 		
 	}
 
-	public void focusOnNPC(Transform _target){
-		origin = transform;
-		StartCoroutine (Transition (origin, _target));
-	}
+    public void focusOnPointBelowPlayer()
+    {
+        //find player transform
+        GameObject player = GameObject.Find("Player");
+        //make a transform that is N units below player
+        GameObject cameraLookAtObject = new GameObject();
+        cameraLookAtObject.transform.position = player.transform.position;
+        cameraLookAtObject.transform.Translate(new Vector3(0, 0, 10), player.transform);
+        //then IDK, run focusOnTransform
+        focusOnTransform(cameraLookAtObject.transform);
 
-	public void reset(){
-		Transform currentTransform = transform;
-		StartCoroutine(ResetPositon(currentTransform));
+    }
+
+	public void focusOnTransform(Transform _target){
+        if(!isRotated)
+        {
+            origin = GameObject.Find("MainCamera").transform;
+            origin.Rotate(rotationAmount, 0, 0);
+            isRotated = !isRotated;
+        }
+        //StartCoroutine (Transition (origin, _target));
+    }
+
+	public void resetCameraRotation(){
+        if(isRotated)
+        {
+            origin = GameObject.Find("MainCamera").transform;
+            origin.Rotate(-rotationAmount, 0, 0);
+            isRotated = !isRotated;
+        }
+
+       // Transform currentTransform = transform;
+		//StartCoroutine(ResetPositon(currentTransform));
 	}
 
 	IEnumerator Transition(Transform start, Transform end)
 	{
-		Quaternion targetRotation = Quaternion.LookRotation (end.position - start.position);
+        GameObject camera = GameObject.Find("MainCamera");
+        Quaternion targetRotation = Quaternion.Euler(70, 0, 0); // Quaternion.LookRotation (end.position - start.position);
 		float t = 0.0f;
 		while (t < 1.0f)
 		{
 			t += Time.deltaTime * (Time.timeScale/transitionDuration);
-			//transform.LookAt(Vector3.Lerp(start, end, t));
-			transform.rotation = Quaternion.Slerp(start.rotation, targetRotation, t);
+            //transform.LookAt(Vector3.Lerp(start, end, t));
+            camera.transform.Rotate(70, 0, 0);
+           // camera.transform.rotation = Quaternion.Slerp(start.rotation, targetRotation, t);
 			yield return 0;
 		}
 

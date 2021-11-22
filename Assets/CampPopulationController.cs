@@ -109,6 +109,30 @@ public class CampPopulationController : MonoBehaviour {
 		//then set up a narrative for it
 	}
 
+    public void shuffleNPCAssignments()
+    {
+        GameObject[] workerNPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+        GameObject[] dialogNPCs = GameObject.FindGameObjectsWithTag("dialog_npc");
+        //combine and set all tags to None
+        GameObject[] combined = new GameObject[workerNPCs.Length + dialogNPCs.Length];
+        Array.Copy(workerNPCs, combined, workerNPCs.Length);
+        Array.Copy(dialogNPCs, 0, combined, workerNPCs.Length, dialogNPCs.Length);
+        //randomize order?
+        ShuffleArray(combined);
+        //set first five to worker npc, set next 5 to dialognpc
+
+        for(int i = 0; i < 4; i++)
+        {
+            combined[i].tag = "WorkerNPC";
+        }
+
+        for(int i = 5; i < combined.Length; i++)
+        {
+            combined[i].tag = "dialog_npc";
+        }
+
+    }
+
 	public void LoadNPCFromSave(string name, float healthpoints, Vector3 position, int daysTalkedTo, int scriptIndex, NPCStatRecord statRecord, bool isWorker){
 		GameObject npc = Instantiate (blankNPCPrefab, position, Quaternion.identity);
 
@@ -196,7 +220,19 @@ public class CampPopulationController : MonoBehaviour {
 		return i;
 	}
 
-	private void AssociateNewNPCWithNPCStatRecord(GameObject npc){
+    void ShuffleArray(GameObject[] texts)
+    {
+        // Knuth shuffle algorithm :: courtesy of Wikipedia :)
+        for (int t = 0; t < texts.Length; t++)
+        {
+            GameObject tmp = texts[t];
+            int r = UnityEngine.Random.Range(t, texts.Length);
+            texts[t] = texts[r];
+            texts[r] = tmp;
+        }
+    }
+
+    private void AssociateNewNPCWithNPCStatRecord(GameObject npc){
 		npc.GetComponent<NPCstats> ().loadNPCStatFromRecord (NPCRecords [NPCRecordStatIndex]);
 		NPCRecordStatIndex++;
 	}

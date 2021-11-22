@@ -21,6 +21,16 @@ public class RealTimeDebug : MonoBehaviour
         {
             KillNPCWithBag();
         }
+
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            ChangeCameraFocus();
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            ResetCameraFocus();
+        }
     }
 
     void KillNPCWithBag()
@@ -32,5 +42,18 @@ public class RealTimeDebug : MonoBehaviour
         int randIndex = Random.Range(0, gameObjects.Count);
         GameObject npcToKill = gameObjects[randIndex];
         npcToKill.GetComponent<health>().AddDamage(1000000); //hey
+    }
+
+    void ChangeCameraFocus()
+    {
+        Debug.Log("TestingCameraMovement");
+        GameObject cameraRig = GameObject.Find("MultipurposeCameraRig");
+        cameraRig.GetComponent<ZoomNFocus>().focusOnPointBelowPlayer();
+    }
+
+    void ResetCameraFocus()
+    {
+        GameObject cameraRig = GameObject.Find("MultipurposeCameraRig");
+        cameraRig.GetComponent<ZoomNFocus>().resetCameraRotation();
     }
 }
