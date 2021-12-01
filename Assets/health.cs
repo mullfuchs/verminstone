@@ -62,8 +62,12 @@ public class health : MonoBehaviour {
 
 		if (TrackOnTheUI) {
 			controller = GameObject.Find ("Canvas").GetComponent<UIController> ();
-			controller.updateBarMaxValue (controller.HealthBarObject, maxHealth);
-			controller.updateBar (controller.HealthBarObject, healthPoints);
+            if(controller != null)
+            {
+                controller.updateBarMaxValue(controller.HealthBarObject, maxHealth);
+                controller.updateBar(controller.HealthBarObject, healthPoints);
+            }
+
 		}
         
 

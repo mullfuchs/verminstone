@@ -61,8 +61,8 @@ public class EnemyTeamHandler : MonoBehaviour {
 		//randSpawner.GetComponent<SpawnObjects> ().SpawnEnemy (SwarmEnemy, MinerList.ToArray (), floorLevel, floorLevel);
 
 
-		if (floorLevel >= SpawnRatesForFloors.Length) {
-			MakeSwarmFromSpawnRate (closestsSpawner, MinerList.ToArray(), SpawnRatesForFloors [SpawnRatesForFloors.Length]);
+		if (SpawnRatesForFloors.Length > 0 && floorLevel >= SpawnRatesForFloors.Length) {
+			MakeSwarmFromSpawnRate (closestsSpawner, MinerList.ToArray(), SpawnRatesForFloors [SpawnRatesForFloors.Length - 1]);
 		} else {
 			MakeSwarmFromSpawnRate (closestsSpawner, MinerList.ToArray(), SpawnRatesForFloors [floorLevel]);
 		}
@@ -81,6 +81,11 @@ public class EnemyTeamHandler : MonoBehaviour {
     {
         ListOfSpawnersOnFloor = GameObject.FindGameObjectsWithTag("Spawner");
         //return ListOfSpawnersOnFloor[0];
+        if (ListOfSpawnersOnFloor.Length <= 0)
+        {
+            return null;
+        }
+
         GameObject closestSpawn = ListOfSpawnersOnFloor[0];
         
         float distanceToSpawn = Vector3.Distance(closestSpawn.transform.position, targetPosition);
@@ -101,8 +106,13 @@ public class EnemyTeamHandler : MonoBehaviour {
 	private GameObject findARandomSpawner()
 	{
 		ListOfSpawnersOnFloor = GameObject.FindGameObjectsWithTag ("Spawner");
-		GameObject randomSpawn = ListOfSpawnersOnFloor [Random.Range(0, ListOfSpawnersOnFloor.Length)];
+        if(ListOfSpawnersOnFloor.Length == 0)
+        {
+            return null;
+        }
 
+		GameObject randomSpawn = ListOfSpawnersOnFloor [Random.Range(0, ListOfSpawnersOnFloor.Length)];
+        
 		return randomSpawn;
 	}
 

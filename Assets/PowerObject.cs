@@ -175,7 +175,10 @@ public class PowerObject : MonoBehaviour {
 			AddPowerAmount(other.gameObject.GetComponent<VStoneObject>().energy);
 
             xp += 1;
-			uiController.updateBar(uiController.XPBarObject, xp);
+            if(uiController != null)
+            {
+                uiController.updateBar(uiController.XPBarObject, xp);
+            }
 			//uiController.updateText (uiController.XPText, "Power Level: " + powerLevel);
 
             if(xp > powerThreshold)
