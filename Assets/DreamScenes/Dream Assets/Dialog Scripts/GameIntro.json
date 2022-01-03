@@ -1,0 +1,12 @@
+[
+	{
+		"title": "GameIntro.StartNode",
+		"tags": "",
+		"body": "<<changeSceneObject SceneShotController EmmaVoid>>\n<<changeSceneShot SceneShotController shot1>>\nSo this is how it ends for me\nI always knew this might happen\n<<changeSceneShot SceneShotController shot2>>\nit ate away at me in the back of my mind all my life\n<<changeSceneObject SceneShotController EmmaCage>>\nand now \n<<changeSceneObject SceneShotController DetectorScene>>\nit's happened\n<<changeSceneShot SceneShotController shot3>>\n...\nDo you know what this is?\n<<changeSceneShot SceneShotController shot2>>\nNo\n<<changeSceneShot SceneShotController shot4>>\nIt's a Magnussen detector, stupid\nDo you know what that means?\n<<changeSceneShot SceneShotController shot2>>\nNo\n<<changeSceneShot SceneShotController shot5>>\nIt means you react to the Theta Crystals\nwhich means, you get to find them\n<<changeSceneShot SceneShotController shot2>>\nWhat?\n<<changeSceneShot SceneShotController shot6>>\nUnderneath this facility is a huge cave filled with Theta Crystals\nwe use Theta Crystals as a part of the metal refining process\nYou're going to be a part of a crew that finds and brings them back to the surface\n<<changeSceneShot SceneShotController shot2>>\n...Ok\n<<changeSceneShot SceneShotController shot5>>\nMills, get this one in the training corral.",
+		"position": {
+			"x": 541,
+			"y": 259
+		},
+		"colorID": 0
+	}
+]
