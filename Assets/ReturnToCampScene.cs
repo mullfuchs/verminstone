@@ -32,5 +32,13 @@ public class ReturnToCampScene : MonoBehaviour {
 
     }
 
+    [Yarn.Unity.YarnCommand("goToScene")]
+    public void goToScene(string sceneName)
+    {
+        DontDestroyOnLoad(transform.gameObject);
+        SceneManager.LoadScene(sceneName);
+        Destroy(transform.gameObject);
+    }
+
 
 }

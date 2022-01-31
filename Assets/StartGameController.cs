@@ -18,7 +18,7 @@ public class StartGameController : MonoBehaviour {
 	}
 
 	public void StartNewGame(){
-		SceneManager.LoadScene ("Camp");
+		SceneManager.LoadScene ("Intro Scene");
         loadGameFromSave = false;
 	}
 
