@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 //spawn in player and NPCs when they die or whatever
 
@@ -111,6 +112,14 @@ public class CampPopulationController : MonoBehaviour {
 
     public void shuffleNPCAssignments()
     {
+
+        //retrying with lists
+       // List<GameObject> workerNPCs = new List<GameObject>();
+      //  List<GameObject> dialogNPCs = new List<GameObject>();
+
+      //  List<GameObject> combinedNPCs = workerNPCs.AddRange(dialogNPCs);
+
+
         GameObject[] workerNPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
         GameObject[] dialogNPCs = GameObject.FindGameObjectsWithTag("dialog_npc");
         //combine and set all tags to None
@@ -121,15 +130,30 @@ public class CampPopulationController : MonoBehaviour {
         ShuffleArray(combined);
         //set first five to worker npc, set next 5 to dialognpc
 
-        for(int i = 0; i < 4; i++)
+        int counter = 0;
+        foreach(GameObject npc in combined)
+        {
+            if(counter >= 5)
+            {
+                npc.tag = "dialog_npc";
+            }
+            else
+            {
+                npc.tag = "WorkerNPC";
+                counter++;
+            }
+        }
+        /*
+        for(int i = 0; i <= 4; i++)
         {
             combined[i].tag = "WorkerNPC";
         }
 
-        for(int i = 5; i < combined.Length; i++)
+        for(int i = 5; i <= combined.Length; i++)
         {
             combined[i].tag = "dialog_npc";
         }
+        */
 
     }
 

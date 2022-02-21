@@ -55,6 +55,12 @@ public class EquipUIController : MonoBehaviour {
 
         NPCCardParent.SetActive(true);
         NPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+
+        foreach (GameObject x in NPCCards)
+        {
+            Destroy(x);
+        }
+
         foreach (GameObject g in NPCs)
         {
             GameObject uiCard = Instantiate(NPCCardPrefab, NPCCardParent.transform, false);
@@ -70,6 +76,12 @@ public class EquipUIController : MonoBehaviour {
     {
         Items = GameObject.Find("CampEventController").GetComponent<CampInventoryController>().getInventoryList();
         ItemCardParent.SetActive(true);
+
+        foreach (GameObject x in ItemCards)
+        {
+            Destroy(x);
+        }
+
         foreach (GameObject g in Items)
         {
             GameObject uiCard = Instantiate(ItemCardPrefab, ItemCardParent.transform, false);
@@ -271,7 +283,7 @@ public class EquipUIController : MonoBehaviour {
             else
             {
                 Navigation buttonNav = NPCCards[cardIndex].GetComponent<NPCEquipCardController>().EquipButton.GetComponent<Button>().navigation;
-                buttonNav.selectOnRight = ItemCards[NPCCards.Count].GetComponentInChildren<Button>();
+                buttonNav.selectOnRight = ItemCards[NPCCards.Count - 1].GetComponentInChildren<Button>();
                 buttonNav.selectOnUp = getSelectOnUp(NPCCards, cardIndex, LaunchButton);
                 buttonNav.selectOnDown = getSelectOnDown(NPCCards, cardIndex, LaunchButton);
                 NPCCards[cardIndex].GetComponent<NPCEquipCardController>().EquipButton.GetComponent<Button>().navigation = buttonNav;
@@ -291,7 +303,7 @@ public class EquipUIController : MonoBehaviour {
             else
             {
                 Navigation buttonNav = ItemCards[cardIndex].GetComponentInChildren<Button>().navigation;
-                buttonNav.selectOnLeft = NPCCards[NPCCards.Count].GetComponentInChildren<Button>();
+                buttonNav.selectOnLeft = NPCCards[NPCCards.Count - 1].GetComponentInChildren<Button>();
                 buttonNav.selectOnUp = getSelectOnUp(ItemCards, cardIndex, LaunchButton);
                 buttonNav.selectOnDown = getSelectOnDown(ItemCards, cardIndex, LaunchButton);
                 ItemCards[cardIndex].GetComponentInChildren<Button>().navigation = buttonNav;
