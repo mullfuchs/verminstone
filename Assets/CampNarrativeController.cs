@@ -160,13 +160,25 @@ public class CampNarrativeController : MonoBehaviour {
 	//if they've been talked to, adance the days theyve been talked to by 1
 		//god this sucks
 		GameObject[] npcs;
-		npcs = GameObject.FindGameObjectsWithTag ("WorkerNPC");
+        npcs = GameObject.FindGameObjectsWithTag("WorkerNPC");
 		foreach (GameObject npc in npcs) {
 			if (npc.GetComponent<NPCstats> ().hasBeenTalkedToToday) {
 				npc.GetComponent<NPCstats> ().daysTalkedTo += 1;
 			}
 		}
-	}
+
+        GameObject[] dialognpcs;
+        dialognpcs = GameObject.FindGameObjectsWithTag("dialog_npc");
+        foreach (GameObject npc in dialognpcs)
+        {
+            if (npc.GetComponent<NPCstats>().hasBeenTalkedToToday)
+            {
+                npc.GetComponent<NPCstats>().daysTalkedTo += 1;
+            }
+        }
+
+
+    }
 
 	public void AdvanceDialogDayOfKeyNPCs(){
 		foreach (GameObject keyNPC in KeyNPCs) {
@@ -187,18 +199,22 @@ public class CampNarrativeController : MonoBehaviour {
 	}
 
 	public void SetUpNewNPCNarrative(GameObject npc, int scriptIndex = -1){
-		TextAsset npcScript = getScriptForNPC(npc.GetComponent<NPCstats>().NPCName);
-		npc.GetComponent<Yarn.Unity.Example.NPC> ().scriptToLoad = npcScript;
-		//set character name by, uh, getting the file name and parsing it?
-		string[] dialogNamespace = new string[3];
-		char[] charSeparators = new char[] {'.'};
-		dialogNamespace = npcScript.name.Split (charSeparators, System.StringSplitOptions.None);
-		string characterName = dialogNamespace [0];
-		npc.GetComponent<Yarn.Unity.Example.NPC> ().characterName = characterName;
-		npc.GetComponent<NPCstats>().NPCName = characterName;
-		print ("setting dialog for new char " + characterName);
-        //set up it's portratit
-        SetUpNewNPCPortrait(npc);
+        if(npc.GetComponent<NPCstats>().NPCName != "")
+        {
+            TextAsset npcScript = getScriptForNPC(npc.GetComponent<NPCstats>().NPCName);
+            npc.GetComponent<Yarn.Unity.Example.NPC>().scriptToLoad = npcScript;
+            //set character name by, uh, getting the file name and parsing it?
+            string[] dialogNamespace = new string[3];
+            char[] charSeparators = new char[] { '.' };
+            dialogNamespace = npcScript.name.Split(charSeparators, System.StringSplitOptions.None);
+            string characterName = dialogNamespace[0];
+            npc.GetComponent<Yarn.Unity.Example.NPC>().characterName = characterName;
+            npc.GetComponent<NPCstats>().NPCName = characterName;
+            print("setting dialog for new char " + characterName);
+            //set up it's portratit
+            SetUpNewNPCPortrait(npc);
+        }
+		
 	}
 
     public void SetUpNewNPCPortrait(GameObject npc)

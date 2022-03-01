@@ -79,8 +79,15 @@ public class GameSaveController : MonoBehaviour {
 			profile.NPCName = stats.NPCName;
 			profile.NPCHealth = stats.health;
             profile.NPCPosition = npcs[i].transform.position;
-			profile.NPCDaysTalkedTo = stats.daysTalkedTo;
-			profile.NPCDialogIndex = stats.NPCScriptIndex;
+            if(stats.hasBeenTalkedToToday)
+            {
+                profile.NPCDaysTalkedTo = stats.daysTalkedTo + 1;
+            }
+            else
+            {
+                profile.NPCDaysTalkedTo = stats.daysTalkedTo;
+            }
+            profile.NPCDialogIndex = stats.NPCScriptIndex;
 			profile.statRecord = stats.statObject;
 
 			gameSave.NPCProfiles.Add (profile);
@@ -95,7 +102,16 @@ public class GameSaveController : MonoBehaviour {
             profile.NPCName = stats.NPCName;
             profile.NPCHealth = stats.health;
             profile.NPCPosition = NonWorkers[i].transform.position;
-            profile.NPCDaysTalkedTo = stats.daysTalkedTo;
+
+            if (stats.hasBeenTalkedToToday)
+            {
+                profile.NPCDaysTalkedTo = stats.daysTalkedTo + 1;
+            }
+            else
+            {
+                profile.NPCDaysTalkedTo = stats.daysTalkedTo;
+            }
+
             profile.NPCDialogIndex = stats.NPCScriptIndex;
             profile.statRecord = stats.statObject;
 
@@ -109,7 +125,7 @@ public class GameSaveController : MonoBehaviour {
 		gameSave.PlayerPosition = player.transform.position;
 		gameSave.PlayerHealth = player.GetComponent<health> ().healthPoints;
         //gameSave.DaysElapsed = GameObject.Find ("CampEventController").GetComponent<CampEventController> ().day;
-        gameSave.DaysElapsed = campEventController.GetComponent<CampEventController>().day;
+        gameSave.DaysElapsed = campEventController.GetComponent<CampEventController>().day + 1; //incrementign here because day increments after save file is created
 
         //weapon/upgrade levels
         gameSave.WeaponLevel = campEventController.GetComponent<CampInventoryController>().weaponLevel;
@@ -134,9 +150,10 @@ public class GameSaveController : MonoBehaviour {
 
         //set the day
         gameObject.transform.GetComponent<CampEventController>().day = data.DaysElapsed;
-		gameObject.transform.GetComponent<CampEventController> ().StartDay ();
+        gameObject.transform.GetComponent<CampNarrativeController>().day = data.DaysElapsed;
+        GameObject.Find("DayCounter").GetComponent<DayCountController>().UpdateDayText(data.DaysElapsed);
 
-		foreach (NPCProfile profile in data.NPCProfiles) {
+        foreach (NPCProfile profile in data.NPCProfiles) {
 			campPopController.LoadNPCFromSave (profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex, profile.statRecord, true);
 		}
 
@@ -144,6 +161,8 @@ public class GameSaveController : MonoBehaviour {
         {
             campPopController.LoadNPCFromSave(profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex, profile.statRecord, false);
         }
+
+        gameObject.transform.GetComponent<CampEventController>().StartDay();
 
         GameObject.Find ("GameQuestObjects").GetComponent<CampQuestController> ().LoadCompletedQuests ( data.CompletedQuests );
         GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().RestoreQuestVariables(data.QuestVariableReference);

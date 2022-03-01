@@ -42,7 +42,7 @@
 	{
 		"title": "RockyEscape.QuestionMenu",
 		"tags": "",
-		"body": "Any other questions for me\n[[Yeah, how much do we need to dig?|RockyEscape.DigLengthQuestion]]\n[[How difficult will it be to dig?|RockyEscape.LifeForceQuestion]]\n[[You're the shopkeeper, why can't I get better stuff?|RockyEscape.InventoryQuestion]]\n[[No, I want to start digging|RockyEscape.ResolveDialog]]",
+		"body": "Any other questions for me\n[[Yeah, how much do we need to dig?|RockyEscape.DigLengthQuestion]]\n[[You're the shopkeeper, why can't I get better stuff?|RockyEscape.InventoryQuestion]]\n[[No, I want to start digging|RockyEscape.ResolveDialog]]",
 		"position": {
 			"x": 303,
 			"y": 311

@@ -18,6 +18,12 @@ public class DayCountController : MonoBehaviour
         counterText.text = "Day: " + campNarrativeController.day;
     }
 
+    public void UpdateDayText(int day)
+    {
+        Text counterText = gameObject.GetComponent<Text>();
+        counterText.text = "Day: " + day;
+    }
+
     // Update is called once per frame
     void Update()
     {
