@@ -19,6 +19,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         [SerializeField] private float m_StepInterval;
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private float footsetpInterval;
+        [SerializeField] private float audioLevel = 0.25f; 
 
         Rigidbody m_Rigidbody;
 		Animator m_Animator;
@@ -261,6 +262,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // excluding sound at index 0
             int n = Random.Range(0, m_FootstepSounds.Length);
             m_AudioSource.clip = m_FootstepSounds[n];
+            m_AudioSource.volume = audioLevel;
             m_AudioSource.PlayOneShot(m_AudioSource.clip);
             // move picked sound to index 0 so it's not picked next time
             m_FootstepSounds[n] = m_FootstepSounds[0];

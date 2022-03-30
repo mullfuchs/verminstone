@@ -203,7 +203,9 @@ public class CampEventController : MonoBehaviour {
 	}
 
 	IEnumerator EndDayCycle(){
-		//GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().SetScreenOverlayColor (Color.black);
+        //GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().SetScreenOverlayColor (Color.black);
+        gameObject.GetComponent<CampPopulationController>().WarpNPCsToBed();
+
 		gameObject.GetComponent<GameSaveController>().SaveGame();
         
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.black, 2.0f);
@@ -263,7 +265,14 @@ public class CampEventController : MonoBehaviour {
         }
         gameObject.GetComponent<CampInventoryController>().EnableShopKeeper(true);
 
-	}
+        GameObject[] idleNPCs = GameObject.FindGameObjectsWithTag("dialog_npc");
+        foreach(GameObject npc in idleNPCs)
+        {
+            npc.GetComponent<NPCOverworldController>().DoIdleRoutine();
+        }
+
+
+    }
 
 	public void EnterCaveSequence(){
         //set cave entrance object to be inactive

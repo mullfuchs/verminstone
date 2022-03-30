@@ -43,6 +43,12 @@ public class PlayerEventController : MonoBehaviour {
         {
             isActionButtonPressed = false;
         }
+
+        if(Input.GetButtonDown("Pause") && dialogOpened == false)
+        {
+            GameObject.Find("Canvas").GetComponent<PauseMenuEnabler>().EnablePauseMenu();
+            dialogOpened = true;
+        }
 	}
 
 	void OnTriggerEnter(Collider Other){
@@ -108,7 +114,7 @@ public class PlayerEventController : MonoBehaviour {
         {
             ///hmmm I could put in a switch here so that the NPC is only able to be talked to once that day, checking the"has been talked to"
             ////becuse that would fix one or two problems, 
-            if(gameObject.GetComponent<Yarn.Unity.Example.DialogTrigger>().canTalkToNPCs)
+            if(gameObject.GetComponent<Yarn.Unity.Example.DialogTrigger>().canTalkToNPCs && Other.gameObject.GetComponentInParent<Yarn.Unity.Example.NPC>().canTalkTo)
             {
                 iconIndicator.sprite = Talkicon;
                 string npcName = Other.GetComponentInParent<NPCstats>().NPCName;

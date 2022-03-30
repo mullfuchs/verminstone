@@ -167,6 +167,8 @@ public class CampPopulationController : MonoBehaviour {
 		stats.health = healthpoints;
 		CampNarrativeController narrativeController = gameObject.GetComponent<CampNarrativeController> ();
 
+        npc.GetComponent<health>().healthPoints = healthpoints;
+
 		narrativeController.SetUpNewNPCNarrative (npc, scriptIndex);
 		print ("Attempting to load " + stats.NPCName);
 		stats.loadNPCStatFromRecord (statRecord);
@@ -176,6 +178,8 @@ public class CampPopulationController : MonoBehaviour {
         {
             npc.tag = "dialog_npc";
         }
+        npc.GetComponent<Yarn.Unity.Example.NPC>().canTalkTo = false;
+
 		//npc.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().agent.Warp ( position );
 	}
 
@@ -254,6 +258,27 @@ public class CampPopulationController : MonoBehaviour {
             texts[t] = texts[r];
             texts[r] = tmp;
         }
+    }
+
+    public void WarpNPCsToBed()
+    {
+        GameObject[] workerNPCs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+        GameObject[] dialogNPCs = GameObject.FindGameObjectsWithTag("dialog_npc");
+
+        foreach(GameObject npc in workerNPCs)
+        {
+            //get npc bed location
+            Vector3 bedPosition = gameObject.GetComponent<NPCBedController>().npcBeds[npc.GetComponent<NPCstats>().bedIndex].transform.position;
+            npc.GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(bedPosition);
+        }
+
+        foreach (GameObject npc in dialogNPCs)
+        {
+            //get npc bed location
+            Vector3 bedPosition = gameObject.GetComponent<NPCBedController>().npcBeds[npc.GetComponent<NPCstats>().bedIndex].transform.position;
+            npc.GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(bedPosition);
+        }
+
     }
 
     private void AssociateNewNPCWithNPCStatRecord(GameObject npc){

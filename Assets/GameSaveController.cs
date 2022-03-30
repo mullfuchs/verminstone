@@ -138,6 +138,13 @@ public class GameSaveController : MonoBehaviour {
         gameSave.QuestVariableReference = GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().GatherQuestVariablesForSave();
         gameSave.DialogViariableReferece = GameObject.Find("Dialogue").GetComponent<ExampleVariableStorage>().GetDialogVariables();
 
+        VStoneEconomyObject vStoneObject = campEventController.GetComponent<VStoneEconomyObject>();
+
+        gameSave.DailyQuota = vStoneObject.DailyQuota;
+        gameSave.YesterdaysQuota = vStoneObject.YesterdaysQuota;
+        gameSave.IncrementAmount = vStoneObject.IncrementAmout;
+        gameSave.VStoneForExtraFood = vStoneObject.VStoneNeededForExtraFood;
+
         currentlyLoadedSave = gameSave;
 
 		return gameSave;
@@ -146,6 +153,7 @@ public class GameSaveController : MonoBehaviour {
 	void LoadGameData(Save data){
 
         CampPopulationController campPopController = GameObject.Find("CampEventController").GetComponent<CampPopulationController>();
+        GameObject campEventController = GameObject.Find("CampEventController");
         campPopController.LoadPlayerFromSave(data.PlayerPosition, data.PlayerHealth);
 
         //set the day
@@ -178,7 +186,28 @@ public class GameSaveController : MonoBehaviour {
         campInventoryController.pickaxeLevel = data.PickaxeLevel;
 
         currentlyLoadedSave = data;
-	}
+
+        GameObject.Find("Player").GetComponent<Yarn.Unity.Example.DialogTrigger>().canTalkToNPCs = true;
+        // gameObject.GetComponent<CampInventoryController>().EnableShopKeeper(false);
+        //  gameObject.GetComponent<CampInventoryController>().EnableShopKeeper(true);
+
+        // update vstone economy
+        VStoneEconomyObject vstoneEcoObject = campEventController.GetComponent<VStoneEconomyObject>();
+
+        vstoneEcoObject.DailyQuota = data.DailyQuota;
+        vstoneEcoObject.YesterdaysQuota = data.YesterdaysQuota;
+        vstoneEcoObject.IncrementAmout = data.IncrementAmount;
+        vstoneEcoObject.VStoneNeededForExtraFood = data.VStoneForExtraFood;
+
+        vstoneEcoObject.IncreaseDailyQuota(data.DaysElapsed);
+
+        //tell npcs to idle
+        GameObject[] idleNPCs = GameObject.FindGameObjectsWithTag("dialog_npc");
+        foreach (GameObject npc in idleNPCs)
+        {
+            npc.GetComponent<NPCOverworldController>().DoIdleRoutine();
+        }
+    }
 
     public void LoadQuestObjects()
     {

@@ -98,7 +98,7 @@ public class NPCOverworldController : MonoBehaviour {
         }
 	}
 
-	void DoIdleRoutine(){
+	public void DoIdleRoutine(){
 		idling = true;
 		idleTime = idlePeriod;
 		npcIdleTargets = buildIdleTargetList ();

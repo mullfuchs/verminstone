@@ -18,6 +18,11 @@ public class Save {
     public int BagLevel;
     public int HelmetLevel;
     public int PickaxeLevel;
+    //vstone economy
+    public float DailyQuota;
+    public float YesterdaysQuota;
+    public float IncrementAmount;
+    public float VStoneForExtraFood;
 }
 
 [System.Serializable]
