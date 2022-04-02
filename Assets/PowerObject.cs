@@ -8,8 +8,15 @@ public class PowerObject : MonoBehaviour {
 	private float powerAmount = 1;
     private float maxPowerAmount = 5;
 	private float regenRate = 0.005f;
+
+    public float healingAmount = 10.0f;
+    public float healingCost = 0.8f;
+    public float healingInterval = 0.3f;
+
 	private bool canRegen = true;
 	private bool healing = false;
+
+    private bool canHeal = true;
 
 	public int powerLevel = 1;
 	public int xp = 1;
@@ -49,41 +56,27 @@ public class PowerObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (powerAmount > maxPowerAmount) {
-			canRegen = false;
+			//canRegen = false;
 		}
 
 		if (powerAmount <= 0) {
-			canRegen = true;
+			//canRegen = true;
 		}
 
 		if (canRegen && !healing) {
-			AddPowerAmount (regenRate);
-			canRegen = false;
-			Invoke ("ResetRegen", 0.2f);
+			//AddPowerAmount (regenRate);
+			//canRegen = false;
+			//Invoke ("ResetRegen", 0.2f);
 		}
 			
-        if (Input.GetButtonDown("HealButton"))
+        if (Input.GetButton("HealButton") && canHeal)
         {
-			if (powerLevel >= 2) {
-				levelDown ();
-				HealingObject.SetActive (true);
-				healing = true;
-			}
+            healNPCIncremental();
+            //healNPCs();
         }
-        if(Input.GetButtonUp("HealButton"))
-        {
-            HealingObject.SetActive(false);
-			healing = false;
-        }
+       
 
-		//healing yourself costs one level, I mean, that makes sense right?
-
-		if (Input.GetButtonDown ("HealSelfButton")) {
-			if (powerLevel >= 2) {
-				levelDown ();
-				gameObject.GetComponent<health> ().AddHealth (100f);
-			}
-		}
+		
 	}
 
 	public void AddPowerAmount(float amount){
@@ -103,7 +96,14 @@ public class PowerObject : MonoBehaviour {
 	public void RemovePowerAmount(float amount){
 		if (powerAmount > 0) {
 			powerAmount -= amount;
-			uiController.updateBar(uiController.PowerBarObject, powerAmount);
+            if (powerAmount == 0)
+            {
+                uiController.updateBar(uiController.PowerBarObject, 0.1f);
+            }
+            else
+            {
+                uiController.updateBar(uiController.PowerBarObject, powerAmount);
+            }
 			setLightIntensity (powerAmount);
 		}
     }
@@ -183,7 +183,7 @@ public class PowerObject : MonoBehaviour {
 
             if(xp > powerThreshold)
             {
-                levelUp();
+               // levelUp();
             }
 
 			this.GetComponent<NPCTeamHandler>().AddStoneToBeMined(other.gameObject);
@@ -201,7 +201,12 @@ public class PowerObject : MonoBehaviour {
 	void setLightIntensity(float powerLevel){
 		if (powerLevel >= 5) {
 			GlowLight.intensity = 5;
-		} else {
+		}
+        else if(powerLevel <= 1)
+        {
+            GlowLight.intensity = 1;
+        }
+        else {
 			GlowLight.intensity = powerLevel;
 		}
 	}
@@ -209,5 +214,48 @@ public class PowerObject : MonoBehaviour {
     public void setGlowLight(bool isOn)
     {
         GlowLight.enabled = isOn;
+    }
+
+    void healNPCs()
+    {
+        //I could probably have a thing that slowly ticks down and takes away a percentage of health, allowing players to slowly heal everyone.
+        float powerPercent = powerAmount / maxPowerAmount;
+
+        GameObject[] npcs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+        foreach(GameObject npc in npcs)
+        {
+            health npcHeath = npc.GetComponent<health>();
+            float npcMaxHealth = npcHeath.maxHealth;
+            npcHeath.AddHealth(npcMaxHealth * powerPercent);
+        }
+
+        health playerHealth = gameObject.GetComponent<health>();
+        float playerMaxHealth = playerHealth.maxHealth;
+        playerHealth.AddHealth(playerMaxHealth * powerPercent);
+
+        RemovePowerAmount(powerAmount);
+    }
+
+    public void resetHeal()
+    {
+        canHeal = true;
+    }
+
+    void healNPCIncremental()
+    {
+        //I guess just heal everyone and then remove a bit of power amount
+        GameObject[] npcs = GameObject.FindGameObjectsWithTag("WorkerNPC");
+        foreach (GameObject npc in npcs)
+        {
+            health npcHeath = npc.GetComponent<health>();
+            float npcMaxHealth = npcHeath.maxHealth;
+            npcHeath.AddHealth(healingAmount);
+        }
+
+        health playerHealth = gameObject.GetComponent<health>();
+        playerHealth.AddHealth(healingAmount);
+        RemovePowerAmount(healingCost);
+        canHeal = false;
+        Invoke("resetHeal", healingInterval);
     }
 }
