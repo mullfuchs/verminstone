@@ -248,12 +248,12 @@ public class PowerObject : MonoBehaviour {
         foreach (GameObject npc in npcs)
         {
             health npcHeath = npc.GetComponent<health>();
-            float npcMaxHealth = npcHeath.maxHealth;
             npcHeath.AddHealth(healingAmount);
         }
 
         health playerHealth = gameObject.GetComponent<health>();
         playerHealth.AddHealth(healingAmount);
+
         RemovePowerAmount(healingCost);
         canHeal = false;
         Invoke("resetHeal", healingInterval);

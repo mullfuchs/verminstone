@@ -23,6 +23,7 @@ public class Save {
     public float YesterdaysQuota;
     public float IncrementAmount;
     public float VStoneForExtraFood;
+    public int ExtraFoodPortions;
 }
 
 [System.Serializable]

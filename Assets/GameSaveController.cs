@@ -144,6 +144,7 @@ public class GameSaveController : MonoBehaviour {
         gameSave.YesterdaysQuota = vStoneObject.YesterdaysQuota;
         gameSave.IncrementAmount = vStoneObject.IncrementAmout;
         gameSave.VStoneForExtraFood = vStoneObject.VStoneNeededForExtraFood;
+        gameSave.ExtraFoodPortions = vStoneObject.ExtraPortionsForDay;
 
         currentlyLoadedSave = gameSave;
 
@@ -198,6 +199,7 @@ public class GameSaveController : MonoBehaviour {
         vstoneEcoObject.YesterdaysQuota = data.YesterdaysQuota;
         vstoneEcoObject.IncrementAmout = data.IncrementAmount;
         vstoneEcoObject.VStoneNeededForExtraFood = data.VStoneForExtraFood;
+        vstoneEcoObject.ExtraPortionsForDay = data.ExtraFoodPortions;
 
         vstoneEcoObject.IncreaseDailyQuota(data.DaysElapsed);
 

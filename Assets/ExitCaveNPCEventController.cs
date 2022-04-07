@@ -116,10 +116,20 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
             //pop dialog for success, or failure
             //populateDialogPortraits();
-            FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue("Overseer.Exit.Success1");
+
             //get overseer dialog portraits from keynpcs from CampNarrativeControllerObject
+            string OverseerDialogNode = GetEndOfRunDialogAndCalculateExtraPortions(VStoneEcoInstance);
+            yield return new WaitForSeconds(0.1f);
+
+            FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue(OverseerDialogNode);
             Sprite[] OverseerPortraits = GameObject.Find("CampEventController").GetComponent<CampNarrativeController>().getPotraitsForKeyNPC("Overseer");
             FindObjectOfType<DialogPortraitController>().populateDialogPortraits(GameObject.Find("Player").GetComponent<NPCstats>().DialogPortraits, OverseerPortraits);
+
+            int extraPortions = 0;
+            //logic for better food portions goes here
+            //ok yeah this is REALLY UGLY looking whacha gonna do?
+            
+
 
             while (hasExitDialogCompleted != true)
             {
@@ -191,5 +201,39 @@ public class ExitCaveNPCEventController : MonoBehaviour {
         print("finishing exit dialog");
         hasExitDialogCompleted = true;
         GameObject.Find("Player").GetComponent<Yarn.Unity.Example.DialogTrigger>().canTalkToNPCs = false;
+    }
+
+    string GetEndOfRunDialogAndCalculateExtraPortions(VStoneEconomyObject VstoneEcoInstance)
+    {
+        string returnNode = "Overseer.Exit.Success1";
+
+        if (VstoneEcoInstance.getTotalCollected() >= (1 + VstoneEcoInstance.ExtraVstoneForFivePortion) * VstoneEcoInstance.getDailyQuota())
+        {
+            returnNode = "Overseer.Exit.Success5";
+            VStoneEcoInstance.ExtraPortionsForDay = 5;
+        }
+        else if (VstoneEcoInstance.getTotalCollected() >= (1 + VstoneEcoInstance.ExtraVstoneForFourPortion) * VstoneEcoInstance.getDailyQuota())
+        {
+            returnNode = "Overseer.Exit.Success4";
+            VStoneEcoInstance.ExtraPortionsForDay = 4;
+        }
+        else if (VstoneEcoInstance.getTotalCollected() >= (1 + VstoneEcoInstance.ExtraVStoneForThreePortion) * VstoneEcoInstance.getDailyQuota())
+        {
+            returnNode = "Overseer.Exit.Success3";
+            VStoneEcoInstance.ExtraPortionsForDay = 3;
+        }
+        else if (VstoneEcoInstance.getTotalCollected() >= (1 + VstoneEcoInstance.ExtraVStoneForTwoPortion) * VstoneEcoInstance.getDailyQuota())
+        {
+            returnNode = "Overseer.Exit.Success2";
+            VStoneEcoInstance.ExtraPortionsForDay = 2;
+        }
+        else
+        {
+            returnNode = "Overseer.Exit.Success1";
+            VStoneEcoInstance.ExtraPortionsForDay = 0;
+        }
+        
+
+        return returnNode;
     }
 }

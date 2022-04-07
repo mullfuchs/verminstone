@@ -2,10 +2,10 @@
 	{
 		"title": "Overseer.Exit.Success1",
 		"tags": "",
-		"body": "<<setLeftPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setRightPortrait DialogAndPortraitContainer overseer_default_talking>>\nThat's a satisfactory amount of crystal\nyou could always bring up more\nmaybe we'd feed you more\nbut no matter, you'll be back tomorrow\n<<completeCaveExitDialog CaveExit>>\n",
+		"body": "<<setLeftPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setRightPortrait DialogAndPortraitContainer overseer_default_talking>>\nYou brought the exact amount we asked for\nnothing more?\nWell you technically did make quota...\nbut no extra food for you\nbring back more next time\n<<completeCaveExitDialog CaveExit>>\n",
 		"position": {
-			"x": 326,
-			"y": 149
+			"x": 265,
+			"y": -37
 		},
 		"colorID": 0
 	},
@@ -14,8 +14,48 @@
 		"tags": "",
 		"body": "<<setLeftPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setRightPortrait DialogAndPortraitContainer overseer_default_talking>>\nUnacceptable! Go back in there and bring back your quota\n<<completeCaveExitDialog CaveExit>>",
 		"position": {
-			"x": 580,
-			"y": 174
+			"x": 519,
+			"y": -42
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Overseer.Exit.Success2",
+		"tags": "",
+		"body": "<<setLeftPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setRightPortrait DialogAndPortraitContainer overseer_default_talking>>\nThat's a satisfactory amount of crystal\nyou could always bring up more\nI think we can spare an extra food portion\nbut no matter, you'll be back tomorrow\n<<completeCaveExitDialog CaveExit>>",
+		"position": {
+			"x": 267,
+			"y": 208
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Overseer.Exit.Success3",
+		"tags": "",
+		"body": "<<setLeftPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setRightPortrait DialogAndPortraitContainer overseer_default_talking>>\nYou brought up a decent amount.\nA little more than quota\nIt could always be more\nbut I think we can give you a little extra food\nThree whole portions!\n<<completeCaveExitDialog CaveExit>>",
+		"position": {
+			"x": 269,
+			"y": 444
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Overseer.Exit.Success4",
+		"tags": "",
+		"body": "<<setLeftPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setRightPortrait DialogAndPortraitContainer overseer_default_talking>>\nHmmm Industrious today are we?\nI'd really prefer it if you brought up a little more\nbut I'm feeling generous this time\nfour extra food portions!!\n<<completeCaveExitDialog CaveExit>>",
+		"position": {
+			"x": 268,
+			"y": 685
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Overseer.Exit.Success5",
+		"tags": "",
+		"body": "<<setLeftPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setRightPortrait DialogAndPortraitContainer overseer_default_talking>>\nAh do my eyes decive me?\n<<setLeftPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setRightPortrait DialogAndPortraitContainer overseer_default_silent>>\nIs this enough for you asshole?\n<<setLeftPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setRightPortrait DialogAndPortraitContainer overseer_default_talking>>\nOh my! yes\nyou should bring this much up every time\nyou'd make me very rich!\nI think we can give you...\nFIVE, yes. FIVE extra portions.\n<<completeCaveExitDialog CaveExit>>",
+		"position": {
+			"x": 526,
+			"y": 205
 		},
 		"colorID": 0
 	}

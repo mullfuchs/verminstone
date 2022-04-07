@@ -10,6 +10,12 @@ public class VStoneEconomyObject : MonoBehaviour {
 	public float YesterdaysQuota = 0;
 	public float IncrementAmout = 20;
 	public float VStoneNeededForExtraFood = 5;
+    public int ExtraPortionsForDay = 0;
+
+    public float ExtraVStoneForTwoPortion = 0.1f;
+    public float ExtraVStoneForThreePortion = 0.25f;
+    public float ExtraVstoneForFourPortion = 0.4f;
+    public float ExtraVstoneForFivePortion = 0.55f;
 
     // Use this for initialization
 	void Start () {
@@ -24,7 +30,7 @@ public class VStoneEconomyObject : MonoBehaviour {
 	public int getExtraPortionsBasedOnVstone(){
 		//float diff = vStoneDailyAmount - YesterdaysQuota;
 		//return (int)(diff / VStoneNeededForExtraFood);
-		return 4;
+		return 4 + ExtraPortionsForDay;
 	}
 
     public void AddVStoneToDailyTotal(float amount)
