@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static PlaceObjects;
 
 public class CaveManager : MonoBehaviour {
 
@@ -46,12 +47,13 @@ public class CaveManager : MonoBehaviour {
 			int[,] tempFloor = mapGenObject.GetComponent<GenerateMap> ().MakeFloor (CaveFloors[i].fillPercent);
 			//how many sets of points do we need?
 			int objectPointListCount = CaveFloors[i].FloorObjects.Length;
-			//int objectPointListCount = mapGenObject.GetComponent<PlaceObjects>().FloorObjects.Length;
+            //int objectPointListCount = mapGenObject.GetComponent<PlaceObjects>().FloorObjects.Length;
 
-			//how do we figure out fill percent?
-			//an array of lists?
 
-			List<Vector3>[] pointListArray;
+            //how do we figure out fill percent?
+            //an array of lists?
+
+            List<Vector3>[] pointListArray;
 			pointListArray = new List<Vector3>[objectPointListCount];
 
 			for (int j = 0; j < objectPointListCount; j++) {
@@ -73,6 +75,7 @@ public class CaveManager : MonoBehaviour {
 
 			//List<PlaceObjects.FloorObject> tempObjList = mapGenObject.GetComponent<PlaceObjects> ().PopulateMapList (pointListArray);
 			List<PlaceObjects.FloorObject> tempObjList = mapGenObject.GetComponent<PlaceObjects> ().PopulateMapListWithCaveFloor (CaveFloors[i], pointListArray);
+
 			FloorList.Add( new Floor(tempFloor, tempObjList) );
 		}
 	}

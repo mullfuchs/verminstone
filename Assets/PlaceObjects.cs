@@ -36,8 +36,11 @@ public class PlaceObjects : MonoBehaviour {
 	//todo: refactor this
 	public List<FloorObject> PopulateMapList(List<Vector3>[] objectCoords){
 		List<FloorObject> objectList = new List<FloorObject>();
-		 
-		for (int i = 0; i < objectCoords.Length; i++) {
+
+        FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap>().GetSmallestExclusiveRoom(), AscendObjet);
+        FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap>().GetSmallestExclusiveRoom(), DescendObject);
+
+        for (int i = 0; i < objectCoords.Length; i++) {
 			foreach (Vector3 point in objectCoords[i]) {
 				objectList.Add (new FloorObject (point, FloorObjects [i].gameObjectType));
 			}
@@ -64,8 +67,8 @@ public class PlaceObjects : MonoBehaviour {
 
 		FloorObject FloorPatrolBug = new FloorObject (gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), PatrolBug);
 
-		FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), AscendObjet);
-		FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), DescendObject);
+		//FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), AscendObjet);
+		//FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), DescendObject);
 		objectList.Add (FloorPatrolBug);
 		objectList.Add (EntryPoint);
 		objectList.Add (ExitPoint);
@@ -75,7 +78,10 @@ public class PlaceObjects : MonoBehaviour {
 	public List<FloorObject> PopulateMapListWithCaveFloor(CaveFloor _CaveFloor, List<Vector3>[] objectCoords){
 		List<FloorObject> objectList = new List<FloorObject>();
 
-		for (int i = 0; i < objectCoords.Length; i++) {
+        FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap>().GetSmallestExclusiveRoom(), AscendObjet);
+        FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap>().GetSmallestExclusiveRoom(), DescendObject);
+
+        for (int i = 0; i < objectCoords.Length; i++) {
 			foreach (Vector3 point in objectCoords[i]) {
 				objectList.Add (new FloorObject (point, _CaveFloor.FloorObjects [i].gameObjectType));
 			}
@@ -83,8 +89,7 @@ public class PlaceObjects : MonoBehaviour {
 
 		FloorObject FloorPatrolBug = new FloorObject (gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), PatrolBug);
 
-		FloorObject EntryPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), AscendObjet);
-		FloorObject ExitPoint = new FloorObject(gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), DescendObject);
+
 		objectList.Add (FloorPatrolBug);
 		objectList.Add (EntryPoint);
 		objectList.Add (ExitPoint);

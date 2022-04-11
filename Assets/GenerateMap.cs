@@ -490,6 +490,8 @@ public class GenerateMap : MonoBehaviour {
 		while (coordList.Count < numberOfPoints) {
 			Room tempRoom = roomList.ElementAt (UnityEngine.Random.Range (0, roomList.Count));
 			Coord tempTile = tempRoom.tiles.ElementAt (UnityEngine.Random.Range (0, tempRoom.tiles.Count));
+            //maybe remoove that tile here
+            tempRoom.tiles.Remove(tempTile);
 			coordList.Add (coordToWorldPoint (tempTile));
 		}
 
@@ -551,6 +553,32 @@ public class GenerateMap : MonoBehaviour {
 		//return it
 		return coordToWorldPoint(randomSpot);
 	}
+
+    public Vector3 GetSmallestExclusiveRoom()
+    {
+        //find a point in the smallest room and remove it from the room list;
+        if (roomList.Count <= 0)
+        {
+            print("No more empty rooms! that's a problem!");
+            return Vector3.zero;
+        }
+
+
+        Room smallestRoom = roomList[0];
+        foreach(Room candidate in roomList)
+        {
+            if(candidate.roomSize < smallestRoom.roomSize)
+            {
+                smallestRoom = candidate;
+            }
+        }
+
+        //get middle spot room
+        Coord middleSpot = smallestRoom.insideTiles.ElementAt(smallestRoom.insideTiles.Count/2);
+        roomList.Remove(smallestRoom);
+
+        return coordToWorldPoint(middleSpot);
+    }
 
 
 	public void RenderMap(int[,] mapToRender){
