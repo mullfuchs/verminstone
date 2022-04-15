@@ -12,6 +12,9 @@ public class VStoneEconomyObject : MonoBehaviour {
 	public float VStoneNeededForExtraFood = 5;
     public int ExtraPortionsForDay = 0;
 
+
+    public VstoneProgressionObject[] vstoneProgressionCurve;
+
     public float ExtraVStoneForTwoPortion = 0.1f;
     public float ExtraVStoneForThreePortion = 0.25f;
     public float ExtraVstoneForFourPortion = 0.4f;
@@ -64,7 +67,16 @@ public class VStoneEconomyObject : MonoBehaviour {
 
 	public void IncreaseDailyQuota(int day){
 		YesterdaysQuota = DailyQuota;
-		DailyQuota = DailyQuota + IncrementAmout;
+
+        foreach(VstoneProgressionObject vstoneday in vstoneProgressionCurve)
+        {
+            if(vstoneday.dayOfIncrease == day)
+            {
+                DailyQuota = vstoneday.newQuota;
+            }
+        }
+
+		//DailyQuota = DailyQuota + IncrementAmout;
 	}
 
 	public bool meetsDailyQuota(float vStoneAmount){
@@ -73,5 +85,14 @@ public class VStoneEconomyObject : MonoBehaviour {
 		}
 		return false;
 	}
+
+
 		
+}
+
+[System.Serializable]
+public class VstoneProgressionObject
+{
+    public int dayOfIncrease;
+    public int newQuota;
 }

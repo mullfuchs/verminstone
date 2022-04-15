@@ -30,7 +30,7 @@ public class health : MonoBehaviour {
 			controller.updateBar (controller.HealthBarObject, healthPoints);
 		}
 
-        maxHealth = healthPoints;
+        maxHealth = gameObject.GetComponent<NPCstats>().maxHealth;
     }
 	
 	// Update is called once per frame

@@ -32,8 +32,36 @@ namespace Yarn.Unity.Example{
 				//CheckForNearbyNPC ();
 				//CheckForClosestNPC();
 			}
+
+            if(Input.GetButtonDown("Action") && canTalkToNPCs)
+            {
+                GameObject npc = gameObject.GetComponent<PlayerEventController>().npcIMightTalkTo;
+                if(npc != null && npc.GetComponentInParent<Yarn.Unity.Example.NPC>().canTalkTo == true)
+                {
+                    canTalkToNPCs = false;
+                    // Kick off the dialogue at this node.
+                    if (npc.GetComponentInParent<NPCstats>().hasBeenTalkedToToday == false)
+                    {
+                        npc.GetComponentInParent<NPCstats>().hasBeenTalkedToToday = true;
+                        npc.GetComponentInParent<Yarn.Unity.Example.NPC>().canTalkTo = false;
+                    }
+                    CurrentNPC = npc.gameObject.transform.parent.gameObject;
+                    if (CurrentNPC.GetComponent<NPCOverworldController>() != null)
+                    {
+                        CurrentNPC.GetComponent<NPCOverworldController>().idling = false;
+                    }
+                    FindObjectOfType<PlayerEventController>().SetPlayerMovement(false);
+
+                    FindObjectOfType<DialogueRunner>().StartDialogue(CurrentNPC.GetComponent<NPC>().talkToNode);
+                    FindObjectOfType<DialogPortraitController>().populateDialogPortraits(CurrentNPC.GetComponent<NPCstats>().DialogPortraits, gameObject.GetComponent<NPCstats>().DialogPortraits);
+
+                    FindObjectOfType<ZoomNFocus>().focusOnPointBelowPlayer();
+                }
+            }
 		}
 
+
+        /*
         private void OnTriggerStay(Collider other)
         {
             if(other.tag == "NPCDialogTrigger")
@@ -65,6 +93,7 @@ namespace Yarn.Unity.Example{
                 }
             }
         }
+        */
 
         void CheckForNearbyNPC(){
 			var allParticipants = new List<NPC> (FindObjectsOfType<NPC> ());

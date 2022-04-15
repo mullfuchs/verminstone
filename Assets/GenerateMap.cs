@@ -492,6 +492,7 @@ public class GenerateMap : MonoBehaviour {
 			Coord tempTile = tempRoom.tiles.ElementAt (UnityEngine.Random.Range (0, tempRoom.tiles.Count));
             //maybe remoove that tile here
             tempRoom.tiles.Remove(tempTile);
+
 			coordList.Add (coordToWorldPoint (tempTile));
 		}
 

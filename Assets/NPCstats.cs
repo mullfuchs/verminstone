@@ -22,6 +22,7 @@ public class NPCstats : MonoBehaviour {
 	public Sprite[] DialogPortraits;
 	public int NPCScriptIndex;
 	public int bedIndex;
+    public bool isEscaping;
 
 	public NPCStatRecord statObject;
 

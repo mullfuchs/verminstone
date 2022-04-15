@@ -157,7 +157,7 @@ public class CampPopulationController : MonoBehaviour {
 
     }
 
-	public void LoadNPCFromSave(string name, float healthpoints, Vector3 position, int daysTalkedTo, int scriptIndex, NPCStatRecord statRecord, bool isWorker){
+	public void LoadNPCFromSave(string name, float healthpoints, Vector3 position, int daysTalkedTo, int scriptIndex, NPCStatRecord statRecord, bool isWorker, bool isEscaping){
 		GameObject npc = Instantiate (blankNPCPrefab, position, Quaternion.identity);
 
 		NPCstats stats = npc.GetComponent<NPCstats> ();
@@ -180,8 +180,10 @@ public class CampPopulationController : MonoBehaviour {
         }
         npc.GetComponent<Yarn.Unity.Example.NPC>().canTalkTo = false;
 
-		//npc.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().agent.Warp ( position );
-	}
+        npc.GetComponent<NPCOverworldController>().isEscaping = isEscaping;
+
+        //npc.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().agent.Warp ( position );
+    }
 
     public void LoadPlayerFromSave(Vector3 position, float healthpoints)
     {

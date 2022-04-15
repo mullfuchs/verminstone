@@ -34,5 +34,6 @@ public class NPCProfile{
 	public float NPCHealth;
 	public int NPCDaysTalkedTo;
 	public NPCStatRecord statRecord;
+    public bool isEscaping;
 }
 	

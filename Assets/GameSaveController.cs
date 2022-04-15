@@ -90,7 +90,9 @@ public class GameSaveController : MonoBehaviour {
             profile.NPCDialogIndex = stats.NPCScriptIndex;
 			profile.statRecord = stats.statObject;
 
-			gameSave.NPCProfiles.Add (profile);
+            profile.isEscaping = npcs[i].GetComponent<NPCOverworldController>().isEscaping;
+
+            gameSave.NPCProfiles.Add (profile);
 		}
         //yes I KNOW i'm repeating code here I DON"T CARE dingus
         GameObject[] NonWorkers = GameObject.FindGameObjectsWithTag("dialog_npc");
@@ -114,6 +116,8 @@ public class GameSaveController : MonoBehaviour {
 
             profile.NPCDialogIndex = stats.NPCScriptIndex;
             profile.statRecord = stats.statObject;
+
+            profile.isEscaping = NonWorkers[i].GetComponent<NPCOverworldController>().isEscaping;
 
             gameSave.NonWorkerNPCProfiles.Add(profile);
         }
@@ -163,12 +167,12 @@ public class GameSaveController : MonoBehaviour {
         GameObject.Find("DayCounter").GetComponent<DayCountController>().UpdateDayText(data.DaysElapsed);
 
         foreach (NPCProfile profile in data.NPCProfiles) {
-			campPopController.LoadNPCFromSave (profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex, profile.statRecord, true);
+			campPopController.LoadNPCFromSave (profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex, profile.statRecord, true, profile.isEscaping);
 		}
 
         foreach (NPCProfile profile in data.NonWorkerNPCProfiles)
         {
-            campPopController.LoadNPCFromSave(profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex, profile.statRecord, false);
+            campPopController.LoadNPCFromSave(profile.NPCName, profile.NPCHealth, profile.NPCPosition, profile.NPCDaysTalkedTo, profile.NPCDialogIndex, profile.statRecord, false, profile.isEscaping);
         }
 
         gameObject.transform.GetComponent<CampEventController>().StartDay();

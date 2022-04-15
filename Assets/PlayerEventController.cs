@@ -23,6 +23,8 @@ public class PlayerEventController : MonoBehaviour {
     public bool dialogOpened;
 
 	private CampEventController CampEventControllerInstance;
+
+    public GameObject npcIMightTalkTo;
 	// Use this for initialization
 	void Start () {
 		CampEventControllerInstance = GameObject.Find ("CampEventController").GetComponent<CampEventController> ();
@@ -116,6 +118,7 @@ public class PlayerEventController : MonoBehaviour {
             ////becuse that would fix one or two problems, 
             if(gameObject.GetComponent<Yarn.Unity.Example.DialogTrigger>().canTalkToNPCs && Other.gameObject.GetComponentInParent<Yarn.Unity.Example.NPC>().canTalkTo)
             {
+                npcIMightTalkTo = Other.gameObject;
                 iconIndicator.sprite = Talkicon;
                 string npcName = Other.GetComponentInParent<NPCstats>().NPCName;
                 if (npcName != null && npcName != "")
@@ -198,6 +201,11 @@ public class PlayerEventController : MonoBehaviour {
         {
             CampEventControllerInstance.EndTunnelDigSequence();
             dialogOpened = false;
+        }
+
+        if(Other.tag == "NPCDialogTrigger")
+        {
+            npcIMightTalkTo = null;
         }
     }
 

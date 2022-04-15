@@ -19,12 +19,20 @@ public class SetNPCEscapeFlags : MonoBehaviour {
     public GameObject EscapeReturnGameObject;
     public GameObject EntryWarpZone;
 
+    private bool npcsEscaping = false;
+
     // Use this for initialization
     void Start() {
         //check if escape ncs are zero
         GameObject[] npcs = GameObject.FindGameObjectsWithTag("WorkerNPC");
-        bool npcsEscaping = false;
-        foreach (GameObject g in npcs)
+        //oh it isn;t checking for dialog npcs either
+        //hmm no wonder it didn't work
+        GameObject[] nonWorkerNPCs = GameObject.FindGameObjectsWithTag("dialog_npc");
+        GameObject[] combinedNPCs = new GameObject[npcs.Length + nonWorkerNPCs.Length];
+        System.Array.Copy(npcs, combinedNPCs, npcs.Length);
+        System.Array.Copy(nonWorkerNPCs, 0, combinedNPCs, npcs.Length, nonWorkerNPCs.Length);
+
+        foreach (GameObject g in combinedNPCs)
         {
             if (g.GetComponent<NPCOverworldController>().isEscaping && !npcsThatCanEscape.Contains(g.name))
             {
@@ -33,7 +41,7 @@ public class SetNPCEscapeFlags : MonoBehaviour {
             }
         }
         //if zero find a random npc
-        if (!npcsEscaping)
+        if (npcsThatCanEscape.Count == 0)
         {
             GameObject randNPC = npcs[Random.Range(0, npcs.Length - 1)];
             npcsThatCanEscape.Add( randNPC.name);
@@ -64,7 +72,7 @@ public class SetNPCEscapeFlags : MonoBehaviour {
         {
             npcsThatCanEscape.Add(npcName);
         }
-
+        GameObject.Find(npcName).GetComponent<NPCOverworldController>().isEscaping = true;
         //maybe set a variable that is specific to the npc name so we don't have to ask again
     }
 

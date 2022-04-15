@@ -62,8 +62,10 @@ public class NPCFoodCardController : MonoBehaviour {
 		//check remaining amount
 		if (parentFoodDistroObject.ExtraFoodAmount > 0) {
 			NPCstats stats = associatedNPC.GetComponent<NPCstats> ();
-			stats.health = 100;
-			npcHealth.healthPoints = npcHealth.maxHealth;
+            npcHealth.AddHealth(25);
+
+            stats.health += 25;
+			//npcHealth.healthPoints = npcHealth.maxHealth;
 			updateFoodCardUI ();
 			parentFoodDistroObject.updateAllCards ();
 		}
