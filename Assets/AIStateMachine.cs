@@ -222,6 +222,7 @@ public class AIStateMachine : MonoBehaviour {
 				targets.Dequeue ();
 				CheckIfTheresATargetInMyQueue ();
                 VStoneEcoInstance.AddVStoneToDailyTotal(vStoneAmount);
+
                 vStoneAmount = 0;
             }
         }

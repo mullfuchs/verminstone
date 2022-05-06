@@ -189,7 +189,11 @@ public class CampNarrativeController : MonoBehaviour {
 	}
 
 	public string GetStartNode(string characterName, int day, timePeriod time_of_day){
-		string startNode = characterName + ".Day" + day + "." + time_of_day.ToString() + ".Start";
+        if(day >= 10)
+        {
+            day = 10;
+        }
+        string startNode = characterName + ".Day" + day + "." + time_of_day.ToString() + ".Start";
 		return startNode;
 	}
 

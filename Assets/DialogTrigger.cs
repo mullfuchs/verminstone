@@ -40,9 +40,13 @@ namespace Yarn.Unity.Example{
                 {
                     canTalkToNPCs = false;
                     // Kick off the dialogue at this node.
-                    if (npc.GetComponentInParent<NPCstats>().hasBeenTalkedToToday == false)
+                    if (npc.GetComponentInParent<NPCstats>().hasBeenTalkedToToday == false )
                     {
-                        npc.GetComponentInParent<NPCstats>().hasBeenTalkedToToday = true;
+                        //find the camp event controller and figure if it's day or night time
+                        if (GameObject.Find("CampEventController").GetComponent<CampNarrativeController>().timeOfDay == CampNarrativeController.timePeriod.Evening)
+                        {
+                            npc.GetComponentInParent<NPCstats>().hasBeenTalkedToToday = true;
+                        }
                         npc.GetComponentInParent<Yarn.Unity.Example.NPC>().canTalkTo = false;
                     }
                     CurrentNPC = npc.gameObject.transform.parent.gameObject;

@@ -19,7 +19,8 @@ public class NPCEquipCardController : MonoBehaviour {
     public Image BackObjectIcon;
     public Image HandObjectIcon;
     public Image HeadObjectIcon;
-    
+
+    public Image portrait;
 
     // Use this for initialization
     void Start () {
@@ -52,6 +53,7 @@ public class NPCEquipCardController : MonoBehaviour {
     {
         NPCstats stats = associatedNPC.GetComponent<NPCstats>();
         nameText.GetComponent<Text>().text = stats.NPCName + "\n" + "Attack - " + stats.attack + "\n" + "Defense - " + stats.defense;
+        portrait.sprite = associatedNPC.GetComponent<NPCstats>().DialogPortraits[0];
     }
 
     private void EquipHandObject()

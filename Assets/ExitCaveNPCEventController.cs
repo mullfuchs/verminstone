@@ -100,11 +100,16 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 			NPCCarriers [i].GetComponent<AIStateMachine> ().SendNPCToObject (stoneBucketObject); 
 		}
 
+        debugGetStonesFromCarriers(NPCCarriers);
 		//have all the carriers dropped stone?
-		while (stoneBucketObject.GetComponent<RockBucketController> ().getNumberOfVisitedCarriers() < carrierCount) {
-			yield return null;
-		}
-		yield return new WaitForSeconds (5.0f);
+        //code does not actually need this??
+        //so what I should do is rip out the code for carrying the rock to the bucket, keeping everything else, but doing a general sweep of
+        //the carriers, possibly here
+		//while (stoneBucketObject.GetComponent<RockBucketController> ().getNumberOfVisitedCarriers() < carrierCount) {
+		//	yield return null;
+		//}
+
+		yield return new WaitForSeconds (6.0f);
 
         teamHandler.emptyVstoneCollected();
 
@@ -160,7 +165,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 
             GameObject.Find("CampEventController").GetComponent<CampInventoryController>().EnableShopKeeper(false);
 
-            GameObject.Find("CampEventController").GetComponent<GameSaveController>().LoadQuestObjects();
+            //so for some reason when this hits it wipes the save? uhh?
+            //GameObject.Find("CampEventController").GetComponent<GameSaveController>().LoadQuestObjects();
 
             //EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
         } else {

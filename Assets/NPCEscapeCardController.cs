@@ -19,6 +19,8 @@ public class NPCEscapeCardController : MonoBehaviour
 
     public Button digButton;
 
+    public Image portrait;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,8 @@ public class NPCEscapeCardController : MonoBehaviour
 
         nameText.GetComponent<Text>().text = stats.name;
         moodText.GetComponent<Text>().text = stats.mood;
+
+        portrait.sprite = associatedNPC.GetComponent<NPCstats>().DialogPortraits[0];
     }
 
     public void assignNPCtoCard(GameObject npc)
