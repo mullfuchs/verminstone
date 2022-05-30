@@ -122,7 +122,7 @@
 	{
 		"title": "Murmur.Day6.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nStill tired Murmur?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nYes, I'm so fucking tired\nand bored, I'm so bored\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nsame, yes\n<<CampEventController upgradeBagLevel>>\n[[....|Murmur.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nStill tired Murmur?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_talking>>\nYes, I'm so fucking tired\nand bored, I'm so bored\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer murmur_default_silent>>\nsame, yes\n[[....|Murmur.Dialog.Resolve]]",
 		"position": {
 			"x": 1247,
 			"y": 882
@@ -212,7 +212,7 @@
 	{
 		"title": "Murmur.AddToEscapeQuest",
 		"tags": "",
-		"body": "<<addNPCToEscape CampAreaSecretEscape Murmur>>\nEscape? Here? You have a plan?\nI'll help you, whatever it takes\n",
+		"body": "<<addNPCToEscape CampAreaSecretEscape Murmur>>\nyou wanna escape?\nI'll help\nholy crap I hope we get out of this\n",
 		"position": {
 			"x": 1911,
 			"y": 580

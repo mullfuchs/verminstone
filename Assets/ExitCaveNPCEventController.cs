@@ -193,7 +193,6 @@ public class ExitCaveNPCEventController : MonoBehaviour {
 	}
 
 	void debugGetStonesFromCarriers(GameObject[] NPCCarrierArray){
-		print ("DEBUG GET STONES, FUCK");
 		for (int i = 0; i < NPCCarrierArray.Length; i++) {
 			VStoneEcoInstance.AddVStoneToDailyTotal( NPCCarrierArray [i].GetComponent<AIStateMachine> ().GetVerminStoneAmount ());
 			print("DEBUG total vstone collected this run: " + VStoneEcoInstance.getDailyTotal());

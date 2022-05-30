@@ -2,7 +2,7 @@
 	{
 		"title": "Rin.Day1.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHello, I don't think we've met\nI'm Rin. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nLikewise\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHello, I don't think we've met\nI'm Rin. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nLikewise",
 		"position": {
 			"x": 212,
 			"y": 143
@@ -12,7 +12,7 @@
 	{
 		"title": "Rin.Day1.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nHey Rin\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHi Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nRin, you seem new here\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nI am, I think I got here a month ago\nit's hard to tell, I haven't seen a calander in a while\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nHey Rin\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHi Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nRin, you seem new here\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nI am, I think I got here a month ago\nit's hard to tell, I haven't seen a calander in a while\n",
 		"position": {
 			"x": 212,
 			"y": 355
@@ -32,7 +32,7 @@
 	{
 		"title": "Rin.Day2.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHello, I don't think we've met\nI'm Rin. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nLikewise\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\ngood morning rin\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\n...hey",
 		"position": {
 			"x": 230,
 			"y": 665
@@ -42,7 +42,7 @@
 	{
 		"title": "Rin.Day2.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nWhat are you thinking about Rin?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\n...\nEmma I'm kinda tired and don't wanna talk right now\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nok\n\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nWhat are you thinking about Rin?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\n...\nEmma I'm kinda tired and don't wanna talk right now\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nok",
 		"position": {
 			"x": 227,
 			"y": 881
@@ -52,7 +52,7 @@
 	{
 		"title": "Rin.Day3.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHello, I don't think we've met\nI'm Rin. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nLikewise\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\ngood morning rin\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\n...hey",
 		"position": {
 			"x": 459,
 			"y": 665
@@ -62,7 +62,7 @@
 	{
 		"title": "Rin.Day3.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHey Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nHi Rin\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHow long have you been doing this crystal mining?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nI dunno, I can't seem to remember when I got here\nI haven't seen a calender, I was counting the days for a while\nbut it just depressed me too much to think about\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nAren't you going to get even more depressed if you don't even know what day it is?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nDoes it even matter?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nFair enough\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHey Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nHi Rin\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHow long have you been doing this crystal mining?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nI dunno, I can't seem to remember when I got here\nI haven't seen a calender, I was counting the days for a while\nbut it just depressed me too much to think about\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nAren't you going to get even more depressed if you don't even know what day it is?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nDoes it even matter?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nFair enough",
 		"position": {
 			"x": 466,
 			"y": 890
@@ -72,7 +72,7 @@
 	{
 		"title": "Rin.Day4.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHello, I don't think we've met\nI'm Rin. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nLikewise\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\ngood morning rin\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\n...hey",
 		"position": {
 			"x": 746,
 			"y": 666
@@ -82,7 +82,7 @@
 	{
 		"title": "Rin.Day4.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nI used to be a reporter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nYou wrote for a paper?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nYeah I did\nI was good at it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nWhat did you write about?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nI mainly did financial writing\nbanks and stuff\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nhmm...\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nIt doesn't matter now\nall that's gone\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nI used to be a reporter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nYou wrote for a paper?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nYeah I did\nI was good at it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nWhat did you write about?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nI mainly did financial writing\nbanks and stuff\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nhmm...\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nIt doesn't matter now\nall that's gone",
 		"position": {
 			"x": 746,
 			"y": 884
@@ -92,7 +92,7 @@
 	{
 		"title": "Rin.Day5.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHello, I don't think we've met\nI'm Rin. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nLikewise\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\ngood morning rin\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\n...hey\n[[....|Rin.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 665
@@ -102,7 +102,7 @@
 	{
 		"title": "Rin.Day5.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nYou said you wrote about banks and things\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nyeah, why are you curious\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nwell that's the reason I ended up here\nmy family worked on bank owned land and we had a bad harvest\nso, they sold me off\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nOh, oh dear\nSadly, that's pretty common\nIt's so common the banks expect it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nreally?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nYeah, in some cases if a farm is profitable enough they'll \"adjust\" the interest rates\nso that suddenly a farm isn't making enough money for them\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\n...\nI think that's what happened with ours\nwe had a few safe years and then for some reason our \"interest rate\" changed\nwe worked so hard back then, and it was for nothing?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nwell, yeah\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\n....\n<<CampEventController upgradeSwordLevel>>\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nYou said you wrote about banks and things\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nyeah, why are you curious\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nwell that's the reason I ended up here\nmy family worked on bank owned land and we had a bad harvest\nso, they sold me off\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nOh, oh dear\nSadly, that's pretty common\nIt's so common the banks expect it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nreally?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nYeah, in some cases if a farm is profitable enough they'll \"adjust\" the interest rates\nso that suddenly a farm isn't making enough money for them\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\n...\nI think that's what happened with ours\nwe had a few safe years and then for some reason our \"interest rate\" changed\nwe worked so hard back then, and it was for nothing?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nwell, yeah\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\n....\n[[....|Rin.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 887
@@ -112,7 +112,7 @@
 	{
 		"title": "Rin.Day6.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHello, I don't think we've met\nI'm Rin. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nLikewise\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\ngood morning rin\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\n...hey\n[[....|Rin.Dialog.Resolve]]",
 		"position": {
 			"x": 1239,
 			"y": 662
@@ -132,7 +132,7 @@
 	{
 		"title": "Rin.Day7.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHello, I don't think we've met\nI'm Rin. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nLikewise\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\ngood morning rin\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\n...hey\n[[....|Rin.Dialog.Resolve]]",
 		"position": {
 			"x": 203,
 			"y": 1182
@@ -152,7 +152,7 @@
 	{
 		"title": "Rin.Day8.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHello, I don't think we've met\nI'm Rin. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nLikewise\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\ngood morning rin\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\n...hey\n[[....|Rin.Dialog.Resolve]]",
 		"position": {
 			"x": 427,
 			"y": 1182
@@ -172,7 +172,7 @@
 	{
 		"title": "Rin.Day9.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHello, I don't think we've met\nI'm Rin. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nLikewise\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\ngood morning rin\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\n...hey\n[[....|Rin.Dialog.Resolve]]",
 		"position": {
 			"x": 662,
 			"y": 1184
@@ -192,7 +192,7 @@
 	{
 		"title": "Rin.Day10.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\nHello, I don't think we've met\nI'm Rin. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\nLikewise\n[[....|Rin.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_talking>>\ngood morning rin\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rin_default_silent>>\n...hey\n[[....|Rin.Dialog.Resolve]]",
 		"position": {
 			"x": 890,
 			"y": 1181
@@ -212,7 +212,7 @@
 	{
 		"title": "Rin.AddToEscapeQuest",
 		"tags": "",
-		"body": "<<addNPCToEscape CampAreaSecretEscape Rin>>\nEscape? Here? You have a plan?\nI'll help you, whatever it takes\n",
+		"body": "<<addNPCToEscape CampAreaSecretEscape Rin>>\nI'll dig whatever tunnel you want me to\njust as long as we get out of here",
 		"position": {
 			"x": 1911,
 			"y": 580

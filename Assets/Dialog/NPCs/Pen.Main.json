@@ -102,7 +102,7 @@
 	{
 		"title": "Pen.Day5.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nhey emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nhey pen\nyou gonna ask me something?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nmmm yeah\nyou got any good memories?\nlike from before all this\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nwell\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nlike the first boy you kissed?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nI ain't exactly into boys, pen\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\noh\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nher name was sarah though\nstill think about her once in a while\n<<CampEventController upgradeArmorLevel>>\n[[....|Pen.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nhey emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nhey pen\nyou gonna ask me something?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nmmm yeah\nyou got any good memories?\nlike from before all this\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nwell\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\nlike the first boy you kissed?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nI ain't exactly into boys, pen\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_talking>>\noh\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer pen_default_silent>>\nher name was sarah though\nstill think about her once in a while\n[[....|Pen.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 887
@@ -212,7 +212,7 @@
 	{
 		"title": "Pen.AddToEscapeQuest",
 		"tags": "",
-		"body": "<<addNPCToEscape CampAreaSecretEscape Pen>>\nEscape? Here? You have a plan?\nI'll help you, whatever it takes\n",
+		"body": "<<addNPCToEscape CampAreaSecretEscape Pen>>\nyou want to get out of here?\nI thought you were up to something...\nI'll try to help dig\n",
 		"position": {
 			"x": 1911,
 			"y": 580

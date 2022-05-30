@@ -52,7 +52,7 @@
 	{
 		"title": "Krimble.Day3.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nHey Krim\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nHey Emma\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nHey Krim\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nHey Emma\n",
 		"position": {
 			"x": 459,
 			"y": 665
@@ -62,7 +62,7 @@
 	{
 		"title": "Krimble.Day3.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nGot anything to say \n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nNah not really\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nOk\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nGot anything to say \n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nNah not really\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nOk\n",
 		"position": {
 			"x": 466,
 			"y": 890
@@ -72,7 +72,7 @@
 	{
 		"title": "Krimble.Day4.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nMorning Krim\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nEmma...hello\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nMorning Krim\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nEmma...hello\n",
 		"position": {
 			"x": 746,
 			"y": 666
@@ -82,7 +82,7 @@
 	{
 		"title": "Krimble.Day4.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nSo, what did you do, uh, before this?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nmy family grew crops, I guess we didn't make enough money\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nWe kept bees\nI guess that didn't make enough money either\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nwhat's that like?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nbees are actually pretty friendly and if you take care of them, they'll return the favor\nthey just couldn't make enough honey for us\nand...well\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nyeah\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nSo, what did you do, uh, before this?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nmy family grew crops, I guess we didn't make enough money\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nWe kept bees\nI guess that didn't make enough money either\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nwhat's that like?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nbees are actually pretty friendly and if you take care of them, they'll return the favor\nthey just couldn't make enough honey for us\nand...well\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nyeah\n",
 		"position": {
 			"x": 746,
 			"y": 884
@@ -102,7 +102,7 @@
 	{
 		"title": "Krimble.Day5.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nI'm so tired Krim\nThey don't let us sleep enough\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nYeah, I don't think I'm going to make it through the winter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nwhat do you mean?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nI heard some of the old timers talking\nthe one's who've been here a while, i mean\nthey say a lot of folks don't make it through the winter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\noh, oh no\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nyeah\nwhat about you, can you handle a winter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nI don't know\n<<CampEventController upgradePickaxeLevel>>\n[[....|Krimble.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nI'm so tired Krim\nThey don't let us sleep enough\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nYeah, I don't think I'm going to make it through the winter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nwhat do you mean?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nI heard some of the old timers talking\nthe one's who've been here a while, i mean\nthey say a lot of folks don't make it through the winter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\noh, oh no\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nyeah\nwhat about you, can you handle a winter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nI don't know\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 887
@@ -174,8 +174,8 @@
 		"tags": "",
 		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_silent>>\nGood morning Krim\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer krimble_default_talking>>\nGood morning emma\n[[....|Krimble.Dialog.Resolve]]",
 		"position": {
-			"x": 662,
-			"y": 1184
+			"x": 666,
+			"y": 1193
 		},
 		"colorID": 0
 	},
@@ -212,7 +212,7 @@
 	{
 		"title": "Krimble.AddToEscapeQuest",
 		"tags": "",
-		"body": "<<addNPCToEscape CampAreaSecretEscape Krimble>>\nEscape? Here? You have a plan?\nI'll help you, whatever it takes\n",
+		"body": "<<addNPCToEscape CampAreaSecretEscape Krimble>>\nIf you can get us out of here, i'll try to help",
 		"position": {
 			"x": 1911,
 			"y": 580

@@ -42,7 +42,7 @@
 	{
 		"title": "Tutorial.Combat2",
 		"tags": "",
-		"body": "In this next area we've brought a collection of flora\nFlora attack all creatures that pass by them with deadly projectile spores\nYou can use your power to heal your fellow workers, but it'll also cost you health\npress the X button to heal\ndon't get too enthusiastic, same some health for yourself",
+		"body": "In this next area we've brought a collection of flora\nFlora attack all creatures that pass by them with deadly projectile spores\nYou can use your power to heal your fellow workers, but it'll also cost you energy\npress the X button to heal\ndon't get too enthusiastic, or you wont be able to use energy attacks",
 		"position": {
 			"x": 621,
 			"y": 395
@@ -52,7 +52,7 @@
 	{
 		"title": "Tutorial.End",
 		"tags": "",
-		"body": "That's the end of the tutorial\nTo exit a cave, go back to the elevator that dropped you off\nBut remember, if you don't bring enough back to the surface \nyou'll have to go back down for more\nhave fun!",
+		"body": "That's the end of the tutorial\nTo exit a cave, walk into the elevator ahead of you\nBut remember, if you don't bring enough back to the surface \nyou'll have a bad time\nhave fun!",
 		"position": {
 			"x": 839,
 			"y": 385

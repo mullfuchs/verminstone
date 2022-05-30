@@ -2,7 +2,7 @@
 	{
 		"title": "Basil.Day1.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello, I don't think we've met\nI'm Basil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nLikewise\n",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHello....\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\n.....\n",
 		"position": {
 			"x": 212,
 			"y": 143
@@ -122,7 +122,7 @@
 	{
 		"title": "Basil.Day6.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHey Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHey Basil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nah fuck I hate it here, i hate talking \nwhat is there to even fucking talk about\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nI know, I know\nwhy don't you tell me something about yourself\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nLike what? Some kind of story.\nI guess. Not like we have anywhere to go right now. \nI could tell you about the night my last owner died.\n...actually, you know what, nevermind\n<<CampEventController upgradeBagLevel>>\n[[....|Basil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nHey Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nHey Basil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nah fuck I hate it here, i hate talking \nwhat is there to even fucking talk about\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_silent>>\nI know, I know\nwhy don't you tell me something about yourself\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer basil_default_talking>>\nLike what? Some kind of story.\nI guess. Not like we have anywhere to go right now. \nI could tell you about the night my last owner died.\n...actually, you know what, nevermind\n[[....|Basil.Dialog.Resolve]]",
 		"position": {
 			"x": 1247,
 			"y": 882
@@ -212,7 +212,7 @@
 	{
 		"title": "Basil.AddToEscapeQuest",
 		"tags": "",
-		"body": "<<addNPCToEscape CampAreaSecretEscape Basil>>\nEscape? Here? You have a plan?\nI'll help you, whatever it takes\n",
+		"body": "<<addNPCToEscape CampAreaSecretEscape Basil>>\nYou want me to escape?\nAre you mad?\nCount me in.",
 		"position": {
 			"x": 1911,
 			"y": 580
@@ -222,7 +222,7 @@
 	{
 		"title": "Basil.EndDialog",
 		"tags": "",
-		"body": "Bye",
+		"body": "So Long",
 		"position": {
 			"x": 2202,
 			"y": 436

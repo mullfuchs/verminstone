@@ -2,7 +2,7 @@
 	{
 		"title": "Ursine.Day1.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise",
 		"position": {
 			"x": 212,
 			"y": 143
@@ -12,7 +12,7 @@
 	{
 		"title": "Ursine.Day1.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHey\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nHey\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nI'm Ursine\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nI'm Emma\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHey\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nHey\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nI'm Ursine\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nI'm Emma",
 		"position": {
 			"x": 212,
 			"y": 355
@@ -32,7 +32,7 @@
 	{
 		"title": "Ursine.Day2.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nGood morning emma\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nGood morning ursine",
 		"position": {
 			"x": 230,
 			"y": 665
@@ -42,7 +42,7 @@
 	{
 		"title": "Ursine.Day2.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nWhat did you do before this?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nThis?\nI was, uh\nIt's hard for me to say\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nIt's ok, I won't judge\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nI was a \npit fighter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\n...\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nyeah, I knew it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\n..no!\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nyeah forget about it\ndon't talk to me\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nWhat did you do before this?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nThis?\nI was, uh\nIt's hard for me to say\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nIt's ok, I won't judge\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nI was a \npit fighter\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\n...\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nyeah, I knew it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\n..no!\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nyeah forget about it\ndon't talk to me",
 		"position": {
 			"x": 227,
 			"y": 881
@@ -52,7 +52,7 @@
 	{
 		"title": "Ursine.Day3.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nGood morning emma\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nGood morning ursine",
 		"position": {
 			"x": 459,
 			"y": 665
@@ -62,7 +62,7 @@
 	{
 		"title": "Ursine.Day3.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nYou really wanna talk\nto a pit fighter?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\n...\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nYou wanna know how many kills I had, right?\nit's what everyone asks\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nNo I don't\nI don't care\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nwhat do you want out of me?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nI'm just trying to survive right now\nI don't want anything from you\nI just want to know you better\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nwhy? we're mining crystals. I could die any day\na few days from now, tomorrow\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nI'll see you tomorrow\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nYou really wanna talk\nto a pit fighter?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\n...\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nYou wanna know how many kills I had, right?\nit's what everyone asks\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nNo I don't\nI don't care\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nwhat do you want out of me?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nI'm just trying to survive right now\nI don't want anything from you\nI just want to know you better\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nwhy? we're mining crystals. I could die any day\na few days from now, tomorrow\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nI'll see you tomorrow",
 		"position": {
 			"x": 466,
 			"y": 890
@@ -72,7 +72,7 @@
 	{
 		"title": "Ursine.Day4.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nGood morning emma\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nGood morning ursine",
 		"position": {
 			"x": 746,
 			"y": 666
@@ -82,7 +82,7 @@
 	{
 		"title": "Ursine.Day4.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nEmma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nUrsine\nIf you don't wanna talk about your past, I won't ask you\nPeople keep asking me how I got enslaved\nand honestly I wish I'd stop, because bringing it up...\nit's painful\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nYeah\nI get that\ncan't really bring up your past to someone unless you trust em\nand folks like us\nour pasts are nightmares\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nyeah\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nEmma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nUrsine\nIf you don't wanna talk about your past, I won't ask you\nPeople keep asking me how I got enslaved\nand honestly I wish I'd stop, because bringing it up...\nit's painful\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nYeah\nI get that\ncan't really bring up your past to someone unless you trust em\nand folks like us\nour pasts are nightmares\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nyeah",
 		"position": {
 			"x": 746,
 			"y": 884
@@ -92,7 +92,7 @@
 	{
 		"title": "Ursine.Day5.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nGood morning emma\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nGood morning ursine\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 665
@@ -102,7 +102,7 @@
 	{
 		"title": "Ursine.Day5.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHey Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nHi Ursine\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nYou ever...try to escape?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nWhat.\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nYeah you know, run off. \nYou ever done it?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nI've only ever been a slave here\nI know people get traded around\nI bet it's easier when you're not in the middle of nowhere\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nOh, ok.\nAnyway I did. \n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nDo tell\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nBetween fights, we were always kept in this kind of cage system\nOne day I found out that the seams in one of the walls was welded poorly\nso I spent probably a few weeks filing them down\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\n...weeks?\ni mean, you're doing pit fighting, I didn't think you'd be able to surivive long\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nMost of our fights weren't \"to the death\"\nthey were pretty violent, but they wouldn't have a death match unless it were like a holiday\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\na holiday?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nanyway yeah I busted out just on myself after weeks of filing away at the wall\nI didn't have a plan, which is what gets a lot of runaways\nthey caught me like a few hours later\nit was pretty stupid\n<<CampEventController upgradeBagLevel>>\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHey Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nHi Ursine\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nYou ever...try to escape?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nWhat.\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nYeah you know, run off. \nYou ever done it?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nI've only ever been a slave here\nI know people get traded around\nI bet it's easier when you're not in the middle of nowhere\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nOh, ok.\nAnyway I did. \n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nDo tell\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nBetween fights, we were always kept in this kind of cage system\nOne day I found out that the seams in one of the walls was welded poorly\nso I spent probably a few weeks filing them down\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\n...weeks?\ni mean, you're doing pit fighting, I didn't think you'd be able to surivive long\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nMost of our fights weren't \"to the death\"\nthey were pretty violent, but they wouldn't have a death match unless it were like a holiday\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\na holiday?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nanyway yeah I busted out just on myself after weeks of filing away at the wall\nI didn't have a plan, which is what gets a lot of runaways\nthey caught me like a few hours later\nit was pretty stupid\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 887
@@ -112,7 +112,7 @@
 	{
 		"title": "Ursine.Day6.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nGood morning emma\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nGood morning ursine\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 1239,
 			"y": 662
@@ -132,7 +132,7 @@
 	{
 		"title": "Ursine.Day7.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nGood morning emma\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nGood morning ursine\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 203,
 			"y": 1182
@@ -152,7 +152,7 @@
 	{
 		"title": "Ursine.Day8.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nGood morning emma\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nGood morning ursine\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 427,
 			"y": 1182
@@ -172,7 +172,7 @@
 	{
 		"title": "Ursine.Day9.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nGood morning emma\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nGood morning ursine\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 662,
 			"y": 1184
@@ -192,7 +192,7 @@
 	{
 		"title": "Ursine.Day10.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nHello, I don't think we've met\nI'm Ursine. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nLikewise\n[[....|Ursine.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_talking>>\nGood morning emma\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer ursine_default_silent>>\nGood morning ursine\n[[....|Ursine.Dialog.Resolve]]",
 		"position": {
 			"x": 890,
 			"y": 1181
@@ -212,7 +212,7 @@
 	{
 		"title": "Ursine.AddToEscapeQuest",
 		"tags": "",
-		"body": "<<addNPCToEscape CampAreaSecretEscape Ursine>>\nEscape? Here? You have a plan?\nI'll help you, whatever it takes\n",
+		"body": "<<addNPCToEscape CampAreaSecretEscape Ursine>>\nEscape? Back to the real world?\nI might as well give it a shot",
 		"position": {
 			"x": 1911,
 			"y": 580

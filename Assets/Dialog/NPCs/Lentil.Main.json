@@ -2,7 +2,7 @@
 	{
 		"title": "Lentil.Day1.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLikewise\n",
 		"position": {
 			"x": 212,
 			"y": 143
@@ -12,7 +12,7 @@
 	{
 		"title": "Lentil.Day1.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHi Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nHi Lentil\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHi Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nHi Lentil\n",
 		"position": {
 			"x": 212,
 			"y": 355
@@ -32,7 +32,7 @@
 	{
 		"title": "Lentil.Day2.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nGood Morning Lentil\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\neh\n",
 		"position": {
 			"x": 230,
 			"y": 665
@@ -42,7 +42,7 @@
 	{
 		"title": "Lentil.Day2.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nNice weather we're having lentil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nIs that a joke?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\n...I guess\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nthat's some real good deadpan comedy there\nlove it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nok sure\n\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nNice weather we're having lentil\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nIs that a joke?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\n...I guess\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nthat's some real good deadpan comedy there\nlove it\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nok sure",
 		"position": {
 			"x": 227,
 			"y": 881
@@ -52,7 +52,7 @@
 	{
 		"title": "Lentil.Day3.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHey Lentil\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\neh..",
 		"position": {
 			"x": 459,
 			"y": 665
@@ -62,7 +62,7 @@
 	{
 		"title": "Lentil.Day3.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nWhat did you use to do?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nI used to be a miner\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\na free miner?\nI thought all mines were slave labor\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nNah, it was actually good money\ncan't get good yeild if your labor is starving and terrified\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nwell, I guess someone's trying\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nWhat did you use to do?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nI used to be a miner\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\na free miner?\nI thought all mines were slave labor\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nNah, it was actually good money\ncan't get good yeild if your labor is starving and terrified\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nwell, I guess someone's trying",
 		"position": {
 			"x": 466,
 			"y": 890
@@ -72,7 +72,7 @@
 	{
 		"title": "Lentil.Day4.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHi Lentil\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nI'm still tired, heh",
 		"position": {
 			"x": 746,
 			"y": 666
@@ -92,7 +92,7 @@
 	{
 		"title": "Lentil.Day5.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nGood morning\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nmmmhmmm\n[[....|Lentil.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 665
@@ -102,7 +102,7 @@
 	{
 		"title": "Lentil.Day5.Evening.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nDepressed again Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nOf course I am\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nMe too\nit's like the whole world is a dark void\nit's like I'm in a tornado of ash\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nI feel like I'm at the bottom of the sea\nI can feel the weight of the whole ocean\ncrushing my ribcage\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\n...\nthat's good\nthat's poetry\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nyou think so?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nyeah\n<<CampEventController upgradePickaxeLevel>>\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nDepressed again Emma\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nOf course I am\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nMe too\nit's like the whole world is a dark void\nit's like I'm in a tornado of ash\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nI feel like I'm at the bottom of the sea\nI can feel the weight of the whole ocean\ncrushing my ribcage\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\n...\nthat's good\nthat's poetry\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nyou think so?\n\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nyeah\n[[....|Lentil.Dialog.Resolve]]",
 		"position": {
 			"x": 999,
 			"y": 887
@@ -112,7 +112,7 @@
 	{
 		"title": "Lentil.Day6.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHey Lentil\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nhi\n[[....|Lentil.Dialog.Resolve]]",
 		"position": {
 			"x": 1239,
 			"y": 662
@@ -132,7 +132,7 @@
 	{
 		"title": "Lentil.Day7.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHi emma\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nhey\n[[....|Lentil.Dialog.Resolve]]",
 		"position": {
 			"x": 203,
 			"y": 1182
@@ -152,7 +152,7 @@
 	{
 		"title": "Lentil.Day8.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nugh\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nyeah\n[[....|Lentil.Dialog.Resolve]]",
 		"position": {
 			"x": 427,
 			"y": 1182
@@ -172,7 +172,7 @@
 	{
 		"title": "Lentil.Day9.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\n....\nhey\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
 		"position": {
 			"x": 662,
 			"y": 1184
@@ -192,7 +192,7 @@
 	{
 		"title": "Lentil.Day10.Morning.Start",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\nHello, I don't think we've met\nI'm Lentil. \nI'm glad to finally meet you\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\nLikewise\n[[....|Lentil.Dialog.Resolve]]",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_talking>>\n....\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer lentil_default_silent>>\n...\n[[....|Lentil.Dialog.Resolve]]",
 		"position": {
 			"x": 890,
 			"y": 1181
@@ -212,10 +212,10 @@
 	{
 		"title": "Lentil.AddToEscapeQuest",
 		"tags": "",
-		"body": "<<addNPCToEscape CampAreaSecretEscape Lentil>>\nEscape? Here? You have a plan?\nI'll help you, whatever it takes\n",
+		"body": "<<addNPCToEscape CampAreaSecretEscape Lentil>>\nYou want to escape?\nfinally, a ray of hope\nI'll try to help as much as I can\n",
 		"position": {
-			"x": 1911,
-			"y": 580
+			"x": 1614,
+			"y": 701
 		},
 		"colorID": 0
 	},
