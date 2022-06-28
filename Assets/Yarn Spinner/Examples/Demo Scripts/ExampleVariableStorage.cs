@@ -170,6 +170,7 @@ public class ExampleVariableStorage : VariableStorageBehaviour
     public void LoadVariablesFromSaveFile(DefaultVariable[] dialogVariables)
     {
         defaultVariables = dialogVariables;
+        ResetToDefaults();
     }
 
 }

@@ -42,8 +42,9 @@ public class CampPopulationController : MonoBehaviour {
 			print("loading game from save");
 			IsNewGame = false;
             //this is also being looked at in the game save controller so watch it
-            startGameObj.GetComponent<StartGameController>().loadGameFromSave = false;
 
+            startGameObj.GetComponent<StartGameController>().loadGameFromSave = false;
+            Destroy(startGameObj);
         }
 
 		if (IsNewGame == true)
@@ -53,7 +54,8 @@ public class CampPopulationController : MonoBehaviour {
 
 			SpawnNewPlayerAndNPCSquad();
 			IsNewGame = false;
-		}
+            Destroy(startGameObj);
+        }
 
         
 

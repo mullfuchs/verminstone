@@ -26,11 +26,11 @@ public class GameSaveController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.P)) {
-			SaveGame ();		
+		//	SaveGame ();		
 		}
 
 		if (Input.GetKeyDown (KeyCode.O)) {
-			LoadGame ();
+		//	LoadGame ();
 		}
 	}
 
@@ -221,7 +221,7 @@ public class GameSaveController : MonoBehaviour {
         {
             GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().LoadCompletedQuests(currentlyLoadedSave.CompletedQuests);
             GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().RestoreQuestVariables(currentlyLoadedSave.QuestVariableReference);
-
+            print("loading dialog variables...hopefully");
             GameObject.Find("Dialogue").GetComponent<ExampleVariableStorage>().LoadVariablesFromSaveFile(currentlyLoadedSave.DialogViariableReferece);
 
         }

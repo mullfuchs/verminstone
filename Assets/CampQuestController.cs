@@ -67,6 +67,7 @@ public class CampQuestController : MonoBehaviour {
         QuestVariableReference.EscapingNPCs = gameObject.transform.Find("CampAreaSecretEscape").GetComponent<SetNPCEscapeFlags>().npcsThatCanEscape.ToArray();
         QuestVariableReference.daysLeftToEscape = gameObject.transform.Find("CampAreaSecretEscape").GetComponent<SetNPCEscapeFlags>().daysLeftToEscape;
         QuestVariableReference.metersOfTunnelDug = gameObject.transform.Find("CampAreaSecretEscape").GetComponent<SetNPCEscapeFlags>().metersOfTunnelDug;
+        QuestVariableReference.playerHasStartedEscape = gameObject.transform.Find("CampAreaSecretEscape").GetComponent<SetNPCEscapeFlags>().hasPlayerStartedEscape;
         return QuestVariableReference;
     }
 
@@ -76,6 +77,7 @@ public class CampQuestController : MonoBehaviour {
         flags.npcsThatCanEscape =  q.EscapingNPCs.ToList();
         flags.daysLeftToEscape = q.daysLeftToEscape;
         flags.metersOfTunnelDug = q.metersOfTunnelDug;
+        flags.hasPlayerStartedEscape = q.playerHasStartedEscape;
     }
 
 	public List<string> GetCompletedQuestList(){
@@ -101,4 +103,5 @@ public struct QuestVariables{
     public string[] EscapingNPCs;
     public int daysLeftToEscape;
     public int metersOfTunnelDug;
+    public bool playerHasStartedEscape;
 }

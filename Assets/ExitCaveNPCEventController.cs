@@ -166,7 +166,8 @@ public class ExitCaveNPCEventController : MonoBehaviour {
             GameObject.Find("CampEventController").GetComponent<CampInventoryController>().EnableShopKeeper(false);
 
             //so for some reason when this hits it wipes the save? uhh?
-            //GameObject.Find("CampEventController").GetComponent<GameSaveController>().LoadQuestObjects();
+            //restoring this but refactoring to only hot load dialog variables
+            GameObject.Find("CampEventController").GetComponent<GameSaveController>().LoadQuestObjects();
 
             //EventController.GetComponent<CampEventController>().SendNPCsToBarracks();
         } else {

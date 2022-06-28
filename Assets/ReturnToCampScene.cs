@@ -23,10 +23,11 @@ public class ReturnToCampScene : MonoBehaviour {
 	[Yarn.Unity.YarnCommand("returnToCampScene")]
 	public void loadCamp(){
 		print ("returning to camp?");
+        Destroy(GameObject.Find("CampEventController")); //gonna try destroying the camp event controller then having the whole scene reload
         DontDestroyOnLoad(transform.gameObject);
         SceneManager.LoadScene("Camp");
         print("restoring camp stuff");
-        GameObject.Find("CampEventController").GetComponent<CampNarrativeController>().SetPlayerAndNPCsActive(true);
+      //  GameObject.Find("CampEventController").GetComponent<CampNarrativeController>().SetPlayerAndNPCsActive(true);
         GameObject.Find ("CampEventController").GetComponent<CampEventController> ().StartDay ();
         Destroy(transform.gameObject);
 
