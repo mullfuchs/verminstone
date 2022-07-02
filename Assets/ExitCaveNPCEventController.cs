@@ -213,22 +213,22 @@ public class ExitCaveNPCEventController : MonoBehaviour {
     {
         string returnNode = "Overseer.Exit.Success1";
 
-        if (VstoneEcoInstance.getTotalCollected() >= (1 + VstoneEcoInstance.ExtraVstoneForFivePortion) * VstoneEcoInstance.getDailyQuota())
+        if (VstoneEcoInstance.getDailyTotal() >= (1 + VstoneEcoInstance.ExtraVstoneForFivePortion) * VstoneEcoInstance.getDailyQuota())
         {
             returnNode = "Overseer.Exit.Success5";
             VStoneEcoInstance.ExtraPortionsForDay = 5;
         }
-        else if (VstoneEcoInstance.getTotalCollected() >= (1 + VstoneEcoInstance.ExtraVstoneForFourPortion) * VstoneEcoInstance.getDailyQuota())
+        else if (VstoneEcoInstance.getDailyTotal() >= (1 + VstoneEcoInstance.ExtraVstoneForFourPortion) * VstoneEcoInstance.getDailyQuota())
         {
             returnNode = "Overseer.Exit.Success4";
             VStoneEcoInstance.ExtraPortionsForDay = 4;
         }
-        else if (VstoneEcoInstance.getTotalCollected() >= (1 + VstoneEcoInstance.ExtraVStoneForThreePortion) * VstoneEcoInstance.getDailyQuota())
+        else if (VstoneEcoInstance.getDailyTotal() >= (1 + VstoneEcoInstance.ExtraVStoneForThreePortion) * VstoneEcoInstance.getDailyQuota())
         {
             returnNode = "Overseer.Exit.Success3";
             VStoneEcoInstance.ExtraPortionsForDay = 3;
         }
-        else if (VstoneEcoInstance.getTotalCollected() >= (1 + VstoneEcoInstance.ExtraVStoneForTwoPortion) * VstoneEcoInstance.getDailyQuota())
+        else if (VstoneEcoInstance.getDailyTotal() >= (1 + VstoneEcoInstance.ExtraVStoneForTwoPortion) * VstoneEcoInstance.getDailyQuota())
         {
             returnNode = "Overseer.Exit.Success2";
             VStoneEcoInstance.ExtraPortionsForDay = 2;

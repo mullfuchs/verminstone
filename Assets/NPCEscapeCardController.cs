@@ -66,10 +66,10 @@ public class NPCEscapeCardController : MonoBehaviour
         if (!hasDugTunnel)
         {
             NPCstats stats = associatedNPC.GetComponent<NPCstats>();
-            if(stats.health > 26)
+            if(npcHealth.healthPoints > 26)
             {
-                stats.health -= 25;
-                npcHealth.healthPoints = stats.health;
+                npcHealth.healthPoints -= 25;
+                stats.health = npcHealth.healthPoints;
 
                 UpdateEscapeCardUI();
                 parentEscapeUIController.updateEscapeStatsAndUI(stats.attack);
