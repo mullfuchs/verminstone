@@ -9,6 +9,8 @@ public class ItemEquipCardController : MonoBehaviour {
 
     public GameObject nameText;
 
+    public GameObject statText;
+
     public Image icon;
     // Use this for initialization
     void Start () {
@@ -31,6 +33,7 @@ public class ItemEquipCardController : MonoBehaviour {
     {
         EquippableItem itemStats = associatedItem.GetComponent<EquippableItem>();
         nameText.GetComponent<Text>().text = "Level " + itemStats.itemLevel + " " + itemStats.itemName;
+        statText.GetComponent<Text>().text = GetStatBonusString(associatedItem);
         icon.sprite = itemStats.icon;
     }
 
@@ -42,6 +45,21 @@ public class ItemEquipCardController : MonoBehaviour {
             equipUI.SetCurrentItemAndEnableButtons(associatedItem);
         }
 
+    }
+
+    private string GetStatBonusString(GameObject item)
+    {
+        if (item.GetComponent<DefenseController>() != null)
+        {
+            return "Def +" + item.GetComponent<DefenseController>().defensePoints;
+        }
+
+        if (item.GetComponent<WeaponController>() != null)
+        {
+            return "Atk +" + item.GetComponent<WeaponController>().damage;
+        }
+
+        return "";
     }
 
 }

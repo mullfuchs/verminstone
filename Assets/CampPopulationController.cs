@@ -191,12 +191,14 @@ public class CampPopulationController : MonoBehaviour {
     {
         GameObject player = SpawnPlayerPrefab();
         player.transform.position = position;
+        player.GetComponentInChildren<ShootOnAxisInput>().canShoot = false;
         player.GetComponent<health>().healthPoints = healthpoints;
     }
 
 	private GameObject SpawnPlayerPrefab(){
 		GameObject Player = Instantiate (PlayerPrefab, PlayerSpawnPoint.position, Quaternion.identity);
 		Player.name = "Player";
+        Player.GetComponentInChildren<ShootOnAxisInput>().canShoot = false;
         return Player;
 	}
 

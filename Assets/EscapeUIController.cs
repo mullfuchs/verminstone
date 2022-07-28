@@ -65,7 +65,7 @@ public class EscapeUIController : MonoBehaviour
             npcCard.GetComponent<NPCEscapeCardController>().parentEscapeUIController = this;
             NPCCards.Add(npcCard);
         }
-        TunnelDisplay.GetComponent<Text>().text = "Tunnel Dug: " + metersOfTunnel;
+        TunnelDisplay.GetComponent<Text>().text = "Meters left to dig: " + (EscapeObjectInstance.metersNeededToEscape - metersOfTunnel);
         //make cards for em
         //add a player card too
         GameObject playerObj = GameObject.Find("Player");
@@ -97,7 +97,7 @@ public class EscapeUIController : MonoBehaviour
         //update the amount of tunnel dug
         //update the UI
         metersOfTunnel += metersDug;
-        TunnelDisplay.GetComponent<Text>().text = "Tunnel Dug: " + metersOfTunnel;
+        TunnelDisplay.GetComponent<Text>().text = "Distance left: " + (EscapeObjectInstance.metersNeededToEscape - metersOfTunnel);
     }
 
     public void AttemptEscape()

@@ -59,7 +59,7 @@ public class ExampleVariableStorage : VariableStorageBehaviour
 	{
         if(debugTextView == null)
         {
-            debugTextView = GameObject.Find("DialogVariableDebug").GetComponent<UnityEngine.UI.Text>();
+          //  debugTextView = GameObject.Find("DialogVariableDebug").GetComponent<UnityEngine.UI.Text>();
         }
 		ResetToDefaults ();
 	}

@@ -30,7 +30,7 @@ public class HandleGameState : MonoBehaviour {
         }
 
 
-		if(Input.GetKeyDown(KeyCode.Alpha0) && forceRestart)
+		if(Input.GetButtonDown("Action") && clearToRestart)
 		{
             SceneManager.LoadScene("TitleScreen");
         }
@@ -46,9 +46,9 @@ public class HandleGameState : MonoBehaviour {
         //GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().SetScreenOverlayColor (Color.black);
         GameObject.Find("MultipurposeCameraRig").GetComponent<ScreenFade>().FadeOutScene(2.0f);
         yield return new WaitForSeconds(2.0f);
-        UIcontroller.updateText(UIcontroller.GameStatusText, "GAME \n OVER");
+        UIcontroller.updateText(UIcontroller.GameStatusText, "YOU \n DIED");
         yield return new WaitForSeconds(2.0f);
-        UIcontroller.updateText(UIcontroller.GameStatusText, "Press the Zero key to restart");
+        UIcontroller.updateText(UIcontroller.GameStatusSubtitle, "Press A to \n return to title screen");
         clearToRestart = true;
 
     }

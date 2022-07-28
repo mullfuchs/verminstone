@@ -28,7 +28,7 @@ public class ChangeFloorOnEnter : MonoBehaviour {
 
 	void OnTriggerStay(Collider other){
 		
-		if (other.gameObject.tag == "Player" && CanSwapLevels && Input.GetButton("Action")) {
+		if (other.gameObject.tag == "Player" && Input.GetButton("Action")) {
 			cameraFade.StartFade (Color.black, 2.0f);
 			if (descending) {
 				caveManager.GetComponent<CaveManager> ().DescendToLowerFloor ();

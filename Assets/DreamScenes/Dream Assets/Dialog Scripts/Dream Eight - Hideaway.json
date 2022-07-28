@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Hideout.Start",
+		"tags": "",
+		"body": "<<changeSceneShot SceneShotController openingshot>>\r\n<<changeSceneObject SceneShotController CrowdLooking>>\r\nHey uhh\r\n<<changeSceneShot SceneShotController shotonbar>>\r\n...\r\n<<changeSceneShot SceneShotController rockycloseup>>\r\nShe's cool guys, I know her\r\n<<changeSceneObject SceneShotController EmmaAtBar>>\r\n<<changeSceneShot SceneShotController emmacloseup>>\r\nWhere is this place?\r\n<<changeSceneShot SceneShotController pianocloseup>>\r\nIt's a little hideout we run\r\nhow did you find it?\r\n<<changeSceneShot SceneShotController emmacloseup>>\r\nI dunno, I sleepwalk a lot\r\nend up in places I shouldn't be...\r\n<<changeSceneShot SceneShotController rockycloseup>>\r\nWell, want a drink?\r\n<<changeSceneShot SceneShotController emmacloseup>>\r\n...\r\nYeah\r\n<<changeSceneShot SceneShotController pianocloseup>>\r\nNot sure how that piano can hold a tune\r\n<<changeSceneShot SceneShotController emmacloseup>>\r\nWhat do we do rocky?\r\nAre we just going to work until we die?\r\n<<changeSceneShot SceneShotController rockycloseup>>\r\nwell....\r\nlisten\r\nthere's a pipe in your camp\r\n<<changeSceneShot SceneShotController emmacloseup>>\r\na pipe?\r\n<<changeSceneShot SceneShotController rockycloseup>>\r\nyeah, just like the one you sleep walked through\r\nanyway, walk into it\r\n<<changeSceneShot SceneShotController emmacloseup>>\r\nand?\r\n<<changeSceneShot SceneShotController pianocloseup>>\r\nyou'll see...\r\n<<changeSceneShot SceneShotController emmacloseup>>\r\nalright.\r\n<<changeSceneShot SceneShotController rockycloseup>>\r\nAre you enjoying your drink?\r\n<<changeSceneShot SceneShotController emmacloseup>>\r\nI haven't had any\r\nbut I feel kind of\r\nsleepy...\r\n<<returnToCampScene SceneShotController>>",
+		"position": {
+			"x": 460,
+			"y": 709
+		},
+		"colorID": 0
+	}
+]

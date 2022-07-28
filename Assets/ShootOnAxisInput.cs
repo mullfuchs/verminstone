@@ -16,7 +16,7 @@ public class ShootOnAxisInput : MonoBehaviour {
     public float cost = 0.8f;
     public float secondsAlive = 5.0f;
 
-	private bool canShoot = true;
+	public bool canShoot = true;
 
 	void ResetShot(){
 		canShoot = true;
@@ -25,6 +25,11 @@ public class ShootOnAxisInput : MonoBehaviour {
 	void Start () {
 	
 	}
+
+    public void setCanShoot(bool canPlayerShoot)
+    {
+        canShoot = canPlayerShoot;
+    }
 	
 	// Update is called once per frame
 	void Update () {

@@ -12,6 +12,7 @@ public class UIController : MonoBehaviour {
 
     public GameObject VStoneAmountText;
     public GameObject GameStatusText;
+    public GameObject GameStatusSubtitle;
 
 	public GameObject NPCHealthPrefab;
 	public GameObject NPCPrefabContainer;

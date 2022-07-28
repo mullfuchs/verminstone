@@ -60,7 +60,7 @@ public class PlayerEventController : MonoBehaviour {
             iconIndicator.sprite = FoodIcon;
             actionDescriptionText.text = "Eat";
         }
-        if (Other.tag == "EquipArea"){
+        if (Other.tag == "EquipArea" && !isEvening()){
             iconIndicator.sprite = EquipIcon;
             actionDescriptionText.text = "Equip Team";
             //CampEventControllerInstance.StartEquipAreaSequence();
@@ -94,7 +94,7 @@ public class PlayerEventController : MonoBehaviour {
             actionDescriptionText.text = "Dig Tunnel";
             //CampEventControllerInstance.StartTunnelDigSequence();
         }
-        if(Other.tag == "bed")
+        if(Other.tag == "bed" && isEvening())
         {
             iconIndicator.sprite = SleepIcon;
             actionDescriptionText.text = "Sleep";
@@ -131,7 +131,7 @@ public class PlayerEventController : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider other){
-		if (other.tag == "bed" && Input.GetButtonDown("Action") && canEndDay) {
+		if (other.tag == "bed" && Input.GetButtonDown("Action") && canEndDay && isEvening()) {
 			print ("Ending day");
 			canEndDay = false;
 			CampEventControllerInstance.EndDay ();
@@ -212,5 +212,10 @@ public class PlayerEventController : MonoBehaviour {
     public void SetPlayerMovement(bool canMove)
     {
         gameObject.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl>().can_move = canMove;
+    }
+
+    public bool isEvening()
+    {
+        return CampEventControllerInstance.GetComponent<CampNarrativeController>().timeOfDay == CampNarrativeController.timePeriod.Evening;
     }
 }

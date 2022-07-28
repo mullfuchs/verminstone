@@ -83,7 +83,7 @@ public class NPCOverworldController : MonoBehaviour {
 		//idling = false;
 		if (gameObject.GetComponent<NPCstats> ().bedIndex != null) {
             GameObject bed = GameObject.Find("CampEventController").GetComponent<NPCBedController>().npcBeds[ gameObject.GetComponent<NPCstats> ().bedIndex ];
-			gameObject.GetComponent<AIStateMachine> ().SendNPCToObject (bed);
+			gameObject.GetComponent<AIStateMachine> ().HardSendNPCToObject (bed);
 			//God this sucks, but what can ya do lol
 		}
 	}

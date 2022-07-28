@@ -107,7 +107,10 @@ namespace Yarn.Unity.Example {
 				foreach (char c in line.text) {
 					stringBuilder.Append (c);
 					lineText.text = stringBuilder.ToString ();
-                    AudioSource.PlayOneShot(TextAdvanceSound);
+                    if(TextAdvanceSound != null)
+                    {
+                        AudioSource.PlayOneShot(TextAdvanceSound);
+                    }
 					yield return new WaitForSeconds (textSpeed);
 				}
 			} else {
@@ -121,8 +124,9 @@ namespace Yarn.Unity.Example {
 			
 			
 			// Wait for any user input
-			while (Input.anyKeyDown == false) {
-				yield return null;
+			while (Input.GetButtonDown("Action") == false) {
+
+                yield return null;
 			}
 			
 			// Hide the text and prompt

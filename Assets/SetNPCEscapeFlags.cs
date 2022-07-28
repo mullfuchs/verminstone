@@ -81,7 +81,7 @@ public class SetNPCEscapeFlags : MonoBehaviour {
     {
         hasPlayerStartedEscape = true;
 
-        EscapeReturnGameObject.GetComponent<SetDialogNodeForNPCOnEnter>().enabled = false;
+        ///EscapeReturnGameObject.GetComponent<SetDialogNodeForNPCOnEnter>().enabled = false;
         
         GameObject dialogInstance = GameObject.Find("Dialogue");
         ExampleVariableStorage.DefaultVariable[] vars = dialogInstance.GetComponent<ExampleVariableStorage>().defaultVariables;
@@ -106,12 +106,9 @@ public class SetNPCEscapeFlags : MonoBehaviour {
             GameObject n = GameObject.Find(name);
             if(n != null)
             {
-                //clearing targets makes them follow 
-                //n.GetComponent<AIStateMachine>().targets.Clear();
-                
-                //n.GetComponent<NPCOverworldController>().isEscaping = false;
-                n.GetComponent<NPCOverworldController>().SendNPCToBed();
+                n.GetComponent<AIStateMachine>().targets.Clear();
                 EntryWarpZone.GetComponent<WarpPlayerAndNPCsToZoneOnEnter>().WarpNPCToZone(n);
+                n.GetComponent<NPCOverworldController>().SendNPCToBed();
             }
         }
         
