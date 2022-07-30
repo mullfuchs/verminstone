@@ -52,7 +52,7 @@
 	{
 		"title": "RockyEscape.ResolveDialog",
 		"tags": "",
-		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nOk. Just walk up to the thing and dig\nOur associate here will also help\n<<set $escape_active to true>>\n<<setPlayerStartEscapeFlag CampAreaSecretEscape>>\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nAre you gonna fuckin help?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\noh uhh, absolutly",
+		"body": "<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\nOk. Just walk up to the thing and dig\nOur associate here will also help\nremember to talk to others in the camp\neventually, you'll gain their trust\nand you can ask them to help dig too\n<<set $escape_active to true>>\n<<setPlayerStartEscapeFlag CampAreaSecretEscape>>\n<<setRightPortrait DialogAndPortraitContainer emma_default_talking>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_silent>>\nAre you gonna fuckin help?\n<<setRightPortrait DialogAndPortraitContainer emma_default_silent>>\n<<setLeftPortrait DialogAndPortraitContainer rocky_default_talking>>\noh uhh, absolutly",
 		"position": {
 			"x": 303,
 			"y": -25

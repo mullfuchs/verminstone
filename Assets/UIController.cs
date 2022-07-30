@@ -30,7 +30,13 @@ public class UIController : MonoBehaviour {
         assignBarObject(PowerBar, PowerBarObject);
         assignBarObject(XPBar, XPBarObject); 
 		SetupNPCCards ();
-	}
+        InitializeTheUI();
+    }
+
+    private void Awake()
+    {
+       
+    }
 
     void assignBarObject(FillableBarController bar, GameObject barObject)
     {
@@ -115,6 +121,16 @@ public class UIController : MonoBehaviour {
 		}
 	}
 
-
+    public void InitializeTheUI()
+    {
+        GameObject playerObj = GameObject.Find("Player");
+        //vstone needed
+        float kgOfVStoneNeeded = playerObj.GetComponent<NPCTeamHandler>().getVstoneQuota();
+        updateText(VStoneAmountText, "0 / " + kgOfVStoneNeeded.ToString());
+        //energy level
+        updateBar(PowerBarObject, playerObj.GetComponent<PowerObject>().getPowerAmount());
+        //health
+        updateBar(HealthBarObject, playerObj.GetComponent<health>().healthPoints);
+    }
 
 }

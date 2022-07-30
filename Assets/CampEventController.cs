@@ -33,7 +33,9 @@ public class CampEventController : MonoBehaviour {
 
 	public static CampEventController instance = null;
 
-	public GameObject Sun;
+    public GameObject SunDay;
+    public GameObject SunEvening;
+
 	private float DayCycleClockTime;
 
 	public int DaysToFinishGame = 10;
@@ -212,8 +214,9 @@ public class CampEventController : MonoBehaviour {
 		GameObject.Find ("CampEventController").GetComponent<VStoneEconomyObject> ().resetDailyTotal ();
 
 		yield return new WaitForSeconds (2.0f);
-        //Sun.transform.Rotate( new Vector3(7.633f,-201.307f,-153.5f));
+        EnableMorningLighting();
         //advance time
+
 		day += 1;
 		GameObject.Find ("DayCounter").GetComponent<UnityEngine.UI.Text> ().text = "Day:" + day;
         gameObject.GetComponent<CampNarrativeController>().day += 1;
@@ -277,6 +280,7 @@ public class CampEventController : MonoBehaviour {
 	public void EnterCaveSequence(){
         //set cave entrance object to be inactive
         //caveExitObject.LoadLevelOnEnter = false;
+        DisableAllSuns();
         HideNonWorkerNPCs();
         GameObject.Find("Player").GetComponent<NPCTeamHandler>().rebuildNPCLists();
         GameObject.Find("Player").GetComponent<PlayerEventController>().dialogOpened = false;
@@ -290,6 +294,7 @@ public class CampEventController : MonoBehaviour {
 	public void ExitCaveSequence(){
 		print ("exiting cave");
         UnHideWorkerNPCs();
+        EnableEveningLighting();
 		gameObject.GetComponent<CampNarrativeController>().timeOfDay = CampNarrativeController.timePeriod.Evening;
 		gameObject.GetComponent<CampNarrativeController> ().UpdateNPCNarratives ();
 		//gameObject.GetComponent<CampNarrativeController> ().UpdateKeyNPCNarratives ();
@@ -370,6 +375,24 @@ public class CampEventController : MonoBehaviour {
                 npc.GetComponent<NPCOverworldController>().idling = true;
             }
         }
+    }
+
+    public void EnableMorningLighting()
+    {
+        SunDay.SetActive(true);
+        SunEvening.SetActive(false);
+    }
+
+    public void EnableEveningLighting()
+    {
+        SunDay.SetActive(false);
+        SunEvening.SetActive(true);
+    }
+
+    public void DisableAllSuns()
+    {
+        SunDay.SetActive(false);
+        SunEvening.SetActive(false);
     }
 
 }

@@ -16,6 +16,7 @@ public class VStoneObject : MonoBehaviour {
     private GameObject playerObject;
     private GameObject EnemyTeamHandler;
 	public int FragmentsToMake = 5;
+    public GameObject ShatterEffectObject;
 
 	public float ShardSpawnRadius = 0.5f;
 
@@ -132,6 +133,10 @@ public class VStoneObject : MonoBehaviour {
 			GameObject.Find("CaveManager").GetComponent<CaveManager>().RemoveObjectFromFloor(gameObject);
 		}
         AudioSource.PlayClipAtPoint(destructionSound, this.transform.position);
-		Destroy(gameObject);
+        if(ShatterEffectObject != null)
+        {
+            Instantiate(ShatterEffectObject, gameObject.transform.position, gameObject.transform.rotation);
+        }
+        Destroy(gameObject);
 	}
 }

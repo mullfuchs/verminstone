@@ -415,6 +415,11 @@ public class NPCTeamHandler : MonoBehaviour {
 		KgVstoneNeeded = amt;
 	}
 
+    public float getVstoneQuota()
+    {
+        return KgVstoneNeeded;
+    }
+
 	public void rebuildNPCLists(){
 		CurrentMiners = GetAllNPCSwithMineTools();
 		CurrentCarriers = GetAllNPCSwithBagTools();
