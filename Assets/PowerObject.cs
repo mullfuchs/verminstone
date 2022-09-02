@@ -4,6 +4,7 @@ using System.Collections;
 public class PowerObject : MonoBehaviour {
 
     public GameObject UIObject;
+    public GameObject HealEffect;
 
 	private float powerAmount = 1;
     private float maxPowerAmount = 5;
@@ -94,9 +95,9 @@ public class PowerObject : MonoBehaviour {
     }
 
 	public void RemovePowerAmount(float amount){
-		if (powerAmount > 0) {
+		if (powerAmount > 0 && uiController != null) {
 			powerAmount -= amount;
-            if (powerAmount == 0)
+            if (powerAmount == 0 && uiController.PowerBarObject != null)
             {
                 uiController.updateBar(uiController.PowerBarObject, 0.1f);
             }
@@ -191,7 +192,7 @@ public class PowerObject : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		GUILayout.Label ("Power " + powerAmount + " Level " + powerLevel);
+		//GUILayout.Label ("Power " + powerAmount + " Level " + powerLevel);
 	}
 
 	public float getPowerAmount(){
@@ -249,6 +250,8 @@ public class PowerObject : MonoBehaviour {
         {
             health npcHeath = npc.GetComponent<health>();
             npcHeath.AddHealth(healingAmount);
+            GameObject healOrb = Instantiate(HealEffect, gameObject.transform.position, Quaternion.identity);
+            healOrb.GetComponent<HealingOrbScript>().target = npc;
         }
 
         health playerHealth = gameObject.GetComponent<health>();

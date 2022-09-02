@@ -1,0 +1,12 @@
+[
+	{
+		"title": "BadEnd.Start",
+		"tags": "",
+		"body": "<<changeSceneShot SceneShotController shot1>>\nWe know how this is going to go\nYou're smarter than the others you know\n<<changeSceneShot SceneShotController shot2>>\nI don't think you belong here \nnot like the others\n<<changeSceneShot SceneShotController shot4>>\nSo lets work together\nyou help us out, and we'll help you out\n<<changeSceneShot SceneShotController shot1>>\nI think I can arrange a work transfer\nYou know you won't survive much longer in those caves\nDon't be a dummy now\n<<changeSceneShot SceneShotController shot3>>\n....\n<<changeSceneShot SceneShotController shot4>>\nNot going to talk huh?\nGoing to be a brave one too?\nI thought you were smart\n<<returnToCampScene DialogAndPortraitContainer>>",
+		"position": {
+			"x": 540,
+			"y": 260
+		},
+		"colorID": 0
+	}
+]

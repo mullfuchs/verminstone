@@ -90,7 +90,7 @@ public class NPCTeamHandler : MonoBehaviour {
 
 	}
 
-    public void makeNPCPickUpBag(GameObject bag)
+    public void makeNPCPickUpBag(GameObject bag, float vstoneAmount)
     {
         //check all npc for health and if they do not have a 
         List<GameObject> eligableNPCs = new List<GameObject>();
@@ -106,7 +106,9 @@ public class NPCTeamHandler : MonoBehaviour {
         }
         int randIndex = Random.Range(0, eligableNPCs.Count);
 
-        eligableNPCs[randIndex].GetComponent<AIStateMachine>().AddTargetForNPC(bag);
+        eligableNPCs[randIndex].GetComponent<NPCInventory>().EquipBackItem(bag);
+        eligableNPCs[randIndex].GetComponent<AIStateMachine>().SetVstoneAmount((vstoneAmount));
+
 
     }
 
@@ -353,11 +355,15 @@ public class NPCTeamHandler : MonoBehaviour {
         //redistribute targets, if any
 		if(npc.GetComponent<NPCInventory>().ObjectOnBack != null && npc.GetComponent<NPCInventory>().ObjectOnBack.GetComponent<EquippableItem>().itemName == "Back Bag")
         {
-			removeCollectedVStone (npc.GetComponent<AIStateMachine> ().GetVerminStoneAmount ());
+			//removeCollectedVStone (npc.GetComponent<NPCInventory>().ObjectOnBack.GetComponent<Vstonebag>().currentVStoneAmount);
             //spawn vstone bag prefab
             //find an npc that has an empty slot or does not have a back, make em pick it up
         }
-
+        GameObject canvas = GameObject.Find("Canvas");
+        if (canvas != null)
+        {
+           canvas.GetComponent<UIController>().ResetNPCCards();
+        }
         //TODO: hash out if/how npcs picking up inventory works
         //GameObject handObj = npc.GetComponent<NPCInventory>().ObjectHeldInHands;
         //GameObject backObj = npc.GetComponent<NPCInventory>().ObjectOnBack;
@@ -392,12 +398,10 @@ public class NPCTeamHandler : MonoBehaviour {
 	public void removeCollectedVStone(float amount)
 	{
 		KilogramsofVstoneCollected -= amount;
-		UIController uiObject = GameObject.FindObjectOfType<UIController> ();
-		if (uiObject != null) {
-			UIcontroller = uiObject;
-		}
-
-		UIcontroller.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString() + " / " + KgVstoneNeeded.ToString() );
+        UIController uiObject = GameObject.FindGameObjectWithTag("GameUI").GetComponent<UIController>();
+        if (uiObject != null) {
+            uiObject.updateText(UIcontroller.VStoneAmountText, KilogramsofVstoneCollected.ToString() + " / " + KgVstoneNeeded.ToString());
+        }
 
 	}
 

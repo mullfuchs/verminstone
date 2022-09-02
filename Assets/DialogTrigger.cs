@@ -40,6 +40,7 @@ namespace Yarn.Unity.Example{
                 {
                     canTalkToNPCs = false;
                     // Kick off the dialogue at this node.
+                    npc.GetComponentInParent<UnityEngine.AI.NavMeshAgent>().isStopped = true;
                     if (npc.GetComponentInParent<NPCstats>().hasBeenTalkedToToday == false )
                     {
                         //find the camp event controller and figure if it's day or night time
@@ -141,6 +142,7 @@ namespace Yarn.Unity.Example{
             if(CurrentNPC != null && CurrentNPC.GetComponent<NPCOverworldController>() != null)
             {
                 CurrentNPC.GetComponent<NPCOverworldController>().idling = true;
+                CurrentNPC.GetComponentInParent<UnityEngine.AI.NavMeshAgent>().isStopped = false;
             }
         }
 

@@ -138,21 +138,18 @@ public class health : MonoBehaviour {
         if(gameObject.tag == "WorkerNPC")
         {
 			if(gameObject.GetComponent<NPCstats> ().ragDollObject != null){
-                GameObject.FindGameObjectWithTag("Player").GetComponent<NPCTeamHandler>().handleNPCDeath(gameObject);
+                GameObject backobject = gameObject.GetComponent<NPCInventory>().getBackObject();
+
+                gameObject.GetComponent<AIStateMachine>().handleDeath(backobject);
+
 				GameObject ragdoll = Instantiate (gameObject.GetComponent<NPCstats> ().ragDollObject, gameObject.transform.position, gameObject.transform.rotation);
                 ragdoll.GetComponent<RagdollController>().NPCCopy = this.gameObject;
                 this.gameObject.transform.parent = ragdoll.transform;
                 this.gameObject.SetActive(false);
-			}
-            //dump the bag if they have it
-            GameObject backobject = gameObject.GetComponent<NPCInventory>().getBackObject();
-            if(backobject != null && backobject.tag == "BagTool")
-            {
-                gameObject.GetComponent<NPCInventory>().DropBackItem();
+
+                GameObject.FindGameObjectWithTag("Player").GetComponent<NPCTeamHandler>().handleNPCDeath(gameObject);
             }
 
-
-			gameObject.GetComponent<AIStateMachine>().handleDeath(backobject);
             return;
         }
 		

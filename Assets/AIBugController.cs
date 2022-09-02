@@ -49,7 +49,7 @@ public class AIBugController : MonoBehaviour {
 		if (isAttacking) {
 			if (target != null) {
 				float distToEnemy = Vector3.Distance (target.transform.position, transform.position);
-				if (distToEnemy <= 1.5f && CanAttack) {
+				if (distToEnemy < 1.5f && CanAttack) {
 					PerformAttack ();
 				}
 			} else if(!patrol) {

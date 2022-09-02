@@ -236,7 +236,7 @@ public class AIStateMachine : MonoBehaviour {
 			}
 		}
 
-        if (other.tag == "VStoneFragment" && other.gameObject == getTargetObject())
+        if (other.tag == "VStoneFragment" /* && other.gameObject == getTargetObject() */)
         {
             if (gameObject.GetComponent<NPCInventory>().ObjectOnBack.tag == "BagTool")
             {
@@ -287,14 +287,11 @@ public class AIStateMachine : MonoBehaviour {
 
         if (other.tag == "BagTool" && other.gameObject == getTargetObject())
         {
-            //drop current back object
-
             ChannelerIFollow.GetComponent<NPCTeamHandler>().addCollectedVStone(other.gameObject.GetComponent<Vstonebag>().currentVStoneAmount);
-            gameObject.GetComponent<NPCInventory>().DropBackItem();
-            //equip this object
-            gameObject.GetComponent<NPCInventory>().EquipBackItem(other.gameObject);
-            //update vstone total
             vStoneAmount += other.gameObject.GetComponent<Vstonebag>().currentVStoneAmount;
+            gameObject.GetComponent<NPCInventory>().EquipBackItem(other.gameObject);
+            Destroy(other.gameObject);
+            gameObject.GetComponent<NPCInventory>().DropBackItem();
             GameObject.Find("Canvas").GetComponent<UIController>().ResetNPCCards();
             targets.Dequeue();
         }
@@ -406,6 +403,11 @@ public class AIStateMachine : MonoBehaviour {
 		return vStoneAmount;
 	}
 
+    public void SetVstoneAmount(float amount)
+    {
+        vStoneAmount = amount;
+    }
+
     public void AddTargetForNPC(GameObject target)
     {
         targets.Enqueue(target);
@@ -428,9 +430,11 @@ public class AIStateMachine : MonoBehaviour {
         if(target != null && target.tag == "BagTool")
         {
             //if target is a bag object, add that to the npc team handler queue or whatever
-            ChannelerIFollow.GetComponent<NPCTeamHandler>().makeNPCPickUpBag(target);
+            ChannelerIFollow.GetComponent<NPCTeamHandler>().makeNPCPickUpBag(target, vStoneAmount);
         }
 		ChannelerIFollow.GetComponent<NPCTeamHandler>().RefreshNPCMinerList();
+
+
     }
 
 	public void handleRessurection()

@@ -29,25 +29,54 @@ public class ChangeFloorOnEnter : MonoBehaviour {
 	void OnTriggerStay(Collider other){
 		
 		if (other.gameObject.tag == "Player" && Input.GetButton("Action")) {
-			cameraFade.StartFade (Color.black, 2.0f);
 			if (descending) {
-				caveManager.GetComponent<CaveManager> ().DescendToLowerFloor ();
+                StartCoroutine("DescendFloor");
+                /*
+                caveManager.GetComponent<CaveManager> ().DescendToLowerFloor ();
 				floorlevel += 1;
 				EnemyTeamHandler = GameObject.Find ("EnemyNPCHandler");
 				EnemyTeamHandler.GetComponent<EnemyTeamHandler> ().floorLevel = floorlevel;
 				print ("floor level: " + floorlevel);
 				CanSwapLevels = false;
+                */
 			} else {
+                StartCoroutine("AscendFloor");
+                /*
 				caveManager.GetComponent<CaveManager> ().AscendToUpperFloor ();
 				floorlevel -= 1;
 				EnemyTeamHandler = GameObject.Find ("EnemyNPCHandler");
 				EnemyTeamHandler.GetComponent<EnemyTeamHandler> ().floorLevel = floorlevel;
 				print ("floor level: " + floorlevel);
 				CanSwapLevels = false;
+                */
 			}
-			cameraFade.StartFade (Color.clear, 2.0f);
 		}
 
 	}
+
+    IEnumerator AscendFloor(){
+        cameraFade.StartFade(Color.black, 2.0f);
+        yield return new WaitForSeconds(2.0f);
+        caveManager.GetComponent<CaveManager>().AscendToUpperFloor();
+        floorlevel -= 1;
+        EnemyTeamHandler = GameObject.Find("EnemyNPCHandler");
+        EnemyTeamHandler.GetComponent<EnemyTeamHandler>().floorLevel = floorlevel;
+        print("floor level: " + floorlevel);
+        CanSwapLevels = false;
+        cameraFade.StartFade(Color.clear, 2.0f);
+    }
+
+
+    IEnumerator DescendFloor (){
+        cameraFade.StartFade(Color.black, 2.0f);
+        yield return new WaitForSeconds(2.0f);
+        caveManager.GetComponent<CaveManager>().DescendToLowerFloor();
+        floorlevel += 1;
+        EnemyTeamHandler = GameObject.Find("EnemyNPCHandler");
+        EnemyTeamHandler.GetComponent<EnemyTeamHandler>().floorLevel = floorlevel;
+        print("floor level: " + floorlevel);
+        CanSwapLevels = false;
+        cameraFade.StartFade(Color.clear, 2.0f);
+    }
 
 }

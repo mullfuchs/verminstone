@@ -222,6 +222,12 @@ public class CampEventController : MonoBehaviour {
         gameObject.GetComponent<CampNarrativeController>().day += 1;
 		gameObject.GetComponent<CampNarrativeController>().timeOfDay = CampNarrativeController.timePeriod.Morning;
 
+        int npcCount = GameObject.FindGameObjectsWithTag("WorkerNPC").Length + GameObject.FindGameObjectsWithTag("dialog_npc").Length;
+        if(npcCount <= 3)
+        {
+            SceneManager.LoadScene("Bad Game Ending");
+        }
+
 		if (day >= DaysToFinishGame) {
 			print ("you won the game!");
 			SceneManager.LoadScene ("tempEndGame");
@@ -280,6 +286,13 @@ public class CampEventController : MonoBehaviour {
 	public void EnterCaveSequence(){
         //set cave entrance object to be inactive
         //caveExitObject.LoadLevelOnEnter = false;
+        StartCoroutine("EnterCaveCoroutine");
+
+	}
+
+    IEnumerator EnterCaveCoroutine(){
+        GameObject.Find("MultipurposeCameraRig").GetComponent<CameraFade>().StartFade(Color.black, 2.0f);
+        yield return new WaitForSeconds(2.0f);
         DisableAllSuns();
         HideNonWorkerNPCs();
         GameObject.Find("Player").GetComponent<NPCTeamHandler>().rebuildNPCLists();
@@ -287,9 +300,9 @@ public class CampEventController : MonoBehaviour {
         FindObjectOfType<PlayerEventController>().SetPlayerMovement(true);
         gameObject.GetComponent<VStoneEconomyObject>().SetDailyQuota();
         caveEntrance.GetComponent<CaveEntrance>().enterCaveAndStartRun();
-		//caveEntrance.SetActive(false);
-		caveExit.SetActive(false);
-	}
+        //caveEntrance.SetActive(false);
+        caveExit.SetActive(false);
+    }
 
 	public void ExitCaveSequence(){
 		print ("exiting cave");

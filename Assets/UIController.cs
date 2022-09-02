@@ -77,22 +77,27 @@ public class UIController : MonoBehaviour {
     }
 
 	public void SetupNPCCards(){
-		//get all the npcs
-		//make a card prefab for each one
-		//add it to the card prefab holder
-		//add a reference to the health which updates itself?
-		//fuck the references aren't active on scene activation
-		GameObject[] npcs = GameObject.Find("Player").GetComponent<NPCTeamHandler>().NPCMiners;
+        //get all the npcs
+        //make a card prefab for each one
+        //add it to the card prefab holder
+        //add a reference to the health which updates itself?
+        //fuck the references aren't active on scene activation
+        GameObject[] npcs = GameObject.Find("Player").GetComponent<NPCTeamHandler>().NPCMiners;
+        //GameObject[] npcs = GameObject.FindGameObjectsWithTag("WorkerNPC");
 
-		for (int i = 0; i < npcs.Length; i++) {
-			GameObject uiCard = Instantiate (NPCHealthPrefab, NPCPrefabContainer.transform);
-			uiCard.GetComponentInChildren<FillableBarController> ().SetMaxValue( npcs [i].GetComponent<health> ().maxHealth );
-			uiCard.GetComponentInChildren<FillableBarController> ().UpdateCurrentValue( npcs [i].GetComponent<health> ().healthPoints);
-			uiCard.transform.Find("Portrait").GetComponent<Image>().sprite = npcs [i].GetComponent<NPCstats> ().DialogPortraits [0];
-			SetUpInventoryIcons (npcs [i], uiCard);
+        for (int i = 0; i < npcs.Length; i++) {
+            if(npcs[i].GetComponent<health>().healthPoints > 0)
+            {
+                GameObject uiCard = Instantiate(NPCHealthPrefab, NPCPrefabContainer.transform);
+                uiCard.GetComponentInChildren<FillableBarController>().SetMaxValue(npcs[i].GetComponent<health>().maxHealth);
+                uiCard.GetComponentInChildren<FillableBarController>().UpdateCurrentValue(npcs[i].GetComponent<health>().healthPoints);
+                uiCard.transform.Find("Portrait").GetComponent<Image>().sprite = npcs[i].GetComponent<NPCstats>().DialogPortraits[0];
+                SetUpInventoryIcons(npcs[i], uiCard);
 
-			npcs [i].GetComponent<health> ().SetTrackingUIElement ( uiCard.GetComponentInChildren<FillableBarController> () );
-			uiCard.SetActive (true);
+                npcs[i].GetComponent<health>().SetTrackingUIElement(uiCard.GetComponentInChildren<FillableBarController>());
+                uiCard.SetActive(true);
+            }
+
 		}
 	}
 

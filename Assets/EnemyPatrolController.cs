@@ -24,6 +24,10 @@ public class EnemyPatrolController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(currentTarget == null)
+        {
+            currentTarget = getNewTarget();
+        }
 		if(Vector3.Distance(currentTarget.position, gameObject.transform.position) <= distanceThreshold){
 			currentTarget = getNewTarget ();
 			gameObject.GetComponent<AIBugController> ().setTargetTransform (currentTarget);
