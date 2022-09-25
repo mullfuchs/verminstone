@@ -319,7 +319,7 @@ public class CampPopulationController : MonoBehaviour {
 
 
 		body.GetComponentInChildren<SkinnedMeshRenderer> ().material = NPCBodyMaterials [furType];
-
+        npc.GetComponent<SleepTimeController>().characterModelReference = body;
 		npc.GetComponent<Animator> ().avatar = body.GetComponent<Animator> ().avatar;
 
 	}

@@ -31,6 +31,7 @@ public class UIController : MonoBehaviour {
         assignBarObject(XPBar, XPBarObject); 
 		SetupNPCCards ();
         InitializeTheUI();
+        player.GetComponent<health>().SetTrackingUIElement(HealthBarObject.GetComponentInChildren<FillableBarController>());
     }
 
     private void Awake()

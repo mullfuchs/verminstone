@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DealDamageToObjects : MonoBehaviour {
 
-    public string AffectedTag;
+    public string[] AffectedTags;
 
 	public float baseDamageAmount;
 	public float knockback;
@@ -36,7 +36,7 @@ public class DealDamageToObjects : MonoBehaviour {
         if(other.GetComponent<health>() != null)
         {
             health OtherHealth = other.GetComponent<health>();
-            if (other.tag == AffectedTag && OtherHealth)
+            if (isTagAnAffectedTag(other.tag) && OtherHealth)
             {
                 float tempDMG = baseDamageAmount + AttackStat;
                 if (other.attachedRigidbody != null)
@@ -95,4 +95,16 @@ public class DealDamageToObjects : MonoBehaviour {
 		baseDamageAmount += amount;
 		print ("damage increased to " + baseDamageAmount);
 	}
+
+    private bool isTagAnAffectedTag(string tag)
+    {
+        foreach(string t in AffectedTags)
+        {
+            if(tag == t)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

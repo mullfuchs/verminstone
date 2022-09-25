@@ -408,6 +408,7 @@ public class GenerateMap : MonoBehaviour {
 		public int roomSize;
 		public bool isAccessableFromMainRoom;
 		public bool isMainRoom;
+        public int itemcount = 0;
 
 		public Room(){
 			
@@ -492,6 +493,7 @@ public class GenerateMap : MonoBehaviour {
 			Coord tempTile = tempRoom.tiles.ElementAt (UnityEngine.Random.Range (0, tempRoom.tiles.Count));
             //maybe remoove that tile here
             tempRoom.tiles.Remove(tempTile);
+            tempRoom.itemcount += 1;
 
 			coordList.Add (coordToWorldPoint (tempTile));
 		}
@@ -568,14 +570,14 @@ public class GenerateMap : MonoBehaviour {
         Room smallestRoom = roomList[0];
         foreach(Room candidate in roomList)
         {
-            if(candidate.roomSize < smallestRoom.roomSize)
+            if(candidate.itemcount < smallestRoom.itemcount)
             {
                 smallestRoom = candidate;
             }
         }
 
         //get middle spot room
-        Coord middleSpot = smallestRoom.insideTiles.ElementAt(smallestRoom.insideTiles.Count/2);
+        Coord middleSpot = smallestRoom.tiles.ElementAt(smallestRoom.tiles.Count/2);
         roomList.Remove(smallestRoom);
 
         return coordToWorldPoint(middleSpot);

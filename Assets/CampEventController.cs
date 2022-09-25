@@ -278,6 +278,8 @@ public class CampEventController : MonoBehaviour {
         foreach(GameObject npc in idleNPCs)
         {
             npc.GetComponent<NPCOverworldController>().DoIdleRoutine();
+            npc.GetComponent<SleepTimeController>().setCharacterModelVisibility(true);
+            npc.GetComponent<SleepTimeController>().setDialogBoxActive(true);
         }
 
 

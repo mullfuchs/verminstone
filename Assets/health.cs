@@ -13,7 +13,7 @@ public class health : MonoBehaviour {
     private int defensePoints = 0;
 	private UIController controller = null;
 
-	private FillableBarController healthBar;
+	public FillableBarController healthBar;
 
 	public GameObject DeathEffectObject;
 

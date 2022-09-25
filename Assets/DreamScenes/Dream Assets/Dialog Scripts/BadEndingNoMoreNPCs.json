@@ -2,7 +2,7 @@
 	{
 		"title": "BadEnd.Start",
 		"tags": "",
-		"body": "<<changeSceneShot SceneShotController shot1>>\nYou know why you're here don't you?\n<<changeSceneShot SceneShotController shot2>>\nYou keep losing assets in the caves\nour numbers are way down as a result\n<<changeSceneShot SceneShotController shot4>>\nIt isn't in our budget to\n...aquire\nmore assets\n<<changeSceneShot SceneShotController shot1>>\nSo the decision has been made\nWe're going to write off our losses\n<<changeSceneShot SceneShotController shot3>>\n....\n<<changeSceneShot SceneShotController shot4>>\nSo that means\nthis is where you end\n<<goToScene DialogAndPortraitContainer TitleScreen>>",
+		"body": "<<changeSceneShot SceneShotController shot1>>\nManager: You know why you're here don't you?\n<<changeSceneShot SceneShotController shot2>>\nManager: You keep losing assets in the caves\nManager: our numbers are way down as a result\n<<changeSceneShot SceneShotController shot4>>\nManager: It isn't in our budget to\nManager: ...aquire\nManager: more assets\n<<changeSceneShot SceneShotController shot1>>\nManager: So the decision has been made\nManager: We're going to write off our losses\n<<changeSceneShot SceneShotController shot3>>\nEmma: ....\n<<changeSceneShot SceneShotController shot4>>\nManager: So that means\nManager: this is where you end\n<<goToScene DialogAndPortraitContainer TitleScreen>>",
 		"position": {
 			"x": 540,
 			"y": 260
