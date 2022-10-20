@@ -233,7 +233,7 @@ public class CampEventController : MonoBehaviour {
 			SceneManager.LoadScene ("tempEndGame");
 		}
         //hard coding escape quest to start at a certain day
-        if(day >= 1 && GameObject.Find("CampAreaSecretEscape") == null )
+        if(day >= 5 && GameObject.Find("CampAreaSecretEscape") == null )
         {
            // print("trying to turn on camp area secret escape");
             GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().StartQuest("CampAreaSecretEscape");
@@ -282,6 +282,11 @@ public class CampEventController : MonoBehaviour {
             npc.GetComponent<SleepTimeController>().setDialogBoxActive(true);
         }
 
+        //running dialog for day 2
+        if(gameObject.GetComponent<CampEventController>().day == 2)
+        {
+            Invoke("Day2Tutorial", 2.0f);
+        }
 
     }
 
@@ -408,6 +413,13 @@ public class CampEventController : MonoBehaviour {
     {
         SunDay.SetActive(false);
         SunEvening.SetActive(false);
+    }
+
+    void Day2Tutorial()
+    {
+        FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue("Overseer.DayTwoTutorial");
+        Sprite[] OverseerPortraits = GameObject.Find("CampEventController").GetComponent<CampNarrativeController>().getPotraitsForKeyNPC("Overseer");
+        FindObjectOfType<DialogPortraitController>().populateDialogPortraits(GameObject.Find("Player").GetComponent<NPCstats>().DialogPortraits, OverseerPortraits);
     }
 
 }

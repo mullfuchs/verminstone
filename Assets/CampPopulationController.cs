@@ -55,6 +55,11 @@ public class CampPopulationController : MonoBehaviour {
 			SpawnNewPlayerAndNPCSquad();
 			IsNewGame = false;
             Destroy(startGameObj);
+            //run intro dialog
+            GameObject.Find("Player").GetComponent<Yarn.Unity.Example.DialogTrigger>().canTalkToNPCs = true; 
+            FindObjectOfType<Yarn.Unity.DialogueRunner>().StartDialogue("Overseer.StartGame");
+            Sprite[] OverseerPortraits = GameObject.Find("CampEventController").GetComponent<CampNarrativeController>().getPotraitsForKeyNPC("Overseer");
+            FindObjectOfType<DialogPortraitController>().populateDialogPortraits(GameObject.Find("Player").GetComponent<NPCstats>().DialogPortraits, OverseerPortraits);
         }
 
         
@@ -192,6 +197,7 @@ public class CampPopulationController : MonoBehaviour {
         GameObject player = SpawnPlayerPrefab();
         player.transform.position = position;
         player.GetComponentInChildren<ShootOnAxisInput>().canShoot = false;
+        player.GetComponent<PowerObject>().canHeal = false;
         player.GetComponent<health>().healthPoints = healthpoints;
     }
 
@@ -199,6 +205,7 @@ public class CampPopulationController : MonoBehaviour {
 		GameObject Player = Instantiate (PlayerPrefab, PlayerSpawnPoint.position, Quaternion.identity);
 		Player.name = "Player";
         Player.GetComponentInChildren<ShootOnAxisInput>().canShoot = false;
+        Player.GetComponent<PowerObject>().canHeal = false;
         return Player;
 	}
 

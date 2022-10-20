@@ -98,6 +98,7 @@ public class CaveEntrance : MonoBehaviour {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PowerObject>().setGlowLight(true);
         player.GetComponentInChildren<ShootOnAxisInput>().canShoot = true;
+        player.GetComponent<PowerObject>().canHeal = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<NPCTeamHandler>().rebuildNPCLists();
         SceneManager.LoadScene("testMapScene");
         LoadLevelOnEnter = false;

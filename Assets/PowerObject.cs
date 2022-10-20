@@ -17,7 +17,7 @@ public class PowerObject : MonoBehaviour {
 	private bool canRegen = true;
 	private bool healing = false;
 
-    private bool canHeal = true;
+    public bool canHeal = true;
 
 	public int powerLevel = 1;
 	public int xp = 1;

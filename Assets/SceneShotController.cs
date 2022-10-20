@@ -11,25 +11,32 @@ public class SceneShotController : MonoBehaviour
     // Start is called before the first frame update
     public GameObject currentActiveSceneObject;
     public GameObject mainSceneCamera;
+    public GameObject RealCamera;
+    public bool skipInitialization = false;
+
+    private Transform OriginalCameraTransform;
     void Start()
     {
+
         if(mainSceneCamera == null)
         {
             GameObject.FindGameObjectWithTag("MainCamera");
         }
 
-        if (SceneObjects.Length != 0)
+        if (SceneObjects.Length != 0 && !skipInitialization)
         {
             SceneObjects[0].SceneGameObject.SetActive(true);
             currentActiveSceneObject = SceneObjects[0].SceneGameObject;
         }
 
-        if (CameraPositions.Length != 0)
+        if (CameraPositions.Length != 0 && !skipInitialization)
         {
             mainSceneCamera.transform.position = CameraPositions[0].ShotTransform.transform.position;
             mainSceneCamera.transform.rotation = CameraPositions[0].ShotTransform.transform.rotation;
             mainSceneCamera.GetComponent<Camera>().fieldOfView = CameraPositions[0].FOV;
         }
+
+
     }
 
     // Update is called once per frame
@@ -65,6 +72,24 @@ public class SceneShotController : MonoBehaviour
             }
         }
     }
+
+    [Yarn.Unity.YarnCommand("disableAutoCam")]
+    public void disableAutoCam()
+    {
+        RealCamera.SetActive(false);
+        mainSceneCamera.SetActive(true);
+        //mainSceneCamera.GetComponentInParent<UnityStandardAssets.Cameras.AutoCam>().enabled = false;
+    }
+
+    [Yarn.Unity.YarnCommand("enableAutoCam")]
+    public void enableAutoCam()
+    {
+        mainSceneCamera.SetActive(false);
+        RealCamera.SetActive(true);
+
+        // mainSceneCamera.GetComponentInParent<UnityStandardAssets.Cameras.AutoCam>().enabled = true;
+    }
+
 
     [Serializable]
     public struct SceneObject
