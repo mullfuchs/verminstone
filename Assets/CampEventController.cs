@@ -43,6 +43,8 @@ public class CampEventController : MonoBehaviour {
 	public int day = 1;
 
 	private GameObject[] NPCbeds;
+
+    public bool canStartCaveEnterCoroutine = true;
 	// Use this for initialization
 	void Start () {
 		canvas = GameObject.Find ("Canvas");
@@ -293,7 +295,11 @@ public class CampEventController : MonoBehaviour {
 	public void EnterCaveSequence(){
         //set cave entrance object to be inactive
         //caveExitObject.LoadLevelOnEnter = false;
-        StartCoroutine("EnterCaveCoroutine");
+        if(canStartCaveEnterCoroutine)
+        {
+            StartCoroutine("EnterCaveCoroutine");
+            canStartCaveEnterCoroutine = false;
+        }
 
 	}
 
@@ -313,6 +319,7 @@ public class CampEventController : MonoBehaviour {
 
 	public void ExitCaveSequence(){
 		print ("exiting cave");
+        canStartCaveEnterCoroutine = true;
         UnHideWorkerNPCs();
         EnableEveningLighting();
 		gameObject.GetComponent<CampNarrativeController>().timeOfDay = CampNarrativeController.timePeriod.Evening;

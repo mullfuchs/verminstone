@@ -14,7 +14,7 @@ public class PauseMenuEnabler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //add "if start menu pressed close menu" code here
     }
 
     public void EnablePauseMenu()
@@ -22,6 +22,14 @@ public class PauseMenuEnabler : MonoBehaviour
         if(pauseMenuObject != null)
         {
             pauseMenuObject.SetActive(true);
+        }
+    }
+
+    public void DisablePauseMenu()
+    {
+        if (pauseMenuObject != null)
+        {
+            pauseMenuObject.SetActive(false);
         }
     }
 }

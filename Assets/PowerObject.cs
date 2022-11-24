@@ -70,7 +70,7 @@ public class PowerObject : MonoBehaviour {
 			//Invoke ("ResetRegen", 0.2f);
 		}
 			
-        if (Input.GetButton("HealButton") && canHeal)
+        if (Input.GetButton("HealButton") && canHeal && powerAmount > 0.1f)
         {
             healNPCIncremental();
             //healNPCs();
@@ -92,6 +92,11 @@ public class PowerObject : MonoBehaviour {
 			uiController.updateBar (uiController.PowerBarObject, powerAmount);
 			setLightIntensity (powerAmount);
 		}
+
+        if(powerAmount > 0.1f)
+        {
+            canHeal = true;
+        }
     }
 
 	public void RemovePowerAmount(float amount){
@@ -107,6 +112,10 @@ public class PowerObject : MonoBehaviour {
             }
 			setLightIntensity (powerAmount);
 		}
+        if(powerAmount <= 0.1f)
+        {
+            canHeal = false;
+        }
     }
 
 	void ResetRegen(){

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class AssignOnClickEvent : MonoBehaviour
 {
     // Start is called before the first frame update
+    
+
     void Start()
     {
         
@@ -25,6 +27,7 @@ public class AssignOnClickEvent : MonoBehaviour
     void Button_OnClick()
     {
         GameObject.Find("CampEventController").GetComponent<CampEventController>().EnterCaveSequence();
+
     }
 
 }

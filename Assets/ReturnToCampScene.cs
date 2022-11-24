@@ -16,7 +16,7 @@ public class ReturnToCampScene : MonoBehaviour {
         //press x to skip
 		if(Input.GetKeyDown(KeyCode.X))
         {
-            loadCamp();
+            //loadCamp();
         }
 	}
 
@@ -24,21 +24,21 @@ public class ReturnToCampScene : MonoBehaviour {
 	public void loadCamp(){
 		print ("returning to camp?");
         Destroy(GameObject.Find("CampEventController")); //gonna try destroying the camp event controller then having the whole scene reload
-        DontDestroyOnLoad(transform.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
         SceneManager.LoadScene("Camp");
         print("restoring camp stuff");
       //  GameObject.Find("CampEventController").GetComponent<CampNarrativeController>().SetPlayerAndNPCsActive(true);
         GameObject.Find ("CampEventController").GetComponent<CampEventController> ().StartDay ();
-        Destroy(transform.gameObject);
+        Destroy(this.gameObject);
 
     }
 
     [Yarn.Unity.YarnCommand("goToScene")]
     public void goToScene(string sceneName)
     {
-        DontDestroyOnLoad(transform.gameObject);
+       // DontDestroyOnLoad(this.gameObject);
         SceneManager.LoadScene(sceneName);
-        Destroy(transform.gameObject);
+        Destroy(this.gameObject);
     }
 
 
