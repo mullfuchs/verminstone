@@ -153,6 +153,16 @@ public class ExitCaveNPCEventController : MonoBehaviour {
                 npcs [i].GetComponent<AIStateMachine> ().SendNPCToObject ( GameObject.Find("EquipmentReturn") );
 			}
 
+            //just in case the dialog npcs were stuck in a bed and had the dialog visibility turned off
+            GameObject[] idleNPCs = GameObject.FindGameObjectsWithTag("dialog_npc");
+            foreach (GameObject npc in idleNPCs)
+            {
+                npc.GetComponent<NPCOverworldController>().DoIdleRoutine();
+                npc.GetComponent<SleepTimeController>().setCharacterModelVisibility(true);
+                npc.GetComponent<SleepTimeController>().setDialogBoxActive(true);
+            }
+
+
             GameObject[] dialog_npcs = GameObject.FindGameObjectsWithTag("dialog_npc");
             foreach(GameObject dialog_npc in dialog_npcs)
             {

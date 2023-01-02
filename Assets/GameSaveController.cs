@@ -77,7 +77,7 @@ public class GameSaveController : MonoBehaviour {
 
 			NPCProfile profile = new NPCProfile();
 			profile.NPCName = stats.NPCName;
-			profile.NPCHealth = stats.health;
+			profile.NPCHealth = npcs[i].GetComponent<health>().healthPoints;
             profile.NPCPosition = npcs[i].transform.position;
             if(stats.hasBeenTalkedToToday)
             {
@@ -102,7 +102,7 @@ public class GameSaveController : MonoBehaviour {
 
             NPCProfile profile = new NPCProfile();
             profile.NPCName = stats.NPCName;
-            profile.NPCHealth = stats.health;
+            profile.NPCHealth = npcs[i].GetComponent<health>().healthPoints;
             profile.NPCPosition = NonWorkers[i].transform.position;
 
             if (stats.hasBeenTalkedToToday)
@@ -129,7 +129,7 @@ public class GameSaveController : MonoBehaviour {
 		gameSave.PlayerPosition = player.transform.position;
 		gameSave.PlayerHealth = player.GetComponent<health> ().healthPoints;
         //gameSave.DaysElapsed = GameObject.Find ("CampEventController").GetComponent<CampEventController> ().day;
-        gameSave.DaysElapsed = campEventController.GetComponent<CampEventController>().day + 1; //incrementign here because day increments after save file is created
+        gameSave.DaysElapsed = campEventController.GetComponent<CampEventController>().day; //incrementign here because day increments after save file is created
 
         //weapon/upgrade levels
         gameSave.WeaponLevel = campEventController.GetComponent<CampInventoryController>().weaponLevel;

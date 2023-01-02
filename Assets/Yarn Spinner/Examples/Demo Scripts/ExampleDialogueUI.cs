@@ -234,8 +234,12 @@ namespace Yarn.Unity.Example {
 				gameControlsContainer.gameObject.SetActive(true);
 			}
 
-            GameObject.Find("Player").GetComponent<DialogTrigger>().ReleaseNPCPlayerIsTalkingTo();
 
+            GameObject playerOBJ = GameObject.Find("Player");
+            if(playerOBJ != null)
+            {
+                playerOBJ.GetComponent<DialogTrigger>().ReleaseNPCPlayerIsTalkingTo();
+            }
 
 			yield break;
 		}

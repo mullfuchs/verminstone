@@ -7,6 +7,10 @@ public class health : MonoBehaviour {
     public float maxHealth;
 	public bool isFreindlyFireOn = false;
 	public bool TrackOnTheUI = false;
+    //damage buff
+    public bool HasDamageBuffer = false;
+    public float DamageBufferTime = 1.0f;
+    private bool canBeDamaged = true;
 
     public AudioClip deathSound;
 
@@ -79,7 +83,19 @@ public class health : MonoBehaviour {
 		if (tempDamage <= 0) {
 			healthPoints -= 1;
 		} else {
-			healthPoints -= tempDamage;
+            if(!HasDamageBuffer)
+            {
+                healthPoints -= tempDamage;
+            }
+            else
+            {
+                if (canBeDamaged)
+                {
+                    healthPoints -= tempDamage;
+                    canBeDamaged = false;
+                    Invoke("resetDamageBuff", DamageBufferTime);
+                }
+            }
 		}
 
 		if (healthBar != null) {
@@ -164,4 +180,9 @@ public class health : MonoBehaviour {
 	public void SetTrackingUIElement(FillableBarController _healthBar){
 		healthBar = _healthBar;
 	}
+
+    public void resetDamageBuff()
+    {
+        canBeDamaged = true;
+    }
 }

@@ -32,11 +32,13 @@ public class HandleGameState : MonoBehaviour {
 
 		if(Input.GetButtonDown("Action") && clearToRestart)
 		{
+            deleteUndeltableObjects();
             SceneManager.LoadScene("TitleScreen");
         }
 
 		if(Input.GetKeyDown(KeyCode.Alpha0) && clearToRestart)
         {
+            deleteUndeltableObjects();
             SceneManager.LoadScene("TitleScreen");
         }
 	}
@@ -74,5 +76,22 @@ public class HandleGameState : MonoBehaviour {
         yield return new WaitForSeconds(2.0f);
         UIcontroller.updateText(UIcontroller.GameStatusText, "Press the Zero key to restart");
         clearToRestart = true;
+    }
+
+    public void deleteUndeltableObjects()
+    {
+        GameObject CampEventController = GameObject.Find("CampEventController");
+        if(CampEventController != null)
+        {
+            CampEventController.GetComponent<CampEventController>().UnHideWorkerNPCs();
+        }
+
+        DontDestroyOnLoad[] undestroyableObjects = FindObjectsOfType<DontDestroyOnLoad>();
+        foreach(DontDestroyOnLoad g in undestroyableObjects)
+        {
+            
+            Destroy(g.gameObject);
+        }
+        
     }
 }

@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class ExitTutorialLevel : MonoBehaviour {
 
 	public string levelToLoad;
+    private CameraFade cameraFade;
 
 	// Use this for initialization
 	void Start () {
-		
+        cameraFade = GameObject.Find("MultipurposeCameraRig").GetComponent<CameraFade>();
 	}
 	
 	// Update is called once per frame
@@ -19,8 +20,7 @@ public class ExitTutorialLevel : MonoBehaviour {
 
 	void OnTriggerEnter( Collider Other ){
 		if (Other.gameObject.name == "Player") {
-			destroyPlayerAndNPCS ();
-			SceneManager.LoadScene (levelToLoad);
+            StartCoroutine("changeLevels");
 		}
 	}
 
@@ -31,4 +31,12 @@ public class ExitTutorialLevel : MonoBehaviour {
 		}
 		Destroy(GameObject.Find("Player"));
 	}
+
+    IEnumerator changeLevels()
+    {
+        cameraFade.StartFade(Color.black, 2.0f);
+        yield return new WaitForSeconds(2.0f);
+        destroyPlayerAndNPCS();
+        SceneManager.LoadScene(levelToLoad);
+    }
 }

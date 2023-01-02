@@ -69,6 +69,18 @@ public class DialogPortraitController : MonoBehaviour
         }
     }
 
+    [Yarn.Unity.YarnCommand("disablePlayerMovement")]
+    public void DisablePlayerMovement()
+    {
+        FindObjectOfType<PlayerEventController>().SetPlayerMovement(false);
+    }
+
+    [Yarn.Unity.YarnCommand("enablePlayerMovement")]
+    public void EnablePlayerMovement()
+    {
+        FindObjectOfType<PlayerEventController>().SetPlayerMovement(true);
+    }
+
 	public Sprite GetImage(string imageName, Sprite[] images)
     {
 

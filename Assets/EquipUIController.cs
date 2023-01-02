@@ -189,7 +189,10 @@ public class EquipUIController : MonoBehaviour {
     public void equipBackItemToNPC(GameObject npc)
     {
         npc.GetComponent<NPCInventory>().EquipBackItem(currentItem);
-        UpdateCarryCapacityUI();
+        if(currentItem.gameObject.tag == "BagTool")
+        {
+            UpdateCarryCapacityUI();
+        }
        // currentItem = null;
        // resetAllButtons();
         checkForValidLoadout();

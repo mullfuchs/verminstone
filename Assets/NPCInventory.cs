@@ -92,7 +92,7 @@ public class NPCInventory : MonoBehaviour {
         ActiveBackObject = Instantiate(item, backTransform.position, backTransform.rotation, backTransform);
 		ActiveBackObject.GetComponent<Rigidbody> ().isKinematic = true;
 		ActiveBackObject.GetComponent<Rigidbody> ().useGravity = false;
-		ActiveBackObject.GetComponentInChildren<MeshCollider> ().enabled = false;
+	//	ActiveBackObject.GetComponentInChildren<MeshCollider> ().enabled = false;
         ObjectOnBack = item;
     }
 

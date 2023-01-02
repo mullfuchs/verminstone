@@ -209,8 +209,14 @@ public class CampEventController : MonoBehaviour {
 	IEnumerator EndDayCycle(){
         //GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().SetScreenOverlayColor (Color.black);
         gameObject.GetComponent<CampPopulationController>().WarpNPCsToBed();
+        day += 1;
+        if (day > 4 && GameObject.Find("CampAreaSecretEscape") == null)
+        {
+            print("trying to turn on camp area secret escape");
+            GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().StartQuest("CampAreaSecretEscape");
+        }
 
-		gameObject.GetComponent<GameSaveController>().SaveGame();
+        gameObject.GetComponent<GameSaveController>().SaveGame();
         
 		GameObject.Find ("MultipurposeCameraRig").GetComponent<CameraFade> ().StartFade (Color.black, 2.0f);
 		GameObject.Find ("CampEventController").GetComponent<VStoneEconomyObject> ().resetDailyTotal ();
@@ -219,7 +225,7 @@ public class CampEventController : MonoBehaviour {
         EnableMorningLighting();
         //advance time
 
-		day += 1;
+		
 		GameObject.Find ("DayCounter").GetComponent<UnityEngine.UI.Text> ().text = "Day:" + day;
         gameObject.GetComponent<CampNarrativeController>().day += 1;
 		gameObject.GetComponent<CampNarrativeController>().timeOfDay = CampNarrativeController.timePeriod.Morning;
@@ -235,11 +241,7 @@ public class CampEventController : MonoBehaviour {
 			SceneManager.LoadScene ("tempEndGame");
 		}
         //hard coding escape quest to start at a certain day
-        if(day >= 5 && GameObject.Find("CampAreaSecretEscape") == null )
-        {
-           // print("trying to turn on camp area secret escape");
-            GameObject.Find("GameQuestObjects").GetComponent<CampQuestController>().StartQuest("CampAreaSecretEscape");
-        }
+
 
         if(!gameObject.GetComponent<CampNarrativeController>().RunDreamForDay(day))
         {

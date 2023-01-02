@@ -11,12 +11,12 @@ public class PauseMenuController : MonoBehaviour
 
     void Start()
     {
-        
+        resumeButton.GetComponent<UnityEngine.UI.Button>().Select();
     }
 
     private void Awake()
     {
-        resumeButton.GetComponent<UnityEngine.UI.Button>().Select();
+       
     }
 
     // Update is called once per frame

@@ -39,6 +39,8 @@ public class AIStateMachine : MonoBehaviour {
     public AudioClip stonePickupSound;
     private AudioSource m_AudioSource;
 
+    private bool canCheckForExtraShards;
+
     // Use this for initialization
     void Start () {
 		//DefaultTarget = this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target.gameObject;
@@ -150,6 +152,7 @@ public class AIStateMachine : MonoBehaviour {
 				}
 			}	
 		}
+
 	    
 
 	}
@@ -163,7 +166,14 @@ public class AIStateMachine : MonoBehaviour {
 	}
 
 	Transform getTarget(){
-		return this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl> ().target;
+        if (this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target == null)
+        {
+            return this.transform;
+        }
+        else
+        {
+            return this.GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target;
+        }
 	}
 
 	void CheckIfIHaveNoTarget(){
@@ -228,17 +238,20 @@ public class AIStateMachine : MonoBehaviour {
         }
 
 		if (other.tag == "StoneDropoffDebug") {
-			if(gameObject.GetComponent<NPCInventory>().ObjectOnBack.tag == "BagTool" && vStoneAmount >= 0.0f)
+            /*
+            if (gameObject.GetComponent<NPCInventory>().ObjectOnBack.tag == "BagTool" && vStoneAmount >= 0.0f)
 			{
 				VStoneEcoInstance.AddVStoneToDailyTotal(vStoneAmount);
 				vStoneAmount = 0;
                 canCarryVstone = true;
 			}
+            */ 
 		}
 
         if (other.tag == "VStoneFragment" /* && other.gameObject == getTargetObject() */)
         {
-            if (gameObject.GetComponent<NPCInventory>().ObjectOnBack.tag == "BagTool")
+            GameObject backObject = gameObject.GetComponent<NPCInventory>().getBackObject();
+            if (backObject != null && backObject.tag == "BagTool")
             {
                 print("picking up stone");
                 //check bag capacity vs what I have
@@ -267,11 +280,11 @@ public class AIStateMachine : MonoBehaviour {
                 vStoneAmount += vStoneFragmentAmount;
                 m_AudioSource.PlayOneShot(stonePickupSound);
                 ChannelerIFollow.GetComponent<NPCTeamHandler>().addCollectedVStone(vStoneFragmentAmount);
+                Destroy(other.gameObject);
                 if (targets.Count > 0)
                 {
                     targets.Dequeue();
                 }
-                Destroy(other.gameObject);
                 CheckIfTheresATargetInMyQueue();
             }
         }
@@ -492,6 +505,28 @@ public class AIStateMachine : MonoBehaviour {
         targets.Clear();
         targets.Enqueue(target);
         updateStoppingDistance(itemStoppingDist);
+    }
+
+    public void checkForExtraShards()
+    {
+        //does npc have backpack?
+        
+        //can we check for extra shards
+        if(!canCheckForExtraShards)
+        {
+            return;
+        }
+        else
+        {
+
+        }
+
+
+    }
+
+    public void resetExtraShardCounterCheck()
+    {
+        canCheckForExtraShards = true;
     }
 
 }

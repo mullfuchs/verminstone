@@ -60,6 +60,8 @@ public class NPCFoodDistroUIController : MonoBehaviour {
 		foreach (GameObject x in NPCCards) {
 			Destroy (x);
 		}
+        NPCCards.Clear();
+
 		cardParent.SetActive (false);
 	}
 

@@ -6,6 +6,7 @@ public class BedInteract : MonoBehaviour
 {
 
     public GameObject bedOccupiedObject;
+    public bool isBedOccupied = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class BedInteract : MonoBehaviour
         if(other.tag == "WorkerNPC" || other.tag == "dialog_npc")
         {
             bedOccupiedObject.SetActive(true);
+            isBedOccupied = true;
             other.GetComponent<SleepTimeController>().setCharacterModelVisibility(false);
             other.GetComponent<SleepTimeController>().setDialogBoxActive(false);
         }
@@ -33,6 +35,7 @@ public class BedInteract : MonoBehaviour
         if (other.tag == "WorkerNPC" || other.tag == "dialog_npc")
         {
             bedOccupiedObject.SetActive(false);
+            isBedOccupied = false;
             other.GetComponent<SleepTimeController>().setCharacterModelVisibility(true);
             other.GetComponent<SleepTimeController>().setDialogBoxActive(true);
         }
