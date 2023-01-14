@@ -255,7 +255,7 @@ public class AIStateMachine : MonoBehaviour {
             {
                 print("picking up stone");
                 //check bag capacity vs what I have
-                float vStoneFragmentAmount = 5.0f;
+                int vStoneFragmentAmount = (int)Random.Range(2,6);
                 int cap = gameObject.GetComponent<NPCInventory>().ObjectOnBack.GetComponent<Vstonebag>().vStoneCapacity;
                 if (cap < (int)vStoneAmount + vStoneFragmentAmount)
                 {

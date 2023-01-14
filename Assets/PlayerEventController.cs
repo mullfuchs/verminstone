@@ -94,7 +94,7 @@ public class PlayerEventController : MonoBehaviour {
             actionDescriptionText.text = "Dig Tunnel";
             //CampEventControllerInstance.StartTunnelDigSequence();
         }
-        if(Other.tag == "bed" && isEvening())
+        if(Other.tag == "PlayerBed" && isEvening())
         {
             iconIndicator.sprite = SleepIcon;
             actionDescriptionText.text = "Sleep";
@@ -131,7 +131,7 @@ public class PlayerEventController : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider other){
-		if (other.tag == "bed" && Input.GetButtonDown("Action") && canEndDay && isEvening()) {
+		if (other.tag == "PlayerBed" && Input.GetButtonDown("Action") && canEndDay && isEvening()) {
 			print ("Ending day");
 			canEndDay = false;
 			CampEventControllerInstance.EndDay ();
