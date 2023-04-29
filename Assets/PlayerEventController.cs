@@ -186,8 +186,9 @@ public class PlayerEventController : MonoBehaviour {
             dialogOpened = false;
 		}
 		if (Other.tag == "EquipArea") {
-			CampEventControllerInstance.EndEquipAreaSequence ();
-            dialogOpened = false;
+			//commenting this out since players no longer walk away to de-equip.
+            //CampEventControllerInstance.EndEquipAreaSequence ();
+            //dialogOpened = false;
 		}
 
         if (Other.tag == "CaveExit")

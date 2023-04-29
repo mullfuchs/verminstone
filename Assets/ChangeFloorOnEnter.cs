@@ -10,10 +10,11 @@ public class ChangeFloorOnEnter : MonoBehaviour {
 
 	public bool CanSwapLevels = false;
 
+
 	private int floorlevel = 1;
 	private GameObject EnemyTeamHandler;
 	private CameraFade cameraFade;
-
+    private bool canChangeLevels = true;
 	// Use this for initialization
 	void Start () {
 		caveManager = GameObject.Find ("CaveManager");
@@ -28,8 +29,9 @@ public class ChangeFloorOnEnter : MonoBehaviour {
 
 	void OnTriggerStay(Collider other){
 		
-		if (other.gameObject.tag == "Player" && Input.GetButton("Action")) {
+		if (other.gameObject.tag == "Player" && Input.GetButton("Action") && canChangeLevels) {
 			if (descending) {
+                canChangeLevels = false;
                 StartCoroutine("DescendFloor");
                 /*
                 caveManager.GetComponent<CaveManager> ().DescendToLowerFloor ();
@@ -40,6 +42,7 @@ public class ChangeFloorOnEnter : MonoBehaviour {
 				CanSwapLevels = false;
                 */
 			} else {
+                canChangeLevels = false;
                 StartCoroutine("AscendFloor");
                 /*
 				caveManager.GetComponent<CaveManager> ().AscendToUpperFloor ();
@@ -64,6 +67,8 @@ public class ChangeFloorOnEnter : MonoBehaviour {
         print("floor level: " + floorlevel);
         CanSwapLevels = false;
         cameraFade.StartFade(Color.clear, 2.0f);
+        yield return new WaitForSeconds(2.0f);
+        canChangeLevels = true;
     }
 
 
@@ -77,6 +82,8 @@ public class ChangeFloorOnEnter : MonoBehaviour {
         print("floor level: " + floorlevel);
         CanSwapLevels = false;
         cameraFade.StartFade(Color.clear, 2.0f);
+        yield return new WaitForSeconds(2.0f);
+        canChangeLevels = true;
     }
 
 }

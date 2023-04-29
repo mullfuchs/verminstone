@@ -10,7 +10,8 @@ public class ReturnToCampScene : MonoBehaviour {
     // Use this for initialization
     void Start () {
         cameraFade = GameObject.Find("Main Camera").GetComponent<CameraFade>();
-	}
+        Destroy(GameObject.Find("CampEventController")); //gonna try destroying the camp event controller then having the whole scene reload
+    }
 	
 	// Update is called once per frame
 	void Update () {

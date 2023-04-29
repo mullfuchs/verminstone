@@ -15,11 +15,13 @@ public class EnemyPatrolController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (targets.Length >= 1) {
-			SetupPatrol (targets);
-		} else {
-			SetupPatrolWithGameObjects (GameObject.FindGameObjectsWithTag ("Spawner"));
-		}
+        SetupPatrolWithGameObjects(GameObject.FindGameObjectsWithTag("Spawner"));
+
+       // if (targets.Length >= 1) {
+		//	SetupPatrol (targets);
+		//} else {
+		//	SetupPatrolWithGameObjects (GameObject.FindGameObjectsWithTag ("Spawner"));
+		//}
 	}
 	
 	// Update is called once per frame
@@ -27,6 +29,11 @@ public class EnemyPatrolController : MonoBehaviour {
         if(currentTarget == null)
         {
             currentTarget = getNewTarget();
+            if(currentTarget == null)
+            {
+                //there are no targets because we just checked, destroy self
+                Destroy(gameObject);
+            }
         }
 		if(Vector3.Distance(currentTarget.position, gameObject.transform.position) <= distanceThreshold){
 			currentTarget = getNewTarget ();
@@ -65,12 +72,15 @@ public class EnemyPatrolController : MonoBehaviour {
 	}
 
 	Transform getNewTarget(){
-		if (targetIndex == targets.Length) {
-			targetIndex = 0;
-		} else {
-			targetIndex += 1;
-		}
-		return targets [targetIndex];
+        foreach(Transform t in targets)
+        {
+            if(t != null)
+            {
+                return t;
+            }
+        }
+
+        return null;
 	}
 
 

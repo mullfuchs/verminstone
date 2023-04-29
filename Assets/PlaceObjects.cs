@@ -87,10 +87,10 @@ public class PlaceObjects : MonoBehaviour {
 			}
 		}
 
-		FloorObject FloorPatrolBug = new FloorObject (gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), PatrolBug);
+		//FloorObject FloorPatrolBug = new FloorObject (gameObject.GetComponent<GenerateMap> ().GetRandomPointInRandomRoom (), PatrolBug);
 
 
-		objectList.Add (FloorPatrolBug);
+		//objectList.Add (FloorPatrolBug);
 		objectList.Add (EntryPoint);
 		objectList.Add (ExitPoint);
 		return objectList;
